@@ -1,5 +1,5 @@
 {
-  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "$type": "Bespoke.PosEntt.ItemCategories.Domain.ItemCategory, PosEntt.ItemCategory",
   "Code": "06",
   "Name": "Odd Item",
   "SnbSequence": 6,

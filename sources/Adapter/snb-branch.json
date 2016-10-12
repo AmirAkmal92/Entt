@@ -27,7 +27,7 @@
         "HttpMethod": "GET",
         "BaseAddress": "http://eryken2.asuscomm.com:8086/api/Branch?%24inlinecount=allpages&%24format=json&%24top=15&%24orderby=Name",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbBranch",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbBranch",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
@@ -1102,7 +1102,7 @@
         "HttpMethod": "POST",
         "BaseAddress": "http://eryken2.asuscomm.com:8086/api/cmd/UpdateBranch",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbBranch",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbBranch",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",

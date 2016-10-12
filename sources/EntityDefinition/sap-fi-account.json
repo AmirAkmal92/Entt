@@ -83,7 +83,7 @@
   },
   "ServiceContract": {
     "$type": "Bespoke.Sph.Domain.ServiceContract, domain.sph",
-    "CodeNamespace": "Bespoke.DevV1.IntegrationApis",
+    "CodeNamespace": "Bespoke.PosEntt.IntegrationApis",
     "FullSearchEndpoint": {
       "$type": "Bespoke.Sph.Domain.FullSearchEndpoint, domain.sph",
       "IsAllowed": false,

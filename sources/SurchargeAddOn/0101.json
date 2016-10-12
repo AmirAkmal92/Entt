@@ -1,5 +1,5 @@
 {
-  "$type": "Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn, DevV1.SurchargeAddOn",
+  "$type": "Bespoke.PosEntt.SurchargeAddOns.Domain.SurchargeAddOn, PosEntt.SurchargeAddOn",
   "Code": "0101",
   "ServiceCode": "01",
   "TypeCode": "01",

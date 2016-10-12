@@ -1,5 +1,5 @@
 {
-  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
   "Code": "PLD1011",
   "Name": "COURIER CHARGES - LPM PMR",
   "SocCode": "80001151",

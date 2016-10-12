@@ -227,7 +227,7 @@
         },
         {
           "$type": "Bespoke.Sph.Domain.ListView, domain.sph",
-          "ChildItemType": "bespoke.DevV1_salesOrder.domain.Consignment",
+          "ChildItemType": "bespoke.PosEntt_salesOrder.domain.Consignment",
           "IsChildItemFunction": false,
           "ListViewColumnCollection": {
             "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ListViewColumn, domain.sph]], domain.sph",

@@ -27,7 +27,7 @@
         "HttpMethod": "POST",
         "BaseAddress": "http://localhost:3330/api/sap-accounts/01081610019",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbWebNewAccount",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebNewAccount",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
@@ -1347,7 +1347,7 @@
         "HttpMethod": "POST",
         "BaseAddress": "http://localhost:3330/api/sales-orders",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbWebNewAccount",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebNewAccount",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
