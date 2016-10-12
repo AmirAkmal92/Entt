@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "NA",
+  "Name": "COURIER CHARGES - LPM UPSR",
+  "SocCode": "80001150",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "NA-80001150",
+  "CreatedDate": "2016-09-27T09:31:49.3351611+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:31:49.3321604+08:00",
+  "WebId": "ff90cbba-e942-4ae5-e237-0a455543958d"
+}

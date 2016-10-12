@@ -1,0 +1,19 @@
+{
+  "Name": "S302",
+  "Environment": "dev",
+  "ComputerName": "S302",
+  "HomeDirectory": "",
+  "ApplicationPool": "",
+  "ApplicationPoolCredential": null,
+  "IsConsole": false,
+  "EnableRemoteManagement": false,
+  "HostNameBinding": "",
+  "PortBinding": 0,
+  "UseSsl": false,
+  "CreatedBy": null,
+  "Id": "dev.s302",
+  "CreatedDate": "0001-01-01T00:00:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-09T12:36:11.2241312+08:00",
+  "WebId": null
+}

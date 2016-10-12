@@ -1,0 +1,12 @@
+{
+  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "Code": "09",
+  "Name": "Extra Prepaid",
+  "SnbSequence": 9,
+  "CreatedBy": "admin",
+  "Id": "09",
+  "CreatedDate": "2016-10-01T08:38:59.822373+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:38:59.821372+08:00",
+  "WebId": "5800d21b-6bc7-4f2e-96eb-099e45ed6f0e"
+}

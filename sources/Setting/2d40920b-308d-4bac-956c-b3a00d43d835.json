@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.Sph.Domain.Setting, domain.sph",
+  "SettingId": 0,
+  "UserName": "admin@bespoke.com.my",
+  "Key": "ForgotPassword",
+  "Value": "2015-01-30T08:50:18",
+  "CreatedBy": "WS27",
+  "Id": "2d40920b-308d-4bac-956c-b3a00d43d835",
+  "CreatedDate": "2015-01-30T08:50:18.0946873+08:00",
+  "ChangedBy": "WS27",
+  "ChangedDate": "2015-01-30T08:50:18.0916852+08:00",
+  "WebId": "dd1ee6a0-8c02-4403-be04-f20f3d9d17ac"
+}

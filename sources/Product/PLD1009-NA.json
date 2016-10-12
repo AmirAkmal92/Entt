@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1009",
+  "Name": "POSLAJU ECONOMY PACKAGE",
+  "SocCode": "NA",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1009-NA",
+  "CreatedDate": "2016-09-27T09:35:45.0292052+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:35:45.0272053+08:00",
+  "WebId": "8ab84d16-d43b-4d1c-b409-d5b2306caadb"
+}

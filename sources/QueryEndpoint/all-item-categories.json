@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "ItemCategoryAllItemCategoriesQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "Code",
+        "Direction": "Asc",
+        "WebId": "4671a2ce-425e-4ec8-baef-8e36c6a40716"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "CacheProfile": "",
+  "Name": "All item categories",
+  "Route": "",
+  "IsReturnSource": "",
+  "Entity": "ItemCategory",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "item-categories",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "all-item-categories",
+  "CreatedDate": "2016-09-30T15:14:50.5634103+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:32:35.1120336+08:00",
+  "WebId": "684e0586-b64e-4465-bd59-d96ceff7b8cf"
+}

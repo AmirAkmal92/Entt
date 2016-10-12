@@ -1,0 +1,112 @@
+{
+  "$type": "Bespoke.Sph.Domain.EntityView, domain.sph",
+  "ViewColumnCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ViewColumn, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "IposDocumentTimeStamp",
+        "Header": "Ipos Document Time Stamp",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "date:{0}",
+        "RouteValueField": "",
+        "WebId": "106e7f03-6673-46c9-f530-737125766707"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "SoldtoPartyAccNo",
+        "Header": "Soldto Party Acc No",
+        "Sort": "",
+        "IsLinkColumn": true,
+        "FormRoute": "sales-order-details",
+        "IconCssClass": "fa fa-file-text-o",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "Id",
+        "WebId": "d9e7b5bb-cbeb-4237-b530-2faa7e4ac83d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "BranchCode",
+        "Header": "Branch Code",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "201ce636-d5f8-4cdd-f880-f2819f71251b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "IposNumber",
+        "Header": "Ipos Number",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "d80c8524-1236-455e-87bf-6db160e15227"
+      }
+    ]
+  },
+  "ConditionalFormattingCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Performer": {
+    "$type": "Bespoke.Sph.Domain.Performer, domain.sph",
+    "UserProperty": "",
+    "Value": "",
+    "IsPublic": true,
+    "WebId": null
+  },
+  "RouteParameterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.RouteParameter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "IconClass": "fa fa-calendar",
+  "IconStoreId": "520a65c5-fea8-4f10-b9ce-95ac4be47f96",
+  "EntityDefinitionId": "sales-order",
+  "Name": "Soc sales orders today",
+  "Route": "soc-sales-order-today",
+  "Note": "",
+  "IsPublished": true,
+  "Visibilty": "",
+  "TileColour": "bviolet",
+  "CountMessage": "",
+  "Entity": "SalesOrder",
+  "Partial": "",
+  "Template": null,
+  "DisplayOnDashboard": true,
+  "Endpoint": "today-sales-orders",
+  "CreatedBy": "admin",
+  "Id": "sales-order-soc-sales-order-today",
+  "CreatedDate": "2016-09-24T11:58:24.2008898+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T09:11:50.3819469+08:00",
+  "WebId": "c43ebc4a-bd48-4981-b02a-5ecd5fb5528a"
+}

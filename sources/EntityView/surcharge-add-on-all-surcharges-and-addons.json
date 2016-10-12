@@ -1,0 +1,112 @@
+{
+  "$type": "Bespoke.Sph.Domain.EntityView, domain.sph",
+  "ViewColumnCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ViewColumn, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "Code",
+        "Header": "Code",
+        "Sort": "",
+        "IsLinkColumn": true,
+        "FormRoute": "surcharge-add-lookup-details",
+        "IconCssClass": "fa fa-credit-card-alt",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "Code",
+        "WebId": "cebda1d9-0b6d-42d9-aa64-e636cd211bf6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "SnbCode",
+        "Header": "Snb Code",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "0da493f4-fb15-4659-b03f-6b52ca180e5a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "ServiceName",
+        "Header": "Service Name",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "94bd9b7e-78c8-4b7f-a8e6-2f37528df7fc"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "Name",
+        "Header": "Name",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "10066a59-b3b1-47ee-e2ab-a90e4c753986"
+      }
+    ]
+  },
+  "ConditionalFormattingCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Performer": {
+    "$type": "Bespoke.Sph.Domain.Performer, domain.sph",
+    "UserProperty": "",
+    "Value": "",
+    "IsPublic": true,
+    "WebId": null
+  },
+  "RouteParameterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.RouteParameter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "IconClass": "fa fa-cc-mastercard",
+  "IconStoreId": "1212785e-1ed5-4f66-a1e3-143c2d3d3724",
+  "EntityDefinitionId": "surcharge-add-on",
+  "Name": "All surcharges and addons",
+  "Route": "all-surcharges-and-addons",
+  "Note": "",
+  "IsPublished": true,
+  "Visibilty": "",
+  "TileColour": "borange",
+  "CountMessage": "",
+  "Entity": "SurchargeAddOn",
+  "Partial": "",
+  "Template": null,
+  "DisplayOnDashboard": true,
+  "Endpoint": "default-surcharges-and-addons",
+  "CreatedBy": "admin",
+  "Id": "surcharge-add-on-all-surcharges-and-addons",
+  "CreatedDate": "2016-09-30T08:27:02.6739251+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-30T16:28:48.3147241+08:00",
+  "WebId": "c2db18ac-8781-430b-f247-5d06cb3fa72f"
+}

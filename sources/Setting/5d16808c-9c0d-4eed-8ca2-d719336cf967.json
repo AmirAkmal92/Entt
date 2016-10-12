@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.Sph.Domain.Setting, domain.sph",
+  "SettingId": 0,
+  "UserName": "admin",
+  "Key": "Token",
+  "Value": "{\r\n  \"$type\": \"Bespoke.Sph.Web.Controllers.SphSecurityToken, core.sph\",\r\n  \"Username\": \"admin\",\r\n  \"Issued\": \"2015-03-05T15:08:28.0435218+08:00\",\r\n  \"Expired\": \"2015-03-19T15:08:28.0435218+08:00\",\r\n  \"Roles\": {\r\n    \"$type\": \"System.String[], mscorlib\",\r\n    \"$values\": [\r\n      \"administrators\",\r\n      \"developers\"\r\n    ]\r\n  }\r\n}",
+  "CreatedBy": "WS27",
+  "Id": "5d16808c-9c0d-4eed-8ca2-d719336cf967",
+  "CreatedDate": "2015-03-05T15:09:42.6114943+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2015-03-05T17:01:14.0411339+08:00",
+  "WebId": "fe969a65-e9d3-48bb-8fef-e5ff495b4acd"
+}

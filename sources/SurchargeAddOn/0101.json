@@ -1,0 +1,16 @@
+{
+  "$type": "Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn, DevV1.SurchargeAddOn",
+  "Code": "0101",
+  "ServiceCode": "01",
+  "TypeCode": "01",
+  "ServiceName": "Fuel Surcharge",
+  "Name": "Domestic",
+  "SnbCode": "S03",
+  "Type": "Surcharge",
+  "CreatedBy": "admin",
+  "Id": "0101",
+  "CreatedDate": "2016-09-30T08:46:43.7457139+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-30T08:46:43.7427148+08:00",
+  "WebId": "1cead77d-a58e-4ad6-fc4c-37d17a70c6b0"
+}

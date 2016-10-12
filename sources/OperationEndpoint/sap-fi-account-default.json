@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.OperationEndpoint, domain.sph",
+  "EntityPermissionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.EntityPermission, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Rules": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "SetterActionChildCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.SetterActionChild, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "PatchPathCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.PatchSetter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "default",
+  "Route": "",
+  "IsHttpPut": false,
+  "IsHttpPatch": false,
+  "IsHttpPost": true,
+  "IsHttpDelete": false,
+  "Note": "",
+  "Entity": "SapFiAccount",
+  "Resource": "sap-fi-accounts",
+  "IsPublished": true,
+  "IsConflictDetectionEnabled": false,
+  "CreatedBy": "admin",
+  "Id": "sap-fi-account-default",
+  "CreatedDate": "2016-09-06T15:06:35.268882+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-21T11:21:34.9120374+08:00",
+  "WebId": "e99d26c7-20dd-4d3b-8b63-49b662018d8b"
+}

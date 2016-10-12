@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1001",
+  "Name": "Next Day Delivery",
+  "SocCode": "80000000",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1001-80000000",
+  "CreatedDate": "2016-09-27T09:34:09.4651696+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:34:09.4621674+08:00",
+  "WebId": "cfbee2bb-5e81-4443-ee4c-6d398c950615"
+}

@@ -1,0 +1,12 @@
+{
+  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "Code": "11",
+  "Name": "Old Item",
+  "SnbSequence": 11,
+  "CreatedBy": "admin",
+  "Id": "11",
+  "CreatedDate": "2016-10-01T08:39:13.7209767+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:39:13.7199775+08:00",
+  "WebId": "ebca728f-73fa-4c06-c606-87ee93241f80"
+}

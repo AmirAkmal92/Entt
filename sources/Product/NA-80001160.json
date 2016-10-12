@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "NA",
+  "Name": "COURIER CHARGES - MPM STPM",
+  "SocCode": "80001160",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "NA-80001160",
+  "CreatedDate": "2016-09-27T09:38:41.8682668+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:38:41.8672652+08:00",
+  "WebId": "7cec30ed-f5ea-40e2-9643-9ff37d4badc6"
+}

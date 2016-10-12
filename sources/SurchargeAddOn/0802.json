@@ -1,0 +1,16 @@
+{
+  "$type": "Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn, DevV1.SurchargeAddOn",
+  "Code": "0802",
+  "ServiceCode": "08",
+  "TypeCode": "02",
+  "ServiceName": "TCS",
+  "Name": "Tokyo - Document",
+  "SnbCode": "V03",
+  "Type": "Surcharge",
+  "CreatedBy": "admin",
+  "Id": "0802",
+  "CreatedDate": "2016-09-30T09:00:17.8348204+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-30T09:00:17.8188175+08:00",
+  "WebId": "8a4ae437-1bf7-4ecd-cd57-ec64c6a41e98"
+}

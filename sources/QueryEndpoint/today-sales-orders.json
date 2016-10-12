@@ -1,0 +1,62 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "SalesOrderTodaySalesOrdersQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Filter, domain.sph",
+        "Term": "CreatedDate",
+        "Operator": "Ge",
+        "Field": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff93d63ef8",
+          "Script": "DateTime.Today",
+          "Name": "Today",
+          "Note": "",
+          "WebId": "93d63ef8-6bdd-456d-9b3a-c16bbd58d8f9"
+        },
+        "WebId": "05cd6cb1-af58-4601-9fb9-f1c3cdbd547d"
+      }
+    ]
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "CreatedDate",
+        "Direction": "Desc",
+        "WebId": "5b4787d1-34b4-41c8-cf1f-faf6a23d2880"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "Id",
+      "OrderType",
+      "SoldtoPartyAccNo",
+      "IposDocumentTimeStamp",
+      "IposNumber",
+      "BranchCode",
+      "ShiptoPartyPostcode",
+      "OrderQty"
+    ]
+  },
+  "CacheProfile": "",
+  "Name": "Today sales orders",
+  "Route": "today",
+  "IsReturnSource": "",
+  "Entity": "SalesOrder",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "sales-orders",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "today-sales-orders",
+  "CreatedDate": "2016-09-30T07:23:18.3488848+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T09:11:30.794132+08:00",
+  "WebId": "38c4fc3f-f98b-4b48-9486-1e22a4dbd8c8"
+}

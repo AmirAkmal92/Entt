@@ -1,0 +1,50 @@
+{
+  "$type": "Bespoke.Sph.Domain.QuotaPolicy, domain.sph",
+  "RateLimit": {
+    "$type": "Bespoke.Sph.Domain.RateLimit, domain.sph",
+    "IsUnlimited": false,
+    "Calls": 1,
+    "RenewalPeriod": {
+      "$type": "Bespoke.Sph.Domain.TimePeriod, domain.sph",
+      "Count": 2,
+      "Unit": "Seconds",
+      "WebId": "e7b02dbe-984a-4ad9-c27c-f57a8a4e9b22"
+    },
+    "WebId": null
+  },
+  "QuotaLimit": {
+    "$type": "Bespoke.Sph.Domain.QuotaLimit, domain.sph",
+    "IsUnlimited": false,
+    "Calls": 2,
+    "RenewalPeriod": {
+      "$type": "Bespoke.Sph.Domain.TimePeriod, domain.sph",
+      "Count": 2222,
+      "Unit": "Seconds",
+      "WebId": "5cfcf0ad-e7eb-4eac-dabb-dfa0e4c9bb17"
+    },
+    "WebId": null
+  },
+  "BandwidthLimit": {
+    "$type": "Bespoke.Sph.Domain.BandwidthLimit, domain.sph",
+    "IsUnlimited": false,
+    "Size": 2,
+    "RenewalPeriod": {
+      "$type": "Bespoke.Sph.Domain.TimePeriod, domain.sph",
+      "Count": 2,
+      "Unit": "Hours",
+      "WebId": "c0ab6392-4fd2-4ee5-e5b7-5a5682eca75f"
+    },
+    "WebId": null
+  },
+  "EndpointLimitCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.EndpointLimit, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "Bronze",
+  "CreatedBy": "admin",
+  "Id": "broze",
+  "CreatedDate": "2016-04-19T09:30:31.1102791+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-04-27T06:54:41.0881156+08:00",
+  "WebId": "335191de-8198-4710-b157-4e68986f9b94"
+}

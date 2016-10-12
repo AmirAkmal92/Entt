@@ -1,0 +1,12 @@
+{
+  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "Code": "05",
+  "Name": "Blood",
+  "SnbSequence": 5,
+  "CreatedBy": "admin",
+  "Id": "05",
+  "CreatedDate": "2016-10-01T08:37:57.3645687+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:37:57.3575662+08:00",
+  "WebId": "6cad596a-691a-4724-d6e2-ab48e8964d50"
+}

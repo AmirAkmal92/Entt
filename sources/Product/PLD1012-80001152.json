@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1012",
+  "Name": "COURIER CHARGES - LPM SPM",
+  "SocCode": "80001152",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1012-80001152",
+  "CreatedDate": "2016-09-27T09:36:10.3792941+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:36:10.3782943+08:00",
+  "WebId": "4efcb0b5-c969-458a-d771-2dd3b05428a0"
+}

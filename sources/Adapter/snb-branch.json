@@ -1,0 +1,2184 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiAdapter, restapi.adapter",
+  "BaseAddress": null,
+  "AuthenticationType": "Bearer",
+  "DefaultValue": {
+    "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+    "CodeNamespace": "ff031a8da6",
+    "Script": "ConfigurationManager.GetEnvironmentVariable(\"Token\");",
+    "Name": "GetToken",
+    "Note": "",
+    "WebId": "031a8da6-4154-44da-8517-aaa741ea2e62"
+  },
+  "SecurityHeaderCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "OdataTranslator": null,
+  "TableDefinitionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Api.TableDefinition, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "OperationDefinitionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Api.OperationDefinition, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Integrations.Adapters.RequestWithoutBodyApiOperationDefinition, restapi.adapter",
+        "HttpMethod": "GET",
+        "BaseAddress": "http://eryken2.asuscomm.com:8086/api/Branch?%24inlinecount=allpages&%24format=json&%24top=15&%24orderby=Name",
+        "UseHttpGet": false,
+        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbBranch",
+        "Uuid": null,
+        "ParameterDefinition": {
+          "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
+          "MemberCollection": {
+            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+            "$values": []
+          },
+          "Name": null,
+          "IsRequest": false,
+          "IsResponse": false,
+          "CodeNamespace": null,
+          "WebId": null
+        },
+        "RequestMemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "GetApiBranchQueryString",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "$inlinecount",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Inlinecount",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "allpages",
+                      "Name": "$inlinecount",
+                      "Note": null,
+                      "WebId": "8d4e44da-8538-41aa-9454-2d282aaa65b5"
+                    },
+                    "WebId": "296f0db1-e385-4e6d-b7fa-023a04912064"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "$format",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Format",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "json",
+                      "Name": "$format",
+                      "Note": null,
+                      "WebId": "0278c5c9-f6d4-416c-b678-7e747077e796"
+                    },
+                    "WebId": "e918aedb-89bd-46c4-aa7d-b55e198ed95a"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.Int32, mscorlib",
+                    "IsNullable": true,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "$top",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Top",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.Int32, mscorlib",
+                      "Value": 15,
+                      "Name": "$top",
+                      "Note": null,
+                      "WebId": "9445f195-456a-437b-9d43-ad38b255aea7"
+                    },
+                    "WebId": "fc9df370-7a2d-4a6a-b595-64236b45429e"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "$orderby",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Orderby",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "Name",
+                      "Name": "$orderby",
+                      "Note": null,
+                      "WebId": "41867c41-c300-4be7-8af7-104d5273dadc"
+                    },
+                    "WebId": "ee396876-0f2b-497f-8021-b8ee540d5b58"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Integrations.Adapters.QueryStringMember, restapi.adapter",
+                    "TypeName": "System.Int32, mscorlib",
+                    "IsNullable": true,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "$skip",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Skip",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "2fba8b8b-3dde-40ce-ba72-5851676efbe7"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "QueryStrings",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "faf1bed8-8f28-4e10-a5c6-716a5ea0238f"
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "GetApiBranchRequestHeader",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Host",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Host",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "eryken2.asuscomm.com:8086",
+                      "Name": "Host",
+                      "Note": null,
+                      "WebId": "a2b47225-5c23-411a-a16b-8ea3e05e2304"
+                    },
+                    "WebId": "2b8eb4b5-6d88-48de-a00c-e1b5567c9ea0"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Connection",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Connection",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "keep-alive",
+                      "Name": "Connection",
+                      "Note": null,
+                      "WebId": "18607878-c6b8-46cd-a96a-e0c9172603e7"
+                    },
+                    "WebId": "987c82d8-7de2-426e-bf6a-a41c128b3d2b"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Accept",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "application/json, text/javascript, */*; q=0.01",
+                      "Name": "Accept",
+                      "Note": null,
+                      "WebId": "54455ad0-84a1-46e7-a05b-b1c4e64c1163"
+                    },
+                    "WebId": "7b2962b5-9ffc-4488-83aa-8f508c04c75f"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Origin",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Origin",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "http://eryken2.asuscomm.com:8085",
+                      "Name": "Origin",
+                      "Note": null,
+                      "WebId": "777541a8-d6ae-4099-b815-57721154334c"
+                    },
+                    "WebId": "d4213d00-bea6-4b24-95f9-030e393f1de9"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "User-Agent",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "UserAgent",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2854.2 Safari/537.36",
+                      "Name": "User-Agent",
+                      "Note": null,
+                      "WebId": "e1a6b7e0-205a-4045-be31-665c8b13e5fa"
+                    },
+                    "WebId": "85d9e3e7-7e68-4a31-b31b-4618ff628337"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Referer",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Referer",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "http://eryken2.asuscomm.com:8085/Branch",
+                      "Name": "Referer",
+                      "Note": null,
+                      "WebId": "542702fc-5f91-4915-865d-cd28006d934f"
+                    },
+                    "WebId": "7ff8ed02-8f2e-4cc0-b2b7-4c1dde7dbd13"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept-Encoding",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AcceptEncoding",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "gzip, deflate, sdch",
+                      "Name": "Accept-Encoding",
+                      "Note": null,
+                      "WebId": "02663fba-1579-4d21-9888-5052f6907d2f"
+                    },
+                    "WebId": "93678237-6fda-45eb-99bd-1e154cc01e92"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept-Language",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AcceptLanguage",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "en-US,en;q=0.8,ms;q=0.6",
+                      "Name": "Accept-Language",
+                      "Note": null,
+                      "WebId": "b6fcfd57-3a92-4d58-b0fc-4dc5b6248bf6"
+                    },
+                    "WebId": "9ead92e2-8b1e-4cff-b00b-12cdbef874fa"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Integrations.Adapters.HttpHeaderMember, restapi.adapter",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "X-User-Key",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "SdsKey",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+                      "CodeNamespace": "ff719a4ab1",
+                      "Script": "ConfigurationManager.GetEnvironmentVariable(\"SDS_KEY\")",
+                      "Name": "SdsKey",
+                      "Note": "",
+                      "WebId": "719a4ab1-0da1-40b3-f9ab-99cf848ecc75"
+                    },
+                    "WebId": "c72bede1-d668-426c-932d-db061222cbc5"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Headers",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "292daa21-93b8-4520-b488-5deb5b6b8748"
+            }
+          ]
+        },
+        "ResponseMemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "GetApiBranchResponseHeader",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Cache-Control",
+                    "PropertyAttribute": "[JsonProperty(\"Cache-Control\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "CacheControl",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "fcaf1687-9165-4796-b742-694efbdc324e"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Pragma",
+                    "PropertyAttribute": "[JsonProperty(\"Pragma\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Pragma",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "077b159b-ccde-42ee-b9ea-32d084cd14e0"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Type",
+                    "PropertyAttribute": "[JsonProperty(\"Content-Type\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentType",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "c862c39a-7fa0-45c2-9206-cd998a2dcf48"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Expires",
+                    "PropertyAttribute": "[JsonProperty(\"Expires\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Expires",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "66b921ed-292a-4b0a-c2f1-6b6df0a19621"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Server",
+                    "PropertyAttribute": "[JsonProperty(\"Server\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Server",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "d268d906-a39e-40e8-f4c4-631696022cda"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Access-Control-Allow-Origin",
+                    "PropertyAttribute": "[JsonProperty(\"Access-Control-Allow-Origin\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AccessControlAllowOrigin",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "6e6b04f2-9e22-4ffe-e98d-27b560883ad1"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Access-Control-Allow-Credentials",
+                    "PropertyAttribute": "[JsonProperty(\"Access-Control-Allow-Credentials\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AccessControlAllowCredentials",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "34adc0fe-bc44-41be-f0c3-3fba1ff977d2"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "DataServiceVersion",
+                    "PropertyAttribute": "[JsonProperty(\"DataServiceVersion\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "DataServiceVersion",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "7975f7f4-72ee-4800-a905-bb2e62390391"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "X-AspNet-Version",
+                    "PropertyAttribute": "[JsonProperty(\"X-AspNet-Version\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "XAspNetVersion",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "a0ce66c4-4633-4a75-96cc-8437a5bcf426"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "X-Powered-By",
+                    "PropertyAttribute": "[JsonProperty(\"X-Powered-By\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "XPoweredBy",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "7f399e10-4b2c-402f-cbaa-b3b502e47622"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Date",
+                    "PropertyAttribute": "[JsonProperty(\"Date\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Date",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "842000b3-ffec-4521-957d-ae82c7204598"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Length",
+                    "PropertyAttribute": "[JsonProperty(\"Content-Length\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentLength",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "8a931fb6-ffdb-4c11-978f-65c6d69b0797"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Headers",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "2cebab58-5f44-4b0c-cdf0-c8cd4be95db3"
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "GetApiBranchResponseBody",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"odata.metadata\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "OdataMetadata",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "53b1277a-e990-4783-c943-b44f185282ef"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"odata.count\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "OdataCount",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "43b0b92d-76a3-4124-918a-be4d70461759"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+                    "EmptyField": null,
+                    "TypeName": "ValueItem",
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"value\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": [
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"SerializedPostCodeRanges\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "SerializedPostCodeRanges",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "45b4a99a-b0c9-49b8-f69a-3ee2b6ef8cac"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Id\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Id",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "02ac8e14-3ee8-4114-c61c-e8ee26bb00c0"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"State\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "State",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "647ba7de-a508-4a15-9368-56282943ff73"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Type\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Type",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "bc4071ac-27ef-473b-a951-33f7b2798ba1"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Code\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Code",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "155cff8b-cc54-494e-af9c-26b991f925fb"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Name\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Name",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "51dad891-fedd-44cb-ad31-861791567a70"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"ProfitCentreCode\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "ProfitCentreCode",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "dbe782c7-28f5-45bb-b6df-cb44ef97406d"
+                        }
+                      ]
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Value",
+                    "AllowMultiple": true,
+                    "DefaultValue": null,
+                    "WebId": "0dbf23fd-6d74-4b11-fed2-670c9bc8e106"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Body",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "d220a0e0-6252-4e17-f36a-ed19b7e49366"
+            }
+          ]
+        },
+        "ErrorRetry": {
+          "$type": "Bespoke.Sph.Domain.Api.ErrorRetry, domain.sph",
+          "Attempt": 0,
+          "IsEnabled": false,
+          "Wait": 0,
+          "Algorithm": "Constant",
+          "WebId": null
+        },
+        "Name": "GetApiBranch",
+        "MethodName": "GetApiBranch",
+        "IsOneWay": false,
+        "IsSelected": false,
+        "Schema": "",
+        "WebId": "189df02b-86ff-4f4b-aff8-9947083513a4"
+      },
+      {
+        "$type": "Bespoke.Sph.Integrations.Adapters.RestApiOperationDefinition, restapi.adapter",
+        "HttpMethod": "POST",
+        "BaseAddress": "http://eryken2.asuscomm.com:8086/api/cmd/UpdateBranch",
+        "UseHttpGet": false,
+        "CodeNamespace": "Bespoke.DevV1.Adapters.SnbBranch",
+        "Uuid": null,
+        "ParameterDefinition": {
+          "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
+          "MemberCollection": {
+            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+            "$values": []
+          },
+          "Name": null,
+          "IsRequest": false,
+          "IsResponse": false,
+          "CodeNamespace": null,
+          "WebId": null
+        },
+        "RequestMemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "PostApiCmdUpdateBranchQueryString",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "QueryStrings",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "0c34c041-6e63-4997-a466-4d28ae49d16d"
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "PostApiCmdUpdateBranchRequestHeader",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Host",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Host",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "eryken2.asuscomm.com:8086",
+                      "Name": "Host",
+                      "Note": null,
+                      "WebId": "c7bdc6ce-b30f-4779-bf9f-0673b0dd089c"
+                    },
+                    "WebId": "5d7ab43e-f0ac-459e-a10c-98ca91161058"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Connection",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Connection",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "keep-alive",
+                      "Name": "Connection",
+                      "Note": null,
+                      "WebId": "dc3ec3f2-4f29-4b8f-b9f5-37bf4bd2586b"
+                    },
+                    "WebId": "43f33bfd-dfb8-455b-ac8d-fbfd3694dba9"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Length",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentLength",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "178",
+                      "Name": "Content-Length",
+                      "Note": null,
+                      "WebId": "fd5dcff9-bf2e-45cb-b83c-f85609ad9e7a"
+                    },
+                    "WebId": "8e55ff78-0df2-4229-b69e-2ae81d0c0174"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Accept",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "application/json, text/javascript, */*; q=0.01",
+                      "Name": "Accept",
+                      "Note": null,
+                      "WebId": "8a90313c-14bb-4618-9105-36f148e71c67"
+                    },
+                    "WebId": "9198c2cd-f00c-410f-bf52-e0e6028aa603"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Origin",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Origin",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "http://eryken2.asuscomm.com:8085",
+                      "Name": "Origin",
+                      "Note": null,
+                      "WebId": "9134200a-c7be-47d3-a5ab-9e29a112cbbc"
+                    },
+                    "WebId": "b91013a7-30f0-4cad-98be-5a8c0bdca500"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "User-Agent",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "UserAgent",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2854.2 Safari/537.36",
+                      "Name": "User-Agent",
+                      "Note": null,
+                      "WebId": "a82980d7-8322-4bc2-8aef-f217139a989c"
+                    },
+                    "WebId": "d94df46d-139e-4d03-bf11-178267319ffe"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Type",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentType",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "application/json",
+                      "Name": "Content-Type",
+                      "Note": null,
+                      "WebId": "e6771f01-cce9-4017-b100-c3ea62254eeb"
+                    },
+                    "WebId": "3d8ca142-7b1f-4bc6-a2be-47766e310795"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Referer",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Referer",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "http://eryken2.asuscomm.com:8085/Branch",
+                      "Name": "Referer",
+                      "Note": null,
+                      "WebId": "bfdb0a02-64f7-42f6-ab93-f4c1d444a496"
+                    },
+                    "WebId": "9b397ff7-eaab-4fa3-9a2f-83563f6133f8"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept-Encoding",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AcceptEncoding",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "gzip, deflate",
+                      "Name": "Accept-Encoding",
+                      "Note": null,
+                      "WebId": "0a462dd3-65b9-4199-b2d3-47610dc4395e"
+                    },
+                    "WebId": "3602eb8f-11f1-4488-91cb-1ba51628cdad"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Accept-Language",
+                    "PropertyAttribute": null,
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AcceptLanguage",
+                    "AllowMultiple": false,
+                    "DefaultValue": {
+                      "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+                      "TypeName": "System.String, mscorlib",
+                      "Value": "en-US,en;q=0.8,ms;q=0.6",
+                      "Name": "Accept-Language",
+                      "Note": null,
+                      "WebId": "e988e7db-1f23-4e43-aa19-eb51e4954fde"
+                    },
+                    "WebId": "60323c5f-e4a1-4151-9f09-dcd84560f16c"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Headers",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "17fbd0e9-f5a5-4177-e247-77fade5cba44"
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "PostApiCmdUpdateBranchRequestBody",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"SerializedPostCodeRanges\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "SerializedPostCodeRanges",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "641dc250-a36d-4e0e-8703-85768217f288"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"Id\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Id",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "379565f9-bcd8-401a-cf58-a7dcd560bbee"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"State\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "State",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "61df3600-11b2-463d-e593-a0e814165ff6"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"Type\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Type",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "dea4a40c-082e-49c8-ede1-38bd49575967"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"Code\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Code",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "5c01eb3c-87f7-490c-db1f-d1b1b3dc542c"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"Name\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Name",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "52f9070b-5415-41a5-d00c-23bb3767b996"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"ProfitCentreCode\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ProfitCentreCode",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "ce07c14b-c406-4b75-c1a6-bf52dc2563e0"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Body",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "b5c2c16a-9a63-48dc-fde3-e61360796256"
+            }
+          ]
+        },
+        "ResponseMemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "PostApiCmdUpdateBranchResponseHeader",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Cache-Control",
+                    "PropertyAttribute": "[JsonProperty(\"Cache-Control\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "CacheControl",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "56d52eca-0da5-41da-d2d7-8dec63447bc7"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Pragma",
+                    "PropertyAttribute": "[JsonProperty(\"Pragma\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Pragma",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "4ba17af0-1035-43c7-c86a-a65b06d93261"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Type",
+                    "PropertyAttribute": "[JsonProperty(\"Content-Type\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentType",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "ecb498ca-21ea-4b15-fc80-b08120a5c5c1"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Expires",
+                    "PropertyAttribute": "[JsonProperty(\"Expires\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Expires",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "c87db6a1-c473-4064-8b85-7afa95745b07"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Server",
+                    "PropertyAttribute": "[JsonProperty(\"Server\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Server",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "2d510937-bd22-4a71-b48d-961049b3b9ff"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Access-Control-Allow-Origin",
+                    "PropertyAttribute": "[JsonProperty(\"Access-Control-Allow-Origin\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AccessControlAllowOrigin",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "f059c1ad-dfe4-4a8f-8f0e-0a3e84f55987"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Access-Control-Allow-Credentials",
+                    "PropertyAttribute": "[JsonProperty(\"Access-Control-Allow-Credentials\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "AccessControlAllowCredentials",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "bbed7af5-544d-493f-b6a3-fbd9f8b16047"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "X-AspNet-Version",
+                    "PropertyAttribute": "[JsonProperty(\"X-AspNet-Version\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "XAspNetVersion",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "6984e130-e53c-4ddc-bb82-c3d4f45a4e2b"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "X-Powered-By",
+                    "PropertyAttribute": "[JsonProperty(\"X-Powered-By\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "XPoweredBy",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "3b941b4d-5f30-44a9-cfbe-20d6878b4cc9"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Date",
+                    "PropertyAttribute": "[JsonProperty(\"Date\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Date",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "cdf28e0f-6e0f-499f-d8bb-e8df0d485c7d"
+                  },
+                  {
+                    "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                    "TypeName": "System.String, mscorlib",
+                    "IsNullable": false,
+                    "IsNotIndexed": false,
+                    "IsAnalyzed": false,
+                    "IsFilterable": false,
+                    "IsExcludeInAll": false,
+                    "Boost": 0,
+                    "FullName": "Content-Length",
+                    "PropertyAttribute": "[JsonProperty(\"Content-Length\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "ContentLength",
+                    "AllowMultiple": false,
+                    "DefaultValue": null,
+                    "WebId": "90ac5624-174b-4de3-beed-35c4484bf581"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Headers",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "fb7e097b-d2d4-48b6-b094-ab04b97ce2b4"
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+              "EmptyField": null,
+              "TypeName": "PostApiCmdUpdateBranchResponseBody",
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": [
+                  {
+                    "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
+                    "EmptyField": null,
+                    "TypeName": "ValueItem",
+                    "FullName": null,
+                    "PropertyAttribute": "[JsonProperty(\"value\")]",
+                    "MemberCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                      "$values": [
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Id\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Id",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "b7ade85d-c462-4b2b-b7e3-ad16cbed82c2"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"State\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "State",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "68225fbd-956a-4ac7-8fb5-90d8933f3482"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Type\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Type",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "c2426f6b-c259-476d-ddd0-d4ca091c9f40"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Code\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Code",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "3b385e82-da77-44ac-91ea-d9f429b17a4c"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"Name\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "Name",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "e6f722d6-ebb5-4cb1-eeed-cfee54bae3ef"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"ProfitCentreCode\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "ProfitCentreCode",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "6f7819a7-a494-4bf1-f482-c1bf9d6a8262"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.String, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
+                          "FullName": null,
+                          "PropertyAttribute": "[JsonProperty(\"PostCodeRanges\")]",
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "PostCodeRanges",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "5ec2da2f-674e-43dc-95a9-aafaf396ead8"
+                        }
+                      ]
+                    },
+                    "FieldPermissionCollection": {
+                      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                      "$values": []
+                    },
+                    "Name": "Value",
+                    "AllowMultiple": true,
+                    "DefaultValue": null,
+                    "WebId": "58cd466a-b2c4-4c6b-fb8a-ebcaaa4b321d"
+                  }
+                ]
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "Body",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "3a4e7f86-daca-4d0c-c56d-326d213d6a7d"
+            }
+          ]
+        },
+        "ErrorRetry": {
+          "$type": "Bespoke.Sph.Domain.Api.ErrorRetry, domain.sph",
+          "Attempt": 0,
+          "IsEnabled": false,
+          "Wait": 0,
+          "Algorithm": "Constant",
+          "WebId": null
+        },
+        "Name": "PostApiCmdUpdateBranch",
+        "MethodName": "PostApiCmdUpdateBranch",
+        "IsOneWay": false,
+        "IsSelected": false,
+        "Schema": "",
+        "WebId": "e5d27719-5ccc-4811-a8a6-0816661ddcd8"
+      }
+    ]
+  },
+  "Name": "SnbBranch",
+  "Description": null,
+  "ColumnDisplayNameStrategy": null,
+  "CreatedBy": "admin",
+  "Id": "snb-branch",
+  "CreatedDate": "2016-09-14T14:58:08.928943+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-15T10:43:41.6244634+08:00",
+  "WebId": "e10bbe1e-900d-405f-a594-6a7bb236c699"
+}

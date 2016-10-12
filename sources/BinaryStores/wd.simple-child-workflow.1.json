@@ -1,0 +1,11 @@
+{
+  "$type": "Bespoke.Sph.Domain.BinaryStore, domain.sph",
+  "Extension": ".json",
+  "FileName": "wd.simple-child-workflow.1.json",
+  "CreatedBy": null,
+  "Id": "wd.simple-child-workflow.1",
+  "CreatedDate": "0001-01-01T00:00:00",
+  "ChangedBy": null,
+  "ChangedDate": "0001-01-01T00:00:00",
+  "WebId": null
+}

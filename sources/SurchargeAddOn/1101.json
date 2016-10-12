@@ -1,0 +1,16 @@
+{
+  "$type": "Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn, DevV1.SurchargeAddOn",
+  "Code": "1101",
+  "ServiceCode": "11",
+  "TypeCode": "01",
+  "ServiceName": "Handling Chg (D)",
+  "Name": "Normal",
+  "SnbCode": "S05",
+  "Type": "Surcharge",
+  "CreatedBy": "admin",
+  "Id": "1101",
+  "CreatedDate": "2016-09-30T09:01:19.1083738+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-30T09:01:19.0978526+08:00",
+  "WebId": "44e177c2-8cc3-4f9e-98c3-663941600d32"
+}

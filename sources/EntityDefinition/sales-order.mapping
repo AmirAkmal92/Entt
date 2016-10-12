@@ -1,0 +1,60 @@
+{
+    "salesorder":{
+        "properties":{
+            "CreatedBy": {"type": "string", "index":"not_analyzed"},
+            "ChangedBy": {"type": "string", "index":"not_analyzed"},
+            "WebId": {"type": "string", "index":"not_analyzed"},
+            "CreatedDate": {"type": "date"},
+            "ChangedDate": {"type": "date"},
+    "Consignments":{
+        "type":  "object",
+        "properties":{
+             "Tag":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "SoldtoPartyAccNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IposNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShiptoPartyPostcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ProductCodeMaterial":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "OrderQty":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "BranchCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Agent":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConNoteNumberParent":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConNoteNumberChild":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Weight":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "CustomerDeclaredWeight":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "VolumetricDimension":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "VolumetricWeight":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ValueAdded":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "SurchargeCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "SumInsured":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "SubAccountRef":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "RecepientRefNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Zone":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "CountryCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ItemCategoryType":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "MpsIndicator":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "OddItemAmount":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "OddItemDescription":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+,
+             "Tag":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "OrderType":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "SalesOrg":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DistributionChannel":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Division":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "SoldtoPartyAccNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IposNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IposUserID":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IposDocumentTimeStamp":{"type":"date","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "BranchCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IposNumber2":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShiptoPartyPostcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ProductCodeMaterial":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "OrderQty":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "OddItemAmount":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "OddItemDescription":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Pl9":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "MhlIndicator":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "administrators",
+      "developers"
+    ]
+  },
+  "Owner": null,
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "Appointment",
+      "Company",
+      "Customer",
+      "District",
+      "Employee",
+      "Patient",
+      "PendaftaranProgram",
+      "Soalan",
+      "State"
+    ]
+  },
+  "Name": "Developers",
+  "Description": "Developers",
+  "IsActive": false,
+  "StartModule": "custom-paging",
+  "EnforceStartModule": false,
+  "IsSearchVisible": true,
+  "IsMessageVisible": true,
+  "IsHelpVisible": true,
+  "HelpUri": null,
+  "Title": null,
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "Developers",
+  "CreatedDate": "2015-06-29T17:06:04.2704388+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-02-23T08:11:20.1856601+08:00",
+  "WebId": "bd3528f6-dfbb-413b-b2f6-d7e6b7437c96"
+}

@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1006",
+  "Name": "Parcel Domestic Surface",
+  "SocCode": "80001118",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1006-80001118",
+  "CreatedDate": "2016-09-27T09:35:11.3082146+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:35:11.3072148+08:00",
+  "WebId": "f5e2bb74-499e-4640-d013-42fc64f5f919"
+}

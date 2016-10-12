@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1007",
+  "Name": "Parcel Domestic Air",
+  "SocCode": "80001119",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1007-80001119",
+  "CreatedDate": "2016-09-27T09:35:27.0431548+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:35:27.0421538+08:00",
+  "WebId": "998beb9c-da56-4d69-f092-c518ebef19ce"
+}

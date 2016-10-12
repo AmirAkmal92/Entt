@@ -1,0 +1,53 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "SocAdmin",
+      "administrators"
+    ]
+  },
+  "Owner": {
+    "$type": "Bespoke.Sph.Domain.Owner, domain.sph",
+    "Address": {
+      "$type": "Bespoke.Sph.Domain.Address, domain.sph",
+      "UnitNo": "",
+      "Floor": "",
+      "Block": "",
+      "Street": "",
+      "City": "",
+      "Postcode": "",
+      "State": "",
+      "Country": "",
+      "WebId": null
+    },
+    "Name": "",
+    "TelephoneNo": "",
+    "FaxNo": "",
+    "Email": "",
+    "WebId": null
+  },
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "SalesOrder"
+    ]
+  },
+  "Name": "Soc admin",
+  "Description": "Soc admin to monitor soc",
+  "IsActive": false,
+  "StartModule": "soc-dashboard",
+  "EnforceStartModule": true,
+  "IsSearchVisible": true,
+  "IsMessageVisible": true,
+  "IsHelpVisible": true,
+  "HelpUri": "",
+  "Title": "",
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "soc-admin",
+  "CreatedDate": "2016-10-04T16:20:35.0885408+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-04T18:15:46.7181542+08:00",
+  "WebId": "699dfe48-539b-4568-bab9-535121fc825a"
+}

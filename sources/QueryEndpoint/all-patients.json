@@ -1,0 +1,42 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "CodeNamespace": "Bespoke.DevV1.Api",
+  "Icon": "fa fa-search",
+  "Url": "entity.query.designer/all-patients",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Performer": {
+    "$type": "Bespoke.Sph.Domain.Performer, domain.sph",
+    "UserProperty": "",
+    "Value": "",
+    "IsPublic": false,
+    "WebId": null
+  },
+  "RouteParameterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.RouteParameter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "CacheProfile": "",
+  "Name": "All patients",
+  "Route": "all-patients",
+  "IsReturnSource": "",
+  "Entity": "Patient",
+  "Note": "all of them",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "all-patients",
+  "CreatedDate": "2016-01-18T19:07:20.9850918+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-01-18T19:07:20.9850918+08:00",
+  "WebId": "d81aa6b4-5a51-4964-e7b1-4946f77c30f7"
+}

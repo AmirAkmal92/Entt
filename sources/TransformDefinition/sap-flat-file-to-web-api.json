@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ReferenceNo",
+        "TypeName": "",
+        "Destination": "Body.ReferenceNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "10f7e4e0-15a4-43d4-dbda-85a6e79fa1fc"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "SapAccountNo",
+        "TypeName": "",
+        "Destination": "Body.AccountNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ff59655f-bfb9-4e8e-b5e5-eb63f1cc63d5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ReferenceNo",
+        "TypeName": "",
+        "Destination": "Routes.ReferenceNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d3b36ea9-1fea-4483-b3cb-ee82e0393da1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Date",
+        "TypeName": "",
+        "Destination": "Body.DateTime",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4f43cd5d-c860-41a9-b1e5-687f76506b85"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "SapFlatFileToWebApi",
+  "Description": "",
+  "InputTypeName": "Bespoke.DevV1.SapFiAccounts.Domain.SapFiAccount, DevV1.SapFiAccount",
+  "OutputTypeName": "Bespoke.DevV1.Adapters.SnbWebNewAccount.UpdateSapAccountRequest, DevV1.SnbWebNewAccount",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "sap-flat-file-to-web-api",
+  "CreatedDate": "2016-09-17T13:38:03.8098033+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-21T11:04:45.1930458+08:00",
+  "WebId": "24b8d44e-5c97-4680-8eb3-5488b1f7161f"
+}

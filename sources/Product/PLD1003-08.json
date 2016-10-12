@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1003",
+  "Name": "Time Certain Service",
+  "SocCode": "08",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1003-08",
+  "CreatedDate": "2016-09-27T09:34:32.1913153+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:34:32.1873112+08:00",
+  "WebId": "1d279085-20a6-4bd8-c08b-a4514b6cf58e"
+}

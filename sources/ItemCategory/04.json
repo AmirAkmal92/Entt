@@ -1,0 +1,12 @@
+{
+  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "Code": "04",
+  "Name": "Credit Card",
+  "SnbSequence": 4,
+  "CreatedBy": "admin",
+  "Id": "04",
+  "CreatedDate": "2016-10-01T08:41:53.2551565+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:41:53.2601576+08:00",
+  "WebId": "ab615ffa-581d-4d47-cb45-01de22419f47"
+}

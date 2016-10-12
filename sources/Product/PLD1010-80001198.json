@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1010",
+  "Name": "ECONFAST",
+  "SocCode": "80001198",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1010-80001198",
+  "CreatedDate": "2016-09-27T09:35:53.7972281+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:35:53.7952276+08:00",
+  "WebId": "6e590d6b-9259-4be8-9913-e749c8e41b34"
+}

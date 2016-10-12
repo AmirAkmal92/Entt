@@ -1,0 +1,76 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "soc-to-snb-sales-order",
+        "Adapter": "SnbWebNewAccount",
+        "Operation": "PostSalesOrders",
+        "Table": null,
+        "Crud": null,
+        "Retry": 5,
+        "RetryInterval": 500,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "PostToSnb",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "b59e5313-c0ff-475b-e1b2-dee21a120d33"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "DevV1.SnbWebNewAccount",
+        "FullName": "DevV1.SnbWebNewAccount, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "E:\\project\\work\\rx\\source\\web\\web.sph\\bin\\DevV1.SnbWebNewAccount.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "DevV1.SocToSnbSalesOrder",
+        "FullName": "DevV1.SocToSnbSalesOrder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "E:\\project\\work\\rx\\source\\web\\web.sph\\bin\\DevV1.SocToSnbSalesOrder.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "Post Snb",
+  "Entity": "SalesOrder",
+  "TypeOf": "Bespoke.DevV1.SalesOrders.Domain.SalesOrder, DevV1.SalesOrder",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "SalesOrderPostSnbTriggerSubscriber",
+  "CodeNamespace": "Bespoke.DevV1.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "sales-order-post-snb",
+  "CreatedDate": "2016-09-24T13:27:45.163819+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-24T13:29:44.8145019+08:00",
+  "WebId": "332c69cc-6dbb-4e60-acc8-f4499d6dc310"
+}

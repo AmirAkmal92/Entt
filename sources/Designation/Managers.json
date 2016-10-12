@@ -1,0 +1,33 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "clerk"
+    ]
+  },
+  "Owner": null,
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "Patient",
+      "State"
+    ]
+  },
+  "Name": "Managers",
+  "Description": "Managers",
+  "IsActive": false,
+  "StartModule": "patient",
+  "IsSearchVisible": true,
+  "IsMessageVisible": true,
+  "IsHelpVisible": false,
+  "HelpUri": null,
+  "Title": null,
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "managers",
+  "CreatedDate": "2014-09-17T06:39:27.5029581+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2015-07-22T07:53:28.4604111+08:00",
+  "WebId": "a4914c0a-d477-4c6a-a70b-96e5df78192b"
+}

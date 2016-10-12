@@ -1,0 +1,36 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "EmailInvalid",
+  "Entity": "SapFiAccount",
+  "TypeOf": "Bespoke.DevV1.SapFiAccounts.Domain.SapFiAccount, DevV1.SapFiAccount",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "SapFiAccountEmailInvalidTriggerSubscriber",
+  "CodeNamespace": "Bespoke.DevV1.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "sap-fi-account-email-invalid",
+  "CreatedDate": "2016-09-08T15:07:38.983039+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-08T15:07:38.983039+08:00",
+  "WebId": "1a921808-1f6a-4530-8494-a5887ec7afde"
+}

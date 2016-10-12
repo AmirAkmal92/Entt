@@ -1,0 +1,25 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.SqlServerReceiveLocation, sqlserver.adapter",
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "BromBranch",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": null,
+  "SubmitMethod": "",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": null,
+  "ReceivePort": "pos-soc",
+  "CreatedBy": "admin",
+  "Id": "brom-branch",
+  "CreatedDate": "2016-09-05T15:38:37.8829474+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-13T15:20:55.9593589+08:00",
+  "WebId": "f3884eda-7c46-4815-bb20-a82f33edd76a"
+}

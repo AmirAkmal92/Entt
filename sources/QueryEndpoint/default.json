@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "ProductDefaultQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "Code",
+        "Direction": "Asc",
+        "WebId": "131c5349-26fc-437a-d519-3953c63c5262"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "CacheProfile": "",
+  "Name": "Default",
+  "Route": "",
+  "IsReturnSource": "",
+  "Entity": "Product",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "products",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "default",
+  "CreatedDate": "2016-09-27T09:05:54.9506064+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-30T07:08:17.2897244+08:00",
+  "WebId": "6d2eca1d-e4d4-43d0-a48f-4863ecf56786"
+}

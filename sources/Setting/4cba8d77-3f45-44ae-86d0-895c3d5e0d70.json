@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.Sph.Domain.Setting, domain.sph",
+  "SettingId": 0,
+  "UserName": "erymuzuan@gmail.com",
+  "Key": "ForgotPassword",
+  "Value": "2015-01-29T15:38:45",
+  "CreatedBy": "WS27",
+  "Id": "4cba8d77-3f45-44ae-86d0-895c3d5e0d70",
+  "CreatedDate": "2015-01-29T15:38:45.6515309+08:00",
+  "ChangedBy": "WS27",
+  "ChangedDate": "2015-01-29T15:38:45.6515309+08:00",
+  "WebId": "a6e52c89-e858-4ea9-bf6a-96e6b348def5"
+}

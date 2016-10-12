@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "d:\\temp\\sap-drop",
+  "CredentialUserName": null,
+  "ChangeExtension": true,
+  "CredentialPassword": null,
+  "Filter": "*.log",
+  "ArchiveLocation": null,
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "TempOnWhatEver",
+  "IsActive": true,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "sales-order-default",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImRldmVsb3BlcnMiXSwiZW1haWwiOjE0ODMxNDI0MDAsInN1YiI6ImQ2MTc0NmUwLTdhZmMtNDhjYS04OTVmLWQzZDAzOWQ4ZDI4MSIsIm5iZiI6MTQ5MDUwMzE1MiwiaWF0IjoxNDc0ODY0NzUyLCJleHAiOjE0ODMxNDI0MDAsImF1ZCI6IkRldlYxIn0.50WRticwNzLXL3sHdJsBsdhulOQqhPJlYATxm-amFfw",
+  "ReceivePort": "pos-soc",
+  "CreatedBy": "admin",
+  "Id": "temp-on-what-ever",
+  "CreatedDate": "2016-09-03T17:42:56.0792069+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-26T12:41:20.7485858+08:00",
+  "WebId": "3695eb34-1f51-4985-b4a8-364bfc7fab75"
+}

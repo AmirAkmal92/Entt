@@ -1,0 +1,19 @@
+{
+  "Name": "test",
+  "Environment": null,
+  "ComputerName": "S004",
+  "HomeDirectory": "",
+  "ApplicationPool": "",
+  "ApplicationPoolCredential": null,
+  "IsConsole": false,
+  "EnableRemoteManagement": false,
+  "HostNameBinding": "",
+  "PortBinding": 0,
+  "UseSsl": false,
+  "CreatedBy": null,
+  "Id": ".test",
+  "CreatedDate": "0001-01-01T00:00:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-09T12:35:07.3107948+08:00",
+  "WebId": null
+}

@@ -1,0 +1,12 @@
+{
+  "$type": "Bespoke.DevV1.ItemCategories.Domain.ItemCategory, DevV1.ItemCategory",
+  "Code": "07",
+  "Name": "Parcel",
+  "SnbSequence": 7,
+  "CreatedBy": "admin",
+  "Id": "07",
+  "CreatedDate": "2016-10-01T08:38:34.997398+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:38:34.997398+08:00",
+  "WebId": "953cbe03-e501-468c-d0f1-9457e0b53369"
+}

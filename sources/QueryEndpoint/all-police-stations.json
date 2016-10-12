@@ -1,0 +1,56 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "PoliceStationAllPoliceStationsQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "Address.State",
+        "Direction": "Asc",
+        "WebId": "a0556016-2f9a-4226-c0b9-03f2e415a299"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "Category",
+        "Direction": "Asc",
+        "WebId": "65a616dc-6d57-4878-ad1d-7da01c6bdf4f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "Name",
+        "Direction": "Asc",
+        "WebId": "4e3896fc-0513-49d0-acbb-951b65bcc26b"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "No",
+      "Name",
+      "Id",
+      "Category",
+      "Size"
+    ]
+  },
+  "CacheProfile": "",
+  "Name": "All police stations",
+  "Route": "",
+  "IsReturnSource": "",
+  "Entity": "PoliceStation",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "police-stations",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "all-police-stations",
+  "CreatedDate": "2016-04-25T17:24:28.9753064+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-08-22T07:52:16.1518459+08:00",
+  "WebId": "fa022936-b532-46f7-ce51-c6de6f7761a2"
+}

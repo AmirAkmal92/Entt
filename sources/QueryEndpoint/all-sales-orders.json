@@ -1,0 +1,47 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "SalesOrderAllSalesOrdersQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "CreatedDate",
+        "Direction": "Desc",
+        "WebId": "5b4787d1-34b4-41c8-cf1f-faf6a23d2880"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "Id",
+      "OrderType",
+      "SoldtoPartyAccNo",
+      "IposDocumentTimeStamp",
+      "IposNumber",
+      "BranchCode",
+      "ShiptoPartyPostcode",
+      "OrderQty"
+    ]
+  },
+  "CacheProfile": "",
+  "Name": "All sales orders",
+  "Route": "",
+  "IsReturnSource": "",
+  "Entity": "SalesOrder",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "sales-orders",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "all-sales-orders",
+  "CreatedDate": "2016-09-30T07:23:18.3488848+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-01T08:56:10.5983599+08:00",
+  "WebId": "38c4fc3f-f98b-4b48-9486-1e22a4dbd8c8"
+}

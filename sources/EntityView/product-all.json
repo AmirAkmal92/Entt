@@ -1,0 +1,112 @@
+{
+  "$type": "Bespoke.Sph.Domain.EntityView, domain.sph",
+  "ViewColumnCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ViewColumn, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "Code",
+        "Header": "Code",
+        "Sort": "",
+        "IsLinkColumn": true,
+        "FormRoute": "product-details",
+        "IconCssClass": "fa fa-edit",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "c1837267-3419-426b-a19b-b5f7f37edd30"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "Name",
+        "Header": "Name",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "8d00cf5d-7635-448b-e5c4-7d4e604596f7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "SocCode",
+        "Header": "Soc Code",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "34451f73-a8ed-4d13-be03-a70807383c30"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ViewColumn, domain.sph",
+        "ConditionalFormattingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Path": "ParentCode",
+        "Header": "Parent Code",
+        "Sort": "",
+        "IsLinkColumn": false,
+        "FormRoute": null,
+        "IconCssClass": "",
+        "IconStoreId": "",
+        "Format": "text:{0}",
+        "RouteValueField": "",
+        "WebId": "5fedd34f-0279-4a66-8f43-f1cb309b4174"
+      }
+    ]
+  },
+  "ConditionalFormattingCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ConditionalFormatting, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Performer": {
+    "$type": "Bespoke.Sph.Domain.Performer, domain.sph",
+    "UserProperty": "",
+    "Value": null,
+    "IsPublic": true,
+    "WebId": null
+  },
+  "RouteParameterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.RouteParameter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "IconClass": "fa fa-shopping-basket",
+  "IconStoreId": "876fb376-9697-45b5-9c46-fd6c18da083f",
+  "EntityDefinitionId": "product",
+  "Name": "All Products",
+  "Route": "product-all",
+  "Note": null,
+  "IsPublished": true,
+  "Visibilty": null,
+  "TileColour": "bblue",
+  "CountMessage": null,
+  "Entity": "Product",
+  "Partial": null,
+  "Template": null,
+  "DisplayOnDashboard": true,
+  "Endpoint": "default",
+  "CreatedBy": "admin",
+  "Id": "product-all",
+  "CreatedDate": "2016-09-27T08:56:41.3337006+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:12:17.3825839+08:00",
+  "WebId": "4aaa9c83-8fc7-4b69-800f-dd39d8d6c362"
+}

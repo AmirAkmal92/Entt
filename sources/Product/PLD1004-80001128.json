@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.DevV1.Products.Domain.Product, DevV1.Product",
+  "Code": "PLD1004",
+  "Name": "Borneo Economy Express",
+  "SocCode": "80001128",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1004-80001128",
+  "CreatedDate": "2016-09-27T09:34:48.487222+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-09-27T09:34:48.4852251+08:00",
+  "WebId": "be41d126-ca13-4cfc-993d-778428260b9c"
+}
