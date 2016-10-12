@@ -637,12 +637,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": false,
+  "StoreInDatabase": null,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "delivery",
   "CreatedDate": "2016-10-02T08:39:36.204061+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-12T12:29:07.108673+08:00",
+  "ChangedDate": "2016-10-12T12:30:24.2871488+08:00",
   "WebId": "87f180ba-ce72-4e8c-8e54-ce730df00f27"
 }

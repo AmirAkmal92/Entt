@@ -27,7 +27,7 @@
         "HttpMethod": "POST",
         "BaseAddress": "http://localhost:3330/api/sap-accounts/01081610019",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebNewAccount",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebApi",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
@@ -1347,7 +1347,7 @@
         "HttpMethod": "POST",
         "BaseAddress": "http://localhost:3330/api/sales-orders",
         "UseHttpGet": false,
-        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebNewAccount",
+        "CodeNamespace": "Bespoke.PosEntt.Adapters.SnbWebApi",
         "Uuid": null,
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
@@ -3396,13 +3396,13 @@
       }
     ]
   },
-  "Name": "SnbWebNewAccount",
+  "Name": "SnbWebApi",
   "Description": null,
   "ColumnDisplayNameStrategy": null,
   "CreatedBy": "admin",
-  "Id": "snb-web-new-account",
+  "Id": "snb-web-api",
   "CreatedDate": "2016-09-11T09:12:56.5762714+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-04T06:21:26.7607875+08:00",
+  "ChangedDate": "2016-10-12T14:00:45.7431485+08:00",
   "WebId": "9f1e0de5-ac68-4f43-a0dc-68a340e00b84"
 }

@@ -10,7 +10,7 @@
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "soc-to-snb-sales-order",
-        "Adapter": "SnbWebNewAccount",
+        "Adapter": "SnbWebApi",
         "Operation": "PostSalesOrders",
         "Table": null,
         "Crud": null,
@@ -30,10 +30,10 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.SnbWebNewAccount",
-        "FullName": "PosEntt.SnbWebNewAccount, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.SocToSnbSalesOrder",
+        "FullName": "PosEntt.SocToSnbSalesOrder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "E:\\project\\work\\rx\\source\\web\\web.sph\\bin\\PosEntt.SnbWebNewAccount.dll",
+        "Location": "E:\\project\\work\\rx\\source\\web\\web.sph\\bin\\PosEntt.SocToSnbSalesOrder.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -41,10 +41,10 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.SocToSnbSalesOrder",
-        "FullName": "PosEntt.SocToSnbSalesOrder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.SnbWebApi",
+        "FullName": "PosEntt.SnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "E:\\project\\work\\rx\\source\\web\\web.sph\\bin\\PosEntt.SocToSnbSalesOrder.dll",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\PosEntt.SnbWebApi.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -71,6 +71,6 @@
   "Id": "sales-order-post-snb",
   "CreatedDate": "2016-09-24T13:27:45.163819+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-09-24T13:29:44.8145019+08:00",
+  "ChangedDate": "2016-10-12T15:16:16.0039212+08:00",
   "WebId": "332c69cc-6dbb-4e60-acc8-f4499d6dc310"
 }

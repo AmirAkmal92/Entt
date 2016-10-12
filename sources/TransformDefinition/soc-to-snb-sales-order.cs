@@ -2,14 +2,14 @@ using System.Linq;
 using Bespoke.Sph.Domain;
 using System.Collections.Generic;
 
-namespace Bespoke.DevV1.Integrations.Transforms
+namespace Bespoke.PosEntt.Integrations.Transforms
 {
     public partial class SocToSnbSalesOrder
     {
 
-        private static List<Bespoke.DevV1.Products.Domain.Product> m_products = new List<Bespoke.DevV1.Products.Domain.Product>();
-        private static List<Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn> m_surcharges = new List<Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn>();
-        private static List<Bespoke.DevV1.ItemCategories.Domain.ItemCategory> m_categories = new List<Bespoke.DevV1.ItemCategories.Domain.ItemCategory>();
+        private static List<Bespoke.PosEntt.Products.Domain.Product> m_products = new List<Bespoke.PosEntt.Products.Domain.Product>();
+        private static List<Bespoke.PosEntt.SurchargeAddOns.Domain.SurchargeAddOn> m_surcharges = new List<Bespoke.PosEntt.SurchargeAddOns.Domain.SurchargeAddOn>();
+        private static List<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory> m_categories = new List<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory>();
         public static IEnumerable<string> Split(string value, int length)
         {
         	if(string.IsNullOrWhiteSpace(value))
@@ -29,36 +29,36 @@ namespace Bespoke.DevV1.Integrations.Transforms
         		yield return item;
         	}
         }
-        partial void BeforeTransform(Bespoke.DevV1.SalesOrders.Domain.SalesOrder item, Bespoke.DevV1.Adapters.SnbWebNewAccount.PostSalesOrdersRequest destination)
+        partial void BeforeTransform(Bespoke.PosEntt.SalesOrders.Domain.SalesOrder item, Bespoke.PosEntt.Adapters.SnbWebApi.PostSalesOrdersRequest destination)
         {
             var context = new SphDataContext();
             if (m_products.Count == 0)
             {
-                var query = context.CreateQueryable<Bespoke.DevV1.Products.Domain.Product>()
+                var query = context.CreateQueryable<Bespoke.PosEntt.Products.Domain.Product>()
                                 .Where(p => p.Id != "0");
-                var productRepos = ObjectBuilder.GetObject<IRepository<Bespoke.DevV1.Products.Domain.Product>>();
+                var productRepos = ObjectBuilder.GetObject<IRepository<Bespoke.PosEntt.Products.Domain.Product>>();
                 var lo = productRepos.LoadAsync(query, 1, 200, false).Result;
                 m_products.AddRange(lo.ItemCollection);
             }
             if (m_surcharges.Count == 0)
             {
-                var surchargeQuery = context.CreateQueryable<Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn>()
+                var surchargeQuery = context.CreateQueryable<Bespoke.PosEntt.SurchargeAddOns.Domain.SurchargeAddOn>()
                                 .Where(p => p.Id != "0");
-                var surchargeRepos = ObjectBuilder.GetObject<IRepository<Bespoke.DevV1.SurchargeAddOns.Domain.SurchargeAddOn>>();
+                var surchargeRepos = ObjectBuilder.GetObject<IRepository<Bespoke.PosEntt.SurchargeAddOns.Domain.SurchargeAddOn>>();
                 var scLo = surchargeRepos.LoadAsync(surchargeQuery, 1, 200, false).Result;
                 m_surcharges.AddRange(scLo.ItemCollection);
             }
             if (m_categories.Count == 0)
             {
-                var categoryQuery = context.CreateQueryable<Bespoke.DevV1.ItemCategories.Domain.ItemCategory>()
+                var categoryQuery = context.CreateQueryable<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory>()
                                 .Where(p => p.Id != "0");
-                var categoryRepos = ObjectBuilder.GetObject<IRepository<Bespoke.DevV1.ItemCategories.Domain.ItemCategory>>();
+                var categoryRepos = ObjectBuilder.GetObject<IRepository<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory>>();
                 var categoriesLo = categoryRepos.LoadAsync(categoryQuery, 1, 200, false).Result;
                 m_categories.AddRange(categoriesLo.ItemCollection);
             }
         }
 
-        partial void AfterTransform(Bespoke.DevV1.SalesOrders.Domain.SalesOrder item, Bespoke.DevV1.Adapters.SnbWebNewAccount.PostSalesOrdersRequest destination)
+        partial void AfterTransform(Bespoke.PosEntt.SalesOrders.Domain.SalesOrder item, Bespoke.PosEntt.Adapters.SnbWebApi.PostSalesOrdersRequest destination)
         {
 
             foreach (var con in destination.Body.Consignments)

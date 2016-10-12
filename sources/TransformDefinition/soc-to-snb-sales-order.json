@@ -371,12 +371,12 @@
   "Name": "SocToSnbSalesOrder",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.SalesOrders.Domain.SalesOrder, PosEntt.SalesOrder",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebNewAccount.PostSalesOrdersRequest, PosEntt.SnbWebNewAccount",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebApi.PostSalesOrdersRequest, PosEntt.SnbWebApi",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "soc-to-snb-sales-order",
   "CreatedDate": "2016-09-24T12:37:21.6298726+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-03T11:21:51.4282008+08:00",
+  "ChangedDate": "2016-10-12T14:32:42.036296+08:00",
   "WebId": "4b09fdb5-3707-4f5a-9e1d-bfeeae890776"
 }

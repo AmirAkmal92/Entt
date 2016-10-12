@@ -109,12 +109,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "sap-fi-account",
   "CreatedDate": "2016-09-08T07:16:29.6474424+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-09-17T11:04:17.5268798+08:00",
+  "ChangedDate": "2016-10-12T14:38:07.0381896+08:00",
   "WebId": "314010d0-81a6-4c1b-91b9-d052aa6390cf"
 }
