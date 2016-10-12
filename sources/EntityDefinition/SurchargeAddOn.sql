@@ -1,4 +1,4 @@
-CREATE TABLE [DevV1].[SurchargeAddOn](
+CREATE TABLE [PosEntt].[SurchargeAddOn](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL
 ,[Code] VARCHAR(255) NOT NULL
 ,[ServiceName] VARCHAR(255) NOT NULL
