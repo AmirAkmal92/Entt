@@ -1,0 +1,29 @@
+<h1>All Products</h1>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-striped" data-bind="queryPaging :{ query: query, map : map, list:list}">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Soc Code</th>
+                    <th>Parent Code</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach :list">
+                <tr data-bind="">
+                    <td>
+                        <a data-bind="attr : {href:'#product-details' + '/' + Id, title:'Code' }">
+                            <i class="fa fa-edit"></i>
+                                                        <span data-bind="text:Code"></span>
+                        </a>
+                    </td>
+                    <td data-bind="text:Name"></td>
+                    <td data-bind="text:SocCode"></td>
+                    <td data-bind="text:ParentCode"></td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="/Images/spinner-md.gif" alt="loading" class="absolute-center" data-bind="visible: isBusy" />
+    </div>
+</div>

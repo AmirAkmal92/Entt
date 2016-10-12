@@ -1,0 +1,58 @@
+[
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "soc-dashboard",
+    "moduleId": "viewmodels/soc-dashboard",
+    "title": "SOC dashboard",
+    "nav": true,
+    "icon": "fa fa-bookmark-o",
+    "caption": "SOC dashboard",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "product-all",
+    "moduleId": "viewmodels/product-all",
+    "title": "Products",
+    "nav": true,
+    "icon": "fa fa-shopping-basket",
+    "caption": "Products",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "all-surcharges-and-addons",
+    "moduleId": "viewmodels/all-surcharges-and-addons",
+    "title": "Surcharge and addons",
+    "nav": true,
+    "icon": "fa fa-credit-card-alt",
+    "caption": "Surcharge and Addons",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "item-categories-all",
+    "moduleId": "viewmodels/item-categories-all",
+    "title": "Item categories",
+    "nav": true,
+    "icon": "fa fa-bars",
+    "caption": "Item categories",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
+  }
+]

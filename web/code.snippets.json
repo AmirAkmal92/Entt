@@ -1,0 +1,12 @@
+[
+  {
+    "lang": "javascript",
+    "title": "dialog",
+    "code": "require(['viewmodels/${1:dialog}' , 'durandal/app'], function (dialog, app2) {\n    app2.showDialog(dialog)\n        .done(function (result) {\n            if (!result) return;\n            if (result === \"OK\") {\n               ${2://body..}\n           }\n        });\n\n});"
+  },
+  {
+    "lang": "javascript",
+    "title": "messagebox",
+    "code": " app.showMessage(\"${1:message}\", \"${2:title}\", [\"OK\"])\n  .done(function () {\n            ${3://body..}  \n   });"
+  }
+]

@@ -1,0 +1,68 @@
+<h1 data-i18n="Surcharge Add Lookup Details">Surcharge Add Lookup Details</h1>
+<div id="error-list" class="row" data-bind="visible:errors().length">
+    <!-- ko foreach : errors -->
+    <div class="col-sm-8 col-sm-offset-2 alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-exclamation"></i>
+        <span data-bind="text:Message"></span>
+    </div>
+    <div class="col-sm-2"></div>
+    <!-- /ko-->
+</div>
+<div class="row">
+    <div class="col-sm-8">
+<form class="form-horizontal" data-bind="with : entity" id="surcharge-add-lookup-details-form">
+    <div class="form-group" data-bind="visible:true">
+        <label data-i18n="Type" for="29c5b21a-87d6-491e-87e6-f5a9f805c730" class="col-md-4">Type</label>
+        <div class="col-md-8">
+            <select  data-bind="value: Type, enable :true" id="29c5b21a-87d6-491e-87e6-f5a9f805c730" name="Type" class=" form-control">
+                    <option value="Surcharge" data-i18n="Surchage">Surchage</option>
+                    <option value="ValueAddedService" data-i18n="Value added service">Value added service</option>
+            </select>
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Service Code" for="74d95315-6ba3-473f-f59b-2484cf379fe4" class="col-md-4">Service Code</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: ServiceCode"
+                   id="74d95315-6ba3-473f-f59b-2484cf379fe4" type="text" name="ServiceCode" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Type Code" for="077095be-ed34-49f6-ee22-a1c2a2572b8f" class="col-md-4">Type Code</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: TypeCode"
+                   id="077095be-ed34-49f6-ee22-a1c2a2572b8f" type="text" name="TypeCode" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Service Name" for="c5a9355f-41e3-42b5-f5a5-46000bd67e77" class="col-md-4">Service Name</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: ServiceName"
+                   id="c5a9355f-41e3-42b5-f5a5-46000bd67e77" type="text" name="ServiceName" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Name" for="d9c9264a-112f-4b64-9b06-b3308ddcfa8b" class="col-md-4">Name</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: Name"
+                   id="d9c9264a-112f-4b64-9b06-b3308ddcfa8b" type="text" name="Name" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Snb Code" for="edfd5af2-3417-47ac-a5fb-1f01542b0f00" class="col-md-4">Snb Code</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: SnbCode"
+                   id="edfd5af2-3417-47ac-a5fb-1f01542b0f00" type="text" name="SnbCode" />
+        </div>
+    </div>
+</form>
+    </div>
+    <div class="col-sm-4">
+    </div>
+</div>

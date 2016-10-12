@@ -1,0 +1,29 @@
+<h1>All surcharges and addons</h1>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-striped" data-bind="queryPaging :{ query: query, map : map, list:list}">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Snb Code</th>
+                    <th>Service Name</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach :list">
+                <tr data-bind="">
+                    <td>
+                        <a data-bind="attr : {href:'#surcharge-add-lookup-details' + '/' + Code, title:'Code' }">
+                            <i class="fa fa-credit-card-alt"></i>
+                                                        <span data-bind="text:Code"></span>
+                        </a>
+                    </td>
+                    <td data-bind="text:SnbCode"></td>
+                    <td data-bind="text:ServiceName"></td>
+                    <td data-bind="text:Name"></td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="/Images/spinner-md.gif" alt="loading" class="absolute-center" data-bind="visible: isBusy" />
+    </div>
+</div>

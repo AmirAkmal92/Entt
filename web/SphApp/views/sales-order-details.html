@@ -1,0 +1,71 @@
+<h1 data-i18n="Sales order details">Sales order details</h1>
+<div id="error-list" class="row" data-bind="visible:errors().length">
+    <!-- ko foreach : errors -->
+    <div class="col-sm-8 col-sm-offset-2 alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-exclamation"></i>
+        <span data-bind="text:Message"></span>
+    </div>
+    <div class="col-sm-2"></div>
+    <!-- /ko-->
+</div>
+<div class="row">
+    <div class="col-sm-8">
+<form class="form-horizontal" data-bind="with : entity" id="sales-order-details-form">
+    <div class="form-group" data-bind="visible:true">
+        <label class="col-md-4">Branch Code</label>
+        <span class="col-md-8" data-bind="text: BranchCode"></span>
+    </div>
+    <div class="form-group" data-bind="visible:true">
+        <label class="col-md-4">Distribution Channel</label>
+        <span class="col-md-8" data-bind="text: DistributionChannel"></span>
+    </div>
+    <div class="form-group" data-bind="visible:true">
+        <label class="col-md-4">AccountNo</label>
+        <span class="col-md-8" data-bind="text: SoldtoPartyAccNo"></span>
+    </div>
+    <div class="form-group" data-bind="visible:true">
+        <label class="col-md-4">Sales Org</label>
+        <span class="col-md-8" data-bind="text: SalesOrg"></span>
+    </div>
+    <div class="form-group" data-bind="visible:true">
+        <label class="col-md-4">PL 9</label>
+        <span class="col-md-8" data-bind="text: Pl9"></span>
+    </div>
+<div data-bind="visible:true">
+    <span> Consignments</span>
+    <table class="table table-condensed table-striped">
+        <thead>
+            <tr>
+                    <th>Con. Note</th>
+                    <th>Product</th>
+                    <th>Receiver</th>
+                    <th>ValueAdded</th>
+                    <th>SurchargeCode</th>
+                    <th>ItemCategoryType</th>
+                    <th>Dimension</th>
+                    <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach :Consignments">
+            <tr>
+                    <td data-bind="text:ConNoteNumberParent"></td>
+                    <td data-bind="text:ProductCodeMaterial"></td>
+                    <td data-bind="text:ShiptoPartyPostcode"></td>
+                    <td data-bind="text:ValueAdded"></td>
+                    <td data-bind="text:SurchargeCode"></td>
+                    <td data-bind="text:ItemCategoryType"></td>
+                    <td data-bind="text:VolumetricDimension"></td>
+                    <td data-bind="text:Weight"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</form>
+    </div>
+    <div class="col-sm-4">
+            <h3 data-i18n="Audit Trail">Audit Trail</h3>
+        <!--ko compose: {model:'viewmodels/_audittrail.list', activationData:{id:$root.entity().Id(), entity : 'SalesOrder'}} -->
+        <!--/ko-->
+    </div>
+</div>

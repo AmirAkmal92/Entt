@@ -1,0 +1,29 @@
+<h1>Soc sales orders today</h1>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-striped" data-bind="queryPaging :{ query: query, map : map, list:list}">
+            <thead>
+                <tr>
+                    <th>Ipos Document Time Stamp</th>
+                    <th>Soldto Party Acc No</th>
+                    <th>Branch Code</th>
+                    <th>Ipos Number</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach :list">
+                <tr data-bind="">
+                    <td data-bind="date:IposDocumentTimeStamp"></td>
+                    <td>
+                        <a data-bind="attr : {href:'#sales-order-details' + '/' + Id, title:'Soldto Party Acc No' }">
+                            <i class="fa fa-file-text-o"></i>
+                                                        <span data-bind="text:SoldtoPartyAccNo"></span>
+                        </a>
+                    </td>
+                    <td data-bind="text:BranchCode"></td>
+                    <td data-bind="text:IposNumber"></td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="/Images/spinner-md.gif" alt="loading" class="absolute-center" data-bind="visible: isBusy" />
+    </div>
+</div>

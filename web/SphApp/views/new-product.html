@@ -1,0 +1,54 @@
+<h1 data-i18n="New Product">New Product</h1>
+<div id="error-list" class="row" data-bind="visible:errors().length">
+    <!-- ko foreach : errors -->
+    <div class="col-sm-8 col-sm-offset-2 alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-exclamation"></i>
+        <span data-bind="text:Message"></span>
+    </div>
+    <div class="col-sm-2"></div>
+    <!-- /ko-->
+</div>
+<div class="row">
+    <div class="col-sm-8">
+<form class="form-horizontal" data-bind="with : entity" id="new-product-form">
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Code" for="b19f7d4a-fda8-4974-dfbd-37727603a6a4" class="col-md-4">Code</label>
+        <div class="col-md-8">
+            <input required class="form-control input-large"
+                   data-bind="value: Code"
+                    data-rule-required="true" 
+                   id="b19f7d4a-fda8-4974-dfbd-37727603a6a4" type="text" name="Code" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Name" for="d0afbd1e-9e71-4df7-ae01-4c07d8a42728" class="col-md-4">Name</label>
+        <div class="col-md-8">
+            <input required class="form-control input-large"
+                   data-bind="value: Name"
+                    data-rule-required="true" 
+                   id="d0afbd1e-9e71-4df7-ae01-4c07d8a42728" type="text" name="Name" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Soc Code" for="8322488c-0498-4af2-fb79-f31e91eba5a3" class="col-md-4">Soc Code</label>
+        <div class="col-md-8">
+            <input required class="form-control input-large"
+                   data-bind="value: SocCode"
+                    data-rule-required="true" 
+                   id="8322488c-0498-4af2-fb79-f31e91eba5a3" type="text" name="SocCode" />
+        </div>
+    </div>
+    <div data-bind="visible:true" class="form-group">
+        <label data-i18n="Parent Code" for="f63fe33f-d49d-41e4-f022-8f28dea1127e" class="col-md-4">Parent Code</label>
+        <div class="col-md-8">
+            <input class="form-control input-large"
+                   data-bind="value: ParentCode"
+                   id="f63fe33f-d49d-41e4-f022-8f28dea1127e" type="text" name="ParentCode" />
+        </div>
+    </div>
+</form>
+    </div>
+    <div class="col-sm-4">
+    </div>
+</div>

@@ -13,3 +13,5 @@ IIS Express/
 rabbitmq_base/
 control.center/
 sources/_generated/
+web/.idea/
+web/obj/
