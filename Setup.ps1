@@ -3,7 +3,7 @@
        [string]$ApplicationName = "PosEntt",
        [string]$Port = 8080,
        [string]$SqlServer = "ProjectsV13",
-       [string]$DatabaseName = "Ost",
+       [string]$DatabaseName = "PosEntt",
        [string]$RabbitMqUserName = "guest",
        [string]$RabbitMqPassword = "guest",
        [string]$RabbitMqBase = "$PWD\rabbitmq_base",
@@ -190,20 +190,20 @@ $allConfigs = @("$WorkingCopy\web\web.config"
 )
 
 
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_BaseUrl", 'http://localhost:' + $Port, "User")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_BaseUrl", 'http://localhost:' + $Port, "Process")
 [Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_HOME", "$WorkingCopy", "User")
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_ApplicationFullName", "$ApplicationName", "User")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_ApplicationFullName", "$ApplicationName", "Process")
     
 $connectionString = "Data Source=(localdb)\$SqlServer;Initial Catalog=$DatabaseName;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_SqlConnectionString", "$connectionString", "User")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_SqlConnectionString", "$connectionString", "Process")
 
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqVirtualHost", "$ApplicationName", "User")
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqUserName", "$RabbitMqUserName", "User")
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqPassword", "$RabbitMqPassword", "User")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqVirtualHost", "$ApplicationName", "Process")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqUserName", "$RabbitMqUserName", "Process")
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_RabbitMqPassword", "$RabbitMqPassword", "Process")
  
  
-$taskscheduler = $WorkingCopy   + "\schedulers\scheduler.delayactivity.exe"       
-[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_TaskScheduler", "$taskscheduler", "User")
+$taskscheduler = "$WorkingCopy\schedulers\scheduler.delayactivity.exe"       
+[Environment]::SetEnvironmentVariable("RX_$ApplicationName" + "_TaskScheduler", "$taskscheduler", "Process")
 
 
 foreach($configFile in $allConfigs){
