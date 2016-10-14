@@ -61,3 +61,42 @@ there should be an entry fo `web.posentt` that point to your `PWD\web` with bind
 ## Setting up oal_dbo database
 
 use the script in snippet folder
+
+## Building the solution
+Before you do, create the Tables for each EntityDefinition (I'll update the sph.builder.exe to do this automatically)
+
+```
+sqlcmd -E -S "(localdb)\ProjectsV13" -d PosEntt -i sources\EntityDefinition\SalesOrder.sql
+
+```
+
+Do this for all of sql file
+* Delivery.sql
+* ItemCategory.sql
+* Product.sql
+* SalesOrder.sql
+* SapFiAccount.sql
+* SurchargeAddOn.sql
+
+Then finally you can run `tools\sph.builder.exe` to build the solution
+for trouble shooting you could compile each component individually with
+```
+.\tool\sph.builder.exe sources\EntityDefinition\sales-order.json
+```
+
+## Know bugs
+
+* SQL Adapter wrongly generating `id` column name as `Id`, this will cause compile error
+* sph.builder.exe did not re-create the SQL Table on compiling
+
+
+## Things fixed improved since 10324
+
+* Using Mono.Cecil for querying CLR metadata instead System.Reflection, this will allow us to compile things 
+that has not been deployed without locking up the dll
+* sph.builder.exe will now compile all EntityDefinition dependencies, like the 
+    * ServiceContact,
+    * QueryEndpoint
+    * OperationEndpoint
+    * ReceivePort
+    * ReceiveLocation
