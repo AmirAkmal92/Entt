@@ -10,19 +10,6 @@ Extract the package from my OneDrive [Download 10324-01](https://1drv.ms/u/s!Anf
 , since web already been extracted you may want to leave it out , except you still need to copy web/bin
 
 
-Now run `Setup.ps1` , use the "-" to override any setup parameters
-
-make sure you have setup your `ERLANG_HOME` and your `JAVA_HOME` correctly
-
-
-## verify your installation
-
-## RabbitmMQ
-Go to http://localhost:15672, see if the broker is running
-
-## SQL Server 
-Use LINQPad in utils to connect to your localdb\ProjectsV13  and see if there's `PosEntt` database created, check there are tables with Sph schemas and dbo for aspnet* objects
-
 ## Edit Elasticsearch config manually
 
 Now edit `elasticsearch\config\elasticsearch.yml`
@@ -39,6 +26,21 @@ index.number_of_replicas: 0
 http.port: 9800
 
 ```
+
+make sure you have setup your `ERLANG_HOME` and your `JAVA_HOME` correctly
+
+Now run `Setup.ps1` , use the "-" to override any setup parameters
+
+
+## verify your installation
+
+## RabbitmMQ
+Go to http://localhost:15672, see if the broker is running
+
+## SQL Server 
+Use LINQPad in utils to connect to your localdb\ProjectsV13  and see if there's `PosEntt` database created, check there are tables with Sph schemas and dbo for aspnet* objects
+
+
 
 # Elasticsearch
 Go to http://localhost:9800/_cat/indices, you see at least `posentt_sys`
