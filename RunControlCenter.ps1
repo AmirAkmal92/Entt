@@ -33,10 +33,4 @@ $machine = ($env:COMPUTERNAME).Replace("-","_")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_BromConnectionString", "Data Source=S301\DEV2016;Initial Catalog=PittisNonCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_SnbWebNewAccount_BaseAddress", "http://eryken2.asuscomm.com:8086", "Process")
 
-
-
-if((Test-Path("Update.bat")) -eq $true){
-    & .\Update.bat
-}
-
 & .\control.center\controlcenter.exe
