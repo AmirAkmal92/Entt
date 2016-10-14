@@ -10,7 +10,7 @@
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "sap-flat-file-to-web-api",
-        "Adapter": "SnbWebNewAccount",
+        "Adapter": "SnbWebApi",
         "Operation": "UpdateSapAccount",
         "Table": null,
         "Crud": null,
@@ -30,10 +30,10 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.SnbWebNewAccount",
-        "FullName": "PosEntt.SnbWebNewAccount, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.SnbWebApi",
+        "FullName": "PosEntt.SnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\sph\\source\\web\\web.sph\\bin\\PosEntt.SnbWebNewAccount.dll",
+        "Location": "C:\\project\\work\\sph\\source\\web\\web.sph\\bin\\PosEntt.SnbWebApi.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",

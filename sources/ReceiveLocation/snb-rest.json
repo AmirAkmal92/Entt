@@ -15,6 +15,7 @@
   "ErrorEndpoint": null,
   "ErrorMethod": null,
   "JwtToken": null,
+  "Route" : "",
   "ReceivePort": "sap-financial-account-update",
   "CreatedBy": "admin",
   "Id": "snb-rest",

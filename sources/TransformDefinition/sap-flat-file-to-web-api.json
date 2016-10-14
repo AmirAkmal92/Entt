@@ -56,7 +56,7 @@
   "Name": "SapFlatFileToWebApi",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.SapFiAccounts.Domain.SapFiAccount, PosEntt.SapFiAccount",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebNewAccount.UpdateSapAccountRequest, PosEntt.SnbWebNewAccount",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebApi.UpdateSapAccountRequest, PosEntt.SnbWebApi",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "sap-flat-file-to-web-api",
