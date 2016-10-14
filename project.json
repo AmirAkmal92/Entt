@@ -5,5 +5,5 @@
   "elasticsearchClusterName": "cluster_WS27_PosEntt",
   "applicationName": "PosEntt",
   "sqlLocalDbName": "ProjectsV13",
-  "updateUri": "http://alpha.reactivedeveloper.com/updates"
+  "updateUri": "http://eryken2.asuscomm.com:8080/updates"
 }
