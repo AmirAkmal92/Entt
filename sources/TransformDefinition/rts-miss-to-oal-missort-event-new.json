@@ -1,0 +1,30 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsMissToOalMissortEventNew",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Misses.Domain.Miss, PosEntt.Miss",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.MissortEventNew, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-miss-to-oal-missort-event-new",
+  "CreatedDate": "2016-10-19T11:50:14.9951007+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-19T11:50:17.5378983+08:00",
+  "WebId": "cebdc3be-73b9-45ac-ba5c-6d0813e9ab68"
+}
