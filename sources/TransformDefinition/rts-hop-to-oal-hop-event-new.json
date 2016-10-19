@@ -1,0 +1,30 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsHopToOalHopEventNew",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Hops.Domain.Hop, PosEntt.Hop",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.HopEventNew, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-hop-to-oal-hop-event-new",
+  "CreatedDate": "2016-10-19T11:25:44.4166535+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-19T11:25:48.0020261+08:00",
+  "WebId": "09a9e699-4a6f-4223-a59a-58bfaaf934d6"
+}
