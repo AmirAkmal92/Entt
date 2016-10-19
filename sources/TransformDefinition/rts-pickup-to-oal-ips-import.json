@@ -1,0 +1,30 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPickupToOalIpsImport",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.IpsImport, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-pickup-to-oal-ips-import",
+  "CreatedDate": "2016-10-19T10:51:40.611901+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-19T10:51:44.0771935+08:00",
+  "WebId": "1bd68028-a339-4aae-96bd-959f5b1b9e90"
+}

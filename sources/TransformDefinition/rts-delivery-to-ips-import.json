@@ -1,0 +1,30 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsDeliveryToIpsImport",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.IpsImport, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-delivery-to-ips-import",
+  "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-19T10:42:27.4855359+08:00",
+  "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
+}
