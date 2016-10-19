@@ -20,11 +20,11 @@
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Hops.Domain.Hop, PosEntt.Hop",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.HopEventNew, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-hop-to-oal-hop-event-new",
   "CreatedDate": "2016-10-19T11:25:44.4166535+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T11:25:48.0020261+08:00",
+  "ChangedDate": "2016-10-19T11:55:35.1464628+08:00",
   "WebId": "09a9e699-4a6f-4223-a59a-58bfaaf934d6"
 }
