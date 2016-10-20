@@ -5,7 +5,7 @@ objectbuilders.app],
 
 function(context, logger, router, system, validation, eximp, dialog, watcher, config, app) {
 
-    var entity = ko.observable(new bespoke.DevV1_salesOrder.domain.SalesOrder(system.guid())),
+    var entity = ko.observable(new bespoke.PosEntt_salesOrder.domain.SalesOrder(system.guid())),
         errors = ko.observableArray(),
         form = ko.observable(new bespoke.sph.domain.EntityForm()),
         watching = ko.observable(false),
@@ -45,7 +45,7 @@ function(context, logger, router, system, validation, eximp, dialog, watcher, co
                         headers["If-Modified-Since"] = lastModified;
                     }
                 }
-                entity(new bespoke.DevV1_salesOrder.domain.SalesOrder(b[0] || b));
+                entity(new bespoke.PosEntt_salesOrder.domain.SalesOrder(b[0] || b));
             }, function(e) {
                 if (e.status == 404) {
                     app.showMessage("Sorry, but we cannot find any SalesOrder with location : " + "/api/sales-orders/" + entityId, "Engineering Team Development", ["OK"]);
