@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fdc6f9da-90b9-4aa8-ccae-52c3c3ad8393"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsStatToOal_ips_import",
+  "Description": "#5081",
+  "InputTypeName": "Bespoke.PosEntt.Stats.Domain.Stat, PosEntt.Stat",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.IpsImport, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-stat-to-oal-ips-import",
+  "CreatedDate": "2016-10-20T09:47:44.9953594+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-20T09:48:02.3507931+08:00",
+  "WebId": "1edcdd3c-a83a-4a20-a52b-54ce672ba1a3"
+}
