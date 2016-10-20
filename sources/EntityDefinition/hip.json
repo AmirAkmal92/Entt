@@ -205,12 +205,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": false,
+  "StoreInDatabase": null,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "hip",
   "CreatedDate": "2016-10-20T09:59:06.6796694+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T10:00:04.2479064+08:00",
+  "ChangedDate": "2016-10-20T10:01:51.8100905+08:00",
   "WebId": "1d49a843-5a40-490e-8e50-f581408d7b0f"
 }
