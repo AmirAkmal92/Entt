@@ -1,0 +1,36 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": "text/plain",
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/stat",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsStatEndpoint",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "rts-stat",
+  "CreatedBy": "admin",
+  "Id": "rts-stat-endpoint",
+  "CreatedDate": "2016-10-20T09:36:31.413389+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-20T09:36:31.413389+08:00",
+  "WebId": "f9f8ca01-3875-4d18-9875-6ec887b968e0"
+}
