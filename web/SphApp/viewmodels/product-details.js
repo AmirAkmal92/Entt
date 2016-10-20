@@ -5,7 +5,7 @@ objectbuilders.app],
 
 function(context, logger, router, system, validation, eximp, dialog, watcher, config, app) {
 
-    var entity = ko.observable(new bespoke.DevV1_product.domain.Product(system.guid())),
+    var entity = ko.observable(new bespoke.PosEntt_product.domain.Product(system.guid())),
         errors = ko.observableArray(),
         form = ko.observable(new bespoke.sph.domain.EntityForm()),
         watching = ko.observable(false),
@@ -45,7 +45,7 @@ function(context, logger, router, system, validation, eximp, dialog, watcher, co
                         headers["If-Modified-Since"] = lastModified;
                     }
                 }
-                entity(new bespoke.DevV1_product.domain.Product(b[0] || b));
+                entity(new bespoke.PosEntt_product.domain.Product(b[0] || b));
             }, function(e) {
                 if (e.status == 404) {
                     app.showMessage("Sorry, but we cannot find any Product with location : " + "/api/products/" + entityId, "Engineering Team Development", ["OK"]);
