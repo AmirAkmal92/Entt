@@ -57,11 +57,11 @@
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.ConsoleDetails, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-norm-to-oal-console-details",
   "CreatedDate": "2016-10-20T09:11:11.0320778+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T09:11:48.8929389+08:00",
+  "ChangedDate": "2016-10-20T09:19:19.085175+08:00",
   "WebId": "645957e2-3066-422f-9c78-dad446f4dba1"
 }

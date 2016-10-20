@@ -30,11 +30,11 @@
   "Description": "normal_console_event_new #5088",
   "InputTypeName": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.NormalConsoleEventNew, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-norm-to-normal-console-event-new",
   "CreatedDate": "2016-10-20T09:14:13.0735584+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T09:14:19.8712845+08:00",
+  "ChangedDate": "2016-10-20T09:19:11.7178077+08:00",
   "WebId": "d10d9d5b-af4f-448e-8a86-6ea175ca87df"
 }
