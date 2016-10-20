@@ -1,0 +1,36 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": "text/plain",
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/norm",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsNormEndpoint",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "rts-norm",
+  "CreatedBy": "admin",
+  "Id": "rts-norm-endpoint",
+  "CreatedDate": "2016-10-20T09:04:12.9696112+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-20T09:04:12.9696112+08:00",
+  "WebId": "c796dde4-7a0b-4c17-a846-d1ba1cfeb874"
+}
