@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "BeatNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d8bb2604-04f7-452a-c894-a80b5dbe0a3a"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsNormTo_normal_console_event_new",
+  "Description": "normal_console_event_new #5088",
+  "InputTypeName": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.NormalConsoleEventNew, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-norm-to-normal-console-event-new",
+  "CreatedDate": "2016-10-20T09:14:13.0735584+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-20T09:14:19.8712845+08:00",
+  "WebId": "d10d9d5b-af4f-448e-8a86-6ea175ca87df"
+}
