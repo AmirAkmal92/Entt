@@ -26,9 +26,9 @@
             }
             RabbitMqConfigs   = @{
                 ErlangVersion       = "8.0"
-                ErlangInstallerPath = "\\S099\Shared\entt.rts\otp_win64_19.1.exe"
+                ErlangInstallerPath = "\\WS27\Shared\entt.rts\otp_win64_19.1.exe"
                 Version             = "3.6.5"
-                ArchivePath         = "\\S099\Shared\entt.rts\rabbitmq-server-windows-3.6.5.zip"
+                ArchivePath         = "\\WS27\Shared\entt.rts\rabbitmq-server-windows-3.6.5.zip"
                 BrokerPort          = 5672
                 ManagementPort      = 15672
                 BaseDirectory       = "c:\rabbitmq_base"
@@ -74,14 +74,14 @@
 
     NonNodeData =
     @{
-        BuildServer ="\\S099\Shared\entt.rts"
+        BuildServer ="\\WS27\Shared\entt.rts"
      };
 
 
      RxConfigs = @{
             Home = "c:\apps\entt.rts"
             ApplicationName = "PosEntt"
-            WebPath = "c:\apps\rx\entt.rts"
+            WebPath = "c:\apps\entt.rts\web"
             SqlConnectionString = "Data Source=S301\DEV2016;Initial Catalog=PosEntt;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False"
             RabbitMqUserName = "rx-myapp"
             RabbitMqPassword = "mypassword"
