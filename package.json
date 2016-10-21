@@ -1,0 +1,22 @@
+{
+  "name": "entt.rts",
+  "version": "1.0.0",
+  "description": "npm packages for entt.rts",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "elasticdump": "^2.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bespoke.visualstudio.com/DefaultCollection/pos.entt/_git/entt.rts"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2b88acf3-e02d-46f5-ab52-d1d7b3dd6b9f"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsVasnToOal_ips_import",
+  "Description": "#5069",
+  "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.IpsImport, PosEntt.Oal",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "rts-vasn-to-oal-ips-import",
+  "CreatedDate": "2016-10-21T10:39:59.5042314+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-21T10:40:13.7637069+08:00",
+  "WebId": "80b2c8df-4863-4eff-af5a-567d41fb9b67"
+}
