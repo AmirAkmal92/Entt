@@ -5,7 +5,7 @@ Clone the repository to your desired location, normally I would go and do
 git clone https://bespoke.visualstudio.com/DefaultCollection/pos.entt/_git/entt.rts c:\project\work\entt.rts
 ```
 
-Extract the package from my OneDrive [Download 10324-02](https://1drv.ms/u/s!AnfOLTS4EYc4g5py36SaapwTOqHhcA) 
+Extract the package from my OneDrive [Download 10326](https://dl.dropboxusercontent.com/u/72555618/rx-developers/10326/sph.package.1.0.10326-01.7z) 
 
 , since web already been extracted you may want to leave it out , except you still need to copy web/bin
 
@@ -48,12 +48,25 @@ Go to http://localhost:9800/_cat/indices, you see at least `posentt_sys`
 
 # IIS
 got to your `config/applicationHost.config` , now find the line when it says 
+``` xml
+    <sites>
+      <site name="web.PosEntt" id="1">
+        <application path="/" applicationPool="Clr4IntegratedAppPool">
+          <virtualDirectory path="/" physicalPath="F:\project\work\entt.rts\web" />
+        </application>
+        <bindings>
+          <binding protocol="http" bindingInformation="*:8080:localhost" />
+        </bindings>
+      </site>
+      <siteDefaults>
+        <logFile logFormat="W3C" directory="%IIS_USER_HOME%\Logs" />
+        <traceFailedRequestsLogging directory="%IIS_USER_HOME%\TraceLogFiles" enabled="true" maxLogFileSizeKB="1024" />
+      </siteDefaults>
+      <applicationDefaults applicationPool="Clr4IntegratedAppPool" />
+      <virtualDirectoryDefaults allowSubDirConfig="true" />
+    </sites>
 ```
-<sites...
-
-
-</sites>
-```
+*physicalPath should point to your web folder absolute path*
 
 there should be an entry fo `web.posentt` that point to your `PWD\web` with binding to port 50230
 
@@ -80,14 +93,21 @@ Do this for all of sql file
 
 Then finally you can run `tools\sph.builder.exe` to build the solution
 for trouble shooting you could compile each component individually with
-```
+```bat
 .\tool\sph.builder.exe sources\EntityDefinition\sales-order.json
 ```
 
-## Know bugs
+## Known bugs
 
-* SQL Adapter wrongly generating `id` column name as `Id`, this will cause compile error
+* ~~SQL Adapter wrongly generating `id` column name as `Id`, this will cause compile error~~ Fixed in 10325
 * sph.builder.exe did not re-create the SQL Table on compiling
+
+
+## Fixed in 10326
+* FormDialog and PartialView - doesn't effect entt.rts but the ost
+
+## Fixed in 10325
+* Table primary key is now ToPascal casing
 
 
 ## Things fixed improved since 10324
