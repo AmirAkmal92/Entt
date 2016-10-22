@@ -66,11 +66,17 @@ try{
         {
             Remove-Item ".\$vnext" -Force -Recurse
         }
-        mkdir ".\$vnext"
-        Invoke-WebRequest -Method Get -UseBasicParsing -Uri "http://eryken2.asuscomm.com:8080/binaries/$vnext/$vnext.ps1" -OutFile ".\$vnext\$vnext.ps1"
+        Write-Host "Downloading http://eryken2.asuscomm.com:8080/binaries/$vnext/$vnext.ps1"
+
+        if((Test-Path(".\$vnext.ps1")) -eq $true){
+            Remove-Item ".\$vnext.ps1"
+        }
+
+        Invoke-WebRequest -Method Get -UseBasicParsing -Uri "http://eryken2.asuscomm.com:8080/binaries/$vnext/$vnext.ps1" -OutFile ".\$vnext.ps1"
 
         # run 
-        & ".\$vnext\$vnext.ps1"        
+        Write-Host "Runing... ./$vnext.ps1"
+        & ".\$vnext.ps1"        
     }
 
 
