@@ -2,44 +2,7 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "CourierId",
-        "TypeName": "",
-        "Destination": "CourierId",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "11c0d959-fc0f-4e0f-9cdf-9f777552a8d2"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "Date",
-        "TypeName": "",
-        "Destination": "DateField",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "cefdee88-c857-475b-bc8d-fc431ec755f6"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "BeatNo",
-        "TypeName": "",
-        "Destination": "BeatNo",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "6cc10266-10ed-4728-aa6d-3cc0b9d75416"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "RoutingCode",
-        "TypeName": "",
-        "Destination": "RoutingCode",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "242435c1-a823-4a2d-e43d-01522c25ba7c"
-      }
-    ]
+    "$values": []
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -56,7 +19,7 @@
   "Name": "RtsNormToOal_console_details",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.ConsoleDetails, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_console_details, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-norm-to-oal-console-details",

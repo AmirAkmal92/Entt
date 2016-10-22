@@ -19,7 +19,7 @@
   "Name": "RtsMissToOalMissortEventNew",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Misses.Domain.Miss, PosEntt.Miss",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.MissortEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_missort_event_new, PosEntt.Oal",
   "IsPublished": false,
   "CreatedBy": "admin",
   "Id": "rts-miss-to-oal-missort-event-new",

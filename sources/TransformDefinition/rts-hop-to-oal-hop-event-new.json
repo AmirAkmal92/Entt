@@ -19,7 +19,7 @@
   "Name": "RtsHopToOalHopEventNew",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Hops.Domain.Hop, PosEntt.Hop",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.HopEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_hop_event_new, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-hop-to-oal-hop-event-new",

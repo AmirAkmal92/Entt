@@ -7,10 +7,10 @@
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "BeatNo",
         "TypeName": "",
-        "Destination": "BeatNo",
+        "Destination": "beat_no",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "493c0315-97d2-4d07-f3e9-3a209ab6a567"
+        "WebId": "ab6d27f6-8992-4901-ed1a-3b094cfd354a"
       }
     ]
   },
@@ -29,12 +29,12 @@
   "Name": "RtsVasnToOal_vasn_event_new",
   "Description": "#5069",
   "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.VasnEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_vasn_event_new, PosEntt.Oal",
   "IsPublished": false,
   "CreatedBy": "admin",
   "Id": "rts-vasn-to-oal-vasn-event-new",
   "CreatedDate": "2016-10-21T10:38:33.6470229+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-21T10:38:40.1950499+08:00",
+  "ChangedDate": "2016-10-23T06:47:59.0025068+08:00",
   "WebId": "edd23224-2b67-44c9-9978-2bfd40b06879"
 }

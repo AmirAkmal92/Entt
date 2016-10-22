@@ -2,17 +2,7 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "BeatNo",
-        "TypeName": "",
-        "Destination": "BeatNo",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "4c182e2e-e448-49d4-f26f-61a4128dc42b"
-      }
-    ]
+    "$values": []
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -29,7 +19,7 @@
   "Name": "RtsHipToOal_hip_event_new",
   "Description": "#5075",
   "InputTypeName": "Bespoke.PosEntt.Hips.Domain.Hip, PosEntt.Hip",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.HipEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_hip_event_new, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-hip-to-oal-hip-event-new",

@@ -2,17 +2,7 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "BeatNo",
-        "TypeName": "",
-        "Destination": "BeatNo",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "ef7b9a33-c7f8-4f98-d8ce-cfad7625ef93"
-      }
-    ]
+    "$values": []
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -29,7 +19,7 @@
   "Name": "RtsStatTo_Oal_status_code_event_new",
   "Description": "#5080",
   "InputTypeName": "Bespoke.PosEntt.Stats.Domain.Stat, PosEntt.Stat",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.StatusCodeEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_status_code_event_new, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-stat-to-oal-status-code-event-new",

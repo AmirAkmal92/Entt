@@ -2,17 +2,7 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "BeatNo",
-        "TypeName": "",
-        "Destination": "BeatNo",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "d8bb2604-04f7-452a-c894-a80b5dbe0a3a"
-      }
-    ]
+    "$values": []
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -29,7 +19,7 @@
   "Name": "RtsNormTo_normal_console_event_new",
   "Description": "normal_console_event_new #5088",
   "InputTypeName": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.NormalConsoleEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_console_event_new, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-norm-to-normal-console-event-new",

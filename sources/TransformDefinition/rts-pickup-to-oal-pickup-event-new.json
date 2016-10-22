@@ -19,7 +19,7 @@
   "Name": "RtsPickupToOalPickupEventNew",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.PickupEventNew, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_pickup_event_new, PosEntt.Oal",
   "IsPublished": false,
   "CreatedBy": "admin",
   "Id": "rts-pickup-to-oal-pickup-event-new",

@@ -16,15 +16,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsDeliveryToIpsImport",
+  "Name": "RtsDeliveryToOal_dbo_delivery_event_new",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_ips_import, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_delivery_event_new, PosEntt.Oal",
   "IsPublished": false,
   "CreatedBy": "admin",
-  "Id": "rts-delivery-to-ips-import",
-  "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
+  "Id": "rts-delivery-mapping",
+  "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T10:42:27.4855359+08:00",
-  "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
+  "ChangedDate": "2016-10-12T15:33:41.1087011+08:00",
+  "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
