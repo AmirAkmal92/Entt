@@ -171,10 +171,9 @@ Get-ChildItem -Filter *.template -Path .\database\mapping `
     $templateName = $_.Name.ToLowerInvariant().Replace(".template", "")
     $templateUri = "$ElasticSearchHost/_template/$templateName"
     $templateContent = Get-Content $_.FullName
-    $templateJson = $templateContent.Replace("<<application_name>>", $ApplicationName.ToLowerInvariant());
 
     Write-Debug "Creating elasticsearch index template for $templateName"
-    Invoke-WebRequest -Method PUT -Uri $templateUri -ContentType "application/javascript" -Body $templateJson -UseBasicParsing
+    Invoke-WebRequest -Method PUT -Uri $templateUri -ContentType "application/javascript" -Body $templateContent -UseBasicParsing
 }
 
 
