@@ -1,0 +1,35 @@
+﻿<h1>
+    <i class="fa fa-random fa-2x"></i>
+    Transform Definitions
+</h1>
+<div class="row">
+
+
+    <table class="table table-striped" data-bind="filter : {path:'tbody>tr'}, serverPaging :{ entity : 'TransformDefinition', list: mappings, enableReload : true, map : map}">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach : mappings">
+            <tr>
+                <td>
+                    <a href="#" data-bind="attr : {'href':'#transform.definition.edit/' + Id()},text: Name"></a>
+                </td>
+                <td>
+                    <i data-bind="attr : {'class' : inputIcon}"></i>
+                    <span data-bind="text: input"></span>
+                </td>
+                <td>
+                    
+                    <i data-bind="attr : {'class' : outputIcon}"></i>
+                    <span data-bind="text: output"></span>
+                </td>
+                <td data-bind="text: Description"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
