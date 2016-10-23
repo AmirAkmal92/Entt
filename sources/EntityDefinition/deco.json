@@ -253,12 +253,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "deco",
   "CreatedDate": "2016-10-23T06:19:15.3340563+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T06:19:53.7738192+08:00",
+  "ChangedDate": "2016-10-23T08:22:18.5141759+08:00",
   "WebId": "7cb1f22c-44cc-4c23-934c-717780ffcbd5"
 }
