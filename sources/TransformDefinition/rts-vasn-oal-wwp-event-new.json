@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "edf5c101-ffa3-41b8-b47a-a75bbc372f49"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsVasn_oal_wwp_event_new",
+  "Description": "#5070",
+  "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-vasn-oal-wwp-event-new",
+  "CreatedDate": "2016-10-23T13:43:35.4454143+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-23T13:44:13.4418404+08:00",
+  "WebId": "3d231693-c862-4a70-ba61-8605ef9497fe"
+}
