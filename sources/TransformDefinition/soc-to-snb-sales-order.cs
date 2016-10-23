@@ -75,6 +75,15 @@ namespace Bespoke.PosEntt.Integrations.Transforms
                 if(source.ProductCodeMaterial == "81000015")
                     con.ActualWeight = 1;
                     
+                //#5015
+                if(NonSpecialityProducts.Contains(source.ProductCodeMaterial))
+                {
+                    con.SenderPostCode = "87000";
+                    con.ReceiverPostCode = "87000";
+                    if(string.IsNullOrWhiteSpace(destination.Body.BranchCode))
+                        destination.Body.BranchCode = "8700";
+                }
+                    
                 
                 // SNB need category name, not the bloody sequence, while soc use creepy code
                 var cat = m_categories.Where(x => x.Code == source.ItemCategoryType).LastOrDefault();
@@ -116,6 +125,71 @@ namespace Bespoke.PosEntt.Integrations.Transforms
             
             destination.Body.WebId = item.Id;
         }
+        
+        public static string[] NonSpecialityProducts = new []{
+"81000012",
+"81000013",
+"81000014",
+"81000015",
+"81000016",
+"81000030",
+"81000031",
+"81000032",
+"81000033",
+"81000034",
+"81000023",
+"81000022",
+"81000024",
+"81000029",
+"81000028",
+"81000025",
+"81000027",
+"81000026",
+"81000001",
+"81000002",
+"81000003",
+"81000004",
+"81000005",
+"81000006",
+"81000007",
+"81000008",
+"81000009",
+"20000051",
+"20000052",
+"20000053",
+"20000054",
+"20000055",
+"20000056",
+"81000035",
+"80001219",
+"80001220",
+"80001221",
+"80001222",
+"80001223",
+"80001224",
+"80001225",
+"80001226",
+"80001227",
+"80001228",
+"81000017",
+"81000018",
+"81000019",
+"81000020",
+"20003843",
+"20003844",
+"20003845",
+"20003846",
+"20003847",
+"20003848",
+"20003849",
+"20003850",
+"20003851",
+"20003852",
+"20002730",
+"20002731",
+"20002732",
+"20002733"
+};
 
     }
 }
