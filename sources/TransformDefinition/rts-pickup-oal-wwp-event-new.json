@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "88385aa8-3d96-4915-e20d-b7d536d135fd"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPickup_oal_wwp_event_new",
+  "Description": "#5052",
+  "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-pickup-oal-wwp-event-new",
+  "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-23T13:51:58.8588068+08:00",
+  "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
+}
