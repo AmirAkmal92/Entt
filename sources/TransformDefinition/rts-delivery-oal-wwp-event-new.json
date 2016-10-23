@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "35d0a64a-97d0-45b1-9321-1b5b9204d45d"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsDelivery_oal_wwp_event_new",
+  "Description": "#5053",
+  "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-delivery-oal-wwp-event-new",
+  "CreatedDate": "2016-10-23T13:53:57.1024273+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-23T13:54:08.5584164+08:00",
+  "WebId": "5dd2a16d-a9fb-4ff6-be99-2db39f5446d0"
+}
