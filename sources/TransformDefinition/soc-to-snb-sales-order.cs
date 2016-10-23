@@ -65,6 +65,17 @@ namespace Bespoke.PosEntt.Integrations.Transforms
             {
                 var source = item.Consignments.Single(x => x.ConNoteNumberParent == con.ConNoteNo);
                 
+                // #5014
+                if(source.ProductCodeMaterial == "81000012")
+                    con.ActualWeight = 1;
+                if(source.ProductCodeMaterial == "81000013")
+                    con.ActualWeight = 2;
+                if(source.ProductCodeMaterial == "81000014")
+                    con.ActualWeight = 3;
+                if(source.ProductCodeMaterial == "81000015")
+                    con.ActualWeight = 1;
+                    
+                
                 // SNB need category name, not the bloody sequence, while soc use creepy code
                 var cat = m_categories.Where(x => x.Code == source.ItemCategoryType).LastOrDefault();
                 if(null != cat)
