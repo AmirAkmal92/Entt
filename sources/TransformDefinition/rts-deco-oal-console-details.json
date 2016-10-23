@@ -16,15 +16,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsDeco_Oal_delivery_console_event_new",
-  "Description": "#5131",
+  "Name": "RtsDeco_oal_console_details",
+  "Description": "#5135",
   "InputTypeName": "Bespoke.PosEntt.Decos.Domain.Deco, PosEntt.Deco",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_delivery_console_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_console_details, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
-  "Id": "rts-deco-oal-delivery-console-event-new",
-  "CreatedDate": "2016-10-23T07:49:45.1384917+08:00",
+  "Id": "rts-deco-oal-console-details",
+  "CreatedDate": "2016-10-23T08:09:41.8882784+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T08:10:21.5849726+08:00",
-  "WebId": "2287dbd4-0e78-4b75-9c81-696b15773070"
+  "ChangedDate": "2016-10-23T08:09:55.4534922+08:00",
+  "WebId": "9f5c8b59-c1ae-45c9-8b9d-219f96d8f628"
 }
