@@ -20,7 +20,7 @@ $machine = ($env:COMPUTERNAME).Replace("-","_")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchHttpPort","9800", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchHost","http://localhost:9800", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticSearchJar","$RxHome\elasticsearch\lib\elasticsearch-1.7.5.jar", "Process")
-[System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchClusterName","cluster_$machine""_POSENTT", "Process")
+[System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchClusterName","cluster_$machine" + "_POSENTT", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchIndexNumberOfReplicas","0", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_ElasticsearchNodeName","node_$machine" + "_POSENTT", "Process")
 
@@ -49,6 +49,7 @@ $build = $json.build
 Write-Host "Please wait while we check for new RX build, current build is $build" -ForegroundColor Cyan
 
 try{
+    Write-Progress -Activity "Check for update....." -PercentComplete 50 -SecondsRemaining 5
     $release = Invoke-WebRequest -Method Get -UseBasicParsing -Uri "http://eryken2.asuscomm.com:8080/binaries/$build.json" -ErrorAction Ignore
     Write-Host $release.StatusCode
 
