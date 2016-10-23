@@ -5,6 +5,9 @@
     ],
       "files.exclude": {
         "**/.git": true,         // this is a default value
+        "**/*.exe": true,     
+        "**/*.pdb": true,   
+        "**/*.dll": true,       
         "**/.DS_Store": true,    // this is a default value
 
         "**/node_modules": true, // this excludes all folders 
@@ -12,21 +15,24 @@
                                  // the explore tree
 
         "node_modules": true ,  
-                                "config" : true,
-                                "web/bin" : true,
-                                "data" : true,
-                                "tools" : true,
-                                ".nuget" : true,
-                                "packages" : true,
-                                "output" : true,
-                                "schedulers" : true,
-                                "control.center" : true,
-                                "elasticsearch" : true,
-                                "subscribers.host" : true,
-                                "subscribers" : true,
-                                "rabbitmq_server" :true,
-                                "rabbitmq_base" :true,
-                                "IIS Express" :true
+        "utils": true ,  
+        "config" : true,
+        ".vscode" : true,
+        "web/bin" : true,
+        "sources/BinaryStores" : true,
+        "data" : true,
+        "tools" : true,
+        ".nuget" : true,
+        "packages" : true,
+        "output" : true,
+        "schedulers" : true,
+        "control.center" : true,
+        "elasticsearch" : true,
+        "subscribers.host" : true,
+        "subscribers" : true,
+        "rabbitmq_server" :true,
+        "rabbitmq_base" :true,
+        "IIS Express" :true
 
     }
 }
