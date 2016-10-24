@@ -26,9 +26,9 @@
             }
             RabbitMqConfigs   = @{
                 ErlangVersion       = "8.0"
-                ErlangInstallerPath = "\\WS27\Shared\entt.rts\otp_win64_19.1.exe"
+                ErlangInstallerPath = "\\WS27\Shared\installers\otp_win64_19.1.exe"
                 Version             = "3.6.5"
-                ArchivePath         = "\\WS27\Shared\entt.rts\rabbitmq-server-windows-3.6.5.zip"
+                ArchivePath         = "\\WS27\Shared\installers\rabbitmq-server-windows-3.6.5.zip"
                 BrokerPort          = 5672
                 ManagementPort      = 15672
                 BaseDirectory       = "c:\rabbitmq_base"
@@ -88,10 +88,7 @@
             RabbitMqHost = "S305"
             ElasticSearchHost = "http://S305:9200"
             BromConnectionString = "Data Source=S301\DEV2016;Initial Catalog=PittisNonCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+            OalConnectionString = "Data Source=S301\DEV2016;Initial Catalog=Oal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
             SnbWebNewAccount_BaseAddress = "http://eryken2.asuscomm.com:8086"
-
-
-     }
-
-    
+     }    
 }

@@ -22,3 +22,4 @@ node_modules/
 web/docs
 103*/
 version.json
+*.mof
