@@ -23,6 +23,7 @@ if((Test-Path($BuildServer)) -eq $true){
 Robocopy $DevHome\sources $BuildServer\sources /mir
 Robocopy $DevHome\output $BuildServer\output /mir
 Robocopy $DevHome\web $BuildServer\web  /mir
+Robocopy $DevHome\schedulers $BuildServer\schedulers /mir
 Robocopy $DevHome\subscribers $BuildServer\subscribers /mir
 Robocopy $DevHome\tools $BuildServer\tools /mir
 Robocopy $DevHome\subscribers.host $BuildServer\subscribers.host /mir
