@@ -5,12 +5,30 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "Id",
+        "Source": "CourierId",
         "TypeName": "",
-        "Destination": "id",
+        "Destination": "user_id",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "88385aa8-3d96-4915-e20d-b7d536d135fd"
+        "WebId": "6f116089-5ac6-4387-f259-86b351982c17"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "branch_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "746aa503-1459-4df3-af1c-1e6e94cbdaf9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_note_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "3f99a1e0-56db-47d9-c69e-943eb4451cd6"
       }
     ]
   },
@@ -35,6 +53,6 @@
   "Id": "rts-pickup-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T13:51:58.8588068+08:00",
+  "ChangedDate": "2016-10-25T08:57:51.5430928+08:00",
   "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
 }

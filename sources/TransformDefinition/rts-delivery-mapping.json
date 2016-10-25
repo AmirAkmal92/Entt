@@ -2,7 +2,35 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "beat_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1dc23e51-99d7-4993-a35d-cf4d80332202"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ReasonCode",
+        "TypeName": "",
+        "Destination": "event_type",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "90a56a83-7183-4990-ab8b-9dc2492681df"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Comment",
+        "TypeName": "",
+        "Destination": "event_comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7c6914c2-a691-4cd5-ec20-26a103178ebe"
+      }
+    ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -20,11 +48,11 @@
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_delivery_event_new, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-12T15:33:41.1087011+08:00",
+  "ChangedDate": "2016-10-24T18:07:29.0420473+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
