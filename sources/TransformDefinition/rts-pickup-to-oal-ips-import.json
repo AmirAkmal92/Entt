@@ -2,7 +2,35 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "item_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e8e14fb6-9471-44c7-aac9-7738c1d9fd6c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "user_fid",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b0051c9c-cd0b-41dc-e527-709a70fc01e1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Country",
+        "TypeName": "",
+        "Destination": "dest_country_cd",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f866b553-7b5f-46dd-e103-7b13246782a2"
+      }
+    ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -20,11 +48,11 @@
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_ips_import, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-pickup-to-oal-ips-import",
   "CreatedDate": "2016-10-19T10:51:40.611901+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T10:51:44.0771935+08:00",
+  "ChangedDate": "2016-10-25T16:41:40.845943+08:00",
   "WebId": "1bd68028-a339-4aae-96bd-959f5b1b9e90"
 }

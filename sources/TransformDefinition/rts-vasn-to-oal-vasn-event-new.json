@@ -11,6 +11,42 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "ab6d27f6-8992-4901-ed1a-3b094cfd354a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "courier_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "cc1f8c25-f107-4a22-b584-822f5e20b3b2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1c7c1af2-9f2f-4d00-cbb9-466d1554fb5d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ItemType",
+        "TypeName": "",
+        "Destination": "van_item_type_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "654b729a-e691-4a2e-e168-d9f126610c85"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "SenderName",
+        "TypeName": "",
+        "Destination": "van_sender_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6c7d6a43-9a26-4a21-ee6c-3088ab7810de"
       }
     ]
   },
@@ -30,11 +66,11 @@
   "Description": "#5069",
   "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_vasn_event_new, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-vasn-to-oal-vasn-event-new",
   "CreatedDate": "2016-10-21T10:38:33.6470229+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T06:47:59.0025068+08:00",
+  "ChangedDate": "2016-10-25T16:46:06.2499866+08:00",
   "WebId": "edd23224-2b67-44c9-9978-2bfd40b06879"
 }

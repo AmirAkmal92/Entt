@@ -2,7 +2,26 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "item_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "26a24c8d-afa3-430b-8477-82219fcf2884"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "user_fid",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "95582c0a-31cb-49b8-9d31-5dec9f56322f"
+      }
+    ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -20,11 +39,11 @@
   "Description": "#5069",
   "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_ips_import, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-vasn-to-oal-ips-import",
   "CreatedDate": "2016-10-21T10:39:59.5042314+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-21T10:40:13.7637069+08:00",
+  "ChangedDate": "2016-10-25T16:59:14.1027789+08:00",
   "WebId": "80b2c8df-4863-4eff-af5a-567d41fb9b67"
 }

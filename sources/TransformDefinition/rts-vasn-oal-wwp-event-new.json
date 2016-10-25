@@ -11,6 +11,33 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "edf5c101-ffa3-41b8-b47a-a75bbc372f49"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_note_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c56ff5f0-4cbd-43b9-ff33-d8ccbed70dae"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "branch_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "107dd9d4-0ef7-4497-ceb6-7deb300e576b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "user_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "05eb4934-cc6b-4941-b978-e3e6a53d5381"
       }
     ]
   },
@@ -35,6 +62,6 @@
   "Id": "rts-vasn-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:43:35.4454143+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T13:44:13.4418404+08:00",
+  "ChangedDate": "2016-10-25T17:01:13.4099375+08:00",
   "WebId": "3d231693-c862-4a70-ba61-8605ef9497fe"
 }
