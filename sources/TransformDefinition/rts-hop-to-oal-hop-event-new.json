@@ -2,7 +2,53 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "beat_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "369c675f-ac01-4a39-a563-c3b05b3fe0da"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Comment",
+        "TypeName": "",
+        "Destination": "event_comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f875adc8-29c3-4a3c-9aa8-269f64eb6509"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "courier_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5a30f9c7-375e-44c5-fb6b-cee1405a9644"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DestOffice",
+        "TypeName": "",
+        "Destination": "dest_office_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4305b4eb-1592-423f-f210-e4f59c6d782c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "92287d45-4bcc-4edb-c61a-d05d474b5cda"
+      }
+    ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
@@ -25,6 +71,6 @@
   "Id": "rts-hop-to-oal-hop-event-new",
   "CreatedDate": "2016-10-19T11:25:44.4166535+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T11:55:35.1464628+08:00",
+  "ChangedDate": "2016-10-25T17:26:58.8655161+08:00",
   "WebId": "09a9e699-4a6f-4223-a59a-58bfaaf934d6"
 }
