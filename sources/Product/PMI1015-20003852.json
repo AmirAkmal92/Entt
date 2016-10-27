@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI1015",
+  "Name": "Flexipack International 2Kg Zone 2 (XL)",
+  "SocCode": "20003852",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI1015-20003852",
+  "CreatedDate": "2016-10-27T11:26:12.6743485+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:26:12.6743485+08:00",
+  "WebId": "dd239eb4-ed1f-4f56-e5a6-5625506325af"
+}

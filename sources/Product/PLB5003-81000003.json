@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLB5003",
+  "Name": "Pos Laju Pack 10 (Box 10kg)",
+  "SocCode": "81000003",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLB5003-81000003",
+  "CreatedDate": "2016-10-27T10:51:27.4566971+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:51:27.4566971+08:00",
+  "WebId": "9b805c20-ff15-4255-d138-f9ce5606d3bf"
+}

@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLP2006",
+  "Name": "Prepaid Envelope Size S (Blue)",
+  "SocCode": "81000033",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLP2006-81000033",
+  "CreatedDate": "2016-10-27T09:53:44.126894+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T09:53:44.126894+08:00",
+  "WebId": "5d566f67-1ac0-40dc-9824-edc83768b9f7"
+}

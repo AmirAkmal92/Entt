@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI2003",
+  "Name": "Parcel International - Contract (Air)",
+  "SocCode": "80001121",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI2003-80001121",
+  "CreatedDate": "2016-10-27T11:28:01.6950793+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:28:01.6950793+08:00",
+  "WebId": "fcc80999-1e3b-44ae-9c99-6b6846b13e3b"
+}

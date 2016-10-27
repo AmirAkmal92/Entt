@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLB5010",
+  "Name": "Pos Laju Flyers Pack 50 M",
+  "SocCode": "81000029",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLB5010-81000029",
+  "CreatedDate": "2016-10-27T11:02:52.1031518+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:02:52.1031518+08:00",
+  "WebId": "bba64426-db0e-440b-f17a-9aa2ddba1dbe"
+}

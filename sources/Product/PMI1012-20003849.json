@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI1012",
+  "Name": "Flexipack International 250G Zone 2 (S)",
+  "SocCode": "20003849",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI1012-20003849",
+  "CreatedDate": "2016-10-27T11:22:25.6833437+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:22:25.6677203+08:00",
+  "WebId": "72ceb683-3cf9-403c-8f0c-c5037b3146da"
+}

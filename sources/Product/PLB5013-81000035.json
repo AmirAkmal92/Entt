@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLB5013",
+  "Name": "Pos Laju Bubble Wrap 1x5m",
+  "SocCode": "81000035",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLB5013-81000035",
+  "CreatedDate": "2016-10-27T11:06:36.3535862+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:06:36.3535862+08:00",
+  "WebId": "bf081e96-e9bc-48bc-943d-2ec297dc0083"
+}

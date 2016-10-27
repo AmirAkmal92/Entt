@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1009",
+  "Name": "POSLAJU ECONOMY PACKAGE",
+  "SocCode": "80000002",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1009-80000002",
+  "CreatedDate": "2016-10-26T18:41:43.2421466+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-26T18:41:43.2577759+08:00",
+  "WebId": "8ab84d16-d43b-4d1c-b409-d5b2306caadb"
+}

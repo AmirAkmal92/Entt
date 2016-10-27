@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLB5004",
+  "Name": "Pos Laju Pack Tube (Cylinder)",
+  "SocCode": "81000008",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLB5004-81000008",
+  "CreatedDate": "2016-10-27T10:52:43.5515737+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:52:43.5515737+08:00",
+  "WebId": "73834047-786b-4b8d-ef36-81cc17bc357e"
+}

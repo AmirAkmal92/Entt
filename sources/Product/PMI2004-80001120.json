@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI2004",
+  "Name": "Parcel International - Contract (Surface)",
+  "SocCode": "80001120",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI2004-80001120",
+  "CreatedDate": "2016-10-27T11:28:58.4007395+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:28:58.4007395+08:00",
+  "WebId": "43b61044-53f4-428f-922f-fd67760131e7"
+}

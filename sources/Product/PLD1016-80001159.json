@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1016",
+  "Name": "COURIER CHARGES - MPM PTK",
+  "SocCode": "80001159",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1016-80001159",
+  "CreatedDate": "2016-10-26T19:05:25.6070984+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-26T19:05:25.5914697+08:00",
+  "WebId": "9a176b99-7e21-4613-c712-e338b0eac492"
+}

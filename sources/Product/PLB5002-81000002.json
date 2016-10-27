@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLB5002",
+  "Name": "Pos Laju Pack 5 (Box 5kg)",
+  "SocCode": "81000002",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLB5002-81000002",
+  "CreatedDate": "2016-10-27T10:50:21.4713433+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:50:21.4713433+08:00",
+  "WebId": "09a44dbd-e5c2-4503-95ed-41e162715769"
+}
