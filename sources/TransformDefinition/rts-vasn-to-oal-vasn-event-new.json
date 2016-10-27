@@ -155,6 +155,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "cdb0334c-5a86-454f-8ce6-81b742e06a26"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "b2d9dc49-1b01-47a8-ee57-25a0e1435c39",
+        "Destination": "data_flag",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "48d776ca-c336-4e6f-d80e-bda70485e369"
       }
     ]
   },
@@ -673,6 +682,21 @@
         "X": 490.0,
         "Y": 156.0,
         "WebId": "6fab43c1-7d5a-4cf0-fee3-d2373578276b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\nvar isBaby = item.ConsignmentNo.StartsWith(\"EA\") || item.ConsignmentNo.StartsWith(\"EB\");\nreturn isBaby ? \"1\" : \"0\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "CheckBabyNo",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 179.0,
+        "Y": 482.0,
+        "WebId": "b2d9dc49-1b01-47a8-ee57-25a0e1435c39"
       }
     ]
   },
@@ -693,6 +717,6 @@
   "Id": "rts-vasn-to-oal-vasn-event-new",
   "CreatedDate": "2016-10-21T10:38:33.6470229+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-27T17:12:12.6982958+08:00",
+  "ChangedDate": "2016-10-27T17:22:50.9138254+08:00",
   "WebId": "edd23224-2b67-44c9-9978-2bfd40b06879"
 }
