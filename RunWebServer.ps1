@@ -1,0 +1,1 @@
+﻿Start-Process -FilePath '.\IIS Express\iisexpress.exe' -ArgumentList @("/config:.\config\applicationhost.config",  "/site:web.PosEntt",  "/trace:error")
