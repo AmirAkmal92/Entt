@@ -13,6 +13,7 @@
         "Adapter": "Oal",
         "Operation": null,
         "Table": "normal_console_event_new",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
@@ -29,6 +30,7 @@
         "Adapter": "Oal",
         "Operation": null,
         "Table": "console_details",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
@@ -98,6 +100,6 @@
   "Id": "norm-rts-norm-to-oal",
   "CreatedDate": "2016-10-20T09:15:59.496062+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T09:27:55.6517615+08:00",
+  "ChangedDate": "2016-10-28T09:35:59.3467902+08:00",
   "WebId": "d90f19f7-473d-45b3-9757-14ab9d538ea9"
 }
