@@ -29,12 +29,86 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "3f99a1e0-56db-47d9-c69e-943eb4451cd6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3260c9ae-e763-43f4-a199-c8e853a3cbe8",
+        "Destination": "shipper_reference_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "72655e2c-32fa-403e-f491-e11461dec818"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c845d1f4-9ae3-453f-e087-2da3fe48dae7",
+        "Destination": "date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "911f9bd6-e130-47f1-a9b0-e432340787de"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "22f4fda5-f720-4f6b-d87b-25211ad01699",
+        "Destination": "event_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2570a571-6648-4c62-bde3-0567b0383a3c"
       }
     ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "--",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 501.0,
+        "Y": 49.0,
+        "WebId": "3260c9ae-e763-43f4-a199-c8e853a3cbe8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\nreturn new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDate",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 456.0,
+        "Y": 203.0,
+        "WebId": "c845d1f4-9ae3-453f-e087-2da3fe48dae7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\nreturn item.ModuleId.Equals(\"04\") ? \"EM006\" : \"EM004\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetEventCode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 373.0,
+        "Y": 194.0,
+        "WebId": "22f4fda5-f720-4f6b-d87b-25211ad01699"
+      }
+    ]
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -53,6 +127,6 @@
   "Id": "rts-pickup-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-25T08:57:51.5430928+08:00",
+  "ChangedDate": "2016-10-27T11:28:19.2971715+08:00",
   "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
 }
