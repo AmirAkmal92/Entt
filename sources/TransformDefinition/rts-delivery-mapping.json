@@ -29,6 +29,96 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "7c6914c2-a691-4cd5-ec20-26a103178ebe"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "courier_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5bcef1a6-14ba-47af-ef9e-54c4c31e6df8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "3834f075-32bd-4113-8571-5fb44c05bdb2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ReasonCode",
+        "TypeName": "",
+        "Destination": "delivery_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c1a6bf2c-6398-48d7-ece3-d57e0dba478a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "AlternativeAddress",
+        "TypeName": "",
+        "Destination": "alternative_address",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f89177ce-ff0b-4a25-f69f-7b4156d39f39"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "RecipientName",
+        "TypeName": "",
+        "Destination": "receipent_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e2bf2113-8282-4d60-fe3e-167e0dcb837d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "RecipientIc",
+        "TypeName": "",
+        "Destination": "receipent_i_c",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1e94243c-7127-4414-d830-f5cf8a7d79ae"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "RecipientLocation",
+        "TypeName": "",
+        "Destination": "receipent_location_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "33401017-9da8-4ffc-94a1-8e93ffdeceef"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PaymentType",
+        "TypeName": "",
+        "Destination": "pod_payment_type_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0ba44794-a110-41f9-e35b-89acabdb10c1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PaymentMode",
+        "TypeName": "",
+        "Destination": "pod_payment_mode_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2a812490-b3a2-4a6b-f2aa-f964d4d738a6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ChequeNo",
+        "TypeName": "",
+        "Destination": "pod_cheque_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bf7a83e7-6fba-4d97-be3d-cb920f059b4f"
       }
     ]
   },
@@ -53,6 +143,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-24T18:07:29.0420473+08:00",
+  "ChangedDate": "2016-10-25T19:58:08.1109839+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
