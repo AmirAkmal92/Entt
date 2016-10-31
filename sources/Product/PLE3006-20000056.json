@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLE3006",
+  "Name": "Sampul Ekspres PX2 (LJ)",
+  "SocCode": "20000056",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLE3006-20000056",
+  "CreatedDate": "2016-10-27T10:46:44.4668762+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:46:44.4512385+08:00",
+  "WebId": "71685a21-046f-4112-db92-43b3b01e12a8"
+}

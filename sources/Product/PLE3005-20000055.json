@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLE3005",
+  "Name": "Sampul Ekpres PX1 1kg",
+  "SocCode": "20000055",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLE3005-20000055",
+  "CreatedDate": "2016-10-27T10:28:34.1287894+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:35:50.2656018+08:00",
+  "WebId": "df4f9502-d31a-46b4-904d-f12b741f87a3"
+}

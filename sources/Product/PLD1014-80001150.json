@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1014",
+  "Name": "COURIER CHARGES - LPM UPSR",
+  "SocCode": "80001150",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1014-80001150",
+  "CreatedDate": "2016-10-26T18:58:55.9593918+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-26T18:58:55.9437709+08:00",
+  "WebId": "ff90cbba-e942-4ae5-e237-0a455543958d"
+}

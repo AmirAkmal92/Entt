@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLP2009",
+  "Name": "Prepaid Box Size M (Blue)",
+  "SocCode": "81000031",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLP2009-81000031",
+  "CreatedDate": "2016-10-27T09:58:55.6295093+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T09:58:55.6295093+08:00",
+  "WebId": "17c92b57-ec95-4b9d-8c79-eee4e3d2f415"
+}

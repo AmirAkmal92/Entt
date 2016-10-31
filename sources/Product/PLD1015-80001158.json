@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1015",
+  "Name": "COURIER CHARGES - MPM MUET",
+  "SocCode": "80001158",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1015-80001158",
+  "CreatedDate": "2016-10-26T19:06:02.2481055+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-26T19:06:02.2324721+08:00",
+  "WebId": "ff90cbba-e942-4ae5-e237-0a455543958d"
+}

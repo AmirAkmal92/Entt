@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLE3002",
+  "Name": "Sampul Ekspres DL2 100g",
+  "SocCode": "20000054",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLE3002-20000054",
+  "CreatedDate": "2016-10-27T10:05:30.7265857+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:05:30.7109419+08:00",
+  "WebId": "f48b6990-f166-4e34-de21-f08720d6aee6"
+}

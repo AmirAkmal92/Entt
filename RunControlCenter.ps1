@@ -1,3 +1,9 @@
+param(
+    [string]$UpdateUrl = "http://alpha.rxdeveloper.com",
+    [switch]$DontUpdate,
+    [switch]$KeepDownloadedUpdates
+)
+
 $RxHome = "$PWD"
 $machine = ($env:COMPUTERNAME).Replace("-","_")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_HOME","$RxHome", "Process")
@@ -33,24 +39,32 @@ $machine = ($env:COMPUTERNAME).Replace("-","_")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_BromConnectionString", "Data Source=S301\DEV2016;Initial Catalog=PittisNonCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_SnbWebNewAccount_BaseAddress", "http://eryken2.asuscomm.com:8086", "Process")
 
+if($DontUpdate.IsPresent -eq $true){
+   
+    & .\control.center\controlcenter.exe
+    return;
+}
+
+
 if((Test-Path(".\version.json")) -eq $false)
 {
     $updateJson = @"
 {   
-    "build": 10325,
+    "build": 10326,
     "date" : "2016-10-20"
 }
 "@
 $updateJson | Out-File .\version.json -Encoding ascii
 }
 
+
+
 $json = Get-Content .\version.json | ConvertFrom-Json
 $build = $json.build
 Write-Host "Please wait while we check for new RX build, current build is $build" -ForegroundColor Cyan
 
 try{
-    Write-Progress -Activity "Check for update....." -PercentComplete 50 -SecondsRemaining 5
-    $release = Invoke-WebRequest -Method Get -UseBasicParsing -Uri "http://eryken2.asuscomm.com:8080/binaries/$build.json" -ErrorAction Ignore
+    $release = Invoke-WebRequest -Method Get -UseBasicParsing -Uri "$UpdateUrl/binaries/$build.json" -ErrorAction Ignore
     Write-Host $release.StatusCode
 
     $jsonResponse = $release.Content | ConvertFrom-Json
@@ -67,17 +81,26 @@ try{
         {
             Remove-Item ".\$vnext" -Force -Recurse
         }
-        Write-Host "Downloading http://eryken2.asuscomm.com:8080/binaries/$vnext/$vnext.ps1"
+        Write-Host "Downloading $UpdateUrl/binaries/$vnext/$vnext.ps1"
 
         if((Test-Path(".\$vnext.ps1")) -eq $true){
             Remove-Item ".\$vnext.ps1"
         }
 
-        Invoke-WebRequest -Method Get -UseBasicParsing -Uri "http://eryken2.asuscomm.com:8080/binaries/$vnext/$vnext.ps1" -OutFile ".\$vnext.ps1"
+        Invoke-WebRequest -Method Get -UseBasicParsing -Uri "$UpdateUrl/binaries/$vnext/$vnext.ps1" -OutFile ".\$vnext.ps1"
 
         # run 
         Write-Host "Runing... ./$vnext.ps1"
-        & ".\$vnext.ps1"        
+        & ".\$vnext.ps1"
+        
+        Write-Host "Successfully applying the update, please check your git status, see if there's any error"
+        
+        if($KeepDownloadedUpdates.IsPresent -eq $false)
+        {
+            # remove the folder and scripts
+            Remove-Item ".\$vnext.ps1"
+            Remove-Item ".\$vnext" -Recurse -Force
+        }        
     }
 
 

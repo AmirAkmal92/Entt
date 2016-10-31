@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1013",
+  "Name": "COURIER CHARGES - LPM STAM",
+  "SocCode": "80001153",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1013-80001153",
+  "CreatedDate": "2016-10-26T19:04:35.1532169+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-26T19:04:35.1532169+08:00",
+  "WebId": "ff90cbba-e942-4ae5-e237-0a455543958d"
+}

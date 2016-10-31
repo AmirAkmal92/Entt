@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLE3004",
+  "Name": "Sampul Ekspres B4 500g",
+  "SocCode": "20000051",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLE3004-20000051",
+  "CreatedDate": "2016-10-27T10:35:49.9683125+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T10:35:49.9213689+08:00",
+  "WebId": "e8a53d65-7722-4ef8-b0cb-4d11ed8b6d87"
+}

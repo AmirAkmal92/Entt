@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI1009",
+  "Name": "Flexipack International 1Kg Zone 1 (L)",
+  "SocCode": "20003846",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI1009-20003846",
+  "CreatedDate": "2016-10-27T11:17:19.7903823+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-10-27T11:17:19.7903823+08:00",
+  "WebId": "2e35f9bf-81f0-473e-a3d4-8839d4240dd7"
+}
