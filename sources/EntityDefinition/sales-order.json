@@ -326,8 +326,8 @@
             },
             {
               "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-              "TypeName": "System.String, mscorlib",
-              "IsNullable": true,
+              "TypeName": "System.Decimal, mscorlib",
+              "IsNullable": false,
               "IsNotIndexed": false,
               "IsAnalyzed": false,
               "IsFilterable": false,
@@ -1134,6 +1134,6 @@
   "Id": "sales-order",
   "CreatedDate": "2016-10-08T11:25:16.918439+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-08T11:26:05.2672155+08:00",
+  "ChangedDate": "2016-10-31T12:52:51.2407957+08:00",
   "WebId": "35581d1d-2048-456a-a1d5-0defeae82fde (2016-09-01 10:29:01.728)"
 }

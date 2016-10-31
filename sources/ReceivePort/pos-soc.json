@@ -443,8 +443,8 @@
                 "$values": []
               },
               "Name": "VolumetricWeight",
-              "TypeName": "System.String, mscorlib",
-              "IsNullable": true,
+              "TypeName": "System.Decimal, mscorlib",
+              "IsNullable": false,
               "Converter": null,
               "SampleValue": "0.000",
               "IsComplex": false,
@@ -1466,6 +1466,6 @@
   "Id": "pos-soc",
   "CreatedDate": "2016-09-01T10:29:01.7284826+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-12T12:35:47.3902814+08:00",
+  "ChangedDate": "2016-10-31T13:07:04.6679095+08:00",
   "WebId": "35581d1d-2048-456a-a1d5-0defeae82fde (2016-09-01 10:29:01.728)"
 }

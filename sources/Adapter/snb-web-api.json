@@ -2527,6 +2527,30 @@
                           "IsFilterable": false,
                           "IsExcludeInAll": false,
                           "Boost": 0,
+                          "FullName": "",
+                          "PropertyAttribute": null,
+                          "MemberCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "FieldPermissionCollection": {
+                            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                            "$values": []
+                          },
+                          "Name": "VolumetricWeight",
+                          "AllowMultiple": false,
+                          "DefaultValue": null,
+                          "WebId": "a2f5ca5e-96bb-48c7-d898-da7a446cbc68"
+                        },
+                        {
+                          "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+                          "TypeName": "System.Decimal, mscorlib",
+                          "IsNullable": false,
+                          "IsNotIndexed": false,
+                          "IsAnalyzed": false,
+                          "IsFilterable": false,
+                          "IsExcludeInAll": false,
+                          "Boost": 0,
                           "FullName": null,
                           "PropertyAttribute": "[JsonProperty(\"Width\")]",
                           "MemberCollection": {
@@ -3399,10 +3423,11 @@
   "Name": "SnbWebApi",
   "Description": null,
   "ColumnDisplayNameStrategy": null,
+  "ClrNameStrategy": null,
   "CreatedBy": "admin",
   "Id": "snb-web-api",
   "CreatedDate": "2016-09-11T09:12:56.5762714+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-12T14:00:45.7431485+08:00",
+  "ChangedDate": "2016-10-31T14:24:25.0357155+08:00",
   "WebId": "9f1e0de5-ac68-4f43-a0dc-68a340e00b84"
 }
