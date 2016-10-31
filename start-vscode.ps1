@@ -1,1 +1,1 @@
-& "D:\Program Files (x86)\Microsoft VS Code\Code.exe" $PWD
+Start-Process -FilePath "D:\Program Files (x86)\Microsoft VS Code\Code.exe" -ArgumentList $PWD
