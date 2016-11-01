@@ -76,7 +76,7 @@
           "$values": []
         },
         "Name": "Date",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "Converter": "ddMMyyyy",
         "SampleValue": "07102016",
@@ -96,7 +96,7 @@
           "$values": []
         },
         "Name": "Time",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "Converter": "HHmmss",
         "SampleValue": "083226",
@@ -372,6 +372,6 @@
   "Id": "rts-reve",
   "CreatedDate": "2016-10-31T18:58:58.2726282+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T19:09:51.310618+08:00",
+  "ChangedDate": "2016-11-01T13:17:10.3061147+08:00",
   "WebId": "7fc1dd54-4b56-48bd-b1be-45086fd87802"
 }
