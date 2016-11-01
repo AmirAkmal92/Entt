@@ -152,6 +152,23 @@
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
     "$values": [
+      
+      {
+        "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
+        "Section": "AppSetting",
+        "Key": "oal",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 148.0,
+        "Y": 275.0,
+        "WebId": "94103be0-1796-485c-cc6c-5b9d591d569c"
+      },
       {
         "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
         "TypeName": "System.Int32, mscorlib",
@@ -230,22 +247,6 @@
         "X": 592.0,
         "Y": 188.0,
         "WebId": "b012d3b7-5ba4-4c92-eb39-a3f7187c3190"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "AppSetting",
-        "Key": "oal",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 148.0,
-        "Y": 275.0,
-        "WebId": "94103be0-1796-485c-cc6c-5b9d591d569c"
       },
       {
         "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
