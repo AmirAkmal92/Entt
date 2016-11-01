@@ -77,7 +77,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -101,7 +101,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -211,6 +211,6 @@
   "Id": "sip",
   "CreatedDate": "2016-10-31T18:21:43.751453+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T18:27:50.476832+08:00",
+  "ChangedDate": "2016-11-01T10:26:06.4773185+08:00",
   "WebId": "19a46662-f606-4ed8-81b2-230f490bab97"
 }

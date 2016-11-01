@@ -76,7 +76,7 @@
           "$values": []
         },
         "Name": "Date",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "Converter": "ddMMyyyy",
         "SampleValue": "02012016",
@@ -96,7 +96,7 @@
           "$values": []
         },
         "Name": "Time",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "Converter": "HHmmss",
         "SampleValue": "092957",
@@ -172,6 +172,6 @@
   "Id": "rts-sip",
   "CreatedDate": "2016-10-31T18:18:09.1742665+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T18:25:58.514093+08:00",
+  "ChangedDate": "2016-11-01T10:32:54.3919975+08:00",
   "WebId": "19a46662-f606-4ed8-81b2-230f490bab97"
 }
