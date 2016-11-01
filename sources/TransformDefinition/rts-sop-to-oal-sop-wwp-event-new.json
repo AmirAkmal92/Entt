@@ -1,0 +1,236 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "user_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "08f1255a-a8b9-473f-8092-5902d8da94b3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "branch_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6a0356ea-4b07-40ee-ddf4-abff603534b8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "5dcce111-f9d8-40ca-fd89-4a6011ef100a",
+        "Destination": "version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8cf2c992-91d1-4503-e3ae-88bd0775e1db"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3283cd17-7f82-48ba-acbd-c2be73600157",
+        "Destination": "date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "620032e9-f61f-4c6d-dc02-ec6aad19855c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ed27245c-370c-49c6-b845-2b5e4c6a86e8",
+        "Destination": "event_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ab3baedc-9ba2-4a82-84f5-7a35dbe67c58"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "origin_country_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "cc5f1952-a55d-4df3-de67-6d2f1b785be2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "destination_postcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6cd346c1-242b-4d89-d53e-e870270fa95c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "destination_country_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c0e04731-4483-4176-ff49-fde0b3cefd93"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "shipper_reference_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "32644383-8cd9-4e88-8ef0-96c42dffbf9c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_note_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bcce2456-bf1b-4635-d184-866b1a5ad41b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "reason_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "517601ec-a7c0-4b1e-cd81-5c1b8056d9ec"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "recipient_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a7025080-c18a-46b4-a549-7379ed91b2a3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "799751bb-4372-4084-d4a5-0a83d4d75488",
+        "Destination": "recipient_ic_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "11c0da7f-4353-4a4f-eb04-3fb05be502ed"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3b3d58fb-55f0-4272-b703-098b699b5ce3",
+        "Destination": "filename",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c74bcdf0-0368-426c-f7ca-6bbec466ba17"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 513.0,
+        "Y": 366.0,
+        "WebId": "5dcce111-f9d8-40ca-fd89-4a6011ef100a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 370.0,
+        "Y": 325.0,
+        "WebId": "3283cd17-7f82-48ba-acbd-c2be73600157"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "EM005",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 457.0,
+        "Y": 218.0,
+        "WebId": "ed27245c-370c-49c6-b845-2b5e4c6a86e8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "-",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 520.0,
+        "Y": 189.0,
+        "WebId": "799751bb-4372-4084-d4a5-0a83d4d75488"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.Format(\"sa_sop_{0}_{1}\", item.Date, item.Time);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetFileName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 529.0,
+        "Y": 273.0,
+        "WebId": "3b3d58fb-55f0-4272-b703-098b699b5ce3"
+      }
+    ]
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsSopToOalSopWwpEventNew",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Sops.Domain.Sop, PosEntt.Sop",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-sop-to-oal-sop-wwp-event-new",
+  "CreatedDate": "2016-11-01T11:36:19.5149703+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-01T12:03:00.8553019+08:00",
+  "WebId": "70f692d6-963d-4867-9561-035f3ff40993"
+}
