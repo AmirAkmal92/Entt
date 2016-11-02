@@ -2,11 +2,154 @@
   "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
   "MapCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "dbb16d15-60fb-4f76-8aed-d5c632597076",
+        "Destination": "version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c0821f77-f2ca-4e25-b435-7c5078f98076"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "item_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a2fbdcc4-498a-4a06-dd31-ad9d7f5167f1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "user_fid",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d4c42533-7078-493a-fc31-7ccd65c0a46a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "7fb880cb-182b-4b70-c096-8fc8e207d66d",
+        "Destination": "event_date_local_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "671a0b09-a313-4320-abb0-44531c329d97"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "1c2c1a28-985f-4d68-ca15-578db596c694",
+        "Destination": "event_date_g_m_t_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c6b67493-2647-4791-c229-1778c5209055"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "84d21ace-0d13-4a01-c68c-96ef3d63357d",
+        "Destination": "status",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "394a9913-61c7-4f36-cc2c-64eeacde6580"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "eb21bc67-6b56-4a7b-c0af-8d34dd11d4ca",
+        "Destination": "data_code_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "951701eb-dcae-49a1-8dea-cbb3bbbc70c5"
+      }
+    ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 536.0,
+        "Y": 511.0,
+        "WebId": "dbb16d15-60fb-4f76-8aed-d5c632597076"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 476.0,
+        "Y": 472.0,
+        "WebId": "7fb880cb-182b-4b70-c096-8fc8e207d66d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var date = new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);\nreturn date.AddHours(8);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDateTimeGmt",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 402.0,
+        "Y": 404.0,
+        "WebId": "1c2c1a28-985f-4d68-ca15-578db596c694"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 514.0,
+        "Y": 354.0,
+        "WebId": "84d21ace-0d13-4a01-c68c-96ef3d63357d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "deli",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 532.0,
+        "Y": 394.0,
+        "WebId": "eb21bc67-6b56-4a7b-c0af-8d34dd11d4ca"
+      }
+    ]
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -20,11 +163,11 @@
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
   "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_ips_import, PosEntt.Oal",
-  "IsPublished": false,
+  "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T10:42:27.4855359+08:00",
+  "ChangedDate": "2016-11-02T16:20:29.1099568+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }

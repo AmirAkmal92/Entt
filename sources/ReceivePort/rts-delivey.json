@@ -96,9 +96,9 @@
           "$values": []
         },
         "Name": "Time",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
-        "Converter": null,
+        "Converter": "HHmmss",
         "SampleValue": "150605",
         "IsComplex": false,
         "AllowMultiple": false,
@@ -560,6 +560,6 @@
   "Id": "rts-delivey",
   "CreatedDate": "2016-10-02T08:34:19.5717952+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-01T16:07:45.4748837+08:00",
+  "ChangedDate": "2016-11-02T15:18:21.8078315+08:00",
   "WebId": "87f180ba-ce72-4e8c-8e54-ce730df00f27"
 }
