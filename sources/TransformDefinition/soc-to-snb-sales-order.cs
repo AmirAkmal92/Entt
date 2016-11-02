@@ -12,22 +12,22 @@ namespace Bespoke.PosEntt.Integrations.Transforms
         private static List<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory> m_categories = new List<Bespoke.PosEntt.ItemCategories.Domain.ItemCategory>();
         public static IEnumerable<string> Split(string value, int length)
         {
-        	if(string.IsNullOrWhiteSpace(value))
-        		yield break;
-        	if(value.Length < length)
-        		yield break;
-        	var c = 0;
-        	while (c < value.Length)
-        	{
-        		if (value.Length % length != 0) 
-        		{
-        			if(c + length > value.Length)
-        			yield break;
-        		}
-        		var item = value.Substring(c, length);
-        		c +=length;
-        		yield return item;
-        	}
+            if (string.IsNullOrWhiteSpace(value))
+                yield break;
+            if (value.Length < length)
+                yield break;
+            var c = 0;
+            while (c < value.Length)
+            {
+                if (value.Length % length != 0)
+                {
+                    if (c + length > value.Length)
+                        yield break;
+                }
+                var item = value.Substring(c, length);
+                c += length;
+                yield return item;
+            }
         }
         partial void BeforeTransform(Bespoke.PosEntt.SalesOrders.Domain.SalesOrder item, Bespoke.PosEntt.Adapters.SnbWebApi.PostSalesOrdersRequest destination)
         {
@@ -63,35 +63,43 @@ namespace Bespoke.PosEntt.Integrations.Transforms
 
             foreach (var con in destination.Body.Consignments)
             {
-                var source = item.Consignments.Single(x => x.ConNoteNumberParent == con.ConNoteNo);
-                
+                Bespoke.PosEntt.SalesOrders.Domain.Consignment source = null;
+                if (string.IsNullOrWhiteSpace(con.ChildConNoteNo) || con.ChildConNoteNo == "-")
+                {
+                    source = item.Consignments.First(x => x.ConNoteNumberParent == con.ConNoteNo && (string.IsNullOrWhiteSpace(x.ConNoteNumberChild) || x.ConNoteNumberChild == "-"));
+                }
+                else
+                {
+                    source = item.Consignments.Single(x => x.ConNoteNumberParent == con.ConNoteNo && x.ConNoteNumberChild == con.ChildConNoteNo);
+                }
+
                 // #5014
-                if(source.ProductCodeMaterial == "81000012")
+                if (source.ProductCodeMaterial == "81000012")
                     con.ActualWeight = 1;
-                if(source.ProductCodeMaterial == "81000013")
+                if (source.ProductCodeMaterial == "81000013")
                     con.ActualWeight = 2;
-                if(source.ProductCodeMaterial == "81000014")
+                if (source.ProductCodeMaterial == "81000014")
                     con.ActualWeight = 3;
-                if(source.ProductCodeMaterial == "81000015")
+                if (source.ProductCodeMaterial == "81000015")
                     con.ActualWeight = 1;
-                    
+
                 //#5015
-                if(NonSpecialityProducts.Contains(source.ProductCodeMaterial))
+                if (NonSpecialityProducts.Contains(source.ProductCodeMaterial))
                 {
                     con.SenderPostCode = "87000";
                     con.ReceiverPostCode = "87000";
-                    if(string.IsNullOrWhiteSpace(destination.Body.BranchCode))
+                    if (string.IsNullOrWhiteSpace(destination.Body.BranchCode))
                         destination.Body.BranchCode = "8700";
                 }
-                    
-                
+
+
                 // SNB need category name, not the bloody sequence, while soc use creepy code
                 var cat = m_categories.Where(x => x.Code == source.ItemCategoryType).LastOrDefault();
-                if(null != cat)
+                if (null != cat)
                     con.ItemCategory = cat.Name;
-                
+
                 // in soc, surchages in presented in a multiple of 4, e.g. 0101|1101 , no | of course 
-                foreach(var code in Split(source.SurchargeCode, 4))
+                foreach (var code in Split(source.SurchargeCode, 4))
                 {
                     var code1 = code;
                     var surcharges = m_surcharges.Where(x => x.Code == code1).Select(x => x.SnbCode).ToArray();
@@ -99,34 +107,34 @@ namespace Bespoke.PosEntt.Integrations.Transforms
                 }
 
                 // in soc, value added in presented in a multiple of 4, e.g. 0101|1101, no | of cource 
-                foreach(var code in Split(source.ValueAdded, 4))
+                foreach (var code in Split(source.ValueAdded, 4))
                 {
                     var code1 = code;
                     var services = m_surcharges.Where(x => x.Code == code1).Select(x => x.SnbCode).ToArray();
                     con.ValueAddedServices.AddRange(services);
                 }
-                
+
                 con.ProductCode = m_products.Where(x => x.SocCode == source.ProductCodeMaterial).Select(x => x.Code).LastOrDefault() ?? "-";
-                
+
                 // split the dimensions
-                if(!string.IsNullOrWhiteSpace(source.VolumetricDimension))
+                if (!string.IsNullOrWhiteSpace(source.VolumetricDimension))
                 {
-                    var dimensions = source.VolumetricDimension.Split(new []{"X", "x"}, System.StringSplitOptions.RemoveEmptyEntries);
-                    if(dimensions.Length == 3)
+                    var dimensions = source.VolumetricDimension.Split(new[] { "X", "x" }, System.StringSplitOptions.RemoveEmptyEntries);
+                    if (dimensions.Length == 3)
                     {
                         con.Width = decimal.Parse(dimensions[0]);
                         con.Height = decimal.Parse(dimensions[1]);
                         con.Length = decimal.Parse(dimensions[2]);
                     }
                 }
-                
+
             }
-            
-            
+
+
             destination.Body.WebId = item.Id;
         }
-        
-        public static string[] NonSpecialityProducts = new []{
+
+        public static string[] NonSpecialityProducts = new[]{
 "81000012",
 "81000013",
 "81000014",

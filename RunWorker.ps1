@@ -5,9 +5,10 @@ Param(
        
      )
 
+  
 if($Debug -ne $false){
-  & .\subscribers.host\workers.console.runner.exe /log:console /config:$config /v:PosEntt /debug 
+   Start-Process -FilePath .\subscribers.host\workers.console.runner.exe -ArgumentList @( "/log:console", "/config:$config", "/v:PosEntt",  "/debug" )
 }else{
-   & .\subscribers.host\workers.console.runner.exe /log:console /v:PosEntt /config:$config
+   Start-Process -FilePath .\subscribers.host\workers.console.runner.exe -ArgumentList @( "/log:console", "/config:$config", "/v:PosEntt" )
 }
     
