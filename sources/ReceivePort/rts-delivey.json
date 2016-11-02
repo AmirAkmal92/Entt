@@ -428,6 +428,26 @@
         "WebId": "ae54b262-3c8c-444b-a834-79c3b996274e"
       },
       {
+        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+        "Column": 21,
+        "AllowMissing": false,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "CodAccount",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "Converter": null,
+        "SampleValue": "888",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": null,
+        "Ignore": false,
+        "Comment": null,
+        "WebId": "ae54b262-3c8c-444b-a834-79c3b996274e"
+      },
+      {
         "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
         "Header": "Name",
         "Pattern": "^(?<value>.*?)_",
@@ -474,7 +494,7 @@
       {
         "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
         "Header": "Name",
-        "Pattern": ".*_(?<value>\\d{8}-\\d{4})_.*",
+        "Pattern": ".*_(?<value>\\d{8}_\\d{6})_.*",
         "StartPosition": null,
         "Length": null,
         "FieldMappingCollection": {
@@ -484,7 +504,7 @@
         "Name": "DateTime",
         "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
-        "Converter": "yyyyMMdd-HHmm",
+        "Converter": "yyyyMMdd_HHmmss",
         "SampleValue": "",
         "IsComplex": false,
         "AllowMultiple": false,
@@ -540,6 +560,6 @@
   "Id": "rts-delivey",
   "CreatedDate": "2016-10-02T08:34:19.5717952+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T14:10:19.3307304+08:00",
+  "ChangedDate": "2016-11-01T16:07:45.4748837+08:00",
   "WebId": "87f180ba-ce72-4e8c-8e54-ce730df00f27"
 }
