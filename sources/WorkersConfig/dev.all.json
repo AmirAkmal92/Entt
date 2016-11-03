@@ -136,6 +136,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_deco-deco-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoDecoToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.deco-deco-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
