@@ -1,10 +1,10 @@
 ﻿
-$erlang = Get-Process -Name erl | measure
+$erlang = Get-Process -Name erl* | measure
 if($erlang.Count -ne 1){
     Start-Process .\rabbitmq_server\sbin\rabbitmq-server.bat
 }
 
-$java = Get-Process -Name java | measure
+$java = Get-Process -Name java* | measure
 if($java.Count -ne 1){
     Start-Process .\elasticsearch\bin\elasticsearch.bat
 }
