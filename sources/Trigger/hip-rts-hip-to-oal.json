@@ -17,7 +17,7 @@
         "Retry": 5,
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
-        "Title": "ToOal_hip_event_new",
+        "Title": "ToOalHipEventNew",
         "IsActive": true,
         "TriggerId": null,
         "Note": null,
