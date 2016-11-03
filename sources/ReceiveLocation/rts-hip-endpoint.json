@@ -1,5 +1,7 @@
 {
   "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BufferAllRows": true,
+  "RejectPartial": true,
   "BaseAddress": "http://localhost:8080",
   "ContentType": "text/plain",
   "InboundMapping": null,
