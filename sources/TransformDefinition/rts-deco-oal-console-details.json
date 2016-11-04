@@ -119,6 +119,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "56002194-9caf-4452-99c4-d628913a2784"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "0ccf1db0-c4fe-46c9-dd89-ef64c32d2409",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0fc6d2b9-71ac-4cf0-98fd-0354b8b7b3fb"
       }
     ]
   },
@@ -481,7 +490,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_deco_{0}_{1}\", item.Date, item.Time);\n",
+        "Expression": "return string.Format(\"sa_deco_{0:yyyyMMdd}_{1:HHmmss}\", item.Date, item.Time);\n",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -493,6 +502,21 @@
         "X": 535.0,
         "Y": 472.0,
         "WebId": "e2505ae4-cfaf-4fba-de91-4f0e867ef901"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var guidx = Guid.NewGuid();\r\nreturn guidx.ToString().Substring(0,19);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 531.0,
+        "Y": 75.0,
+        "WebId": "0ccf1db0-c4fe-46c9-dd89-ef64c32d2409"
       }
     ]
   },
@@ -513,6 +537,6 @@
   "Id": "rts-deco-oal-console-details",
   "CreatedDate": "2016-10-23T08:09:41.8882784+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T10:43:44.08379+08:00",
+  "ChangedDate": "2016-11-04T16:38:38.498706+08:00",
   "WebId": "9f5c8b59-c1ae-45c9-8b9d-219f96d8f628"
 }
