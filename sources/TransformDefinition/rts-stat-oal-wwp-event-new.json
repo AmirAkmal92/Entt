@@ -4,19 +4,36 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
     "$values": [
       {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "Id",
-        "TypeName": "",
-        "Destination": "id",
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "81fbdff6-9078-4bfc-a313-174e5140ced4",
+        "Destination": "version",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "90c7ad3a-f4c8-40dc-99df-8f8be1b164e7"
+        "WebId": "caea830f-ca97-40e3-f5f0-0d418be1bdae"
       }
     ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 627.0,
+        "Y": 352.0,
+        "WebId": "81fbdff6-9078-4bfc-a313-174e5140ced4"
+      }
+    ]
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -35,6 +52,6 @@
   "Id": "rts-stat-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:49:12.6836027+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T13:49:21.6540639+08:00",
+  "ChangedDate": "2016-11-02T16:38:24.4620009+08:00",
   "WebId": "f70550d4-3a11-42b1-a7ed-3e745c09f927"
 }

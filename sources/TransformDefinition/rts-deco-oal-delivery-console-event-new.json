@@ -128,6 +128,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "1c29efc8-3a7b-481a-cf26-38b6883cbdd9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "7a827249-6ee7-4f7d-84aa-422556225e57",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "aa5a0807-26c0-42cb-bec4-de8b942435b9"
       }
     ]
   },
@@ -534,6 +543,21 @@
         "X": 0.0,
         "Y": 0.0,
         "WebId": "24bd884e-db04-4d9b-ebc2-c02302d4cf7b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var guidx = Guid.NewGuid();\nreturn guidx.ToString().Substring(0,34);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 424.0,
+        "Y": 78.0,
+        "WebId": "7a827249-6ee7-4f7d-84aa-422556225e57"
       }
     ]
   },
@@ -554,6 +578,6 @@
   "Id": "rts-deco-oal-delivery-console-event-new",
   "CreatedDate": "2016-10-23T07:49:45.1384917+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T10:33:05.6770309+08:00",
+  "ChangedDate": "2016-11-04T16:48:24.3294089+08:00",
   "WebId": "2287dbd4-0e78-4b75-9c81-696b15773070"
 }
