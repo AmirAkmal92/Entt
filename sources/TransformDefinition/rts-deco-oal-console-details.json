@@ -128,6 +128,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "0fc6d2b9-71ac-4cf0-98fd-0354b8b7b3fb"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ef24e329-12c5-42c3-a6c5-53144bdb5636",
+        "Destination": "dt_created_oal_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d5c66709-caff-4592-f209-4781c0b791ba"
       }
     ]
   },
@@ -505,7 +514,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var guidx = Guid.NewGuid();\r\nreturn guidx.ToString().Substring(0,19);",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty).Substring(0,10);\r\nreturn guid;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -517,6 +526,21 @@
         "X": 531.0,
         "Y": 75.0,
         "WebId": "0ccf1db0-c4fe-46c9-dd89-ef64c32d2409"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return DateTime.Now;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDefaultDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 564.0,
+        "Y": 281.0,
+        "WebId": "ef24e329-12c5-42c3-a6c5-53144bdb5636"
       }
     ]
   },
@@ -537,6 +561,6 @@
   "Id": "rts-deco-oal-console-details",
   "CreatedDate": "2016-10-23T08:09:41.8882784+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-04T16:38:38.498706+08:00",
+  "ChangedDate": "2016-11-08T17:05:34.107805+08:00",
   "WebId": "9f5c8b59-c1ae-45c9-8b9d-219f96d8f628"
 }
