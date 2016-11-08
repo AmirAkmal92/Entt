@@ -5,15 +5,6 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "Id",
-        "TypeName": "",
-        "Destination": "id",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "edf5c101-ffa3-41b8-b47a-a75bbc372f49"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "ConsignmentNo",
         "TypeName": "",
         "Destination": "consignment_note_number",
@@ -38,12 +29,246 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "05eb4934-cc6b-4941-b978-e3e6a53d5381"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "37cbf55a-7aa1-4ac7-8107-7d6ce910118d",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "25eac232-a33f-4164-be01-d35ba4e9d739"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "shipper_reference_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "552cf053-e4e9-4f62-9aa4-99ece38437a9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "origin_country_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "61dcaff0-97b5-4503-8959-a56412e14dae"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "destination_postcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c6a1ded0-cf0a-4b6f-9986-24b8d09153e5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "destination_country_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "475e5490-b92d-42b7-c268-f1f73e556817"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "reason_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e9f8cc84-3a63-4715-cbdf-d3e11422fd25"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "recipient_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "df78df14-bbb8-4563-9868-8bd371084d32"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aca6219f-a80f-4067-a817-b809efa91d75",
+        "Destination": "recipient_ic_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "76c4d8a5-d39f-4808-f8d2-b2b66fb5f94f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "902c4b1b-fefc-4bee-f1c7-5fa7960239b4",
+        "Destination": "filename",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "72d0f89d-f90b-460d-8fae-9b34605bb0e2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c4ebe7c8-3a27-4a81-e03f-2e5ba7f5f3c7",
+        "Destination": "date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5932ec06-583d-498c-bd66-4cdd7aeeb191"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "4442e37c-73f5-4226-8a95-330a3eb45cb3",
+        "Destination": "dt_created_oal_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e7c62027-044f-4665-e036-bd55d6c3f242"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "4442e37c-73f5-4226-8a95-330a3eb45cb3",
+        "Destination": "dtCreatedOalDateField",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c386b9d6-8a21-4fa3-a121-2f951e893018"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "1c91df88-58cc-471c-e34e-1cad69bcd3c2",
+        "Destination": "version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7714cdfd-0a0e-4a09-ecea-10199233d38b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "f933252d-2b2d-4c19-ebd9-e809683a2369",
+        "Destination": "event_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "11b456d6-cf3d-4be6-926e-4d3fa4eedbc2"
       }
     ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty);\r\nreturn guid;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 517.0,
+        "Y": 49.0,
+        "WebId": "37cbf55a-7aa1-4ac7-8107-7d6ce910118d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return \"-\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetDefaultValue",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 502.0,
+        "Y": 248.0,
+        "WebId": "aca6219f-a80f-4067-a817-b809efa91d75"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.Format(\"sa_vasn_{0:yyyyddMM}_{1:HHmmss}\", item.Date, item.Time);// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\n",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetBatchName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 441.0,
+        "Y": 303.0,
+        "WebId": "902c4b1b-fefc-4bee-f1c7-5fa7960239b4"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 554.0,
+        "Y": 354.0,
+        "WebId": "c4ebe7c8-3a27-4a81-e03f-2e5ba7f5f3c7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return DateTime.Now;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDefaultDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 642.0,
+        "Y": 401.0,
+        "WebId": "4442e37c-73f5-4226-8a95-330a3eb45cb3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 721.0,
+        "Y": 440.0,
+        "WebId": "1c91df88-58cc-471c-e34e-1cad69bcd3c2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "EM013",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 508.0,
+        "Y": 172.0,
+        "WebId": "f933252d-2b2d-4c19-ebd9-e809683a2369"
+      }
+    ]
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -62,6 +287,6 @@
   "Id": "rts-vasn-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:43:35.4454143+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-25T17:01:13.4099375+08:00",
+  "ChangedDate": "2016-11-08T23:38:12.851937+08:00",
   "WebId": "3d231693-c862-4a70-ba61-8605ef9497fe"
 }
