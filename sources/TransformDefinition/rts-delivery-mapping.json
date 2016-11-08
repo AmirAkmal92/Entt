@@ -325,7 +325,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "AppSetting",
+        "Section": "ConnectionString",
         "Key": "oal",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -1235,6 +1235,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-08T11:34:07.7089324+08:00",
+  "ChangedDate": "2016-11-08T15:11:25.0458095+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
