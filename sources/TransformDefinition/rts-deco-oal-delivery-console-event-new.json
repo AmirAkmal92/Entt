@@ -146,6 +146,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "9ca2fdab-6c43-44f8-cb5d-a9bd48454642"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsoleTag",
+        "TypeName": "",
+        "Destination": "consignment_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "629e3c2d-47f7-4d56-f8d9-2a6af20f152c"
       }
     ]
   },
@@ -602,6 +611,6 @@
   "Id": "rts-deco-oal-delivery-console-event-new",
   "CreatedDate": "2016-10-23T07:49:45.1384917+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-08T17:07:16.5119239+08:00",
+  "ChangedDate": "2016-11-08T18:06:54.1498443+08:00",
   "WebId": "2287dbd4-0e78-4b75-9c81-696b15773070"
 }
