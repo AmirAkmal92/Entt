@@ -137,6 +137,60 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "7399e996-1659-46f0-e1c3-865973c806db"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "592b5d49-3749-40ca-859e-819f3dd44a3a",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c1f627f3-80b2-4574-ae2d-00ed8bf74c2e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "2d39c7d8-5d33-430c-c202-3b50a7c570f2",
+        "Destination": "version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7bf2ba33-50d2-4cbf-9688-1362c54a041f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ae49a6c9-15f3-4243-f2c7-f7a6b4aa12d8",
+        "Destination": "date_created_o_a_l_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "110c9add-62ba-4d6f-c316-a3fe3511541a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3ae5cccc-c477-48ee-e313-8a505ff1b855",
+        "Destination": "event_pending_status",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1b10690e-fd63-4639-d348-262d49263dda"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ae49a6c9-15f3-4243-f2c7-f7a6b4aa12d8",
+        "Destination": "date_createdoaldate_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f40dfdbc-d31f-491a-a5a3-0f52d861094b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ae49a6c9-15f3-4243-f2c7-f7a6b4aa12d8",
+        "Destination": "dateCreatedOALDateField",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ed4c6d4a-1738-4c6e-e72d-83a77802a4bc"
       }
     ]
   },
@@ -207,7 +261,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_comm_{0}_{1}\", item.Date, item.Time);",
+        "Expression": "return string.Format(\"sa_comm_{0:yyyyddMM}_{1:HHmmss}\", item.Date, item.Time);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -222,7 +276,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "AppSetting",
+        "Section": "ConnectionString",
         "Key": "oal",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -542,6 +596,81 @@
         "X": 495.0,
         "Y": 42.0,
         "WebId": "7a4ad8fa-bd22-4a79-fb18-cc3d76253691"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty);\nreturn guid;\n",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 485.0,
+        "Y": 86.0,
+        "WebId": "592b5d49-3749-40ca-859e-819f3dd44a3a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 542.0,
+        "Y": 543.0,
+        "WebId": "2d39c7d8-5d33-430c-c202-3b50a7c570f2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return DateTime.Now;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDefaultDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 484.0,
+        "Y": 497.0,
+        "WebId": "ae49a6c9-15f3-4243-f2c7-f7a6b4aa12d8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.IsNullOrEmpty(name) ? \"01\" : \"00\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "name",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "028826a4-b361-4d07-a951-a078590586be",
+              "Constant": "",
+              "Default": "",
+              "WebId": "201fa682-332a-4ec9-a82d-c46bfc8f4597"
+            }
+          ]
+        },
+        "Name": "SetEventPendingStatus",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 393.0,
+        "Y": 93.0,
+        "WebId": "3ae5cccc-c477-48ee-e313-8a505ff1b855"
       }
     ]
   },
@@ -562,6 +691,6 @@
   "Id": "rts-comm-to-oal-comm-event-new",
   "CreatedDate": "2016-11-01T11:38:51.9399812+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-01T12:17:49.6515389+08:00",
+  "ChangedDate": "2016-11-08T22:58:17.5193842+08:00",
   "WebId": "28fd966a-1124-48b3-bf2f-12670fa95c3c"
 }
