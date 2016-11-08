@@ -65,6 +65,51 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "951701eb-dcae-49a1-8dea-cbb3bbbc70c5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "f015729a-8fb2-4ab6-fbd9-2a228be4e1f5",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4364f5db-f93b-42d9-c173-bc71a52b11a2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "df49174c-994a-4895-d11b-3a3effa2191d",
+        "Destination": "non_delivery_reason",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6edbe2f7-b69a-4b42-e1ac-0910b26acc65"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "5abeb8a6-95a7-4009-f2e8-824eea7d3dac",
+        "Destination": "non_delivery_measure",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "282e6c1e-d67c-4ddd-9544-9cca8993fb73"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ee9039d1-8f77-4d58-f17d-09efa4a72ce9",
+        "Destination": "signatory_nm",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b4156277-c347-4e42-d90c-1d34cb46936f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "b9562fc2-3352-48be-a823-03dc6704de20",
+        "Destination": "dt_created_oal_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "491c6f2c-83ca-43df-b2b8-d41c0f0c484e"
       }
     ]
   },
@@ -83,8 +128,8 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 536.0,
-        "Y": 511.0,
+        "X": 469.0,
+        "Y": 588.0,
         "WebId": "dbb16d15-60fb-4f76-8aed-d5c632597076"
       },
       {
@@ -98,8 +143,8 @@
         "OutputTypeName": "System.DateTime, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 476.0,
-        "Y": 472.0,
+        "X": 378.0,
+        "Y": 452.0,
         "WebId": "7fb880cb-182b-4b70-c096-8fc8e207d66d"
       },
       {
@@ -148,6 +193,81 @@
         "X": 532.0,
         "Y": 394.0,
         "WebId": "eb21bc67-6b56-4a7b-c0af-8d34dd11d4ca"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty).Substring(0,10);\r\nreturn guid;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "CreateId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 529.0,
+        "Y": 51.0,
+        "WebId": "f015729a-8fb2-4ab6-fbd9-2a228be4e1f5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"12\"; break;\r\n    case \"03\" : display = \"10\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"18\";  break;\r\n    case \"05\" : display = \"13\"; break;\r\n    case \"06\" : display = \"14\"; break;\r\n    case \"07\" : display = \"16\"; break;\r\n    case \"08\" : display = \"13\"; break;\r\n    case \"09\" : display = \"12\"; break;\r\n}\r\nreturn display;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetNonDeliveryReason",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 476.0,
+        "Y": 272.0,
+        "WebId": "df49174c-994a-4895-d11b-3a3effa2191d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"C\"; break;\r\n    case \"03\" : display = \"M\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"C\";  break;\r\n    case \"05\" : display = \"M\"; break;\r\n    case \"06\" : display = \"L\"; break;\r\n    case \"07\" : display = \"B\"; break;\r\n    case \"08\" : display = \"E\"; break;\r\n    case \"09\" : display = \"C\"; break;\r\n}\r\nreturn display;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetNonDeliveryMeasure",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 565.0,
+        "Y": 300.0,
+        "WebId": "5abeb8a6-95a7-4009-f2e8-824eea7d3dac"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "string signatoryName = null;\r\nvar signatories = new string[] {\"01\", \"10\", \"11\"};\r\nif (signatories.Contains(\"10\")) signatoryName = item.RecipientName;\r\nreturn signatoryName;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetSignatories",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 659.0,
+        "Y": 347.0,
+        "WebId": "ee9039d1-8f77-4d58-f17d-09efa4a72ce9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return DateTime.Now;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDefaultDateTime",
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 536.0,
+        "Y": 515.0,
+        "WebId": "b9562fc2-3352-48be-a823-03dc6704de20"
       }
     ]
   },
@@ -168,6 +288,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-02T16:20:29.1099568+08:00",
+  "ChangedDate": "2016-11-08T12:04:33.6501617+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
