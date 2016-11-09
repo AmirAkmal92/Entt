@@ -172,7 +172,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "AppSetting",
+        "Section": "ConnectionString",
         "Key": "oal",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -924,6 +924,6 @@
   "Id": "rts-norm-to-normal-console-event-new",
   "CreatedDate": "2016-10-20T09:14:13.0735584+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-08T16:27:44.5783996+08:00",
+  "ChangedDate": "2016-11-09T10:51:17.4383825+08:00",
   "WebId": "d10d9d5b-af4f-448e-8a86-6ea175ca87df"
 }

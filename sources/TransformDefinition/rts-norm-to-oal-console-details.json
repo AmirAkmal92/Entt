@@ -261,7 +261,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "AppSetting",
+        "Section": "ConnectionString",
         "Key": "oal",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -809,6 +809,6 @@
   "Id": "rts-norm-to-oal-console-details",
   "CreatedDate": "2016-10-20T09:11:11.0320778+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-08T16:28:36.3917249+08:00",
+  "ChangedDate": "2016-11-09T10:51:42.0260113+08:00",
   "WebId": "645957e2-3066-422f-9c78-dad446f4dba1"
 }
