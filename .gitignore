@@ -23,3 +23,7 @@ web/docs
 103*/
 version.json
 *.mof
+/sources/rts.functoids/bin/Debug
+/sources/rts.functoids/obj
+/sources/rts.functoids/bin
+/sources/rts.functoids/.vs/rts.functoids/v14/.suo
