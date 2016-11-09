@@ -866,6 +866,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "7d396f6c-b18e-43ca-b85c-d2a0bf1d93ab"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 1,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "LineCount",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "76fc8e53-8f7e-4dc9-ccd3-423dc0a76e94"
       }
     ]
   },
@@ -901,12 +925,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "pickup",
   "CreatedDate": "2016-10-19T09:13:55.9012871+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T09:14:27.0935652+08:00",
+  "ChangedDate": "2016-11-09T16:28:08.2550587+08:00",
   "WebId": "40d79a4f-82e7-4c1d-925a-c19132742ba7"
 }
