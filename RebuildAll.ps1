@@ -2,6 +2,9 @@
 
     [Switch]$NoNewWindow
 )
+
+& .\env.posentt.ps1
+
 $erlang = Get-Process -Name erl* | measure
 if($erlang.Count -ne 1){
     Start-Process .\rabbitmq_server\sbin\rabbitmq-server.bat
@@ -35,6 +38,16 @@ ls -Path .\web\bin -Filter "workflows.*.pdb" | Remove-Item
 
 ls -Path .\web\bin -Filter "PosEntt.*.dll" | Remove-Item
 ls -Path .\web\bin -Filter "PosEntt.*.pdb" | Remove-Item
+
+
+#Build functoid
+$MsBuild = Get-Command msbuild* | measure
+if($MsBuild.Count -lt 1){
+    Write-Error "Use Visual Studio 2015 command prompt to compile the custom functoids"
+    return;
+}
+msbuild .\posentt.sln /m
+
 
 if($NoNewWindow.IsPresent){
 
@@ -100,6 +113,10 @@ copy $domainpdb $subscribers
 copy $domaindll $subscribersHost
 copy $domainpdb $subscribersHost
 
+
+copy C:\project\work\sph\bin\tools\*.adapter.* .\tools
+copy C:\project\work\sph\bin\tools\*.adapter.* .\web\bin
+
 copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.lookup.dll F:\project\work\entt.rts\tools
 copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.lookup.pdb F:\project\work\entt.rts\tools
 copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.lookup.dll F:\project\work\entt.rts\web\bin
@@ -107,4 +124,28 @@ copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.loo
 
 Start-Process .\tools\sph.builder.exe -ArgumentList @(".\sources\TransformDefinition\soc-to-snb-sales-order.json")
 
+
+
+copy C:\project\work\sph\source\web\core.sph\bin\core.sph.dll .\web\bin
+copy C:\project\work\sph\source\web\core.sph\bin\core.sph.pdb .\web\bin
+
+
+copy C:\project\work\sph\source\web\webapi.common\bin\Debug\webapi.common.dll .\web\bin
+copy C:\project\work\sph\source\web\webapi.common\bin\Debug\webapi.common.pdb .\web\bin
+
+
+
+copy C:\project\work\sph\source\adapters\restapi.adapter\bin\Debug\restapi.adapter.dll .\tools
+copy C:\project\work\sph\source\adapters\restapi.adapter\bin\Debug\restapi.adapter.pdb .\tools
+copy C:\project\work\sph\source\adapters\restapi.adapter\bin\Debug\restapi.adapter.dll .\web\bin
+copy C:\project\work\sph\source\adapters\restapi.adapter\bin\Debug\restapi.adapter.pdb .\web\bin
+
+
+$mappings = ls .\sources\TransformDefinition -Filter *.json
+foreach($map in $mappings){
+    Write-Host "Compiling $map ..." -ForegroundColor Cyan
+    .\tools\sph.builder.exe $map
+}
+
 #>
+
