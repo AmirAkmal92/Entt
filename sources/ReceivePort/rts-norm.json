@@ -215,7 +215,7 @@
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "AllConsignmentnNotes",
+        "Name": "AllConsignmentNotes",
         "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "Converter": null,
@@ -266,6 +266,28 @@
         "Ignore": false,
         "Comment": null,
         "WebId": "91d145d4-aef5-4248-acde-fbc0120466d7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "Name",
+        "Pattern": ".*_(?<value>\\w{5}).txt",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "7414f0c0-323c-4647-9daf-d9301e9bd81f"
       }
     ]
   },
@@ -292,6 +314,6 @@
   "Id": "rts-norm",
   "CreatedDate": "2016-10-20T08:57:47.8068232+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T08:59:50.1180897+08:00",
+  "ChangedDate": "2016-11-10T14:01:43.5201637+08:00",
   "WebId": "ee752629-0c5c-4663-876a-e067be982656"
 }

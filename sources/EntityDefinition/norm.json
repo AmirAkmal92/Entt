@@ -262,7 +262,7 @@
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "AllConsignmentnNotes",
+        "Name": "AllConsignmentNotes",
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "e3885d93-f739-4b56-820c-fed56b876280"
@@ -314,6 +314,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "91d145d4-aef5-4248-acde-fbc0120466d7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 3,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "c127e61d-d948-4a93-9149-65223053a597"
       }
     ]
   },
@@ -355,6 +379,6 @@
   "Id": "norm",
   "CreatedDate": "2016-10-20T09:01:23.8975992+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-28T09:28:34.7908001+08:00",
+  "ChangedDate": "2016-11-10T13:51:33.9075483+08:00",
   "WebId": "ee752629-0c5c-4663-876a-e067be982656"
 }
