@@ -141,20 +141,20 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "7c858c16-ad4f-42fa-d8c0-0d7d1b01d58e",
+        "Functoid": "eadc2081-4601-4fd2-eefb-5007c92bdfa3",
         "Destination": "dt_created_oal_date_field",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "7701323e-e52b-46e7-95ad-8e0a1c9a11ae"
+        "WebId": "060e4a02-86f0-4831-d5ba-b9f87c2c44fc"
       },
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "7c858c16-ad4f-42fa-d8c0-0d7d1b01d58e",
+        "Functoid": "eadc2081-4601-4fd2-eefb-5007c92bdfa3",
         "Destination": "dtCreatedOalDateField",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "0ee8a748-ce9b-4c51-80c1-ed53242810d3"
+        "WebId": "97009aca-8d11-44ae-88f9-f6c51fc181f4"
       }
     ]
   },
@@ -210,7 +210,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_sop_{0:yyyyddMM}_{1:HHmmss}\", item.Date, item.Time);",
+        "Expression": "return string.Format(\"sa_sop_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -254,19 +254,18 @@
         "WebId": "480e3458-fa6c-449d-91a6-11e534405be6"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return DateTime.Now;",
+        "$type": "Bespoke.Sph.Domain.NowFunctoid, domain.sph",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "GetDefaultDateTime",
-        "OutputTypeName": "System.DateTime, mscorlib",
+        "Name": null,
+        "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 631.0,
-        "Y": 425.0,
-        "WebId": "7c858c16-ad4f-42fa-d8c0-0d7d1b01d58e"
+        "X": 711.0,
+        "Y": 413.0,
+        "WebId": "eadc2081-4601-4fd2-eefb-5007c92bdfa3"
       }
     ]
   },
@@ -287,6 +286,6 @@
   "Id": "rts-sop-to-oal-sop-wwp-event-new",
   "CreatedDate": "2016-11-01T11:36:19.5149703+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-08T22:17:10.3326741+08:00",
+  "ChangedDate": "2016-11-10T16:55:27.8140559+08:00",
   "WebId": "70f692d6-963d-4867-9561-035f3ff40993"
 }
