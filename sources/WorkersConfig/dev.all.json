@@ -168,6 +168,30 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_vasn-rts-vasn-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
