@@ -186,6 +186,28 @@
         "Ignore": false,
         "Comment": null,
         "WebId": "237f8bdf-bd28-42e6-9069-809d8ac601df"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "Name",
+        "Pattern": ".*_(?<value>\\w{5}).txt",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "47f591cd-6036-458d-98d7-6733270252e5"
       }
     ]
   },
@@ -212,6 +234,6 @@
   "Id": "rts-hop",
   "CreatedDate": "2016-10-19T11:13:38.652615+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T11:17:32.3229297+08:00",
+  "ChangedDate": "2016-11-10T17:00:37.1376487+08:00",
   "WebId": "8cf2495a-9bb3-46ee-b8ba-6e41309f5029"
 }

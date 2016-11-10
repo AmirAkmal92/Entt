@@ -146,6 +146,28 @@
         "Ignore": false,
         "Comment": null,
         "WebId": "45964aee-51c0-40de-b7b9-4a1e9f91dfdc"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "Name",
+        "Pattern": ".*_(?<value>\\w{5}).txt",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "31ef0d82-0e55-44b8-8394-40967a689074"
       }
     ]
   },
@@ -172,6 +194,6 @@
   "Id": "rts-hip",
   "CreatedDate": "2016-10-20T09:57:22.1870725+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T09:58:58.715291+08:00",
+  "ChangedDate": "2016-11-10T16:59:47.8610512+08:00",
   "WebId": "1d49a843-5a40-490e-8e50-f581408d7b0f"
 }
