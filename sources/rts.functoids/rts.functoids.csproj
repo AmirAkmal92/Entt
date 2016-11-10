@@ -7,7 +7,7 @@
     <ProjectGuid>{6BE3F455-251A-407B-8C5E-FA77A0861BF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>rts.functoids</RootNamespace>
+    <RootNamespace>Bespoke.PosEntt.Functoids</RootNamespace>
     <AssemblyName>rts.functoids</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,10 +44,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CombineDateTime.cs" />
+    <Compile Include="CombineDateTimeFunctoid.cs" />
+    <Compile Include="OalIdFunctoid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oal.id.functoid.dialog.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oal.id.functoid.dialog.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).dll $(SolutionDir)web\bin
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)web\bin
+
+copy $(TargetDir)$(TargetName).dll $(SolutionDir)tools
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)tools
+
+copy $(TargetDir)$(TargetName).dll $(SolutionDir)subscribers
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)subscribers</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
