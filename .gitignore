@@ -27,3 +27,4 @@ version.json
 /sources/rts.functoids/obj
 /sources/rts.functoids/bin
 /sources/rts.functoids/.vs/rts.functoids/v14/.suo
+*.suo
