@@ -218,6 +218,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "0e88a651-8294-4c85-b54d-1bc9c351e70c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 3,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "29a37f0e-6881-4148-c0ec-07a4ff416c1f"
       }
     ]
   },
@@ -259,6 +283,6 @@
   "Id": "deco",
   "CreatedDate": "2016-10-23T06:19:15.3340563+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T08:22:18.5141759+08:00",
+  "ChangedDate": "2016-11-10T15:30:03.7036574+08:00",
   "WebId": "7cb1f22c-44cc-4c23-934c-717780ffcbd5"
 }
