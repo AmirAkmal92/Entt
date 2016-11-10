@@ -290,6 +290,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "9997243b-c116-4038-b1e9-17343ef9e6ca"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 3,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "812ab622-eb89-4b29-8f79-9fdd793efaac"
       }
     ]
   },
@@ -325,12 +349,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "miss",
   "CreatedDate": "2016-10-19T11:42:53.0205448+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-19T11:43:31.8008644+08:00",
+  "ChangedDate": "2016-11-10T17:04:31.0732946+08:00",
   "WebId": "afac2900-486a-4da3-b1d4-0a7b9d6542be"
 }
