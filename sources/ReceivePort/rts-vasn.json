@@ -206,6 +206,28 @@
         "Ignore": false,
         "Comment": null,
         "WebId": "814ec63c-a930-4286-93a9-1290f811606a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "Name",
+        "Pattern": ".*_(?<value>\\w{5}).txt",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "e6c4f46b-776b-4268-eab1-61a20ac3ab25"
       }
     ]
   },
@@ -232,6 +254,6 @@
   "Id": "rts-vasn",
   "CreatedDate": "2016-10-21T10:04:54.6515791+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-21T10:07:11.9140839+08:00",
+  "ChangedDate": "2016-11-11T10:19:03.2560063+08:00",
   "WebId": "11e77f74-a476-4acc-84a0-f9433fe6efc2"
 }
