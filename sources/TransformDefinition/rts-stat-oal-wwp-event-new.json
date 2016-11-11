@@ -24,24 +24,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "71597d8c-d6a7-4e8d-f8c0-8e819bc52e9f",
-        "Destination": "dtCreatedOalDateField",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "3f447d0c-e427-41ef-fcb3-fcecb45fdbe2"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "71597d8c-d6a7-4e8d-f8c0-8e819bc52e9f",
-        "Destination": "dt_created_oal_date_field",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "9949ff7a-4025-4d72-df13-50713a2e1022"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "77879434-541f-47bf-a32b-f7a5f5fee017",
         "Destination": "date_field",
         "SourceTypeName": "",
@@ -146,6 +128,33 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "ec228698-19c5-4d99-8f72-b8321bafe45a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "4a5bbb25-ef0d-4c08-86f6-0c75ca3e112c",
+        "Destination": "filename",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d939e10a-470e-413c-b355-79839cb1700c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "e10f1599-4d0c-46ee-c4c4-22315ce142ae",
+        "Destination": "dt_created_oal_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "afb101dd-5e4e-4b27-acca-4a93b33d1549"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "e10f1599-4d0c-46ee-c4c4-22315ce142ae",
+        "Destination": "dtCreatedOalDateField",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d6fae121-44bf-4b4d-c371-5989460879f6"
       }
     ]
   },
@@ -182,21 +191,6 @@
         "X": 554.0,
         "Y": 55.0,
         "WebId": "45566a16-8d03-4f3c-b439-02bb3000d19d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return DateTime.Now;",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "GetDefaultDateTime",
-        "OutputTypeName": "System.DateTime, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 493.0,
-        "Y": 390.0,
-        "WebId": "71597d8c-d6a7-4e8d-f8c0-8e819bc52e9f"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
@@ -242,6 +236,35 @@
         "X": 288.0,
         "Y": 198.0,
         "WebId": "dc676256-3e67-45fb-ab45-c9639f0de431"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.Format(\"sa_stat_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetFileName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 627.0,
+        "Y": 324.0,
+        "WebId": "4a5bbb25-ef0d-4c08-86f6-0c75ca3e112c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.NowFunctoid, domain.sph",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 642.0,
+        "Y": 377.0,
+        "WebId": "e10f1599-4d0c-46ee-c4c4-22315ce142ae"
       }
     ]
   },
@@ -262,6 +285,6 @@
   "Id": "rts-stat-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:49:12.6836027+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-09T00:00:33.9149516+08:00",
+  "ChangedDate": "2016-11-11T12:49:14.1387695+08:00",
   "WebId": "f70550d4-3a11-42b1-a7ed-3e745c09f927"
 }
