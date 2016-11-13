@@ -26,23 +26,6 @@
       },
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-delivery-to-ips-import",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "ips_import",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryInterval": 5000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalDeliveryIpsImport",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "9e1591e8-c4f6-45d5-c534-87e6c91b4647"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-delivery-oal-wwp-event-new",
         "Adapter": "Oal",
         "Operation": null,
@@ -95,17 +78,6 @@
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
         "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsDeliveryToIpsImport",
-        "FullName": "PosEntt.RtsDeliveryToIpsImport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsDeliveryToIpsImport.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
       }
     ]
   },
@@ -128,6 +100,6 @@
   "Id": "delivery-rts-delivery-to-oal",
   "CreatedDate": "2016-11-09T11:51:27.6369025+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-09T12:24:59.2536444+08:00",
+  "ChangedDate": "2016-11-13T13:17:13.237303+08:00",
   "WebId": "426d64e3-7372-474f-9fca-300ab00d64f4"
 }

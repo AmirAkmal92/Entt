@@ -9,26 +9,11 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-stat-to-oal-ips-import",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "ips_import",
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryInterval": 5000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "OalIpsImport",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "5ec5e610-505d-4ff9-d2f6-12ab129e9ba8"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-stat-to-oal-status-code-event-new",
         "Adapter": "Oal",
         "Operation": null,
         "Table": "status_code_event_new",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
@@ -38,6 +23,23 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "4d06f7f9-4219-4509-fb76-71828d7cdb50"
+      },
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-stat-oal-wwp-event-new",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "wwp_event_new",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "OalStatusWwpEventNew",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "9dbacc78-2772-42bb-edb5-d9d2a93dafee"
       }
     ]
   },
@@ -57,10 +59,10 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsStatToOal_ips_import",
-        "FullName": "PosEntt.RtsStatToOal_ips_import, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.RtsStatTo_Oal_status_code_event_new",
+        "FullName": "PosEntt.RtsStatTo_Oal_status_code_event_new, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.RtsStatToOal_ips_import.dll",
+        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.RtsStatTo_Oal_status_code_event_new.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -68,10 +70,10 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsStatTo_Oal_status_code_event_new",
-        "FullName": "PosEntt.RtsStatTo_Oal_status_code_event_new, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.RtsStat_oal_wwp_event_new",
+        "FullName": "PosEntt.RtsStat_oal_wwp_event_new, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.RtsStatTo_Oal_status_code_event_new.dll",
+        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsStat_oal_wwp_event_new.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -98,6 +100,6 @@
   "Id": "stat-rts-stat-to-oal",
   "CreatedDate": "2016-10-20T09:49:27.1320856+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T09:51:06.4159489+08:00",
+  "ChangedDate": "2016-11-13T14:05:38.6832934+08:00",
   "WebId": "85892339-ec1a-4265-bace-f2687afb81c6"
 }

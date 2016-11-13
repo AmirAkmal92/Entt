@@ -26,23 +26,6 @@
       },
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-pickup-to-oal-ips-import",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "ips_import",
-        "Schema": null,
-        "Crud": null,
-        "Retry": 5,
-        "RetryInterval": 5000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalPickupIpsImport",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "dfa1665c-c7c7-4c48-c18c-bfeaecbbebe7"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-pickup-oal-wwp-event-new",
         "Adapter": "Oal",
         "Operation": null,
@@ -69,17 +52,6 @@
         "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
         "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsPickupToOalIpsImport",
-        "FullName": "PosEntt.RtsPickupToOalIpsImport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsPickupToOalIpsImport.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -117,7 +89,7 @@
   "Entity": "Pickup",
   "TypeOf": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
   "Note": "",
-  "IsActive": false,
+  "IsActive": true,
   "IsFiredOnAdded": true,
   "IsFiredOnDeleted": false,
   "IsFiredOnChanged": false,
@@ -128,6 +100,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-09T12:20:15.8277564+08:00",
+  "ChangedDate": "2016-11-13T13:55:39.4195571+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }

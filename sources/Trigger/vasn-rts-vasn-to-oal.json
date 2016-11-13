@@ -26,23 +26,6 @@
       },
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-vasn-to-oal-ips-import",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "ips_import",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryInterval": 5000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalVasnIpsImport",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "dfc33167-8d14-4f9d-fb15-8ab5a69e2451"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-vasn-oal-wwp-event-new",
         "Adapter": "Oal",
         "Operation": null,
@@ -69,17 +52,6 @@
         "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
         "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsVasnToOal_ips_import",
-        "FullName": "PosEntt.RtsVasnToOal_ips_import, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsVasnToOal_ips_import.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -128,6 +100,6 @@
   "Id": "vasn-rts-vasn-to-oal",
   "CreatedDate": "2016-11-09T12:21:56.0672031+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-09T12:28:21.7881878+08:00",
+  "ChangedDate": "2016-11-13T14:06:52.6780277+08:00",
   "WebId": "c7baf610-de20-4da2-b150-dda427c3a4cd"
 }
