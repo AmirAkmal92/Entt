@@ -1,0 +1,50 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "devices"
+    ]
+  },
+  "Owner": {
+    "$type": "Bespoke.Sph.Domain.Owner, domain.sph",
+    "Address": {
+      "$type": "Bespoke.Sph.Domain.Address, domain.sph",
+      "UnitNo": "",
+      "Floor": "",
+      "Block": "",
+      "Street": "",
+      "City": "",
+      "Postcode": "",
+      "State": "",
+      "Country": "",
+      "WebId": null
+    },
+    "Name": "",
+    "TelephoneNo": "",
+    "FaxNo": "",
+    "Email": "",
+    "WebId": null
+  },
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "Name": "Device",
+  "Description": "",
+  "IsActive": false,
+  "StartModule": "",
+  "EnforceStartModule": false,
+  "IsSearchVisible": false,
+  "IsMessageVisible": false,
+  "IsHelpVisible": false,
+  "HelpUri": "",
+  "Title": "",
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "device",
+  "CreatedDate": "2016-11-15T06:24:15.0999992+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-15T06:24:15.0999992+08:00",
+  "WebId": "1b2c3ebb-e6c2-44ee-9383-c342b60b3fe3"
+}
