@@ -176,6 +176,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
       "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal"

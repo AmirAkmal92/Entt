@@ -1,0 +1,101 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "3171c1fe-3317-4e93-c1f7-a5d0472792ff"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "MY",
+          "Name": "MY",
+          "Note": "",
+          "WebId": "fc90edc2-0417-436f-aeeb-c2f3b24f2688"
+        },
+        "Operator": "NotEndsWith",
+        "WebId": "0d510eb6-b8bc-4e3f-d757-8a34425a8036"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-delivery-to-ips-import",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "ips_import",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToOalDeliveryIpsImport",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "9e1591e8-c4f6-45d5-c534-87e6c91b4647"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Oal",
+        "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsDeliveryToIpsImport",
+        "FullName": "PosEntt.RtsDeliveryToIpsImport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsDeliveryToIpsImport.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsDeliveryToOalIpsImport",
+  "Entity": "Delivery",
+  "TypeOf": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "DeliveryRtsDeliveryToOalIpsImportTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "delivery-rts-delivery-to-oal-ips-import",
+  "CreatedDate": "2016-11-09T11:51:27.6369025+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-14T11:23:42.9178142+08:00",
+  "WebId": "426d64e3-7372-474f-9fca-300ab00d64f4"
+}
