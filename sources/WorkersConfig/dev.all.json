@@ -200,6 +200,54 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_comm-rts-comm-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.comm-rts-comm-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_miss-rts-miss-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.miss-rts-miss-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sip-rts-sip-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.sip-rts-sip-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sop-rts-sop-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.sop-rts-sop-to-oal"
+    },    
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_reve-rts-reve-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.ReveRtsReveToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.reve-rts-reve-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"

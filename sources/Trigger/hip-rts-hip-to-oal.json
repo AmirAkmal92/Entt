@@ -13,6 +13,7 @@
         "Adapter": "Oal",
         "Operation": null,
         "Table": "hip_event_new",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
@@ -22,6 +23,23 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "fbb888c1-68fb-4d95-924a-ef8b8a442d83"
+      },
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-hip-to-oal-wwp-event-new",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "wwp_event_new",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToOalHipWwpEventNew",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "5eed7c8f-7348-49d5-a774-edeec56a342f"
       }
     ]
   },
@@ -49,6 +67,17 @@
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
         "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsHipToOalWwpEventNew",
+        "FullName": "PosEntt.RtsHipToOalWwpEventNew, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsHipToOalWwpEventNew.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
       }
     ]
   },
@@ -71,6 +100,6 @@
   "Id": "hip-rts-hip-to-oal",
   "CreatedDate": "2016-10-20T10:06:14.5676777+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-20T10:07:05.1356299+08:00",
+  "ChangedDate": "2016-11-14T12:59:52.605448+08:00",
   "WebId": "7e1840cc-b9b9-4c62-acd0-4a36f0879e76"
 }

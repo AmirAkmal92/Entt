@@ -25,6 +25,27 @@
         },
         "Operator": "NotEndsWith",
         "WebId": "0d510eb6-b8bc-4e3f-d757-8a34425a8036"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff3d8cc44e",
+          "Script": "item.ConsignmentNo.Length",
+          "Name": "ConsignmentLength",
+          "Note": "",
+          "WebId": "3d8cc44e-cae6-49cf-f83b-a32181b0ab9a"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 13,
+          "Name": "13",
+          "Note": "",
+          "WebId": "a072178c-472a-4998-9675-a4dc39a09eaa"
+        },
+        "Operator": "Eq",
+        "WebId": "a68908d7-4804-47c1-edca-c24969508aa8"
       }
     ]
   },
@@ -96,6 +117,6 @@
   "Id": "delivery-rts-delivery-to-oal-ips-import",
   "CreatedDate": "2016-11-09T11:51:27.6369025+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-14T11:23:42.9178142+08:00",
+  "ChangedDate": "2016-11-14T13:17:28.0221976+08:00",
   "WebId": "426d64e3-7372-474f-9fca-300ab00d64f4"
 }
