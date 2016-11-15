@@ -29088,7 +29088,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.String, mscorlib",
@@ -29112,59 +29112,6 @@
               "AllowMultiple": false,
               "DefaultValue": null,
               "WebId": "dbo-consignment_initial-73"
-            },
-            {
-              "$type": "Bespoke.Sph.Integrations.Adapters.Columns.DateTimeColumn, sqlserver.adapter",
-              "SqlType": "DateTime",
-              "CanWrite": true,
-              "Length": 8,
-              "IsSelected": false,
-              "Unsupported": false,
-              "DbType": "datetime",
-              "ClrName": "db_date",
-              "IsPrimaryKey": false,
-              "IsVersion": false,
-              "IsModifiedDate": false,
-              "IsComputed": false,
-              "IsIdentity": false,
-              "IsComplex": false,
-              "MimeType": null,
-              "Ignore": false,
-              "DisplayName": "db_date",
-              "Order": 74,
-              "LookupColumnTable": {
-                "$type": "Bespoke.Sph.Domain.Api.LookupColumnTable, domain.sph",
-                "IsEnabled": false,
-                "Table": null,
-                "Column": null,
-                "DbType": null,
-                "ValueColumn": null,
-                "KeyColumn": null,
-                "Name": null,
-                "TypeName": null,
-                "WebId": null
-              },
-              "TypeName": "System.DateTime, mscorlib",
-              "IsNullable": false,
-              "IsNotIndexed": false,
-              "IsAnalyzed": false,
-              "IsFilterable": false,
-              "IsExcludeInAll": false,
-              "Boost": 0,
-              "FullName": null,
-              "PropertyAttribute": null,
-              "MemberCollection": {
-                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-                "$values": []
-              },
-              "FieldPermissionCollection": {
-                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-                "$values": []
-              },
-              "Name": "db_date",
-              "AllowMultiple": false,
-              "DefaultValue": null,
-              "WebId": "dbo-consignment_initial-74"
             }
           ]
         },
@@ -29202,6 +29149,6 @@
   "Id": "oal",
   "CreatedDate": "2016-10-12T15:16:51.3557981+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T16:45:44.6743567+08:00",
+  "ChangedDate": "2016-11-16T07:07:01.3221561+08:00",
   "WebId": "fac085be-f03e-491c-845b-851cf3f703a5"
 }

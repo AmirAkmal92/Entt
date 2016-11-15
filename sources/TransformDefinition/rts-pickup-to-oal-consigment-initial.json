@@ -294,15 +294,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "ba80fcff-a18f-44cc-bb8c-f63b17c5b5fd",
-        "Destination": "db_date",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "e5a28534-8a80-4278-d86a-81deba6c7190"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "92cac228-be0e-472f-cb6c-2bf284140a24",
         "Destination": "prod_type_desc",
         "SourceTypeName": "",
@@ -555,7 +546,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return item.BabyConsignment.Length > 0 ? item.ConsignmentNo : string.Empty;",
+        "Expression": "return null != item.BabyConsignment && item.BabyConsignment.Length > 0 ? item.ConsignmentNo : null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -564,8 +555,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 802.0,
-        "Y": 175.0,
+        "X": 673.0,
+        "Y": 174.0,
         "WebId": "d293758f-6042-4690-b51d-181d71c85eb7"
       },
       {
@@ -578,13 +569,13 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 814.0,
-        "Y": 107.0,
+        "X": 722.0,
+        "Y": 109.0,
         "WebId": "cdba7905-fd5a-4975-f26f-30fe29097459"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return item.BabyConsignment.Length > 0 ? (byte)1 : (byte)0;",
+        "Expression": "return null != item.BabyConsignment && item.BabyConsignment.Length > 0 ? (byte)1 : (byte)0;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -593,13 +584,13 @@
         "OutputTypeName": "System.Byte, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 875.0,
-        "Y": 198.0,
+        "X": 614.0,
+        "Y": 196.0,
         "WebId": "1efda36a-c3e9-4bca-a26b-81f79effe478"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double height = 0;\nvar ok = double.TryParse(item.Height.ToString(), out height);\nreturn height;",
+        "Expression": "double height = 0;\nif (null == item.Height) return height;\nvar ok = double.TryParse(item.Height.ToString(), out height);\nreturn height;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -608,13 +599,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 758.0,
-        "Y": 434.0,
+        "X": 728.0,
+        "Y": 436.0,
         "WebId": "66963356-48d1-42e2-e11d-1b039388cab4"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double width = 0;\r\nvar ok = double.TryParse(item.Witdh.ToString(), out width);\r\nreturn width;",
+        "Expression": "double width = 0;\r\nif (null == item.Witdh) return width;\r\nvar ok = double.TryParse(item.Witdh.ToString(), out width);\r\nreturn width;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -623,13 +614,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 689.0,
-        "Y": 458.0,
+        "X": 660.0,
+        "Y": 459.0,
         "WebId": "f6aae9d8-17c6-4d69-929a-9b956672b074"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double length = 0;\nvar ok = double.TryParse(item.Length.ToString(), out length);\nreturn length;",
+        "Expression": "double length = 0;\nif (null == item.Length) return length;\nvar ok = double.TryParse(item.Length.ToString(), out length);\nreturn length;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -638,13 +629,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 757.0,
-        "Y": 481.0,
+        "X": 667.0,
+        "Y": 498.0,
         "WebId": "82df8e5c-61c3-4d75-d888-e77039e0b01d"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double weight = 0;\r\nvar ok = double.TryParse(item.ParentWeight.ToString(), out weight);\r\nreturn weight;",
+        "Expression": "double weight = 0;\r\nif (null == item.ParentWeight) return weight;\r\nvar ok = double.TryParse(item.ParentWeight.ToString(), out weight);\r\nreturn weight;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -653,13 +644,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 816.0,
-        "Y": 507.0,
+        "X": 742.0,
+        "Y": 522.0,
         "WebId": "f2e46dac-4218-4a26-a799-7bbed6dee1dc"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double totalWeight = 0;\nvar ok = double.TryParse(item.TotalWeight.ToString(), out totalWeight);\nreturn totalWeight;",
+        "Expression": "double totalWeight = 0;\nif (null == item.TotalWeight) return totalWeight;\nvar ok = double.TryParse(item.TotalWeight.ToString(), out totalWeight);\nreturn totalWeight;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -668,13 +659,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 422.0,
-        "Y": 1027.0,
+        "X": 283.0,
+        "Y": 905.0,
         "WebId": "a123260b-aa5e-485a-8ee4-123b38184468"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double totaDimWeight = 0;\r\nvar ok = double.TryParse(item.TotalDimWeight.ToString(), out totaDimWeight);\r\nreturn totaDimWeight;",
+        "Expression": "double totaDimWeight = 0;\r\nif (null == item.TotalDimWeight) return totaDimWeight;\r\nvar ok = double.TryParse(item.TotalDimWeight.ToString(), out totaDimWeight);\r\nreturn totaDimWeight;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -689,7 +680,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double parentWeight = 0;\r\nvar ok = double.TryParse(item.ParentWeight.ToString(), out parentWeight);\r\nreturn parentWeight;",
+        "Expression": "double parentWeight = 0;\r\nif (null == item.ParentWeight) return parentWeight;\r\nvar ok = double.TryParse(item.ParentWeight.ToString(), out parentWeight);\r\nreturn parentWeight;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -698,23 +689,9 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 761.0,
-        "Y": 272.0,
+        "X": 666.0,
+        "Y": 276.0,
         "WebId": "135d4791-42f5-4057-ca26-350a0d882510"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.NowFunctoid, domain.sph",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 746.0,
-        "Y": 1752.0,
-        "WebId": "ba80fcff-a18f-44cc-bb8c-f63b17c5b5fd"
       },
       {
         "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
@@ -1025,7 +1002,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double price = 0;\r\nvar ok = double.TryParse(item.Price.ToString(), out price);\r\nreturn price;",
+        "Expression": "double price = 0;\r\nif (null == item.Price) return price;\r\nvar ok = double.TryParse(item.Price.ToString(), out price);\r\nreturn price;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1034,13 +1011,13 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 708.0,
-        "Y": 734.0,
+        "X": 540.0,
+        "Y": 707.0,
         "WebId": "a208e9ff-b873-4933-90aa-a88c34343cdb"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "double fee = 0;\r\nvar ok = double.TryParse(item.ConsignmentFee.ToString(), out fee);\r\nreturn fee;",
+        "Expression": "double fee = 0;\r\nif (null == item.ConsignmentFee) return fee;\r\nvar ok = double.TryParse(item.ConsignmentFee.ToString(), out fee);\r\nreturn fee;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1049,8 +1026,8 @@
         "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 759.0,
-        "Y": 762.0,
+        "X": 604.0,
+        "Y": 779.0,
         "WebId": "804333f2-9e40-451f-de77-5b0d19e56ec9"
       },
       {
@@ -1169,6 +1146,6 @@
   "Id": "rts-pickup-to-oal-consigment-initial",
   "CreatedDate": "2016-11-11T16:46:43.6484388+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-13T11:08:57.8934092+08:00",
+  "ChangedDate": "2016-11-16T07:07:58.2879656+08:00",
   "WebId": "7c98b8ee-52ba-4e13-82c6-b0f505b3f4f4"
 }
