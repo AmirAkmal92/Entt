@@ -28,3 +28,5 @@ version.json
 /sources/rts.functoids/bin
 /sources/rts.functoids/.vs/rts.functoids/v14/.suo
 *.suo
+/sources/subscriber.rts.logs/bin/Debug
+/sources/subscriber.rts.logs/obj/Debug
