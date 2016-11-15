@@ -1,0 +1,101 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "Country",
+          "Name": "Country",
+          "Note": "",
+          "WebId": "e02e7cfe-2037-424f-d528-c3d41d2157af"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "MY",
+          "Name": "MY",
+          "Note": "",
+          "WebId": "87fd4e3b-0e6f-4df2-a8fc-dabd7763c8d2"
+        },
+        "Operator": "Neq",
+        "WebId": "2d052d07-8113-4d24-8b0a-e0e74bfcc2f6"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-pickup-to-oal-ips-import",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "ips_import",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToOalPickupIpsImport",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "cf68f24c-cadb-4e3f-a9cb-da8b69cc8de5"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Oal",
+        "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsPickupToOalIpsImport",
+        "FullName": "PosEntt.RtsPickupToOalIpsImport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsPickupToOalIpsImport.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPickupToOalIpsImport",
+  "Entity": "Pickup",
+  "TypeOf": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "PickupRtsPickupToOalIpsImportTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "pickup-rts-pickup-to-oal-ips-import",
+  "CreatedDate": "2016-11-16T07:30:31.4853265+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-16T07:34:54.5508133+08:00",
+  "WebId": "453029c7-32e7-4939-8848-a7e08b9f966d"
+}
