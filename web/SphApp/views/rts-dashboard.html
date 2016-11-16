@@ -1,0 +1,46 @@
+<h3 class="page-title">
+  Real time scanner Dashboard
+</h3>
+<div class="row">
+  <div class="col-lg-9">
+    <div class="row">
+      <form class="form-inline">
+        <div class="date-range pull-right" style="margin-right: 30px">
+          <i class="fa fa-calendar fa-lg"></i>
+          <span data-bind="date: { value : from, format :'MMMM DD, YYYY', inputFormat :'YYYY-MM-DD'}">
+            </span> -
+          <span data-bind="date: { value:to, format :'MMMM DD, YYYY', inputFormat :'YYYY-MM-DD'}"></span>
+          <b class="caret"></b>
+        </div>
+        <div class="form-group" data-bind2="visible : aggregate() === 'date_histogram'">
+          <label for="chart-date-interval">Date interval</label>
+          <select data-bind="value:interval" class="form-control" name="chart.date-interval" id="chart-date-interval">
+                <option value="year">Year</option>
+                <option value="quarter">Quarter</option>
+                <option value="month">Month</option>
+                <option value="week">Week</option>
+                <option value="day">Day</option>
+                <option value="hour"> Hour</option>
+                <option value="minute">minute</option>
+                <option value="second">second</option>
+            </select>
+        </div>
+      </form>
+    </div>
+    <div class="row" id="request-logs-charts">
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <h3>Messages</h3>
+    <nav>
+      <ul class="nav nav-stacked" data-bind="foreach: entities">
+        <li>
+          <a href="javascript:;" data-bind="attr : {'href' : '#rts-messages/' + ko.unwrap(Id)}">
+            <i class="icon-lock" data-bind="attr : { 'class' : IconClass }" style="margin-right: 10px"></i><span data-bind="text:Name">Pick</span>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
