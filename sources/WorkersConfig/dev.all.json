@@ -248,6 +248,22 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
