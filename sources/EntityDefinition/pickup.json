@@ -270,7 +270,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Int32, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -486,7 +486,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Int32, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -510,7 +510,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Int32, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -654,7 +654,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -678,7 +678,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -702,7 +702,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -726,7 +726,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -931,6 +931,6 @@
   "Id": "pickup",
   "CreatedDate": "2016-10-19T09:13:55.9012871+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T15:16:34.6831231+08:00",
+  "ChangedDate": "2016-11-15T16:06:07.0679526+08:00",
   "WebId": "40d79a4f-82e7-4c1d-925a-c19132742ba7"
 }
