@@ -54,5 +54,33 @@
     "showWhenLoggedIn": false,
     "isAdminPage": false,
     "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "rts-dashboard",
+    "moduleId": "viewmodels/rts-dashboard",
+    "title": "Real Time Scanner",
+    "nav": true,
+    "icon": "fa fa-clock-o",
+    "caption": "Real Time Scanner",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "rts-messages/:type",
+    "moduleId": "viewmodels/rts-messages",
+    "title": "RTS messages",
+    "nav": false,
+    "icon": "fa fa-gitlab",
+    "caption": "RTS messages",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
   }
 ]
