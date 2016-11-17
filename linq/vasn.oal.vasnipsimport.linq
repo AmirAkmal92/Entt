@@ -9,7 +9,7 @@
 </Query>
 
 var port = new Bespoke.PosEntt.ReceivePorts.RtsVasn(new Bespoke.Sph.Domain.Logger());
-//var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_vasn_20160101-1009\20161009\20161009104028_0_sa_vasn_20161009_103908_kjt06.txt.log");
+//var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_vasn_20160101-1009\20161009\20161009082419_0_sa_vasn_20161009_082358_jhb05.txt.log");
 //var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_vasn_20160101-1009\20161009\20161009184335_0_sa_vasn_20161009_184314_jhb98.txt.log");
 var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_vasn_20160101-1009\20161009\20161009113137_0_sa_vasn_20161009_113336_tgg45.txt.log");
 

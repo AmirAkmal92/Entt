@@ -9,8 +9,8 @@
 </Query>
 
 var port = new Bespoke.PosEntt.ReceivePorts.RtsPickup(new Bespoke.Sph.Domain.Logger());
-var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_files_20160101-1009\20160102\20160102\20160102160334_0_sa_pick_20160102_160544_bb297.txt.log");
-port.AddHeader("Name", "20161009082318_0_sa_vasn_20161009_081832_ck296.txt.log");
+var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_files_20160101-1009\20161007\20161007193818_0_sa_pick_20161007_194730_KCH30.txt.log");
+port.AddHeader("Name", "20161007193818_0_sa_pick_20161007_194730_KCH30.txt.log");
 var rawList  = port.Process(lines);
 //Console.WriteLine (rawList);
 var entities = from i in rawList
@@ -21,5 +21,12 @@ var map = new Bespoke.PosEntt.Integrations.Transforms.RtsPickupToOalPickupEventN
 var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);
+//list.Dump();
 
+var adapter = new Bespoke.PosEntt.Adapters.Oal.dbo_pickup_event_newAdapter();
+foreach (var item in list)
+{
+	var result = await adapter.InsertAsync(item);
+	result.Dump();
+}
 list.Dump();

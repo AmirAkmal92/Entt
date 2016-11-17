@@ -22,4 +22,10 @@ var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);
 
+var adapter = new Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_newAdapter();
+foreach (var item in list)
+{
+	var result = await adapter.InsertAsync(item);
+	result.Dump();
+}
 list.Dump();

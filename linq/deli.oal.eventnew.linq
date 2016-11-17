@@ -9,8 +9,8 @@
 </Query>
 
 var port = new Bespoke.PosEntt.ReceivePorts.RtsDelivey(new Bespoke.Sph.Domain.Logger());
-var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_deli_20160101-1009\20161009\20161009223344_0_sa_deli_20161009_223108_lgk13.txt.log");
-port.AddHeader("Name", "20161009223344_0_sa_deli_20161009_223108_lgk13.txt.log");
+var lines = File.ReadLines(@"D:\office\pos-malaysia\entt\Plan B1\Realtime Scanner\Data\sa_deli_20160101-1009\20161009\20161009182444_0_sa_deli_20161009_181732_spi68.txt.log");
+port.AddHeader("Name", "20161009182444_0_sa_deli_20161009_181732_spi68.txt.log");
 var rawList  = port.Process(lines);
 var entities = from i in rawList
 			   where null != i
