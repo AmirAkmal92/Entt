@@ -132,24 +132,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "1c567a79-7709-46ea-fff1-d131ba877a74",
-        "Destination": "orig_country_cd",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "6aec037e-8c2d-4048-b9c6-746dfd485579"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "eb9a12ad-e040-48e3-e51b-ea7e01e93bd0",
-        "Destination": "dest_country_cd",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "35d9a3d2-aec7-4f96-8446-69bce40e11d7"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "eb7db4ba-fde0-433e-e031-5374fa39d2f8",
         "Destination": "version",
         "SourceTypeName": "",
@@ -159,11 +141,38 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "13146163-059a-47b0-9f68-1bf193ef3c99",
+        "Functoid": "d51fd900-5bcd-4533-83cd-40d38e18ed5c",
+        "Destination": "item_weight_double",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "acce9c40-ba22-49c4-d7d8-7d4670752323"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "b1117f59-afc4-4f7a-8826-2d5a49ddc315",
+        "Destination": "orig_country_cd",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a5e5397d-bc55-454d-b545-8698e8d60111"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "8f2a3193-831b-432f-e112-1ac3748364a7",
+        "Destination": "dest_country_cd",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6eeb1c1c-6286-4c33-a7bf-ccffd7bf8fe8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "8f2afe55-8d11-4b47-af99-a19605512bbb",
         "Destination": "tn_cd",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "0705f433-1dcd-493c-f6af-32161f8fa866"
+        "WebId": "340ae3c9-438e-460c-fb71-8bbaecd66739"
       }
     ]
   },
@@ -417,8 +426,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 293.0,
-        "Y": 180.0,
+        "X": 240.0,
+        "Y": 259.0,
         "WebId": "beafd714-7c55-4346-b53f-47433685b4ac"
       },
       {
@@ -461,72 +470,46 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 442.0,
-        "Y": 169.0,
+        "X": 435.0,
+        "Y": 239.0,
         "WebId": "16bca855-f4c8-431d-867d-cfad4b4e106f"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "if (!origin.Equals(\"-\"))\n{\n    return origin;\n}\nelse\n{\n    var pattern = @\"\\w{2}\\d{9}(?<country>\\w{2})\";\n\tvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\n\treturn match.Success ? match.Groups[\"country\"].Value : \"-\";\n}",
+        "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
+        "Section": "ConnectionString",
+        "Key": "oal",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": [
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "origin",
-              "TypeName": "System.String, mscorlib",
-              "Description": "",
-              "Label": "",
-              "Comment": "",
-              "IsOptional": false,
-              "Functoid": "b186bed5-8ed3-46fc-9385-d5bf7219d982",
-              "Constant": "",
-              "Default": "",
-              "WebId": "c151a3f0-d932-40f3-c0c9-11763e3b2674"
-            }
-          ]
+          "$values": []
         },
-        "Name": "SetOriginCountryCode",
-        "OutputTypeName": "System.String, mscorlib",
+        "Name": null,
+        "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 437.0,
-        "Y": 257.0,
-        "WebId": "1c567a79-7709-46ea-fff1-d131ba877a74"
+        "X": 23.0,
+        "Y": 374.0,
+        "WebId": "b0859c27-e1a6-4687-d570-cc66866d928d"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "if (!destination.Equals(\"-\"))\r\n{\r\n    return destination;\r\n}\r\nelse\r\n{\r\n    var pattern = @\"\\w{2}\\d{9}(?<country>\\w{2})\";\r\n\tvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\n\treturn match.Success ? match.Groups[\"country\"].Value : \"-\";\r\n}",
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": [
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "destination",
-              "TypeName": "System.String, mscorlib",
-              "Description": "",
-              "Label": "",
-              "Comment": "",
-              "IsOptional": false,
-              "Functoid": "7ccb260d-0c2e-4231-954d-18e7ef4f160c",
-              "Constant": "",
-              "Default": "",
-              "WebId": "cc067ec5-6aa3-4d5a-f46b-f35200d62846"
-            }
-          ]
+          "$values": []
         },
-        "Name": "SetDestinationCountryCode",
-        "OutputTypeName": "System.String, mscorlib",
+        "Name": null,
+        "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 528.0,
-        "Y": 360.0,
-        "WebId": "eb9a12ad-e040-48e3-e51b-ea7e01e93bd0"
+        "X": 684.0,
+        "Y": 569.0,
+        "WebId": "eb7db4ba-fde0-433e-e031-5374fa39d2f8"
       },
       {
         "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
-        "DefaultValue": "-",
-        "SqlText": "SELECT [consignee_address_country] FROM [dbo].[consignment_initial]  WHERE [number] = @value1",
+        "DefaultValue": "0d",
+        "SqlText": "SELECT [weight_double] FROM [dbo].[consignment_initial] WHERE [number] = @value1",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": [
@@ -551,7 +534,7 @@
               "Label": null,
               "Comment": null,
               "IsOptional": true,
-              "Functoid": "fbd4cfc5-388d-4fef-980d-f19a6c9a8f0b",
+              "Functoid": "a2f10f2f-8faf-4ea5-c53b-9b54af629507",
               "Constant": null,
               "Default": null,
               "WebId": null
@@ -598,12 +581,27 @@
           ]
         },
         "Name": null,
-        "OutputTypeName": "System.String, mscorlib",
+        "OutputTypeName": "System.Double, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 290.0,
-        "Y": 268.0,
-        "WebId": "b186bed5-8ed3-46fc-9385-d5bf7219d982"
+        "X": 271.0,
+        "Y": 512.0,
+        "WebId": "d51fd900-5bcd-4533-83cd-40d38e18ed5c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "ConsignmentNo",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "a2f10f2f-8faf-4ea5-c53b-9b54af629507"
       },
       {
         "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
@@ -633,7 +631,7 @@
               "Label": null,
               "Comment": null,
               "IsOptional": true,
-              "Functoid": "dc622eef-fa2a-4d35-94ab-419d1ba5413d",
+              "Functoid": "1cd95dba-bc97-4bc8-c40e-5fc2bcc692ed",
               "Constant": null,
               "Default": null,
               "WebId": null
@@ -683,9 +681,9 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 285.0,
-        "Y": 357.0,
-        "WebId": "7ccb260d-0c2e-4231-954d-18e7ef4f160c"
+        "X": 303.0,
+        "Y": 356.0,
+        "WebId": "0b9bc5e4-4476-49a6-ddcb-bc56f8c2b4cd"
       },
       {
         "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
@@ -700,7 +698,118 @@
         "Comment": "",
         "X": 0.0,
         "Y": 0.0,
-        "WebId": "fbd4cfc5-388d-4fef-980d-f19a6c9a8f0b"
+        "WebId": "1cd95dba-bc97-4bc8-c40e-5fc2bcc692ed"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "if (!origin.Equals(\"-\"))\r\n{\r\n    return origin;\r\n}\r\nelse\r\n{\r\n    var pattern = @\"\\w{2}\\d{9}(?<country>\\w{2})\";\r\n\tvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\n\treturn match.Success ? match.Groups[\"country\"].Value : \"-\";\r\n}",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "origin",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "0b9bc5e4-4476-49a6-ddcb-bc56f8c2b4cd",
+              "Constant": "",
+              "Default": "",
+              "WebId": "8d673f8e-21ca-4325-9c83-8f26e14a1b45"
+            }
+          ]
+        },
+        "Name": "GetOriginCountry",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 445.0,
+        "Y": 313.0,
+        "WebId": "b1117f59-afc4-4f7a-8826-2d5a49ddc315"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
+        "DefaultValue": "-",
+        "SqlText": "SELECT [consignee_address_country] FROM [dbo].[consignment_initial]  WHERE [number] = @value1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "connection",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "b0859c27-e1a6-4687-d570-cc66866d928d",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value1",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": "cad22600-2304-4cd1-d7de-4ac7271abe54",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value2",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value3",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value4",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 300.0,
+        "Y": 422.0,
+        "WebId": "4695a9b0-166e-471a-ef65-a2325af22483"
       },
       {
         "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
@@ -715,39 +824,36 @@
         "Comment": "",
         "X": 0.0,
         "Y": 0.0,
-        "WebId": "dc622eef-fa2a-4d35-94ab-419d1ba5413d"
+        "WebId": "cad22600-2304-4cd1-d7de-4ac7271abe54"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
-        "Section": "ConnectionString",
-        "Key": "oal",
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "if (!destination.Equals(\"-\"))\r\n{\r\n    return destination;\r\n}\r\nelse\r\n{\r\n    var pattern = @\"\\w{2}\\d{9}(?<country>\\w{2})\";\r\n\tvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\n\treturn match.Success ? match.Groups[\"country\"].Value : \"-\";\r\n}",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "destination",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "4695a9b0-166e-471a-ef65-a2325af22483",
+              "Constant": "",
+              "Default": "",
+              "WebId": "c1c53f6c-af71-4f17-e0ff-abf331d25340"
+            }
+          ]
         },
-        "Name": null,
-        "OutputTypeName": null,
+        "Name": "SetDestinationCountry",
+        "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 59.0,
-        "Y": 312.0,
-        "WebId": "b0859c27-e1a6-4687-d570-cc66866d928d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.Int32, mscorlib",
-        "Value": "0",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 684.0,
-        "Y": 569.0,
-        "WebId": "eb7db4ba-fde0-433e-e031-5374fa39d2f8"
+        "X": 450.0,
+        "Y": 383.0,
+        "WebId": "8f2a3193-831b-432f-e112-1ac3748364a7"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
@@ -760,9 +866,9 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 731.0,
-        "Y": 201.0,
-        "WebId": "13146163-059a-47b0-9f68-1bf193ef3c99"
+        "X": 647.0,
+        "Y": 168.0,
+        "WebId": "8f2afe55-8d11-4b47-af99-a19605512bbb"
       }
     ]
   },
@@ -783,6 +889,6 @@
   "Id": "rts-vasn-to-oal-ips-import",
   "CreatedDate": "2016-10-21T10:39:59.5042314+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T12:06:44.0762634+08:00",
+  "ChangedDate": "2016-11-17T09:53:09.2718619+08:00",
   "WebId": "80b2c8df-4863-4eff-af5a-567d41fb9b67"
 }

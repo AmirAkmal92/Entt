@@ -173,6 +173,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "f9532d27-79f1-424d-81c3-8f786e360eef"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "6a01bab2-4d80-45b8-c209-a9579f35dcdb",
+        "Destination": "item_weight_double",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a518d28f-4b9c-415a-9458-4a6ccbbb5eb5"
       }
     ]
   },
@@ -359,8 +368,8 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 113.0,
-        "Y": 238.0,
+        "X": 58.0,
+        "Y": 321.0,
         "WebId": "c8a9766d-a762-4a53-eca6-22a15ca7b7d9"
       },
       {
@@ -771,6 +780,103 @@
         "X": 674.0,
         "Y": 157.0,
         "WebId": "713b5882-6d65-4883-d2b3-00bc3c70957c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
+        "DefaultValue": "0d",
+        "SqlText": "SELECT [weight_double] FROM [dbo].[consignment_initial] WHERE [number] = @value1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "connection",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "c8a9766d-a762-4a53-eca6-22a15ca7b7d9",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value1",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": "6bbab0d0-01cb-4ee4-c684-775ace0ee725",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value2",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value3",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value4",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.Double, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 214.0,
+        "Y": 417.0,
+        "WebId": "6a01bab2-4d80-45b8-c209-a9579f35dcdb"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "ConsignmentNo",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "6bbab0d0-01cb-4ee4-c684-775ace0ee725"
       }
     ]
   },
@@ -791,6 +897,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T16:16:16.8648873+08:00",
+  "ChangedDate": "2016-11-16T16:03:49.39559+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
