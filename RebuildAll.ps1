@@ -20,24 +20,41 @@ ls -Path .\output -Filter "*.*" | Remove-Item
 ls -Path .\schedulers -Filter "PosEntt.*.dll" | Remove-Item
 ls -Path .\schedulers -Filter "PosEntt.*.pdb" | Remove-Item
 
+ls -Path .\schedulers -Filter "subscriber.trigger.*.dll" | Remove-Item
+ls -Path .\schedulers -Filter "subscriber.trigger.*.pdb" | Remove-Item
+
+ls -Path .\schedulers -Filter "workflows.*.dll" | Remove-Item
+ls -Path .\schedulers -Filter "workflows.*.pdb" | Remove-Item
+
+
 ls -Path .\subscribers -Filter "PosEntt.*.dll" | Remove-Item
 ls -Path .\subscribers -Filter "PosEntt.*.pdb" | Remove-Item
 
-
 ls -Path .\subscribers -Filter "subscriber.trigger.*.dll" | Remove-Item
 ls -Path .\subscribers -Filter "subscriber.trigger.*.pdb" | Remove-Item
-
 
 ls -Path .\subscribers -Filter "workflows.*.dll" | Remove-Item
 ls -Path .\subscribers -Filter "workflows.*.pdb" | Remove-Item
 
 
-ls -Path .\web\bin -Filter "workflows.*.dll" | Remove-Item
-ls -Path .\web\bin -Filter "workflows.*.pdb" | Remove-Item
+ls -Path .\subscribers.host -Filter "PosEntt.*.dll" | Remove-Item
+ls -Path .\subscribers.host -Filter "PosEntt.*.pdb" | Remove-Item
+
+ls -Path .\subscribers.host -Filter "subscriber.trigger.*.dll" | Remove-Item
+ls -Path .\subscribers.host -Filter "subscriber.trigger.*.pdb" | Remove-Item
+
+ls -Path .\subscribers.host -Filter "workflows.*.dll" | Remove-Item
+ls -Path .\subscribers.host -Filter "workflows.*.pdb" | Remove-Item
 
 
 ls -Path .\web\bin -Filter "PosEntt.*.dll" | Remove-Item
 ls -Path .\web\bin -Filter "PosEntt.*.pdb" | Remove-Item
+
+ls -Path .\web\bin -Filter "subscriber.trigger.*.dll" | Remove-Item
+ls -Path .\web\bin -Filter "subscriber.trigger.*.pdb" | Remove-Item
+
+ls -Path .\web\bin -Filter "workflows.*.dll" | Remove-Item
+ls -Path .\web\bin -Filter "workflows.*.pdb" | Remove-Item
 
 
 #Build functoid
