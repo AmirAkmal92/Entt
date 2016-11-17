@@ -6,7 +6,24 @@
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
-    "$values": [
+    "$values": [      
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-pickup-to-oal-consigment-initial",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "consignment_initial",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToPickupOalConsignmentInitial",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "5fdce19b-9bb4-4ff7-f64d-32a99979b6ca"
+      },
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-pickup-to-oal-pickup-event-new",
@@ -40,23 +57,6 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "73d6a173-f73a-4d6c-b1ad-86c282012246"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-pickup-to-oal-consigment-initial",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "consignment_initial",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryInterval": 5000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToPickupOalConsignmentInitial",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "5fdce19b-9bb4-4ff7-f64d-32a99979b6ca"
       }
     ]
   },
