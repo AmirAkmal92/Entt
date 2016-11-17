@@ -3,7 +3,7 @@
   <Reference Relative="..\output\PosEntt.Hip.dll">D:\project\work\entt.rts\output\PosEntt.Hip.dll</Reference>
   <Reference Relative="..\output\PosEntt.Oal.dll">D:\project\work\entt.rts\output\PosEntt.Oal.dll</Reference>
   <Reference Relative="..\output\PosEntt.ReceivePort.RtsHip.dll">D:\project\work\entt.rts\output\PosEntt.ReceivePort.RtsHip.dll</Reference>
-  <Reference Relative="..\output\PosEntt.RtsHipToOalWwpEventNew.dll">D:\project\work\entt.rts\output\PosEntt.RtsHipToOalWwpEventNew.dll</Reference>
+  <Reference Relative="..\output\PosEntt.RtsHipToOalWwpEventNewLog.dll">D:\project\work\entt.rts\output\PosEntt.RtsHipToOalWwpEventNewLog.dll</Reference>
   <Namespace>Bespoke.Sph.Domain</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
 </Query>
@@ -17,7 +17,7 @@ var entities = from i in rawList
 			   where null != i
 			   let json = i.ToJson()
 			   select json.DeserializeFromJson<Bespoke.PosEntt.Hips.Domain.Hip>();
-var map = new Bespoke.PosEntt.Integrations.Transforms.RtsHipToOalWwpEventNew();
+var map = new Bespoke.PosEntt.Integrations.Transforms.RtsHipToOalWwpEventNewLog();
 var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);

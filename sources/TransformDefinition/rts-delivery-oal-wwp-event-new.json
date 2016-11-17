@@ -321,15 +321,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsDelivery_oal_wwp_event_new",
+  "Name": "RtsDelivery_oal_wwp_event_new_log",
   "Description": "#5053",
   "InputTypeName": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new_log, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-delivery-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:53:57.1024273+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-10T12:08:13.6074907+08:00",
+  "ChangedDate": "2016-11-17T10:35:15.0053446+08:00",
   "WebId": "5dd2a16d-a9fb-4ff6-be99-2db39f5446d0"
 }

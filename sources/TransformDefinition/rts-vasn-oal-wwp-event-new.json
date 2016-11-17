@@ -277,15 +277,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsVasn_oal_wwp_event_new",
+  "Name": "RtsVasn_oal_wwp_event_new_log",
   "Description": "#5070",
   "InputTypeName": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new_log, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-vasn-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:43:35.4454143+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T10:47:02.2252724+08:00",
+  "ChangedDate": "2016-11-17T10:42:29.7223609+08:00",
   "WebId": "3d231693-c862-4a70-ba61-8605ef9497fe"
 }

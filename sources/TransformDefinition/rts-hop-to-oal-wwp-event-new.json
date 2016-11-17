@@ -375,15 +375,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsHopToOalWwpEventNew",
+  "Name": "RtsHopToOalWwpEventNewLog",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Hops.Domain.Hop, PosEntt.Hop",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new_log, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-hop-to-oal-wwp-event-new",
   "CreatedDate": "2016-11-11T16:57:09.8452782+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T17:01:18.2367113+08:00",
+  "ChangedDate": "2016-11-17T10:50:16.2529156+08:00",
   "WebId": "07acd8ec-a2fa-4b4a-9192-249a4fb7b484"
 }

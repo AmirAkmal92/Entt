@@ -357,15 +357,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsPickup_oal_wwp_event_new",
+  "Name": "RtsPickup_oal_wwp_event_new_log",
   "Description": "#5052",
   "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new_log, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-pickup-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-15T16:07:00.6423109+08:00",
+  "ChangedDate": "2016-11-17T10:39:18.4491801+08:00",
   "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
 }

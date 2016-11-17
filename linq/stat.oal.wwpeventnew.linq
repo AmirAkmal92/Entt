@@ -2,7 +2,7 @@
   <Reference Relative="..\subscribers\domain.sph.dll">D:\project\work\entt.rts\subscribers\domain.sph.dll</Reference>
   <Reference Relative="..\output\PosEntt.Oal.dll">D:\project\work\entt.rts\output\PosEntt.Oal.dll</Reference>
   <Reference Relative="..\output\PosEntt.ReceivePort.RtsStat.dll">D:\project\work\entt.rts\output\PosEntt.ReceivePort.RtsStat.dll</Reference>
-  <Reference Relative="..\output\PosEntt.RtsStat_oal_wwp_event_new.dll">D:\project\work\entt.rts\output\PosEntt.RtsStat_oal_wwp_event_new.dll</Reference>
+  <Reference Relative="..\output\PosEntt.RtsStat_oal_wwp_event_new_log.dll">D:\project\work\entt.rts\output\PosEntt.RtsStat_oal_wwp_event_new_log.dll</Reference>
   <Reference Relative="..\output\PosEntt.Stat.dll">D:\project\work\entt.rts\output\PosEntt.Stat.dll</Reference>
   <Namespace>Bespoke.Sph.Domain</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
@@ -17,7 +17,7 @@ var entities = from i in rawList
 			   where null != i
 			   let json = i.ToJson()
 			   select json.DeserializeFromJson<Bespoke.PosEntt.Stats.Domain.Stat>();
-var map = new Bespoke.PosEntt.Integrations.Transforms.RtsStatOalWwpEventNew();
+var map = new Bespoke.PosEntt.Integrations.Transforms.RtsStatOalWwpEventNewLog();
 var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);

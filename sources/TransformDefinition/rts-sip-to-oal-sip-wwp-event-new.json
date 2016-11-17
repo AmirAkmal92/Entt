@@ -375,15 +375,15 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsSipToOalSipWwpEventNew",
+  "Name": "RtsSipToOalSipWwpEventNewLog",
   "Description": "",
   "InputTypeName": "Bespoke.PosEntt.Sips.Domain.Sip, PosEntt.Sip",
-  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new, PosEntt.Oal",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_wwp_event_new_log, PosEntt.Oal",
   "IsPublished": true,
   "CreatedBy": "admin",
   "Id": "rts-sip-to-oal-sip-wwp-event-new",
   "CreatedDate": "2016-11-11T16:29:47.9677632+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T16:36:57.3396569+08:00",
+  "ChangedDate": "2016-11-17T10:45:33.0016601+08:00",
   "WebId": "da3c2fca-cea0-449d-8ebf-918402f149ce"
 }

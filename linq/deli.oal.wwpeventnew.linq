@@ -3,7 +3,7 @@
   <Reference Relative="..\output\PosEntt.Delivery.dll">D:\project\work\entt.rts\output\PosEntt.Delivery.dll</Reference>
   <Reference Relative="..\output\PosEntt.Oal.dll">D:\project\work\entt.rts\output\PosEntt.Oal.dll</Reference>
   <Reference Relative="..\output\PosEntt.ReceivePort.RtsDelivey.dll">D:\project\work\entt.rts\output\PosEntt.ReceivePort.RtsDelivey.dll</Reference>
-  <Reference Relative="..\output\PosEntt.RtsDelivery_oal_wwp_event_new.dll">D:\project\work\entt.rts\output\PosEntt.RtsDelivery_oal_wwp_event_new.dll</Reference>
+  <Reference Relative="..\output\PosEntt.RtsDelivery_oal_wwp_event_new_log.dll">D:\project\work\entt.rts\output\PosEntt.RtsDelivery_oal_wwp_event_new_log.dll</Reference>
   <Namespace>Bespoke.Sph.Domain</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
 </Query>
@@ -16,7 +16,7 @@ var entities = from i in rawList
 			   where null != i
 			   let json = i.ToJson()
 			   select json.DeserializeFromJson<Bespoke.PosEntt.Deliveries.Domain.Delivery>();
-var map = new Bespoke.PosEntt.Integrations.Transforms.RtsDeliveryOalWwpEventNew();
+var map = new Bespoke.PosEntt.Integrations.Transforms.RtsDeliveryOalWwpEventNewLog();
 var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);
