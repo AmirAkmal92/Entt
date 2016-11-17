@@ -1,0 +1,122 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "21834c4f-e67e-4dba-b372-bb85e346a65c"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "MY",
+          "Name": "MY",
+          "Note": "",
+          "WebId": "d1e4178d-d3da-4959-a90d-8b774eac892b"
+        },
+        "Operator": "NotEndsWith",
+        "WebId": "ee92c2a4-b1e3-4624-eb31-e47582488bb8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "fff11b482e",
+          "Script": "item.ConsignmentNo.Length",
+          "Name": "ItemLength",
+          "Note": "",
+          "WebId": "f11b482e-1bbf-4d9f-a924-9fdf0a5974a0"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 13,
+          "Name": "13",
+          "Note": "",
+          "WebId": "14e6adf3-2e82-4345-9567-4491a159e332"
+        },
+        "Operator": "Eq",
+        "WebId": "c386b29e-c4a3-45c1-d486-e2ce3439d3f9"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "rts-vasn-to-oal-ips-import",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "ips_import",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToOalVasnIpsImport",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "3e6fbbc6-a2d4-494b-bd1a-c02529cda5ba"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Oal",
+        "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsVasnToOal_ips_import",
+        "FullName": "PosEntt.RtsVasnToOal_ips_import, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsVasnToOal_ips_import.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsVasnToOalIpsImport",
+  "Entity": "Vasn",
+  "TypeOf": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "VasnRtsVasnToOalIpsImportTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "vasn-rts-vasn-to-oal-ips-import",
+  "CreatedDate": "2016-11-17T12:37:27.7383523+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-17T12:45:04.2326021+08:00",
+  "WebId": "025c8e0c-6d5e-40c9-a827-af758e95453c"
+}
