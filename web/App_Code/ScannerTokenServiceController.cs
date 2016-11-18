@@ -22,8 +22,10 @@ public class ScannerTokenServiceController : BaseApiController
         if (model.grant_type == "admin" && !User.IsInRole("administrators"))
             return Json(new { success = false, status = 403, message = "You are not in administrator role" });
 
-        if (model.grant_type == "local_network" && this.GetClientIp().StartsWith("1"))
-            return Json(new { success = false, status = 403, message = "local_network request must be done within specified IP address range" });
+        var ip = this.GetClientIp();
+
+        if (model.grant_type == "local_network" && !ip.StartsWith("1"))
+            return Json(new { success = false, status = 403, message = "local_network request must be done within specified IP address range " + ip});
 
         model.expiry = DateTime.Today.AddMonths(1);// give it 1 month validity
         var tokenService = ObjectBuilder.GetObject<ITokenService>();
