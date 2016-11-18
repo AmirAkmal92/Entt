@@ -1,9 +1,9 @@
 define(["services/datacontext", "services/logger", "plugins/router", objectbuilders.system, objectbuilders.app], function(context, logger, router, system, app){
-    var activate = function(type){
-            
+    var isBusy = ko.observable(false),
+        rtsType = ko.observable(),
+        activate = function(type){
+            rtsType(type);
             return true;
-
-
         },
         attached  = function(view){
         
@@ -11,7 +11,8 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
 
     return {
         activate : activate,
-        attached : attached
+        attached : attached,
+        isBusy : isBusy
     };
 
 });
