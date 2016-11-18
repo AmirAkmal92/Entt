@@ -30,3 +30,5 @@ version.json
 *.suo
 /sources/subscriber.rts.logs/bin/Debug
 /sources/subscriber.rts.logs/obj/Debug
+/sources/rts.pickup.babies/bin/Debug
+/sources/rts.pickup.babies/obj/Debug

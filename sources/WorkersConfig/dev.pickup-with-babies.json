@@ -1,0 +1,21 @@
+{
+  "name": "dev",
+  "description": "Run the pickup trigger splitting the baby con notes",
+  "isEnabled": true,
+  "environment": "dev",
+  "subscriberConfigs": [
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-oal-pickup-with-babies",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupOalPickupWithBabiesTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-oal-pickup-with-babies"
+    }],
+  "createdBy": "erymuzuan",
+  "id": "dev",
+  "createdDate": "2016-10-07T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-10-07T00:00:00+08:00",
+  "webId": "dev"
+}
