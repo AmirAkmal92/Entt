@@ -28,7 +28,7 @@ namespace Bespoke.PosEntt.CustomActions
             var map = new Integrations.Transforms.RtsPickupToOalPickupEventNew();
             var rows = new List<Adapters.Oal.dbo_pickup_event_new>();
             var parentRow = await map.TransformAsync(pickup);
-            rows.Add(parentRow);
+            //rows.Add(parentRow);
 
             var babies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var babyConsignmentNo in babies)
