@@ -34,6 +34,9 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var babyConsignmentNo in babies)
             {
                 var childRow = parentRow.Clone();
+                var ticks = System.DateTime.Now.Ticks;
+                var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+                childRow.id = id.Substring(0, 34);
                 childRow.consignment_no = babyConsignmentNo;
                 childRow.item_type_code = (babyConsignmentNo.StartsWith("CG") && babyConsignmentNo.EndsWith("MY") &&
                                            babyConsignmentNo.Length == 13)
@@ -55,6 +58,8 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+
+            //var consignmentAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
         }
 
         public override string GetEditorViewModel()
