@@ -124,7 +124,7 @@
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "CourierId",
         "TypeName": "",
-        "Destination": "courier_id",
+        "Destination": "_courier_id",
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "cab388db-b651-4a4a-8c8f-024e2079f1c8"

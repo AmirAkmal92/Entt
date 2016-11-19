@@ -43,6 +43,9 @@
     <Reference Include="PosEntt.Pickup">
       <HintPath>..\..\output\PosEntt.Pickup.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsPickupToOalConsigmentInitial">
+      <HintPath>..\..\output\PosEntt.RtsPickupToOalConsigmentInitial.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsPickupToOalPickupEventNew">
       <HintPath>..\..\output\PosEntt.RtsPickupToOalPickupEventNew.dll</HintPath>
     </Reference>

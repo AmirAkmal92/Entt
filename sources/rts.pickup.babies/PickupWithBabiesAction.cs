@@ -25,9 +25,9 @@ namespace Bespoke.PosEntt.CustomActions
 
         public async Task RunAsync(Pickup pickup)
         {
-            var map = new Integrations.Transforms.RtsPickupToOalPickupEventNew();
-            var rows = new List<Adapters.Oal.dbo_pickup_event_new>();
-            var parentRow = await map.TransformAsync(pickup);
+            var eventNewMap = new Integrations.Transforms.RtsPickupToOalPickupEventNew();
+            var pickupEventNewRows = new List<Adapters.Oal.dbo_pickup_event_new>();
+            var parentRow = await eventNewMap.TransformAsync(pickup);
             //rows.Add(parentRow);
 
             var babies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -44,22 +44,51 @@ namespace Bespoke.PosEntt.CustomActions
                     : "01";
                 childRow.data_flag = "1";
 
-                rows.Add(childRow);
+                pickupEventNewRows.Add(childRow);
             }
 
-            var adapter = new Adapters.Oal.dbo_pickup_event_newAdapter();
-            foreach (var item in rows)
+            var eventNewAdapter = new Adapters.Oal.dbo_pickup_event_newAdapter();
+            foreach (var item in pickupEventNewRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => adapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => eventNewAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
 
-            //var consignmentAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            //consigment initial parts
+            var consignmentInitialMap = new Integrations.Transforms.RtsPickupToOalConsigmentInitial();
+            var consignmentInitialRows = new List<Adapters.Oal.dbo_consignment_initial>();
+            var consignmentParentRow = await consignmentInitialMap.TransformAsync(pickup);
+            consignmentInitialRows.Add(consignmentParentRow);
+
+            foreach (var babyConsignmentNo in babies)
+            {
+                var consignmentChildRow = consignmentParentRow.Clone();
+                var ticks = System.DateTime.Now.Ticks;
+                var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+                consignmentChildRow.id = id.Substring(0, 20);
+                consignmentChildRow.baby_item = consignmentParentRow.id;
+                consignmentChildRow.parent = consignmentParentRow.id;
+                consignmentChildRow.is_parent = 0;
+                consignmentInitialRows.Add(consignmentChildRow);
+
+            }
+
+            var consignmentAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            foreach (var item in consignmentInitialRows)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => consignmentAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
         }
 
         public override string GetEditorViewModel()
