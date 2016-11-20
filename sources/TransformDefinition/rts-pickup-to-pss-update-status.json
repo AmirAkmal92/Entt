@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PickupNo",
+        "TypeName": "",
+        "Destination": "PickupNumber",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fc0370e3-fd6b-4672-d466-2e14622ae5d8"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPickupToPssUpdateStatus",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Pss.UpdatePickupStatusRequest, PosEntt.Pss",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-pickup-to-pss-update-status",
+  "CreatedDate": "2016-11-21T07:40:43.8860853+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-21T07:40:59.9046076+08:00",
+  "WebId": "6d041c6e-90f8-41db-b0b9-2556c95bd2c9"
+}
