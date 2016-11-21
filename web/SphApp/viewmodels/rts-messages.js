@@ -3,7 +3,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         list = ko.observableArray(),
         queueOptions = ko.observableArray(),
         selectedItems = ko.observableArray(),
-        queue = ko.observable(),
+        queues = ko.observableArray(),
         rtsType = ko.observable(),
         total = ko.observable(),
         from = ko.observable(0),
@@ -87,12 +87,13 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                    }
                );
         },
-        requeue = function() {
-            return context.post(ko.toJSON(query), `api/rts-dashboard/${rtsType()}`)
+        requeue = function () {
+            const qs = queues().map(x => ko.unwrap(x.Id)).join(","),
+                items = selectedItems().map(x => x._source);
+            return context.post(ko.toJSON(items), `api/rts-dashboard/${rtsType()}/requeue/${qs}`)
                     .then(function (result) {
-                        total(result.hits.total);
-                        list(result.hits.hits);
-                    });
+                    console.log(result);
+                });
         };
 
     return {
@@ -103,7 +104,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         selectedItems: selectedItems,
         queueOptions: queueOptions,
         requeue: requeue,
-        queue: queue,
+        queues: queues,
         dateFrom: dateFrom,
         to: to,
         isBusy: isBusy
