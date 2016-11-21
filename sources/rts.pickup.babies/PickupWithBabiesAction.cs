@@ -18,7 +18,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var pickup = context.Item as Pickup;
             if (null == pickup) return;
-
+            if (pickup.TotalBaby <= 0) return;
             await RunAsync(pickup);
         }
 

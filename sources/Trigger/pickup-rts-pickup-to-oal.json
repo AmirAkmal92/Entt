@@ -2,7 +2,31 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "TotalBaby",
+          "Name": "TotalBaby",
+          "Note": "",
+          "WebId": "c84b8b84-ea4c-49e5-8d5e-48104ce975f9"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "669060ff-2524-4460-ce10-a2bcbf35ffe6"
+        },
+        "Operator": "Le",
+        "WebId": "4a39510e-a29b-4b1f-983a-4ba999073233"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -19,7 +43,7 @@
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "ToPickupOalConsignmentInitial",
-        "IsActive": false,
+        "IsActive": true,
         "TriggerId": null,
         "Note": null,
         "WebId": "5fdce19b-9bb4-4ff7-f64d-32a99979b6ca"
@@ -36,7 +60,7 @@
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "ToOalPickupEventNew",
-        "IsActive": false,
+        "IsActive": true,
         "TriggerId": null,
         "Note": null,
         "WebId": "4ea1775a-83de-4c07-ac3e-552020cfaa95"
@@ -128,6 +152,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T18:10:48.0216667+08:00",
+  "ChangedDate": "2016-11-21T19:17:54.2616935+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }
