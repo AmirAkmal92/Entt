@@ -18,33 +18,36 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var pickup = context.Item as Pickup;
             if (null == pickup) return;
-            if (pickup.TotalBaby <= 0) return;
 
             await RunAsync(pickup);
         }
 
         public async Task RunAsync(Pickup pickup)
         {
+            //pickup_event_new
             var eventNewMap = new Integrations.Transforms.RtsPickupToOalPickupEventNew();
             var pickupEventNewRows = new List<Adapters.Oal.dbo_pickup_event_new>();
             var parentRow = await eventNewMap.TransformAsync(pickup);
-            //rows.Add(parentRow);
+            pickupEventNewRows.Add(parentRow);
 
-            var babies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var babyConsignmentNo in babies)
+            if (null != pickup.BabyConsignment)
             {
-                var childRow = parentRow.Clone();
-                var ticks = System.DateTime.Now.Ticks;
-                var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
-                childRow.id = id.Substring(0, 34);
-                childRow.consignment_no = babyConsignmentNo;
-                childRow.item_type_code = (babyConsignmentNo.StartsWith("CG") && babyConsignmentNo.EndsWith("MY") &&
-                                           babyConsignmentNo.Length == 13)
-                    ? "02"
-                    : "01";
-                childRow.data_flag = "1";
-
-                pickupEventNewRows.Add(childRow);
+                var babies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var babyConsignmentNo in babies)
+                {
+                    var childRow = parentRow.Clone();
+                    var ticks = System.DateTime.Now.Ticks;
+                    var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+                    childRow.id = id.Substring(0, 34);
+                    childRow.consignment_no = babyConsignmentNo;
+                    childRow.item_type_code = (babyConsignmentNo.StartsWith("CG") && babyConsignmentNo.EndsWith("MY") &&
+                                               babyConsignmentNo.Length == 13)
+                        ? "02"
+                        : "01";
+                    childRow.data_flag = "1";
+                    childRow.parent_no = parentRow.consignment_no;
+                    pickupEventNewRows.Add(childRow);
+                }
             }
 
             var eventNewAdapter = new Adapters.Oal.dbo_pickup_event_newAdapter();
@@ -59,23 +62,28 @@ namespace Bespoke.PosEntt.CustomActions
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
 
-            //consigment initial parts
+            //consigment_initial
             var consignmentInitialMap = new Integrations.Transforms.RtsPickupToOalConsigmentInitial();
             var consignmentInitialRows = new List<Adapters.Oal.dbo_consignment_initial>();
             var consignmentParentRow = await consignmentInitialMap.TransformAsync(pickup);
             consignmentInitialRows.Add(consignmentParentRow);
 
-            foreach (var babyConsignmentNo in babies)
+            if (null != pickup.BabyConsignment)
             {
-                var consignmentChildRow = consignmentParentRow.Clone();
-                var ticks = System.DateTime.Now.Ticks;
-                var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
-                consignmentChildRow.id = id.Substring(0, 20);
-                consignmentChildRow.baby_item = consignmentParentRow.id;
-                consignmentChildRow.parent = consignmentParentRow.id;
-                consignmentChildRow.is_parent = 0;
-                consignmentInitialRows.Add(consignmentChildRow);
+                var consignmentBabies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var babyConsignmentNo in consignmentBabies)
+                {
+                    var consignmentChildRow = consignmentParentRow.Clone();
+                    var ticks = System.DateTime.Now.Ticks;
+                    var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+                    consignmentChildRow.id = id.Substring(0, 20);
+                    consignmentChildRow.baby_item = consignmentParentRow.id;
+                    consignmentChildRow.parent = consignmentParentRow.id;
+                    consignmentChildRow.is_parent = 0;
+                    consignmentChildRow.number = babyConsignmentNo;
+                    consignmentInitialRows.Add(consignmentChildRow);
 
+                }
             }
 
             var consignmentAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
