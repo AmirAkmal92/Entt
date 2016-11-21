@@ -1,29 +1,70 @@
 <h1>Search messages</h1>
+
+<div class="row">
+    <form class="form-inline">
+        <div class="date-range pull-right" style="margin-right: 30px">
+            <i class="fa fa-calendar fa-lg"></i>
+            <span data-bind="date: { value : from, format :'MMMM DD, YYYY', inputFormat :'YYYY-MM-DD'}">
+            </span> -
+            <span data-bind="date: { value:to, format :'MMMM DD, YYYY', inputFormat :'YYYY-MM-DD'}"></span>
+            <b class="caret"></b>
+        </div>
+    </form>
+</div>
 <div class="row">
     <div class="col-md-8">
-        <table class="table table-striped" data-bind2="queryPaging :{ query: query, map : map, list:list}">
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Soc Code</th>
-                    <th>Parent Code</th>
+                    <th></th>
+                    <th>Created date</th>
+                    <!-- ko if : $root.type() === 'Stat' -->
+                    <th>CourierId</th>
+                    <th>LocationId</th>
+                    <th>BeatNo</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>ConsignmentNo</th>
+                    <th>StatusCode</th>
+                    <th>Comment</th>
+                    <th>ScannerId</th>
+                    <!-- /ko -->
                 </tr>
             </thead>
-            <tbody data-bind2="foreach :list">
+            <tbody data-bind="foreach :list">
                 <tr data-bind2="">
                     <td>
-                        <a data-bind2="attr : {href:'#product-details' + '/' + Id, title:'Code' }">
-                            <i class="fa fa-edit"></i>
-                                                        <span data-bind2="text:Code"></span>
-                        </a>
+                        <input type="checkbox" data-bind="checked: $root.selectedItems, value : $data" />
                     </td>
-                    <td data-bind2="text:Name"></td>
-                    <td data-bind2="text:SocCode"></td>
-                    <td data-bind3="text:ParentCode"></td>
+                    <td data-bind="date: {value:_source.CreatedDate, format: 'YYYY-MM-DD HH:mm:ss'}"></td>
+                    <!-- ko if :  $root.type() === 'Stat' -->
+                    <td data-bind="text:_source.CourierId"></td>
+                    <td data-bind="text:_source.LocationId"></td>
+                    <td data-bind="text:_source.BeatNo"></td>
+                    <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
+                    <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}"></td>
+                    <td data-bind="text:_source.ConsignmentNo"></td>
+                    <td data-bind="text:_source.StatusCode"></td>
+                    <td data-bind="text:_source.Comment"></td>
+                    <td data-bind="text:_source.ScannerId"></td>
+                    <!-- /ko -->
                 </tr>
             </tbody>
         </table>
-        <img src="/Images/spinner-md.gif" alt="loading" class="absolute-center" data-bind2="visible: isBusy" />
+        <img src="/images/spinner-md.gif" alt="loading" class="absolute-center" data-bind="visible: isBusy" />
     </div>
+</div>
+<div class="row">
+    <div id="messages-pager"></div>
+</div>
+
+<div class="row">
+    <form class="form-inline">
+        <label for="queues-options">Queue name</label>
+        <select class="form-control" id="queues-options" data-bind="value : queue, options : queueOptions, optionsValue : 'Id', optionsText : 'Name', optionsCaption :'[Select queue]'"></select>
+        <button class="btn btn-success" data-bind="enable : selectedItems().length > 0  && ko.unwrap(queue), command : requeue">
+            <i class="fa fa-send-o"></i>
+            Requeue to
+        </button>
+    </form>
 </div>
