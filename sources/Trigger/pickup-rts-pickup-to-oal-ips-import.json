@@ -25,6 +25,27 @@
         },
         "Operator": "Neq",
         "WebId": "2d052d07-8113-4d24-8b0a-e0e74bfcc2f6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ffa97f1bc3",
+          "Script": "item.Country.Length",
+          "Name": "CheckCountryLength",
+          "Note": "",
+          "WebId": "a97f1bc3-0ac6-4470-d69a-fd794745b255"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "490435d2-d028-4aec-ec8f-b7d003a71cda"
+        },
+        "Operator": "Gt",
+        "WebId": "69d0f607-d10f-44ec-8ff8-39a186b291c1"
       }
     ]
   },
@@ -96,6 +117,6 @@
   "Id": "pickup-rts-pickup-to-oal-ips-import",
   "CreatedDate": "2016-11-16T07:30:31.4853265+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-16T07:34:54.5508133+08:00",
+  "ChangedDate": "2016-11-21T16:02:25.0241077+08:00",
   "WebId": "453029c7-32e7-4939-8848-a7e08b9f966d"
 }
