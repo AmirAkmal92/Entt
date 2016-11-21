@@ -204,15 +204,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "d293758f-6042-4690-b51d-181d71c85eb7",
-        "Destination": "parent",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "1e22efb0-4d0c-4b73-cfb7-ba052a9905dc"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "1efda36a-c3e9-4bca-a26b-81f79effe478",
         "Destination": "is_parent",
         "SourceTypeName": "",
@@ -543,21 +534,6 @@
         "X": 668.0,
         "Y": 920.0,
         "WebId": "72c2732d-d87b-48be-c2d9-023f4e491f9e"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return null != item.BabyConsignment && item.BabyConsignment.Length > 0 ? item.ConsignmentNo : null;",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "SetParent",
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 673.0,
-        "Y": 174.0,
-        "WebId": "d293758f-6042-4690-b51d-181d71c85eb7"
       },
       {
         "$type": "Bespoke.Sph.Domain.NowFunctoid, domain.sph",
@@ -1146,6 +1122,6 @@
   "Id": "rts-pickup-to-oal-consigment-initial",
   "CreatedDate": "2016-11-11T16:46:43.6484388+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-16T07:07:58.2879656+08:00",
+  "ChangedDate": "2016-11-21T16:09:13.9930153+08:00",
   "WebId": "7c98b8ee-52ba-4e13-82c6-b0f505b3f4f4"
 }
