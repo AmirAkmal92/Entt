@@ -28982,7 +28982,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.DateTime, mscorlib",
@@ -29035,7 +29035,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.DateTime, mscorlib",
@@ -29088,7 +29088,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.String, mscorlib",
@@ -29130,7 +29130,7 @@
               "IsComplex": false,
               "MimeType": null,
               "Ignore": false,
-              "DisplayName": "dt_created_oal_date_field",
+              "DisplayName": "dtcreatedoaldatefield",
               "Order": 18,
               "LookupColumnTable": {
                 "$type": "Bespoke.Sph.Domain.Api.LookupColumnTable, domain.sph",
@@ -29141,7 +29141,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.DateTime, mscorlib",
@@ -29699,6 +29699,6 @@
   "Id": "oal",
   "CreatedDate": "2016-10-12T15:16:51.3557981+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:27:25.427603+08:00",
+  "ChangedDate": "2016-11-21T19:57:02.6732181+08:00",
   "WebId": "fac085be-f03e-491c-845b-851cf3f703a5"
 }

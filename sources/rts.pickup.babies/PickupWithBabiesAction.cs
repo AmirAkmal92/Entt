@@ -97,6 +97,38 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+
+            //wwp_event_new
+            var wwpEventNewLogMap = new Integrations.Transforms.RtsPickupOalWwpEventNewLog();
+            var wwpEventNewLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
+            var wwpEventNewLogParentRow = await wwpEventNewLogMap.TransformAsync(pickup);
+            wwpEventNewLogRows.Add(wwpEventNewLogParentRow);
+
+            if (null != pickup.BabyConsignment)
+            {
+                var wwpLogBabies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var babyConsignmentNo in wwpLogBabies)
+                {
+                    var wwpLogChildRow = wwpEventNewLogParentRow.Clone();
+                    var ticks = System.DateTime.Now.Ticks;
+                    var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+                    wwpLogChildRow.id = id.Substring(0, 34);
+                    wwpLogChildRow.consignment_note_number = babyConsignmentNo;
+                    wwpEventNewLogRows.Add(wwpLogChildRow);
+                }
+            }
+
+            var wwpLogAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
+            foreach (var item in wwpEventNewLogRows)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => wwpLogAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
         }
 
         public override string GetEditorViewModel()
