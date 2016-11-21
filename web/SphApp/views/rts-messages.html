@@ -5,9 +5,16 @@
 </h1>
 
 <div class="row">
+    <form class="form-inline">
+        <input type="search" class="form-control col-lg-8" data-bind="value:searchText, tooltip :'You can use Lucene query string search e.g. FieldName:value, AND OR, fuzzy etc'" style="width: 600px" placeholder="Search..." />
+        <button class="btn btn-default" data-bind="command : search">
+            <i class="fa fa-search"></i>
+        </button>
+    </form>
+</div>
+
+<div class="row">
     <div class="col-lg-10 col-md-12 col-sm-12">
-
-
         <div class="row">
             <form class="form-inline">
                 <div class="date-range pull-right" style="margin-right: 30px">
@@ -36,6 +43,8 @@
                         <th>Comment</th>
                         <th>ScannerId</th>
                         <!-- /ko -->
+                        
+
                     </tr>
                 </thead>
                 <tbody data-bind="foreach :list">
@@ -67,7 +76,7 @@
     </div>
     <div class="col-lg-2 col-md-12 col-sm-12">
         <div class="row">
-            <h3 class="badge badge-important">Tasks</h3>
+            <h3><span class="label label-primary">Tasks</span></h3>
         </div>
         <form class="form-horizontal">
 

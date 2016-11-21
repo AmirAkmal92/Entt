@@ -5,6 +5,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         selectedItems = ko.observableArray(),
         queues = ko.observableArray(),
         rtsType = ko.observable(),
+        searchText = ko.observable(),
         total = ko.observable(),
         from = ko.observable(0),
         size = ko.observable(20),
@@ -12,11 +13,17 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         to = ko.observable(moment().endOf("day").format()),
         query = {
             "query": {
-                "range": {
-                    "CreatedDate": {
-                        "from": dateFrom,
-                        "to": to
-                    }
+                "bool": {
+                    "must": [
+                       {
+                           "range": {
+                               "CreatedDate": {
+                                   "from": dateFrom,
+                                   "to": to
+                               }
+                           }
+                       }
+                    ]
                 }
             },
             "from": from,
@@ -37,7 +44,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     list(result.hits.hits);
 
                     return context.loadAsync("Trigger", `Entity eq '${type}'`);
-                }).then(function(lo) {
+                }).then(function (lo) {
                     queueOptions(lo.itemCollection);
                 });
         },
@@ -86,13 +93,30 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                           });
                    }
                );
+
         },
         requeue = function () {
             const qs = queues().map(x => ko.unwrap(x.Id)).join(","),
                 items = selectedItems().map(x => x._source);
             return context.post(ko.toJSON(items), `api/rts-dashboard/${rtsType()}/requeue/${qs}`)
                     .then(function (result) {
-                    console.log(result);
+                        console.log(result);
+                    });
+        },
+        search = function () {
+            const q = ko.toJS(query);
+            q.query.bool.must.push({
+                "query_string": {
+                    "default_field": "_all",
+                    "query": searchText()
+                }
+            });
+            isBusy(true);
+            return context.post(ko.toJSON(q), `api/rts-dashboard/${rtsType().toLowerCase()}`)
+                   .then(function (result) {
+                       total(result.hits.total);
+                       list(result.hits.hits);
+                    isBusy(false);
                 });
         };
 
@@ -106,6 +130,8 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         requeue: requeue,
         queues: queues,
         dateFrom: dateFrom,
+        searchText: searchText,
+        search: search,
         to: to,
         isBusy: isBusy
     };
