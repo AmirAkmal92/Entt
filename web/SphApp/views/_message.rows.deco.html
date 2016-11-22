@@ -4,6 +4,14 @@
         <tr>
             <th></th>
             <th>Created date</th>
+            <th>CourierId</th>
+            <th>LocationId</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>ConsoleTag</th>
+            <th>AllConsignmentnNotes</th>
+            <th>TotalConsignment</th>
+            <th>ScannerId</th>
         </tr>
     </thead>
     <tbody data-bind="foreach :list">
@@ -12,12 +20,14 @@
                 <input type="checkbox" data-bind="checked: $root.selectedItems, value : $data" />
             </td>
             <td data-bind="date: {value:_source.CreatedDate, format: 'YYYY-MM-DD HH:mm:ss'}"></td>
-
-
+            <td data-bind="text:_source.CourierId"></td>
+            <td data-bind="text:_source.LocationId"></td>
+            <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
+            <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}"></td>
+            <td data-bind="text:_source.ConsoleTag"></td>
+            <td data-bind="text:_source.AllConsignmentnNotes.replace(/,/g, ', ')"></td>
+            <td data-bind="text:_source.TotalConsignment"></td>
+            <td data-bind="text:_source.ScannerId"></td>
         </tr>
     </tbody>
 </table>
-
-<div class="alert alert-danger">
-    Complete the column list, please see _message.rows.stat.html for sample
-</div>
