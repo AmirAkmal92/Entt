@@ -2,7 +2,31 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "TotalConsignment",
+          "Name": "TotalConsignment",
+          "Note": "",
+          "WebId": "a87302e9-b29c-4c56-c1d8-e9fb2c8a987a"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "56a75f7e-efd0-4eac-8e70-dd5a18583612"
+        },
+        "Operator": "Gt",
+        "WebId": "4ab90dee-39b6-47e6-e5cf-d849f9e7077e"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -13,6 +37,7 @@
         "Adapter": "Oal",
         "Operation": null,
         "Table": "console_details",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
@@ -29,12 +54,13 @@
         "Adapter": "Oal",
         "Operation": null,
         "Table": "delivery_console_event_new",
+        "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "DeliveryConsoleEventNew",
-        "IsActive": true,
+        "IsActive": false,
         "TriggerId": null,
         "Note": null,
         "WebId": "7e803395-0fe5-4d23-9328-8cfed441ccfa"
@@ -98,6 +124,6 @@
   "Id": "deco-deco-to-oal",
   "CreatedDate": "2016-10-23T08:12:34.3670003+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-23T08:16:35.1114513+08:00",
+  "ChangedDate": "2016-11-22T23:40:27.2016682+08:00",
   "WebId": "1aae2427-315e-47aa-b91a-25195a59d578"
 }
