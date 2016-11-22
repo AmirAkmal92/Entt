@@ -353,6 +353,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "3f84cd9d-f9db-4d18-b2e1-dd3b9e826cb8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Country",
+        "TypeName": "",
+        "Destination": "consignee_address_country",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7fedf124-aa96-4b24-e457-cd35d0cb4ff6"
       }
     ]
   },
@@ -1122,6 +1131,6 @@
   "Id": "rts-pickup-to-oal-consigment-initial",
   "CreatedDate": "2016-11-11T16:46:43.6484388+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T16:09:13.9930153+08:00",
+  "ChangedDate": "2016-11-22T22:35:16.5852629+08:00",
   "WebId": "7c98b8ee-52ba-4e13-82c6-b0f505b3f4f4"
 }
