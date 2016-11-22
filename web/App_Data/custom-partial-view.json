@@ -26,5 +26,103 @@
     "useViewModel": true,
     "jsDiff": null,
     "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.stat",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.pick",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.comm",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.deco",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.delivery",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.hop",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.hip",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.miss",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.norm",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.pickup",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.reve",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.sip",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.sop",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
+  },
+  {
+    "name": "_message.rows.vasn",
+    "originalName": null,
+    "useViewModel": false,
+    "jsDiff": null,
+    "htmlDiff": null
   }
 ]

@@ -1,0 +1,36 @@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Created date</th>
+            <th>CourierId</th>
+            <th>LocationId</th>
+            <th>BeatNo</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>ConsignmentNo</th>
+            <th>StatusCode</th>
+            <th>Comment</th>
+            <th>ScannerId</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach :list">
+        <tr data-bind2="">
+            <td>
+                <input type="checkbox" data-bind="checked: $root.selectedItems, value : $data" />
+            </td>
+            <td data-bind="date: {value:_source.CreatedDate, format: 'YYYY-MM-DD HH:mm:ss'}"></td>
+
+            <td data-bind="text:_source.CourierId"></td>
+            <td data-bind="text:_source.LocationId"></td>
+            <td data-bind="text:_source.BeatNo"></td>
+            <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
+            <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}"></td>
+            <td data-bind="text:_source.ConsignmentNo"></td>
+            <td data-bind="text:_source.StatusCode"></td>
+            <td data-bind="text:_source.Comment"></td>
+            <td data-bind="text:_source.ScannerId"></td>
+        </tr>
+    </tbody>
+</table>

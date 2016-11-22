@@ -38,6 +38,8 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         },
         activate = function (type) {
             rtsType(type);
+            selectedItems([]);
+            queues([]);
             return context.post(ko.toJSON(query), `api/rts-dashboard/${type.toLowerCase()}`)
                 .then(function (result) {
                     total(result.hits.total);
