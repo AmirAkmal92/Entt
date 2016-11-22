@@ -17,7 +17,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var norm = context.Item as Norms.Domain.Norm;
             if (null == norm) return;
-            if (norm.AllConsignmentNotes.Length <= 0) return;
+            if (norm.TotalConsignment <= 0) return;
             await RunAsync(norm);
         }
 
@@ -33,9 +33,10 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in itemList)
             {
                 var childItem = parentRow.Clone();
-                childItem.id = GenerateId(20);
+                childItem.id = GenerateId(34);
                 childItem.consignment_no = item;
                 childItem.item_type_code = IsConsole(item) ? "02" : "01";
+                childItem.data_flag = "1";
                 normEventRows.Add(childItem);
             }
 
@@ -129,7 +130,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
             <div class=""modal-header"">
                 <button type=""button"" class=""close"" data-dismiss=""modal"" data-bind=""click : cancelClick"">&times;</button>
-                <h3>RTS norm with babies</h3>
+                <h3>RTS norm with child items</h3>
             </div>
             <div class=""modal-body"" data-bind=""with: action"">
 
