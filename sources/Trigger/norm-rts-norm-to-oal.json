@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ffac7b515b",
+          "Script": "item.AllConsignmentNotes.Length",
+          "Name": "ItemLength",
+          "Note": "",
+          "WebId": "ac7b515b-6f8c-462c-8b35-d82a52ca9f38"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "7d6df55b-695e-4db6-c3c1-41b7a72e2c8a"
+        },
+        "Operator": "Gt",
+        "WebId": "31c91eb9-1f76-4bdf-99c8-96eb4072f019"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -100,6 +122,6 @@
   "Id": "norm-rts-norm-to-oal",
   "CreatedDate": "2016-10-20T09:15:59.496062+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-28T09:35:59.3467902+08:00",
+  "ChangedDate": "2016-11-22T22:21:37.4201445+08:00",
   "WebId": "d90f19f7-473d-45b3-9757-14ab9d538ea9"
 }

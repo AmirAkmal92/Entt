@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.PosEntt.CustomActions.NormWithBabiesAction, rts.pickup.babies",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "0d5e9c5e-d053-42f4-9e68-3fb8828465e3"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsNormToOalWithChild",
+  "Entity": "Norm",
+  "TypeOf": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "NormRtsNormToOalWithChildTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "norm-rts-norm-to-oal-with-child",
+  "CreatedDate": "2016-11-22T22:02:16.6112094+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-22T22:08:40.7874006+08:00",
+  "WebId": "54b232eb-5548-41f1-980b-dadbe152da86"
+}

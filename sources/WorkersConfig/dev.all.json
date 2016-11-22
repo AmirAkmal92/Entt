@@ -280,6 +280,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_norm-rts-norm-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"

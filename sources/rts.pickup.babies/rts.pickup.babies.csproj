@@ -37,11 +37,17 @@
       <HintPath>..\..\packages\Polly.4.2.4\lib\net45\Polly.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PosEntt.Norm">
+      <HintPath>..\..\output\PosEntt.Norm.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.Oal">
       <HintPath>..\..\output\PosEntt.Oal.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.Pickup">
       <HintPath>..\..\output\PosEntt.Pickup.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsNormTo_normal_console_event_new">
+      <HintPath>..\..\output\PosEntt.RtsNormTo_normal_console_event_new.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.RtsPickupToOalConsigmentInitial">
       <HintPath>..\..\output\PosEntt.RtsPickupToOalConsigmentInitial.dll</HintPath>
@@ -63,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NormWithBabiesAction.cs" />
     <Compile Include="PickupWithBabiesAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
