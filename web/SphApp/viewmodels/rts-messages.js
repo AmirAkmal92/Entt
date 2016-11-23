@@ -3,6 +3,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         list = ko.observableArray(),
         queueOptions = ko.observableArray(),
         selectedItems = ko.observableArray(),
+        members = ko.observableArray(),
         queues = ko.observableArray(),
         rtsType = ko.observable(),
         searchText = ko.observable(""),
@@ -48,6 +49,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     return context.loadAsync("Trigger", `Entity eq '${type}'`);
                 }).then(function (lo) {
                     queueOptions(lo.itemCollection);
+                    return context.loadOneAsync("EntityDefinition", `Id eq '${type.toLowerCase()}'`);
+                })
+                .then(function(ed){
+                    members(ed.MemberCollection());
                 });
         },
         attached = function (view) {
@@ -96,6 +101,13 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                    }
                );
 
+               $(view).on("click", "ul.dropdown-menu a", function () {
+                    var term = $(this).data("term") || ($(this).text() + ":"),
+                        text = searchText();
+                    searchText(text + " " + term);
+                    $("input#search-text").focus();
+                });
+
         },
         requeue = function () {
             const qs = queues().map(x => ko.unwrap(x.Id)).join(","),
@@ -128,6 +140,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         type: rtsType,
         list: list,
         selectedItems: selectedItems,
+        members : members,
         queueOptions: queueOptions,
         requeue: requeue,
         queues: queues,

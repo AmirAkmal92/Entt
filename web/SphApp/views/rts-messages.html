@@ -5,17 +5,33 @@
 </h1>
 <div class="row">
     <div class="col-lg-6">
-        <form class="form-inline">
+
+        <form id="search-form">
             <div class="input-group">
-                <input type="search" class="form-control" data-bind="value:searchText, valueUpdate : 'keyup', tooltip :'You can use Lucene query string search e.g. FieldName:value, AND OR, fuzzy etc'"
-                     placeholder="Search..." />
+                <div class="input-group-btn">
+                    <button type="button" style="height:28px" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-search"></i> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" >
+                                         
+                        <!-- ko foreach : members -->
+                        <li><a href="javascript:;" data-bind="text: Name">Details.Tags</a></li>
+                        <!-- /ko -->
+                        <li role="separator" class="divider"></li>
+                        <li><a href="javascript:;" data-term="AND">AND</a></li>
+                        <li><a href="javascript:;" data-term="OR">OR</a></li>
+                    </ul>
+                </div> 
+                <input type="search" id="search-text" class="form-control" data-bind="value:searchText, valueUpdate : 'keyup', tooltip :'You can use Lucene query string search e.g. FieldName:value, AND OR, fuzzy etc'" placeholder="Search..." />
                 <span class="input-group-btn">
                     <button class="btn btn-default" style="height:28px" data-bind="command : search, enable : searchText().length > 3">
-                        <i class="fa fa-search"></i>
+                        <i class="fa fa-circle-o-notch"></i>
                      </button>
                 </span>
             </div>
+
         </form>
+
     </div>
 </div>
 <div class="row">
