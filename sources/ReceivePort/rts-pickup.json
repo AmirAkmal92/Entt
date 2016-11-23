@@ -456,7 +456,7 @@
           "$values": []
         },
         "Name": "BabyWeigth",
-        "TypeName": "System.Decimal, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
@@ -476,7 +476,7 @@
           "$values": []
         },
         "Name": "BabyHeigth",
-        "TypeName": "System.Decimal, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
@@ -496,7 +496,7 @@
           "$values": []
         },
         "Name": "BabyWidth",
-        "TypeName": "System.Decimal, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
@@ -516,7 +516,7 @@
           "$values": []
         },
         "Name": "BabyLength",
-        "TypeName": "System.Decimal, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
@@ -774,6 +774,6 @@
   "Id": "rts-pickup",
   "CreatedDate": "2016-10-19T08:27:49.884808+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-15T16:04:41.6151987+08:00",
+  "ChangedDate": "2016-11-23T22:11:22.1308032+08:00",
   "WebId": "40d79a4f-82e7-4c1d-925a-c19132742ba7"
 }

@@ -40,6 +40,9 @@
     <Reference Include="PosEntt.Deco">
       <HintPath>..\..\output\PosEntt.Deco.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.Delivery">
+      <HintPath>..\..\output\PosEntt.Delivery.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.Hip">
       <HintPath>..\..\output\PosEntt.Hip.dll</HintPath>
     </Reference>
@@ -58,11 +61,23 @@
     <Reference Include="PosEntt.RtsDeco_Oal_delivery_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsDeco_Oal_delivery_console_event_new.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsDeliveryToOal_dbo_delivery_event_new">
+      <HintPath>..\..\output\PosEntt.RtsDeliveryToOal_dbo_delivery_event_new.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsDelivery_oal_wwp_event_new_log">
+      <HintPath>..\..\output\PosEntt.RtsDelivery_oal_wwp_event_new_log.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsHipToOalWwpEventNewLog">
+      <HintPath>..\..\output\PosEntt.RtsHipToOalWwpEventNewLog.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsHipToOal_hip_event_new">
       <HintPath>..\..\output\PosEntt.RtsHipToOal_hip_event_new.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.RtsHopToOalHopEventNew">
       <HintPath>..\..\output\PosEntt.RtsHopToOalHopEventNew.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsHopToOalWwpEventNewLog">
+      <HintPath>..\..\output\PosEntt.RtsHopToOalWwpEventNewLog.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.RtsNormTo_normal_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsNormTo_normal_console_event_new.dll</HintPath>
@@ -105,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeliWithChildrenAction.cs" />
     <Compile Include="HopWithChildrenAction.cs" />
     <Compile Include="SipWithChildrenAction.cs" />
     <Compile Include="HipWithChildrenAction.cs" />

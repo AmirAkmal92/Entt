@@ -33,6 +33,7 @@ namespace Bespoke.PosEntt.CustomActions
             if (null != pickup.BabyConsignment)
             {
                 var babies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
                 foreach (var babyConsignmentNo in babies)
                 {
                     var childRow = parentRow.Clone();
@@ -68,9 +69,17 @@ namespace Bespoke.PosEntt.CustomActions
             var consignmentParentRow = await consignmentInitialMap.TransformAsync(pickup);
             consignmentInitialRows.Add(consignmentParentRow);
 
+            
+
             if (null != pickup.BabyConsignment)
             {
                 var consignmentBabies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var babiesWeight = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var babiesHeight = pickup.BabyHeigth.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var babiesWidth = pickup.BabyWidth.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var babiesLength = pickup.BabyLength.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                var index = 0;
+
                 foreach (var babyConsignmentNo in consignmentBabies)
                 {
                     var consignmentChildRow = consignmentParentRow.Clone();
@@ -81,8 +90,13 @@ namespace Bespoke.PosEntt.CustomActions
                     consignmentChildRow.parent = consignmentParentRow.id;
                     consignmentChildRow.is_parent = 0;
                     consignmentChildRow.number = babyConsignmentNo;
-                    consignmentInitialRows.Add(consignmentChildRow);
+                    consignmentChildRow.weight_double = GetDoubleValue(babiesWeight[index]);
+                    consignmentChildRow.height_double = GetDoubleValue(babiesHeight[index]);
+                    consignmentChildRow.length_double = GetDoubleValue(babiesLength[index]);
+                    consignmentChildRow.width_double = GetDoubleValue(babiesWidth[index]);
 
+                    consignmentInitialRows.Add(consignmentChildRow);
+                    index++;
                 }
             }
 
@@ -226,6 +240,13 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 </section>";
 
             return html;
+        }
+
+        private double? GetDoubleValue(string val)
+        {
+            double retVal = 0;
+            var ok = double.TryParse(val, out retVal);
+            return retVal;
         }
     }
 }

@@ -23,6 +23,9 @@ namespace Bespoke.PosEntt.CustomActions
 
         public async Task RunAsync(Sips.Domain.Sip sip)
         {
+            var isConsole = IsConsole(sip.ConsignmentNo);
+            if (!isConsole) return;
+
             //console_details
             var consoleList = new List<string>();
             if (IsConsole(sip.ConsignmentNo)) consoleList.Add(sip.ConsignmentNo);
