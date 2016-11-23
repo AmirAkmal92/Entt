@@ -24,26 +24,63 @@ namespace Bespoke.PosEntt.CustomActions
         public async Task RunAsync(Sops.Domain.Sop sop)
         {
             //console_details
+            var consoleList = new List<string>();
+            if (IsConsole(sop.ConsignmentNo)) consoleList.Add(sop.ConsignmentNo);
+
             var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
             var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", sop.ConsignmentNo);
             var lo = await consoleDetailsAdapter.LoadAsync(query);
             var consoleItem = lo.ItemCollection.FirstOrDefault();
-            if (null == consoleItem) return;
+            if (null == consoleItem)
+            {
+                //insert into pending items
+                var pending = new Adapters.Oal.dbo_event_pending_console();
+                pending.id = GenerateId(20);
+                pending.event_class = "pos.oal.SopEventNew";
+                pending.console_no = sop.ConsignmentNo;
+                pending.version = 0;
+                pending.date_field = DateTime.Now;
+
+                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(pending));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+
+                return;
+            }
 
             var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
             var sopEventMap = new Integrations.Transforms.RtsSopToOalSopEventNew();
             var sopEventRows = new List<Adapters.Oal.dbo_sop_event_new>();
+            var sopWwpEventLogMap = new Integrations.Transforms.RtsSopToOalSopWwpEventNewLog();
+            var sopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
 
             foreach (var item in children)
             {
+                if (consoleList.Contains(item)) continue;
+
+                var console = IsConsole(item);
                 var sop1 = sop.Clone();
                 var child = await sopEventMap.TransformAsync(sop1);
                 child.id = GenerateId(34);
                 child.consignment_no = item;
                 child.data_flag = "1";
-                child.item_type_code = IsConsole(item) ? "02" : "01";
-
+                child.item_type_code = console ? "02" : "01";
                 sopEventRows.Add(child);
+
+                if (console)
+                {
+                    consoleList.Add(item);
+
+                    var wwp = await sopWwpEventLogMap.TransformAsync(sop1);
+                    wwp.id = GenerateId(34);
+                    wwp.consignment_note_number = item;
+                    sopWwpEventLogRows.Add(wwp);
+                }
             }
             
             var sopEventAdapter = new Adapters.Oal.dbo_sop_event_newAdapter();
@@ -56,7 +93,19 @@ namespace Bespoke.PosEntt.CustomActions
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }            
+            }
+
+            var sopWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
+            foreach (var item in sopWwpEventLogRows)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => sopWwpEventAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
         }
 
         public override string GetEditorViewModel()
