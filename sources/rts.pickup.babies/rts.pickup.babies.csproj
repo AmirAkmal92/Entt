@@ -79,8 +79,14 @@
     <Reference Include="PosEntt.RtsSipToOalSipEventNew">
       <HintPath>..\..\output\PosEntt.RtsSipToOalSipEventNew.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsSipToOalSipWwpEventNewLog">
+      <HintPath>..\..\output\PosEntt.RtsSipToOalSipWwpEventNewLog.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsSopToOalSopEventNew">
       <HintPath>..\..\output\PosEntt.RtsSopToOalSopEventNew.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsSopToOalSopWwpEventNewLog">
+      <HintPath>..\..\output\PosEntt.RtsSopToOalSopWwpEventNewLog.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.Sip">
       <HintPath>..\..\output\PosEntt.Sip.dll</HintPath>

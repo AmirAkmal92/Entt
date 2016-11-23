@@ -208,7 +208,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_pick_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "return string.Format(\"sa_pick_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -366,6 +366,6 @@
   "Id": "rts-pickup-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:39:18.4491801+08:00",
+  "ChangedDate": "2016-11-23T20:17:03.79185+08:00",
   "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
 }

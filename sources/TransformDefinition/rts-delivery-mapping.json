@@ -130,51 +130,6 @@
         "WebId": "20d899c5-78b4-41f7-b72e-c843dc2a219d"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "db5c2257-0f7d-4044-9c2b-ff52790d6ea8",
-        "Destination": "courier_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "7cba9df3-343c-47be-9ea7-93f9ef953fd2"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "0cbc7409-b484-4cf1-b80a-4bc64431649a",
-        "Destination": "receipent_location",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "e1ca6b3a-4e46-48ae-87ea-40e023d87dd9"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "72ac36bc-4470-4c78-8363-f2d828e90e3c",
-        "Destination": "pod_payment_type_desc",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "d1f589f4-648a-4286-ed6b-e8f7106eedcf"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "6ebeb1da-1b3c-4bfb-a3de-67f1762f6138",
-        "Destination": "pod_payment_mode_desc",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "ce0254a3-a9b7-455a-b997-feb14184d6f5"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "2fb939eb-b93a-4bf6-e54b-3672c3ab393b",
-        "Destination": "pod_bank_code_desc",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "7542827d-601e-436c-857f-9bf13624e57e"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "LokasiDrop",
         "TypeName": "",
@@ -256,33 +211,6 @@
         "WebId": "d887283b-04f9-4deb-e666-94855ff7d918"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "75bfaed2-f3f4-46d0-dcc4-ff5a9dee8c65",
-        "Destination": "date_field",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "55d37da3-6a19-4186-98e0-f60fb6e420cc"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "04071672-4c50-49d6-8db5-7fa1378b53ec",
-        "Destination": "id",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "54ea1bd6-f715-4f98-8874-079a76380826"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "a4f01089-e868-48fc-ef34-a79490c5a88e",
-        "Destination": "event_sub_type_code",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "2d2952df-ee9e-4520-ea07-7dd1d1038b1b"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "AlternativeAddress",
         "TypeName": "",
@@ -344,6 +272,87 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "26a7f274-4e28-49fd-9421-1914f32944d4"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aa5a662a-65af-4341-9d70-74b870aadd17",
+        "Destination": "event_sub_type_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "55e87791-1670-4356-e596-66ef838ad0ad"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "5b3c37b0-75fe-4adc-8c4e-b87b305467ae",
+        "Destination": "event_channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a45171f4-831b-4fb5-9295-96abeb9e1350"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "36d5d01c-b345-458d-ac2a-7e1da96e6bef",
+        "Destination": "date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7891d7ea-e7b4-4c79-afde-d17150206c65"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "bda66b7f-e66f-4c4f-fe0b-fe2287ed7acd",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "71e1be22-638c-4e30-c339-93dfead8576a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "cbf06b54-aa75-4215-e072-a4a08801097e",
+        "Destination": "courier_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "9b489129-1397-44f3-9476-0ed9942be595"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3bba32c6-1fa4-4e9a-e835-4a02d3209061",
+        "Destination": "receipent_location",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "635da4b2-405a-4b84-812e-c0d6457ecdc9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "b6b7e86f-92f5-4d2a-d3c6-09a7252bf2ab",
+        "Destination": "pod_payment_type_desc",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "aa7e29bf-d9b6-4981-9aa3-a904e3d0f69a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c8b97449-2236-49c9-bdaf-3629eb8fa265",
+        "Destination": "pod_payment_mode_desc",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "940e81f8-be73-4a3b-9200-d203864bbfbd"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "f4554c71-9d1d-4f68-efaf-e6c6ea92ccab",
+        "Destination": "pod_bank_code_desc",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "29deaf60-c85e-4318-b948-216ab5994303"
       }
     ]
   },
@@ -1140,7 +1149,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "decimal amount = 0;\r\nif (item.TotalPayment.HasValue) amount = item.TotalPayment.Value;\r\n\r\nif (!string.IsNullOrEmpty(item.CodAccount) && item.CodAccount != \"-\")\r\n{\r\n    return string.Format(\"AccountNo: {0}  | Amount:RM {1:0.00}\", item.CodAccount, amount);\r\n}\r\nreturn \"-\";",
+        "Expression": "decimal amount = 0;\r\nif (item.TotalPayment.HasValue) amount = item.TotalPayment.Value;\r\n\r\nif (!string.IsNullOrEmpty(item.CodAccount) && item.CodAccount != \"-\")\r\n{\r\n    return string.Format(\"AccountNo: {0}  | Amount:RM {1:0.00}\", item.CodAccount, amount);\r\n}\r\nreturn null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1155,36 +1164,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return new DateTime(item.Date.Year,item.Date.Month, item.Date.Day, item.Time.Hour, item.Time.Minute, item.Time.Second);",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "GetDateTime",
-        "OutputTypeName": "System.DateTime, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 390.0,
-        "Y": 41.0,
-        "WebId": "75bfaed2-f3f4-46d0-dcc4-ff5a9dee8c65"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty);\nreturn guid;",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "CreateId",
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 633.0,
-        "Y": 150.0,
-        "WebId": "04071672-4c50-49d6-8db5-7fa1378b53ec"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
         "Expression": "var display = \"Kod Tidak Diketahui\";\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"01\" : return \"Pod\";\r\n    case \"02\" : return \"Tutup\";\r\n    case \"03\" : return \"Salah Alamat\";\r\n    case \"04\" : return \"Rosak\";\r\n    case \"05\" : return \"Enggan Terima\";\r\n    case \"06\" : return \"Future\";\r\n    case \"07\" : return \"Kegagalan Operasi\";\r\n    case \"08\" : return \"Enggan Beri Pengenalan\";\r\n    case \"09\" : return \"Tiada Penerima\";\r\n    case \"10\" : return \"Pod\";\r\n    case \"11\" : return \"Pod\";\r\n    case \"28\" : return \"Pindah\";\r\n    case \"99\" : return \"Lain-Lain\";\r\n}\r\nreturn display;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -1194,8 +1173,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 647.0,
-        "Y": 254.0,
+        "X": 587.0,
+        "Y": 259.0,
         "WebId": "a4f01089-e868-48fc-ef34-a79490c5a88e"
       },
       {
@@ -1268,8 +1247,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 704.0,
-        "Y": 327.0,
+        "X": 682.0,
+        "Y": 368.0,
         "WebId": "9c803d73-90ef-455a-8adb-5a901e821e27"
       },
       {
@@ -1300,6 +1279,324 @@
         "X": 557.0,
         "Y": 213.0,
         "WebId": "613b1d7e-2d4c-4bcc-c696-584f2d4712a3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return subType.Length <= 3 ? subType : subType.Substring(0,3);",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "subType",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "a4f01089-e868-48fc-ef34-a79490c5a88e",
+              "Constant": "",
+              "Default": "",
+              "WebId": "a0aade05-d167-408b-c4dd-ca9b2bccbff4"
+            }
+          ]
+        },
+        "Name": "TruncateSubTypeBug",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 680.0,
+        "Y": 274.0,
+        "WebId": "aa5a662a-65af-4341-9d70-74b870aadd17"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "002",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 626.0,
+        "Y": 321.0,
+        "WebId": "5b3c37b0-75fe-4adc-8c4e-b87b305467ae"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.CombineDateTimeFunctoid, rts.functoids",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "date",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "67975831-e0d0-484b-f1f6-38ef351f57e7",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "time",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "31884888-d838-4a3a-8894-46059288a3b6",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 543.0,
+        "Y": 37.0,
+        "WebId": "36d5d01c-b345-458d-ac2a-7e1da96e6bef"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "Date",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "67975831-e0d0-484b-f1f6-38ef351f57e7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "Time",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "31884888-d838-4a3a-8894-46059288a3b6"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.OalIdFunctoid, rts.functoids",
+        "Prefix": "en",
+        "Suffix": null,
+        "Length": 34,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Prefix",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Suffix",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Length",
+              "TypeName": "System.Int32, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 650.0,
+        "Y": 145.0,
+        "WebId": "bda66b7f-e66f-4c4f-fe0b-fe2287ed7acd"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !name.Equals(\"-\") ? name : null; ",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "name",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "db5c2257-0f7d-4044-9c2b-ff52790d6ea8",
+              "Constant": "",
+              "Default": "",
+              "WebId": "ce139d72-e7ca-47ca-b34b-d3e059862dab"
+            }
+          ]
+        },
+        "Name": "CheckCourierName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 474.0,
+        "Y": 432.0,
+        "WebId": "cbf06b54-aa75-4215-e072-a4a08801097e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !location.Equals(\"-\") ? location : null; ",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "location",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "0cbc7409-b484-4cf1-b80a-4bc64431649a",
+              "Constant": "",
+              "Default": "",
+              "WebId": "305eb230-2a34-422a-a731-ef6eacff56ac"
+            }
+          ]
+        },
+        "Name": "CheckRecipientLocation",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 424.0,
+        "Y": 518.0,
+        "WebId": "3bba32c6-1fa4-4e9a-e835-4a02d3209061"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !pt.Equals(\"-\") ? pt : null; ",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "pt",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "72ac36bc-4470-4c78-8363-f2d828e90e3c",
+              "Constant": "",
+              "Default": "",
+              "WebId": "14d63fce-d034-46ea-b1b7-1a8137ceab5a"
+            }
+          ]
+        },
+        "Name": "CheckPaymentType",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 427.0,
+        "Y": 582.0,
+        "WebId": "b6b7e86f-92f5-4d2a-d3c6-09a7252bf2ab"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !mode.Equals(\"-\") ? mode : null; ",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "mode",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "6ebeb1da-1b3c-4bfb-a3de-67f1762f6138",
+              "Constant": "",
+              "Default": "",
+              "WebId": "d5d0cc90-8f69-4043-b255-08e04931d2da"
+            }
+          ]
+        },
+        "Name": "CheckPaymentMode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 428.0,
+        "Y": 641.0,
+        "WebId": "c8b97449-2236-49c9-bdaf-3629eb8fa265"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !code.Equals(\"-\") ? code : null;\n",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "code",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "2fb939eb-b93a-4bf6-e54b-3672c3ab393b",
+              "Constant": "",
+              "Default": "",
+              "WebId": "6acf8afc-5174-4f95-8216-96cb0ac86d65"
+            }
+          ]
+        },
+        "Name": "CheckBankCode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 431.0,
+        "Y": 711.0,
+        "WebId": "f4554c71-9d1d-4f68-efaf-e6c6ea92ccab"
       }
     ]
   },
@@ -1320,6 +1617,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-10T11:59:17.2116326+08:00",
+  "ChangedDate": "2016-11-23T21:45:02.5203033+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
