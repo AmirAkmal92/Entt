@@ -312,6 +312,22 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_hip-rts-hip-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.hip-rts-hip-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_hop-rts-hop-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.hop-rts-hop-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
