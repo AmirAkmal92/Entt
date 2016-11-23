@@ -64,6 +64,18 @@
     <Reference Include="PosEntt.RtsPickup_oal_wwp_event_new_log">
       <HintPath>..\..\output\PosEntt.RtsPickup_oal_wwp_event_new_log.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsSipToOalSipEventNew">
+      <HintPath>..\..\output\PosEntt.RtsSipToOalSipEventNew.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsSopToOalSopEventNew">
+      <HintPath>..\..\output\PosEntt.RtsSopToOalSopEventNew.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Sip">
+      <HintPath>..\..\output\PosEntt.Sip.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Sop">
+      <HintPath>..\..\output\PosEntt.Sop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -75,6 +87,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SipWithChildrenAction.cs" />
+    <Compile Include="SopWithChildrenAction.cs" />
     <Compile Include="DecoWithBabiesAction.cs" />
     <Compile Include="NormWithBabiesAction.cs" />
     <Compile Include="PickupWithBabiesAction.cs" />
