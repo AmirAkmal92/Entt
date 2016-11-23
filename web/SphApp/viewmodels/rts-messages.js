@@ -5,7 +5,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         selectedItems = ko.observableArray(),
         queues = ko.observableArray(),
         rtsType = ko.observable(),
-        searchText = ko.observable(),
+        searchText = ko.observable(""),
         total = ko.observable(),
         from = ko.observable(0),
         size = ko.observable(20),
