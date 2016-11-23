@@ -224,7 +224,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "switch (item.StatusCode)\n{\n    case \"01\": return \"EM040\";\n    case \"03\": return \"EM040\";\n    case \"04\": return \"EM040\";\n    case \"12\": return \"EM015\";\n    case \"13\": return \"EM062\";\n    case \"14\": return \"EM025\";\n    case \"15\": return \"EM034\";\n    case \"16\": return \"EM058\";\n    case \"17\": return \"EM054\";\n    case \"18\": return \"EM022\";\n    case \"19\": return \"EM017\";\n    case \"21\": return \"EM063\";\n    case \"27\": return \"EM073\";\n    case \"36\": return \"AJ01\";\n    case \"37\": return \"AJ0\";\n    case \"38\": return \"EM064\";\n    case \"50\": return \"SC50\";\n    case \"51\": return \"SC51\";\n    case \"52\": return \"SC52\";\n    case \"53\": return \"SC53\";\n    case \"54\": return \"SC54\";\n}\nreturn string.Empty;",
+        "Expression": "switch (item.StatusCode)\n{\n    case \"01\": return \"EM040\";\n    case \"03\": return \"EM040\";\n    case \"04\": return \"EM040\";\n    case \"12\": return \"EM015\";\n    case \"13\": return \"EM062\";\n    case \"14\": return \"EM025\";\n    case \"15\": return \"EM034\";\n    case \"16\": return \"EM058\";\n    case \"17\": return \"EM054\";\n    case \"18\": return \"EM022\";\n    case \"19\": return \"EM017\";\n    case \"20\": return \"EM092\";\n    case \"21\": return \"EM063\";\n    case \"27\": return \"EM073\";\n    case \"36\": return \"AJ01\";\n    case \"37\": return \"AJ0\";\n    case \"38\": return \"EM064\";\n    case \"50\": return \"SC50\";\n    case \"51\": return \"SC51\";\n    case \"52\": return \"SC52\";\n    case \"53\": return \"SC53\";\n    case \"54\": return \"SC54\";\n    case \"59\": return \"EM088\";\n    case \"61\": return \"EM090\";\n    case \"62\": return \"EM091\";\n}\nreturn string.Empty;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -233,8 +233,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 288.0,
-        "Y": 198.0,
+        "X": 190.0,
+        "Y": 200.0,
         "WebId": "dc676256-3e67-45fb-ab45-c9639f0de431"
       },
       {
@@ -285,6 +285,6 @@
   "Id": "rts-stat-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:49:12.6836027+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:44:07.3604072+08:00",
+  "ChangedDate": "2016-11-23T23:34:59.5792067+08:00",
   "WebId": "f70550d4-3a11-42b1-a7ed-3e745c09f927"
 }
