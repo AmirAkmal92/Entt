@@ -1179,7 +1179,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_deli_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time, item.ScannerId);",
+        "Expression": "return string.Format(\"sa_deli_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time, item.ScannerId);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1617,6 +1617,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-23T21:45:02.5203033+08:00",
+  "ChangedDate": "2016-11-24T12:46:26.9077069+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }

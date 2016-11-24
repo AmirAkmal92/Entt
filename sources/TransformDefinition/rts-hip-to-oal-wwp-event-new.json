@@ -321,7 +321,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_hip_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "return string.Format(\"sa_hip_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -384,6 +384,6 @@
   "Id": "rts-hip-to-oal-wwp-event-new",
   "CreatedDate": "2016-11-11T16:50:54.4741333+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:48:56.4496619+08:00",
+  "ChangedDate": "2016-11-24T12:49:46.9385566+08:00",
   "WebId": "54f3e81d-170a-43e9-8af3-4a00b348602f"
 }

@@ -52,28 +52,10 @@
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
         "Functoid": "8019d22c-69a2-4e99-95d4-6d2f04341f64",
-        "Destination": "shipper_reference_number",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "bc88cb00-a27c-4bba-d790-dbc14167e092"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "8019d22c-69a2-4e99-95d4-6d2f04341f64",
         "Destination": "origin_country_code",
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "c3289d71-5723-4ed1-a05e-caa3f3f068e6"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "8019d22c-69a2-4e99-95d4-6d2f04341f64",
-        "Destination": "destination_postcode",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "87735148-f360-4a79-8dd8-69ca2bb7fecd"
       },
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
@@ -155,6 +137,24 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "7b26748c-e72f-41b9-e372-580114a75e14"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "AccountNo",
+        "TypeName": "",
+        "Destination": "shipper_reference_number",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f856a674-92b7-458a-9a49-ea17139a2d77"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Postcode",
+        "TypeName": "",
+        "Destination": "destination_postcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f6fc024e-4d53-4034-82b5-89f06947ba8d"
       }
     ]
   },
@@ -202,8 +202,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 501.0,
-        "Y": 195.0,
+        "X": 441.0,
+        "Y": 303.0,
         "WebId": "8019d22c-69a2-4e99-95d4-6d2f04341f64"
       },
       {
@@ -366,6 +366,6 @@
   "Id": "rts-pickup-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:51:17.2797416+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-23T20:17:03.79185+08:00",
+  "ChangedDate": "2016-11-24T12:42:51.2491686+08:00",
   "WebId": "9da7cb43-448a-4296-a7cf-d8f2d61c55b0"
 }

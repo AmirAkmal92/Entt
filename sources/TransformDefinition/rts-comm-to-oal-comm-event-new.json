@@ -270,7 +270,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_comm_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "return string.Format(\"sa_comm_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -714,6 +714,6 @@
   "Id": "rts-comm-to-oal-comm-event-new",
   "CreatedDate": "2016-11-01T11:38:51.9399812+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-10T17:53:50.5685581+08:00",
+  "ChangedDate": "2016-11-24T12:47:33.6202342+08:00",
   "WebId": "28fd966a-1124-48b3-bf2f-12670fa95c3c"
 }
