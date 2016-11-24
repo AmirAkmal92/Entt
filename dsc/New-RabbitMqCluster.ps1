@@ -21,3 +21,8 @@
 
 .\rabbitmqctl.bat -n $NodeName add_user PosEnttApp megadeth
 .\rabbitmqctl -n $NodeName set_user_tags PosEnttApp administrator
+
+
+.\rabbitmqctl -n $NodeName set_permissions -p PosEntt PosEnttApp ".*" ".*" ".*"
+
+.\rabbitmq-plugins.bat -n $NodeName enable rabbitmq_management
