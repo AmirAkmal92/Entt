@@ -33,15 +33,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "6f0b486f-87db-4101-ce54-7f180d21bfdb",
-        "Destination": "id",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "61dcab01-36f7-4d4a-c876-9e4dcff16c75"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "d6528bbb-6d5d-4a2a-c7f3-e1ed6f7bdd58",
         "Destination": "event_date_local_date_field",
         "SourceTypeName": "",
@@ -159,20 +150,38 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "dd4aa4b7-5c89-4eca-c26f-3514cf934e62",
-        "Destination": "non_delivery_reason",
+        "Functoid": "59379007-9527-4742-e95b-ba84c8bf5253",
+        "Destination": "id",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "0a4ad2bc-210e-4f01-e559-e4ea14ea634f"
+        "WebId": "80f69258-0714-4d62-f3f0-8751ca2dab45"
       },
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "bbbdc0dc-7faf-4da4-af66-8be9809e2c3b",
+        "Functoid": "109902e9-580f-4511-c8a5-9226193e2403",
+        "Destination": "non_delivery_reason",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "211948ed-7490-420c-c13b-b42ad1b01fee"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "4b4e7d0a-4eba-4cf8-b1c2-dba007f9ce7d",
         "Destination": "non_delivery_measure",
         "SourceTypeName": "",
         "DestinationTypeName": "",
-        "WebId": "da7db16b-9445-48be-fae7-c6000fc49d26"
+        "WebId": "c6a917d0-6fed-43a4-9d61-82afc38ea6be"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "adeac565-0c52-461d-bc47-c7ab2bf7c881",
+        "Destination": "retention_reason",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bb6a4961-0eac-4ab4-c076-0d6b9f599976"
       }
     ]
   },
@@ -194,21 +203,6 @@
         "X": 525.0,
         "Y": 523.0,
         "WebId": "5233d109-bca9-4ed1-db49-990512a4065d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString().Replace(\"-\",string.Empty).Substring(0,10);\nreturn guid;\n",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "GetId",
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 494.0,
-        "Y": 45.0,
-        "WebId": "6f0b486f-87db-4101-ce54-7f180d21bfdb"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
@@ -403,7 +397,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return \"TN---\";",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"02\": return \"TN932\"; //EDC\r\n  case \"03\": return \"TN034\";\r\n  case \"04\": return \"TN034\";\r\n  case \"05\": return \"TN036\";\r\n  case \"06\": return \"TN036\";\r\n  case \"08\": return \"TN036\";\r\n  case \"10\": return \"TN036\";\r\n  case \"11\": return \"TN036\";\r\n  case \"12\": return \"TN036\";\r\n  case \"13\": return \"EDH\";\r\n  case \"14\": return \"TN036\";\r\n  case \"15\": return \"TN036\";\r\n  case \"16\": return \"TN036\";\r\n  case \"17\": return \"TN036\";\r\n  case \"18\": return \"TN036\";\r\n  case \"19\": return \"TN036\";\r\n  case \"25\": return \"TN036\";\r\n  case \"34\": return \"TN036\";\r\n  case \"41\": return \"TN036\";\r\n  case \"42\": return \"TN036\";\r\n  \r\n}\r\n\r\nreturn null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -412,8 +406,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 667.0,
-        "Y": 165.0,
+        "X": 577.0,
+        "Y": 145.0,
         "WebId": "a280bd8b-ec51-4b32-93c1-d0a4043fb4a2"
       },
       {
@@ -781,7 +775,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "if (!destination.Equals(\"-\"))\r\n{\r\n    return destination;\r\n}\r\nelse\r\n{\r\n    var pattern = @\"\\w{2}\\d{9}(?<country>\\w{2})\";\r\n\tvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\n\treturn match.Success ? match.Groups[\"country\"].Value : \"-\";\r\n}\r\n",
+        "Expression": "return !destination.Equals(\"-\") ? destination : null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": [
@@ -1000,36 +994,106 @@
         "WebId": "ed3db9b4-139c-42d2-c4cf-412f0495703d"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "Value": "16",
+        "$type": "Bespoke.PosEntt.Functoids.OalIdFunctoid, rts.functoids",
+        "Prefix": "en",
+        "Suffix": null,
+        "Length": 20,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Prefix",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Suffix",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Length",
+              "TypeName": "System.Int32, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
         },
         "Name": null,
-        "OutputTypeName": null,
+        "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 662.0,
-        "Y": 272.0,
-        "WebId": "dd4aa4b7-5c89-4eca-c26f-3514cf934e62"
+        "X": 589.0,
+        "Y": 49.0,
+        "WebId": "59379007-9527-4742-e95b-ba84c8bf5253"
       },
       {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "Value": "A",
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"24\";\r\n  case \"06\": return \"26\";\r\n  case \"08\": return \"99\";\r\n  case \"10\": return \"27\";\r\n  case \"11\": return \"99\";\r\n  case \"12\": return \"22\";\r\n  case \"13\": return \"12\";\r\n  case \"14\": return \"45\";\r\n  case \"15\": return \"16\";\r\n  case \"16\": return \"16\";\r\n  case \"17\": return \"99\";\r\n  case \"18\": return \"22\";\r\n  case \"19\": return \"18\";\r\n  case \"25\": return \"21\";\r\n  case \"34\": return \"14\";\r\n  case \"41\": return \"45\";\r\n  case \"42\": return \"45\";\r\n  \r\n}\r\n\r\nreturn null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": null,
-        "OutputTypeName": null,
+        "Name": "SetNonDeliReason",
+        "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 700.0,
-        "Y": 310.0,
-        "WebId": "bbbdc0dc-7faf-4da4-af66-8be9809e2c3b"
+        "X": 612.0,
+        "Y": 278.0,
+        "WebId": "109902e9-580f-4511-c8a5-9226193e2403"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"B\";\r\n  case \"06\": return \"B\";\r\n  case \"08\": return \"B\";\r\n  case \"10\": return \"I\";\r\n  case \"11\": return \"F\";\r\n  case \"12\": return \"E\";\r\n  case \"13\": return \"J\";\r\n  case \"14\": return \"B\";\r\n  case \"15\": return \"B\";\r\n  case \"16\": return \"B\";\r\n  case \"17\": return \"K\";\r\n  case \"18\": return \"K\";\r\n  case \"19\": return \"C\";\r\n  case \"25\": return \"J\";\r\n  case \"34\": return \"L\";\r\n  case \"41\": return \"B\";\r\n  case \"42\": return \"B\";\r\n  \r\n}\r\n\r\nreturn null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetNonDeliMeasure",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 541.0,
+        "Y": 324.0,
+        "WebId": "4b4e7d0a-4eba-4cf8-b1c2-dba007f9ce7d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"03\": return \"20\";\r\n  case \"04\": return \"56\";  \r\n}\r\n\r\nreturn null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetRetentionReason",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 712.0,
+        "Y": 358.0,
+        "WebId": "adeac565-0c52-461d-bc47-c7ab2bf7c881"
       }
     ]
   },
@@ -1050,6 +1114,6 @@
   "Id": "rts-stat-to-oal-ips-import",
   "CreatedDate": "2016-10-20T09:47:44.9953594+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:17:03.1319916+08:00",
+  "ChangedDate": "2016-11-24T16:14:28.2866688+08:00",
   "WebId": "1edcdd3c-a83a-4a20-a52b-54ce672ba1a3"
 }
