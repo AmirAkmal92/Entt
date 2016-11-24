@@ -716,7 +716,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_reve_{0:yyyyddMM}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\n",
+        "Expression": "return string.Format(\"sa_reve_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\n",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -999,6 +999,6 @@
   "Id": "rts-reve-to-oal-revex-event-new",
   "CreatedDate": "2016-11-01T11:40:02.666853+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T15:14:06.1866725+08:00",
+  "ChangedDate": "2016-11-24T12:56:14.577852+08:00",
   "WebId": "1cecbccf-eac7-4215-9085-b25c979a0e3c"
 }
