@@ -328,6 +328,30 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_vasn-rts-vasn-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
