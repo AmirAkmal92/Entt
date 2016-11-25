@@ -34,9 +34,6 @@ void Main()
 		Console.WriteLine("Broker shutdown");
 		args.Dump();
 		// dispose previous connections
-		// channel.Dispose();
-		// connection.Dispose();
-
 		host = (host == "S322") ? "S323" : "S322";
 		factory = new ConnectionFactory
 		{

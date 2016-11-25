@@ -16,7 +16,7 @@
   </AppConfig>
 </Query>
 
-var host = "S323";
+var host = "S322";
 var factory = new ConnectionFactory
 {
 	UserName = ConfigurationManager.RabbitMqUserName,
