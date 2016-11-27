@@ -27,6 +27,11 @@
 
 .\rabbitmq-plugins.bat -n $NodeName enable rabbitmq_management
 
+
+.\rabbitmqctl.bat -n $NodeName cluster_status
+
+.\rabbitmq-plugins.bat list
+
 <#
 
 
