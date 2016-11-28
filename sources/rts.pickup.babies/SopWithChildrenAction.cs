@@ -47,6 +47,10 @@ namespace Bespoke.PosEntt.CustomActions
             parentRow.id = GenerateId(34);
             m_sopEventRows.Add(parentRow);
 
+            var sopWwpEventLogMap = new Integrations.Transforms.RtsSopToOalSopWwpEventNewLog();
+            var parentWwpRow = await sopWwpEventLogMap.TransformAsync(sop);
+            m_sopWwpEventLogRows.Add(parentWwpRow);
+
             var consoleItem = await SearchConsoleDetails(sop.ConsignmentNo);
             if (null != consoleItem)
             {
@@ -55,6 +59,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     if (consoleList.Contains(item)) continue;
                     ProcessChild(parentRow, item);
+                    ProcessChildWwp(parentWwpRow, item);
 
                     //2 level
                     var console = IsConsole(item);
@@ -69,6 +74,7 @@ namespace Bespoke.PosEntt.CustomActions
                             {
                                 if (consoleList.Contains(cc)) continue;
                                 ProcessChild(parentRow, cc);
+                                ProcessChildWwp(parentWwpRow, cc);
 
                                 //3 level
                                 var anotherConsole = IsConsole(cc);
@@ -83,6 +89,7 @@ namespace Bespoke.PosEntt.CustomActions
                                         {
                                             if (consoleList.Contains(ccc)) continue;
                                             ProcessChild(parentRow, ccc);
+                                            ProcessChildWwp(parentWwpRow, ccc);
                                         }
                                     }
                                     else
@@ -182,11 +189,9 @@ namespace Bespoke.PosEntt.CustomActions
             m_sopEventPendingConsoleRows.Add(pendingWwp);
         }
 
-        async private Task ProcessChildWwp(Sops.Domain.Sop sop, string childConnoteNo)
+        private void ProcessChildWwp(Adapters.Oal.dbo_wwp_event_new_log sopWwp, string childConnoteNo)
         {
-            var sopWwpEventLogMap = new Integrations.Transforms.RtsSopToOalSopWwpEventNewLog();
-            var sop1 = sop;
-            var wwp = await sopWwpEventLogMap.TransformAsync(sop1);
+            var wwp = sopWwp.Clone();
             wwp.id = GenerateId(34);
             wwp.consignment_note_number = childConnoteNo;
             m_sopWwpEventLogRows.Add(wwp);
