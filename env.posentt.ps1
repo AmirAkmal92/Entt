@@ -12,6 +12,7 @@ $machine = ($env:COMPUTERNAME).Replace("-","_")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_RabbitMqUserName","guest", "Process")
 
 [System.Environment]::SetEnvironmentVariable("RABBITMQ_BASE","$RxHome\rabbitmq_base", "Process")
+[System.Environment]::SetEnvironmentVariable("RX_POSENTT_RabbitMqHost","localhost", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_RabbitMqBase","$RxHome\rabbitmq_base", "Process")
 [System.Environment]::SetEnvironmentVariable("RX_POSENTT_RabbitMqDirectory","$RxHome\rabbitmq_server", "Process")
 [System.Environment]::SetEnvironmentVariable("PATH","$env:Path;$RxHome\rabbitmq_server\sbin", "Process")
