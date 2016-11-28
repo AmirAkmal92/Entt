@@ -23,6 +23,7 @@
              "NewCharge":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "NewPostCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "NewRoutingCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PlNine":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "ScannerId":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
         }
     }

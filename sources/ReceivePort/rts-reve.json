@@ -317,12 +317,12 @@
         },
         "Name": "NewPostCode",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
         "WebId": "8cebe045-9dba-4e0a-af31-1f59c34c3cdc"
@@ -337,15 +337,35 @@
         },
         "Name": "NewRoutingCode",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
         "WebId": "7e59d8c3-1222-41ea-ac8e-71571f807509"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+        "Column": 17,
+        "AllowMissing": false,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "PlNine",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "Converter": null,
+        "SampleValue": "-",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "-",
+        "Ignore": false,
+        "Comment": null,
+        "WebId": "2316bf00-8e38-431b-b3ba-4e060a2d5561"
       },
       {
         "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
@@ -394,6 +414,6 @@
   "Id": "rts-reve",
   "CreatedDate": "2016-10-31T18:58:58.2726282+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T10:23:45.5781566+08:00",
+  "ChangedDate": "2016-11-28T18:53:08.3326689+08:00",
   "WebId": "7fc1dd54-4b56-48bd-b1be-45086fd87802"
 }
