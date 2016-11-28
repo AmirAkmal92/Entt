@@ -121,33 +121,6 @@
         "WebId": "e4806261-50df-4ae7-baa8-5fc3a1edbfbb"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "d4123bc9-1f1d-498a-baa8-2edb1e199b2f",
-        "Destination": "office_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "60e3b838-3ae7-4dad-934e-03a0a81c8bff"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "cbaa16a9-09ec-4d10-82a7-bb5765f2445c",
-        "Destination": "office_next_code",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "3a75d4b8-5b48-463e-a25b-d7f731b7657d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "4ec87cee-e9ab-4e62-edd2-9d6c275624ce",
-        "Destination": "courier_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "07777d43-4006-49fd-81ea-29e517d016ec"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "LocationId",
         "TypeName": "",
@@ -155,15 +128,6 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "a26591c6-669e-4116-b556-f90b4a9fd146"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "4bd5d056-5cdc-42fe-f48c-e8612071f1f7",
-        "Destination": "dest_office_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "6b84e899-cd5e-45ca-e3b4-03efe168b78c"
       },
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
@@ -200,6 +164,42 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "ef6f6853-034c-41e6-f9a3-e968bd6e2c69"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "780d7c12-049a-4db9-d8bf-25a7be755a05",
+        "Destination": "dest_office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "19f2c7fe-3926-45cb-c9f1-d76ef69ab2a7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "054e4951-18ab-4c78-907f-bcba3a5caa59",
+        "Destination": "courier_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "56c959b0-b3f8-44a6-80c0-cae3cfd0ba58"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "455736da-9afa-4392-f31a-37d821dd9142",
+        "Destination": "office_next_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "41d1748f-d06e-49c2-fc4a-59359226bc53"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "5400cea7-5622-4308-ea79-015d3704fc5b",
+        "Destination": "office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "14c6f3f0-091d-48d9-b30d-76e9ddab84c9"
       }
     ]
   },
@@ -820,6 +820,122 @@
         "X": 707.0,
         "Y": 563.0,
         "WebId": "1f17f61e-dbfd-458f-be96-07616bc5512f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !nextOffice.Equals(\"-\") ? nextOffice : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "nextOffice",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "cbaa16a9-09ec-4d10-82a7-bb5765f2445c",
+              "Constant": "",
+              "Default": "",
+              "WebId": "0e82f477-80cf-4717-88e3-2c03493050c8"
+            }
+          ]
+        },
+        "Name": "CheckOfficeNextCode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 455.0,
+        "Y": 339.0,
+        "WebId": "455736da-9afa-4392-f31a-37d821dd9142"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !courier.Equals(\"-\") ? courier : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "courier",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "4ec87cee-e9ab-4e62-edd2-9d6c275624ce",
+              "Constant": "",
+              "Default": "",
+              "WebId": "1c4a0edf-6bc6-474f-b77c-9a99e9882c04"
+            }
+          ]
+        },
+        "Name": "CheckCourierName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 473.0,
+        "Y": 426.0,
+        "WebId": "054e4951-18ab-4c78-907f-bcba3a5caa59"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !destination.Equals(\"-\") ? destination : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "destination",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "4bd5d056-5cdc-42fe-f48c-e8612071f1f7",
+              "Constant": "",
+              "Default": "",
+              "WebId": "5e8aadae-f98f-4198-d599-9568d6759a95"
+            }
+          ]
+        },
+        "Name": "CheckDestination",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 465.0,
+        "Y": 516.0,
+        "WebId": "780d7c12-049a-4db9-d8bf-25a7be755a05"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !office.Equals(\"-\") ? office : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "office",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "d4123bc9-1f1d-498a-baa8-2edb1e199b2f",
+              "Constant": "",
+              "Default": "",
+              "WebId": "fb5d4a7a-b711-4d39-a3c4-fa39a223700e"
+            }
+          ]
+        },
+        "Name": "CheckOfficeName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 448.0,
+        "Y": 270.0,
+        "WebId": "5400cea7-5622-4308-ea79-015d3704fc5b"
       }
     ]
   },
@@ -840,6 +956,6 @@
   "Id": "rts-hop-to-oal-hop-event-new",
   "CreatedDate": "2016-10-19T11:25:44.4166535+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-24T12:50:12.4900108+08:00",
+  "ChangedDate": "2016-11-28T23:35:39.1220421+08:00",
   "WebId": "09a9e699-4a6f-4223-a59a-58bfaaf934d6"
 }

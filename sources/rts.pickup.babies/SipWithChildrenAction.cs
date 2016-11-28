@@ -293,8 +293,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
         private string GenerateId(int length)
         {
-            var ticks = System.DateTime.Now.Ticks;
-            var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
             return id.Substring(0, length);
         }
 

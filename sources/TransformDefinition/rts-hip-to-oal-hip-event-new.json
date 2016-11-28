@@ -114,33 +114,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "e023e7a1-5d72-4edb-f558-2c7bdce960cd",
-        "Destination": "office_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "52800fcc-5cce-464b-d553-7dde3186166c"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "3afda4b0-fe58-48d8-d99f-170b9fe8e62a",
-        "Destination": "office_next_code",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "76a8ca27-f14c-4090-aba9-e24043b73db9"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "db349cfa-69c4-4c83-84bb-5513765cfe47",
-        "Destination": "courier_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "c5fbcca4-acf0-4938-c701-af4f167a035c"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "2cffff19-9cc0-482e-b023-c24552ac971c",
         "Destination": "event_pending_status",
         "SourceTypeName": "",
@@ -173,6 +146,33 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "942b191f-4c80-487d-c272-8b8bc48bebde"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "52f623b1-4af5-4487-8dd2-9628b7ba098a",
+        "Destination": "courier_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "40d741ba-5815-4dbd-afc8-bc8693dbb0dd"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3c5dd9ec-70af-4766-d980-2c3b001e8707",
+        "Destination": "office_next_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0c24dfc0-6f0a-491a-ca89-64b43d8a76d9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "09e02f9e-29d2-4b63-c8c4-a16cbbe15186",
+        "Destination": "office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "39ae493c-1358-4def-88a2-e3ea7f03af59"
       }
     ]
   },
@@ -696,6 +696,93 @@
         "X": 668.0,
         "Y": 358.0,
         "WebId": "cfb71b01-3d99-4b6c-c051-782526a2fd5e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !office.Equals(\"-\") ? office : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "office",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "e023e7a1-5d72-4edb-f558-2c7bdce960cd",
+              "Constant": "",
+              "Default": "",
+              "WebId": "43fb6dc7-832c-4631-eb3d-374e2d1b5da4"
+            }
+          ]
+        },
+        "Name": "CheckOfficeName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 519.0,
+        "Y": 213.0,
+        "WebId": "09e02f9e-29d2-4b63-c8c4-a16cbbe15186"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !officeNextCode.Equals(\"-\") ? officeNextCode : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "officeNextCode",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "3afda4b0-fe58-48d8-d99f-170b9fe8e62a",
+              "Constant": "",
+              "Default": "",
+              "WebId": "c659cb9b-46ec-4a6b-87f2-0486f59bcef9"
+            }
+          ]
+        },
+        "Name": "CheckOfficeNextCode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 489.0,
+        "Y": 318.0,
+        "WebId": "3c5dd9ec-70af-4766-d980-2c3b001e8707"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !courier.Equals(\"-\") ? courier : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "courier",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "db349cfa-69c4-4c83-84bb-5513765cfe47",
+              "Constant": "",
+              "Default": "",
+              "WebId": "72a07775-065a-4b98-fc95-ea00604a499f"
+            }
+          ]
+        },
+        "Name": "CheckCourierName",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 513.0,
+        "Y": 384.0,
+        "WebId": "52f623b1-4af5-4487-8dd2-9628b7ba098a"
       }
     ]
   },
@@ -716,6 +803,6 @@
   "Id": "rts-hip-to-oal-hip-event-new",
   "CreatedDate": "2016-10-20T10:05:16.3125246+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-24T12:49:10.0206716+08:00",
+  "ChangedDate": "2016-11-28T23:27:12.7271315+08:00",
   "WebId": "61983377-3e92-4771-954f-4947c2aab209"
 }
