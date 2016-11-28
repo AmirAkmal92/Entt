@@ -150,7 +150,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -174,7 +174,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -259,6 +259,6 @@
   "Id": "stat",
   "CreatedDate": "2016-10-20T09:33:54.5934327+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T10:22:59.1115417+08:00",
+  "ChangedDate": "2016-11-28T15:28:57.8662214+08:00",
   "WebId": "4136f226-57a2-43f5-becb-a6e7809d0cf2"
 }

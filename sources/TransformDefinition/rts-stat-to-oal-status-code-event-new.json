@@ -157,15 +157,6 @@
         "WebId": "a6c512b7-4bdc-4152-cc9a-f1ef7dda6b58"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "6678f084-1dfc-494b-81c2-ad8285bda41c",
-        "Destination": "event_type_name_display",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "9bd307b9-f810-4a8c-e536-cc11e4b6a3ce"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "Comment",
         "TypeName": "",
@@ -186,20 +177,29 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "6678f084-1dfc-494b-81c2-ad8285bda41c",
-        "Destination": "status_code_desc",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "030f542a-abf3-418f-a696-13619d55f9ee"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "5ba3dc01-0a7c-4ea0-a9c2-9e6056b77870",
         "Destination": "item_type_code",
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "720d39f9-ab21-46b2-ede0-c7bd0121591a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "7727eb74-e909-4e97-ea33-3898ba131ef2",
+        "Destination": "event_type_name_display",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d5f708ae-4093-4a37-9fb4-2e627ce3a7ea"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "7727eb74-e909-4e97-ea33-3898ba131ef2",
+        "Destination": "status_code_desc",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bb5dc4b0-b1ae-4e60-9435-1061d57679f3"
       }
     ]
   },
@@ -775,6 +775,35 @@
         "X": 538.0,
         "Y": 452.0,
         "WebId": "5ba3dc01-0a7c-4ea0-a9c2-9e6056b77870"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return !desc.Equals(\"-\") ? desc : null;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "desc",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "6678f084-1dfc-494b-81c2-ad8285bda41c",
+              "Constant": "",
+              "Default": "",
+              "WebId": "6b8cbd34-9acc-4652-ede8-a0b55a3cb173"
+            }
+          ]
+        },
+        "Name": "CheckDescription",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 517.0,
+        "Y": 90.0,
+        "WebId": "7727eb74-e909-4e97-ea33-3898ba131ef2"
       }
     ]
   },
@@ -795,6 +824,6 @@
   "Id": "rts-stat-to-oal-status-code-event-new",
   "CreatedDate": "2016-10-20T09:45:31.2892741+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T13:01:39.0339475+08:00",
+  "ChangedDate": "2016-11-28T15:25:59.3018512+08:00",
   "WebId": "4fc2f8a5-75be-4513-902f-72cff9f7b804"
 }

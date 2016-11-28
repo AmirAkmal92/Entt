@@ -137,12 +137,12 @@
         },
         "Name": "StatusCode",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "21",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
         "WebId": "6a3fa2c8-af80-43a6-8d05-434addff227c"
@@ -157,12 +157,12 @@
         },
         "Name": "Comment",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "GPO SBN",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
         "WebId": "deffb5b8-d91c-4cd5-8449-6c39ef43af82"
@@ -214,6 +214,6 @@
   "Id": "rts-stat",
   "CreatedDate": "2016-10-20T09:31:52.3157319+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-11T10:21:25.3894906+08:00",
+  "ChangedDate": "2016-11-28T15:28:30.2821908+08:00",
   "WebId": "4136f226-57a2-43f5-becb-a6e7809d0cf2"
 }
