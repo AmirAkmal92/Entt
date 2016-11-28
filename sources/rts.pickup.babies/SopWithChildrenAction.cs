@@ -14,81 +14,100 @@ namespace Bespoke.PosEntt.CustomActions
     public class SopWithChildrenAction : CustomAction
     {
         public override bool UseAsync => true;
+
+        private List<Adapters.Oal.dbo_sop_event_new> m_sopEventRows;
+        private List<Adapters.Oal.dbo_wwp_event_new_log> m_sopWwpEventLogRows;
+        private List<Adapters.Oal.dbo_event_pending_console> m_sopEventPendingConsoleRows;
+
         public override async Task ExecuteAsync(RuleContext context)
         {
             var sop = context.Item as Sops.Domain.Sop;
             if (null == sop) return;
-            await RunAsync(sop);
-        }
-
-        public async Task RunAsync(Sops.Domain.Sop sop)
-        {
             var isConsole = IsConsole(sop.ConsignmentNo);
             if (!isConsole) return;
 
+            m_sopEventRows = new List<Adapters.Oal.dbo_sop_event_new>();
+            m_sopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
+            m_sopEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
+
+        await RunAsync(sop);
+        }
+
+        public async Task RunAsync(Sops.Domain.Sop sop)
+        {            
+
             //console_details
             var consoleList = new List<string>();
-            if (IsConsole(sop.ConsignmentNo)) consoleList.Add(sop.ConsignmentNo);
+            consoleList.Add(sop.ConsignmentNo);
 
-            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
-            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", sop.ConsignmentNo);
-            var lo = await consoleDetailsAdapter.LoadAsync(query);
-            var consoleItem = lo.ItemCollection.FirstOrDefault();
-            if (null == consoleItem)
-            {
-                //insert into pending items
-                var pending = new Adapters.Oal.dbo_event_pending_console();
-                pending.id = GenerateId(20);
-                pending.event_class = "pos.oal.SopEventNew";
-                pending.console_no = sop.ConsignmentNo;
-                pending.version = 0;
-                pending.date_field = DateTime.Now;
-
-                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-                var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(pending));
-                var result = await pr;
-                if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-
-                return;
-            }
-
-            var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            var sopEventMap = new Integrations.Transforms.RtsSopToOalSopEventNew();
-            var sopEventRows = new List<Adapters.Oal.dbo_sop_event_new>();
-            var sopWwpEventLogMap = new Integrations.Transforms.RtsSopToOalSopWwpEventNewLog();
-            var sopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-
-            foreach (var item in children)
-            {
-                if (consoleList.Contains(item)) continue;
-
-                var console = IsConsole(item);
-                var sop1 = sop.Clone();
-                var child = await sopEventMap.TransformAsync(sop1);
-                child.id = GenerateId(34);
-                child.consignment_no = item;
-                child.data_flag = "1";
-                child.item_type_code = console ? "02" : "01";
-                sopEventRows.Add(child);
-
-                if (console)
-                {
-                    consoleList.Add(item);
-
-                    var wwp = await sopWwpEventLogMap.TransformAsync(sop1);
-                    wwp.id = GenerateId(34);
-                    wwp.consignment_note_number = item;
-                    sopWwpEventLogRows.Add(wwp);
-                }
-            }
-            
+            var sopWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
             var sopEventAdapter = new Adapters.Oal.dbo_sop_event_newAdapter();
-            foreach (var item in sopEventRows)
+            var sopEventMap = new Integrations.Transforms.RtsSopToOalSopEventNew();
+            var parentRow = await sopEventMap.TransformAsync(sop);
+            parentRow.id = GenerateId(34);
+            m_sopEventRows.Add(parentRow);
+
+            var consoleItem = await SearchConsoleDetails(sop.ConsignmentNo);
+            if (null != consoleItem)
             {
+                var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in children)
+                {
+                    if (consoleList.Contains(item)) continue;
+                    ProcessChild(parentRow, item);
+
+                    //2 level
+                    var console = IsConsole(item);
+                    if (console)
+                    {
+                        consoleList.Add(item);
+                        var childConsole = await SearchConsoleDetails(item);
+                        if (null != childConsole)
+                        {
+                            var childConsoleItems = childConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (var cc in childConsoleItems)
+                            {
+                                if (consoleList.Contains(cc)) continue;
+                                ProcessChild(parentRow, cc);
+
+                                //3 level
+                                var anotherConsole = IsConsole(cc);
+                                if (anotherConsole)
+                                {
+                                    consoleList.Add(cc);
+                                    var anotherChildConsole = await SearchConsoleDetails(cc);
+                                    if (null != anotherChildConsole)
+                                    {
+                                        var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                                        foreach (var ccc in anotherChildConsoleItems)
+                                        {
+                                            if (consoleList.Contains(ccc)) continue;
+                                            ProcessChild(parentRow, ccc);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        AddPendingItems(parentRow.id, cc);
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            AddPendingItems(parentRow.id, item);
+                        }
+                    }
+                }                
+            }
+            else
+            {
+                AddPendingItems(parentRow.id, sop.ConsignmentNo);
+            }
+
+            //persist any rows
+            foreach (var item in m_sopEventRows)
+            {
+                System.Diagnostics.Debug.WriteLine("sop_event_new: {0}|{1}", item.consignment_no, item.id);
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => sopEventAdapter.InsertAsync(item));
@@ -98,8 +117,7 @@ namespace Bespoke.PosEntt.CustomActions
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
 
-            var sopWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
-            foreach (var item in sopWwpEventLogRows)
+            foreach (var item in m_sopWwpEventLogRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
@@ -109,6 +127,69 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+
+            foreach (var item in m_sopEventPendingConsoleRows)
+            {
+                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
+        {
+            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", consignmentNo);
+            var lo = await consoleDetailsAdapter.LoadAsync(query);
+            return lo.ItemCollection.FirstOrDefault();
+        }
+
+        private void ProcessChild(Adapters.Oal.dbo_sop_event_new parent, string consignmentNo)
+        {
+            var console = IsConsole(consignmentNo);
+            var child = parent.Clone();
+            child.id = GenerateId(34);
+            child.consignment_no = consignmentNo;
+            child.data_flag = "1";
+            child.item_type_code = console ? "02" : "01";
+            m_sopEventRows.Add(child);
+        }
+
+        private void AddPendingItems(string parentId, string consignmentNo)
+        {
+            //insert into pending items
+            var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
+            pendingConsole.id = GenerateId(20);
+            pendingConsole.event_id = parentId;
+            pendingConsole.event_class = "pos.oal.SopEventNew";
+            pendingConsole.console_no = consignmentNo;
+            pendingConsole.version = 0;
+            pendingConsole.date_field = DateTime.Now;
+            m_sopEventPendingConsoleRows.Add(pendingConsole);
+
+            var pendingWwp = new Adapters.Oal.dbo_event_pending_console();
+            pendingWwp.id = GenerateId(20);
+            pendingWwp.event_id = parentId;
+            pendingWwp.event_class = "pos.oal.WwpEventNewLog";
+            pendingWwp.console_no = consignmentNo;
+            pendingWwp.version = 0;
+            pendingWwp.date_field = DateTime.Now;
+            m_sopEventPendingConsoleRows.Add(pendingWwp);
+        }
+
+        async private Task ProcessChildWwp(Sops.Domain.Sop sop, string childConnoteNo)
+        {
+            var sopWwpEventLogMap = new Integrations.Transforms.RtsSopToOalSopWwpEventNewLog();
+            var sop1 = sop;
+            var wwp = await sopWwpEventLogMap.TransformAsync(sop1);
+            wwp.id = GenerateId(34);
+            wwp.consignment_note_number = childConnoteNo;
+            m_sopWwpEventLogRows.Add(wwp);
         }
 
         public override string GetEditorViewModel()
@@ -210,8 +291,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
         private string GenerateId(int length)
         {
-            var ticks = System.DateTime.Now.Ticks;
-            var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));            
             return id.Substring(0, length);
         }
 
