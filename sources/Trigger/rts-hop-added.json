@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ffd4f0b0fd",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "d4f0b0fd-721c-427d-8e65-2a91ff611b23"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": false,
+          "Name": "false",
+          "Note": "",
+          "WebId": "f30749ee-61bd-44ae-b953-47a9c609f2a6"
+        },
+        "Operator": "Eq",
+        "WebId": "28691e6f-92d7-409e-a178-db278b4f633e"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -100,6 +122,6 @@
   "Id": "rts-hop-added",
   "CreatedDate": "2016-10-19T11:53:35.1190563+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T11:11:19.4360858+08:00",
+  "ChangedDate": "2016-11-28T14:41:23.5152756+08:00",
   "WebId": "ea07b5ca-8811-4ed5-ab73-82108fe47488"
 }
