@@ -360,6 +360,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_comm-rts-comm-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.comm-rts-comm-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"

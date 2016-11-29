@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.PosEntt.CustomActions.CommWithChildrenAction, rts.pickup.babies",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "8983229c-b1b0-4d26-cda3-a78bdd15cb63"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsCommToOalWithChild",
+  "Entity": "Comm",
+  "TypeOf": "Bespoke.PosEntt.Comms.Domain.Comm, PosEntt.Comm",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "CommRtsCommToOalWithChildTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "comm-rts-comm-to-oal-with-child",
+  "CreatedDate": "2016-11-29T08:32:48.1507564+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-11-29T08:33:08.5197011+08:00",
+  "WebId": "0da70f76-f7b1-486c-b046-96a05fdfaddd"
+}

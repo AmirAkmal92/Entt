@@ -37,6 +37,9 @@
       <HintPath>..\..\packages\Polly.4.2.4\lib\net45\Polly.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PosEntt.Comm">
+      <HintPath>..\..\output\PosEntt.Comm.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.Deco">
       <HintPath>..\..\output\PosEntt.Deco.dll</HintPath>
     </Reference>
@@ -60,6 +63,9 @@
     </Reference>
     <Reference Include="PosEntt.Pickup">
       <HintPath>..\..\output\PosEntt.Pickup.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsCommToOalCommEventNew">
+      <HintPath>..\..\output\PosEntt.RtsCommToOalCommEventNew.dll</HintPath>
     </Reference>
     <Reference Include="PosEntt.RtsDeco_Oal_delivery_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsDeco_Oal_delivery_console_event_new.dll</HintPath>
@@ -145,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeliWithChildrenAction.cs" />
+    <Compile Include="CommWithChildrenAction.cs" />
     <Compile Include="StatWithChildrenAction.cs" />
     <Compile Include="MissortWithChildrenAction.cs" />
     <Compile Include="VasnWithChildrenAction.cs" />
