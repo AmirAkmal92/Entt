@@ -9,6 +9,7 @@
             <th>Date</th>
             <th>Time</th>
             <th>ConsignmentNo</th>
+            <th>PickupNo</th>
             <th>BabyConsignment</th>
             <th>TotalBaby</th>
             <th>ScannerId</th>
@@ -25,6 +26,7 @@
             <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
             <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}"></td>
             <td data-bind="text:_source.ConsignmentNo"></td>
+            <td data-bind="text:_source.PickupNo"></td>
             <td data-bind="text:_source.BabyConsignment.replace(/,/g, ', ')"></td>
             <td data-bind="text:_source.TotalBaby"></td>
             <td data-bind="text:_source.ScannerId"></td>
