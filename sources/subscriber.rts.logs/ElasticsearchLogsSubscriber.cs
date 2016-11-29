@@ -91,9 +91,6 @@ namespace Bespoke.PostEntt.Subscribers
   ""aliases"": {{
     ""{ConfigurationManager.ElasticSearchIndex}_rts"": {{}}
   }},
-  ""settings"": {{
-    ""number_of_shards"": {1}
-  }},
   ""mappings"": {{
         {mappings.ToString(",\r\n")}
   }}
