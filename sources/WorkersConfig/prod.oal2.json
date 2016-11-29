@@ -1,0 +1,246 @@
+{
+  "name": "oal2",
+  "description": "OAL workers config on production servers",
+  "isEnabled": true,
+  "environment": "prod",
+  "subscriberConfigs": [
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_deco-deco-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoDecoToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.deco-deco-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_norm-rts-norm-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.norm-rts-norm-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_hip-rts-hip-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.hip-rts-hip-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_rts-hop-added",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.RtsHopAddedTriggerSubscriber",
+      "assembly": "subscriber.trigger.rts-hop-added"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_vasn-rts-vasn-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_comm-rts-comm-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.comm-rts-comm-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_miss-rts-miss-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.miss-rts-miss-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sip-rts-sip-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.sip-rts-sip-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sop-rts-sop-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.sop-rts-sop-to-oal"
+    },    
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_reve-rts-reve-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.ReveRtsReveToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.reve-rts-reve-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-oal-pickup-with-babies",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupOalPickupWithBabiesTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-oal-pickup-with-babies"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-to-pss",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToPssTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-to-pss"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_norm-rts-norm-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_deco-rts-deco-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.deco-rts-deco-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sop-rts-sop-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.sop-rts-sop-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sip-rts-sip-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.sip-rts-sip-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_hip-rts-hip-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.hip-rts-hip-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_hop-rts-hop-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.hop-rts-hop-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_stat-rts-stat-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_vasn-rts-vasn-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_miss-rts-miss-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.miss-rts-miss-to-oal-with-child"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_comm-rts-comm-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.comm-rts-comm-to-oal-with-child"
+    }
+  ],
+  "createdBy": "erymuzuan",
+  "id": "oal2",
+  "createdDate": "2016-11-29T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-11-29T00:00:00+08:00",
+  "webId": "oal2"
+}
