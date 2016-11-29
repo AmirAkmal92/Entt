@@ -1,0 +1,15 @@
+IF OBJECT_ID('Sph.AccessToken', 'U') IS NOT NULL
+  DROP TABLE Sph.AccessToken
+GO
+
+CREATE TABLE Sph.AccessToken
+(
+	 [Subject] VARCHAR(50) NOT NULL PRIMARY KEY
+	,[Email] VARCHAR(255) NULL
+	,[UserName] VARCHAR(255) NULL
+	,[Payload] VARCHAR(MAX)
+	,[ExpiryDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
+)
+GO 
+
+
