@@ -124,9 +124,7 @@ namespace Bespoke.PosEntt.CustomActions
                 foreach (var babyConsignmentNo in wwpLogBabies)
                 {
                     var wwpLogChildRow = wwpEventNewLogParentRow.Clone();
-                    var ticks = System.DateTime.Now.Ticks;
-                    var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
-                    wwpLogChildRow.id = id.Substring(0, 34);
+                    wwpLogChildRow.id = GenerateId(34);
                     wwpLogChildRow.consignment_note_number = babyConsignmentNo;
                     wwpEventNewLogRows.Add(wwpLogChildRow);
                 }
@@ -143,6 +141,12 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+        }
+        
+        private string GenerateId(int length)
+        {
+            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
+            return id.Substring(0, length);
         }
 
         public override string GetEditorViewModel()

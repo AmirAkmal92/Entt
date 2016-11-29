@@ -94,21 +94,21 @@ namespace Bespoke.PosEntt.CustomActions
                                     }
                                     else
                                     {
-                                        AddPendingItems(parentRow.id, cc);
+                                        AddPendingItems(parentRow.id, parentWwpRow.id, cc);
                                     }
                                 }
                             }
                         }
                         else
                         {
-                            AddPendingItems(parentRow.id, item);
+                            AddPendingItems(parentRow.id, parentWwpRow.id, item);
                         }
                     }
                 }                
             }
             else
             {
-                AddPendingItems(parentRow.id, sop.ConsignmentNo);
+                AddPendingItems(parentRow.id, parentWwpRow.id, sop.ConsignmentNo);
             }
 
             //persist any rows
@@ -135,9 +135,9 @@ namespace Bespoke.PosEntt.CustomActions
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
 
+            var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
             foreach (var item in m_sopEventPendingConsoleRows)
             {
-                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
@@ -167,7 +167,7 @@ namespace Bespoke.PosEntt.CustomActions
             m_sopEventRows.Add(child);
         }
 
-        private void AddPendingItems(string parentId, string consignmentNo)
+        private void AddPendingItems(string parentId, string wwpParentId, string consignmentNo)
         {
             //insert into pending items
             var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
@@ -181,7 +181,7 @@ namespace Bespoke.PosEntt.CustomActions
 
             var pendingWwp = new Adapters.Oal.dbo_event_pending_console();
             pendingWwp.id = GenerateId(20);
-            pendingWwp.event_id = parentId;
+            pendingWwp.event_id = wwpParentId;
             pendingWwp.event_class = "pos.oal.WwpEventNewLog";
             pendingWwp.console_no = consignmentNo;
             pendingWwp.version = 0;

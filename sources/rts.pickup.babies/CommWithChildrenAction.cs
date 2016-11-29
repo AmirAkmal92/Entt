@@ -109,10 +109,10 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
-            
+
+            var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
             foreach (var item in m_commEventPendingConsoleRows)
             {
-                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
