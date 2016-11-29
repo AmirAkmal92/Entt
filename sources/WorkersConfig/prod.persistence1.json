@@ -1,5 +1,5 @@
 {
-  "name": "persistence",
+  "name": "persistence1",
   "description": "Persistence workers config on production servers",
   "isEnabled": true,
   "environment": "prod",

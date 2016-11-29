@@ -1,5 +1,5 @@
 {
-  "name": "oal",
+  "name": "oal2",
   "description": "OAL workers config on production servers",
   "isEnabled": true,
   "environment": "prod",
