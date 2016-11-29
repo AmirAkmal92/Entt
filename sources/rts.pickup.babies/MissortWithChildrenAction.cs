@@ -10,47 +10,40 @@ using System.Linq;
 namespace Bespoke.PosEntt.CustomActions
 {
     [Export(typeof(CustomAction))]
-    [DesignerMetadata(Name = "DeliWithChildren", TypeName = "Bespoke.PosEntt.CustomActions.DeliWithChildrenAction, rts.pickup.babies", Description = "RTS DELI with child items", FontAwesomeIcon = "calendar-check-o")]
-    public class DeliWithChildrenAction : CustomAction
+    [DesignerMetadata(Name = "MissWithChildren", TypeName = "Bespoke.PosEntt.CustomActions.MissWithChildrenAction, rts.pickup.babies", Description = "RTS MISSORT with child items", FontAwesomeIcon = "calendar-check-o")]
+    public class MissWithChildrenAction : CustomAction
     {
         public override bool UseAsync => true;
-
-        private List<Adapters.Oal.dbo_delivery_event_new> m_deliEventRows;
-        private List<Adapters.Oal.dbo_wwp_event_new_log> m_deliWwpEventLogRows;
-        private List<Adapters.Oal.dbo_event_pending_console> m_deliEventPendingConsoleRows;
+        private List<Adapters.Oal.dbo_missort_event_new> m_missEventRows;
+        private List<Adapters.Oal.dbo_event_pending_console> m_missEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
-            var deli = context.Item as Deliveries.Domain.Delivery;
-            if (null == deli) return;
-            var isConsole = IsConsole(deli.ConsignmentNo);
+            var miss = context.Item as Misses.Domain.Miss;
+            if (null == miss) return;
+            var isConsole = IsConsole(miss.ConsignmentNo);
             if (!isConsole) return;
 
-            m_deliEventRows = new List<Adapters.Oal.dbo_delivery_event_new>();
-            m_deliWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_deliEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
+            m_missEventRows = new List<Adapters.Oal.dbo_missort_event_new>();
+            m_missEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
 
-            await RunAsync(deli);
+            await RunAsync(miss);
         }
 
-        public async Task RunAsync(Deliveries.Domain.Delivery deli)
+        public async Task RunAsync(Misses.Domain.Miss miss)
         {
             //console_details
             var consoleList = new List<string>();
-            if (IsConsole(deli.ConsignmentNo)) consoleList.Add(deli.ConsignmentNo);
+            if (IsConsole(miss.ConsignmentNo)) consoleList.Add(miss.ConsignmentNo);
 
-            var deliEventAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
-            var deliWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
-            var deliEventMap = new Integrations.Transforms.RtsDeliveryToOalDboDeliveryEventNew();
-            var parentRow = await deliEventMap.TransformAsync(deli);
+            var missEventAdapter = new Adapters.Oal.dbo_missort_event_newAdapter();
+            var missWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
+            var missEventMap = new Integrations.Transforms.RtsMissToOalMissortEventNew();
+            var parentRow = await missEventMap.TransformAsync(miss);
             parentRow.id = GenerateId(34);
-            m_deliEventRows.Add(parentRow);
-
-            var deliWwpEventLogMap = new Integrations.Transforms.RtsDeliveryOalWwpEventNewLog();
-            var parentWwpRow = await deliWwpEventLogMap.TransformAsync(deli);
-            m_deliWwpEventLogRows.Add(parentWwpRow);
-
-            var consoleItem = await SearchConsoleDetails(deli.ConsignmentNo);
+            m_missEventRows.Add(parentRow);
+            
+            var consoleItem = await SearchConsoleDetails(miss.ConsignmentNo);
             if (null != consoleItem)
             {
                 var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
@@ -58,7 +51,6 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     if (consoleList.Contains(item)) continue;
                     ProcessChild(parentRow, item);
-                    ProcessChildWwp(parentWwpRow, item);
 
                     //2 level
                     var console = IsConsole(item);
@@ -73,7 +65,6 @@ namespace Bespoke.PosEntt.CustomActions
                             {
                                 if (consoleList.Contains(cc)) continue;
                                 ProcessChild(parentRow, cc);
-                                ProcessChildWwp(parentWwpRow, cc);
 
                                 //3 level
                                 var anotherConsole = IsConsole(cc);
@@ -88,7 +79,6 @@ namespace Bespoke.PosEntt.CustomActions
                                         {
                                             if (consoleList.Contains(ccc)) continue;
                                             ProcessChild(parentRow, ccc);
-                                            ProcessChildWwp(parentWwpRow, ccc);
                                         }
                                     }
                                     else
@@ -107,32 +97,21 @@ namespace Bespoke.PosEntt.CustomActions
             }
             else
             {
-                AddPendingItems(parentRow.id, deli.ConsignmentNo);
+                AddPendingItems(parentRow.id, miss.ConsignmentNo);
             }
 
-            foreach (var item in m_deliEventRows)
+            foreach (var item in m_missEventRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => deliEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => missEventAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
-
-            foreach (var item in m_deliWwpEventLogRows)
-            {
-                var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => deliWwpEventAdapter.InsertAsync(item));
-                var result = await pr;
-                if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }
-
-            foreach (var item in m_deliEventPendingConsoleRows)
+            
+            foreach (var item in m_missEventPendingConsoleRows)
             {
                 var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
                 var pr = Policy.Handle<SqlException>()
@@ -142,7 +121,7 @@ namespace Bespoke.PosEntt.CustomActions
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }
+            }            
         }
 
         async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
@@ -153,7 +132,7 @@ namespace Bespoke.PosEntt.CustomActions
             return lo.ItemCollection.FirstOrDefault();
         }
 
-        private void ProcessChild(Adapters.Oal.dbo_delivery_event_new parent, string consignmentNo)
+        private void ProcessChild(Adapters.Oal.dbo_missort_event_new parent, string consignmentNo)
         {
             var console = IsConsole(consignmentNo);
             var child = parent.Clone();
@@ -161,7 +140,7 @@ namespace Bespoke.PosEntt.CustomActions
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
-            m_deliEventRows.Add(child);
+            m_missEventRows.Add(child);
         }
 
         private void AddPendingItems(string parentId, string consignmentNo)
@@ -170,28 +149,11 @@ namespace Bespoke.PosEntt.CustomActions
             var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
             pendingConsole.id = GenerateId(20);
             pendingConsole.event_id = parentId;
-            pendingConsole.event_class = "pos.oal.DeliveryEventNew";
+            pendingConsole.event_class = "pos.oal.MissortEventNew";
             pendingConsole.console_no = consignmentNo;
             pendingConsole.version = 0;
             pendingConsole.date_field = DateTime.Now;
-            m_deliEventPendingConsoleRows.Add(pendingConsole);
-
-            var pendingWwp = new Adapters.Oal.dbo_event_pending_console();
-            pendingWwp.id = GenerateId(20);
-            pendingWwp.event_id = parentId;
-            pendingWwp.event_class = "pos.oal.WwpEventNewLog";
-            pendingWwp.console_no = consignmentNo;
-            pendingWwp.version = 0;
-            pendingWwp.date_field = DateTime.Now;
-            m_deliEventPendingConsoleRows.Add(pendingWwp);
-        }
-
-        private void ProcessChildWwp(Adapters.Oal.dbo_wwp_event_new_log sipWwp, string childConnoteNo)
-        {
-            var wwp = sipWwp.Clone();
-            wwp.id = GenerateId(34);
-            wwp.consignment_note_number = childConnoteNo;
-            m_deliWwpEventLogRows.Add(wwp);
+            m_missEventPendingConsoleRows.Add(pendingConsole);
         }
 
         public override string GetEditorViewModel()
@@ -200,10 +162,10 @@ namespace Bespoke.PosEntt.CustomActions
 define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbuilders.system],
     function(context, logger, dialog, system) {
 
-                bespoke.sph.domain.DeliWithChildrenAction = function(optionOrWebid) {
+                bespoke.sph.domain.MissWithChildrenAction = function(optionOrWebid) {
 
                     const v = new bespoke.sph.domain.CustomAction(optionOrWebid);
-                    v[""$type""] = ""Bespoke.PosEntt.CustomActions.DeliWithChildrenAction, rts.pickup.babies"";
+                    v[""$type""] = ""Bespoke.PosEntt.CustomActions.MissWithChildrenAction, rts.pickup.babies"";
                     if (optionOrWebid && typeof optionOrWebid === ""object"")
                     {
                         for (var n in optionOrWebid)
@@ -219,16 +181,16 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
                         v.WebId(optionOrWebid);
                     }
 
-                    if (bespoke.sph.domain.DeliWithChildrenActionPartial)
+                    if (bespoke.sph.domain.MissWithChildrenActionPartial)
                     {
-                        return _(v).extend(new bespoke.sph.domain.DeliWithChildrenActionPartial(v));
+                        return _(v).extend(new bespoke.sph.domain.MissWithChildrenActionPartial(v));
                     }
                     return v;
                 };
 
 
 
-        const action = ko.observable(new bespoke.sph.domain.DeliWithChildrenAction(system.guid())),
+        const action = ko.observable(new bespoke.sph.domain.MissWithChildrenAction(system.guid())),
             trigger = ko.observable(),                   
             activate = function() {
                    return true;
@@ -271,7 +233,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
             <div class=""modal-header"">
                 <button type=""button"" class=""close"" data-dismiss=""modal"" data-bind=""click : cancelClick"">&times;</button>
-                <h3>RTS DELI with child items</h3>
+                <h3>RTS MISSORT with child items</h3>
             </div>
             <div class=""modal-body"" data-bind=""with: action"">
 
