@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
 using Polly;
+using System.Linq;
 
 namespace Bespoke.PosEntt.CustomActions
 {
@@ -13,35 +14,84 @@ namespace Bespoke.PosEntt.CustomActions
     public class NormWithBabiesAction : CustomAction
     {
         public override bool UseAsync => true;
+
+        private List<Adapters.Oal.dbo_normal_console_event_new> m_normEventRows;
+        private List<Adapters.Oal.dbo_event_pending_console> m_normEventPendingConsoleRows;
+
         public override async Task ExecuteAsync(RuleContext context)
         {
             var norm = context.Item as Norms.Domain.Norm;
             if (null == norm) return;
             if (norm.TotalConsignment <= 0) return;
+
+            m_normEventRows = new List<Adapters.Oal.dbo_normal_console_event_new>();
+            m_normEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
+
             await RunAsync(norm);
         }
 
         public async Task RunAsync(Norms.Domain.Norm norm)
         {
+            var consoleList = new List<string>();
+            if (IsConsole(norm.ConsoleTag)) consoleList.Add(norm.ConsoleTag);
+
             //norm console_details
             var normEventMap = new Integrations.Transforms.RtsNormToNormalConsoleEventNew();
-            var normEventRows = new List<Adapters.Oal.dbo_normal_console_event_new>();
+            var normEventAdapter = new Adapters.Oal.dbo_normal_console_event_newAdapter();
             var parentRow = await normEventMap.TransformAsync(norm);
-            normEventRows.Add(parentRow);
+            m_normEventRows.Add(parentRow);
 
             var itemList = norm.AllConsignmentNotes.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var item in itemList)
             {
                 var childItem = parentRow.Clone();
-                childItem.id = GenerateId(34);
-                childItem.consignment_no = item;
-                childItem.item_type_code = IsConsole(item) ? "02" : "01";
-                childItem.data_flag = "1";
-                normEventRows.Add(childItem);
+                ProcessChild(parentRow, item);
+
+                //2 level
+                var console = IsConsole(item);
+                if (console)
+                {
+                    consoleList.Add(item);
+                    var childConsole = await SearchConsoleDetails(item);
+                    if (null != childConsole)
+                    {
+                        var childConsoleItems = childConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var cc in childConsoleItems)
+                        {
+                            if (consoleList.Contains(cc)) continue;
+                            ProcessChild(parentRow, cc);
+
+                            //3 level
+                            var anotherConsole = IsConsole(cc);
+                            if (anotherConsole)
+                            {
+                                consoleList.Add(cc);
+                                var anotherChildConsole = await SearchConsoleDetails(cc);
+                                if (null != anotherChildConsole)
+                                {
+                                    var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                                    foreach (var ccc in anotherChildConsoleItems)
+                                    {
+                                        if (consoleList.Contains(ccc)) continue;
+                                        ProcessChild(parentRow, ccc);
+                                    }
+                                }
+                                else
+                                {
+                                    AddPendingItems(parentRow.id, cc);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        AddPendingItems(parentRow.id, item);
+                    }
+                }
+
             }
 
-            var normEventAdapter = new Adapters.Oal.dbo_normal_console_event_newAdapter();
-            foreach (var item in normEventRows)
+            foreach (var item in m_normEventRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
@@ -50,7 +100,51 @@ namespace Bespoke.PosEntt.CustomActions
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }            
+            }
+
+            foreach (var item in m_normEventPendingConsoleRows)
+            {
+                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }           
+        }
+
+        async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
+        {
+            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", consignmentNo);
+            var lo = await consoleDetailsAdapter.LoadAsync(query);
+            return lo.ItemCollection.FirstOrDefault();
+        }
+
+        private void ProcessChild(Adapters.Oal.dbo_normal_console_event_new parent, string consignmentNo)
+        {
+            var console = IsConsole(consignmentNo);
+            var child = parent.Clone();
+            child.id = GenerateId(34);
+            child.consignment_no = consignmentNo;
+            child.data_flag = "1";
+            child.item_type_code = console ? "02" : "01";
+            m_normEventRows.Add(child);
+        }
+
+        private void AddPendingItems(string parentId, string consignmentNo)
+        {
+            //insert into pending items
+            var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
+            pendingConsole.id = GenerateId(20);
+            pendingConsole.event_id = parentId;
+            pendingConsole.event_class = "pos.oal.NormalConsoleEventNew";
+            pendingConsole.console_no = consignmentNo;
+            pendingConsole.version = 0;
+            pendingConsole.date_field = DateTime.Now;
+            m_normEventPendingConsoleRows.Add(pendingConsole);
         }
 
         public override string GetEditorViewModel()
@@ -152,8 +246,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
         private string GenerateId(int length)
         {
-            var ticks = System.DateTime.Now.Ticks;
-            var id = string.Format("en{0}{1}", ticks.ToString().Substring(6), System.Guid.NewGuid().ToString("N"));
+            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
             return id.Substring(0, length);
         }
 
