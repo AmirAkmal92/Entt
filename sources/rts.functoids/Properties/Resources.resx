@@ -124,4 +124,10 @@
   <data name="OalIdFunctoidDialogView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oal.id.functoid.dialog.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="FixedLengthStringFunctoidView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixed.length.string.functoid.dialog.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FixedLengthStringFunctoidViewModel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixed.length.string.functoid.dialog.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

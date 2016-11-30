@@ -8,7 +8,7 @@
                         data-bind="click : cancelClick">
                     &times;
                 </button>
-                <h3>Generate ID Functoid</h3>
+                <h3>Fixed Length String Functoid</h3>
             </div>
             <div class="modal-body" data-bind="with:functoid">
 
@@ -16,19 +16,33 @@
                     <div class="form-group">
                         <label for="id-length" class="col-sm-2 control-label">Length</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="id-length" placeholder="The maximun length of the id" data-bind="value: Length"/>
+                            <input class="form-control" id="id-length" required type="number" placeholder="The length of the output string" data-bind="value: Length"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="id-prefix" class="col-sm-2 control-label">Prefix</label>
+                        <div class="col-md-offset-2 col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input data-bind="checked: Pad" id="pad" type="checkbox" name="Pad"/>
+                                    Pad
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id-prefix" class="col-sm-2 control-label">Pad Char</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="id-prefix" placeholder="Prefix to be added to the Id" data-bind="value: Prefix"/>
+                            <input class="form-control" id="id-prefix" placeholder="Char for pad" data-bind="value: PadChar, enable: Pad" maxlength="1"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="id-suffix" class="col-sm-2 control-label">Suffix</label>
+                        <label for="id-suffix" class="col-sm-2 control-label">Left or right</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="id-suffix" placeholder="Siffix to be added to the Id" data-bind="value: Suffix"/>
+                            <select class="form-control" id="id-suffix" placeholder="Siffix to be added to the Id" data-bind="value: PadLeftOrRight, enable: Pad">
+                                <option value="Left">Left</option>
+                                <option value="Right">Right</option>
+                            </select>
                         </div>
                     </div>
                 </form>
