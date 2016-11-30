@@ -37,15 +37,32 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                }
             ]
         },
+        loadListAsync = function(q){            
+            var q = q || query;
+            return context.post(ko.toJSON(q), `api/rts-dashboard/${rtsType().toLowerCase()}`)
+                .then(function (result) {
+                    total(result.hits.total);
+                    const eventsList = result.hits.hits.map(function(v){
+                        v.log = ko.observable({
+                            total : ko.observable(0),
+                            busy : ko.observable(false),
+                            hits : ko.observableArray()
+                        });
+                        context.get(`api/rts-dashboard/logs/${v._type}/${v._id}`).then(function(log){
+                            v.log().total(log.hits.total);
+                            v.log().hits(log.hits.hits);
+                        });
+                        return v;
+                    });
+                    list(eventsList);
+                });
+        },
         activate = function (type) {
             rtsType(type);
             selectedItems([]);
             queues([]);
-            return context.post(ko.toJSON(query), `api/rts-dashboard/${type.toLowerCase()}`)
+            return loadListAsync()
                 .then(function (result) {
-                    total(result.hits.total);
-                    list(result.hits.hits);
-
                     return context.loadAsync("Trigger", `Entity eq '${type}'`);
                 }).then(function (lo) {
                     queueOptions(lo.itemCollection);
@@ -63,11 +80,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 changed: function (page, ps) {
                     from(ps * (page - 1));
                     size(ps);
-                    return context.post(ko.toJSON(query), `api/rts-dashboard/${rtsType().toLowerCase()}`)
-                      .then(function (result) {
-                          total(result.hits.total);
-                          list(result.hits.hits);
-                      });
+                    return loadListAsync();
                 }
             });
 
@@ -93,11 +106,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                    function (start, end) {
                        dateFrom(start.format());
                        to(end.format());
-                       return context.post(ko.toJSON(query), `api/rts-dashboard/${rtsType().toLowerCase()}`)
-                          .then(function (result) {
-                              total(result.hits.total);
-                              list(result.hits.hits);
-                          });
+                       return loadListAsync();
                    }
                );
 
@@ -126,11 +135,14 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 }
             });
             isBusy(true);
-            return context.post(ko.toJSON(q), `api/rts-dashboard/${rtsType().toLowerCase()}`)
-                   .then(function (result) {
-                       total(result.hits.total);
-                       list(result.hits.hits);
-                    isBusy(false);
+            return loadListAsync(q);
+        },
+        viewLog = function(log){
+            console.log(log);
+               require(["viewmodels/log.details.dialog", "durandal/app"], function (dialog, app2) {
+                    dialog.log(log._source);
+                    app2.showDialog(dialog);
+
                 });
         };
 
@@ -148,6 +160,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         searchText: searchText,
         search: search,
         to: to,
+        viewLog:viewLog,
         isBusy: isBusy
     };
 

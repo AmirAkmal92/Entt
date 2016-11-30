@@ -45,6 +45,49 @@ public class RtsDashboadController : BaseApiController
             throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
         return Json(result);
     }
+
+    [Route("logs/{type}/{id}")]
+    [HttpGet]
+    public async Task<IHttpActionResult> GetSubscriberErrorAsync(string type, string id)
+    {
+        var query = $@"{{
+   ""filter"": {{
+      ""query"": {{
+         ""bool"": {{
+            ""must"": [
+               {{
+                  ""term"": {{
+                     ""otherInfo.id2"": ""{id.Replace("-", "")}""
+                  }}
+               }},               
+               {{
+                  ""term"": {{
+                     ""otherInfo.type"": ""{type.ToLowerInvariant()}""
+                  }}
+               }}
+            ]
+         }}
+      }}
+   }},
+   ""sort"": [
+      {{
+         ""time"": {{
+            ""order"": ""desc""
+         }}
+      }}
+   ]
+}}";
+        var response = await m_client.PostAsync($"{ConfigurationManager.ElasticSearchIndex}_logs/log/_search", new StringContent(query));
+        var content = response.Content as StreamContent;
+        if (null == content) throw new Exception("Cannot execute query on es ");
+        var result = await content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+            throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
+        return Json(result);
+    }
+
+
     [Route("{type}/requeue/{queues}")]
     [HttpPost]
     public async Task<IHttpActionResult> RequeueAsync(string type, string queues, [JsonBody]JArray items)
