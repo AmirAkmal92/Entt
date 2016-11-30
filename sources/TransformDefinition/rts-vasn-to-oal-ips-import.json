@@ -173,6 +173,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "340ae3c9-438e-460c-fb71-8bbaecd66739"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "1df59779-fb2d-4f06-954f-f2807785c379",
+        "Destination": "condition_cd",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "96654b11-5914-46e9-9220-a86559282270"
       }
     ]
   },
@@ -869,6 +878,22 @@
         "X": 647.0,
         "Y": 168.0,
         "WebId": "8f2afe55-8d11-4b47-af99-a19605512bbb"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "30",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 717.0,
+        "Y": 264.0,
+        "WebId": "1df59779-fb2d-4f06-954f-f2807785c379"
       }
     ]
   },
@@ -889,6 +914,6 @@
   "Id": "rts-vasn-to-oal-ips-import",
   "CreatedDate": "2016-10-21T10:39:59.5042314+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T09:53:09.2718619+08:00",
+  "ChangedDate": "2016-11-30T15:49:43.8981214+08:00",
   "WebId": "80b2c8df-4863-4eff-af5a-567d41fb9b67"
 }
