@@ -190,7 +190,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString(\"N\").Substring(0,15);\r\nreturn guid;",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString(\"N\").Substring(0,13);\r\nreturn guid;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -914,6 +914,6 @@
   "Id": "rts-vasn-to-oal-ips-import",
   "CreatedDate": "2016-10-21T10:39:59.5042314+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-30T22:42:22.6368765+08:00",
+  "ChangedDate": "2016-11-30T22:55:46.7141056+08:00",
   "WebId": "80b2c8df-4863-4eff-af5a-567d41fb9b67"
 }

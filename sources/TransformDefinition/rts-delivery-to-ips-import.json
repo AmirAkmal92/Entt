@@ -277,7 +277,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString(\"N\").Substring(0,15);\r\nreturn guid;",
+        "Expression": "var guid = \"en\"+ Guid.NewGuid().ToString(\"N\").Substring(0,13);\r\nreturn guid;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -988,6 +988,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-30T22:29:45.0977344+08:00",
+  "ChangedDate": "2016-11-30T22:56:57.4697252+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
