@@ -12,10 +12,11 @@
             <th>AllConsignmentnNotes</th>
             <th>TotalConsignment</th>
             <th>ScannerId</th>
+            <th>Logs</th>
         </tr>
     </thead>
     <tbody data-bind="foreach :list">
-        <tr data-bind2="">
+        <tr  data-bind="css: { error : log().total() > 0}">
             <td>
                 <input type="checkbox" data-bind="checked: $root.selectedItems, value : $data" />
             </td>
@@ -28,6 +29,13 @@
             <td data-bind="text:_source.AllConsignmentnNotes.replace(/,/g, ', ')"></td>
             <td data-bind="text:_source.TotalConsignment"></td>
             <td data-bind="text:_source.ScannerId"></td>
+            <td data-bind="with:log">
+                <!-- ko foreach : hits -->
+                   <a href="javascript:;" data-bind="attr : { title : 'View error details # ' + ($index()+1) }, click: $root.viewLog">
+                       <i class="fa fa-bookmark-o"></i>                    
+                    </a>
+                <!-- /ko -->
+            </td>
         </tr>
     </tbody>
 </table>
