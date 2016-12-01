@@ -64,6 +64,8 @@ if($MsBuild.Count -lt 1){
     return;
 }
 
+copy .\web\bin\domain.sph.dll .\tools -Force
+copy .\web\bin\domain.sph.pdb .\tools -Force
 
 ls .\sources\Adapter -Filter *.json | % {  
     Write-Host "Compiling adapter $_.Name" -ForegroundColor Cyan
