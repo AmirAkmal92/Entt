@@ -1,0 +1,22 @@
+{
+  "name": "rts-logs",
+  "description": "Logs RTS data into elasticsearch templated index",
+  "isEnabled": true,
+  "environment": "prod",
+  "subscriberConfigs": [
+    {
+      "instancesCount": 3,
+      "prefetchCount": 3,
+      "priority": 3,
+      "queueName": "rts_logs",
+      "fullName": "Bespoke.PostEntt.Subscribers.ElasticsearchLogsSubscriber",
+      "assembly": "subscriber.rts.logs"
+    }
+  ],
+  "createdBy": "erymuzuan",
+  "id": "rts-logs",
+  "createdDate": "2016-10-07T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-10-07T00:00:00+08:00",
+  "webId": "prod.rtslogs"
+}
