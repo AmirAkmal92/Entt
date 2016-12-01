@@ -63,17 +63,35 @@ if($MsBuild.Count -lt 1){
     Write-Error "Use Visual Studio 2015 command prompt to compile the custom functoids"
     return;
 }
+
+
+ls .\sources\Adapter -Filter *.json | % {  
+    Write-Host "Compiling adapter $_.Name" -ForegroundColor Cyan
+    .\tools\sph.builder.exe /q $_.FullName 
+    }
+
+
+ls .\sources\EntityDefinition -Filter *.json | % {  
+    Write-Host "Compiling entity $_.Name" -ForegroundColor Cyan
+    .\tools\sph.builder.exe /q $_.FullName }
+
 msbuild .\posentt.sln /m
 
+ls .\sources\TransformDefinition -Filter *.json | % {  
+    Write-Host "Compiling mapping $_.Name" -ForegroundColor Cyan
+    .\tools\sph.builder.exe /q $_.FullName }
 
-if($NoNewWindow.IsPresent){
+ls .\sources\WorkflowDefinition -Filter *.json | % {  
+    Write-Host "Compiling workflow $_.Name" -ForegroundColor Cyan
+    .\tools\sph.builder.exe /q $_.FullName }
 
-    Start-Process .\tools\sph.builder.exe -Wait -NoNewWindow
+ls .\sources\Trigger -Filter *.json | % { 
+    Write-Host "Compiling trigger $_.Name" -ForegroundColor Cyan
+    .\tools\sph.builder.exe /q $_.FullName 
 }
-else{
+ls .\sources\Designation -Filter *.json | % { .\tools\sph.builder.exe /q $_.FullName }
 
-    Start-Process .\tools\sph.builder.exe -Wait
-}
+
 
 Write-Host "Done compiling, please check any errors ... " -ForegroundColor Cyan
 
@@ -133,6 +151,8 @@ copy $domainpdb $subscribersHost
 
 copy C:\project\work\sph\bin\tools\*.adapter.* .\tools
 copy C:\project\work\sph\bin\tools\*.adapter.* .\web\bin
+copy C:\project\work\sph\bin\tools\*.adapter.* .\subscribers
+copy C:\project\work\sph\bin\tools\*.adapter.* .\subscribers.host
 
 copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.lookup.dll F:\project\work\entt.rts\tools
 copy C:\project\work\sph\source\functoids\database.lookup\bin\Debug\database.lookup.pdb F:\project\work\entt.rts\tools
@@ -164,5 +184,45 @@ foreach($map in $mappings){
     .\tools\sph.builder.exe $map
 }
 
+
+
+copy C:\project\work\sph\bin\tools\mapping.test.runner.exe .\tools
+copy C:\project\work\sph\bin\tools\mapping.test.runner.pdb .\tools
+
+
+copy C:\project\work\sph\source\dependencies\rabbitmq.changepublisher\bin\Debug\rabbitmq.changepublisher.dll .\web\bin
+copy C:\project\work\sph\source\dependencies\rabbitmq.changepublisher\bin\Debug\rabbitmq.changepublisher.pdb .\web\bin
+
+
+copy C:\project\work\sph\source\dependencies\rabbitmq.changepublisher\bin\Debug\rabbitmq.changepublisher.dll .\subscribers.host
+copy C:\project\work\sph\source\dependencies\rabbitmq.changepublisher\bin\Debug\rabbitmq.changepublisher.pdb .\subscribers.host
+
+copy C:\project\work\sph\source\subscribers\subscriber.infrastructure\bin\Debug\subscriber.infrastructure.dll .\subscribers -Force
+copy C:\project\work\sph\source\subscribers\subscriber.infrastructure\bin\Debug\subscriber.infrastructure.pdb .\subscribers -Force
+copy C:\project\work\sph\source\subscribers\subscriber.infrastructure\bin\Debug\subscriber.infrastructure.dll .\subscribers.host -Force
+copy C:\project\work\sph\source\subscribers\subscriber.infrastructure\bin\Debug\subscriber.infrastructure.pdb .\subscribers.host -Force
+
+
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.dll .\subscribers -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.pdb .\subscribers -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.dll .\subscribers.host -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.pdb .\subscribers.host -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.dll .\tools -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.pdb .\tools -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.dll .\web\bin -Force
+copy C:\project\work\sph\source\domain\trigger.action.messaging\bin\Debug\trigger.action.messaging.pdb .\web\bin -Force
+
+
+copy $domaindll .\subscribers -Force
+copy $domainpdb .\subscribers -Force
+copy $domaindll .\subscribers.host -Force
+copy $domainpdb .\subscribers.host -Force
+copy $domaindll .\tools -Force
+copy $domainpdb .\tools -Force
+copy $domaindll .\web\bin -Force
+copy $domainpdb .\web\bin -Force
+
 #>
+
+
 
