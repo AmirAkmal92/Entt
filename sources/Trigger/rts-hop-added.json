@@ -38,6 +38,7 @@
         "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
+        "RetryAlgorithm": "Constant",
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "PushToOalHopEventNew",
@@ -55,6 +56,7 @@
         "Schema": null,
         "Crud": "Insert",
         "Retry": 5,
+        "RetryAlgorithm": "Exponential",
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "ToOalHopWwpEventNewLog",
@@ -100,6 +102,28 @@
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
         "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "F:\\project\\work\\entt.rts\\packages\\Polly.4.2.4\\lib\\dotnet\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "F:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
       }
     ]
   },
@@ -122,6 +146,6 @@
   "Id": "rts-hop-added",
   "CreatedDate": "2016-10-19T11:53:35.1190563+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-28T14:41:23.5152756+08:00",
+  "ChangedDate": "2016-12-01T08:02:52.0911705+08:00",
   "WebId": "ea07b5ca-8811-4ed5-ab73-82108fe47488"
 }
