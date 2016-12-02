@@ -322,7 +322,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "string signatoryName = null;\r\nvar signatories = new string[] {\"01\", \"10\", \"11\"};\r\nif (signatories.Contains(\"10\")) signatoryName = item.RecipientName;\r\nreturn signatoryName;",
+        "Expression": "string signatoryName = null;\r\nvar signatories = new string[] {\"01\", \"10\", \"11\"};\r\nif (signatories.Contains(item.ReasonCode)) signatoryName = item.RecipientName;\r\nreturn signatoryName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -988,6 +988,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-30T22:56:57.4697252+08:00",
+  "ChangedDate": "2016-12-02T09:35:48.2685201+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
