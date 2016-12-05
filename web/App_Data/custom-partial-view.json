@@ -124,5 +124,12 @@
     "useViewModel": false,
     "jsDiff": null,
     "htmlDiff": null
+  },
+  {
+    "name": "_rts-dashboard.dlq",
+    "originalName": null,
+    "useViewModel": true,
+    "jsDiff": null,
+    "htmlDiff": null
   }
 ]

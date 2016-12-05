@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -14,8 +15,12 @@ using RabbitMQ.Client;
 [RoutePrefix("api/rts-dashboard")]
 public class RtsDashboadController : BaseApiController
 {
-
+               
     private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
+    private readonly HttpClient m_rabbitMqManagementClient = new HttpClient(new HttpClientHandler { Credentials = new NetworkCredential(ConfigurationManager.RabbitMqUserName, ConfigurationManager.RabbitMqPassword) })
+                                                                { 
+                                                                        BaseAddress = new Uri($"{ConfigurationManager.RabbitMqManagementScheme}://{ConfigurationManager.RabbitMqHost}:{ConfigurationManager.RabbitMqManagementPort}") 
+                                                                };
 
     [Route("")]
     [HttpPost]
@@ -44,6 +49,15 @@ public class RtsDashboadController : BaseApiController
         if (!response.IsSuccessStatusCode)
             throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
         return Json(result);
+    }
+
+    [Route("dlq")]
+    [HttpGet]
+    public async Task<IHttpActionResult> GetDlqAsync()
+    {
+        await Task.Delay(500);
+        var response = await m_rabbitMqManagementClient.GetStringAsync("/api/queues/PosEntt/ms_dead_letter_queue");
+        return Json(response);
     }
 
     [Route("logs/{type}/{id}")]
