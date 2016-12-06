@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
 using Polly;
-using System.Linq;
 
 namespace Bespoke.PosEntt.CustomActions
 {
@@ -15,8 +14,8 @@ namespace Bespoke.PosEntt.CustomActions
     {
         public override bool UseAsync => true;
 
-        private List<Adapters.Oal.dbo_sip_event_new>  m_sipEventRows;
-        private List<Adapters.Oal.dbo_wwp_event_new_log>  m_sipWwpEventLogRows;
+        private List<Adapters.Oal.dbo_sip_event_new> m_sipEventRows;
+        private List<Adapters.Oal.dbo_wwp_event_new_log> m_sipWwpEventLogRows;
         private List<Adapters.Oal.dbo_event_pending_console> m_sipEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
@@ -30,7 +29,7 @@ namespace Bespoke.PosEntt.CustomActions
             m_sipWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
             m_sipEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
 
-        await RunAsync(sip);
+            await RunAsync(sip);
         }
 
         public async Task RunAsync(Sips.Domain.Sip sip)
@@ -50,10 +49,10 @@ namespace Bespoke.PosEntt.CustomActions
             var parentWwpRow = await sipWwpEventLogMap.TransformAsync(sip);
             m_sipWwpEventLogRows.Add(parentWwpRow);
 
-            var consoleItem = await SearchConsoleDetails(sip.ConsignmentNo);
+            var consoleItem = await GetItemConsigmentsFromConsoleDetailsAsync(sip.ConsignmentNo);
             if (null != consoleItem)
             {
-                var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                var children = consoleItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in children)
                 {
                     if (consoleList.Contains(item)) continue;
@@ -65,10 +64,10 @@ namespace Bespoke.PosEntt.CustomActions
                     if (console)
                     {
                         consoleList.Add(item);
-                        var childConsole = await SearchConsoleDetails(item);
+                        var childConsole = await GetItemConsigmentsFromConsoleDetailsAsync(item);
                         if (null != childConsole)
                         {
-                            var childConsoleItems = childConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                            var childConsoleItems = childConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                             foreach (var cc in childConsoleItems)
                             {
                                 if (consoleList.Contains(cc)) continue;
@@ -80,10 +79,10 @@ namespace Bespoke.PosEntt.CustomActions
                                 if (anotherConsole)
                                 {
                                     consoleList.Add(cc);
-                                    var anotherChildConsole = await SearchConsoleDetails(cc);
+                                    var anotherChildConsole = await GetItemConsigmentsFromConsoleDetailsAsync(cc);
                                     if (null != anotherChildConsole)
                                     {
-                                        var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                                        var anotherChildConsoleItems = anotherChildConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                                         foreach (var ccc in anotherChildConsoleItems)
                                         {
                                             if (consoleList.Contains(ccc)) continue;
@@ -109,7 +108,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 AddPendingItems(parentRow.id, parentWwpRow.id, sip.ConsignmentNo);
             }
-            
+
             foreach (var item in m_sipEventRows)
             {
                 var pr = Policy.Handle<SqlException>()
@@ -145,12 +144,11 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
+        private static Task<string> GetItemConsigmentsFromConsoleDetailsAsync(string consignmentNo)
         {
             var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
-            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", consignmentNo);
-            var lo = await consoleDetailsAdapter.LoadAsync(query);
-            return lo.ItemCollection.FirstOrDefault();
+            var query = $"SELECT [item_consignments] FROM [dbo].[console_details] WHERE console_no = '{consignmentNo}'";
+            return consoleDetailsAdapter.ExecuteScalarAsync<string>(query);
         }
 
         private void ProcessChild(Adapters.Oal.dbo_sip_event_new parent, string consignmentNo)
@@ -167,22 +165,26 @@ namespace Bespoke.PosEntt.CustomActions
         private void AddPendingItems(string parentId, string wwpParentId, string consignmentNo)
         {
             //insert into pending items
-            var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
-            pendingConsole.id = GenerateId(20);
-            pendingConsole.event_id = parentId;
-            pendingConsole.event_class = "pos.oal.SipEventNew";
-            pendingConsole.console_no = consignmentNo;
-            pendingConsole.version = 0;
-            pendingConsole.date_field = DateTime.Now;
+            var pendingConsole = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = parentId,
+                event_class = "pos.oal.SipEventNew",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
             m_sipEventPendingConsoleRows.Add(pendingConsole);
 
-            var pendingWwp = new Adapters.Oal.dbo_event_pending_console();
-            pendingWwp.id = GenerateId(20);
-            pendingWwp.event_id = wwpParentId;
-            pendingWwp.event_class = "pos.oal.WwpEventNewLog";
-            pendingWwp.console_no = consignmentNo;
-            pendingWwp.version = 0;
-            pendingWwp.date_field = DateTime.Now;
+            var pendingWwp = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = wwpParentId,
+                event_class = "pos.oal.WwpEventNewLog",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
             m_sipEventPendingConsoleRows.Add(pendingWwp);
         }
 
@@ -293,14 +295,14 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
         private string GenerateId(int length)
         {
-            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
+            var id = $"en{Guid.NewGuid():N}";
             return id.Substring(0, length);
         }
 
         private bool IsConsole(string connoteNo)
         {
-            var pattern = "CG[0-9]{9}MY";
-            var match = System.Text.RegularExpressions.Regex.Match(connoteNo, pattern);
+            const string PATTERN = "CG[0-9]{9}MY";
+            var match = System.Text.RegularExpressions.Regex.Match(connoteNo, PATTERN);
             return match.Success;
         }
     }
