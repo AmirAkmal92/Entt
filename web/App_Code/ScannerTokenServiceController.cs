@@ -114,6 +114,7 @@ public class ScannerTokenServiceController : BaseApiController
             Roles.AddUserToRoles(userName, profile.Roles);
             Membership.UpdateUser(em);
             await CreateProfile(profile, designation);
+            return true;
 
         }
 
