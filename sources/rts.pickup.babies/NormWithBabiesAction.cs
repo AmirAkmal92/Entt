@@ -5,15 +5,13 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
 using Polly;
-using System.Linq;
 
 namespace Bespoke.PosEntt.CustomActions
 {
     [Export(typeof(CustomAction))]
     [DesignerMetadata(Name = "NormWithBabies", TypeName = "Bespoke.PosEntt.CustomActions.NormWithBabiesAction, rts.pickup.babies", Description = "RTS Norm with babies", FontAwesomeIcon = "calendar-check-o")]
-    public class NormWithBabiesAction : CustomAction
+    public class NormWithBabiesAction : EventWithChildrenAction
     {
-        public override bool UseAsync => true;
 
         private List<Adapters.Oal.dbo_normal_console_event_new> m_normEventRows;
         private List<Adapters.Oal.dbo_event_pending_console> m_normEventPendingConsoleRows;
@@ -41,54 +39,48 @@ namespace Bespoke.PosEntt.CustomActions
             var parentRow = await normEventMap.TransformAsync(norm);
             m_normEventRows.Add(parentRow);
 
-            var itemList = norm.AllConsignmentNotes.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var itemList = norm.AllConsignmentNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var item in itemList)
             {
-                var childItem = parentRow.Clone();
                 ProcessChild(parentRow, item);
 
                 //2 level
                 var console = IsConsole(item);
-                if (console)
+                if (!console) continue;
+                consoleList.Add(item);
+                var childConsole = await GetItemConsigmentsFromConsoleDetailsAsync(item);
+                if (null != childConsole)
                 {
-                    consoleList.Add(item);
-                    var childConsole = await SearchConsoleDetails(item);
-                    if (null != childConsole)
+                    var childConsoleItems = childConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (var cc in childConsoleItems)
                     {
-                        var childConsoleItems = childConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                        foreach (var cc in childConsoleItems)
-                        {
-                            if (consoleList.Contains(cc)) continue;
-                            ProcessChild(parentRow, cc);
+                        if (consoleList.Contains(cc)) continue;
+                        ProcessChild(parentRow, cc);
 
-                            //3 level
-                            var anotherConsole = IsConsole(cc);
-                            if (anotherConsole)
+                        //3 level
+                        var anotherConsole = IsConsole(cc);
+                        if (!anotherConsole) continue;
+                        consoleList.Add(cc);
+                        var anotherChildConsole = await GetItemConsigmentsFromConsoleDetailsAsync(cc);
+                        if (null != anotherChildConsole)
+                        {
+                            var anotherChildConsoleItems = anotherChildConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach (var ccc in anotherChildConsoleItems)
                             {
-                                consoleList.Add(cc);
-                                var anotherChildConsole = await SearchConsoleDetails(cc);
-                                if (null != anotherChildConsole)
-                                {
-                                    var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                                    foreach (var ccc in anotherChildConsoleItems)
-                                    {
-                                        if (consoleList.Contains(ccc)) continue;
-                                        ProcessChild(parentRow, ccc);
-                                    }
-                                }
-                                else
-                                {
-                                    AddPendingItems(parentRow.id, cc);
-                                }
+                                if (consoleList.Contains(ccc)) continue;
+                                ProcessChild(parentRow, ccc);
                             }
                         }
-                    }
-                    else
-                    {
-                        AddPendingItems(parentRow.id, item);
+                        else
+                        {
+                            AddPendingItems(parentRow.id, cc);
+                        }
                     }
                 }
-
+                else
+                {
+                    AddPendingItems(parentRow.id, item);
+                }
             }
 
             foreach (var item in m_normEventRows)
@@ -123,25 +115,22 @@ namespace Bespoke.PosEntt.CustomActions
             }
 
 
-            var consolePendingList = new List<string>();
-            consolePendingList.Add(norm.ConsoleTag);
+            var consolePendingList = new List<string> { norm.ConsoleTag };
             foreach (var item in itemList)
             {
                 var console = IsConsole(item);
-                if (console)
-                {
-                    if (consolePendingList.Contains(item)) continue;
-                    
-                    consolePendingList.Add(item);
-                }
+                if (!console) continue;
+                if (consolePendingList.Contains(item)) continue;
+
+                consolePendingList.Add(item);
             }
         }
 
-        async private Task ProcessEventPendingItem(Norms.Domain.Norm norm, Adapters.Oal.dbo_event_pending_console pending)
+        private async Task ProcessEventPendingItem(Norms.Domain.Norm norm, Adapters.Oal.dbo_event_pending_console pending)
         {
-            var itemList = norm.AllConsignmentNotes.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var itemList = norm.AllConsignmentNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             var ok = false;
-            switch(pending.event_class)
+            switch (pending.event_class)
             {
                 case "pos.oal.SopEventNew":
                     await ProcessSopPendingItem(pending.event_id, itemList);
@@ -185,7 +174,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessStatPendingItem(string statEventId, string[] itemList)
+        private async Task ProcessStatPendingItem(string statEventId, string[] itemList)
         {
             var statAdapter = new Adapters.Oal.dbo_status_code_event_newAdapter();
             var stat = await statAdapter.LoadOneAsync(statEventId);
@@ -212,7 +201,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessVasnPendingItem(string vasnEventId, string[] itemList)
+        private async Task ProcessVasnPendingItem(string vasnEventId, string[] itemList)
         {
             var vasnAdapter = new Adapters.Oal.dbo_vasn_event_newAdapter();
             var vasn = await vasnAdapter.LoadOneAsync(vasnEventId);
@@ -239,7 +228,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessSopPendingItem(string sopEventId, string[] itemList)
+        private async Task ProcessSopPendingItem(string sopEventId, string[] itemList)
         {
             var sopAdapter = new Adapters.Oal.dbo_sop_event_newAdapter();
             var sop = await sopAdapter.LoadOneAsync(sopEventId);
@@ -266,7 +255,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessSipPendingItem(string sipEventId, string[] itemList)
+        private async Task ProcessSipPendingItem(string sipEventId, string[] itemList)
         {
             var sipAdapter = new Adapters.Oal.dbo_sip_event_newAdapter();
             var sip = await sipAdapter.LoadOneAsync(sipEventId);
@@ -293,7 +282,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessHopPendingItem(string hopEventId, string[] itemList)
+        private async Task ProcessHopPendingItem(string hopEventId, string[] itemList)
         {
             var hopAdapter = new Adapters.Oal.dbo_hop_event_newAdapter();
             var hop = await hopAdapter.LoadOneAsync(hopEventId);
@@ -320,7 +309,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessHipPendingItem(string hipEventId, string[] itemList)
+        private async Task ProcessHipPendingItem(string hipEventId, string[] itemList)
         {
             var hipAdapter = new Adapters.Oal.dbo_hip_event_newAdapter();
             var hip = await hipAdapter.LoadOneAsync(hipEventId);
@@ -347,14 +336,13 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task ProcessWwpPendingItem(string wwpEventId, string[] itemList)
+        private async Task ProcessWwpPendingItem(string wwpEventId, string[] itemList)
         {
             var wwpAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
             var wwp = await wwpAdapter.LoadOneAsync(wwpEventId);
             var wwpItems = new List<Adapters.Oal.dbo_wwp_event_new_log>();
             foreach (var item in itemList)
             {
-                var console = IsConsole(item);
                 var child = wwp.Clone();
                 child.id = GenerateId(34);
                 child.consignment_note_number = item;
@@ -373,26 +361,37 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private void ProcessNormPendingItem(string consoleTag, string id)
-        {
-        }
 
-        async private Task<ObjectCollection<Adapters.Oal.dbo_event_pending_console>> SearchEventPending(string consoleNo)
+
+        private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPending(string consoleNo)
         {
             var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-            var query = string.Format("SELECT * FROM [dbo].[event_pending_console] WHERE console_no = '{0}'", consoleNo);
-            var lo = await pendingAdapter.LoadAsync(query);
-            return lo.ItemCollection;
+            var query = $"SELECT [event_class], [event_id] FROM [dbo].[event_pending_console] WHERE console_no = '{consoleNo}'";
+
+            var list = new List<Adapters.Oal.dbo_event_pending_console>();
+            using (var conn = new SqlConnection(pendingAdapter.ConnectionString))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        var item = new Adapters.Oal.dbo_event_pending_console
+                        {
+                            event_class = reader["event_class"].ReadNullableString(),
+                            event_id = reader["event_id"].ReadNullableString()
+                        };
+                        list.Add(item);
+
+                    }
+                }
+
+            }
+            return list;
 
         }
 
-        async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
-        {
-            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
-            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", consignmentNo);
-            var lo = await consoleDetailsAdapter.LoadAsync(query);
-            return lo.ItemCollection.FirstOrDefault();
-        }
 
         private void ProcessChild(Adapters.Oal.dbo_normal_console_event_new parent, string consignmentNo)
         {
@@ -408,124 +407,18 @@ namespace Bespoke.PosEntt.CustomActions
         private void AddPendingItems(string parentId, string consignmentNo)
         {
             //insert into pending items
-            var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
-            pendingConsole.id = GenerateId(20);
-            pendingConsole.event_id = parentId;
-            pendingConsole.event_class = "pos.oal.NormalConsoleEventNew";
-            pendingConsole.console_no = consignmentNo;
-            pendingConsole.version = 0;
-            pendingConsole.date_field = DateTime.Now;
+            var pendingConsole = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = parentId,
+                event_class = "pos.oal.NormalConsoleEventNew",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
             m_normEventPendingConsoleRows.Add(pendingConsole);
         }
 
-        public override string GetEditorViewModel()
-        {
-            return @"
-define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbuilders.system],
-    function(context, logger, dialog, system) {
 
-                bespoke.sph.domain.NormWithBabiesAction = function(optionOrWebid) {
-
-                    const v = new bespoke.sph.domain.CustomAction(optionOrWebid);
-                    v[""$type""] = ""Bespoke.PosEntt.CustomActions.NormWithBabiesAction, rts.pickup.babies"";
-                    if (optionOrWebid && typeof optionOrWebid === ""object"")
-                    {
-                        for (var n in optionOrWebid)
-                        {
-                            if (typeof v[n] === ""function"")
-                            {
-                                v[n](optionOrWebid[n]);
-                            }
-                        }
-                    }
-                    if (optionOrWebid && typeof optionOrWebid === ""string"")
-                    {
-                        v.WebId(optionOrWebid);
-                    }
-
-                    if (bespoke.sph.domain.NormWithBabiesActionPartial)
-                    {
-                        return _(v).extend(new bespoke.sph.domain.NormWithBabiesActionPartial(v));
-                    }
-                    return v;
-                };
-
-
-
-        const action = ko.observable(new bespoke.sph.domain.NormWithBabiesAction(system.guid())),
-            trigger = ko.observable(),                   
-            activate = function() {
-                   return true;
-
-                },
-            attached = function(view) {
-                },
-            okClick = function(data, ev) {
-                    if (bespoke.utils.form.checkValidity(ev.target))
-                    {
-                        dialog.close(this, ""OK"");
-                    }
-                },
-            cancelClick = function() {
-                    dialog.close(this, ""Cancel"");
-                };
-
-                const vm = {
-                    trigger: trigger,
-                    action: action,
-                    activate: activate,
-                    attached: attached,
-                    okClick: okClick,
-                    cancelClick: cancelClick
-                };
-
-
-            return vm;
-
-        });
-";
-        }
-
-        public override string GetEditorView()
-        {
-            //language=html
-            var html = @"<section class=""view-model-modal"" id=""messaging-action-dialog"">
-    <div class=""modal-dialog"">
-        <div class=""modal-content"">
-
-            <div class=""modal-header"">
-                <button type=""button"" class=""close"" data-dismiss=""modal"" data-bind=""click : cancelClick"">&times;</button>
-                <h3>RTS norm with child items</h3>
-            </div>
-            <div class=""modal-body"" data-bind=""with: action"">
-
-                <form class=""form-horizontal"" id=""messaging-dialog-form"">
-
-
-                </form>
-            </div>
-            <div class=""modal-footer"">
-                <input form=""messaging-dialog-form"" data-dismiss=""modal"" type=""submit"" class=""btn btn-default"" value=""OK"" data-bind=""click: okClick"" />
-                <a href=""#"" class=""btn btn-default"" data-dismiss=""modal"" data-bind=""click : cancelClick"">Cancel</a>
-            </div>
-        </div>
-    </div>
-</section>";
-
-            return html;
-        }
-
-        private string GenerateId(int length)
-        {
-            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
-            return id.Substring(0, length);
-        }
-
-        private bool IsConsole(string connoteNo)
-        {
-            var pattern = "CG[0-9]{9}MY";
-            var match = System.Text.RegularExpressions.Regex.Match(connoteNo, pattern);
-            return match.Success;
-        }
     }
 }
