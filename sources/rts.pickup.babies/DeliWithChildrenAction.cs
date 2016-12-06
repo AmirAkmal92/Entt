@@ -53,7 +53,7 @@ namespace Bespoke.PosEntt.CustomActions
             var consoleItem = await SearchConsoleDetails(deli.ConsignmentNo);
             if (null != consoleItem)
             {
-                var children = consoleItem.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                var children = consoleItem.item_consignments.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in children)
                 {
                     if (consoleList.Contains(item)) continue;
@@ -68,7 +68,7 @@ namespace Bespoke.PosEntt.CustomActions
                         var childConsole = await SearchConsoleDetails(item);
                         if (null != childConsole)
                         {
-                            var childConsoleItems = childConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                            var childConsoleItems = childConsole.item_consignments.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                             foreach (var cc in childConsoleItems)
                             {
                                 if (consoleList.Contains(cc)) continue;
@@ -83,7 +83,7 @@ namespace Bespoke.PosEntt.CustomActions
                                     var anotherChildConsole = await SearchConsoleDetails(cc);
                                     if (null != anotherChildConsole)
                                     {
-                                        var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                                        var anotherChildConsoleItems = anotherChildConsole.item_consignments.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                                         foreach (var ccc in anotherChildConsoleItems)
                                         {
                                             if (consoleList.Contains(ccc)) continue;
@@ -145,10 +145,10 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        async private Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
+        private async Task<Adapters.Oal.dbo_console_details> SearchConsoleDetails(string consignmentNo)
         {
             var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
-            var query = string.Format("SELECT * FROM [dbo].[console_details] WHERE console_no = '{0}'", consignmentNo);
+            var query = $"SELECT * FROM [dbo].[console_details] WHERE console_no = '{consignmentNo}'";
             var lo = await consoleDetailsAdapter.LoadAsync(query);
             return lo.ItemCollection.FirstOrDefault();
         }
@@ -167,22 +167,26 @@ namespace Bespoke.PosEntt.CustomActions
         private void AddPendingItems(string parentId, string wwpParentId, string consignmentNo)
         {
             //insert into pending items
-            var pendingConsole = new Adapters.Oal.dbo_event_pending_console();
-            pendingConsole.id = GenerateId(20);
-            pendingConsole.event_id = parentId;
-            pendingConsole.event_class = "pos.oal.DeliveryEventNew";
-            pendingConsole.console_no = consignmentNo;
-            pendingConsole.version = 0;
-            pendingConsole.date_field = DateTime.Now;
+            var pendingConsole = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = parentId,
+                event_class = "pos.oal.DeliveryEventNew",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
             m_deliEventPendingConsoleRows.Add(pendingConsole);
 
-            var pendingWwp = new Adapters.Oal.dbo_event_pending_console();
-            pendingWwp.id = GenerateId(20);
-            pendingWwp.event_id = wwpParentId;
-            pendingWwp.event_class = "pos.oal.WwpEventNewLog";
-            pendingWwp.console_no = consignmentNo;
-            pendingWwp.version = 0;
-            pendingWwp.date_field = DateTime.Now;
+            var pendingWwp = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = wwpParentId,
+                event_class = "pos.oal.WwpEventNewLog",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
             m_deliEventPendingConsoleRows.Add(pendingWwp);
         }
 
@@ -291,16 +295,16 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
             return html;
         }
 
-        private string GenerateId(int length)
+        private static string GenerateId(int length)
         {
-            var id = string.Format("en{0}", System.Guid.NewGuid().ToString("N"));
+            var id = $"en{Guid.NewGuid():N}";
             return id.Substring(0, length);
         }
 
-        private bool IsConsole(string connoteNo)
+        private static bool IsConsole(string connoteNo)
         {
-            var pattern = "CG[0-9]{9}MY";
-            var match = System.Text.RegularExpressions.Regex.Match(connoteNo, pattern);
+            const string PATTERN = "CG[0-9]{9}MY";
+            var match = System.Text.RegularExpressions.Regex.Match(connoteNo, PATTERN);
             return match.Success;
         }
     }
