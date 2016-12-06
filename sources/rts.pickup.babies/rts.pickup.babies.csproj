@@ -150,6 +150,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventWithChildrenAction.cs" />
     <Compile Include="DeliWithChildrenAction.cs" />
     <Compile Include="CommWithChildrenAction.cs" />
     <Compile Include="StatWithChildrenAction.cs" />
