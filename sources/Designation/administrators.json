@@ -1,0 +1,50 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "administrators"
+    ]
+  },
+  "Owner": {
+    "$type": "Bespoke.Sph.Domain.Owner, domain.sph",
+    "Address": {
+      "$type": "Bespoke.Sph.Domain.Address, domain.sph",
+      "UnitNo": "",
+      "Floor": "",
+      "Block": "",
+      "Street": "",
+      "City": "",
+      "Postcode": "",
+      "State": "",
+      "Country": "",
+      "WebId": null
+    },
+    "Name": "",
+    "TelephoneNo": "",
+    "FaxNo": "",
+    "Email": "",
+    "WebId": null
+  },
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "Name": "Administrators",
+  "Description": "",
+  "IsActive": false,
+  "StartModule": "",
+  "EnforceStartModule": true,
+  "IsSearchVisible": false,
+  "IsMessageVisible": true,
+  "IsHelpVisible": false,
+  "HelpUri": "",
+  "Title": "",
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "administrators",
+  "CreatedDate": "2016-12-02T07:13:26.7773703+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-02T07:13:26.7773703+08:00",
+  "WebId": "57d40ae4-4358-4d1a-a722-119a53985a46"
+}
