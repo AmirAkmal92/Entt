@@ -132,6 +132,9 @@ namespace Bespoke.PosEntt.CustomActions
             var ok = false;
             switch (pending.event_class)
             {
+                case "pos.oal.DeliveryEventNew":
+                    await ProcessDeliveryPendingItem(pending.event_id, itemList);
+                    break;
                 case "pos.oal.SopEventNew":
                     await ProcessSopPendingItem(pending.event_id, itemList);
                     ok = true;
@@ -160,6 +163,7 @@ namespace Bespoke.PosEntt.CustomActions
                     //ProcessNormPendingItem(item.console_no, item.event_id);
                     break;
                 case "pos.oal.MissortEventNew":
+                    await ProcessMissPendingItem(pending.event_id, itemList);
                     break;
                 case "pos.oal.WwpEventNewLog":
                     await ProcessWwpPendingItem(pending.event_id, itemList);
@@ -171,6 +175,60 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
                 await pendingAdapter.DeleteAsync(pending.id);
+            }
+        }
+
+        private async Task ProcessDeliveryPendingItem(string deliEventId, string[] itemList)
+        {
+            var deliAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
+            var deli = await deliAdapter.LoadOneAsync(deliEventId);
+            var deliItems = new List<Adapters.Oal.dbo_delivery_event_new>();
+            foreach (var item in itemList)
+            {
+                var console = IsConsole(item);
+                var child = deli.Clone();
+                child.id = GenerateId(34);
+                child.consignment_no = item;
+                child.data_flag = "1";
+                child.item_type_code = console ? "02" : "01";
+                deliItems.Add(child);
+            }
+            foreach (var item in deliItems)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => deliAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task ProcessMissPendingItem(string missEventId, string[] itemList)
+        {
+            var missAdapter = new Adapters.Oal.dbo_missort_event_newAdapter();
+            var miss = await missAdapter.LoadOneAsync(missEventId);
+            var missItems = new List<Adapters.Oal.dbo_missort_event_new>();
+            foreach (var item in itemList)
+            {
+                var console = IsConsole(item);
+                var child = miss.Clone();
+                child.id = GenerateId(34);
+                child.consignment_no = item;
+                child.data_flag = "1";
+                child.item_type_code = console ? "02" : "01";
+                missItems.Add(child);
+            }
+            foreach (var item in missItems)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => missAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
         }
 
