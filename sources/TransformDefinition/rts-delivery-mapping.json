@@ -312,15 +312,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "cbf06b54-aa75-4215-e072-a4a08801097e",
-        "Destination": "courier_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "9b489129-1397-44f3-9476-0ed9942be595"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "3bba32c6-1fa4-4e9a-e835-4a02d3209061",
         "Destination": "receipent_location",
         "SourceTypeName": "",
@@ -353,6 +344,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "29deaf60-c85e-4318-b948-216ab5994303"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "eff9e339-f6b1-4928-dcf2-09c509586e3d",
+        "Destination": "courier_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "057d0b71-a27f-4785-c2cf-97f75f9ee564"
       }
     ]
   },
@@ -1597,6 +1597,39 @@
         "X": 431.0,
         "Y": 711.0,
         "WebId": "f4554c71-9d1d-4f68-efaf-e6c6ea92ccab"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 30,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "cbf06b54-aa75-4215-e072-a4a08801097e",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 596.0,
+        "Y": 476.0,
+        "WebId": "eff9e339-f6b1-4928-dcf2-09c509586e3d"
       }
     ]
   },
@@ -1617,6 +1650,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-25T23:12:08.9549236+08:00",
+  "ChangedDate": "2016-12-07T16:32:02.4695626+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
