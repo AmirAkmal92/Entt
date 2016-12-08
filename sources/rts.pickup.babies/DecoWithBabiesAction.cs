@@ -421,7 +421,7 @@ namespace Bespoke.PosEntt.CustomActions
         private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPending(string consoleNo)
         {
             var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-            var query = $"SELECT [event_class], [event_id] FROM [dbo].[event_pending_console] WHERE console_no = '{consoleNo}'";
+            var query = $"SELECT [id], [event_class], [event_id] FROM [dbo].[event_pending_console] WHERE console_no = '{consoleNo}'";
 
             var list = new List<Adapters.Oal.dbo_event_pending_console>();
             using (var conn = new SqlConnection(pendingAdapter.ConnectionString))
@@ -434,6 +434,7 @@ namespace Bespoke.PosEntt.CustomActions
                     {
                         var item = new Adapters.Oal.dbo_event_pending_console
                         {
+                            id = reader["id"].ReadNullableString(),
                             event_class = reader["event_class"].ReadNullableString(),
                             event_id = reader["event_id"].ReadNullableString()
                         };
