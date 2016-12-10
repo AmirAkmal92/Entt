@@ -25,7 +25,7 @@
             <td data-bind="text:_source.CourierId"></td>
             <td data-bind="text:_source.LocationId"></td>
             <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
-            <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}"></td>
+            <td data-bind="date: {value:_source.Time, format : 'HH:mm:ss'}, attr : {title : _source.Time}"></td>
             <td data-bind="text:_source.ConsignmentNo"></td>
             <td data-bind="text:_source.PickupNo"></td>
             <td data-bind="text:_source.BabyConsignment"></td>
