@@ -9,7 +9,7 @@ using System.Web.Http;
 using Bespoke.Sph.Domain;
 using Bespoke.Sph.WebApi;
 using RabbitMQ.Client;
-
+using Newtonsoft.Json.Linq;
 
 [RoutePrefix("api/rts-dashboard")]
 public class RtsDashboadController : BaseApiController
@@ -105,8 +105,10 @@ public class RtsDashboadController : BaseApiController
     [HttpPost]
     public async Task<IHttpActionResult> RequeueAsync(string type, string id, [FromBody]RequeueViewModel model)
     {
-        var payload = await m_client.GetStringAsync($"posentt_rts_{model.Date:yyyyMMdd}/{type.ToLowerInvariant()}/{id}");
-        await this.SendMessage(model.QueueName, payload, new Dictionary<string, object>());
+        var hit = await m_client.GetStringAsync($"posentt_rts_{model.Date:yyyyMMdd}/{type.ToLowerInvariant()}/{id}");
+        var json = JObject.Parse(hit);
+        var source = json.SelectToken("$._source").ToString();
+        await this.SendMessage(model.QueueName, source, new Dictionary<string, object>());
 
         var update = $@"{{
    ""doc"": {{
@@ -124,7 +126,7 @@ public class RtsDashboadController : BaseApiController
     }
 
     public const int PERSISTENT_DELIVERY_MODE = 2;
-    private async Task SendMessage(string triggerId, string payload, IDictionary<string, object> headers)
+    private async Task SendMessage(string routingKey, string payload, IDictionary<string, object> headers)
     {
         var factory = new ConnectionFactory
         {
@@ -140,7 +142,6 @@ public class RtsDashboadController : BaseApiController
         {
 
             var log = string.Empty;
-            var routingKey = $"trigger_subs_{triggerId}";
             var body = await CompressAsync(payload);
 
             var props = channel.CreateBasicProperties();

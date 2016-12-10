@@ -114,7 +114,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                    }
                );
 
-            $(view).on("click", "ul.dropdown-menu a", function () {
+            $(view).on("click", "form#search-form ul.dropdown-menu a", function () {
                 const term = $(this).data("term") || ($(this).text() + ":"),
                     member = ko.dataFor(this);
 
