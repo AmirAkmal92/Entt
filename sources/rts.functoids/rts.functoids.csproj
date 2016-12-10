@@ -76,12 +76,29 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetDir)$(TargetName).dll $(SolutionDir)web\bin
+
+
+
 copy $(TargetDir)$(TargetName).pdb $(SolutionDir)web\bin
 
+
+
+
+
 copy $(TargetDir)$(TargetName).dll $(SolutionDir)tools
+
+
+
 copy $(TargetDir)$(TargetName).pdb $(SolutionDir)tools
 
+
+
+
+
 copy $(TargetDir)$(TargetName).dll $(SolutionDir)subscribers
+
+
+
 copy $(TargetDir)$(TargetName).pdb $(SolutionDir)subscribers</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
