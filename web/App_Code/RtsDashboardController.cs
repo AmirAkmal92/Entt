@@ -8,19 +8,18 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Bespoke.Sph.Domain;
 using Bespoke.Sph.WebApi;
-using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 
 
 [RoutePrefix("api/rts-dashboard")]
 public class RtsDashboadController : BaseApiController
 {
-               
+
     private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
     private readonly HttpClient m_rabbitMqManagementClient = new HttpClient(new HttpClientHandler { Credentials = new NetworkCredential(ConfigurationManager.RabbitMqUserName, ConfigurationManager.RabbitMqPassword) })
-                                                                { 
-                                                                        BaseAddress = new Uri($"{ConfigurationManager.RabbitMqManagementScheme}://{ConfigurationManager.RabbitMqHost}:{ConfigurationManager.RabbitMqManagementPort}") 
-                                                                };
+    {
+        BaseAddress = new Uri($"{ConfigurationManager.RabbitMqManagementScheme}://{ConfigurationManager.RabbitMqHost}:{ConfigurationManager.RabbitMqManagementPort}")
+    };
 
     [Route("")]
     [HttpPost]
@@ -47,7 +46,7 @@ public class RtsDashboadController : BaseApiController
         var result = await content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)
-            throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
+            return Invalid((HttpStatusCode)422, new { query, result });
         return Json(result);
     }
 
@@ -102,20 +101,30 @@ public class RtsDashboadController : BaseApiController
     }
 
 
-    [Route("{type}/requeue/{queues}")]
+    [Route("{type}/{id}/requeue")]
     [HttpPost]
-    public async Task<IHttpActionResult> RequeueAsync(string type, string queues, [JsonBody]JArray items)
+    public async Task<IHttpActionResult> RequeueAsync(string type, string id, [FromBody]RequeueViewModel model)
     {
-        var triggers = queues.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-        foreach (var q in triggers)
-        {
-            await this.SendMessage(q, items, new Dictionary<string, object>());
-        }
-        return Json(new { message = "OK", routing = triggers });
+        var payload = await m_client.GetStringAsync($"posentt_rts_{model.Date:yyyyMMdd}/{type.ToLowerInvariant()}/{id}");
+        await this.SendMessage(model.QueueName, payload, new Dictionary<string, object>());
+
+        var update = $@"{{
+   ""doc"": {{
+      ""otherInfo"": {{
+         ""requeued"": true,
+         ""requeuedOn"": ""{DateTime.Now:O}"",
+         ""requeuedBy"": ""{User.Identity.Name}""
+      }}
+   }}
+}}";
+        var response = await m_client.PostAsync($"posentt_logs_{model.Date:yyyyMMdd}/log/{model.LogId}/_update", new StringContent(update));
+        response.EnsureSuccessStatusCode();
+
+        return Json(new { message = "OK" });
     }
 
     public const int PERSISTENT_DELIVERY_MODE = 2;
-    private async Task SendMessage(string triggerId, JArray items, IDictionary<string, object> headers)
+    private async Task SendMessage(string triggerId, string payload, IDictionary<string, object> headers)
     {
         var factory = new ConnectionFactory
         {
@@ -129,28 +138,25 @@ public class RtsDashboadController : BaseApiController
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
         {
-            foreach (var item in items)
+
+            var log = string.Empty;
+            var routingKey = $"trigger_subs_{triggerId}";
+            var body = await CompressAsync(payload);
+
+            var props = channel.CreateBasicProperties();
+            props.DeliveryMode = PERSISTENT_DELIVERY_MODE;
+            props.Persistent = true;
+            props.ContentType = "application/json";
+            props.Headers = new Dictionary<string, object> { { "operation", "requeue" }, { "crud", "added" }, { "log", log } };
+            if (null != headers)
             {
-                var log = string.Empty;
-                var routingKey = $"trigger_subs_{triggerId}";
-                var body = await CompressAsync(item.ToString());
-
-                var props = channel.CreateBasicProperties();
-                props.DeliveryMode = PERSISTENT_DELIVERY_MODE;
-                props.Persistent = true;
-                props.ContentType = "application/json";
-                props.Headers = new Dictionary<string, object> { { "operation", "requeue" }, { "crud", "added" }, { "log", log } };
-                if (null != headers)
+                foreach (var k in headers.Keys)
                 {
-                    foreach (var k in headers.Keys)
-                    {
-                        if (!props.Headers.ContainsKey(k))
-                            props.Headers.Add(k, headers[k]);
-                    }
+                    if (!props.Headers.ContainsKey(k))
+                        props.Headers.Add(k, headers[k]);
                 }
-                channel.BasicPublish("", routingKey, props, body);
             }
-
+            channel.BasicPublish("", routingKey, props, body);
 
             channel.Close();
             connection.Close();
@@ -182,4 +188,11 @@ public class RtsDashboadController : BaseApiController
     }
 
 
+}
+
+public class RequeueViewModel
+{
+    public DateTime Date { set; get; }
+    public string LogId { get; set; }
+    public string QueueName { get; set; }
 }

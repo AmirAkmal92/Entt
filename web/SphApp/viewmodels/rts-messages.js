@@ -37,20 +37,24 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                }
             ]
         },
-        loadListAsync = function(q){            
-            var q = q || query;
+        loadListAsync = function (q) {
+            q = q || query;
             return context.post(ko.toJSON(q), `api/rts-dashboard/${rtsType().toLowerCase()}`)
                 .then(function (result) {
                     total(result.hits.total);
-                    const eventsList = result.hits.hits.map(function(v){
+                    const eventsList = result.hits.hits.map(function (v) {
                         v.log = ko.observable({
-                            total : ko.observable(0),
-                            busy : ko.observable(false),
-                            hits : ko.observableArray()
+                            total: ko.observable(0),
+                            busy: ko.observable(false),
+                            hits: ko.observableArray()
                         });
-                        context.get(`api/rts-dashboard/logs/${v._type}/${v._id}`).then(function(log){
+                        context.get(`api/rts-dashboard/logs/${v._type}/${v._id}`).then(function (log) {
                             v.log().total(log.hits.total);
-                            v.log().hits(log.hits.hits);
+                            const hits = log.hits.hits.map(function (v) {
+                                v.canRequeue = ko.observable(v._source.otherInfo.requeued !== true);
+                                return v;
+                            });
+                            v.log().hits(hits);
                         });
                         return v;
                     });
@@ -68,7 +72,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     queueOptions(lo.itemCollection);
                     return context.loadOneAsync("EntityDefinition", `Id eq '${type.toLowerCase()}'`);
                 })
-                .then(function(ed){
+                .then(function (ed) {
                     members(ed.MemberCollection());
                 });
         },
@@ -110,18 +114,27 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                    }
                );
 
-               $(view).on("click", "ul.dropdown-menu a", function () {
-                    var term = $(this).data("term") || ($(this).text() + ":"),
-                        text = searchText();
-                    searchText(text + " " + term);
-                    $("input#search-text").focus();
-                });
+            $(view).on("click", "ul.dropdown-menu a", function () {
+                const term = $(this).data("term") || ($(this).text() + ":"),
+                    member = ko.dataFor(this);
+
+                let text = searchText();
+                if (text) {
+                    text = `${text} AND `;
+                }
+                if (ko.unwrap(member.TypeName) === "System.DateTime, mscorlib") {
+                    searchText(`${text}  ${term} [ TO ]`);
+                } else {
+                    searchText(`${text} ${term}""`);
+                }
+                $("input#search-text").focus();
+            });
 
         },
-        requeue = function () {
-            const qs = queues().map(x => ko.unwrap(x.Id)).join(","),
-                items = selectedItems().map(x => x._source);
-            return context.post(ko.toJSON(items), `api/rts-dashboard/${rtsType()}/requeue/${qs}`)
+        requeue = function (log) {
+            console.log(log);
+            log.canRequeue(false);
+            return context.post(ko.toJSON({ date: log._source.time, logId: log._id, queueName: log._source.source }), `api/rts-dashboard/${rtsType()}/${log._source.otherInfo.id}/requeue`)
                     .then(function (result) {
                         console.log(result);
                     });
@@ -135,15 +148,22 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 }
             });
             isBusy(true);
-            return loadListAsync(q);
-        },
-        viewLog = function(log){
-            console.log(log);
-               require(["viewmodels/log.details.dialog", "durandal/app"], function (dialog, app2) {
-                    dialog.log(log._source);
-                    app2.showDialog(dialog);
-
+            return loadListAsync(q)
+                .fail(function (e, arg) {
+                    const result = JSON.parse(e.responseJSON.result);
+                    logger.error("Error in your search syntax", result);
+                })
+                .always(function () {
+                    isBusy(false);
                 });
+        },
+        viewLog = function (log) {
+            console.log(log);
+            require(["viewmodels/log.details.dialog", "durandal/app"], function (dialog, app2) {
+                dialog.log(log._source);
+                app2.showDialog(dialog);
+
+            });
         };
 
     return {
@@ -152,7 +172,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         type: rtsType,
         list: list,
         selectedItems: selectedItems,
-        members : members,
+        members: members,
         queueOptions: queueOptions,
         requeue: requeue,
         queues: queues,
@@ -160,8 +180,19 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         searchText: searchText,
         search: search,
         to: to,
-        viewLog:viewLog,
-        isBusy: isBusy
+        viewLog: viewLog,
+        isBusy: isBusy,
+        toolbar: {
+            commands: ko.observableArray([
+            {
+                "caption": "Reload",
+                "icon": "bowtie-icon bowtie-navigate-refresh",
+                "id": "rts-messages-reload",
+                command: function () {
+                    return loadListAsync();
+                }
+            }])
+        }
     };
 
 });
