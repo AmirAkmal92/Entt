@@ -50,7 +50,11 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                         });
                         context.get(`api/rts-dashboard/logs/${v._type}/${v._id}`).then(function (log) {
                             v.log().total(log.hits.total);
-                            v.log().hits(log.hits.hits);
+                            const hits = log.hits.hits.map(function (v) {
+                                v.canRequeue = ko.observable(v._source.otherInfo.requeued !== true);
+                                return v;
+                            });
+                            v.log().hits(hits);
                         });
                         return v;
                     });
@@ -127,10 +131,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             });
 
         },
-        requeue = function () {
-            const qs = queues().map(x => ko.unwrap(x.Id)).join(","),
-                items = selectedItems().map(x => x._source);
-            return context.post(ko.toJSON(items), `api/rts-dashboard/${rtsType()}/requeue/${qs}`)
+        requeue = function (log) {
+            console.log(log);
+            log.canRequeue(false);
+            return context.post(ko.toJSON({ date: log._source.time, logId: log._id, queueName: log._source.source }), `api/rts-dashboard/${rtsType()}/${log._source.otherInfo.id}/requeue`)
                     .then(function (result) {
                         console.log(result);
                     });

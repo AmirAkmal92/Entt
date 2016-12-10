@@ -37,9 +37,24 @@
             <td data-bind="text:_source.ScannerId"></td>
             <td data-bind="with:log">
                 <!-- ko foreach : hits -->
-                   <a href="javascript:;" data-bind="attr : { title : 'View error details # ' + ($index()+1) }, click: $root.viewLog">
-                       <i class="fa fa-bookmark-o"></i>                    
-                    </a>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" data-bind="enable: canRequeue,  click: $root.requeue, attr : { title : _source.source}">
+                        <i class="fa fa-gear"></i>
+                        Requeue
+                    </button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:;" data-bind="attr : { title : 'View error details # ' + ($index()+1) }, click: $root.viewLog">
+                                <i class="fa fa-bookmark-o"></i> View Log
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
                 <!-- /ko -->
             </td>
         </tr>
