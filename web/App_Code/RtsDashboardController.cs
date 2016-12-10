@@ -47,7 +47,7 @@ public class RtsDashboadController : BaseApiController
         var result = await content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)
-            throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
+            return Invalid((HttpStatusCode) 422, new {query, result});
         return Json(result);
     }
 
