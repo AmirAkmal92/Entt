@@ -145,7 +145,7 @@ function(context, logger, router, system, validation, eximp, dialog, watcher, co
                     return partial.canExecuteSaveCommand();
                 }
                 return true;
-            }),
+            })
 
         }, // end toolbar
 
