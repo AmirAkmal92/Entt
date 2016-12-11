@@ -35,8 +35,8 @@
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-pickup-to-oal-consigment-initial",
         "Adapter": "Oal",
-        "Operation": null,
-        "Table": "consignment_initial",
+        "Operation": "usp_consigment_initial_rts",
+        "Table": null,
         "Schema": null,
         "Crud": "Insert",
         "Retry": 3,
@@ -177,6 +177,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-09T17:04:53.9218925+08:00",
+  "ChangedDate": "2016-12-12T06:17:27.2790273+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }

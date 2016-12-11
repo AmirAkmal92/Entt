@@ -11,74 +11,74 @@ ALTER PROCEDURE usp_consigment_initial_rts
 @id varchar(20),
            @baby_item varchar(20),
            @dt_received_at_oal_date_field datetime,
-           @dt_created_date_field datetime,
-           @parent varchar(20),
-           @total_consignment_item_number int,
-           @is_parent tinyint,
-           @number varchar(40),
-           @postcode varchar(5),
-           @parent_weight_double float,
-           @total_item_number int,
-           @prodtype varchar(10),
-           @prod_type_desc varchar(100),
-           @packagetype varchar(10),
-           @package_type_desc varchar(100),
-           @country varchar(10),
-           @height_double float,
-           @width_double float,
-           @length_double float,
-           @weight_double float,
-           @item_category varchar(2),
-           @item_category_desc varchar(50),
-           @total_baby_number int,
-           @total_parent_number int,
-           @routing_code varchar(14),
-           @total_weight_double float,
-           @total_dim_weight_double float,
-           @price_money float,
-           @consignment_fee_money float,
-           @sold_to_party_account varchar(10),
-           @recipient_ref_no varchar(20),
-           @_clerk_id varchar(10),
-           @_courier_id varchar(10),
-           @location_id varchar(4),
-           @location_office_name varchar(50),
-           @system_id varchar(3),
-           @system_id_desc varchar(30),
-           @authorisation_id varchar(20),
-           @weight_density_double float,
-           @weight_volumetric_double float,
-           @acceptance_cut_off_indicator varchar(1),
-           @consignee_address_address1 varchar(50),
-           @consignee_address_address2 varchar(50),
-           @consignee_address_city varchar(50),
-           @consignee_address_post_code varchar(10),
-           @consignee_address_state varchar(30),
-           @consignee_address_country varchar(30),
-           @consignee_name varchar(50),
-           @consignee_email varchar(50),
-           @consignee_phone varchar(15),
-           @consignee_reference_number varchar(12),
-           @shipper_account varchar(50),
-           @shipper_name varchar(50),
-           @shipper_address_address1 varchar(50),
-           @shipper_address_address2 varchar(50),
-           @shipper_address_city varchar(50),
-           @shipper_address_post_code varchar(10),
-           @shipper_address_state varchar(30),
-           @shipper_address_country varchar(30),
-           @shipper_email varchar(50),
-           @shipper_phone varchar(15),
-           @shipper_reference_number varchar(12),
-           @_i_p_o_s_receipt_no varchar(30),
-           @packaging_code varchar(2),
-           @packaging_desc varchar(20),
-           @day_taken_for_data_entry varchar(4),
-           @drop_option_indicator varchar(1),
-           @pickup_date_date_field datetime,
-           @pl_nine varchar(10),
-           @iposreceipt_no varchar(30),
-           @ClerkId varchar(10),
+           @dt_created_date_field datetime = NULL,
+           @parent varchar(20) = NULL,
+           @total_consignment_item_number int = NULL,
+           @is_parent tinyint = NULL,
+           @number varchar(40) = NULL,
+           @postcode varchar(5) = NULL,
+           @parent_weight_double float = NULL,
+           @total_item_number int = NULL,
+           @prodtype varchar(10) = NULL,
+           @prod_type_desc varchar(100) = NULL,
+           @packagetype varchar(10) = NULL,
+           @package_type_desc varchar(100) = NULL,
+           @country varchar(10) = NULL,
+           @height_double float = NULL,
+           @width_double float = NULL,
+           @length_double float = NULL,
+           @weight_double float = NULL,
+           @item_category varchar(2) = NULL,
+           @item_category_desc varchar(50) = NULL,
+           @total_baby_number int = NULL,
+           @total_parent_number int = NULL,
+           @routing_code varchar(14) = NULL,
+           @total_weight_double float = NULL,
+           @total_dim_weight_double float = NULL,
+           @price_money float = NULL,
+           @consignment_fee_money float = NULL,
+           @sold_to_party_account varchar(10) = NULL,
+           @recipient_ref_no varchar(20) = NULL,
+           @clerk_id varchar(10) = NULL,
+           @courier_id varchar(10) = NULL,
+           @location_id varchar(4) = NULL,
+           @location_office_name varchar(50) = NULL,
+           @system_id varchar(3) = NULL,
+           @system_id_desc varchar(30) = NULL,
+           @authorisation_id varchar(20) = NULL,
+           @weight_density_double float = NULL,
+           @weight_volumetric_double float = NULL,
+           @acceptance_cut_off_indicator varchar(1) = NULL,
+           @consignee_address_address1 varchar(50) = NULL,
+           @consignee_address_address2 varchar(50) = NULL,
+           @consignee_address_city varchar(50) = NULL,
+           @consignee_address_post_code varchar(10) = NULL,
+           @consignee_address_state varchar(30) = NULL,
+           @consignee_address_country varchar(30) = NULL,
+           @consignee_name varchar(50) = NULL,
+           @consignee_email varchar(50) = NULL,
+           @consignee_phone varchar(15) = NULL,
+           @consignee_reference_number varchar(12) = NULL,
+           @shipper_account varchar(50) = NULL,
+           @shipper_name varchar(50) = NULL,
+           @shipper_address_address1 varchar(50) = NULL,
+           @shipper_address_address2 varchar(50) = NULL,
+           @shipper_address_city varchar(50) = NULL,
+           @shipper_address_post_code varchar(10) = NULL,
+           @shipper_address_state varchar(30) = NULL,
+           @shipper_address_country varchar(30) = NULL,
+           @shipper_email varchar(50) = NULL,
+           @shipper_phone varchar(15) = NULL,
+           @shipper_reference_number varchar(12) = NULL,
+           @i_p_o_s_receipt_no varchar(30) = NULL,
+           @packaging_code varchar(2) = NULL,
+           @packaging_desc varchar(20) = NULL,
+           @day_taken_for_data_entry varchar(4) = NULL,
+           @drop_option_indicator varchar(1) = NULL,
+           @pickup_date_date_field datetime = NULL,
+           @pl_nine varchar(10) = NULL,
+           @iposreceipt_no varchar(30) = NULL,
+           @ClerkId varchar(10) = NULL,
            @CourierId varchar(10)
 AS
 BEGIN
@@ -95,7 +95,6 @@ UPDATE [dbo].[consignment_initial]
       ,[parent] = @parent
       ,[total_consignment_item_number] = @total_consignment_item_number
       ,[is_parent] = @is_parent
-      ,[number] = @number
       ,[postcode] = @postcode
       ,[parent_weight_double] = @parent_weight_double
       ,[total_item_number] = @total_item_number
@@ -119,8 +118,8 @@ UPDATE [dbo].[consignment_initial]
       ,[consignment_fee_money] = @consignment_fee_money
       ,[sold_to_party_account] = @sold_to_party_account
       ,[recipient_ref_no] = @recipient_ref_no
-      ,[_clerk_id] = @_clerk_id
-      ,[_courier_id] = @_courier_id
+      ,[_clerk_id] = @clerk_id
+      ,[_courier_id] = @courier_id
       ,[location_id] = @location_id
       ,[location_office_name] = @location_office_name
       ,[system_id] = @system_id
@@ -150,7 +149,7 @@ UPDATE [dbo].[consignment_initial]
       ,[shipper_email] = @shipper_email
       ,[shipper_phone] = @shipper_phone
       ,[shipper_reference_number] = @shipper_reference_number
-      ,[_i_p_o_s_receipt_no] = @_i_p_o_s_receipt_no
+      ,[_i_p_o_s_receipt_no] = @i_p_o_s_receipt_no
       ,[packaging_code] = @packaging_code
       ,[packaging_desc] = @packaging_desc
       ,[day_taken_for_data_entry] = @day_taken_for_data_entry
@@ -160,7 +159,7 @@ UPDATE [dbo].[consignment_initial]
       ,[iposreceipt_no] = @iposreceipt_no
       ,[ClerkId] = @ClerkId
       ,[CourierId] = @CourierId
- WHERE id = @id
+ WHERE number = @number
 
 
 IF @@ROWCOUNT = 0
@@ -168,6 +167,7 @@ BEGIN
 
 	INSERT INTO [dbo].[consignment_initial]
            ([id]
+		   ,[version]
            ,[baby_item]
            ,[dt_received_at_oal_date_field]
            ,[dt_created_date_field]
@@ -241,6 +241,7 @@ BEGIN
            ,[CourierId])
      VALUES
            (@id
+		   ,0
            ,@baby_item
            ,@dt_received_at_oal_date_field
            ,@dt_created_date_field
@@ -271,8 +272,8 @@ BEGIN
            ,@consignment_fee_money
            ,@sold_to_party_account
            ,@recipient_ref_no
-           ,@_clerk_id
-           ,@_courier_id
+           ,@clerk_id
+           ,@courier_id
            ,@location_id
            ,@location_office_name
            ,@system_id
@@ -302,7 +303,7 @@ BEGIN
            ,@shipper_email
            ,@shipper_phone
            ,@shipper_reference_number
-           ,@_i_p_o_s_receipt_no
+           ,@i_p_o_s_receipt_no
            ,@packaging_code
            ,@packaging_desc
            ,@day_taken_for_data_entry
