@@ -86,14 +86,15 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
         public override string GetEditorView()
         {
+            // Note : remove $ string interpolation to use resharper HTML syntax
             //language=html
-            var html = @"<section class=""view-model-modal"" id=""messaging-action-dialog"">
+            var html = $@"<section class=""view-model-modal"" id=""messaging-action-dialog"">
     <div class=""modal-dialog"">
         <div class=""modal-content"">
 
             <div class=""modal-header"">
                 <button type=""button"" class=""close"" data-dismiss=""modal"" data-bind=""click : cancelClick"">&times;</button>
-                <h3>RTS DELI with child items</h3>
+                <h3>{this.GetType().Name}</h3>
             </div>
             <div class=""modal-body"" data-bind=""with: action"">
 
