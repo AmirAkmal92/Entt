@@ -25,7 +25,7 @@ public class ScannerTokenServiceController : BaseApiController
         var ip = this.GetClientIp();
 
         if (model.grant_type == "local_network" && !ip.StartsWith("1"))
-            return Json(new { success = false, status = 403, message = "local_network request must be done within specified IP address range " + ip});
+            return Json(new { success = false, status = 403, message = "local_network request must be done within specified IP address range " + ip });
 
         model.expiry = DateTime.Today.AddMonths(1);// give it 1 month validity
         var tokenService = ObjectBuilder.GetObject<ITokenService>();
@@ -74,6 +74,13 @@ public class ScannerTokenServiceController : BaseApiController
             .Replace("\"WebId\"", $"\"token\":\"{token}\",\r\n\"WebId\"");
 
         return Json(json);
+    }
+
+    [Route("check-validity")]
+    [HttpGet]
+    public IHttpActionResult CheckValidity()
+    {
+        return Ok(new { message = "Token is valid" });
     }
 
     private string GetClientIp(HttpRequestMessage request = null)
