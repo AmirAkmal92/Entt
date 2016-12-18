@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "D:\\temp\\sap-soa",
+  "CredentialUserName": null,
+  "ChangeExtension": true,
+  "CredentialPassword": null,
+  "Filter": "SAP_SOA_*.txt",
+  "ArchiveLocation": "d:\\temp\\sap-soa-archive",
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "SapSoaDropFolder",
+  "IsActive": true,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "default-post-sap-soa",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": null,
+  "ReceivePort": "sap-soa-port",
+  "CreatedBy": "admin",
+  "Id": "sap-soa-drop-folder",
+  "CreatedDate": "2016-12-18T15:42:32.2525642+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-18T15:43:53.4784711+08:00",
+  "WebId": "6cdbadbb-c83d-40df-ae55-5e63366e798e"
+}

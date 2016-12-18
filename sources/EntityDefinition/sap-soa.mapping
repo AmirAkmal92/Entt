@@ -1,0 +1,16 @@
+{
+    "sapsoa":{
+        "properties":{
+            "CreatedBy": {"type": "string", "index":"not_analyzed"},
+            "ChangedBy": {"type": "string", "index":"not_analyzed"},
+            "WebId": {"type": "string", "index":"not_analyzed"},
+            "CreatedDate": {"type": "date"},
+            "ChangedDate": {"type": "date"},
+             "AccountNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "InvoiceDate":{"type":"date","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "InvoiceNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Description":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Amount":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false}
+        }
+    }
+}
