@@ -1,0 +1,76 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "AccountNo",
+        "TypeName": "",
+        "Destination": "Routes.AccountNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "287c9dd8-a18f-4bdb-c322-92a8bfc5ff1e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "InvoiceDate",
+        "TypeName": "",
+        "Destination": "Body.Date",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "492a83e8-d981-45a4-dd3c-589fdc2cc101"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "InvoiceNo",
+        "TypeName": "",
+        "Destination": "Body.No",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6bf0845a-c098-4948-8251-04663d9bff7e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Description",
+        "TypeName": "",
+        "Destination": "Body.Description",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "695de946-94cb-4879-ee07-ff99ab586872"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Amount",
+        "TypeName": "",
+        "Destination": "Body.Amount",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "544e1a0a-6c6a-4322-b8c2-0893712cb7a4"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "SapInvoiceToSnbWebApi",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.SapSoas.Domain.SapSoa, PosEntt.SapSoa",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebApi.PostSapInvoiceRequest, PosEntt.SnbWebApi",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "sap-invoice-to-snb-web-api",
+  "CreatedDate": "2016-12-19T07:02:27.8087776+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-19T07:24:35.9331723+08:00",
+  "WebId": "e6a94dd7-b15b-4418-946d-51fa28f4ec6d"
+}
