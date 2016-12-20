@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
 using Polly;
@@ -12,89 +14,100 @@ namespace Bespoke.PosEntt.CustomActions
     [DesignerMetadata(Name = "DecoWithBabies", TypeName = "Bespoke.PosEntt.CustomActions.DecoWithBabiesAction, rts.pickup.babies", Description = "RTS Deco with child items", FontAwesomeIcon = "calendar-check-o")]
     public class DecoWithBabiesAction : EventWithChildrenAction
     {
-        private List<Adapters.Oal.dbo_delivery_console_event_new> m_decoEventRows;
-        private List<Adapters.Oal.dbo_event_pending_console> m_decoEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
             var deco = context.Item as Decos.Domain.Deco;
             if (null == deco) return;
             if (deco.TotalConsignment <= 0) return;
-
-            m_decoEventRows = new List<Adapters.Oal.dbo_delivery_console_event_new>();
-            m_decoEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
+            
             await RunAsync(deco);
         }
 
         public async Task RunAsync(Decos.Domain.Deco deco)
         {
-            var consoleList = new List<string>();
-            if (IsConsole(deco.ConsoleTag)) consoleList.Add(deco.ConsoleTag);
+            var rows = new ConcurrentBag<Adapters.Oal.dbo_delivery_console_event_new>();
+            var map = new Integrations.Transforms.RtsDecoOalDeliveryConsoleEventNew();
+            var row = await map.TransformAsync(deco);
+            rows.Add(row);
+            rows.AddRange(await GetEventRowsAsync(row, deco.AllConsignmentnNotes));
 
-            //deco console_details
-            var decoEventMap = new Integrations.Transforms.RtsDecoOalDeliveryConsoleEventNew();
-            var parentRow = await decoEventMap.TransformAsync(deco);
-            var decoEventAdapter = new Adapters.Oal.dbo_delivery_console_event_newAdapter();
-            m_decoEventRows.Add(parentRow);
+            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var tagExistInConsoleDetails = (await consoleDetailsAdapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbo.console_details WHERE [console_tag] = '{deco.ConsoleTag}'")) > 0;
 
-            var itemList = deco.AllConsignmentnNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var item in itemList)
+            if (tagExistInConsoleDetails)
+                await InsertDeliveryConsoleEventNewAsync(rows);
+            else
+                await InsertEventPendingConsoleAsync(deco);
+
+
+            var tagExistInPendingConsole = (await consoleDetailsAdapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbo.event_pending_console WHERE [console_no] = '{deco.ConsoleTag}'")) > 0;
+            if (tagExistInPendingConsole)
+                await ProcessPendingConsoleAsync(deco, rows);
+
+            // now add to console_details
+            await AddToConsoleDetailsAsync(deco);
+
+        }
+
+        private async Task ProcessPendingConsoleAsync(Decos.Domain.Deco deco, IEnumerable<Adapters.Oal.dbo_delivery_console_event_new> rows)
+        {
+            var pendingItems = await SearchEventPendingAsync(deco.ConsoleTag);
+            var tasks = from p in pendingItems
+                        select ProcessEventPendingItem(deco, p);
+            await Task.WhenAll(tasks);
+
+            var consolePendingList = new List<string> { deco.ConsoleTag };
+            foreach (var item in rows)
             {
-                ProcessChild(parentRow, item);
-
-                //2 level
-                var console = IsConsole(item);
+                var console = IsConsole(item.consignment_no);
                 if (!console) continue;
-                consoleList.Add(item);
-                var childConsole = await GetItemConsigmentsFromConsoleDetailsAsync(item);
-                if (null != childConsole)
-                {
-                    var childConsoleItems = childConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (var cc in childConsoleItems)
-                    {
-                        if (consoleList.Contains(cc)) continue;
-                        ProcessChild(parentRow, cc);
+                if (consolePendingList.Contains(item.consignment_no)) continue;
 
-                        //3 level
-                        var anotherConsole = IsConsole(cc);
-                        if (!anotherConsole) continue;
-                        consoleList.Add(cc);
-                        var anotherChildConsole = await GetItemConsigmentsFromConsoleDetailsAsync(cc);
-                        if (null != anotherChildConsole)
-                        {
-                            var anotherChildConsoleItems = anotherChildConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                            foreach (var ccc in anotherChildConsoleItems)
-                            {
-                                if (consoleList.Contains(ccc)) continue;
-                                ProcessChild(parentRow, ccc);
-                            }
-                        }
-                        else
-                        {
-                            AddPendingItems(parentRow.id, cc);
-                        }
-                    }
-                }
-                else
-                {
-                    AddPendingItems(parentRow.id, item);
-                }
+                consolePendingList.Add(item.consignment_no);
             }
+        }
 
-            foreach (var item in m_decoEventRows)
+        private async Task AddToConsoleDetailsAsync(Decos.Domain.Deco deco)
+        {
+            var adapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var id = await adapter.ExecuteScalarAsync<string>($"SELECT [id] FROM dbo.console_details WHERE [console_no] = '{deco.ConsoleTag}'");
+            var consoleTagNotInConsoleDetails = string.IsNullOrWhiteSpace(id);
+            if (consoleTagNotInConsoleDetails)
             {
+                var map = new Integrations.Transforms.RtsDecoOalConsoleDetails();
+                var row = await map.TransformAsync(deco);
+
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+                return;
             }
 
+            var details = await adapter.LoadOneAsync(id);
+            if (details.courier_id == deco.CourierId && details.date_field == deco.Date)
+            {
+                var notes = details.item_consignments.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                notes.AddRange(deco.AllConsignmentnNotes.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries));
+                details.item_consignments = string.Join("\t", notes.OrderBy(x => x).Distinct());
+                await adapter.UpdateAsync(details);
+                return;
+            }
+            // TODO : insert into console_duplicate_error & event_exception
+            Console.WriteLine("insert into console_duplicate_error & event_exception");
+
+        }
+
+        private async Task InsertEventPendingConsoleAsync(Decos.Domain.Deco deco)
+        {
             var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-            foreach (var item in m_decoEventPendingConsoleRows)
+            var rows = new List<Adapters.Oal.dbo_event_pending_console>();
+            // TODO : get the rows
+            foreach (var item in rows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
@@ -104,25 +117,39 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+        }
 
-            //
-            //execute pending items, if any
-            var pendingItems = await SearchEventPending(deco.ConsoleTag);
-            foreach (var pending in pendingItems)
+        private async Task InsertDeliveryConsoleEventNewAsync(IEnumerable<Adapters.Oal.dbo_delivery_console_event_new> rows)
+        {
+
+            var decoEventAdapter = new Adapters.Oal.dbo_delivery_console_event_newAdapter();
+            foreach (var item in rows)
             {
-                await ProcessEventPendingItem(deco, pending);
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task<IEnumerable<Adapters.Oal.dbo_delivery_console_event_new>> GetEventRowsAsync(Adapters.Oal.dbo_delivery_console_event_new eventRow, string consignmentNotes)
+        {
+
+            var list = new ConcurrentBag<Adapters.Oal.dbo_delivery_console_event_new>();
+            var items = consignmentNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var item in items)
+            {
+                var row = await CloneChildAsync(eventRow, item);
+                list.Add(row);
+                var children = await GetEventRowsAsync(eventRow, row.item_consignments);
+                list.AddRange(children);
+
             }
 
-
-            var consolePendingList = new List<string> { deco.ConsoleTag };
-            foreach (var item in itemList)
-            {
-                var console = IsConsole(item);
-                if (!console) continue;
-                if (consolePendingList.Contains(item)) continue;
-
-                consolePendingList.Add(item);
-            }
+            return list;
         }
 
         private async Task ProcessEventPendingItem(Decos.Domain.Deco deco, Adapters.Oal.dbo_event_pending_console pending)
@@ -176,7 +203,7 @@ namespace Bespoke.PosEntt.CustomActions
                 await pendingAdapter.DeleteAsync(pending.id);
             }
         }
-        
+
         private async Task ProcessDeliveryPendingItem(string deliEventId, string[] itemList)
         {
             var deliAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
@@ -418,7 +445,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPending(string consoleNo)
+        private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPendingAsync(string consoleNo)
         {
             var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
             var query = $"SELECT [id], [event_class], [event_id] FROM [dbo].[event_pending_console] WHERE console_no = '{consoleNo}'";
@@ -448,7 +475,7 @@ namespace Bespoke.PosEntt.CustomActions
 
         }
 
-        private void ProcessChild(Adapters.Oal.dbo_delivery_console_event_new parent, string consignmentNo)
+        private async Task<Adapters.Oal.dbo_delivery_console_event_new> CloneChildAsync(Adapters.Oal.dbo_delivery_console_event_new parent, string consignmentNo)
         {
             var console = IsConsole(consignmentNo);
             var child = parent.Clone();
@@ -456,12 +483,17 @@ namespace Bespoke.PosEntt.CustomActions
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
-            m_decoEventRows.Add(child);
+            if (console)
+                child.item_consignments = await this.GetItemConsigmentsFromConsoleDetailsAsync(consignmentNo);
+
+
+            return child;
+
         }
 
-        private void AddPendingItems(string parentId, string consignmentNo)
+        private Adapters.Oal.dbo_event_pending_console GetPendingConsoleRow(string parentId, string consignmentNo)
         {
-            //insert into pending items
+
             var pendingConsole = new Adapters.Oal.dbo_event_pending_console
             {
                 id = GenerateId(20),
@@ -471,7 +503,7 @@ namespace Bespoke.PosEntt.CustomActions
                 version = 0,
                 date_field = DateTime.Now
             };
-            m_decoEventPendingConsoleRows.Add(pendingConsole);
+            return pendingConsole;
         }
 
     }
