@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "d:\\temp\\sap-account-ageing",
+  "CredentialUserName": null,
+  "ChangeExtension": true,
+  "CredentialPassword": null,
+  "Filter": "SAP_AGEN_HQ_*.txt",
+  "ArchiveLocation": "d:\\temp\\sap-account-ageing-acrhived",
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "SapAgeingFileDrop",
+  "IsActive": true,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "default-post-sap-ageing",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": null,
+  "ReceivePort": "sap-ageing-port",
+  "CreatedBy": "admin",
+  "Id": "sap-ageing-file-drop",
+  "CreatedDate": "2016-12-22T09:35:24.3206853+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-22T09:38:28.4102562+08:00",
+  "WebId": "3f55ade4-c0a0-4086-949b-f432b742eee5"
+}

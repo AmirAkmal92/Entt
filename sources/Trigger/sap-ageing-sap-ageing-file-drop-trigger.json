@@ -1,0 +1,78 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "sap-account-ageing-to-snb-web-api",
+        "Adapter": "SnbWebApi",
+        "Operation": "PostSapAccountAgeing",
+        "Table": null,
+        "Schema": null,
+        "Crud": null,
+        "Retry": 3,
+        "RetryAlgorithm": "Exponential",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "PostToSnbWebApi",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "8a78c30d-ff41-4e9e-f2b6-1913ee3b9688"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.SapAccountAgeingToSnbWebApi",
+        "FullName": "PosEntt.SapAccountAgeingToSnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.SapAccountAgeingToSnbWebApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.SnbWebApi",
+        "FullName": "PosEntt.SnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.SnbWebApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "SapAgeingFileDropTrigger",
+  "Entity": "SapAgeing",
+  "TypeOf": "Bespoke.PosEntt.SapAgeings.Domain.SapAgeing, PosEntt.SapAgeing",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "SapAgeingSapAgeingFileDropTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "sap-ageing-sap-ageing-file-drop-trigger",
+  "CreatedDate": "2016-12-22T09:41:30.5289671+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-22T09:42:27.0584231+08:00",
+  "WebId": "02c14038-dcfc-4abf-bd87-60edd68624dd"
+}
