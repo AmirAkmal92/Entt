@@ -1,0 +1,30 @@
+{
+  "name": "oal2",
+  "description": "OAL workers config on production servers",
+  "isEnabled": true,
+  "environment": "prod",
+  "subscriberConfigs": [
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_norm-rts-norm-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.norm-rts-norm-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_norm-rts-norm-to-oal-with-child",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalWithChildTriggerSubscriber",
+      "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
+    }
+  ],
+  "createdBy": "erymuzuan",
+  "id": "oal2",
+  "createdDate": "2016-11-29T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-11-29T00:00:00+08:00",
+  "webId": "oal2"
+}

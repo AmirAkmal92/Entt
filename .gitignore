@@ -35,3 +35,4 @@ version.json
 /PrecompiledWeb
 env.posentt.ws27.ps1
 *.user
+/subscribers.host*

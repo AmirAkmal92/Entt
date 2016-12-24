@@ -1,0 +1,46 @@
+{
+  "name": "prod-es",
+  "description": "Prod on for es some subscribers",
+  "isEnabled": true,
+  "environment": "prod",
+  "subscriberConfigs": [      
+    {
+      "instancesCount": 1,
+      "prefetchCount": 5,
+      "priority": 0,
+      "queueName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
+      "fullName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
+      "assembly": "subscriber.elasticsearch.indexer"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 5,
+      "priority": 0,
+      "queueName": "es.data-import",
+      "fullName": "Bespoke.Sph.ElasticSearch.DataImportSubscriber",
+      "assembly": "subscriber.elasticsearch.indexer"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "system_asset_es_indexer",
+      "fullName": "Bespoke.Sph.ElasticSearch.SystemAssetIndexerSubscriber",
+      "assembly": "subscriber.elasticsearch.indexer"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "source_queue",
+      "fullName": "subscriber.version.control.SourceSubscriber",
+      "assembly": "subscriber.version.control"
+    }
+  ],
+  "createdBy": "erymuzuan",
+  "id": "prod-es",
+  "createdDate": "2016-10-07T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-10-07T00:00:00+08:00",
+  "webId": "prod-es"
+}
