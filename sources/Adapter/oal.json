@@ -1,7 +1,7 @@
 {
   "$type": "Bespoke.Sph.Integrations.Adapters.SqlServerAdapter, sqlserver.adapter",
   "OdataTranslator": "OdataSqlTranslator",
-  "Version": 0,
+  "Version": 2008,
   "Server": "S301\\DEV2016",
   "TrustedConnection": true,
   "UserId": "enttadm",

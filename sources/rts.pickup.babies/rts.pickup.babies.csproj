@@ -67,6 +67,9 @@
     <Reference Include="PosEntt.RtsCommToOalCommEventNew">
       <HintPath>..\..\output\PosEntt.RtsCommToOalCommEventNew.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsDeco_oal_console_details">
+      <HintPath>..\..\output\PosEntt.RtsDeco_oal_console_details.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsDeco_Oal_delivery_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsDeco_Oal_delivery_console_event_new.dll</HintPath>
     </Reference>
@@ -150,6 +153,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConcurrentBagExtensions.cs" />
     <Compile Include="EventWithChildrenAction.cs" />
     <Compile Include="DeliWithChildrenAction.cs" />
     <Compile Include="CommWithChildrenAction.cs" />

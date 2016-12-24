@@ -63,11 +63,11 @@ namespace Bespoke.PosEntt.CustomActions
 
             //consigment_initial
             var consignmentInitialMap = new Integrations.Transforms.RtsPickupToOalConsigmentInitial();
-            var consignmentInitialRows = new List<Adapters.Oal.dbo_consignment_initial>();
+            var consignmentInitialRows = new List<Adapters.Oal.UspConsigmentInitialRtsRequest>();
             var consignmentParentRow = await consignmentInitialMap.TransformAsync(pickup);
             consignmentInitialRows.Add(consignmentParentRow);
 
-            
+
 
             if (null != pickup.BabyConsignment)
             {
@@ -96,16 +96,16 @@ namespace Bespoke.PosEntt.CustomActions
                 }
             }
 
-            var consignmentAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var oal = new Adapters.Oal.Oal();
             foreach (var item in consignmentInitialRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => consignmentAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => oal.UspConsigmentInitialRtsAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+
             }
 
             //wwp_event_new
@@ -139,11 +139,12 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private double? GetDoubleValue(string val)
+        private double? GetDoubleValue(string text)
         {
-            double retVal = 0;
-            var ok = double.TryParse(val, out retVal);
-            return retVal;
+            double value;
+            if (double.TryParse(text, out value))
+                return value;
+            return null;
         }
     }
 }
