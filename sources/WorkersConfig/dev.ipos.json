@@ -1,0 +1,23 @@
+{
+  "name": "ipos",
+  "description": "Development on local machines",
+  "isEnabled": true,
+  "environment": "dev",
+  "subscriberConfigs": [
+
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_ipos-deposit-payment-ipos-deposit-post-to-snb",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
+      "assembly" : "subscriber.trigger.ipos-deposit-payment-ipos-deposit-post-to-snb"
+    }
+  ],
+  "createdBy": "erymuzuan",
+  "id": "dev.ipos",
+  "createdDate": "2016-10-07T00:00:00+08:00",
+  "changedBy": "erymuzuan",
+  "changedDate": "2016-10-07T00:00:00+08:00",
+  "webId": "dev.ipos"
+}

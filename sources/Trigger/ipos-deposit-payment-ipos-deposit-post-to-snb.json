@@ -1,0 +1,78 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "ipos-deposit-payment-to-snb-web-api",
+        "Adapter": "SnbWebApi",
+        "Operation": "PostDeposit",
+        "Table": null,
+        "Schema": null,
+        "Crud": null,
+        "Retry": 5,
+        "RetryAlgorithm": "Exponential",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "PostToSnbDeposit",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "f997bf01-cd0b-42aa-ee88-6b4827891cd2"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.SnbWebApi",
+        "FullName": "PosEntt.SnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\web\\bin\\PosEntt.SnbWebApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposDepositPaymentToSnbWebApi",
+        "FullName": "PosEntt.IposDepositPaymentToSnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.IposDepositPaymentToSnbWebApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IposDepositPostToSnb",
+  "Entity": "IposDepositPayment",
+  "TypeOf": "Bespoke.PosEntt.IposDepositPayments.Domain.IposDepositPayment, PosEntt.IposDepositPayment",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "ipos-deposit-payment-ipos-deposit-post-to-snb",
+  "CreatedDate": "2016-12-25T08:27:21.8727964+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-25T08:28:55.177849+08:00",
+  "WebId": "030fb8ff-84e4-4353-a6b0-8153e1f78931"
+}

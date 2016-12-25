@@ -368,6 +368,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_ipos-deposit-payment-ipos-deposit-post-to-snb",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
+      "assembly" : "subscriber.trigger.ipos-deposit-payment-ipos-deposit-post-to-snb"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sales-order-post-snb",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
       "assembly": "subscriber.trigger.sales-order-post-snb"
