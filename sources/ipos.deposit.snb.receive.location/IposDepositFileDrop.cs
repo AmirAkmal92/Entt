@@ -24,7 +24,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
             await WaitReadyAsync(file);
 
             var logger = new LocationLogger();
-            var port = new IposDepositPaymentPort(logger) {Uri = new Uri(file)};
+            var port = new IposDepositPaymentPort(logger) { Uri = new Uri(file) };
 
             var fileInfo = new FileInfo(file);
             port.AddHeader("CreationTime", $"{fileInfo.CreationTime:s}");
@@ -49,8 +49,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
             File.Move(file, wip);
             await WaitReadyAsync(wip);
             await Task.Delay(100);
-
-            // TODO : just read to the next record
+            
             var number = 0;
             var lines = File.ReadLines(wip);
             var records = port.Process(lines);
@@ -60,8 +59,6 @@ namespace Bespoke.PosEntt.ReceiveLocations
             {
                 number++;
                 if (null == r) continue; // we got an exception reading the record
-                var request = new StringContent(r.ToJson());
-                request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
                 // polly policy goes here
                 var retry = ConfigurationManager.GetEnvironmentVariableInt32("IposDepositFileDrop", 3);
@@ -69,7 +66,12 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
                 var pr = await Policy.Handle<Exception>()
                                     .WaitAndRetryAsync(retry, c => TimeSpan.FromMilliseconds(interval * Math.Pow(2, c)))
-                                    .ExecuteAndCaptureAsync(() => m_client.PostAsync("/api/ipos-deposit-payments/", request));
+                                    .ExecuteAndCaptureAsync(() =>
+                    {
+                        var request = new StringContent(r.ToJson());
+                        request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                        return m_client.PostAsync("/api/ipos-deposit-payments/", request);
+                    });
 
                 if (null != pr.FinalException)
                 {
@@ -84,12 +86,11 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 {
                     var warn = new LogEntry
                     {
-                        Message = $"Non success status code record {number}({r.Sequence}), StatusCode: {(int) response.StatusCode}",
+                        Message = $"Non success status code record {number}({r.Sequence}), StatusCode: {(int)response.StatusCode}",
                         Severity = Severity.Warning,
                         Details = $"{fileInfo.FullName}:{number}({r.Sequence})"
                     };
-                    logger.Log(warn);
-                    // TODO : we know the use might attempt to resubmit the non 2XX response                
+                    logger.Log(warn);     
                 }
             }
 
@@ -114,6 +115,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 {
                     using (Stream stream = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
                     {
+                        // ReSharper disable once ConditionIsAlwaysTrueOrFalse
                         if (stream != null)
                         {
                             Console.WriteLine($"Output file {fileName} ready.");
@@ -140,11 +142,11 @@ namespace Bespoke.PosEntt.ReceiveLocations
         {
 
             var token = ConfigurationManager.GetEnvironmentVariable("IposDepositFileDrop_JwtToken") ?? @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImRldmVsb3BlcnMiXSwiZW1haWwiOjE0ODMxNDI0MDAsInN1YiI6ImQ2MTc0NmUwLTdhZmMtNDhjYS04OTVmLWQzZDAzOWQ4ZDI4MSIsIm5iZiI6MTQ5MDUwMzE1MiwiaWF0IjoxNDc0ODY0NzUyLCJleHAiOjE0ODMxNDI0MDAsImF1ZCI6IkRldlYxIn0.50WRticwNzLXL3sHdJsBsdhulOQqhPJlYATxm-amFfw";
-            m_client = new HttpClient {BaseAddress = new Uri(ConfigurationManager.BaseUrl)};
+            m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.BaseUrl) };
             m_client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
             var path = ConfigurationManager.GetEnvironmentVariable("IposDepositFileDrop_Path") ?? @"D:\temp\ipos-deposit-drop";
-            m_watcher = new FileSystemWatcher(path, @"ipos_dep_*.txt") {EnableRaisingEvents = true};
+            m_watcher = new FileSystemWatcher(path, @"ipos_dep_*.txt") { EnableRaisingEvents = true };
             m_watcher.Created += FswChanged;
 
             return true;
@@ -153,7 +155,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
         }
 
         public bool Stop() { this.Dispose(); return true; }
-      
+
 
 
         public void Dispose()

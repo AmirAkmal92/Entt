@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -20,12 +19,6 @@ namespace Bespoke.PosEntt.ReceiveLocations
         public void AddHeader<T>(string name, T value)
         {
             this.Headers.Add(name, $"{value}");
-        }
-        private void ProcessHeader(IposDepositPaymentPort record)
-        {
-            // Header: ScannerId
-
-
         }
 
         public IEnumerable<SnbDepositPayment> Process(IEnumerable<string> lines)
