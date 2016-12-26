@@ -89,7 +89,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
 
             var details = await adapter.LoadOneAsync(id);
-            if (details.courier_id == deco.CourierId && details.date_field.Value.Date == deco.Date)
+            if (details.courier_id == deco.CourierId && (details.date_field ?? DateTime.MinValue).Date == deco.Date.Date)
             {
                 var notes = details.item_consignments.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 notes.AddRange(deco.AllConsignmentnNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
@@ -97,9 +97,56 @@ namespace Bespoke.PosEntt.CustomActions
                 await adapter.UpdateAsync(details);
                 return;
             }
-            // TODO : insert into console_duplicate_error & event_exception
-            Console.WriteLine("insert into console_duplicate_error & event_exception");
+            await InsertConsoleDuplicationErrorAndEventExceptionAsync(deco);
 
+        }
+
+        private async Task InsertConsoleDuplicationErrorAndEventExceptionAsync(Decos.Domain.Deco deco)
+        {
+            Console.WriteLine("insert into console_duplicate_error & event_exception");
+            var error = new Adapters.Oal.dbo_console_duplicate_error
+            {
+                item_consignments = deco.AllConsignmentnNotes,
+                date_field = deco.Date,
+                courier_id = deco.CourierId,
+                batch_name = "", // TODO : where's the batch_name value
+                beat_no = deco.BeatNo,
+                console_no = deco.ConsoleTag,
+                console_type = "deco", // TODO : is this correct ?
+                console_type_desc = "",// TODO : again, nothing is said about
+                courier_name = "", // TODO : lookup the courier name
+                dt_created_oal_date_field = deco.CreatedDate,
+                event_comment = deco.Comment,
+                id = GenerateId(20),
+                event_type = "deco",
+                office_dest = "",
+                version = 0,
+                office_dest_name = null,
+                office_name = null,
+                office_next_code = null,
+                office_no = null,
+                other_console_type = null,
+                routing_code = null
+               
+            };
+            var errorAdapter = new Adapters.Oal.dbo_console_duplicate_errorAdapter();
+            await errorAdapter.InsertAsync(error);
+
+
+            var exc = new Adapters.Oal.dbo_event_exception
+            {
+                consignment_no = deco.ConsoleTag,
+                date_field = deco.Date,
+                batch_name = error.batch_name,
+                office_no = error.office_no,
+                version = 0,
+                id = GenerateId(34),
+                courier_id = deco.CourierId,
+                event_class = "", // TODO : I don't know
+                event_id = ""// TODO : I just don't know
+            };
+            var excAdapter = new Adapters.Oal.dbo_event_exceptionAdapter();
+            await excAdapter.InsertAsync(exc);
         }
 
         private async Task InsertEventPendingConsoleAsync(Adapters.Oal.dbo_delivery_console_event_new parent, params string[] connoteNotes)

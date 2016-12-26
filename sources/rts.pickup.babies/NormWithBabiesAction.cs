@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
 using Polly;
@@ -13,122 +15,207 @@ namespace Bespoke.PosEntt.CustomActions
     public class NormWithBabiesAction : EventWithChildrenAction
     {
 
-        private List<Adapters.Oal.dbo_normal_console_event_new> m_normEventRows;
-        private List<Adapters.Oal.dbo_event_pending_console> m_normEventPendingConsoleRows;
-
         public override async Task ExecuteAsync(RuleContext context)
         {
             var norm = context.Item as Norms.Domain.Norm;
             if (null == norm) return;
             if (norm.TotalConsignment <= 0) return;
 
-            m_normEventRows = new List<Adapters.Oal.dbo_normal_console_event_new>();
-            m_normEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
             await RunAsync(norm);
         }
 
         public async Task RunAsync(Norms.Domain.Norm norm)
         {
-            var consoleList = new List<string>();
-            if (IsConsole(norm.ConsoleTag)) consoleList.Add(norm.ConsoleTag);
+            var pendingConsoles = new List<string>();
+            //add to console_details first
+            await AddToConsoleDetailsAsync(norm);
 
-            //norm console_details
-            var normEventMap = new Integrations.Transforms.RtsNormToNormalConsoleEventNew();
-            var normEventAdapter = new Adapters.Oal.dbo_normal_console_event_newAdapter();
-            var parentRow = await normEventMap.TransformAsync(norm);
-            m_normEventRows.Add(parentRow);
-
-            var itemList = norm.AllConsignmentNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var item in itemList)
-            {
-                ProcessChild(parentRow, item);
-
-                //2 level
-                var console = IsConsole(item);
-                if (!console) continue;
-                consoleList.Add(item);
-                var childConsole = await GetItemConsigmentsFromConsoleDetailsAsync(item);
-                if (null != childConsole)
-                {
-                    var childConsoleItems = childConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (var cc in childConsoleItems)
-                    {
-                        if (consoleList.Contains(cc)) continue;
-                        ProcessChild(parentRow, cc);
-
-                        //3 level
-                        var anotherConsole = IsConsole(cc);
-                        if (!anotherConsole) continue;
-                        consoleList.Add(cc);
-                        var anotherChildConsole = await GetItemConsigmentsFromConsoleDetailsAsync(cc);
-                        if (null != anotherChildConsole)
-                        {
-                            var anotherChildConsoleItems = anotherChildConsole.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                            foreach (var ccc in anotherChildConsoleItems)
-                            {
-                                if (consoleList.Contains(ccc)) continue;
-                                ProcessChild(parentRow, ccc);
-                            }
-                        }
-                        else
-                        {
-                            AddPendingItems(parentRow.id, cc);
-                        }
-                    }
-                }
-                else
-                {
-                    AddPendingItems(parentRow.id, item);
-                }
-            }
-
-            foreach (var item in m_normEventRows)
-            {
-                var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => normEventAdapter.InsertAsync(item));
-                var result = await pr;
-                if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }
-
-            var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-            foreach (var item in m_normEventPendingConsoleRows)
-            {
-                var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
-                var result = await pr;
-                if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-            }
+            var rows = new ConcurrentBag<Adapters.Oal.dbo_normal_console_event_new>();
+            var map = new Integrations.Transforms.RtsNormToNormalConsoleEventNew();
+            var row = await map.TransformAsync(norm);
+            rows.Add(row);
+            rows.AddRange(await GetEventRowsAsync(row, pendingConsoles, norm.AllConsignmentNotes));
 
             //
-            //execute pending items, if any
-            var pendingItems = await SearchEventPending(norm.ConsoleTag);
-            foreach (var pending in pendingItems)
-            {
-                await ProcessEventPendingItem(norm, pending);
-            }
+            await InsertDeliveryConsoleEventNewAsync(rows);
 
+            //
+            if (pendingConsoles.Any())
+                await InsertEventPendingConsoleAsync(row, pendingConsoles.ToArray());
+
+            var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var tagExistInPendingConsole = (await consoleDetailsAdapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbo.event_pending_console WHERE [console_no] = '{norm.ConsoleTag}'")) > 0;
+            if (tagExistInPendingConsole)
+                await ProcessPendingConsoleAsync(norm, rows);
+
+        }
+
+        private async Task ProcessPendingConsoleAsync(Norms.Domain.Norm norm, IEnumerable<Adapters.Oal.dbo_normal_console_event_new> rows)
+        {
+            var pendingItems = await SearchEventPendingAsync(norm.ConsoleTag);
+            var tasks = from p in pendingItems
+                        select ProcessEventPendingItem(norm, p);
+            await Task.WhenAll(tasks);
 
             var consolePendingList = new List<string> { norm.ConsoleTag };
-            foreach (var item in itemList)
+            foreach (var item in rows)
             {
-                var console = IsConsole(item);
+                var console = IsConsole(item.consignment_no);
                 if (!console) continue;
-                if (consolePendingList.Contains(item)) continue;
+                if (consolePendingList.Contains(item.consignment_no)) continue;
 
-                consolePendingList.Add(item);
+                consolePendingList.Add(item.consignment_no);
             }
+        }
+
+        private async Task AddToConsoleDetailsAsync(Norms.Domain.Norm norm)
+        {
+            var adapter = new Adapters.Oal.dbo_console_detailsAdapter();
+            var id = await adapter.ExecuteScalarAsync<string>($"SELECT [id] FROM dbo.console_details WHERE [console_no] = '{norm.ConsoleTag}'");
+            var consoleTagNotInConsoleDetails = string.IsNullOrWhiteSpace(id);
+            if (consoleTagNotInConsoleDetails)
+            {
+                var map = new Integrations.Transforms.RtsNormToOalConsoleDetails();
+                var row = await map.TransformAsync(norm);
+
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+                return;
+            }
+
+            var details = await adapter.LoadOneAsync(id);
+            if (details.courier_id == norm.CourierId && (details.date_field ?? DateTime.MinValue).Date == norm.Date.Date)
+            {
+                var notes = details.item_consignments.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                notes.AddRange(norm.AllConsignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
+                details.item_consignments = string.Join("\t", notes.OrderBy(x => x).Distinct());
+                await adapter.UpdateAsync(details);
+                return;
+            }
+            await InsertConsoleDuplicationErrorAndEventExceptionAsync(norm);
+
+        }
+
+        private async Task InsertConsoleDuplicationErrorAndEventExceptionAsync(Norms.Domain.Norm norm)
+        {
+            Console.WriteLine("insert into console_duplicate_error & event_exception");
+            var error = new Adapters.Oal.dbo_console_duplicate_error
+            {
+                item_consignments = norm.AllConsignmentNotes,
+                date_field = norm.Date,
+                courier_id = norm.CourierId,
+                batch_name = "", // TODO : where's the batch_name value
+                beat_no = norm.BeatNo,
+                console_no = norm.ConsoleTag,
+                console_type = "norm", // TODO : is this correct ?
+                console_type_desc = "",// TODO : again, nothing is said about
+                courier_name = "", // TODO : lookup the courier name
+                dt_created_oal_date_field = norm.CreatedDate,
+                event_comment = norm.Comment,
+                id = GenerateId(20),
+                event_type = "deco",
+                office_dest = "",
+                version = 0,
+                office_dest_name = null,
+                office_name = null,
+                office_next_code = null,
+                office_no = null,
+                other_console_type = null,
+                routing_code = null
+
+            };
+            var errorAdapter = new Adapters.Oal.dbo_console_duplicate_errorAdapter();
+            await errorAdapter.InsertAsync(error);
+
+
+            var exc = new Adapters.Oal.dbo_event_exception
+            {
+                consignment_no = norm.ConsoleTag,
+                date_field = norm.Date,
+                batch_name = error.batch_name,
+                office_no = error.office_no,
+                version = 0,
+                id = GenerateId(34),
+                courier_id = norm.CourierId,
+                event_class = "", // TODO : I don't know
+                event_id = ""// TODO : I just don't know
+            };
+            var excAdapter = new Adapters.Oal.dbo_event_exceptionAdapter();
+            await excAdapter.InsertAsync(exc);
+        }
+
+        private async Task InsertEventPendingConsoleAsync(Adapters.Oal.dbo_normal_console_event_new parent, params string[] connoteNotes)
+        {
+            var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
+            var rows = new List<Adapters.Oal.dbo_event_pending_console>();
+
+            foreach (var connoteNo in connoteNotes)
+            {
+                rows.Add(GetPendingConsoleRow(parent.id, connoteNo));
+                foreach (var item in rows)
+                {
+                    var pr = Policy.Handle<SqlException>()
+                        .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                        .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                    var result = await pr;
+                    if (result.FinalException != null)
+                        throw result.FinalException; // send to dead letter queue
+                    System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+                }
+
+            }
+        }
+
+        private async Task InsertDeliveryConsoleEventNewAsync(IEnumerable<Adapters.Oal.dbo_normal_console_event_new> rows)
+        {
+
+            var decoEventAdapter = new Adapters.Oal.dbo_normal_console_event_newAdapter();
+            foreach (var item in rows)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task<IEnumerable<Adapters.Oal.dbo_normal_console_event_new>> GetEventRowsAsync(Adapters.Oal.dbo_normal_console_event_new eventRow, IList<string> pendingConsoles, string consignmentNotes)
+        {
+
+            var list = new ConcurrentBag<Adapters.Oal.dbo_normal_console_event_new>();
+            var items = consignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            foreach (var c in items)
+            {
+                var itemConNote = c;
+                var row = await CloneChildAsync(eventRow, itemConNote);
+                list.Add(row);
+                if (!IsConsole(itemConNote)) continue;
+
+                var childConsignments = await GetItemConsigmentsFromConsoleDetailsAsync(itemConNote);
+                if (null == childConsignments)
+                {
+                    pendingConsoles.Add(itemConNote);
+                    continue;
+                }
+                var children = await GetEventRowsAsync(eventRow, pendingConsoles, childConsignments);
+                list.AddRange(children);
+
+            }
+
+            return list;
         }
 
         private async Task ProcessEventPendingItem(Norms.Domain.Norm norm, Adapters.Oal.dbo_event_pending_console pending)
         {
-            var itemList = norm.AllConsignmentNotes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var itemList = norm.AllConsignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries);
             var ok = false;
             switch (pending.event_class)
             {
@@ -419,9 +506,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-
-
-        private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPending(string consoleNo)
+        private async Task<IEnumerable<Adapters.Oal.dbo_event_pending_console>> SearchEventPendingAsync(string consoleNo)
         {
             var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
             var query = $"SELECT [id], [event_class], [event_id] FROM [dbo].[event_pending_console] WHERE console_no = '{consoleNo}'";
@@ -451,8 +536,7 @@ namespace Bespoke.PosEntt.CustomActions
 
         }
 
-
-        private void ProcessChild(Adapters.Oal.dbo_normal_console_event_new parent, string consignmentNo)
+        private async Task<Adapters.Oal.dbo_normal_console_event_new> CloneChildAsync(Adapters.Oal.dbo_normal_console_event_new parent, string consignmentNo)
         {
             var console = IsConsole(consignmentNo);
             var child = parent.Clone();
@@ -460,22 +544,27 @@ namespace Bespoke.PosEntt.CustomActions
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
-            m_normEventRows.Add(child);
+            if (console)
+                child.item_consignments = await this.GetItemConsigmentsFromConsoleDetailsAsync(consignmentNo);
+
+
+            return child;
+
         }
 
-        private void AddPendingItems(string parentId, string consignmentNo)
+        private Adapters.Oal.dbo_event_pending_console GetPendingConsoleRow(string parentId, string consignmentNo)
         {
-            //insert into pending items
+
             var pendingConsole = new Adapters.Oal.dbo_event_pending_console
             {
                 id = GenerateId(20),
                 event_id = parentId,
-                event_class = "pos.oal.NormalConsoleEventNew",
+                event_class = "pos.oal.DeliveryConsoleEventNew",
                 console_no = consignmentNo,
                 version = 0,
                 date_field = DateTime.Now
             };
-            m_normEventPendingConsoleRows.Add(pendingConsole);
+            return pendingConsole;
         }
 
 

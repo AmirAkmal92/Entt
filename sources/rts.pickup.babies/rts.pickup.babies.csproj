@@ -94,6 +94,9 @@
     <Reference Include="PosEntt.RtsMissToOalMissortEventNew">
       <HintPath>..\..\output\PosEntt.RtsMissToOalMissortEventNew.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsNormToOal_console_details">
+      <HintPath>..\..\output\PosEntt.RtsNormToOal_console_details.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsNormTo_normal_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsNormTo_normal_console_event_new.dll</HintPath>
     </Reference>
