@@ -174,10 +174,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetName).dll $(SolutionDir)web\bin
-copy $(TargetDir)$(TargetName).pdb $(SolutionDir)web\bin
-
-copy $(TargetDir)$(TargetName).dll $(SolutionDir)tools
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).dll $(SolutionDir)tools
 copy $(TargetDir)$(TargetName).pdb $(SolutionDir)tools
 
 copy $(TargetDir)$(TargetName).dll $(SolutionDir)subscribers
