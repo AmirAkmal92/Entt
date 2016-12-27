@@ -28,7 +28,9 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var pendingConsoles = new List<string>();
             //add to console_details first
-            await AddToConsoleDetailsAsync(deco);
+            var success = await AddToConsoleDetailsAsync(deco);
+
+            if (!success) return;
 
             var rows = new ConcurrentBag<Adapters.Oal.dbo_delivery_console_event_new>();
             var map = new Integrations.Transforms.RtsDecoOalDeliveryConsoleEventNew();
@@ -68,7 +70,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private async Task AddToConsoleDetailsAsync(Decos.Domain.Deco deco)
+        private async Task<bool> AddToConsoleDetailsAsync(Decos.Domain.Deco deco)
         {
             var adapter = new Adapters.Oal.dbo_console_detailsAdapter();
             var id = await adapter.ExecuteScalarAsync<string>($"SELECT [id] FROM dbo.console_details WHERE [console_no] = '{deco.ConsoleTag}'");
@@ -85,7 +87,7 @@ namespace Bespoke.PosEntt.CustomActions
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
-                return;
+                return true;
             }
 
             var details = await adapter.LoadOneAsync(id);
@@ -95,36 +97,42 @@ namespace Bespoke.PosEntt.CustomActions
                 notes.AddRange(deco.AllConsignmentnNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
                 details.item_consignments = string.Join("\t", notes.OrderBy(x => x).Distinct());
                 await adapter.UpdateAsync(details);
-                return;
+                return true;
             }
-            await InsertConsoleDuplicationErrorAndEventExceptionAsync(deco);
 
+            await InsertConsoleDuplicationErrorAndEventExceptionAsync(deco);
+            return false;
         }
 
         private async Task InsertConsoleDuplicationErrorAndEventExceptionAsync(Decos.Domain.Deco deco)
         {
             Console.WriteLine("insert into console_duplicate_error & event_exception");
+
+            //
+            var map = new Integrations.Transforms.RtsDecoOalConsoleDetails();
+            var decoDetails = await map.TransformAsync(deco);
+
             var error = new Adapters.Oal.dbo_console_duplicate_error
             {
-                item_consignments = deco.AllConsignmentnNotes,
-                date_field = deco.Date,
-                courier_id = deco.CourierId,
-                batch_name = "", // TODO : where's the batch_name value
-                beat_no = deco.BeatNo,
-                console_no = deco.ConsoleTag,
-                console_type = "deco", // TODO : is this correct ?
-                console_type_desc = "",// TODO : again, nothing is said about
-                courier_name = "", // TODO : lookup the courier name
-                dt_created_oal_date_field = deco.CreatedDate,
-                event_comment = deco.Comment,
+                item_consignments = decoDetails.item_consignments,
+                date_field = decoDetails.date_field,
+                courier_id = decoDetails.courier_id,
+                batch_name = decoDetails.batch_name,
+                beat_no = decoDetails.beat_no,
+                console_no = decoDetails.console_no,
+                console_type = null, 
+                console_type_desc = null,
+                courier_name = decoDetails.courier_name,
+                dt_created_oal_date_field = decoDetails.dt_created_oal_date_field,
+                event_comment = decoDetails.event_comment,
                 id = GenerateId(20),
-                event_type = "deco",
-                office_dest = "",
+                event_type = decoDetails.event_type,
+                office_dest = null,
                 version = 0,
                 office_dest_name = null,
-                office_name = null,
-                office_next_code = null,
-                office_no = null,
+                office_name = decoDetails.office_name,
+                office_next_code = decoDetails.office_next_code,
+                office_no = decoDetails.office_no,
                 other_console_type = null,
                 routing_code = null
                
@@ -135,15 +143,15 @@ namespace Bespoke.PosEntt.CustomActions
 
             var exc = new Adapters.Oal.dbo_event_exception
             {
-                consignment_no = deco.ConsoleTag,
-                date_field = deco.Date,
+                consignment_no = error.console_no,
+                date_field = error.date_field,
                 batch_name = error.batch_name,
                 office_no = error.office_no,
-                version = 0,
+                version = error.version,
                 id = GenerateId(34),
-                courier_id = deco.CourierId,
-                event_class = "", // TODO : I don't know
-                event_id = ""// TODO : I just don't know
+                courier_id = error.courier_id,
+                event_class = "pos.oal.DeliveryConsoleEventNew",
+                event_id = error.id
             };
             var excAdapter = new Adapters.Oal.dbo_event_exceptionAdapter();
             await excAdapter.InsertAsync(exc);
