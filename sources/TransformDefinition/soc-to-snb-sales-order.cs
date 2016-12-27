@@ -98,19 +98,19 @@ namespace Bespoke.PosEntt.Integrations.Transforms
                 if (null != cat)
                     con.ItemCategory = cat.Name;
 
-                // in soc, surchages in presented in a multiple of 4, e.g. 0101|1101 , no | of course 
-                foreach (var code in Split(source.SurchargeCode, 4))
+                // in soc, surchages in presented in a multiple of 4, e.g. 0101|1101 , "|" is not present of course 
+                var chargesCode = Split((source.ValueAdded + source.SurchargeCode), 4);
+                foreach (var code in chargesCode)
                 {
                     var code1 = code;
-                    var surcharges = m_surcharges.Where(x => x.Code == code1).Select(x => x.SnbCode).ToArray();
+                    var surcharges = m_surcharges.Where(x => x.Code == code1 && x.SnbCode.StartsWith("S")).Select(x => x.SnbCode).ToArray();
                     con.Surcharges.AddRange(surcharges);
                 }
 
-                // in soc, value added in presented in a multiple of 4, e.g. 0101|1101, no | of cource 
-                foreach (var code in Split(source.ValueAdded, 4))
+                foreach (var code in chargesCode)
                 {
                     var code1 = code;
-                    var services = m_surcharges.Where(x => x.Code == code1).Select(x => x.SnbCode).ToArray();
+                    var services = m_surcharges.Where(x => x.Code == code1 && x.SnbCode.StartsWith("V")).Select(x => x.SnbCode).ToArray();
                     con.ValueAddedServices.AddRange(services);
                 }
 
