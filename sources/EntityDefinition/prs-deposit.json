@@ -5,30 +5,6 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "SequenceNumber",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "41cecce5-aa42-4690-c8b7-d25d5545b023"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.DateTime, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
@@ -49,7 +25,7 @@
         "Name": "DocumentDate",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "2867b5e0-2306-4d7e-efc8-1929501a3f9a"
+        "WebId": "97288a0a-b12d-47fb-a324-6e7dc6616196"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -73,79 +49,7 @@
         "Name": "PostingDate",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "61252ff0-c6f7-4b4a-ec0e-6b77298ed5e4"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "DocumentType",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "d9188292-7ca1-4ef9-b8b0-552a42d3a321"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "Currency",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "2215fc8f-6001-422b-fe27-7dec2373bfcf"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "ExchangeRate",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "1afd85b4-7547-4b69-9524-5f6415e1f829"
+        "WebId": "a1a28c75-cf12-4e8c-964c-575cfb205158"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -169,7 +73,7 @@
         "Name": "Reference",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "8b05ba79-2501-4e79-d4d2-5acd2ed98692"
+        "WebId": "f0dad8b9-f9f5-4505-9a13-918fba67ce48"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -193,7 +97,7 @@
         "Name": "DocumentHeaderText",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "bd3e4839-0d11-4528-aa0e-8bb3498c4a39"
+        "WebId": "6fc22cd5-ddc3-403d-87df-816f561a9906"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -214,34 +118,10 @@
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "PostingKey",
+        "Name": "ReferenceNo",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "a6598384-ef40-4128-edfb-cab96aca247d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "AccountNo",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "41522213-8b6f-42c6-9d10-46ce34effc27"
+        "WebId": "dbf5f5ba-9524-43b6-a996-462e995b609b"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -265,84 +145,12 @@
         "Name": "Amount",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "fa8c87f1-bf85-4900-9c1a-0845f9c2bb95"
+        "WebId": "df3ec8ef-68ee-4db3-91b4-cfb5a42c6046"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "CostCenter",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "e35a5ffd-064a-487f-d055-2f03b5dbf4ed"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "Quantity",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "c35b4dbc-e80f-4a51-961a-38b36d7e0703"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "TaxCode",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "4b89bb86-53fe-4829-b6a1-3c96cb0ff035"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -361,7 +169,7 @@
         "Name": "Assignment",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "d5e56e05-65c8-4458-9d2a-743fa935e206"
+        "WebId": "0a349c94-ce15-47ff-845f-a7d4bd84f581"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
@@ -385,31 +193,7 @@
         "Name": "Text",
         "AllowMultiple": false,
         "DefaultValue": null,
-        "WebId": "857c1776-d5d9-45db-f03e-9f8d3beebc18"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 1,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "ReferenceKey",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "97210843-72f7-4335-88d9-1963db88e80b"
+        "WebId": "cd0f519b-432f-48ba-a319-04f8c8620a1f"
       }
     ]
   },
@@ -440,8 +224,8 @@
   },
   "Name": "PrsDeposit",
   "Plural": "PrsDeposits",
-  "IconClass": "fa fa-cube",
-  "RecordName": "SequenceNumber",
+  "IconClass": "fa fa-universal-access",
+  "RecordName": "ReferenceNo",
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
@@ -449,8 +233,8 @@
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "prs-deposit",
-  "CreatedDate": "2016-12-20T08:32:04.3104272+08:00",
+  "CreatedDate": "2016-12-28T09:57:29.3197808+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-20T08:33:37.1130529+08:00",
-  "WebId": "bc09ed90-928c-4c99-b9e6-76ae89b7b865"
+  "ChangedDate": "2016-12-28T09:58:55.5802224+08:00",
+  "WebId": "79a361d5-8f21-4782-b0a4-ec77cf78202e"
 }

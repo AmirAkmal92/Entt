@@ -19,6 +19,30 @@
       "queueName": "trigger_subs_sap-fi-account-create-account-with-snbweb-api",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapFiAccountCreateAccountWithSnbwebApiTriggerSubscriber",
       "assembly": "subscriber.trigger.sap-fi-account-create-account-with-snbweb-api"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sap-ageing-sap-ageing-file-drop-trigger",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapAgeingSapAgeingFileDropTriggerSubscriber",
+      "assembly": "subscriber.trigger.sap-ageing-sap-ageing-file-drop-trigger"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_sap-soa-sap-invoice-created",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapSoaSapInvoiceCreatedTriggerSubscriber",
+      "assembly": "subscriber.trigger.sap-soa-sap-invoice-created"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_prs-deposit-prs-deposit-payment",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PrsDepositPrsDepositPaymentTriggerSubscriber",
+      "assembly": "subscriber.trigger.prs-deposit-prs-deposit-payment"
     }
   ],
   "createdBy": "erymuzuan",

@@ -1,0 +1,84 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ReferenceNo",
+        "TypeName": "",
+        "Destination": "Routes.ReferenceNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1a4c7ade-f80b-4352-df5c-003205ce1ae2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DocumentDate",
+        "TypeName": "",
+        "Destination": "Body.PaymentDate",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "161b6605-0926-452a-d0ed-98aa24156395"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Amount",
+        "TypeName": "",
+        "Destination": "Body.Amount",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7e21f536-f254-444e-8bb1-660aead59662"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "4deb8159-4715-4e6f-d5be-0c6edb54b566",
+        "Destination": "Body.PaymentMethod",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "811a54b5-74b8-4595-aa4d-e6d9e2ee0406"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "PRS",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 387.0,
+        "Y": 377.0,
+        "WebId": "4deb8159-4715-4e6f-d5be-0c6edb54b566"
+      }
+    ]
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PrsDepositToSnbWebApiDeposit",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.PrsDeposits.Domain.PrsDeposit, PosEntt.PrsDeposit",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebApi.PostDepositRequest, PosEntt.SnbWebApi",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "prs-deposit-to-snb-web-api-deposit",
+  "CreatedDate": "2016-12-28T10:05:37.2686394+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-28T10:07:29.6531622+08:00",
+  "WebId": "da048d65-8b4e-4850-86c9-bbb85d131e4d"
+}

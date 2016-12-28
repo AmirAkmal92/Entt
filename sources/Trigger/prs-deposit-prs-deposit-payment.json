@@ -1,0 +1,78 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "prs-deposit-to-snb-web-api-deposit",
+        "Adapter": "SnbWebApi",
+        "Operation": "PostDeposit",
+        "Table": null,
+        "Schema": null,
+        "Crud": null,
+        "Retry": 5,
+        "RetryAlgorithm": "Exponential",
+        "RetryInterval": 500,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "PostSnbWebApiDeposit",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "e7ed2e4b-f0e8-4317-e958-bdbfcbe28327"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.PrsDepositToSnbWebApiDeposit",
+        "FullName": "PosEntt.PrsDepositToSnbWebApiDeposit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.PrsDepositToSnbWebApiDeposit.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.SnbWebApi",
+        "FullName": "PosEntt.SnbWebApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "F:\\project\\work\\entt.rts\\web\\bin\\PosEntt.SnbWebApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PrsDepositPayment",
+  "Entity": "PrsDeposit",
+  "TypeOf": "Bespoke.PosEntt.PrsDeposits.Domain.PrsDeposit, PosEntt.PrsDeposit",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "PrsDepositPrsDepositPaymentTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "prs-deposit-prs-deposit-payment",
+  "CreatedDate": "2016-12-28T10:15:41.9427568+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-28T10:17:06.2562853+08:00",
+  "WebId": "b2f96edf-364a-43f4-88cb-9ad2ebe4b6f7"
+}
