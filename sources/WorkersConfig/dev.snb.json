@@ -43,6 +43,14 @@
       "queueName": "trigger_subs_prs-deposit-prs-deposit-payment",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.PrsDepositPrsDepositPaymentTriggerSubscriber",
       "assembly": "subscriber.trigger.prs-deposit-prs-deposit-payment"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName":"trigger_subs_ipos-deposit-payment-ipos-deposit-post-to-snb",
+      "fullName":"Bespoke.PosEntt.TriggerSubscribers.IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
+      "assembly":"subscriber.trigger.ipos-deposit-payment-ipos-deposit-post-to-snb"
     }
   ],
   "createdBy": "erymuzuan",
