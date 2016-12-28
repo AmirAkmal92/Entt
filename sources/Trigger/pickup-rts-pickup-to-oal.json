@@ -6,14 +6,12 @@
       {
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
-          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
-          "XPath": "",
-          "NamespacePrefix": "",
-          "TypeName": "",
-          "Path": "TotalBaby",
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ffc447e8e2",
+          "Script": "item.TotalBaby",
           "Name": "TotalBaby",
           "Note": "",
-          "WebId": "c84b8b84-ea4c-49e5-8d5e-48104ce975f9"
+          "WebId": "c447e8e2-61e4-4ef3-ece1-afba5a3e2115"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -165,7 +163,7 @@
   "Name": "RtsPickupToOal",
   "Entity": "Pickup",
   "TypeOf": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
-  "Note": "",
+  "Note": "The rule LHS changed to Function field due to OutOfMemory bug in Rosylyn scipting compiler",
   "IsActive": true,
   "IsFiredOnAdded": true,
   "IsFiredOnDeleted": false,
@@ -177,6 +175,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-12T06:17:27.2790273+08:00",
+  "ChangedDate": "2016-12-29T07:17:12.7264408+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }
