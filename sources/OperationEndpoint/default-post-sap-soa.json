@@ -29,12 +29,12 @@
   "Note": null,
   "Entity": "SapSoa",
   "Resource": "sap-soas",
-  "IsPublished": false,
+  "IsPublished": true,
   "IsConflictDetectionEnabled": false,
   "CreatedBy": "admin",
   "Id": "default-post-sap-soa",
   "CreatedDate": "2016-12-18T15:40:51.6191798+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-18T15:40:51.6191798+08:00",
+  "ChangedDate": "2016-12-28T08:55:53.0889303+08:00",
   "WebId": "7fa935f9-acfd-4370-82df-2a5a88f71dac"
 }

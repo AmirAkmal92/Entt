@@ -1,16 +1,16 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
-  "Path": "d:\\temp\\prs-snb-deposit",
+  "Path": "d:\\temp\\prs-deposit",
   "CredentialUserName": null,
   "ChangeExtension": true,
   "CredentialPassword": null,
-  "Filter": "PRS_*.txt",
-  "ArchiveLocation": "d:\\temp\\prs-snb-deposit-archived",
+  "Filter": "PRS_DEPO_*txt",
+  "ArchiveLocation": null,
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "PrsSnbDepositFileDrop",
+  "Name": "PrsDepositFileDrop",
   "IsActive": true,
   "ValidationEndpoint": null,
   "ValidationMethod": "",
@@ -23,9 +23,9 @@
   "JwtToken": null,
   "ReceivePort": "prs-deposit-port",
   "CreatedBy": "admin",
-  "Id": "prs-snb-deposit-file-drop",
-  "CreatedDate": "2016-12-20T08:34:36.1718424+08:00",
+  "Id": "prs-deposit-file-drop",
+  "CreatedDate": "2016-12-28T10:17:43.0434684+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-20T08:36:25.6774969+08:00",
-  "WebId": "147be9ac-b259-47fb-a35f-a89304756520"
+  "ChangedDate": "2016-12-28T10:43:27.1517431+08:00",
+  "WebId": "b42e2898-735f-4224-96f9-31ed57009dbe"
 }

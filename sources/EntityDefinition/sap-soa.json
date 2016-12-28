@@ -157,12 +157,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "sap-soa",
   "CreatedDate": "2016-12-18T15:40:51.6191798+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-18T15:42:12.1404771+08:00",
+  "ChangedDate": "2016-12-28T08:48:44.542184+08:00",
   "WebId": "c27b9e0b-ce16-40cd-a40e-1b4c092b07a7"
 }
