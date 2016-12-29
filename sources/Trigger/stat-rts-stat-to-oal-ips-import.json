@@ -62,7 +62,7 @@
         "Crud": "Insert",
         "Retry": 5,
         "RetryAlgorithm": "Exponential",
-        "RetryInterval": 10000,
+        "RetryInterval": 3000,
         "RetryIntervalTimeSpan": 1,
         "Title": "ToOalStatIpsImport",
         "IsActive": true,
