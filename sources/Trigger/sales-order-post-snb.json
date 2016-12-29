@@ -16,6 +16,7 @@
         "Schema": null,
         "Crud": null,
         "Retry": 5,
+        "RetryAlgorithm": "Constant",
         "RetryInterval": 500,
         "RetryIntervalTimeSpan": 1,
         "Title": "PostToSnb",
@@ -72,6 +73,6 @@
   "Id": "sales-order-post-snb",
   "CreatedDate": "2016-09-24T13:27:45.163819+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-31T13:33:33.2420534+08:00",
+  "ChangedDate": "2016-12-29T11:09:33.2430955+08:00",
   "WebId": "332c69cc-6dbb-4e60-acc8-f4499d6dc310"
 }

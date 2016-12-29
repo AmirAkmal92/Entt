@@ -1,6 +1,6 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
-  "Path": "d:\\temp\\sap-drop",
+  "Path": "d:\\temp\\soc-drop",
   "CredentialUserName": null,
   "ChangeExtension": true,
   "CredentialPassword": null,
@@ -10,7 +10,7 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "TempOnWhatEver",
+  "Name": "SocFileDrop",
   "IsActive": true,
   "ValidationEndpoint": null,
   "ValidationMethod": "",
@@ -23,9 +23,9 @@
   "JwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImRldmVsb3BlcnMiXSwiZW1haWwiOjE0ODMxNDI0MDAsInN1YiI6ImQ2MTc0NmUwLTdhZmMtNDhjYS04OTVmLWQzZDAzOWQ4ZDI4MSIsIm5iZiI6MTQ5MDUwMzE1MiwiaWF0IjoxNDc0ODY0NzUyLCJleHAiOjE0ODMxNDI0MDAsImF1ZCI6IkRldlYxIn0.50WRticwNzLXL3sHdJsBsdhulOQqhPJlYATxm-amFfw",
   "ReceivePort": "pos-soc",
   "CreatedBy": "admin",
-  "Id": "temp-on-what-ever",
+  "Id": "soc-file-drop",
   "CreatedDate": "2016-09-03T17:42:56.0792069+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-12T12:36:07.6084598+08:00",
+  "ChangedDate": "2016-12-29T11:04:02.7443928+08:00",
   "WebId": "3695eb34-1f51-4985-b4a8-364bfc7fab75"
 }
