@@ -444,7 +444,7 @@
               },
               "Name": "VolumetricWeight",
               "TypeName": "System.Decimal, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "0.000",
               "IsComplex": false,
@@ -504,12 +504,12 @@
               },
               "Name": "SumInsured",
               "TypeName": "System.Decimal, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "0.00",
               "IsComplex": false,
               "AllowMultiple": false,
-              "NullPlaceholder": null,
+              "NullPlaceholder": "-",
               "Ignore": false,
               "Comment": "",
               "WebId": "c92dafc2-f980-4f1d-a9db-4be9cf2946fa"
@@ -1466,6 +1466,6 @@
   "Id": "pos-soc",
   "CreatedDate": "2016-09-01T10:29:01.7284826+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-02T09:50:41.5039569+08:00",
+  "ChangedDate": "2016-12-29T11:43:13.8811281+08:00",
   "WebId": "35581d1d-2048-456a-a1d5-0defeae82fde (2016-09-01 10:29:01.728)"
 }
