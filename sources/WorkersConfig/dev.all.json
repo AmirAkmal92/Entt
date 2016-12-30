@@ -144,22 +144,6 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
-      "queueName": "trigger_subs_deco-deco-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoDecoToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.deco-deco-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_norm-rts-norm-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.norm-rts-norm-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
       "queueName": "trigger_subs_hip-rts-hip-to-oal",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalTriggerSubscriber",
       "assembly": "subscriber.trigger.hip-rts-hip-to-oal"
