@@ -79,12 +79,12 @@ namespace Bespoke.PosEntt.CustomActions
                 var map = new Integrations.Transforms.RtsNormToOalConsoleDetails();
                 var row = await map.TransformAsync(norm);
 
-                var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                var pr = Policy.Handle<SqlException>(ex => ex.Message.Contains("IX_console_details01"))
+                    .WaitAndRetryAsync(1, x => TimeSpan.FromMilliseconds(100 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                 var result = await pr;
                 if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
+                    return await AddToConsoleDetailsAsync(norm);
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
                 return true;
             }
