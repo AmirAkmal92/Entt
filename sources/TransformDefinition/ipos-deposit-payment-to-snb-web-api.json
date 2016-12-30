@@ -23,15 +23,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "PaymentMethod",
-        "TypeName": "",
-        "Destination": "Body.PaymentMethod",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "8fbdb612-1a59-4679-e424-b4baf6a59d49"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "DocumentDate",
         "TypeName": "",
         "Destination": "Body.PaymentDate",
@@ -47,6 +38,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "581afae1-c07c-4009-b0f6-c3c0412b3458"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "78c87d58-b433-4557-9b48-149c0057d8d4",
+        "Destination": "Body.PaymentMethod",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4f22fd47-562e-4498-caf8-ce9e19baa395"
       }
     ]
   },
@@ -227,6 +227,22 @@
         "X": 0.0,
         "Y": 0.0,
         "WebId": "b2c2956d-5897-4091-825f-72392a93720e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "iPos",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 473.0,
+        "Y": 452.0,
+        "WebId": "78c87d58-b433-4557-9b48-149c0057d8d4"
       }
     ]
   },
@@ -247,6 +263,6 @@
   "Id": "ipos-deposit-payment-to-snb-web-api",
   "CreatedDate": "2016-12-25T07:38:58.9589474+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-25T08:28:32.0244794+08:00",
+  "ChangedDate": "2016-12-30T08:06:36.906263+08:00",
   "WebId": "5294688b-a19c-49f8-9607-4eb1f3b8468d"
 }
