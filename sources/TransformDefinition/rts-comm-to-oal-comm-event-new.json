@@ -105,15 +105,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "bdf6747f-78cc-4ffd-a069-f5e5c42ab140",
-        "Destination": "office_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "407df68c-9be9-490e-d8c3-bd36f413734b"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "ea9b8f1c-f43f-4920-b6c3-c7ffea09adf6",
         "Destination": "office_next_code",
         "SourceTypeName": "",
@@ -200,6 +191,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "963cdf39-37bb-451f-9a53-e00a760998ba"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3288dfc0-d438-47d2-ea5c-58e7b8f6e70e",
+        "Destination": "office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "100e6155-300c-41d9-d33a-dfe313662bb2"
       }
     ]
   },
@@ -727,6 +727,39 @@
         "X": 513.0,
         "Y": 318.0,
         "WebId": "6520bbb9-d381-4f70-f9c3-24d6342ba703"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 30,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "bdf6747f-78cc-4ffd-a069-f5e5c42ab140",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 564.0,
+        "Y": 151.0,
+        "WebId": "3288dfc0-d438-47d2-ea5c-58e7b8f6e70e"
       }
     ]
   },
@@ -747,6 +780,6 @@
   "Id": "rts-comm-to-oal-comm-event-new",
   "CreatedDate": "2016-11-01T11:38:51.9399812+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-07T16:26:14.2166129+08:00",
+  "ChangedDate": "2016-12-30T10:16:01.7293695+08:00",
   "WebId": "28fd966a-1124-48b3-bf2f-12670fa95c3c"
 }
