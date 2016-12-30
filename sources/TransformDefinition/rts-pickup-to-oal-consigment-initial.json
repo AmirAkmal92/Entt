@@ -337,15 +337,6 @@
         "WebId": "08af9a52-c7e5-4fc4-928e-f8279552ebdc"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "e62072ce-d998-4b29-b7c3-ff1608e7fb62",
-        "Destination": "location_office_name",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "3f84cd9d-f9db-4d18-b2e1-dd3b9e826cb8"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "Country",
         "TypeName": "",
@@ -353,6 +344,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "7fedf124-aa96-4b24-e457-cd35d0cb4ff6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "692ff554-0022-4641-ae96-c982dd85f9a2",
+        "Destination": "location_office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "123fae68-ffd7-48f7-dba3-5440dd69ead5"
       }
     ]
   },
@@ -1086,6 +1086,39 @@
         "X": 0.0,
         "Y": 0.0,
         "WebId": "5f3b254a-9078-44b6-feb2-8febc24298c8"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 30,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "e62072ce-d998-4b29-b7c3-ff1608e7fb62",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 576.0,
+        "Y": 805.0,
+        "WebId": "692ff554-0022-4641-ae96-c982dd85f9a2"
       }
     ]
   },
@@ -1106,6 +1139,6 @@
   "Id": "rts-pickup-to-oal-consigment-initial",
   "CreatedDate": "2016-11-11T16:46:43.6484388+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-12T06:01:23.7757878+08:00",
+  "ChangedDate": "2016-12-30T10:29:28.7446068+08:00",
   "WebId": "7c98b8ee-52ba-4e13-82c6-b0f505b3f4f4"
 }
