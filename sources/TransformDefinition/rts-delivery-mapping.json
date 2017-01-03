@@ -121,15 +121,6 @@
         "WebId": "20d899c5-78b4-41f7-b72e-c843dc2a219d"
       },
       {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "LokasiDrop",
-        "TypeName": "",
-        "Destination": "drop_location",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "66200ea3-a7dc-4c29-a58d-96ee4d274106"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
         "Functoid": "a2f03f52-1bbe-49b9-ddb4-cdeacfc51dc3",
@@ -353,6 +344,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "01d96e06-6313-4622-fe57-b0ded4ead215"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "081a3a1e-3977-443b-8837-96a44a3cb209",
+        "Destination": "drop_location",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d75e589d-e6a5-4ebc-a93f-e03d725a9fa4"
       }
     ]
   },
@@ -1663,6 +1663,54 @@
         "X": 553.0,
         "Y": 278.0,
         "WebId": "fab9ed1c-e5a5-4c96-be7f-8228d33ac8be"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 20,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "00e0185b-d696-4560-eebf-42aabc0283dd",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 320.0,
+        "Y": 661.0,
+        "WebId": "081a3a1e-3977-443b-8837-96a44a3cb209"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "LokasiDrop",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "00e0185b-d696-4560-eebf-42aabc0283dd"
       }
     ]
   },
@@ -1683,6 +1731,6 @@
   "Id": "rts-delivery-mapping",
   "CreatedDate": "2016-10-12T15:29:02.2696803+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-30T10:19:56.6067336+08:00",
+  "ChangedDate": "2017-01-03T13:29:33.5261434+08:00",
   "WebId": "5070b2d6-8263-4f5d-99a5-4059ee78dba8"
 }
