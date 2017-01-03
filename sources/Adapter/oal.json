@@ -35386,7 +35386,7 @@
               "IsComplex": false,
               "MimeType": null,
               "Ignore": false,
-              "DisplayName": "clerk_id",
+              "DisplayName": "clerkid",
               "Order": 0,
               "LookupColumnTable": {
                 "$type": "Bespoke.Sph.Domain.Api.LookupColumnTable, domain.sph",
@@ -35560,6 +35560,6 @@
   "Id": "oal",
   "CreatedDate": "2016-10-12T15:16:51.3557981+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-27T07:02:28.8491013+08:00",
+  "ChangedDate": "2017-01-03T17:55:52.9877901+08:00",
   "WebId": "fac085be-f03e-491c-845b-851cf3f703a5"
 }
