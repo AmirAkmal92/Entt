@@ -421,6 +421,10 @@ namespace Bespoke.PosEntt.CustomActions
                 child.consignment_no = item;
                 child.data_flag = "1";
                 child.item_type_code = console ? "02" : "01";
+                if (child.dateCreatedOALDateField.HasValue && child.dateCreatedOALDateField.Value < new DateTime(1753,1,1))
+                {
+                    child.dateCreatedOALDateField = null;
+                }
                 sips.Add(child);
             }
             foreach (var item in sips)
