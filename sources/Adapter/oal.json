@@ -35439,7 +35439,7 @@
               "IsComplex": false,
               "MimeType": null,
               "Ignore": false,
-              "DisplayName": "courier_id",
+              "DisplayName": "courierid",
               "Order": 0,
               "LookupColumnTable": {
                 "$type": "Bespoke.Sph.Domain.Api.LookupColumnTable, domain.sph",
@@ -35560,6 +35560,6 @@
   "Id": "oal",
   "CreatedDate": "2016-10-12T15:16:51.3557981+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-01-03T17:55:52.9877901+08:00",
+  "ChangedDate": "2017-01-03T18:38:29.3137128+08:00",
   "WebId": "fac085be-f03e-491c-845b-851cf3f703a5"
 }
