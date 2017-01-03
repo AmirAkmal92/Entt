@@ -22,15 +22,6 @@
         "WebId": "a2fbdcc4-498a-4a06-dd31-ad9d7f5167f1"
       },
       {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "CourierId",
-        "TypeName": "",
-        "Destination": "user_fid",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "d4c42533-7078-493a-fc31-7ccd65c0a46a"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
         "Functoid": "7fb880cb-182b-4b70-c096-8fc8e207d66d",
@@ -191,6 +182,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "4b2e1f5d-1319-447d-cf1b-c542b1ebf6d3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "a4b2cf0a-d944-4466-839a-c1806b3572f4",
+        "Destination": "user_fid",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "703c39a6-5bd0-48d1-fb33-bec716339b53"
       }
     ]
   },
@@ -968,6 +968,54 @@
         "X": 684.0,
         "Y": 203.0,
         "WebId": "99867c2e-d6ea-4e00-b6c1-e3fbd5a36a16"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 5,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "0b50f873-9281-4b05-b5ca-16c0a041e16f",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 353.0,
+        "Y": 55.0,
+        "WebId": "a4b2cf0a-d944-4466-839a-c1806b3572f4"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "CourierId",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "0b50f873-9281-4b05-b5ca-16c0a041e16f"
       }
     ]
   },
@@ -988,6 +1036,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-15T11:10:21.1173178+08:00",
+  "ChangedDate": "2017-01-03T17:12:52.988684+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
