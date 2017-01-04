@@ -20,7 +20,7 @@ namespace Bespoke.PosEntt.Integrations.Transforms
             {
                 var assignment = item.Assignment;
                 if(assignment.Length >= 6)
-                    destination.Body.Comment = $"Cheque No: {assignment.Substring(assignment.Length -6, 6)}|Receipt No : {item.Text}";
+                    destination.Body.Comment = $"Cheque No: {assignment.Substring(assignment.Length - 6, 6)} | Receipt No : {item.Text}";
             }
 
         }
