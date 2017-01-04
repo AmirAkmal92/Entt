@@ -32,6 +32,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
             }
             p.Amount = credit.Amount;
             p.ReferenceNo = credit.Text;
+            p.ReceiptNo = debit.ReferenceKey;
             return p;
         }
         public string ReferenceNo { get; set; }
@@ -42,7 +43,6 @@ namespace Bespoke.PosEntt.ReceiveLocations
         public DateTime PostingDate { get; set; }
         public string CostCenter { get; set; }
         public int Sequence { get; set; }
-
-
+        public string ReceiptNo { get; set; }
     }
 }

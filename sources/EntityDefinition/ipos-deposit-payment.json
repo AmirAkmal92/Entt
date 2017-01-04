@@ -194,6 +194,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "46421a10-7943-4eec-9db5-4d02d7f9b1c5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ReceiptNo",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "55844499-aafd-4cb0-dc45-7056dc6a4f95"
       }
     ]
   },
@@ -235,6 +259,6 @@
   "Id": "ipos-deposit-payment",
   "CreatedDate": "2016-12-25T07:37:07.6950559+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-25T08:23:41.3902816+08:00",
+  "ChangedDate": "2017-01-04T18:20:56.168575+08:00",
   "WebId": "096861f2-ca1d-4c4d-809b-f3c29884ca96"
 }

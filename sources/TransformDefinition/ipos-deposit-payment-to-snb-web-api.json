@@ -66,7 +66,7 @@
               "Label": null,
               "Comment": null,
               "IsOptional": false,
-              "Functoid": "2f953fcf-1c9c-41e2-ba59-ac3b53170ab3",
+              "Functoid": "0ae2a0ba-706f-46a8-82d1-b4fb8f5557c3",
               "Constant": null,
               "Default": null,
               "WebId": null
@@ -79,7 +79,7 @@
               "Label": null,
               "Comment": null,
               "IsOptional": false,
-              "Functoid": "b2c2956d-5897-4091-825f-72392a93720e",
+              "Functoid": "431cd3fe-fcf8-4e86-dfc8-fccec294baeb",
               "Constant": null,
               "Default": null,
               "WebId": null
@@ -194,13 +194,29 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 295.0,
-        "Y": 253.0,
+        "X": 279.0,
+        "Y": 345.0,
         "WebId": "9c3fed33-bb74-4625-c810-df69f83e9659"
       },
       {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "iPOS",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 473.0,
+        "Y": 452.0,
+        "WebId": "78c87d58-b433-4557-9b48-149c0057d8d4"
+      },
+      {
         "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
-        "Field": "CostCenter",
+        "Field": "ReceiptNo",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -211,7 +227,7 @@
         "Comment": "",
         "X": 0.0,
         "Y": 0.0,
-        "WebId": "2f953fcf-1c9c-41e2-ba59-ac3b53170ab3"
+        "WebId": "0ae2a0ba-706f-46a8-82d1-b4fb8f5557c3"
       },
       {
         "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
@@ -226,23 +242,7 @@
         "Comment": "",
         "X": 0.0,
         "Y": 0.0,
-        "WebId": "b2c2956d-5897-4091-825f-72392a93720e"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "Value": "iPos",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 473.0,
-        "Y": 452.0,
-        "WebId": "78c87d58-b433-4557-9b48-149c0057d8d4"
+        "WebId": "431cd3fe-fcf8-4e86-dfc8-fccec294baeb"
       }
     ]
   },
@@ -263,6 +263,6 @@
   "Id": "ipos-deposit-payment-to-snb-web-api",
   "CreatedDate": "2016-12-25T07:38:58.9589474+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-30T08:06:36.906263+08:00",
+  "ChangedDate": "2017-01-04T18:33:47.9016169+08:00",
   "WebId": "5294688b-a19c-49f8-9607-4eb1f3b8468d"
 }
