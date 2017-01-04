@@ -120,6 +120,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_vasn-rts-vasn-to-oal-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_pickup-oal-pickup-with-babies",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupOalPickupWithBabiesTriggerSubscriber",
       "assembly": "subscriber.trigger.pickup-oal-pickup-with-babies"
