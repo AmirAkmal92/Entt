@@ -18,7 +18,7 @@ namespace Bespoke.PosEntt.Integrations.Transforms
             }
             else
             {
-                var checkNo = item.CheckNo;
+                var checkNo = item.CheckNo.Trim();
                 if (checkNo.Length >= 6)
                     destination.Body.Comment = $"Cheque No: {checkNo.Substring(checkNo.Length - 6, 6)} | Receipt No : {item.ReceiptNo}";
             }
