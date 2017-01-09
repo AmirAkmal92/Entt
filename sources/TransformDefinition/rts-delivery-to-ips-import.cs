@@ -38,7 +38,6 @@ namespace Bespoke.PosEntt.Integrations.Transforms
         			  return content.Equals("01") ? "M" : "D";
         		  };
         
-        
         	Func<string, string> SetOriginCountryCode = (origin) =>
         	{
         		if (!origin.Equals("-"))
