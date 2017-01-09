@@ -1,0 +1,66 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Amount",
+        "TypeName": "",
+        "Destination": "Body.Amount",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "202701ce-917b-4958-a11f-c3f057e9626d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "0164b14e-c743-4c3c-e3b9-9032a74a4aad",
+        "Destination": "Body.PaymentMethod",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fb854269-28ce-4a86-88db-da11eb15ebe3"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "PRS",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 384.0,
+        "Y": 283.0,
+        "WebId": "0164b14e-c743-4c3c-e3b9-9032a74a4aad"
+      }
+    ]
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PrsDepositToSnbWeb",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.PrsDeposits.Domain.PrsDeposit, PosEntt.PrsDeposit",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.SnbWebApi.PostDepositRequest, PosEntt.SnbWebApi",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "prs-deposit-to-snb-web",
+  "CreatedDate": "2016-12-21T15:07:55.5696362+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2016-12-21T15:10:28.4034137+08:00",
+  "WebId": "45752ac4-2312-48a3-89c0-3e594254e30d"
+}
