@@ -76,6 +76,7 @@ namespace Bespoke.PosEntt.Integrations.Transforms
 
             }
 
+            if (null == destination.item_weight_double) destination.item_weight_double = 0d;
             return true;
 
 
