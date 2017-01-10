@@ -202,7 +202,10 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private async Task<IEnumerable<Adapters.Oal.dbo_delivery_console_event_new>> GetEventRowsAsync(Adapters.Oal.dbo_delivery_console_event_new eventRow, IList<string> pendingConsoles, string consignmentNotes)
+        private async Task<IEnumerable<Adapters.Oal.dbo_delivery_console_event_new>> GetEventRowsAsync(
+            Adapters.Oal.dbo_delivery_console_event_new eventRow, 
+            IList<string> pendingConsoles, 
+            string consignmentNotes)
         {
 
             var list = new ConcurrentBag<Adapters.Oal.dbo_delivery_console_event_new>();
