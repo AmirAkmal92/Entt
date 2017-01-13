@@ -299,6 +299,8 @@ namespace Bespoke.PosEntt.CustomActions
         private async Task ProcessDeliveryPendingItem(string deliEventId, string[] itemList)
         {
             var deliAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
+            var ipsAdapter = new Adapters.Oal.dbo_ips_importAdapter();
+
             var deliPendingPolly = await Policy.Handle<SqlException>()
                 .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await deliAdapter.LoadOneAsync(deliEventId));
@@ -307,6 +309,8 @@ namespace Bespoke.PosEntt.CustomActions
 
             var deli = deliPendingPolly.Result;
             var deliItems = new List<Adapters.Oal.dbo_delivery_event_new>();
+            var ipsItems = new List<Adapters.Oal.dbo_ips_import>();
+
             foreach (var item in itemList)
             {
                 var console = IsConsole(item);
@@ -316,7 +320,14 @@ namespace Bespoke.PosEntt.CustomActions
                 child.data_flag = "1";
                 child.item_type_code = console ? "02" : "01";
                 deliItems.Add(child);
+
+                if (IsIpsImportItem(item))
+                {
+                    var ips = await CreateDeliIpsImport(deli, item);
+                    ipsItems.Add(ips);
+                }
             }
+
             foreach (var item in deliItems)
             {
                 var pr = Policy.Handle<SqlException>()
@@ -327,6 +338,62 @@ namespace Bespoke.PosEntt.CustomActions
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+
+            foreach (var item in ipsItems)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+
+        }
+
+        private async Task<Adapters.Oal.dbo_ips_import> CreateDeliIpsImport(Adapters.Oal.dbo_delivery_event_new deli, string consignmentNo)
+        {
+            var ips = new Adapters.Oal.dbo_ips_import();
+            ips.id = GenerateId(13);
+            ips.version = 0;
+            ips.data_code_name = "deli";
+            ips.item_id = consignmentNo;
+            ips.class_cd = GetClassCode(consignmentNo);
+            ips.status = "1";
+            ips.user_fid = deli.courier_id;
+            ips.event_date_local_date_field = deli.date_field;
+            ips.event_date_g_m_t_date_field = deli.date_field.Value.AddHours(-8);
+            ips.postal_status_fcd = "MINL";
+            ips.dest_country_cd = "MY";
+            ips.condition_cd = "30";
+            ips.dt_created_oal_date_field = DateTime.Now;
+            ips.office_cd = "MY" + deli.office_no;
+            ips.non_delivery_reason = GetNonDeliveryReason(deli.delivery_code, "");
+            ips.non_delivery_measure = GetNonDeliveryMeasure(deli.delivery_code, "");
+            ips.tn_cd = GetDeliveryTransactionCode(deli.delivery_code, "");
+            var signatories = new string[] { "01", "10", "11" };
+            if (signatories.Contains(deli.delivery_code)) ips.signatory_nm = deli.receipent_name;
+
+            var consignmentInitialAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var consignmentInitialPolly = await Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 500))
+                .ExecuteAndCaptureAsync(async () => await SearchConsignmentInitialAsync(consignmentNo));
+            if (null != consignmentInitialPolly.FinalException)
+                throw new Exception("Process pending deli import Polly failed", consignmentInitialPolly.FinalException);
+
+            var consignment = consignmentInitialPolly.Result;
+            if (null != consignment)
+            {
+                ips.item_weight_double = consignment.weight_double;
+                if (!string.IsNullOrEmpty(consignment.shipper_address_country))
+                {
+                    ips.orig_country_cd = consignment.shipper_address_country;
+                }
+                ips.content = consignment.item_category.Equals("01") ? "M" : "D";
+            }
+
+            return ips;
         }
 
         private async Task ProcessMissPendingItem(string missEventId, string[] itemList)
