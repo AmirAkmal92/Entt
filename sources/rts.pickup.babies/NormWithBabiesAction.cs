@@ -250,6 +250,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 case "pos.oal.DeliveryEventNew":
                     await ProcessDeliveryPendingItem(pending.event_id, itemList);
+                    ok = true;
                     break;
                 case "pos.oal.SopEventNew":
                     await ProcessSopPendingItem(pending.event_id, itemList);
@@ -280,6 +281,7 @@ namespace Bespoke.PosEntt.CustomActions
                     break;
                 case "pos.oal.MissortEventNew":
                     await ProcessMissPendingItem(pending.event_id, itemList);
+                    ok = true;
                     break;
                 case "pos.oal.WwpEventNewLog":
                     await ProcessWwpPendingItem(pending.event_id, itemList);
