@@ -16,6 +16,109 @@ namespace Bespoke.PosEntt.CustomActions
             
         }
 
+        protected async Task<Adapters.Oal.dbo_consignment_initial> SearchConsignmentInitialAsync(string consignmentNo)
+        {
+            var adapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var query = $"SELECT [weight_double], [item_category], [shipper_address_country] FROM [dbo].[consignment_initial] WHERE [number] = '{consignmentNo}'";
+
+            Adapters.Oal.dbo_consignment_initial consignment = null;
+
+            using (var conn = new System.Data.SqlClient.SqlConnection(adapter.ConnectionString))
+            using (var cmd = new System.Data.SqlClient.SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        consignment = new Adapters.Oal.dbo_consignment_initial
+                        {
+                            weight_double = reader["weight_double"].ReadNullable<double>(),
+                            item_category = reader["item_category"].ReadNullableString(),
+                            shipper_address_country = reader["shipper_address_country"].ReadNullableString()
+                        };
+
+                    }
+                }
+
+            }
+
+            return consignment;
+        }
+
+        protected string GetClassCode(string consignmentNo)
+        {
+            string code = null;
+            var isConsole = consignmentNo.StartsWith("CG") && consignmentNo.EndsWith("MY");
+            if (!isConsole)
+            {
+                var firstLetter = consignmentNo.Substring(0, 1);
+                switch (firstLetter)
+                {
+                    case "E": code = "E"; break;
+                    case "C": code = "C"; break;
+                    case "L": code = "U"; break;
+                }
+            }
+
+            return code;
+        }
+
+        protected string GetNonDeliveryReason(string reasonCode, string damageCode)
+        {
+            string display = null;
+            switch (reasonCode)
+            {
+                case "02": display = "12"; break;
+                case "03": display = "10"; break;
+                case "04": if (damageCode == "01") display = null; else display = "18"; break;
+                case "05": display = "13"; break;
+                case "06": display = "14"; break;
+                case "07": display = "16"; break;
+                case "08": display = "13"; break;
+                case "09": display = "12"; break;
+            }
+            return display;
+        }
+
+        protected string GetNonDeliveryMeasure(string reasonCode, string damageCode)
+        {
+            string display = null;
+            switch (reasonCode)
+            {
+                case "02": display = "C"; break;
+                case "03": display = "M"; break;
+                case "04": if (damageCode == "01") display = null; else display = "C"; break;
+                case "05": display = "M"; break;
+                case "06": display = "L"; break;
+                case "07": display = "B"; break;
+                case "08": display = "E"; break;
+                case "09": display = "C"; break;
+            }
+            return display;
+        }
+
+        protected string GetDeliveryTransactionCode(string reasonCode, string damageCode)
+        {
+            string code = null;
+            switch (reasonCode)
+            {
+                case "01": return "TN037";
+                case "02": return "TN036";
+                case "03": return "TN036";
+                case "04": return damageCode.Equals("01") ? "TN037" : "TN036";
+                case "05": return "TN036";
+                case "06": return "TN036";
+                case "07": return "TN036";
+                case "08": return "TN036";
+                case "09": return "TN036";
+                case "10": return "TN037";
+                case "11": return "TN037";
+            }
+
+            return code;
+        }
+
         public override string GetEditorViewModel()
         {
             return @"
@@ -125,6 +228,16 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
             const string PATTERN = "CG[0-9]{9}MY";
             var match = System.Text.RegularExpressions.Regex.Match(connoteNo, PATTERN);
             return match.Success;
+        }
+
+        protected static bool IsIpsImportItem(string connoteNo)
+        {
+            if (!string.IsNullOrEmpty(connoteNo))
+            {
+                if (!connoteNo.EndsWith("MY") && connoteNo.Length == 13)
+                    return true;
+            }
+            return false;
         }
     }
 }

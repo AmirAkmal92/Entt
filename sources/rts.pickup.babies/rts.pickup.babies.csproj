@@ -73,6 +73,9 @@
     <Reference Include="PosEntt.RtsDeco_Oal_delivery_console_event_new">
       <HintPath>..\..\output\PosEntt.RtsDeco_Oal_delivery_console_event_new.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsDeliveryToIpsImport">
+      <HintPath>..\..\output\PosEntt.RtsDeliveryToIpsImport.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsDeliveryToOal_dbo_delivery_event_new">
       <HintPath>..\..\output\PosEntt.RtsDeliveryToOal_dbo_delivery_event_new.dll</HintPath>
     </Reference>
