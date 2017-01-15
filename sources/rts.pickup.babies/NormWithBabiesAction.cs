@@ -80,7 +80,7 @@ namespace Bespoke.PosEntt.CustomActions
                 var row = await map.TransformAsync(norm);
 
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -90,7 +90,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
 
             var detailsPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await adapter.LoadOneAsync(id));
             if (null != detailsPolly.FinalException)
                 throw new Exception("Console Details Polly Error", detailsPolly.FinalException);
@@ -100,7 +100,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var notes = details.item_consignments.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 notes.AddRange(norm.AllConsignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
-                details.item_consignments = string.Join("\t", notes.OrderBy(x => x).Distinct());
+                details.item_consignments = string.Join("\t", notes.OrderBy(x => x).Where(x => x.Length > 3 /* remove anything less*/).Distinct());
                 await adapter.UpdateAsync(details);
                 return true;
             }
@@ -172,13 +172,17 @@ namespace Bespoke.PosEntt.CustomActions
                 rows.Add(GetPendingConsoleRow(parent.id, connoteNo));
                 foreach (var item in rows)
                 {
+                    // TODO : verify the id, is not duplicate
+                    var one = await pendingAdapter.LoadOneAsync(item.id);
+                    if (null != one)
+                        continue;
                     var pr = Policy.Handle<SqlException>()
-                        .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                        .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                         .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
                     var result = await pr;
-                    if (result.FinalException != null)
-                        throw result.FinalException; // send to dead letter queue
-                    System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+                    //if (result.FinalException != null)
+                    //    throw result.FinalException; // send to dead letter queue
+                    //System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
                 }
 
             }
@@ -186,12 +190,14 @@ namespace Bespoke.PosEntt.CustomActions
 
         private async Task InsertDeliveryConsoleEventNewAsync(IEnumerable<Adapters.Oal.dbo_normal_console_event_new> rows)
         {
-
             var decoEventAdapter = new Adapters.Oal.dbo_normal_console_event_newAdapter();
             foreach (var item in rows)
             {
+                Console.Write(".");
+                if (string.IsNullOrWhiteSpace(item.item_consignments))
+                    continue;
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -200,10 +206,17 @@ namespace Bespoke.PosEntt.CustomActions
             }
         }
 
-        private async Task<IEnumerable<Adapters.Oal.dbo_normal_console_event_new>> GetEventRowsAsync(Adapters.Oal.dbo_normal_console_event_new eventRow, IList<string> pendingConsoles, string consignmentNotes)
+        private async Task<IEnumerable<Adapters.Oal.dbo_normal_console_event_new>> GetEventRowsAsync(
+            Adapters.Oal.dbo_normal_console_event_new eventRow,
+            IList<string> pendingConsoles,
+            string consignmentNotes,
+            int level = 0)
         {
+            Console.Write("." + level);
 
             var list = new ConcurrentBag<Adapters.Oal.dbo_normal_console_event_new>();
+            if (level > 4)
+                return list;
             var items = consignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
             foreach (var c in items)
             {
@@ -218,7 +231,10 @@ namespace Bespoke.PosEntt.CustomActions
                     pendingConsoles.Add(itemConNote);
                     continue;
                 }
-                var children = await GetEventRowsAsync(eventRow, pendingConsoles, childConsignments);
+                var children = await GetEventRowsAsync(eventRow,
+                    pendingConsoles,
+                    childConsignments.ToEmptyString().Trim(),
+                    level + 1);
                 list.AddRange(children);
 
             }
@@ -234,6 +250,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 case "pos.oal.DeliveryEventNew":
                     await ProcessDeliveryPendingItem(pending.event_id, itemList);
+                    ok = true;
                     break;
                 case "pos.oal.SopEventNew":
                     await ProcessSopPendingItem(pending.event_id, itemList);
@@ -264,6 +281,7 @@ namespace Bespoke.PosEntt.CustomActions
                     break;
                 case "pos.oal.MissortEventNew":
                     await ProcessMissPendingItem(pending.event_id, itemList);
+                    ok = true;
                     break;
                 case "pos.oal.WwpEventNewLog":
                     await ProcessWwpPendingItem(pending.event_id, itemList);
@@ -281,14 +299,18 @@ namespace Bespoke.PosEntt.CustomActions
         private async Task ProcessDeliveryPendingItem(string deliEventId, string[] itemList)
         {
             var deliAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
+            var ipsAdapter = new Adapters.Oal.dbo_ips_importAdapter();
+
             var deliPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await deliAdapter.LoadOneAsync(deliEventId));
             if (null != deliPendingPolly.FinalException)
                 throw new Exception("Process Deli Pending Polly Error", deliPendingPolly.FinalException);
 
             var deli = deliPendingPolly.Result;
             var deliItems = new List<Adapters.Oal.dbo_delivery_event_new>();
+            var ipsItems = new List<Adapters.Oal.dbo_ips_import>();
+
             foreach (var item in itemList)
             {
                 var console = IsConsole(item);
@@ -298,24 +320,87 @@ namespace Bespoke.PosEntt.CustomActions
                 child.data_flag = "1";
                 child.item_type_code = console ? "02" : "01";
                 deliItems.Add(child);
+
+                if (IsIpsImportItem(item))
+                {
+                    var ips = await CreateDeliIpsImport(deli, item);
+                    ipsItems.Add(ips);
+                }
             }
+
             foreach (var item in deliItems)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => deliAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
                 System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
             }
+
+            foreach (var item in ipsItems)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+
+        }
+
+        private async Task<Adapters.Oal.dbo_ips_import> CreateDeliIpsImport(Adapters.Oal.dbo_delivery_event_new deli, string consignmentNo)
+        {
+            var ips = new Adapters.Oal.dbo_ips_import();
+            ips.id = GenerateId(13);
+            ips.version = 0;
+            ips.data_code_name = "deli";
+            ips.item_id = consignmentNo;
+            ips.class_cd = GetClassCode(consignmentNo);
+            ips.status = "1";
+            ips.user_fid = deli.courier_id;
+            ips.event_date_local_date_field = deli.date_field;
+            ips.event_date_g_m_t_date_field = deli.date_field.Value.AddHours(-8);
+            ips.postal_status_fcd = "MINL";
+            ips.dest_country_cd = "MY";
+            ips.condition_cd = "30";
+            ips.dt_created_oal_date_field = DateTime.Now;
+            ips.office_cd = "MY" + deli.office_no;
+            ips.non_delivery_reason = GetNonDeliveryReason(deli.delivery_code, "");
+            ips.non_delivery_measure = GetNonDeliveryMeasure(deli.delivery_code, "");
+            ips.tn_cd = GetDeliveryTransactionCode(deli.delivery_code, "");
+            var signatories = new string[] { "01", "10", "11" };
+            if (signatories.Contains(deli.delivery_code)) ips.signatory_nm = deli.receipent_name;
+
+            var consignmentInitialAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var consignmentInitialPolly = await Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 500))
+                .ExecuteAndCaptureAsync(async () => await SearchConsignmentInitialAsync(consignmentNo));
+            if (null != consignmentInitialPolly.FinalException)
+                throw new Exception("Process pending deli import Polly failed", consignmentInitialPolly.FinalException);
+
+            var consignment = consignmentInitialPolly.Result;
+            if (null != consignment)
+            {
+                ips.item_weight_double = consignment.weight_double;
+                if (!string.IsNullOrEmpty(consignment.shipper_address_country))
+                {
+                    ips.orig_country_cd = consignment.shipper_address_country;
+                }
+                ips.content = consignment.item_category.Equals("01") ? "M" : "D";
+            }
+
+            return ips;
         }
 
         private async Task ProcessMissPendingItem(string missEventId, string[] itemList)
         {
             var missAdapter = new Adapters.Oal.dbo_missort_event_newAdapter();
             var missPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await missAdapter.LoadOneAsync(missEventId));
             if (null != missPendingPolly.FinalException)
                 throw new Exception("Process Miss Pending Polly Error", missPendingPolly.FinalException);
@@ -335,7 +420,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in missItems)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => missAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -348,7 +433,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var statAdapter = new Adapters.Oal.dbo_status_code_event_newAdapter();
             var statPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await statAdapter.LoadOneAsync(statEventId));
             if (null != statPendingPolly.FinalException)
                 throw new Exception("Process Stat Pending Polly Error", statPendingPolly.FinalException);
@@ -368,7 +453,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in statItems)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => statAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -381,7 +466,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var vasnAdapter = new Adapters.Oal.dbo_vasn_event_newAdapter();
             var vasnPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await vasnAdapter.LoadOneAsync(vasnEventId));
             if (null != vasnPendingPolly.FinalException)
                 throw new Exception("Process Vasn Pending Polly Error", vasnPendingPolly.FinalException);
@@ -401,7 +486,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in vasnItems)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => vasnAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -414,7 +499,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var sopAdapter = new Adapters.Oal.dbo_sop_event_newAdapter();
             var sopPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await sopAdapter.LoadOneAsync(sopEventId));
             if (null != sopPendingPolly.FinalException)
                 throw new Exception("Process Sop Pending Polly Error", sopPendingPolly.FinalException);
@@ -434,7 +519,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in sops)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => sopAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -447,7 +532,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var sipAdapter = new Adapters.Oal.dbo_sip_event_newAdapter();
             var sipPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await sipAdapter.LoadOneAsync(sipEventId));
             if (null != sipPendingPolly.FinalException)
                 throw new Exception("Process Sip Pending Polly Error", sipPendingPolly.FinalException);
@@ -471,7 +556,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in sips)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => sipAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -484,7 +569,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var hopAdapter = new Adapters.Oal.dbo_hop_event_newAdapter();
             var hopPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await hopAdapter.LoadOneAsync(hopEventId));
             if (null != hopPendingPolly.FinalException)
                 throw new Exception("Process Hop Pending Polly Error", hopPendingPolly.FinalException);
@@ -504,7 +589,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in hops)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => hopAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -517,7 +602,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var hipAdapter = new Adapters.Oal.dbo_hip_event_newAdapter();
             var hipPendingPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await hipAdapter.LoadOneAsync(hipEventId));
             if (null != hipPendingPolly.FinalException)
                 throw new Exception("Process Hip Pending Polly Error", hipPendingPolly.FinalException);
@@ -537,7 +622,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in hips)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => hipAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -550,7 +635,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var wwpAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
             var wwpPolly = await Policy.Handle<SqlException>()
-                .WaitAndRetryAsync(5, c => TimeSpan.FromMilliseconds(c * 500))
+                .WaitAndRetryAsync(2, c => TimeSpan.FromMilliseconds(c * 500))
                 .ExecuteAndCaptureAsync(async () => await wwpAdapter.LoadOneAsync(wwpEventId));
             if (null != wwpPolly.FinalException)
                 throw new Exception("Wwp Pending Polly Error", wwpPolly.FinalException);
@@ -568,7 +653,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in wwpItems)
             {
                 var pr = Policy.Handle<SqlException>()
-                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .WaitAndRetryAsync(2, x => TimeSpan.FromMilliseconds(500 * x))
                     .ExecuteAndCaptureAsync(() => wwpAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)

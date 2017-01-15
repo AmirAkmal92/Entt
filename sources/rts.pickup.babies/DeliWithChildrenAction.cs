@@ -15,6 +15,7 @@ namespace Bespoke.PosEntt.CustomActions
         private List<Adapters.Oal.dbo_delivery_event_new> m_deliEventRows;
         private List<Adapters.Oal.dbo_wwp_event_new_log> m_deliWwpEventLogRows;
         private List<Adapters.Oal.dbo_event_pending_console> m_deliEventPendingConsoleRows;
+        private List<Adapters.Oal.dbo_ips_import> m_deliIpsImportEventRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
@@ -26,6 +27,7 @@ namespace Bespoke.PosEntt.CustomActions
             m_deliEventRows = new List<Adapters.Oal.dbo_delivery_event_new>();
             m_deliWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
             m_deliEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
+            m_deliIpsImportEventRows = new List<Adapters.Oal.dbo_ips_import>();
 
             await RunAsync(deli);
         }
@@ -39,7 +41,10 @@ namespace Bespoke.PosEntt.CustomActions
             var deliEventAdapter = new Adapters.Oal.dbo_delivery_event_newAdapter();
             var deliWwpEventAdapter = new Adapters.Oal.dbo_wwp_event_new_logAdapter();
             var deliEventMap = new Integrations.Transforms.RtsDeliveryToOalDboDeliveryEventNew();
+            var deliIpsImportMap = new Integrations.Transforms.RtsDeliveryToIpsImport();
             var parentRow = await deliEventMap.TransformAsync(deli);
+            var parentIpsRow = await deliIpsImportMap.TransformAsync(deli);
+
             parentRow.id = GenerateId(34);
             m_deliEventRows.Add(parentRow);
 
@@ -56,6 +61,10 @@ namespace Bespoke.PosEntt.CustomActions
                     if (consoleList.Contains(item)) continue;
                     ProcessChild(parentRow, item);
                     ProcessChildWwp(parentWwpRow, item);
+                    if (IsIpsImportItem(item))
+                    {
+                        await ProcessChildIpsImport(parentIpsRow, item);
+                    }
 
                     //2 level
                     var console = IsConsole(item);
@@ -71,6 +80,10 @@ namespace Bespoke.PosEntt.CustomActions
                                 if (consoleList.Contains(cc)) continue;
                                 ProcessChild(parentRow, cc);
                                 ProcessChildWwp(parentWwpRow, cc);
+                                if (IsIpsImportItem(cc))
+                                {
+                                    await ProcessChildIpsImport(parentIpsRow, cc);
+                                }
 
                                 //3 level
                                 var anotherConsole = IsConsole(cc);
@@ -86,6 +99,10 @@ namespace Bespoke.PosEntt.CustomActions
                                             if (consoleList.Contains(ccc)) continue;
                                             ProcessChild(parentRow, ccc);
                                             ProcessChildWwp(parentWwpRow, ccc);
+                                            if (IsIpsImportItem(ccc))
+                                            {
+                                                await ProcessChildIpsImport(parentIpsRow, ccc);
+                                            }
                                         }
                                     }
                                     else
@@ -123,6 +140,18 @@ namespace Bespoke.PosEntt.CustomActions
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => deliWwpEventAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+
+            var ipsAdapter = new Adapters.Oal.dbo_ips_importAdapter();
+            foreach (var item in m_deliIpsImportEventRows)
+            {
+                var pr = Policy.Handle<SqlException>()
+                    .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -187,6 +216,35 @@ namespace Bespoke.PosEntt.CustomActions
             m_deliWwpEventLogRows.Add(wwp);
         }
 
+        private async Task ProcessChildIpsImport(Adapters.Oal.dbo_ips_import parent, string consignmentNo)
+        {
+            var child = parent.Clone();
+            child.id = GenerateId(13);
+            child.item_id = consignmentNo;
+            child.data_code_name = "deli";
+            child.class_cd = GetClassCode(consignmentNo);
 
+            var consignmentInitialAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var consignmentInitialPolly = await Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 500))
+                .ExecuteAndCaptureAsync(async () => await SearchConsignmentInitialAsync(consignmentNo));
+            if (null != consignmentInitialPolly.FinalException)
+                throw new Exception("Process child IPS import Polly failed", consignmentInitialPolly.FinalException);
+
+            var consignment = consignmentInitialPolly.Result;
+            if (null != consignment)
+            {
+                child.item_weight_double = consignment.weight_double;
+                if (!string.IsNullOrEmpty(consignment.shipper_address_country))
+                {
+                    child.orig_country_cd = consignment.shipper_address_country;
+                }
+                child.content = consignment.item_category.Equals("01") ? "M" : "D";
+            }
+
+            m_deliIpsImportEventRows.Add(child);
+        }
+
+        
     }
 }
