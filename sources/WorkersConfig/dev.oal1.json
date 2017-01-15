@@ -101,7 +101,9 @@
       "assembly": "subscriber.trigger.stat-rts-stat-to-oal"
     },
     {
-      "instancesCount": 1,
+      "maxInstances": 50,
+      "minInstances":2,
+      "instancesCount": 5,
       "prefetchCount": 1,
       "priority": 0,
       "queueName": "trigger_subs_pickup-rts-pickup-to-oal-ips-import",

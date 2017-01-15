@@ -37,7 +37,9 @@
       "assembly": "subscriber.trigger.sap-soa-sap-invoice-created"
     },
     {
-      "instancesCount": 1,
+      "maxInstances" : 100,
+      "minInstances" : 2,
+      "instancesCount": 5,
       "prefetchCount": 1,
       "priority": 0,
       "queueName": "trigger_subs_prs-deposit-prs-deposit-payment",
