@@ -26,5 +26,9 @@ namespace Bespoke.PosEntt.CustomActions
 
             return false;
         }
+        public static bool IsDeadlockOrTimeout(this SqlException exception)
+        {
+            return exception.IsTimeout() || exception.IsDeadlock();
+        }
     }
 }

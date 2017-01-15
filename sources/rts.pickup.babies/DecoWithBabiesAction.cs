@@ -82,7 +82,7 @@ namespace Bespoke.PosEntt.CustomActions
                 var map = new Integrations.Transforms.RtsDecoOalConsoleDetails();
                 var row = await map.TransformAsync(deco);
 
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                 var result = await pr;
@@ -185,7 +185,7 @@ namespace Bespoke.PosEntt.CustomActions
                         continue;
 
                     // ignore insert exception
-                    await Policy.Handle<SqlException>(e => e.IsDeadlock())
+                    await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                         .WaitAndRetryAsync(RetryCount, WaitInterval)
                         .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
                 }
@@ -201,7 +201,7 @@ namespace Bespoke.PosEntt.CustomActions
                 Console.Write(".");
                 if (string.IsNullOrWhiteSpace(item.item_consignments))
                     continue;
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
                 var result = await pr;
@@ -335,7 +335,7 @@ namespace Bespoke.PosEntt.CustomActions
 
             foreach (var item in deliItems)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => deliAdapter.InsertAsync(item));
                 var result = await pr;
@@ -346,7 +346,7 @@ namespace Bespoke.PosEntt.CustomActions
 
             foreach (var item in ipsItems)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
                 var result = await pr;
@@ -427,7 +427,7 @@ namespace Bespoke.PosEntt.CustomActions
                 item.date_created_oal_date_field = item.date_created_oal_date_field.ToValidSqlDateTime();
                 item.date_field = item.date_field.ToValidSqlDateTime();
 
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => missAdapter.InsertAsync(item));
                 var result = await pr;
@@ -463,7 +463,7 @@ namespace Bespoke.PosEntt.CustomActions
                 item.date_created_oal_date_field = item.date_created_oal_date_field.ToValidSqlDateTime();
                 item.date_field = item.date_field.ToValidSqlDateTime();
 
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => statAdapter.InsertAsync(item));
                 var result = await pr;
@@ -496,7 +496,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in vasnItems)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => vasnAdapter.InsertAsync(item));
                 var result = await pr;
@@ -529,7 +529,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in sops)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => sopAdapter.InsertAsync(item));
                 var result = await pr;
@@ -566,7 +566,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in sips)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => sipAdapter.InsertAsync(item));
                 var result = await pr;
@@ -599,7 +599,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in hops)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => hopAdapter.InsertAsync(item));
                 var result = await pr;
@@ -632,7 +632,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in hips)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => hipAdapter.InsertAsync(item));
                 var result = await pr;
@@ -663,7 +663,7 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in wwpItems)
             {
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => wwpAdapter.InsertAsync(item));
                 var result = await pr;
