@@ -163,6 +163,8 @@
     <Compile Include="EventWithChildrenAction.cs" />
     <Compile Include="DeliWithChildrenAction.cs" />
     <Compile Include="CommWithChildrenAction.cs" />
+    <Compile Include="SqlDataTypeExtension.cs" />
+    <Compile Include="SqlExceptionExtensions.cs" />
     <Compile Include="StatWithChildrenAction.cs" />
     <Compile Include="MissortWithChildrenAction.cs" />
     <Compile Include="VasnWithChildrenAction.cs" />
