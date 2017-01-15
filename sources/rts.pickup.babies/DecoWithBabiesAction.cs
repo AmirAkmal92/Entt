@@ -424,6 +424,9 @@ namespace Bespoke.PosEntt.CustomActions
             }
             foreach (var item in missItems)
             {
+                item.date_created_oal_date_field = item.date_created_oal_date_field.ToValidSqlDateTime();
+                item.date_field = item.date_field.ToValidSqlDateTime();
+
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlock())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => missAdapter.InsertAsync(item));
