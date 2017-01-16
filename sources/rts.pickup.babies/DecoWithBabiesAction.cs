@@ -82,14 +82,23 @@ namespace Bespoke.PosEntt.CustomActions
                 var map = new Integrations.Transforms.RtsDecoOalConsoleDetails();
                 var row = await map.TransformAsync(deco);
 
-                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                // check for duplicate
+                var dpr = await Policy.Handle<SqlException>(e => e.IsTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
-                var result = await pr;
-                if (result.FinalException != null)
-                    throw result.FinalException; // send to dead letter queue
-                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+                    .ExecuteAndCaptureAsync(() => adapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbo.console_details WHERE console_no ='{row.console_no}'"));
+                if (dpr.Result == 0)
+                {
+                    var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                        .WaitAndRetryAsync(RetryCount, WaitInterval)
+                        .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
+                    var result = await pr;
+                    if (result.FinalException != null)
+                        throw result.FinalException; // send to dead letter queue
+                    System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+
+                }
                 return true;
+
             }
 
             var detailsPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
