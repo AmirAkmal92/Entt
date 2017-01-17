@@ -1,0 +1,209 @@
+
+<section class="view-model-modal" id="log-details-dialog">
+    <div class="modal-dialog" style="width: 850px">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-bind="click : cancelClick">&times;</button>
+                <h3><i class="icon-notebook"></i> Log details
+                </h3>
+            </div>
+            <div class="modal-body" data-bind="with: log">
+                <div class="tabbable" style="min-height: 600px">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#log-general" data-toggle="tab">General</a>
+                        </li>
+                        <li>
+                            <a href="#log-details" data-toggle="tab">Details</a>
+                        </li>
+                        <!-- ko if : exception -->
+
+                        <li>
+                            <a href="#log-exception" data-toggle="tab">Exceptions</a>
+                        </li>
+
+                        <!-- /ko -->
+
+                        <li>
+                            <a href="#log-others" data-toggle="tab">Others</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="log-general" class="tab-pane active">
+
+                            <form class="form-horizontal" id="general-form">
+                                <div class="form-group">
+                                    <label for="date" class="col-sm-3 col-md-2 control-label">Datetime</label>
+                                    <div class="col-sm-9 col-md-10">
+                                        <input type="text" data-bind="date:{value: time, format:'YYYY-MM-DD HH:mm ss', inputFormat :moment.ISO_8601}"
+                                               readonly
+                                               class="form-control" id="date">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="col-sm-3 col-md-2 control-label">Message</label>
+                                    <div class="col-sm-9 col-md-10">
+                                        <a class="pull-right" href="javascript:$('#message').focus().select();document.execCommand('copy');" title="Copy message">
+                                            <i class="fa fa-copy"></i>
+                                        </a>
+                                        <textarea data-bind="value: message"
+                                                  readonly rows="3"
+                                                  class="form-control" id="message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group" data-bind="visible: details">
+                                    <label for="details" class="col-sm-3 col-md-2 control-label">Details</label>
+                                    <div class="col-sm-9 col-md-10">
+                                        <a class="pull-right" href="javascript:$('#details').focus().select();document.execCommand('copy');" title="Copy the details">
+                                            <i class="fa fa-copy"></i>
+                                        </a>
+                                        <textarea data-bind="value: details"
+                                                  readonly rows="20"
+                                                  class="form-control" id="details"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="log-id" class="col-sm-3 col-md-2 control-label">Log Id</label>
+                                    <div class="col-sm-9 col-md-10">
+                                        <input type="text" data-bind="value:id"
+                                               readonly
+                                               class="form-control" id="log-id">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div id="log-details" class="tab-pane">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="computer" class="col-lg-2 control-label">Computer</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: computer"
+                                               readonly="readonly"
+                                               placeholder="Computer name"
+                                               class="form-control" id="computer">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-log" class="col-lg-2 control-label">Log</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" data-bind="value: log"
+                                               readonly="readonly"
+                                               placeholder="log"
+                                               class="form-control" id="event-log">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="log-source" class="col-lg-2 control-label">Source</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: source" readonly="readonly" class="form-control" id="log-source">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="log-severity" class="col-lg-2 control-label">Severity</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: severity" readonly="readonly" class="form-control" id="log-severity">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <!-- ko if : exception -->
+
+
+                        <div id="log-exception" class="tab-pane">
+                            <form class="form-horizontal" data-bind="with : exception">
+                                <div class="form-group">
+                                    <label for="log-exception-message" class="col-lg-2 control-label">Message</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: Message"  readonly="readonly" class="form-control" id="log-exception-message">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="log-exception-class" class="col-lg-2 control-label">Class</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: ClassName"  readonly="readonly" class="form-control" id="log-exception-class">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="log-exception-StackTraceString" class="col-lg-2 control-label">StackTraceString</label>
+                                    <div class="col-lg-10">
+                                        <textarea rows="15"  data-bind="value: StackTraceString"  readonly="readonly" class="form-control" id="log-exception-StackTraceString"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <!-- /ko -->
+
+                        <div id="log-others" class="tab-pane">
+                            <form class="form-horizontal" data-bind="with : otherInfo">
+                                <!-- ko if: typeof requeuedBy !== "undefined"-->
+                                <div class="form-group">
+                                    <label for="requeued-by" class="col-lg-2 control-label">Requeued By</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: requeuedBy" readonly="readonly" class="form-control" id="requeued-by">
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <!-- ko if: typeof requeuedOn !== "undefined" -->
+                                <div class="form-group">
+                                    <label for="requeued-on" class="col-lg-2 control-label">Requeued On</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: requeuedOn" readonly="readonly" class="form-control" id="requeued-on">
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                
+
+                                <!-- ko if: typeof id !== "undefined" -->
+                                <div class="form-group">
+                                    <label for="entity-id2" class="col-lg-2 control-label">Id</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: id" readonly="readonly" class="form-control" id="entity-id2">
+                                        <a data-bind="attr : {href: '/sph#rts-messages/' + type + '/' + id }" target="_blank" >View message</a>
+                           
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                
+
+                                <!-- ko if: typeof type !== "undefined" -->
+                                <div class="form-group">
+                                    <label for="entity-type" class="col-lg-2 control-label">Type</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" data-bind="value: type" readonly="readonly" class="form-control" id="entity-type">
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+
+                                <div class="form-group">
+                                    <label for="other-info-json" class="col-sm-3 col-md-2 control-label">JSON</label>
+                                    <div class="col-sm-9 col-md-10">
+                                        <a class="pull-right" href="javascript:$('#other-info-json').focus().select();document.execCommand('copy');" title="Copy the details">
+                                            <i class="fa fa-copy"></i>
+                                        </a>
+                                        <textarea data-bind="value: JSON.stringify($data)"
+                                                  readonly rows="18"
+                                                  class="form-control" id="other-info-json"></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input form="general-form" data-dismiss="modal" type="submit" class="btn btn-default" value="Close" data-bind="click: okClick" />
+            </div>
+        </div>
+    </div>
+</section>

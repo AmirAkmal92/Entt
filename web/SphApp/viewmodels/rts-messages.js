@@ -61,10 +61,33 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     list(eventsList);
                 });
         },
-        activate = function (type) {
+        search = function () {
+            const q = ko.toJS(query);
+            q.query.bool.must.push({
+                "query_string": {
+                    "default_field": "_all",
+                    "query": searchText()
+                }
+            });
+            isBusy(true);
+            return loadListAsync(q)
+                .fail(function (e, arg) {
+                    const result = JSON.parse(e.responseJSON.result);
+                    logger.error("Error in your search syntax", result);
+                })
+                .always(function () {
+                    isBusy(false);
+                });
+        },
+        activate = function (type, id) {
             rtsType(type);
             selectedItems([]);
             queues([]);
+            if(id){
+                searchText(`Id:"${id.split('-')[0]}"`);
+                dateFrom(moment().subtract(6, "month").format());
+                return search();
+            }
             return loadListAsync()
                 .then(function (result) {
                     return context.loadAsync("Trigger", `Entity eq '${type}'`);
@@ -139,24 +162,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                         console.log(result);
                     });
         },
-        search = function () {
-            const q = ko.toJS(query);
-            q.query.bool.must.push({
-                "query_string": {
-                    "default_field": "_all",
-                    "query": searchText()
-                }
-            });
-            isBusy(true);
-            return loadListAsync(q)
-                .fail(function (e, arg) {
-                    const result = JSON.parse(e.responseJSON.result);
-                    logger.error("Error in your search syntax", result);
-                })
-                .always(function () {
-                    isBusy(false);
-                });
-        },
         viewLog = function (log) {
             console.log(log);
             require(["viewmodels/log.details.dialog", "durandal/app"], function (dialog, app2) {
@@ -164,6 +169,27 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 app2.showDialog(dialog);
 
             });
+        },
+        downloadMessages = function(){
+            function download(data, filename, type) {
+                var a = document.createElement("a"),
+                    file = new Blob([data], {type: type});
+                if (window.navigator.msSaveOrOpenBlob) // IE10+
+                    window.navigator.msSaveOrOpenBlob(file, filename);
+                else { // Others
+                    var url = URL.createObjectURL(file);
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(function() {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);  
+                    }, 0); 
+                }
+            }
+            var json = ko.toJSON(selectedItems);
+            download(json, ko.unwrap(rtsType) + '.json', 'application/json');
         };
 
     return {
@@ -172,6 +198,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         type: rtsType,
         list: list,
         selectedItems: selectedItems,
+        downloadMessages : downloadMessages,
         members: members,
         queueOptions: queueOptions,
         requeue: requeue,

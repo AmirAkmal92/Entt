@@ -55,6 +55,12 @@
         <div class="row">
             <div id="messages-pager"></div>
         </div>
+
+        <div class="row">
+            <button class="btn btn-default" data-bind="enable: selectedItems().length > 0, click: downloadMessages">
+                <i class="fa fa-download"></i>
+                Download</button>
+        </div>
     </div>
 
 </div>

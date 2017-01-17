@@ -72,7 +72,7 @@
   {
     "role": "everybody",
     "groupName": null,
-    "route": "rts-messages/:type",
+    "route": "rts-messages/:type(/:id)",
     "moduleId": "viewmodels/rts-messages",
     "title": "RTS messages",
     "nav": false,
