@@ -1,5 +1,5 @@
 ﻿Param(
-       [string]$WorkingCopy = ".",
+       [string]$WorkingCopy = "$PWD",
        [string]$ApplicationName = "PosEntt",
        [string]$Port = 8080,
        [string]$SqlServer = "ProjectsV13",

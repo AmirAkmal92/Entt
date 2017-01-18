@@ -131,7 +131,7 @@ public class ScannerTokenServiceController : BaseApiController
         }
         catch (MembershipCreateUserException ex)
         {
-            ObjectBuilder.GetObject<ILogger>().Log(new LogEntry(ex));
+            ObjectBuilder.GetObject<ILogger>().Log(new LogEntry(new Exception($"Fail to create User for device '{userName}', email :'{profile.Email}' and password : '{profile.Password}'", ex)));
             return false;
         }
 
