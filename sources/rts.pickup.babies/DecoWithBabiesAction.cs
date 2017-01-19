@@ -404,7 +404,10 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     ips.orig_country_cd = consignment.shipper_address_country;
                 }
-                ips.content = consignment.item_category.Equals("01") ? "M" : "D";
+                if (!string.IsNullOrEmpty(consignment.item_category))
+                    ips.content = consignment.item_category.Equals("01") ? "M" : "D";
+                else
+                    ips.content = "D";
             }
 
             return ips;
