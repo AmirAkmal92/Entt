@@ -239,7 +239,10 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     child.orig_country_cd = consignment.shipper_address_country;
                 }
-                child.content = consignment.item_category.Equals("01") ? "M" : "D";
+                if (!string.IsNullOrEmpty(consignment.item_category))
+                    child.content = consignment.item_category.Equals("01") ? "M" : "D";
+                else
+                    child.content = "D";
             }
 
             m_deliIpsImportEventRows.Add(child);

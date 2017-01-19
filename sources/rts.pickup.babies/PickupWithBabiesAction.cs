@@ -72,7 +72,11 @@ namespace Bespoke.PosEntt.CustomActions
             if (null != pickup.BabyConsignment)
             {
                 var consignmentBabies = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                var babiesWeight = pickup.BabyConsignment.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] babiesWeight = { };
+                if (!string.IsNullOrEmpty(pickup.BabyWeigth))
+                {
+                    babiesWeight = pickup.BabyWeigth.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                }
                 var babiesHeight = pickup.BabyHeigth.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 var babiesWidth = pickup.BabyWidth.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 var babiesLength = pickup.BabyLength.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -86,7 +90,10 @@ namespace Bespoke.PosEntt.CustomActions
                     consignmentChildRow.parent = consignmentParentRow.id;
                     consignmentChildRow.is_parent = 0;
                     consignmentChildRow.number = babyConsignmentNo;
-                    consignmentChildRow.weight_double = GetDoubleValue(babiesWeight[index]);
+                    if (babiesWeight.Length == consignmentBabies.Length)
+                        consignmentChildRow.weight_double = GetDoubleValue(babiesWeight[index]);
+                    else
+                        consignmentChildRow.weight_double = 0;
                     consignmentChildRow.height_double = GetDoubleValue(babiesHeight[index]);
                     consignmentChildRow.length_double = GetDoubleValue(babiesLength[index]);
                     consignmentChildRow.width_double = GetDoubleValue(babiesWidth[index]);
@@ -141,10 +148,10 @@ namespace Bespoke.PosEntt.CustomActions
 
         private double? GetDoubleValue(string text)
         {
-            double value;
+            double value = 0;
             if (double.TryParse(text, out value))
                 return value;
-            return null;
+            return value;
         }
     }
 }
