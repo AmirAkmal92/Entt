@@ -42,7 +42,7 @@ namespace Bespoke.PosEntt.Integrations.Transforms
 
             Func<string, string> SetOriginCountryCode = (origin) =>
             {
-                if (!origin.Equals("-") && !string.IsNullOrWhiteSpace(origin))
+                if (!string.IsNullOrWhiteSpace(origin))
                 {
                     return origin;
                 }
