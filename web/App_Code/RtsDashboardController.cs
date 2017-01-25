@@ -35,6 +35,29 @@ public class RtsDashboadController : BaseApiController
         return Json(result);
     }
 
+    
+    [Route("search/{consignmentNo}")]
+    [HttpGet]
+    public async Task<IHttpActionResult> SearchConsignmentAsync(string consignmentNo)
+    {
+        var query = $@"{{
+    ""query"": {{
+        ""query_string"": {{
+           ""default_field"": ""_all"",
+           ""query"": ""{consignmentNo}""
+        }}
+    }}
+}}";
+        var response = await m_client.PostAsync($"{ConfigurationManager.ElasticSearchIndex}_rts/_search", new StringContent(query));
+        var content = response.Content as StreamContent;
+        if (null == content) throw new Exception("Cannot execute query on es ");
+        var result = await content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+            throw new Exception($"Cannot execute query for :  {query}, Result = {result} ");
+        return Json(result);
+    }
+
     [Route("{type}")]
     [HttpPost]
     public async Task<IHttpActionResult> SearchAsync(string type,

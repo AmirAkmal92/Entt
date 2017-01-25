@@ -14,6 +14,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
 
         var isBusy = ko.observable(false),
             entities = ko.observableArray(),
+            searchResults = ko.observableArray(),
             from = ko.observable(moment().subtract(1, "day").format("YYYY-MM-DD")),
             to = ko.observable(moment().add(1, "day").format("YYYY-MM-DD")),
             interval = ko.observable("hour"),
@@ -75,7 +76,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     seriesDefaults: {
                         labels: {
                             visible: true,
-                            format: "{0}"
+                            format: "##,#"
                         }
                     },
                     series: [
@@ -94,7 +95,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                        
                     }, tooltip: {
                         visible: true,
-                        format: "{0}",
+                        format: "##,#",
                         template: "#= category #: #= value #"
                     }
                 }).data("kendoChart");
@@ -112,6 +113,17 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             },
             attached = function (view) {
                 
+                $(view).on("submit", "form#search-consigment-form", function(e){
+                    e.preventDefault();
+                    isBusy(true);
+                    const consignmentNo = $("input#search-consignment").val();
+                    return context.get("/api/rts-dashboard/search/" + consignmentNo)
+                                        .then(function (result) {
+                                            isBusy(false);
+                                            searchResults(result.hits.hits);
+                                        });
+
+                });
                 $(view).find("div.date-range")
                     .daterangepicker(
                         {
@@ -149,7 +161,8 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             activate: activate,
             attached: attached,
             query: query,
-            entities :entities
+            entities :entities,
+            searchResults : searchResults
         };
 
 

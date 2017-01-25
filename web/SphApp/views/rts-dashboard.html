@@ -32,8 +32,29 @@
     
     <!-- ko compose : 'viewmodels/_rts-dashboard.dlq'-->
     <!--/ko-->
+
+    <div class="row">
+      <table class="table table-condensed table-striped">
+        <thead>
+          <tr>
+              <th>Event</th>
+              <th>Created date</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: searchResults">
+          <tr>
+            <td data-bind="text: _type"></td>
+            <td data-bind="text: _source.CreatedDate"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="col-lg-3">
+    <h3>Search</h3>
+    <form class="form" id="search-consigment-form">
+      <input type="text" id="search-consignment" placeholder="Consignment no" class="form-control"/>
+    </form>
     <h3>Messages</h3>
     <nav>
       <ul class="nav nav-stacked" data-bind="foreach: entities">
