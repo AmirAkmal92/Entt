@@ -35,7 +35,7 @@ public class RtsDashboadController : BaseApiController
         return Json(result);
     }
 
-    
+
     [Route("search/{consignmentNo}")]
     [HttpGet]
     public async Task<IHttpActionResult> SearchConsignmentAsync(string consignmentNo)
@@ -131,7 +131,13 @@ public class RtsDashboadController : BaseApiController
         var hit = await m_client.GetStringAsync($"posentt_rts_{model.Date:yyyyMMdd}/{type.ToLowerInvariant()}/{id}");
         var json = JObject.Parse(hit);
         var source = json.SelectToken("$._source").ToString();
-        await this.SendMessage(model.QueueName, source, new Dictionary<string, object>());
+        var queueName = model.QueueName ?? "persistence";
+        await this.SendMessage(queueName, source, new Dictionary<string, object>());
+
+        if (string.IsNullOrWhiteSpace(model.LogId))
+        {
+            return Json(new { message = "OK" });
+        }
 
         var update = $@"{{
    ""doc"": {{

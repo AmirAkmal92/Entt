@@ -154,10 +154,20 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             });
 
         },
-        requeue = function (log) {
-            console.log(log);
-            log.canRequeue(false);
-            return context.post(ko.toJSON({ date: log._source.time, logId: log._id, queueName: log._source.source }), `api/rts-dashboard/${rtsType()}/${log._source.otherInfo.id}/requeue`)
+        requeue = function (log, element) {
+           // console.log(log);
+           // console.log(element);
+            const rows = $(element.target).parents("tr"),
+                item = ko.dataFor(rows[0]),
+                id = item._id,
+                type = ko.unwrap(rtsType);
+                
+            let data = {date : item._source.CreatedDate};
+            if(ko.isObservable(log.canRequeue)){
+                log.canRequeue(false);
+                data = { date: log._source.time, logId: log._id, queueName: log._source.source };
+            }
+            return context.post(ko.toJSON(data), `api/rts-dashboard/${type}/${id}/requeue`)
                     .then(function (result) {
                         console.log(result);
                     });
