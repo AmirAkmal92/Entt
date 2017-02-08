@@ -607,6 +607,8 @@ namespace Bespoke.PosEntt.CustomActions
             var hops = new List<Adapters.Oal.dbo_hop_event_new>();
             foreach (var item in itemList)
             {
+                if (null == item) continue;
+                if(null == hop) continue;;
                 var console = IsConsole(item);
                 var child = hop.Clone();
                 child.id = GenerateId(34);
