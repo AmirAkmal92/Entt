@@ -95,7 +95,16 @@ function(context, logger, router, system, validation, eximp, dialog, watcher, co
                 tcs.resolve(result);
             });
             return tcs.promise();
+        }, remove = function() {
+            return context.sendDelete("/api/products/" + ko.unwrap(entity().Id))
+                .then(function(result) {
+                    return app.showMessage("Your product has been deleted", "Engineering Team Development", ["OK"]);
+            })
+                .then(function(result) {
+                router.navigate("product-all");
+            });
         },
+
         attached = function(view) {
             // validation
             validation.init($('#product-details-form'), form());
@@ -139,13 +148,17 @@ function(context, logger, router, system, validation, eximp, dialog, watcher, co
         entity: entity,
         errors: errors,
         toolbar: {
+            removeCommand: remove,
+            canExecuteRemoveCommand: ko.computed(function() {
+                return entity().Id();
+            }),
             saveCommand: saveCommand,
             canExecuteSaveCommand: ko.computed(function() {
                 if (typeof partial.canExecuteSaveCommand === "function") {
                     return partial.canExecuteSaveCommand();
                 }
                 return true;
-            })
+            }),
 
         }, // end toolbar
 

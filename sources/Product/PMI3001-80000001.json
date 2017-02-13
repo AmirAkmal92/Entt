@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI3001",
+  "Name": "International Courier - Contract",
+  "SocCode": "80000001",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI3001-80000001",
+  "CreatedDate": "2017-02-13T13:24:09.7150395+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T13:24:09.7150395+08:00",
+  "WebId": "6005ba24-333d-43ba-b6fa-c2ec9cb99ae2"
+}

@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1005",
+  "Name": "Poslaju Economy Package (PEP)",
+  "SocCode": "80000002",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1005-80000002",
+  "CreatedDate": "2017-02-13T12:57:17.706801+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:57:17.6911709+08:00",
+  "WebId": "0e56ad11-8853-4209-81b1-e155dc28c53f"
+}

@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1004",
+  "Name": "Courier Charge - TNT",
+  "SocCode": "80001098",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1004-80001098",
+  "CreatedDate": "2017-02-13T12:55:27.298914+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:55:27.2832858+08:00",
+  "WebId": "21b5fa0c-5013-4c9b-ad77-5a4263d4fb10"
+}

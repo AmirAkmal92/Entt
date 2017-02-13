@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLM4001",
+  "Name": "Parcel Domestic Surface",
+  "SocCode": "80001118",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLM4001-80001118",
+  "CreatedDate": "2017-02-13T12:47:23.1042408+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:47:23.2448719+08:00",
+  "WebId": "625a5c85-397c-43ae-bf57-ab426f7370ee"
+}

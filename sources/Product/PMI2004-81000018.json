@@ -1,13 +1,13 @@
 {
   "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
-  "Code": "PMI2006",
+  "Code": "PMI2004",
   "Name": "International Prepaid Box / PPT - 10KG",
   "SocCode": "81000018",
   "ParentCode": null,
   "CreatedBy": "admin",
-  "Id": "PMI2006-81000018",
-  "CreatedDate": "2016-10-27T11:31:37.2937123+08:00",
+  "Id": "PMI2004-81000018",
+  "CreatedDate": "2017-02-13T13:17:30.334123+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-27T11:31:37.2937123+08:00",
-  "WebId": "22f0e70b-d113-467c-92cc-b928ddbae9bd"
+  "ChangedDate": "2017-02-13T13:17:30.334123+08:00",
+  "WebId": "94f237b9-3cde-4645-b120-1f824f067206"
 }
