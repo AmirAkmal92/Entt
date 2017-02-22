@@ -217,6 +217,16 @@ namespace Bespoke.PosEntt.CustomActions
                 Console.Write(".");
                 if (string.IsNullOrWhiteSpace(item.item_consignments))
                     continue;
+
+
+                var pr0 = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .ExecuteAndCaptureAsync(() => decoEventAdapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM [dbo].[delivery_console_event_new] WHERE [Id]='{item.id}'"));
+                var result0 = await pr0;
+                if (result0.FinalException != null)
+                    throw result0.FinalException;
+                if (result0.Result > 0) continue;
+
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
@@ -608,7 +618,7 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var item in itemList)
             {
                 if (null == item) continue;
-                if(null == hop) continue;;
+                if (null == hop) continue;
                 var console = IsConsole(item);
                 var child = hop.Clone();
                 child.id = GenerateId(34);
