@@ -93,14 +93,14 @@ namespace Bespoke.PosEntt.CustomActions
                 var dpr = await Policy.Handle<SqlException>(e => e.IsTimeout())
                    .WaitAndRetryAsync(RetryCount, WaitInterval)
                    .ExecuteAndCaptureAsync(() => adapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbo.console_details WHERE console_no ='{row.console_no}'"));
-                if (dpr.Result == 0)
+                if (dpr.Result == 0 && !string.IsNullOrWhiteSpace(row.console_no))
                 {
                     var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                         .WaitAndRetryAsync(RetryCount, WaitInterval)
                         .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                     var result = await pr;
                     if (result.FinalException != null)
-                        throw result.FinalException; // send to dead letter queue
+                        throw result.FinalException; // Send to dead letter queue
                     System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
                 }
                 return true;

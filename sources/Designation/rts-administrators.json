@@ -1,0 +1,50 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "rtsadmin"
+    ]
+  },
+  "Owner": {
+    "$type": "Bespoke.Sph.Domain.Owner, domain.sph",
+    "Address": {
+      "$type": "Bespoke.Sph.Domain.Address, domain.sph",
+      "UnitNo": "",
+      "Floor": "",
+      "Block": "",
+      "Street": "",
+      "City": "",
+      "Postcode": "",
+      "State": "",
+      "Country": "",
+      "WebId": null
+    },
+    "Name": "",
+    "TelephoneNo": "",
+    "FaxNo": "",
+    "Email": "",
+    "WebId": null
+  },
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "Name": "Rts Administrators",
+  "Description": "",
+  "IsActive": false,
+  "StartModule": "rts-dashboard",
+  "EnforceStartModule": true,
+  "IsSearchVisible": false,
+  "IsMessageVisible": false,
+  "IsHelpVisible": false,
+  "HelpUri": "",
+  "Title": "",
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "rts-administrators",
+  "CreatedDate": "2017-01-18T11:25:08.9635136+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-01-18T11:25:08.9635136+08:00",
+  "WebId": "3616730c-d924-490b-864e-420e62b18760"
+}
