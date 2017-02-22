@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLM4002",
+  "Name": "Parcel Domestic Air",
+  "SocCode": "80001119",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLM4002-80001119",
+  "CreatedDate": "2017-02-13T12:53:28.187775+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:53:28.187775+08:00",
+  "WebId": "5e1b93ff-c2f8-4e42-ac13-c51b47b6b93f"
+}

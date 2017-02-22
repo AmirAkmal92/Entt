@@ -1,13 +1,13 @@
 {
   "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
-  "Code": "PMI2003",
+  "Code": "PMI2001",
   "Name": "Parcel International - Contract (Air)",
   "SocCode": "80001121",
   "ParentCode": null,
   "CreatedBy": "admin",
-  "Id": "PMI2003-80001121",
-  "CreatedDate": "2016-10-27T11:28:01.6950793+08:00",
+  "Id": "PMI2001-80001121",
+  "CreatedDate": "2017-02-13T13:04:35.3851573+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-10-27T11:28:01.6950793+08:00",
-  "WebId": "fcc80999-1e3b-44ae-9c99-6b6846b13e3b"
+  "ChangedDate": "2017-02-13T13:04:35.3695199+08:00",
+  "WebId": "3c8ccc09-b3dc-4338-aa3a-63f4b86f6060"
 }

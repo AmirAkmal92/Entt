@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PMI2006",
+  "Name": "Parcel International Box / PPT - 20KG",
+  "SocCode": "81000020",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PMI2006-81000020",
+  "CreatedDate": "2017-02-13T13:21:08.9154818+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T13:21:08.8998628+08:00",
+  "WebId": "96ec02af-ab64-4a8d-fdfc-bc9ac304b837"
+}

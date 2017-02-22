@@ -1,12 +1,12 @@
 {
   "$type": "Bespoke.PosEntt.ItemCategories.Domain.ItemCategory, PosEntt.ItemCategory",
   "Code": "04",
-  "Name": "Motorbike",
-  "SnbSequence": 3,
+  "Name": "Credit Card",
+  "SnbSequence": 4,
   "CreatedBy": "admin",
   "Id": "04",
-  "CreatedDate": "2016-12-28T10:00:02.2707944+08:00",
+  "CreatedDate": "2017-02-06T17:33:23.5030209+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-28T10:00:02.2908474+08:00",
-  "WebId": "ab615ffa-581d-4d47-cb45-01de22419f47"
+  "ChangedDate": "2017-02-06T17:33:23.5342659+08:00",
+  "WebId": "032059c5-5b1a-403c-8095-fc6def30624f"
 }

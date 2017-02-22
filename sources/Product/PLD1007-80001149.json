@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1007",
+  "Name": "HAMPER",
+  "SocCode": "80001149",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1007-80001149",
+  "CreatedDate": "2017-02-13T12:39:42.2693011+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:39:42.2536765+08:00",
+  "WebId": "5f645415-ab7a-46a4-b550-d85dc8be98d2"
+}

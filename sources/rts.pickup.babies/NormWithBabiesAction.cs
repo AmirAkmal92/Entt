@@ -506,6 +506,10 @@ namespace Bespoke.PosEntt.CustomActions
                 child.consignment_no = item;
                 child.data_flag = "1";
                 child.item_type_code = console ? "02" : "01";
+                if (child.dateCreatedOALDateField.HasValue && child.dateCreatedOALDateField.Value < new DateTime(1753, 1, 1))
+                {
+                    child.dateCreatedOALDateField = null;
+                }
                 vasnItems.Add(child);
             }
             foreach (var item in vasnItems)
@@ -603,6 +607,8 @@ namespace Bespoke.PosEntt.CustomActions
             var hops = new List<Adapters.Oal.dbo_hop_event_new>();
             foreach (var item in itemList)
             {
+                if (null == item) continue;
+                if(null == hop) continue;;
                 var console = IsConsole(item);
                 var child = hop.Clone();
                 child.id = GenerateId(34);

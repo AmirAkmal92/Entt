@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1006",
+  "Name": "Econfast",
+  "SocCode": "80001198",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1006-80001198",
+  "CreatedDate": "2017-02-13T12:58:51.9269371+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:58:51.9269371+08:00",
+  "WebId": "c64e483a-4100-47cc-997f-deee58bed47e"
+}

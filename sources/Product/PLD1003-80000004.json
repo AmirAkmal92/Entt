@@ -1,0 +1,13 @@
+{
+  "$type": "Bespoke.PosEntt.Products.Domain.Product, PosEntt.Product",
+  "Code": "PLD1003",
+  "Name": "Putrajaya Express",
+  "SocCode": "80000004",
+  "ParentCode": null,
+  "CreatedBy": "admin",
+  "Id": "PLD1003-80000004",
+  "CreatedDate": "2017-02-13T12:52:03.3896351+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-02-13T12:52:03.3896351+08:00",
+  "WebId": "c6b62f6d-49de-43b2-fb6e-697f86dcfbd0"
+}
