@@ -21,55 +21,29 @@ namespace Bespoke.PosEntt.ReceiveLocations
         private bool m_paused;
 
 
-
         private async void PollVasnTableFired(object stateInfo)
         {
             if (m_paused) return;
 
-            //TODO : get the file name
-            var file = "TODO : get the file name" + DateTime.Now;
-
             var logger = new LocationLogger();
-            var port = new RtsVasn(logger) { Uri = new Uri(file) };
-
-            var fileInfo = new FileInfo(file);
-            port.AddHeader("CreationTime", $"{fileInfo.CreationTime:s}");
-            port.AddHeader("DirectoryName", fileInfo.DirectoryName);
-            port.AddHeader("Exists", $"{fileInfo.Exists}");
-            port.AddHeader("Length", $"{fileInfo.Length}");
-            port.AddHeader("Extension", fileInfo.Extension);
-            port.AddHeader("Attributes", $"{fileInfo.Attributes}");
-            port.AddHeader("FullName", fileInfo.FullName);
-            port.AddHeader("Name", fileInfo.Name);
-            port.AddHeader("LastWriteTime", $"{fileInfo.LastWriteTime:s}");
-            port.AddHeader("LastAccessTime", $"{fileInfo.LastAccessTime:s}");
-            port.AddHeader("IsReadOnly", $"{fileInfo.IsReadOnly}");
-            port.AddHeader("Rx:ApplicationName", "PosEntt");
-            port.AddHeader("Rx:LocationName", nameof(VanScanSqlReceiveLocation));
-            port.AddHeader("Rx:Type", "FolderReceiveLocation");
-            port.AddHeader("Rx:MachineName", Environment.GetEnvironmentVariable("COMPUTERNAME"));
-            port.AddHeader("Rx:UserName", Environment.GetEnvironmentVariable("USERNAME"));
-            
-
             var number = 0;
             var records = await ReadVasnAsync();
-
-            var engine = new FileHelperEngine<Vasn>();
+            
             foreach (var r in records)
             {
                 number++;
                 if (null == r) continue; // we got an exception reading the record
 
                 // polly policy goes here
-                var retry = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(RtsVasn)}Retry", 3);
-                var interval = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(RtsVasn)}Internal", 100);
+                var retry = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(Vasn)}Retry", 3);
+                var interval = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(Vasn)}Internal", 100);
 
                 var pr = await Policy.Handle<Exception>()
                                     .WaitAndRetryAsync(retry, c => TimeSpan.FromMilliseconds(interval * Math.Pow(2, c)))
                                     .ExecuteAndCaptureAsync(() =>
                     {
 
-                        var text = engine.WriteString(new []{r});
+                        var text = r.ToString();
                         var request = new StringContent(text);
                         request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
                         return m_client.PostAsync("/api/rts/vasn", request);
@@ -82,26 +56,25 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 }
                 var response = pr.Result;
                 Console.Write($"\r{number} : {response.StatusCode}\t");
-                logger.Log(new LogEntry { Message = $"Record: {number}({r.ScannerId}) , StatusCode: {(int)response.StatusCode}", Severity = Severity.Debug });
+                logger.Log(new LogEntry { Message = $"Record: {number}({r.id}) , StatusCode: {(int)response.StatusCode}", Severity = Severity.Debug });
 
                 if (!response.IsSuccessStatusCode)
                 {
                     var warn = new LogEntry
                     {
-                        Message = $"Non success status code record {number}({r.ScannerId}), StatusCode: {(int)response.StatusCode}",
-                        Severity = Severity.Warning,
-                        Details = $"{fileInfo.FullName}:{number}({r.ScannerId})"
+                        Message = $"Non success status code record {number}({r.id}), StatusCode: {(int)response.StatusCode}",
+                        Severity = Severity.Warning
                     };
                     logger.Log(warn);
                 }
                 else
                 {
-                    // TODO : delete the row in vasn
+                    await DeleteVasnRowAsync(r);
                 }
             }
 
             Console.WriteLine();
-            logger.Log(new LogEntry { Message = $"Done processing {file} with {number} record(s)", Severity = Severity.Info });
+            logger.Log(new LogEntry { Message = $"Done processing with {number} record(s)", Severity = Severity.Info });
 
         }
 
@@ -110,9 +83,9 @@ namespace Bespoke.PosEntt.ReceiveLocations
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
             using (var cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
             {
-                cmd.Parameters.Add("@Id", SqlDbType.Int, 4).Value = item.Id;
+                cmd.Parameters.Add("@id", SqlDbType.Int, 4).Value = item.id;
                 await conn.OpenAsync().ConfigureAwait(false);
-                
+
             }
         }
         private async Task<IEnumerable<Vasn>> ReadVasnAsync()
@@ -160,11 +133,11 @@ namespace Bespoke.PosEntt.ReceiveLocations
         {
 
             var token = ConfigurationManager.GetEnvironmentVariable("SowRtsJwtToken");
-            var dueTime = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsDueTime", 1000);
-            var period = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsPeriod", 5 * 60 * 100);
+            var dueTime = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsDueTime", 10 * 1000);
+            var period = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsPeriod", 5 * 60 * 1000);
             m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.BaseUrl) };
             m_client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-            
+
             var flag = new AutoResetEvent(false);
             m_timer = new Timer(PollVasnTableFired, flag, dueTime, period);
 

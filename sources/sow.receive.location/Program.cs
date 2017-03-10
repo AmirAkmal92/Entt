@@ -7,8 +7,6 @@ namespace Bespoke.PosEntt.ReceiveLocations
     public class Program
     {
 
-
-
         public static void Main(string[] args)
         {
             HostFactory.Run(config =>
