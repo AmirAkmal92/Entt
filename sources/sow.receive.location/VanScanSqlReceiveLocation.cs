@@ -1,30 +1,36 @@
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using Bespoke.Sph.Domain;
 using System.IO;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
+using Bespoke.PosEntt.ReceivePorts;
+using Dapper;
+using FileHelpers;
 using Polly;
 
 namespace Bespoke.PosEntt.ReceiveLocations
 {
     public class VanScanSqlReceiveLocation : IReceiveLocation, IDisposable
     {
-        private FileSystemWatcher m_watcher;
+        private Timer m_timer;
         private HttpClient m_client;
         private bool m_paused;
 
 
 
-        private async void FswChanged(object sender, FileSystemEventArgs e)
+        private async void PollVasnTableFired(object stateInfo)
         {
             if (m_paused) return;
 
-            var file = e.FullPath;
-            var wip = file + ".wip";
-            await WaitReadyAsync(file);
+            //TODO : get the file name
+            var file = "TODO : get the file name" + DateTime.Now;
 
             var logger = new LocationLogger();
-            var port = new Bespoke.PosEntt.ReceivePorts.RtsVasn(logger) { Uri = new Uri(file) };
+            var port = new RtsVasn(logger) { Uri = new Uri(file) };
 
             var fileInfo = new FileInfo(file);
             port.AddHeader("CreationTime", $"{fileInfo.CreationTime:s}");
@@ -43,34 +49,30 @@ namespace Bespoke.PosEntt.ReceiveLocations
             port.AddHeader("Rx:Type", "FolderReceiveLocation");
             port.AddHeader("Rx:MachineName", Environment.GetEnvironmentVariable("COMPUTERNAME"));
             port.AddHeader("Rx:UserName", Environment.GetEnvironmentVariable("USERNAME"));
-
-
-
-            File.Move(file, wip);
-            await WaitReadyAsync(wip);
-            await Task.Delay(100);
             
+
             var number = 0;
-            var lines = File.ReadLines(wip);
-            var records = port.Process(lines);
-            // now post it to the server
-            Console.WriteLine($"Reading file {file}");
+            var records = await ReadVasnAsync();
+
+            var engine = new FileHelperEngine<Vasn>();
             foreach (var r in records)
             {
                 number++;
                 if (null == r) continue; // we got an exception reading the record
 
                 // polly policy goes here
-                var retry = ConfigurationManager.GetEnvironmentVariableInt32("IposDepositFileDrop", 3);
-                var interval = ConfigurationManager.GetEnvironmentVariableInt32("IposDepositFileDrop", 100);
+                var retry = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(RtsVasn)}Retry", 3);
+                var interval = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(RtsVasn)}Internal", 100);
 
                 var pr = await Policy.Handle<Exception>()
                                     .WaitAndRetryAsync(retry, c => TimeSpan.FromMilliseconds(interval * Math.Pow(2, c)))
                                     .ExecuteAndCaptureAsync(() =>
                     {
-                        var request = new StringContent(r.ToJson());
-                        request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                        return m_client.PostAsync("/api/ipos-deposit-payments/", request);
+
+                        var text = engine.WriteString(new []{r});
+                        var request = new StringContent(text);
+                        request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
+                        return m_client.PostAsync("/api/rts/vasn", request);
                     });
 
                 if (null != pr.FinalException)
@@ -80,30 +82,46 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 }
                 var response = pr.Result;
                 Console.Write($"\r{number} : {response.StatusCode}\t");
-                logger.Log(new LogEntry { Message = $"Record: {number}({r.Sequence}) , StatusCode: {(int)response.StatusCode}", Severity = Severity.Debug });
+                logger.Log(new LogEntry { Message = $"Record: {number}({r.ScannerId}) , StatusCode: {(int)response.StatusCode}", Severity = Severity.Debug });
 
                 if (!response.IsSuccessStatusCode)
                 {
                     var warn = new LogEntry
                     {
-                        Message = $"Non success status code record {number}({r.Sequence}), StatusCode: {(int)response.StatusCode}",
+                        Message = $"Non success status code record {number}({r.ScannerId}), StatusCode: {(int)response.StatusCode}",
                         Severity = Severity.Warning,
-                        Details = $"{fileInfo.FullName}:{number}({r.Sequence})"
+                        Details = $"{fileInfo.FullName}:{number}({r.ScannerId})"
                     };
-                    logger.Log(warn);     
+                    logger.Log(warn);
+                }
+                else
+                {
+                    // TODO : delete the row in vasn
                 }
             }
-
 
             Console.WriteLine();
             logger.Log(new LogEntry { Message = $"Done processing {file} with {number} record(s)", Severity = Severity.Info });
 
-            var archivedFolder = ConfigurationManager.GetEnvironmentVariable(nameof(VanScanSqlReceiveLocation) + "ArchiveLocation");
-            if (!string.IsNullOrWhiteSpace(archivedFolder) && Directory.Exists(archivedFolder))
-                File.Move(wip, Path.Combine(archivedFolder, Path.GetFileName(file)));
-            else
-                File.Delete(wip);
+        }
 
+        private async Task DeleteVasnRowAsync(Vasn item)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            using (var cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
+            {
+                cmd.Parameters.Add("@Id", SqlDbType.Int, 4).Value = item.Id;
+                await conn.OpenAsync().ConfigureAwait(false);
+                
+            }
+        }
+        private async Task<IEnumerable<Vasn>> ReadVasnAsync()
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            {
+                await conn.OpenAsync().ConfigureAwait(false);
+                return await conn.QueryAsync<Vasn>("SELECT TOP 100 from dbo.Vasn");
+            }
         }
 
 
@@ -141,13 +159,14 @@ namespace Bespoke.PosEntt.ReceiveLocations
         public bool Start()
         {
 
-            var token = ConfigurationManager.GetEnvironmentVariable("IposDepositFileDrop_JwtToken") ?? @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImRldmVsb3BlcnMiXSwiZW1haWwiOjE0ODMxNDI0MDAsInN1YiI6ImQ2MTc0NmUwLTdhZmMtNDhjYS04OTVmLWQzZDAzOWQ4ZDI4MSIsIm5iZiI6MTQ5MDUwMzE1MiwiaWF0IjoxNDc0ODY0NzUyLCJleHAiOjE0ODMxNDI0MDAsImF1ZCI6IkRldlYxIn0.50WRticwNzLXL3sHdJsBsdhulOQqhPJlYATxm-amFfw";
+            var token = ConfigurationManager.GetEnvironmentVariable("SowRtsJwtToken");
+            var dueTime = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsDueTime", 1000);
+            var period = ConfigurationManager.GetEnvironmentVariableInt32("SowRtsPeriod", 5 * 60 * 100);
             m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.BaseUrl) };
             m_client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-            var path = ConfigurationManager.GetEnvironmentVariable("IposDepositFileDrop_Path") ?? @"D:\temp\ipos-deposit-drop";
-            m_watcher = new FileSystemWatcher(path, @"ipos_dep_*.txt") { EnableRaisingEvents = true };
-            m_watcher.Created += FswChanged;
+            
+            var flag = new AutoResetEvent(false);
+            m_timer = new Timer(PollVasnTableFired, flag, dueTime, period);
 
             return true;
 
@@ -160,8 +179,8 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
         public void Dispose()
         {
-            m_watcher?.Dispose();
-            m_watcher = null;
+            m_timer?.Dispose();
+            m_timer = null;
             m_client?.Dispose();
             m_client = null;
         }
