@@ -80,8 +80,9 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
         private async Task DeleteVasnRowAsync(Vasn item)
         {
-            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            using (var cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
+            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
             {
                 cmd.Parameters.Add("@id", SqlDbType.Int, 4).Value = item.id;
                 await conn.OpenAsync().ConfigureAwait(false);
@@ -90,10 +91,12 @@ namespace Bespoke.PosEntt.ReceiveLocations
         }
         private async Task<IEnumerable<Vasn>> ReadVasnAsync()
         {
-            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
+
             {
                 await conn.OpenAsync().ConfigureAwait(false);
-                return await conn.QueryAsync<Vasn>("SELECT TOP 100 from dbo.Vasn");
+                return await conn.QueryAsync<Vasn>("SELECT TOP 5 from [dbo].[vasn] WHERE [status] = '0'");
             }
         }
 
