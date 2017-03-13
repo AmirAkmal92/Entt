@@ -11,6 +11,7 @@ using Bespoke.PosEntt.ReceivePorts;
 using Dapper;
 using FileHelpers;
 using Polly;
+using System.Linq;
 
 namespace Bespoke.PosEntt.ReceiveLocations
 {
@@ -25,14 +26,19 @@ namespace Bespoke.PosEntt.ReceiveLocations
         {
             if (m_paused) return;
 
+            Console.WriteLine("now running vasn...");
             var logger = new LocationLogger();
             var number = 0;
             var records = await ReadVasnAsync();
+            Console.WriteLine("Found: {0} records", records.ToList().Count);
             
             foreach (var r in records)
             {
                 number++;
                 if (null == r) continue; // we got an exception reading the record
+
+                //sow_vasn_<locationid>_<date>-<time>_<linecount>_<staffid>
+                var filename = string.Format("sow_vasn_{0}_{1}_{2}_{3}", r.location_id, r.date_time.ToString("yyyyMMdd-HHmm"),1,r.courier_id);
 
                 // polly policy goes here
                 var retry = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(Vasn)}Retry", 3);
@@ -45,6 +51,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
                         var text = r.ToString();
                         var request = new StringContent(text);
+                        request.Headers.Add("X-Name", filename);
                         request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
                         return m_client.PostAsync("/api/rts/vasn", request);
                     });
@@ -55,7 +62,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
                     continue;
                 }
                 var response = pr.Result;
-                Console.Write($"\r{number} : {response.StatusCode}\t");
+                Console.WriteLine($"\t{r.consignment_no} : {response.StatusCode}\t");
                 logger.Log(new LogEntry { Message = $"Record: {number}({r.id}) , StatusCode: {(int)response.StatusCode}", Severity = Severity.Debug });
 
                 if (!response.IsSuccessStatusCode)
@@ -80,8 +87,8 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
         private async Task DeleteVasnRowAsync(Vasn item)
         {
-            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
             using (SqlCommand cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
             {
                 cmd.Parameters.Add("@id", SqlDbType.Int, 4).Value = item.id;
@@ -91,12 +98,12 @@ namespace Bespoke.PosEntt.ReceiveLocations
         }
         private async Task<IEnumerable<Vasn>> ReadVasnAsync()
         {
-            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
 
             {
                 await conn.OpenAsync().ConfigureAwait(false);
-                return await conn.QueryAsync<Vasn>("SELECT TOP 5 from [dbo].[vasn] WHERE [status] = '0'");
+                return await conn.QueryAsync<Vasn>("SELECT TOP 5 * FROM [dbo].[vasn] WHERE [status] = '0'");
             }
         }
 
