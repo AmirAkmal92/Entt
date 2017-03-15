@@ -53,6 +53,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
                         var request = new StringContent(text);
                         request.Headers.Add("X-Name", filename);
                         request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
+                        request.Headers.Add("Source", "sow");
                         return m_client.PostAsync("/api/rts/vasn", request);
                     });
 
