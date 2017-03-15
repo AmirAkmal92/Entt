@@ -9,7 +9,7 @@ namespace Bespoke.PosEntt.ReceivePorts
     public class Vasn
     {
         // TODO : the list of properties must follow the Vasn table schema
-        public int id { get; set; }
+        public string id { get; set; }
 
         public int version { get; set; }
         

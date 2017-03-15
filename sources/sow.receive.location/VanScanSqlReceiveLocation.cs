@@ -85,6 +85,73 @@ namespace Bespoke.PosEntt.ReceiveLocations
 
         }
 
+        public async Task<int> InsertAsync(Vasn item)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
+            using (var cmd = new SqlCommand(@"INSERT INTO [dbo].[vasn_log] ([id],
+	        [beat_no],
+            [consignment_no],
+            [courier_id],
+            [data_entry_beat_no],
+            [data_entry_location_id],
+            [data_entry_staff_id],
+            [date_created],
+            [date_created_ori],
+            [date_generated],
+            [date_time],
+            [filename],
+            [last_updated],
+            [location_id],
+            [status],
+            [van_item_type_code],
+            [van_sender_name],
+	            [version]
+                )
+                VALUES(
+                @id,
+	            @beat_no,
+                @consignment_no,
+                @courier_id,
+                @data_entry_beat_no,
+                @data_entry_location_id,
+                @data_entry_staff_id,
+                @date_created,
+                @date_created_ori,
+                @date_generated,
+                @date_time,
+                @filename,
+                @last_updated,
+                @location_id,
+                @status,
+                @van_item_type_code,
+                @van_sender_name,
+	            @version
+            )", conn))
+            {
+                await conn.OpenAsync();
+                cmd.Parameters.Add("@id", SqlDbType.Int, 19).Value = item.id;
+                cmd.Parameters.Add("@beat_no", SqlDbType.VarChar, 3).Value = item.beat_no;
+                cmd.Parameters.Add("@courier_id", SqlDbType.VarChar, 255).Value = item.courier_id;
+                cmd.Parameters.Add("data_entry_location_id", SqlDbType.VarChar, 4).Value = item.data_entry_location_id;
+                cmd.Parameters.Add("@data_entry_staff_id", SqlDbType.VarChar, 255).Value = item.data_entry_staff_id;
+                cmd.Parameters.Add("@date_created", SqlDbType.DateTime, 8).Value = item.date_created;
+                cmd.Parameters.Add("@date_time", SqlDbType.DateTime, 8).Value = item.date_time;
+                cmd.Parameters.Add("@date_created_ori", SqlDbType.DateTime, 8).Value = item.date_created_ori;
+                cmd.Parameters.Add("@date_generated", SqlDbType.DateTime, 8).Value = item.date_generated;
+                cmd.Parameters.Add("@last_updated", SqlDbType.DateTime, 8).Value = item.last_updated;
+                cmd.Parameters.Add("@filename", SqlDbType.VarChar, 255).Value = item.filename;
+                cmd.Parameters.Add("@location_id", SqlDbType.VarChar, 4).Value = item.location_id;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar, 255).Value = item.status;
+                cmd.Parameters.Add("@data_entry_beat_no", SqlDbType.VarChar, 3).Value = item.data_entry_beat_no;
+                cmd.Parameters.Add("@consignment_no", SqlDbType.VarChar, 40).Value = item.consignment_no;
+                cmd.Parameters.Add("@van_item_type_code", SqlDbType.VarChar, 255).Value = item.van_item_type_code;
+                cmd.Parameters.Add("@van_sender_name", SqlDbType.VarChar, 255).Value = item.van_sender_name;
+                cmd.Parameters.Add("@version", SqlDbType.Int, 19).Value = item.version;
+                return await cmd.ExecuteNonQueryAsync();
+            }
+        }
+
+
         private async Task DeleteVasnRowAsync(Vasn item)
         {
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
