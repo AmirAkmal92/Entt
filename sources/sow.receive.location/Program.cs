@@ -29,14 +29,22 @@ namespace Bespoke.PosEntt.ReceiveLocations
                         Console.WriteLine(i);
                     });
                 });
-                config.SetServiceName("RxSqlDropLocation" + nameof(VanScanSqlReceiveLocation));
-                config.SetDisplayName("Rx Receive Location " + nameof(VanScanSqlReceiveLocation));
-                config.SetDescription("Rx Developer receive location for " + nameof(VanScanSqlReceiveLocation));
+
+                var instanceName = args.ParseArg("v");
+                if (string.IsNullOrWhiteSpace(instanceName))
+                    throw new ArgumentException("Please provide /v:<instance-name> when installing the service", nameof(args));
+
+                config.SetServiceName($"RxSqlDropLocation{instanceName}");
+                config.SetDisplayName($"Rx Receive Location {instanceName}");
+                config.SetDescription($"Rx Developer receive location for {instanceName}");
 
                 config.StartAutomatically();
             });
 
         }
+
+  
+
 
     }
 }
