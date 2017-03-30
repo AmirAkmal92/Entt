@@ -38,7 +38,8 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 if (null == r) continue; // we got an exception reading the record
 
                 //sow_vasn_<locationid>_<date>-<time>_<linecount>_<staffid>
-                var filename = string.Format("sow_vasn_{0}_{1}_{2}_{3}", r.location_id, r.date_time.ToString("yyyyMMdd-HHmm"),1,r.courier_id);
+                var filename = string.Format("sow_vasn_{0}_{1}_{2}_{3}.txt", r.location_id, r.date_time.ToString("yyyyMMdd-HHmm"),1,r.courier_id);
+                r.filename = filename;
 
                 // polly policy goes here
                 var retry = ConfigurationManager.GetEnvironmentVariableInt32($"{nameof(Vasn)}Retry", 3);
@@ -52,6 +53,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
                         var text = r.ToString();
                         var request = new StringContent(text);
                         request.Headers.Add("X-Name", filename);
+                        request.Headers.Add("Name", filename);
                         request.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
                         request.Headers.Add("Source", "sow");
                         return m_client.PostAsync("/api/rts/vasn", request);
@@ -77,6 +79,8 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 }
                 else
                 {
+                    await InsertAsync(r);
+
                     await DeleteVasnRowAsync(r);
                 }
             }
@@ -89,7 +93,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
         public async Task<int> InsertAsync(Vasn item)
         {
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            using (var cmd = new SqlCommand(@"INSERT INTO [dbo].[vasn_log] ([id],
+            using (var cmd = new SqlCommand(@"INSERT INTO [dbo].[vasn_log] (
 	        [beat_no],
             [consignment_no],
             [courier_id],
@@ -109,8 +113,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
 	            [version]
                 )
                 VALUES(
-                @id,
-	            @beat_no,
+               @beat_no,
                 @consignment_no,
                 @courier_id,
                 @data_entry_beat_no,
@@ -130,15 +133,14 @@ namespace Bespoke.PosEntt.ReceiveLocations
             )", conn))
             {
                 await conn.OpenAsync();
-                cmd.Parameters.Add("@id", SqlDbType.Int, 19).Value = item.id;
-                cmd.Parameters.Add("@beat_no", SqlDbType.VarChar, 3).Value = item.beat_no;
+               cmd.Parameters.Add("@beat_no", SqlDbType.VarChar, 3).Value = item.beat_no;
                 cmd.Parameters.Add("@courier_id", SqlDbType.VarChar, 255).Value = item.courier_id;
                 cmd.Parameters.Add("data_entry_location_id", SqlDbType.VarChar, 4).Value = item.data_entry_location_id;
                 cmd.Parameters.Add("@data_entry_staff_id", SqlDbType.VarChar, 255).Value = item.data_entry_staff_id;
-                cmd.Parameters.Add("@date_created", SqlDbType.DateTime, 8).Value = item.date_created;
+                cmd.Parameters.Add("@date_created", SqlDbType.DateTime, 8).Value = DateTime.Now;
                 cmd.Parameters.Add("@date_time", SqlDbType.DateTime, 8).Value = item.date_time;
-                cmd.Parameters.Add("@date_created_ori", SqlDbType.DateTime, 8).Value = item.date_created_ori;
-                cmd.Parameters.Add("@date_generated", SqlDbType.DateTime, 8).Value = item.date_generated;
+                cmd.Parameters.Add("@date_created_ori", SqlDbType.DateTime, 8).Value = item.date_created;
+                cmd.Parameters.Add("@date_generated", SqlDbType.DateTime, 8).Value = DateTime.Now;
                 cmd.Parameters.Add("@last_updated", SqlDbType.DateTime, 8).Value = item.last_updated;
                 cmd.Parameters.Add("@filename", SqlDbType.VarChar, 255).Value = item.filename;
                 cmd.Parameters.Add("@location_id", SqlDbType.VarChar, 4).Value = item.location_id;
@@ -153,22 +155,21 @@ namespace Bespoke.PosEntt.ReceiveLocations
         }
 
 
-        private async Task DeleteVasnRowAsync(Vasn item)
+        private async Task<int> DeleteVasnRowAsync(Vasn item)
         {
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
             using (SqlCommand cmd = new SqlCommand("DELETE FROM dbo.Vasn WHERE Id=@Id", conn))
             {
                 cmd.Parameters.Add("@id", SqlDbType.Int, 4).Value = item.id;
                 await conn.OpenAsync().ConfigureAwait(false);
+                return await cmd.ExecuteNonQueryAsync();
 
             }
         }
         private async Task<IEnumerable<Vasn>> ReadVasnAsync()
         {
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            //using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("ConnectionString")))
-
+            
             {
                 await conn.OpenAsync().ConfigureAwait(false);
                 return await conn.QueryAsync<Vasn>("SELECT TOP 5 * FROM [dbo].[vasn] WHERE [status] = '0'");
