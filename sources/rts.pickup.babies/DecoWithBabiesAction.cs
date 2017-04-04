@@ -303,11 +303,11 @@ namespace Bespoke.PosEntt.CustomActions
                     break;
             }
 
-            if (ok)
-            {
+            //if (ok)
+            //{
                 var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
                 await pendingAdapter.DeleteAsync(pending.id);
-            }
+            //}
         }
 
         private async Task ProcessDeliveryPendingItem(string deliEventId, string[] itemList)
@@ -322,6 +322,8 @@ namespace Bespoke.PosEntt.CustomActions
                 throw new Exception("Process Deli Pending Polly Error", deliPendingPolly.FinalException);
 
             var deli = deliPendingPolly.Result;
+            if (null == deli) return;
+
             var deliItems = new List<Adapters.Oal.dbo_delivery_event_new>();
             var ipsItems = new List<Adapters.Oal.dbo_ips_import>();
 
@@ -375,7 +377,7 @@ namespace Bespoke.PosEntt.CustomActions
                 item_id = consignmentNo,
                 class_cd = GetClassCode(consignmentNo),
                 status = "1",
-                user_fid = deli.courier_id,
+                user_fid = deli.courier_id.Length >= 5 ?  deli.courier_id.Substring(0,5) : deli.courier_id,
                 event_date_local_date_field = deli.date_field,
                 event_date_g_m_t_date_field = (deli.date_field ?? DateTime.Now).AddHours(-8),
                 postal_status_fcd = "MINL",
@@ -389,6 +391,10 @@ namespace Bespoke.PosEntt.CustomActions
             };
             var signatories = new[] { "01", "10", "11" };
             if (signatories.Contains(deli.delivery_code)) ips.signatory_nm = deli.receipent_name;
+            if (null != ips.signatory_nm && ips.signatory_nm.Length > 30)
+            {
+                ips.signatory_nm = ips.signatory_nm.Substring(0, 35);
+            }
 
             var consignmentInitialPolly = await Policy.Handle<SqlException>()
                 .WaitAndRetryAsync(RetryCount, WaitInterval)
@@ -668,6 +674,8 @@ namespace Bespoke.PosEntt.CustomActions
                 throw new Exception("Wwp Pending Polly Error", wwpPolly.FinalException);
 
             var wwp = wwpPolly.Result;
+            if (null == wwp) return;
+
             var wwpItems = new List<Adapters.Oal.dbo_wwp_event_new_log>();
             foreach (var item in itemList)
             {
