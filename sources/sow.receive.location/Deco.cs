@@ -50,7 +50,7 @@ namespace Bespoke.PosEntt.ReceivePorts
             //       $"{(string.IsNullOrEmpty(CodAccount) ? "-" : CodAccount)}\t" +
             //       $"{(string.IsNullOrEmpty(CodAmount) ? "-" : CodAmount)}";-	-
 
-            return $"{courier_id}\t{location_id}\t{beat_no}\t{date_time:ddMMyyyy}\t{date_time:HHmmss}\t{console_no}\t{comment}\t{all_connotes}\t{0}";
+            return $"{courier_id}\t{location_id}\t{beat_no}\t{date_time:ddMMyyyy}\t{date_time:HHmmss}\t{console_no}\t{comment}\t{all_connotes}\t{"-"}";
 
 
         }
