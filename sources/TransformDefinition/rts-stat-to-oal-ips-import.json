@@ -477,7 +477,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"24\";\r\n  case \"06\": return \"24\";\r\n  case \"08\": return \"24\";\r\n  case \"10\": return \"18\";\r\n  case \"11\": return \"17\";\r\n  case \"12\": return \"53\";\r\n  case \"13\": return \"12\";\r\n  case \"14\": return \"29\";\r\n  case \"15\": return \"16\";\r\n  case \"16\": return \"16\";\r\n  case \"17\": return \"99\";\r\n  case \"18\": return \"22\";\r\n  case \"19\": return \"18\";\r\n  case \"25\": return \"21\";\r\n  case \"34\": return \"14\";\r\n  case \"41\": return \"29\";\r\n  case \"42\": return \"29\";\r\n  \r\n}\r\n\r\nreturn null;",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"24\";\r\n  case \"06\": return \"24\";\r\n  case \"08\": return \"24\";\r\n  case \"10\": return \"18\";\r\n  case \"11\": return \"17\";\r\n  case \"12\": return \"53\";\r\n  case \"13\": return \"12\";\r\n  case \"15\": return \"16\";\r\n  case \"16\": return \"16\";\r\n  case \"17\": return \"99\";\r\n  case \"18\": return \"22\";\r\n  case \"19\": return \"18\";\r\n  case \"25\": return \"21\";\r\n  case \"34\": return \"14\";\r\n  case \"41\": return \"29\";\r\n  case \"42\": return \"29\";\r\n  \r\n}\r\n\r\nreturn null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -492,7 +492,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"A\";\r\n  case \"06\": return \"A\";\r\n  case \"08\": return \"A\";\r\n  case \"10\": return \"A\";\r\n  case \"11\": return \"F\";\r\n  case \"12\": return \"E\";\r\n  case \"13\": return \"C\";\r\n  case \"14\": return \"F\";\r\n  case \"15\": return \"B\";\r\n  case \"16\": return \"B\";\r\n  case \"17\": return \"K\";\r\n  case \"18\": return \"K\";\r\n  case \"19\": return \"C\";\r\n  case \"25\": return \"C\";\r\n  case \"34\": return \"L\";\r\n  case \"41\": return \"F\";\r\n  case \"42\": return \"F\";\r\n  \r\n}\r\n\r\nreturn null;",
+        "Expression": "switch (item.StatusCode)\r\n{\r\n  case \"05\": return \"A\";\r\n  case \"06\": return \"A\";\r\n  case \"08\": return \"A\";\r\n  case \"10\": return \"A\";\r\n  case \"11\": return \"F\";\r\n  case \"12\": return \"E\";\r\n  case \"13\": return \"C\";\r\n  case \"15\": return \"B\";\r\n  case \"16\": return \"B\";\r\n  case \"17\": return \"K\";\r\n  case \"18\": return \"K\";\r\n  case \"19\": return \"C\";\r\n  case \"25\": return \"C\";\r\n  case \"34\": return \"L\";\r\n  case \"41\": return \"F\";\r\n  case \"42\": return \"F\";\r\n  \r\n}\r\n\r\nreturn null;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -611,6 +611,6 @@
   "Id": "rts-stat-to-oal-ips-import",
   "CreatedDate": "2016-10-20T09:47:44.9953594+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-04-04T09:58:11.6601588+08:00",
+  "ChangedDate": "2017-04-04T10:10:43.9091924+08:00",
   "WebId": "1edcdd3c-a83a-4a20-a52b-54ce672ba1a3"
 }
