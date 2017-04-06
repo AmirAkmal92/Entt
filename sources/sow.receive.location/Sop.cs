@@ -6,30 +6,20 @@ using Newtonsoft.Json;
 namespace Bespoke.PosEntt.ReceivePorts
 {
     [DelimitedRecord("	")]
-    public class Norm
+    public class Sop
     {
         // TODO : the list of properties must follow the Vasn table schema
         public int id { get; set; }
 
         public int version { get; set; }
-        
-        public string all_connotes { get; set; }
-        
+
         public string beat_no { get; set; }
+        
+        public string consignment_no { get; set; }
 
         public string comment { get; set; }
 
-        public string console_no { get; set; }
-
-        public string console_type_code { get; set; }
-
         public string courier_id { get; set; }
-
-        public DateTime date_created { get; set; }
-
-        public DateTime date_time { get; set; }
-
-        public DateTime last_updated { get; set; }
 
         public string data_entry_beat_no { get; set; }
 
@@ -37,18 +27,25 @@ namespace Bespoke.PosEntt.ReceivePorts
 
         public string data_entry_staff_id { get; set; }
 
+        public DateTime date_created { get; set; }
+
+        public DateTime date_time { get; set; }
+
+        public DateTime last_updated { get; set; }
+
         public string location_id { get; set; }
 
         public string next_location { get; set; }
 
-        public string other_console_type { get; set; }
-
-        public string status { get; set; }
-
         public string routing_code { get; set; }
 
+        public string status { get; set; }
+        
         public string filename { get; set; }
 
+        public string pejabat_asal { get; set; }
+
+        public string berat { get; set; }
 
         // the ToString(), kena ikut vasn event untuk RTS api
         public override string ToString()
@@ -58,8 +55,7 @@ namespace Bespoke.PosEntt.ReceivePorts
             //       $"{(string.IsNullOrEmpty(CodAccount) ? "-" : CodAccount)}\t" +
             //       $"{(string.IsNullOrEmpty(CodAmount) ? "-" : CodAmount)}";-	-
 
-            return $"{courier_id}\t{location_id}\t{beat_no}\t{date_time:ddMMyyyy}\t{date_time:HHmmss}\t{console_no}\t{console_type_code}\t"
-                   + $"{other_console_type}\t{next_location}\t{comment}\t{all_connotes}\t{routing_code}\t{"-"}";
+            return $"{courier_id}\t{location_id}\t{beat_no}\t{date_time:ddMMyyyy}\t{date_time:HHmmss}\t{"-"}\t{consignment_no}\t{"-"}\t{comment}";
 
 
         }

@@ -89,7 +89,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
         public async Task<int> InsertAsync(Norm item)
         {
             using (var conn = new SqlConnection(ConfigurationManager.GetEnvironmentVariable("OalConnectionString")))
-            using (var cmd = new SqlCommand(@"INSERT INTO [dbo].[Norm_log] ([id],
+            using (var cmd = new SqlCommand(@"INSERT INTO [dbo].[Norm_log] (
                        [version],
                        [beat_no],
                        [comment],
@@ -113,7 +113,6 @@ namespace Bespoke.PosEntt.ReceiveLocations
                        [all_connotes]
                 )
                 VALUES(
-                       @id,
                        @version,
                        @beat_no,
                        @comment,
@@ -138,13 +137,14 @@ namespace Bespoke.PosEntt.ReceiveLocations
             )", conn))
             {
                 await conn.OpenAsync();
-                cmd.Parameters.Add("@id", SqlDbType.Int, 19).Value = item.id;
                 cmd.Parameters.Add("@beat_no", SqlDbType.VarChar, 3).Value = item.beat_no;
                 cmd.Parameters.Add("@comment", SqlDbType.VarChar, 255).Value = item.comment;
                 cmd.Parameters.Add("@console_no", SqlDbType.VarChar, 40).Value = item.console_no;
                 cmd.Parameters.Add("@console_type_code", SqlDbType.VarChar, 255).Value = item.console_type_code;
-                cmd.Parameters.Add("@date_created", SqlDbType.DateTime, 8).Value = item.date_created;
+                cmd.Parameters.Add("@date_created", SqlDbType.DateTime, 8).Value = DateTime.Now;
                 cmd.Parameters.Add("@date_time", SqlDbType.DateTime, 8).Value = item.date_time;
+                cmd.Parameters.Add("@date_created_ori", SqlDbType.DateTime, 8).Value = item.date_created;
+                cmd.Parameters.Add("@date_generated", SqlDbType.DateTime, 8).Value = DateTime.Now;
                 cmd.Parameters.Add("@last_updated", SqlDbType.DateTime).Value = item.last_updated;
                 cmd.Parameters.Add("@filename", SqlDbType.VarChar, 255).Value = item.filename;
                 cmd.Parameters.Add("@courier_id", SqlDbType.VarChar, 255).Value = item.courier_id;
