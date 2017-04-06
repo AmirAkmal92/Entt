@@ -124,6 +124,9 @@
     <Reference Include="PosEntt.RtsSopToOalSopWwpEventNewLog">
       <HintPath>..\..\output\PosEntt.RtsSopToOalSopWwpEventNewLog.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RtsStatToOal_ips_import">
+      <HintPath>..\..\output\PosEntt.RtsStatToOal_ips_import.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RtsStatTo_Oal_status_code_event_new">
       <HintPath>..\..\output\PosEntt.RtsStatTo_Oal_status_code_event_new.dll</HintPath>
     </Reference>
