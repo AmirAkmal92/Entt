@@ -89,7 +89,7 @@ namespace Bespoke.PosEntt.CustomActions
                 case "02": display = "C"; break;
                 case "03": display = "M"; break;
                 case "04": if (damageCode == "01") display = null; else display = "C"; break;
-                case "05": display = "M"; break;
+                case "05": display = "E"; break;
                 case "06": display = "L"; break;
                 case "07": display = "B"; break;
                 case "08": display = "E"; break;
