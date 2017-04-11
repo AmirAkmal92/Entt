@@ -74,6 +74,12 @@
     <Compile Include="LocationLogger.cs" />
     <Compile Include="Norm.cs" />
     <Compile Include="NormScanSqlReceiveLocation.cs" />
+    <Compile Include="Sip.cs" />
+    <Compile Include="SipScanSqlReceiveLocation.cs" />
+    <Compile Include="Sop.cs" />
+    <Compile Include="SopScanSqlReceiveLocation.cs" />
+    <Compile Include="Stat.cs" />
+    <Compile Include="StatScanSqlReceiveLocation.cs" />
     <Compile Include="VanScanSqlReceiveLocation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

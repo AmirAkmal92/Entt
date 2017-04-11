@@ -78,7 +78,7 @@ namespace Bespoke.PosEntt.ReceivePorts
 
             return $"{courier_id}\t{location_id}\t{beat_no}\t{date_time:ddMMyyyy}\t{date_time:HHmmss}\t{consignment_no}\t{reason_code_id}\t{recipient_name}\t"
                 + $"{recepient_ic}\t{recepient_location}\t{damage_code}\t{authorized_name}\t{comment}\t{alternative_address}\t{payment_type}\t{mode_of_payment}\t"
-                + $"{total_payment}\t{cheque_no}\t{bank_code}\t{drop_code}\t{lokasi_drop}\t{0}";
+                + $"{total_payment}\t{cheque_no}\t{bank_code}\t{drop_code}\t{lokasi_drop}\t{"-"}";
         }
     }
 }
