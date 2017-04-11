@@ -208,6 +208,28 @@
         "Ignore": false,
         "Comment": "",
         "WebId": "81b6c84b-038b-43bd-ce28-225b616831f2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "SourceApplication",
+        "Pattern": "(?<value>.*)",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SourceApplication",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "e280bb7b-612e-4e0e-a2c8-32081cae2dd9"
       }
     ]
   },
@@ -234,6 +256,6 @@
   "Id": "rts-deco",
   "CreatedDate": "2016-10-23T06:16:54.2448441+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-10T15:29:16.5840373+08:00",
+  "ChangedDate": "2017-04-11T12:12:45.6114064+08:00",
   "WebId": "7cb1f22c-44cc-4c23-934c-717780ffcbd5"
 }

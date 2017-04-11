@@ -534,6 +534,28 @@
         "Ignore": false,
         "Comment": "",
         "WebId": "cc84dd99-bddb-4aca-d97d-4aa542c79873"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "SourceApplication",
+        "Pattern": "(?<value>.*)",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SourceApplication",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "623a38cd-2bd6-4b83-b870-22d822056213"
       }
     ]
   },
@@ -560,6 +582,6 @@
   "Id": "rts-delivey",
   "CreatedDate": "2016-10-02T08:34:19.5717952+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-23T21:34:36.9450061+08:00",
+  "ChangedDate": "2017-04-11T12:13:12.2412624+08:00",
   "WebId": "87f180ba-ce72-4e8c-8e54-ce730df00f27"
 }

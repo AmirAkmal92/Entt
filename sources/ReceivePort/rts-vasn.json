@@ -231,7 +231,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
-        "Header": "Source",
+        "Header": "SourceApplication",
         "Pattern": "(?<value>.*)",
         "StartPosition": null,
         "Length": null,
@@ -241,7 +241,7 @@
         },
         "Name": "SourceApplication",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": "",
         "SampleValue": "",
         "IsComplex": false,
@@ -276,6 +276,6 @@
   "Id": "rts-vasn",
   "CreatedDate": "2016-10-21T10:04:54.6515791+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-03-20T17:07:54.1748633+08:00",
+  "ChangedDate": "2017-04-11T12:04:26.0839365+08:00",
   "WebId": "11e77f74-a476-4acc-84a0-f9433fe6efc2"
 }
