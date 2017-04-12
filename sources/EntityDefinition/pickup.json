@@ -890,6 +890,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "c08bce9d-23e0-45d9-de67-55bf5eff8595"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 3,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SourceApplication",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "e9391fd0-d790-4c3e-8976-a02ab3a7ae23"
       }
     ]
   },
@@ -931,6 +955,6 @@
   "Id": "pickup",
   "CreatedDate": "2016-10-19T09:13:55.9012871+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-23T22:12:17.5687849+08:00",
+  "ChangedDate": "2017-04-12T10:42:36.3095861+08:00",
   "WebId": "40d79a4f-82e7-4c1d-925a-c19132742ba7"
 }

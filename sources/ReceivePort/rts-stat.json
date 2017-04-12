@@ -188,6 +188,28 @@
         "Ignore": false,
         "Comment": "",
         "WebId": "aabba270-7d80-40ae-edae-1849f1926cc2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+        "Header": "SourceApplication",
+        "Pattern": "(?<value>.*)",
+        "StartPosition": null,
+        "Length": null,
+        "FieldMappingCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SourceApplication",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "Converter": "",
+        "SampleValue": "",
+        "IsComplex": false,
+        "AllowMultiple": false,
+        "NullPlaceholder": "",
+        "Ignore": false,
+        "Comment": "",
+        "WebId": "337e53df-4651-4614-af18-fc2f98e7e8dc"
       }
     ]
   },
@@ -214,6 +236,6 @@
   "Id": "rts-stat",
   "CreatedDate": "2016-10-20T09:31:52.3157319+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-28T15:28:30.2821908+08:00",
+  "ChangedDate": "2017-04-12T10:47:14.7612926+08:00",
   "WebId": "4136f226-57a2-43f5-becb-a6e7809d0cf2"
 }
