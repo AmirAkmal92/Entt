@@ -16,6 +16,7 @@ namespace Bespoke.PosEntt.CustomActions
         private List<Adapters.Oal.dbo_wwp_event_new_log> m_statWwpEventLogRows;
         private List<Adapters.Oal.dbo_event_pending_console> m_statEventPendingConsoleRows;
         private List<Adapters.Oal.dbo_ips_import> m_statIpsImportRows;
+        private Integrations.Transforms.RtsStatToOalIpsImport m_statOalImportMap;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
@@ -28,6 +29,7 @@ namespace Bespoke.PosEntt.CustomActions
             m_statWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
             m_statEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
             m_statIpsImportRows = new List<Adapters.Oal.dbo_ips_import>();
+            m_statOalImportMap = new Integrations.Transforms.RtsStatToOalIpsImport();
 
             await RunAsync(stat);
         }
@@ -44,8 +46,6 @@ namespace Bespoke.PosEntt.CustomActions
 
             var statEventMap = new Integrations.Transforms.RtsStatToOalStatusCodeEventNew();
             var parentRow = await statEventMap.TransformAsync(stat);
-            var ipsEventMap = new Integrations.Transforms.RtsStatToOalIpsImport();
-            var ipsParentStatus = await ipsEventMap.TransformAsync(stat);
 
             parentRow.id = GenerateId(34);
             m_statEventRows.Add(parentRow);
@@ -64,8 +64,8 @@ namespace Bespoke.PosEntt.CustomActions
                     ProcessChild(parentRow, item);
                     ProcessChildWwp(parentWwpRow, item);
                     if (IsIpsImportItem(item))
-                    {
-                        ProcessChildIpsImport(ipsParentStatus, item);
+                    {                        
+                        await ProcessChildIpsImport(stat, item);
                     }
                 
                     //2 level
@@ -84,7 +84,7 @@ namespace Bespoke.PosEntt.CustomActions
                                 ProcessChildWwp(parentWwpRow, cc);
                                 if (IsIpsImportItem(cc))
                                 {
-                                    ProcessChildIpsImport(ipsParentStatus, cc);
+                                    await ProcessChildIpsImport(stat, cc);
                                 }
 
                                 //3 level
@@ -103,7 +103,7 @@ namespace Bespoke.PosEntt.CustomActions
                                             ProcessChildWwp(parentWwpRow, ccc);
                                             if (IsIpsImportItem(ccc))
                                             {
-                                                ProcessChildIpsImport(ipsParentStatus, ccc);
+                                                await ProcessChildIpsImport(stat, ccc);
                                             }
                                         }
                                     }
@@ -219,14 +219,12 @@ namespace Bespoke.PosEntt.CustomActions
             m_statWwpEventLogRows.Add(wwp);
         }
 
-        private void ProcessChildIpsImport(Adapters.Oal.dbo_ips_import parent, string consignmentNo)
+        private async Task ProcessChildIpsImport(Stats.Domain.Stat parentStat, string consignmentNo)
         {
-            var console = IsConsole(consignmentNo);
-            var child = parent.Clone();
-            child.id = GenerateId(13);
-            child.item_id = consignmentNo;
-            m_statIpsImportRows.Add(child);
+            var childStat = parentStat.Clone();
+            childStat.ConsignmentNo = consignmentNo;
+            var childIpsImport = await m_statOalImportMap.TransformAsync(childStat);            
+            m_statIpsImportRows.Add(childIpsImport);
         }
-
     }
 }
