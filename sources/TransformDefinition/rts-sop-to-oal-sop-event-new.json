@@ -691,7 +691,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_sop_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_sop_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_sop_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -906,6 +906,6 @@
   "Id": "rts-sop-to-oal-sop-event-new",
   "CreatedDate": "2016-11-01T10:43:20.5641071+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-30T10:34:04.5091582+08:00",
+  "ChangedDate": "2017-04-13T11:22:46.1144988+08:00",
   "WebId": "5d9c6de6-7d47-4488-b588-42110b81ad95"
 }

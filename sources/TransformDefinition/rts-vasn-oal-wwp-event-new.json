@@ -193,7 +193,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_vasn_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_vasn_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_vasn_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{4}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -286,6 +286,6 @@
   "Id": "rts-vasn-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:43:35.4454143+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:42:29.7223609+08:00",
+  "ChangedDate": "2017-04-13T11:26:26.4712148+08:00",
   "WebId": "3d231693-c862-4a70-ba61-8605ef9497fe"
 }

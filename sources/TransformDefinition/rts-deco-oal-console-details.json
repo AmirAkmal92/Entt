@@ -499,7 +499,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var saFileName = string.Format(\"sa_deco_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_deco_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
+        "Expression": "var saFileName = string.Format(\"sa_deco_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_deco_{0}_{1:yyyyMMdd}-{2:HHmmss}_{3}_{4}\", item.LocationId,item.Date, item.Time,item.TotalConsignment,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -656,6 +656,6 @@
   "Id": "rts-deco-oal-console-details",
   "CreatedDate": "2016-10-23T08:09:41.8882784+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-04-12T14:33:43.2978895+08:00",
+  "ChangedDate": "2017-04-13T10:39:43.4322151+08:00",
   "WebId": "9f5c8b59-c1ae-45c9-8b9d-219f96d8f628"
 }

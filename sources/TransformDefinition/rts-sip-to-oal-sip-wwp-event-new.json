@@ -228,8 +228,8 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 580.0,
-        "Y": 349.0,
+        "X": 488.0,
+        "Y": 368.0,
         "WebId": "1e032e11-17de-4a64-9ab0-14974c2e8fed"
       },
       {
@@ -305,7 +305,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_sip_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\n",
+        "Expression": "var saFileName = string.Format(\"sa_sip_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_sip_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{4}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -314,8 +314,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 695.0,
-        "Y": 272.0,
+        "X": 415.0,
+        "Y": 327.0,
         "WebId": "2ff7c1fb-3db9-4b8b-fa30-253a2ca4233a"
       },
       {
@@ -384,6 +384,6 @@
   "Id": "rts-sip-to-oal-sip-wwp-event-new",
   "CreatedDate": "2016-11-11T16:29:47.9677632+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-17T10:45:33.0016601+08:00",
+  "ChangedDate": "2017-04-13T11:18:21.9707541+08:00",
   "WebId": "da3c2fca-cea0-449d-8ebf-918402f149ce"
 }
