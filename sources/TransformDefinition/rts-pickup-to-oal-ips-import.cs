@@ -29,21 +29,7 @@ namespace Bespoke.PosEntt.Integrations.Transforms
         private async Task<bool> DoLookupAsync(Bespoke.PosEntt.Pickups.Domain.Pickup item, Bespoke.PosEntt.Adapters.Oal.dbo_ips_import destination)
         {
 
-            Func<string, string> SetOriginCountryCode = (origin) =>
-            {
-                if (!string.IsNullOrWhiteSpace(origin))
-                {
-                    return origin;
-                }
-                else
-                {
-                    var pattern = @"\w{2}\d{9}(?<country>\w{2})";
-                    var match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);
-                    return match.Success ? match.Groups["country"].Value : "-";
-                }
-            };
-            var config = ConfigurationManager.ConnectionStrings["oal"].ConnectionString;
-            var connectionString = @config;
+            var connectionString = ConfigurationManager.ConnectionStrings["oal"].ConnectionString;
             const string queryString = @"SELECT [shipper_address_country] FROM [dbo].[consignment_initial]  WHERE [number] = @consignmentNo";
             using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
@@ -55,11 +41,17 @@ namespace Bespoke.PosEntt.Integrations.Transforms
                     {
                         while (await reader.ReadAsync())
                         {
-                            destination.orig_country_cd = SetOriginCountryCode(reader["shipper_address_country"].ReadNullableString());
+                            destination.orig_country_cd = reader["shipper_address_country"].ReadNullableString();
                         }
                     }
                 }
+            }
 
+            if (string.IsNullOrWhiteSpace(destination.orig_country_cd))
+            {
+                var pattern = @"\w{2}\d{9}(?<country>\w{2})";
+                var match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);
+                destination.orig_country_cd = match.Success ? match.Groups["country"].Value : "-";
             }
 
             if (null == destination.item_weight_double) destination.item_weight_double = 0d;
