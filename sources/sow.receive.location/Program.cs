@@ -15,8 +15,7 @@ namespace Bespoke.PosEntt.ReceiveLocations
                 config.Service<IReceiveLocation>(svc =>
                 {
                     svc.ConstructUsing(() => new VanScanSqlReceiveLocation());
-                    svc.ConstructUsing(() => new DeliScanSqlReceiveLocation());
-                    svc.ConstructUsing(() => new NormScanSqlReceiveLocation());
+                
 
                     svc.WhenStarted(x => x.Start());
                     svc.WhenStopped(x => x.Stop());
