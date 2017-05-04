@@ -15,8 +15,7 @@ using Newtonsoft.Json.Linq;
 public class RtsDashboadController : BaseApiController
 {
 
-    //private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
-    private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri("http://10.1.16.110:9200") };
+    private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
     private readonly HttpClient m_rabbitMqManagementClient = new HttpClient(new HttpClientHandler { Credentials = new NetworkCredential(ConfigurationManager.RabbitMqUserName, ConfigurationManager.RabbitMqPassword) })
     {
         BaseAddress = new Uri($"{ConfigurationManager.RabbitMqManagementScheme}://{ConfigurationManager.RabbitMqHost}:{ConfigurationManager.RabbitMqManagementPort}")
