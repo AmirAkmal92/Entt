@@ -1,0 +1,231 @@
+<div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-8">
+        <div class="row">
+            <br />
+            <div class="pull-right">
+                <a href="/rts-account/logout" class="btn btn-primary btn-xs" title="Log Out"><i class="fa fa-user-times"></i> Log Out</a>
+            </div>
+        </div>
+        <div class="page-header">
+            <h1 class="page-title">
+                RTS Self Service
+            </h1>
+        </div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
+            <li role="presentation"><a href="#delivery-report" aria-controls="delivery-report" role="tab" data-toggle="tab">Delivery Report</a></li>
+            <li role="presentation"><a href="#pickup-report" aria-controls="pickup-report" role="tab" data-toggle="tab">Pickup Report</a></li>
+            <!--<li role="presentation"><a href="#xxx-report" aria-controls="xxx-report" role="tab" data-toggle="tab">Xxx Report</a></li>-->
+            <!--<li role="presentation"><a href="#yyy-report" aria-controls="yyy-report" role="tab" data-toggle="tab">Yyy Report</a></li>-->
+        </ul><!-- /Nav tabs -->
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!--Tab Search-->
+            <div role="tabpanel" class="tab-pane active" id="search">
+                <h3>Search</h3>
+                <br /><br />
+                <form class="form-horizontal" id="search-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="ItemNo">Item No</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="ItemNo" name="ItemNo" data-bind="value: ItemNo" placeholder="Consignment / Console" />
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchItemNo">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearSearchItemNo">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: SearchItemNoResults().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearSearchItemNo"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label>Item No</label>: <span id="search-item-no">item no</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Scanner Date</th>
+                                <th>RTS Date</th>
+                                <th>Courier Id</th>
+                                <th>Location Id</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: SearchItemNoResults">
+                            <tr>
+                                <td data-bind="text: _type"></td>
+                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm'}"></td>
+                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm'}"></td>
+                                <td data-bind="text: _source.CourierId"></td>
+                                <td data-bind="text: _source.LocationId"></td>
+                                <td data-bind="text: _source.Comment"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/Tab Search-->
+            <!--Delivery Report-->
+            <div role="tabpanel" class="tab-pane" id="delivery-report">
+                <h3>Delivery Report</h3>
+                <br /><br />
+                <form class="form-horizontal" id="delivery-report-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="BeatNo">Beat No</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="CourierId">Courier Id</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ReportDateDeli">Date</label>
+                        <div class="col-md-6">
+                            <input class="form-control" id="ReportDateDeli" name="ReportDateDeli" data-bind="value: ReportDate" placeholder="Date" />
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdDeli">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearBeatNoAndCourierIdDeli">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: SearchByBeatNoAndCourierIdDeliResults().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearBeatNoAndCourierIdDeli"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label for="delivery-beat-no">Beat No</label>: <span id="delivery-beat-no">beat no</span>
+                                <br />
+                                <label for="delivery-courier-id">Courier Id</label>: <span id="delivery-courier-id">courier id</span>
+                                <br />
+                                <label for="delivery-date">Date</label>: <span id="delivery-date">date</span>
+                                <br />
+                                <label for="delivery-total">Total</label>: <span id="delivery-total">total</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Consignment No</th>
+                                <th>Scanner Date</th>
+                                <th>RTS Date</th>
+                                <th>Recipient Name</th>
+                                <th>Recipient Ic</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: SearchByBeatNoAndCourierIdDeliResults">
+                            <tr>
+                                <td><span data-bind="text: $index() + 1"></span>. </td>
+                                <td data-bind="text: _source.ConsignmentNo"></td>
+                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: _source.RecipientName"></td>
+                                <td data-bind="text: _source.RecipientIc"></td>
+                                <td data-bind="text: _source.Comment"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/Delivery Report-->
+            <!--Pickup Report-->
+            <div role="tabpanel" class="tab-pane" id="pickup-report">
+                <h3>Pickup Report</h3>
+                <br /><br />
+                <form class="form-horizontal" id="pickup-report-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="BeatNo">Beat No</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="CourierId">Courier Id</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ReportDatePick">Date</label>
+                        <div class="col-md-6">
+                            <input class="form-control" id="ReportDatePick" name="ReportDatePick" data-bind="value: ReportDate" placeholder="Date" />
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdPick">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearBeatNoAndCourierIdPick">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: SearchByBeatNoAndCourierIdPickResults().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearBeatNoAndCourierIdPick"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label for="pickup-beat-no">Beat No</label>: <span id="pickup-beat-no">beat no</span>
+                                <br />
+                                <label for="pickup-courier-id">Courier Id</label>: <span id="pickup-courier-id">courier id</span>
+                                <br />
+                                <label for="pickup-date">Date</label>: <span id="pickup-date">date</span>
+                                <br />
+                                <label for="pickup-total">Total</label>: <span id="pickup-total">total</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Consignment No</th>
+                                <th>Account No</th>
+                                <th>Pickup No</th>
+                                <th>Scanner Date</th>
+                                <th>RTS Date</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: SearchByBeatNoAndCourierIdPickResults">
+                            <tr>
+                                <td><span data-bind="text: $index() + 1"></span>. </td>
+                                <td data-bind="text: _source.ConsignmentNo"></td>
+                                <td data-bind="text: _source.AccountNo"></td>
+                                <td data-bind="text: _source.PickupNo"></td>
+                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: _source.Comment"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/Pickup Report-->
+            <!--<div role="tabpanel" class="tab-pane" id="xxx-report">
+                xxx report
+            </div>-->
+            <!--<div role="tabpanel" class="tab-pane" id="yyy-report">
+                yyy report
+            </div>-->
+        </div><!-- /Tab panes -->
+
+    </div>
+    <div class="col-md-2">&nbsp;</div>
+</div>

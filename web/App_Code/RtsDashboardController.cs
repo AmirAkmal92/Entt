@@ -15,7 +15,8 @@ using Newtonsoft.Json.Linq;
 public class RtsDashboadController : BaseApiController
 {
 
-    private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
+    //private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.ElasticSearchHost) };
+    private readonly HttpClient m_client = new HttpClient { BaseAddress = new Uri("http://10.1.16.110:9200") };
     private readonly HttpClient m_rabbitMqManagementClient = new HttpClient(new HttpClientHandler { Credentials = new NetworkCredential(ConfigurationManager.RabbitMqUserName, ConfigurationManager.RabbitMqPassword) })
     {
         BaseAddress = new Uri($"{ConfigurationManager.RabbitMqManagementScheme}://{ConfigurationManager.RabbitMqHost}:{ConfigurationManager.RabbitMqManagementPort}")
@@ -46,7 +47,14 @@ public class RtsDashboadController : BaseApiController
            ""default_field"": ""_all"",
            ""query"": ""{consignmentNo}""
         }}
-    }}
+    }},
+    ""sort"": [
+        {{
+            ""CreatedDate"": {{
+            ""order"": ""asc""
+            }}
+        }}
+    ]
 }}";
         var response = await m_client.PostAsync($"{ConfigurationManager.ElasticSearchIndex}_rts/_search", new StringContent(query));
         var content = response.Content as StreamContent;
