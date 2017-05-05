@@ -30,9 +30,10 @@
                 <br /><br />
                 <form class="form-horizontal" id="search-form">
                     <div class="form-group">
-                        <label class="col-md-2" for="ItemNo">Item No</label>
+                        <label class="col-md-2" for="ItemNo">Item No *</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="ItemNo" name="ItemNo" data-bind="value: ItemNo" placeholder="Consignment / Console" />
+                            <label id="ItemNo-error" class="error text-danger" for="ItemNo"></label>
                         </div>
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchItemNo">Search</button>
@@ -84,18 +85,22 @@
                         <label class="col-md-2" for="BeatNo">Beat No</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
+                            <label id="BeatNo-error" class="error text-danger" for="BeatNo"></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2" for="CourierId">Courier Id</label>
+                        <label class="col-md-2" for="CourierId">Courier Id *</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
+                            <label id="CourierId-error" class="error text-danger" for="CourierId"></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2" for="ReportDateDeli">Date</label>
+                        <label class="col-md-2" for="ReportDateDeli">Date *</label>
                         <div class="col-md-6">
                             <input class="form-control" id="ReportDateDeli" name="ReportDateDeli" data-bind="value: ReportDate" placeholder="Date" />
+                            <br />
+                            <label id="ReportDateDeli-error" class="error text-danger" for="ReportDateDeli"></label>
                         </div>
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdDeli">Search</button>
@@ -127,6 +132,7 @@
                                 <th>Consignment No</th>
                                 <th>Scanner Date</th>
                                 <th>RTS Date</th>
+                                <th>Beat No</th>
                                 <th>Recipient Name</th>
                                 <th>Recipient Ic</th>
                                 <th>Comment</th>
@@ -138,6 +144,7 @@
                                 <td data-bind="text: _source.ConsignmentNo"></td>
                                 <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: _source.BeatNo"></td>
                                 <td data-bind="text: _source.RecipientName"></td>
                                 <td data-bind="text: _source.RecipientIc"></td>
                                 <td data-bind="text: _source.Comment"></td>
@@ -155,20 +162,23 @@
                         <label class="col-md-2" for="BeatNo">Beat No</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
+                            <label id="BeatNo-error" class="error text-danger" for="BeatNo"></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2" for="CourierId">Courier Id</label>
+                        <label class="col-md-2" for="CourierId">Courier Id *</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
+                            <label id="CourierId-error" class="error text-danger" for="CourierId"></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2" for="ReportDatePick">Date</label>
+                        <label class="col-md-2" for="ReportDatePick">Date *</label>
                         <div class="col-md-6">
                             <input class="form-control" id="ReportDatePick" name="ReportDatePick" data-bind="value: ReportDate" placeholder="Date" />
+                            <br />
+                            <label id="ReportDatePick-error" class="error text-danger" for="ReportDatePick"></label>
                         </div>
-
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdPick">Search</button>
                     <button class="btn btn-danger" type="button" data-bind="click: clearBeatNoAndCourierIdPick">Clear</button>
@@ -201,6 +211,7 @@
                                 <th>Pickup No</th>
                                 <th>Scanner Date</th>
                                 <th>RTS Date</th>
+                                <th>Beat No</th>
                                 <th>Comment</th>
                             </tr>
                         </thead>
@@ -212,6 +223,7 @@
                                 <td data-bind="text: _source.PickupNo"></td>
                                 <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: _source.BeatNo"></td>
                                 <td data-bind="text: _source.Comment"></td>
                             </tr>
                         </tbody>

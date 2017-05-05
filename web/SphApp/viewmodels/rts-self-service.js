@@ -12,9 +12,9 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             return true;
         },
         searchItemNo = function () {
-            //if (!$("#search-form").valid()) {
-            //    return;
-            //}
+            if (!$("#search-form").valid()) {
+                return;
+            }
             if (ItemNo() != "") {
                 isBusy(true);
                 context.get("/api/rts-dashboard/search/" + ItemNo())
@@ -48,39 +48,22 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             clearBeatNoAndCourierId(SearchByBeatNoAndCourierIdPickResults);
         },
         searchByBeatNoAndCourierId = function (type, resultsArray) {
-            //if (type == "delivery") {
-            //    if (!$("#delivery-report-form").valid()) {
-            //        return;
-            //    }
-            //}
-            //if (type == "pickup") {
-            //    if (!$("#pickup-report-form").valid()) {
-            //        return;
-            //    }
-            //}
-            if (BeatNo() != "" && CourierId() != "" && ReportDate() != "") {
+            if (type == "delivery") {
+                if (!$("#delivery-report-form").valid()) {
+                    return;
+                }
+            }
+            if (type == "pickup") {
+                if (!$("#pickup-report-form").valid()) {
+                    return;
+                }
+            }
+            if (CourierId() != "" && ReportDate() != "") {
                 var query = {
                     "query": {
                         "bool": {
                             "must": [
-                               {
-                                   "range": {
-                                       "CreatedDate": {
-                                           "from": ReportDate() + "T00:00:00+08:00",
-                                           "to": ReportDate() + "T23:59:59+08:00"
-                                       }
-                                   }
-                               },
-                               {
-                                   "term": {
-                                       "BeatNo": BeatNo()
-                                   }
-                               },
-                               {
-                                   "term": {
-                                       "CourierId": CourierId()
-                                   }
-                               }
+                                //push conditions in
                             ]
                         }
                     },
@@ -94,6 +77,26 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                        }
                     ]
                 };
+                query.query.bool.must.push({
+                    "range": {
+                        "CreatedDate": {
+                            "from": ReportDate() + "T00:00:00+08:00",
+                            "to": ReportDate() + "T23:59:59+08:00"
+                        }
+                    }
+                });
+                query.query.bool.must.push({
+                    "term": {
+                        "CourierId": CourierId()
+                    }
+                });
+                if (BeatNo() != "") {
+                    query.query.bool.must.push({
+                        "term": {
+                            "BeatNo": BeatNo()
+                        }
+                    });
+                }
                 isBusy(true);
                 context.post(ko.toJSON(query), `/api/rts-dashboard/${type}`)
                     .then(function (result) {
@@ -124,8 +127,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             });
             $("#ReportDatePick").kendoDatePicker({
                 format: "yyyy-MM-dd"
-            });
-            /*
+            });            
             $("#search-form").validate({
                 rules: {
                     ItemNo: {
@@ -139,7 +141,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             $("#delivery-report-form").validate({
                 rules: {
                     BeatNo: {
-                        required: true
+                        required: false
                     },
                     CourierId: {
                         required: true
@@ -157,7 +159,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             $("#pickup-report-form").validate({
                 rules: {
                     BeatNo: {
-                        required: true
+                        required: false
                     },
                     CourierId: {
                         required: true
@@ -172,7 +174,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     ReportDatePick: "Please provide valid Date."
                 }
             });
-            */
         },
         compositionComplete = function () {
 
