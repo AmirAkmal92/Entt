@@ -246,7 +246,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_norm_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time, item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_norm_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_norm_{0}_{1:yyyyMMdd}-{2:HHmmss}_{3}_{4}\", item.LocationId,item.Date, item.Time,item.TotalConsignment,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -889,6 +889,6 @@
   "Id": "rts-norm-to-oal-console-details",
   "CreatedDate": "2016-10-20T09:11:11.0320778+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-30T10:26:26.0623326+08:00",
+  "ChangedDate": "2017-04-13T10:54:27.5454234+08:00",
   "WebId": "645957e2-3066-422f-9c78-dad446f4dba1"
 }

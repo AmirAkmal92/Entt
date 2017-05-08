@@ -239,7 +239,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_stat_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_stat_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_stat_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -248,8 +248,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 614.0,
-        "Y": 500.0,
+        "X": 455.0,
+        "Y": 466.0,
         "WebId": "4a5bbb25-ef0d-4c08-86f6-0c75ca3e112c"
       },
       {
@@ -299,7 +299,7 @@
   "CreatedBy": "admin",
   "Id": "rts-stat-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:49:12.6836027+08:00",
-  "ChangedBy": "admin",
-  "ChangedDate": "2016-11-28T16:12:48.6641505+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2017-04-20T08:45:04.3729501+08:00",
   "WebId": "f70550d4-3a11-42b1-a7ed-3e745c09f927"
 }

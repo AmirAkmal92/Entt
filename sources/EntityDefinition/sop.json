@@ -242,6 +242,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "2de99157-2ead-4a10-b75e-aca1ee1e943d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 3,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SourceApplication",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "6a2dd765-2be8-44a4-b8c3-1f3571065777"
       }
     ]
   },
@@ -283,6 +307,6 @@
   "Id": "sop",
   "CreatedDate": "2016-10-31T18:49:40.3131272+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-10T16:42:41.8098347+08:00",
+  "ChangedDate": "2017-04-12T10:48:15.2434836+08:00",
   "WebId": "0272045e-86fd-4552-97c4-5cab3926ecb0"
 }

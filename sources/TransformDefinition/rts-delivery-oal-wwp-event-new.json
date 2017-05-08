@@ -269,7 +269,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_deli_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time, item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_deli_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_deli_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -278,8 +278,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 651.0,
-        "Y": 346.0,
+        "X": 528.0,
+        "Y": 376.0,
         "WebId": "27aae1f1-371d-4996-f539-82d34a6fdc14"
       },
       {
@@ -307,8 +307,8 @@
         "OutputTypeName": null,
         "Label": null,
         "Comment": null,
-        "X": 644.0,
-        "Y": 419.0,
+        "X": 517.0,
+        "Y": 415.0,
         "WebId": "3f87a6d2-b7b9-4d53-d41e-afec89482a1b"
       }
     ]
@@ -330,6 +330,6 @@
   "Id": "rts-delivery-oal-wwp-event-new",
   "CreatedDate": "2016-10-23T13:53:57.1024273+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-24T12:46:59.2199164+08:00",
+  "ChangedDate": "2017-04-12T15:51:20.5315183+08:00",
   "WebId": "5dd2a16d-a9fb-4ff6-be99-2db39f5446d0"
 }

@@ -653,8 +653,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 674.0,
-        "Y": 487.0,
+        "X": 511.0,
+        "Y": 555.0,
         "WebId": "bfb37df7-78f3-473f-8852-28df32238c99"
       },
       {
@@ -704,7 +704,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_deco_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time, item.ScannerId);\n",
+        "Expression": "var saFileName = string.Format(\"sa_deco_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_deco_{0}_{1:yyyyMMdd}-{2:HHmmss}_{3}_{4}\", item.LocationId,item.Date, item.Time,item.TotalConsignment,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -713,8 +713,8 @@
         "OutputTypeName": "System.String, mscorlib",
         "Label": null,
         "Comment": null,
-        "X": 728.0,
-        "Y": 533.0,
+        "X": 460.0,
+        "Y": 468.0,
         "WebId": "f1813acb-4ef4-416e-a637-87a07d922718"
       },
       {
@@ -802,6 +802,6 @@
   "Id": "rts-deco-oal-delivery-console-event-new",
   "CreatedDate": "2016-10-23T07:49:45.1384917+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-30T10:18:08.8032819+08:00",
+  "ChangedDate": "2017-04-13T10:47:08.7962797+08:00",
   "WebId": "2287dbd4-0e78-4b75-9c81-696b15773070"
 }
