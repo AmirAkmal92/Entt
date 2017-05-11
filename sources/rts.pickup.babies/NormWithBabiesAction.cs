@@ -431,6 +431,27 @@ namespace Bespoke.PosEntt.CustomActions
             return ips;
         }
 
+        private async Task<Adapters.Oal.dbo_ips_import> CreateStatIpsImport(Adapters.Oal.dbo_status_code_event_new stat, string consignmentNo)
+        {
+            //recreate stat item for mapping ipsimport
+            var statusItem = new Stats.Domain.Stat {
+                Date = stat.date_field.Value.Date,
+                Time = stat.date_field.Value,
+                LocationId = stat.office_no,
+                BeatNo = stat.beat_no,
+                CourierId = stat.courier_id,
+                StatusCode = stat.status_code_id,
+                ConsignmentNo = consignmentNo,
+                Comment = stat.event_comment
+            };
+            var map = new Integrations.Transforms.RtsStatToOalIpsImport();
+            var ipsImport = await map.TransformAsync(statusItem);
+
+            ipsImport.dt_created_oal_date_field = stat.date_created_oal_date_field;
+
+            return ipsImport;
+        }
+
         private async Task ProcessMissPendingItem(string missEventId, string[] itemList)
         {
             var missAdapter = new Adapters.Oal.dbo_missort_event_newAdapter();
@@ -475,6 +496,10 @@ namespace Bespoke.PosEntt.CustomActions
 
             var stat = statPendingPolly.Result;
             var statItems = new List<Adapters.Oal.dbo_status_code_event_new>();
+
+            var ipsAdapter = new Adapters.Oal.dbo_ips_importAdapter();
+            var ipsItems = new List<Adapters.Oal.dbo_ips_import>();
+
             foreach (var item in itemList)
             {
                 var console = IsConsole(item);
@@ -484,12 +509,29 @@ namespace Bespoke.PosEntt.CustomActions
                 child.data_flag = "1";
                 child.item_type_code = console ? "02" : "01";
                 statItems.Add(child);
+
+                if (IsIpsImportItem(item))
+                {
+                    var ips = await CreateStatIpsImport(stat, item);
+                    ipsItems.Add(ips);
+                }
             }
             foreach (var item in statItems)
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => statAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+
+            foreach (var item in ipsItems)
+            {
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
