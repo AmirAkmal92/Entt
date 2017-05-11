@@ -547,7 +547,7 @@
         },
         "Name": "SourceApplication",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": "",
         "SampleValue": "",
         "IsComplex": false,
@@ -581,7 +581,7 @@
   "CreatedBy": "admin",
   "Id": "rts-delivey",
   "CreatedDate": "2016-10-02T08:34:19.5717952+08:00",
-  "ChangedBy": "admin",
-  "ChangedDate": "2017-04-12T14:37:49.3730553+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2017-04-27T10:14:12.3750849+08:00",
   "WebId": "87f180ba-ce72-4e8c-8e54-ce730df00f27"
 }

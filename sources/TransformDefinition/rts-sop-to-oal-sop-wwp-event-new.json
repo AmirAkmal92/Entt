@@ -210,7 +210,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var saFileName = string.Format(\"sa_sop_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_sop_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{4}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
+        "Expression": "var saFileName = string.Format(\"sa_sop_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_sop_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -285,7 +285,7 @@
   "CreatedBy": "admin",
   "Id": "rts-sop-to-oal-sop-wwp-event-new",
   "CreatedDate": "2016-11-01T11:36:19.5149703+08:00",
-  "ChangedBy": "admin",
-  "ChangedDate": "2017-04-13T11:23:39.8006285+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2017-04-20T08:47:23.8634284+08:00",
   "WebId": "70f692d6-963d-4867-9561-035f3ff40993"
 }

@@ -82,5 +82,19 @@
     "showWhenLoggedIn": false,
     "isAdminPage": false,
     "startPageRoute": null
+  },
+  {
+    "role": "everybody",
+    "groupName": null,
+    "route": "rts-self-service",
+    "moduleId": "viewmodels/rts-self-service",
+    "title": "RTS Self Service",
+    "nav": true,
+    "icon": "fa fa-newspaper-o",
+    "caption": "RTS Self Service",
+    "settings": null,
+    "showWhenLoggedIn": false,
+    "isAdminPage": false,
+    "startPageRoute": null
   }
 ]

@@ -1,0 +1,51 @@
+{
+  "$type": "Bespoke.Sph.Domain.Designation, domain.sph",
+  "RoleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "developers",
+      "administrators"
+    ]
+  },
+  "Owner": {
+    "$type": "Bespoke.Sph.Domain.Owner, domain.sph",
+    "Address": {
+      "$type": "Bespoke.Sph.Domain.Address, domain.sph",
+      "UnitNo": "",
+      "Floor": "",
+      "Block": "",
+      "Street": "",
+      "City": "",
+      "Postcode": "",
+      "State": "",
+      "Country": "",
+      "WebId": null
+    },
+    "Name": "",
+    "TelephoneNo": "",
+    "FaxNo": "",
+    "Email": "",
+    "WebId": null
+  },
+  "SearchableEntityCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "Name": "Rts admin",
+  "Description": "Rts admin to monitor soc",
+  "IsActive": false,
+  "StartModule": "rts-self-service",
+  "EnforceStartModule": true,
+  "IsSearchVisible": false,
+  "IsMessageVisible": false,
+  "IsHelpVisible": false,
+  "HelpUri": "",
+  "Title": "",
+  "Option": 0,
+  "CreatedBy": "admin",
+  "Id": "rts-admin",
+  "CreatedDate": "2017-05-03T09:58:10.4297355+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-05-04T09:03:14.8284246+08:00",
+  "WebId": "3b59e1ab-06eb-4ec6-bdb7-c9078b69e7ac"
+}

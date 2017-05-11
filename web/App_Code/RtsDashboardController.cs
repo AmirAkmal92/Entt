@@ -46,7 +46,14 @@ public class RtsDashboadController : BaseApiController
            ""default_field"": ""_all"",
            ""query"": ""{consignmentNo}""
         }}
-    }}
+    }},
+    ""sort"": [
+        {{
+            ""CreatedDate"": {{
+            ""order"": ""asc""
+            }}
+        }}
+    ]
 }}";
         var response = await m_client.PostAsync($"{ConfigurationManager.ElasticSearchIndex}_rts/_search", new StringContent(query));
         var content = response.Content as StreamContent;
