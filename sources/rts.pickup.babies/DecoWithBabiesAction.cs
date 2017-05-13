@@ -301,6 +301,10 @@ namespace Bespoke.PosEntt.CustomActions
                     await ProcessWwpPendingItem(pending.event_id, itemList);
                     ok = true;
                     break;
+                case "pos.oal.IpsImport":
+                    await ProcessIpsPendingItem(pending.event_id, itemList);
+                    ok = true;
+                    break;
             }
 
             //if (ok)
@@ -690,6 +694,42 @@ namespace Bespoke.PosEntt.CustomActions
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
                     .ExecuteAndCaptureAsync(() => wwpAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task ProcessIpsPendingItem(string ipsEventId, string[] itemList)
+        {
+            var statAdapter = new Adapters.Oal.dbo_status_code_event_newAdapter();
+            var statPendingPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
+                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .ExecuteAndCaptureAsync(async () => await statAdapter.LoadOneAsync(ipsEventId));
+            if (null != statPendingPolly.FinalException)
+                throw new Exception("Process Stat Pending Polly Error", statPendingPolly.FinalException);
+
+            var stat = statPendingPolly.Result;
+            var statItems = new List<Adapters.Oal.dbo_status_code_event_new>();
+
+            var ipsAdapter = new Adapters.Oal.dbo_ips_importAdapter();
+            var ipsItems = new List<Adapters.Oal.dbo_ips_import>();
+
+            foreach (var item in itemList)
+            {
+                if (IsIpsImportItem(item))
+                {
+                    var ips = await CreateStatIpsImport(stat, item);
+                    ipsItems.Add(ips);
+                }
+            }
+
+            foreach (var item in ipsItems)
+            {
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue

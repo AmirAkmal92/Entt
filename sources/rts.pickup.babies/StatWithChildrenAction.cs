@@ -209,6 +209,17 @@ namespace Bespoke.PosEntt.CustomActions
                 date_field = DateTime.Now
             };
             m_statEventPendingConsoleRows.Add(pendingWwp);
+
+            var pendingIps = new Adapters.Oal.dbo_event_pending_console
+            {
+                id = GenerateId(20),
+                event_id = parentId,
+                event_class = "pos.oal.IpsImport",
+                console_no = consignmentNo,
+                version = 0,
+                date_field = DateTime.Now
+            };
+            m_statEventPendingConsoleRows.Add(pendingIps);
         }
 
         private void ProcessChildWwp(Adapters.Oal.dbo_wwp_event_new_log statWwp, string childConnoteNo)

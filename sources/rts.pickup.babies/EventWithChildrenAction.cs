@@ -16,6 +16,28 @@ namespace Bespoke.PosEntt.CustomActions
             
         }
 
+        protected async Task<Adapters.Oal.dbo_ips_import> CreateStatIpsImport(Adapters.Oal.dbo_status_code_event_new stat, string consignmentNo)
+        {
+            //recreate stat item for mapping ipsimport
+            var statusItem = new Stats.Domain.Stat
+            {
+                Date = stat.date_field.Value.Date,
+                Time = stat.date_field.Value,
+                LocationId = stat.office_no,
+                BeatNo = stat.beat_no,
+                CourierId = stat.courier_id,
+                StatusCode = stat.status_code_id,
+                ConsignmentNo = consignmentNo,
+                Comment = stat.event_comment
+            };
+            var map = new Integrations.Transforms.RtsStatToOalIpsImport();
+            var ipsImport = await map.TransformAsync(statusItem);
+
+            ipsImport.dt_created_oal_date_field = stat.date_created_oal_date_field;
+
+            return ipsImport;
+        }
+
         protected async Task<Adapters.Oal.dbo_consignment_initial> SearchConsignmentInitialAsync(string consignmentNo)
         {
             var adapter = new Adapters.Oal.dbo_consignment_initialAdapter();
