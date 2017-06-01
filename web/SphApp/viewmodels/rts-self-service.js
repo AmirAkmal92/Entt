@@ -58,6 +58,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     .then(function (result) {
                         isBusy(false);
                         AuthToken(result.ItemCollection);
+                        AuthToken.sort(function (l, r) { return l.iat == r.iat ? 0 : (l.iat > r.iat ? -1 : 1) });
                   
                     }, function (e) {
                         if (e.status == 422) {

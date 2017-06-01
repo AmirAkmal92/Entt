@@ -237,7 +237,7 @@
                 <br /><br />
                 <form class="form-horizontal" id="search-auth-form">
                     <div class="form-group">
-                        <label class="col-md-2" for="ScannerId">Scanner Id </label>
+                        <label class="col-md-2" for="ScannerId">Scanner Id *</label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" id="ScannerId" name="ScannerId" data-bind="value: ScannerId" placeholder="Scanner Id" aria-required="true" required />
                             <label id="ScannerId-error" class="error text-danger" for="ScannerId" style="display:none"></label>
@@ -262,6 +262,7 @@
                     <table class="table table-condensed table-striped">
                         <thead>
                             <tr>
+                                <th>&nbsp;</th>
                                 <th>Scanner Id</th>
                                 <th>Date Issued</th>
                                 <th>Date Expired</th>
@@ -269,6 +270,7 @@
                         </thead>
                         <tbody data-bind="foreach: AuthToken" >
                             <tr data-bind="visible:$index() < 5">
+                                <td data-bind="text:$index() + 1"></td>
                                 <td data-bind="text: user"></td>
                                 <td data-bind="text: moment(iat*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
                                 <td data-bind="text: moment(exp*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
