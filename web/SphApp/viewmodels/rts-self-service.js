@@ -8,8 +8,12 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         BeatNo = ko.observable(""),
         CourierId = ko.observable(""),
         ReportDate = ko.observable(""),
+        ActiveScannerEvent = ko.observable("Sip"),//todo: hard code for now
+        ActiveScannerLocationId = ko.observable(""),
+        ActiveScannerDate = ko.observable(""),
         SearchByBeatNoAndCourierIdDeliResults = ko.observableArray(),
         SearchByBeatNoAndCourierIdPickResults = ko.observableArray(),
+        SearchByEventAndLocationIdResults = ko.observableArray(),
         partial = partial || {},
         list = ko.observableArray([]),
         map = function (v) {
@@ -54,7 +58,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     .then(function (result) {
                         isBusy(false);
                         AuthToken(result.ItemCollection);
-                  
+
                     }, function (e) {
                         if (e.status == 422) {
                             console.log("Unprocessable Entity");
@@ -159,6 +163,112 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             ReportDate("");
             resultsArray.removeAll();
         },
+        searchByEventAndLocationId = function () {
+            if (!$("#active-scanner-form").valid()) {
+                return;
+            }
+            //mock the result
+            result = {
+                "took": 172,
+                "timed_out": false,
+                "_shards": {
+                    "total": 905,
+                    "successful": 905,
+                    "failed": 0
+                },
+                "hits": {
+                    "total": 4861,
+                    "max_score": 0,
+                    "hits": []
+                },
+                "aggregations": {
+                    "scanneridaggs": {
+                        "doc_count_error_upper_bound": 0,
+                        "sum_other_doc_count": 0,
+                        "buckets": [
+                           {
+                               "key": "PEN28",
+                               "doc_count": 1190
+                           },
+                           {
+                               "key": "PEN38",
+                               "doc_count": 712
+                           },
+                           {
+                               "key": "PEN41",
+                               "doc_count": 630
+                           },
+                           {
+                               "key": "PEN18",
+                               "doc_count": 509
+                           },
+                           {
+                               "key": "PEN30",
+                               "doc_count": 443
+                           },
+                           {
+                               "key": "PEN39",
+                               "doc_count": 428
+                           },
+                           {
+                               "key": "PEN54",
+                               "doc_count": 363
+                           },
+                           {
+                               "key": "PEN37",
+                               "doc_count": 169
+                           },
+                           {
+                               "key": "PEN03",
+                               "doc_count": 149
+                           },
+                           {
+                               "key": "PEN15",
+                               "doc_count": 137
+                           },
+                           {
+                               "key": "PEN60",
+                               "doc_count": 75
+                           },
+                           {
+                               "key": "PEN13",
+                               "doc_count": 31
+                           },
+                           {
+                               "key": "PEN50",
+                               "doc_count": 11
+                           },
+                           {
+                               "key": "PEN59",
+                               "doc_count": 5
+                           },
+                           {
+                               "key": "PEN61",
+                               "doc_count": 4
+                           },
+                           {
+                               "key": "PEN69",
+                               "doc_count": 4
+                           },
+                           {
+                               "key": "PEN53",
+                               "doc_count": 1
+                           }
+                        ]
+                    }
+                }
+            };
+
+            SearchByEventAndLocationIdResults(result.aggregations.scanneridaggs.buckets);
+            $("#active-scanner-total-events").text(result.hits.total);
+            $("#active-scanner-total-active-scanners").text(result.aggregations.scanneridaggs.buckets.length);
+        },
+        clearEventAndLocationId = function () {
+            ActiveScannerEvent("Sip");//todo: hard code for now
+            ActiveScannerLocationId("");
+            ActiveScannerDate("");
+            SearchByEventAndLocationIdResults.removeAll();
+        },
 
         attached = function (view) {
             $("#ReportDateDeli").kendoDatePicker({
@@ -166,7 +276,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             });
             $("#ReportDatePick").kendoDatePicker({
                 format: "yyyy-MM-dd"
-            });            
+            });
+            $("#ActiveScannerDate").kendoDatePicker({
+                format: "yyyy-MM-dd"
+            });
             $("#search-form").validate({
                 rules: {
                     ItemNo: {
@@ -223,6 +336,24 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     ReportDatePick: "Please provide valid Date."
                 }
             });
+            $("#active-scanner-form").validate({
+                rules: {
+                    ActiveScannerEvent: {
+                        required: false//todo: no validation for now
+                    },
+                    ActiveScannerLocationId: {
+                        required: true
+                    },
+                    ActiveScannerDate: {
+                        required: true
+                    }
+                },
+                messages: {
+                    ActiveScannerEvent: "Please provide valid Event.",
+                    ActiveScannerLocationId: "Please provide valid Location Id.",
+                    ActiveScannerDate: "Please provide valid Date."
+                }
+            });
             if (typeof partial.attached === "function") {
                 partial.attached(view);
             }
@@ -245,12 +376,18 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             BeatNo: BeatNo,
             CourierId: CourierId,
             ReportDate: ReportDate,
+            ActiveScannerEvent: ActiveScannerEvent,
+            ActiveScannerLocationId: ActiveScannerLocationId,
+            ActiveScannerDate: ActiveScannerDate,
             SearchByBeatNoAndCourierIdDeliResults: SearchByBeatNoAndCourierIdDeliResults,
             SearchByBeatNoAndCourierIdPickResults: SearchByBeatNoAndCourierIdPickResults,
+            SearchByEventAndLocationIdResults: SearchByEventAndLocationIdResults,
             searchByBeatNoAndCourierIdDeli: searchByBeatNoAndCourierIdDeli,
             clearBeatNoAndCourierIdDeli: clearBeatNoAndCourierIdDeli,
             searchByBeatNoAndCourierIdPick: searchByBeatNoAndCourierIdPick,
             clearBeatNoAndCourierIdPick: clearBeatNoAndCourierIdPick,
+            searchByEventAndLocationId: searchByEventAndLocationId,
+            clearEventAndLocationId: clearEventAndLocationId,
             activate: activate,
             attached: attached,
             partial: partial,

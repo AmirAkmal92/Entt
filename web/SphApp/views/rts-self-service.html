@@ -19,9 +19,10 @@
             <li role="presentation"><a href="#delivery-report" aria-controls="delivery-report" role="tab" data-toggle="tab">Delivery Report</a></li>
             <li role="presentation"><a href="#pickup-report" aria-controls="pickup-report" role="tab" data-toggle="tab">Pickup Report</a></li>
             <li role="presentation"><a href="#scanner-token" aria-controls="scanner-token" role="tab" data-toggle="tab">Scanner Token</a></li>
+            <li role="presentation"><a href="#active-scanner" aria-controls="active-scanner" role="tab" data-toggle="tab">Active Scanner</a></li>
+            <!--<li role="presentation"><a href="#xxx-report" aria-controls="xxx-report" role="tab" data-toggle="tab">Xxx Report</a></li>-->
             <!--<li role="presentation"><a href="#yyy-report" aria-controls="yyy-report" role="tab" data-toggle="tab">Yyy Report</a></li>-->
         </ul><!-- /Nav tabs -->
-
         <!-- Tab panes -->
         <div class="tab-content">
             <!--Tab Search-->
@@ -91,7 +92,7 @@
                     <div class="form-group">
                         <label class="col-md-2" for="CourierId">Courier Id *</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" aria-required="true" required  />
+                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" aria-required="true" required />
                             <label id="CourierId-error" class="error text-danger" for="CourierId" style="display:none"></label>
                         </div>
                     </div>
@@ -275,8 +276,76 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <!--ScannerToken-->
+            </div><!--/ScannerToken-->
+            <!--Active Scanner-->
+            <div role="tabpanel" class="tab-pane" id="active-scanner">
+                <h3>Active Scanner</h3>
+                <br /><br />
+                <form class="form-horizontal" id="active-scanner-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerEvent">Event</label>
+                        <div class="col-md-6">
+                            <!--todo: hard code and disabled for now-->
+                            <input class="form-control" type="text" id="ActiveScannerEvent" name="ActiveScannerEvent" data-bind="value: ActiveScannerEvent" placeholder="Event" aria-required="true" disabled />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerLocationId">Location Id *</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="ActiveScannerLocationId" name="ActiveScannerLocationId" data-bind="value: ActiveScannerLocationId" placeholder="Location Id" aria-required="true" required />
+                            <label id="ActiveScannerLocationId-error" class="error text-danger" for="ActiveScannerLocationId" style="display:none"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerDate">Date *</label>
+                        <div class="col-md-6">
+                            <input class="form-control" id="ActiveScannerDate" name="ActiveScannerDate" data-bind="value: ActiveScannerDate" placeholder="Date" aria-required="true" required />
+                            <br />
+                            <label id="ActiveScannerDate-error" class="error text-danger" for="ActiveScannerDate" style="display:none"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchByEventAndLocationId">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearEventAndLocationId">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: SearchByEventAndLocationIdResults().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearEventAndLocationId"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label for="active-scanner-event">Event</label>: <span id="active-scanner-event" data-bind="text: ActiveScannerEvent">event</span>
+                                <br />
+                                <label for="active-scanner-location-id">Location Id</label>: <span id="active-scanner-location-id" data-bind="text: ActiveScannerLocationId">location id</span>
+                                <br />
+                                <label for="active-scanner-date">Date</label>: <span id="active-scanner-date" data-bind="text: ActiveScannerDate">date</span>
+                                <br />
+                                <label for="active-scanner-total-events">Total Events</label>: <span id="active-scanner-total-events">total events</span>
+                                <br />
+                                <label for="active-scanner-total-active-scanners">Total Active Scanners</label>: <span id="active-scanner-total-active-scanners">total actice scanners</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Scanner Id</th>
+                                <th>Events Scanned</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: SearchByEventAndLocationIdResults">
+                            <tr>
+                                <td><span data-bind="text: $index() + 1"></span>. </td>
+                                <td data-bind="text: key"></td>
+                                <td data-bind="text: doc_count"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/Active Scanner-->
             <!--<div role="tabpanel" class="tab-pane" id="xxx-report">
                 xxx report
             </div>-->
