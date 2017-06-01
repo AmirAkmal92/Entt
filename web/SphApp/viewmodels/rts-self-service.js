@@ -1,8 +1,8 @@
 define(["services/datacontext", "services/logger", "plugins/router", objectbuilders.app, objectbuilders.validation],
     function (context, logger, router, app, validation) {
         var isBusy = ko.observable(false),
-        ItemNo = ko.observable(""),
-        ScannerId = ko.observable(""),
+            ItemNo = ko.observable(""),
+            ScannerId = ko.observable(""),
         AuthToken = ko.observableArray(),
         SearchItemNoResults = ko.observableArray(),
         BeatNo = ko.observable(""),
@@ -50,10 +50,11 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             }
             if (ScannerId() != "") {
                 isBusy(true);
-                context.get(`/api/auth-tokens/_search?q=${ScannerId()}`)
+                context.get("/api/auth-tokens/_search?q=" + ScannerId() + "&size=10000")
                     .then(function (result) {
                         isBusy(false);
                         AuthToken(result.ItemCollection);
+                        AuthToken.sort(function (l, r) { return l.iat == r.iat ? 0 : (l.iat > r.iat ? -1 : 1) });
                   
                     }, function (e) {
                         if (e.status == 422) {
@@ -71,7 +72,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         },
         clearsearchScannerId = function () {
             ScannerId("");
-            searchScannerId.removeAll();
+            AuthToken.removeAll();
         },
         searchByBeatNoAndCourierIdDeli = function () {
             searchByBeatNoAndCourierId("delivery", SearchByBeatNoAndCourierIdDeliResults);

@@ -266,8 +266,8 @@
                                 <th>Date Expired</th>
                             </tr>
                         </thead>
-                        <tbody data-bind="foreach: AuthToken">
-                            <tr>
+                        <tbody data-bind="foreach: AuthToken" >
+                            <tr data-bind="visible:$index() < 5">
                                 <td data-bind="text: user"></td>
                                 <td data-bind="text: moment(iat*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
                                 <td data-bind="text: moment(exp*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
