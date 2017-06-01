@@ -167,101 +167,55 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             if (!$("#active-scanner-form").valid()) {
                 return;
             }
-            //mock the result
-            result = {
-                "took": 172,
-                "timed_out": false,
-                "_shards": {
-                    "total": 905,
-                    "successful": 905,
-                    "failed": 0
-                },
-                "hits": {
-                    "total": 4861,
-                    "max_score": 0,
-                    "hits": []
-                },
-                "aggregations": {
-                    "scanneridaggs": {
-                        "doc_count_error_upper_bound": 0,
-                        "sum_other_doc_count": 0,
-                        "buckets": [
-                           {
-                               "key": "PEN28",
-                               "doc_count": 1190
-                           },
-                           {
-                               "key": "PEN38",
-                               "doc_count": 712
-                           },
-                           {
-                               "key": "PEN41",
-                               "doc_count": 630
-                           },
-                           {
-                               "key": "PEN18",
-                               "doc_count": 509
-                           },
-                           {
-                               "key": "PEN30",
-                               "doc_count": 443
-                           },
-                           {
-                               "key": "PEN39",
-                               "doc_count": 428
-                           },
-                           {
-                               "key": "PEN54",
-                               "doc_count": 363
-                           },
-                           {
-                               "key": "PEN37",
-                               "doc_count": 169
-                           },
-                           {
-                               "key": "PEN03",
-                               "doc_count": 149
-                           },
-                           {
-                               "key": "PEN15",
-                               "doc_count": 137
-                           },
-                           {
-                               "key": "PEN60",
-                               "doc_count": 75
-                           },
-                           {
-                               "key": "PEN13",
-                               "doc_count": 31
-                           },
-                           {
-                               "key": "PEN50",
-                               "doc_count": 11
-                           },
-                           {
-                               "key": "PEN59",
-                               "doc_count": 5
-                           },
-                           {
-                               "key": "PEN61",
-                               "doc_count": 4
-                           },
-                           {
-                               "key": "PEN69",
-                               "doc_count": 4
-                           },
-                           {
-                               "key": "PEN53",
-                               "doc_count": 1
-                           }
-                        ]
+            if (ActiveScannerEvent() != ""
+                && ActiveScannerLocationId() != ""
+                && ActiveScannerDate() != "") {
+                var query = {
+                    "query": {
+                        "bool": {
+                            "must": [
+                               {
+                                   "range": {
+                                       "CreatedDate": {
+                                           "from": ActiveScannerDate() + "T00:00:00+08:00",
+                                           "to": ActiveScannerDate() + "T23:59:59+08:00"
+                                       }
+                                   }
+                               },
+                               {
+                                   "term": {
+                                       "LocationId": {
+                                           "value": ActiveScannerLocationId()
+                                       }
+                                   }
+                               }
+                            ]
+                        }
+                    },
+                    "size": 0,
+                    "aggs": {
+                        "scanneridaggs": {
+                            "terms": {
+                                "field": "ScannerId",
+                                "size": 100
+                            }
+                        }
                     }
-                }
-            };
-
-            SearchByEventAndLocationIdResults(result.aggregations.scanneridaggs.buckets);
-            $("#active-scanner-total-events").text(result.hits.total);
-            $("#active-scanner-total-active-scanners").text(result.aggregations.scanneridaggs.buckets.length);
+                };
+                isBusy(true);
+                context.post(ko.toJSON(query), `/api/rts-dashboard/${ActiveScannerEvent()}`)
+                    .then(function (result) {
+                        isBusy(false);
+                        SearchByEventAndLocationIdResults(result.aggregations.scanneridaggs.buckets);
+                        $("#active-scanner-total-events").text(result.hits.total);
+                        $("#active-scanner-total-active-scanners").text(result.aggregations.scanneridaggs.buckets.length);
+                    }, function (e) {
+                        if (e.status == 422) {
+                            console.log("Unprocessable Entity");
+                        }
+                        isBusy(false);
+                    });
+            }
         },
         clearEventAndLocationId = function () {
             ActiveScannerEvent("Sip");//todo: hard code for now
