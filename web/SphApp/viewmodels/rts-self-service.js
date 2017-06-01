@@ -8,8 +8,12 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         BeatNo = ko.observable(""),
         CourierId = ko.observable(""),
         ReportDate = ko.observable(""),
+        ActiveScannerEvent = ko.observable("Sip"),//todo: hard code for now
+        ActiveScannerLocationId = ko.observable(""),
+        ActiveScannerDate = ko.observable(""),
         SearchByBeatNoAndCourierIdDeliResults = ko.observableArray(),
         SearchByBeatNoAndCourierIdPickResults = ko.observableArray(),
+        SearchByEventAndLocationIdResults = ko.observableArray(),
         partial = partial || {},
         list = ko.observableArray([]),
         map = function (v) {
@@ -54,7 +58,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     .then(function (result) {
                         isBusy(false);
                         AuthToken(result.ItemCollection);
-                        AuthToken.sort(function (l, r) { return l.iat == r.iat ? 0 : (l.iat > r.iat ? -1 : 1) });
                   
                     }, function (e) {
                         if (e.status == 422) {
@@ -160,6 +163,66 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             ReportDate("");
             resultsArray.removeAll();
         },
+        searchByEventAndLocationId = function () {
+            if (!$("#active-scanner-form").valid()) {
+                return;
+            }
+            if (ActiveScannerEvent() != ""
+                && ActiveScannerLocationId() != ""
+                && ActiveScannerDate() != "") {
+                var query = {
+                    "query": {
+                        "bool": {
+                            "must": [
+                               {
+                                   "range": {
+                                       "CreatedDate": {
+                                           "from": ActiveScannerDate() + "T00:00:00+08:00",
+                                           "to": ActiveScannerDate() + "T23:59:59+08:00"
+                                       }
+                                   }
+                               },
+                               {
+                                   "term": {
+                                       "LocationId": {
+                                           "value": ActiveScannerLocationId()
+                                       }
+                                   }
+                               }
+                            ]
+                        }
+                    },
+                    "size": 0,
+                    "aggs": {
+                        "scanneridaggs": {
+                            "terms": {
+                                "field": "ScannerId",
+                                "size": 100
+                            }
+                        }
+                    }
+                };
+                isBusy(true);
+                context.post(ko.toJSON(query), `/api/rts-dashboard/${ActiveScannerEvent()}`)
+                    .then(function (result) {
+                        isBusy(false);
+                        SearchByEventAndLocationIdResults(result.aggregations.scanneridaggs.buckets);
+                        $("#active-scanner-total-events").text(result.hits.total);
+                        $("#active-scanner-total-active-scanners").text(result.aggregations.scanneridaggs.buckets.length);
+                    }, function (e) {
+                        if (e.status == 422) {
+                            console.log("Unprocessable Entity");
+                        }
+                        isBusy(false);
+                    });
+            }
+        },
+        clearEventAndLocationId = function () {
+            ActiveScannerEvent("Sip");//todo: hard code for now
+            ActiveScannerLocationId("");
+            ActiveScannerDate("");
+            SearchByEventAndLocationIdResults.removeAll();
+        },
 
         attached = function (view) {
             $("#ReportDateDeli").kendoDatePicker({
@@ -167,7 +230,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             });
             $("#ReportDatePick").kendoDatePicker({
                 format: "yyyy-MM-dd"
-            });            
+            });
+            $("#ActiveScannerDate").kendoDatePicker({
+                format: "yyyy-MM-dd"
+            });
             $("#search-form").validate({
                 rules: {
                     ItemNo: {
@@ -224,6 +290,24 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     ReportDatePick: "Please provide valid Date."
                 }
             });
+            $("#active-scanner-form").validate({
+                rules: {
+                    ActiveScannerEvent: {
+                        required: false//todo: no validation for now
+                    },
+                    ActiveScannerLocationId: {
+                        required: true
+                    },
+                    ActiveScannerDate: {
+                        required: true
+                    }
+                },
+                messages: {
+                    ActiveScannerEvent: "Please provide valid Event.",
+                    ActiveScannerLocationId: "Please provide valid Location Id.",
+                    ActiveScannerDate: "Please provide valid Date."
+                }
+            });
             if (typeof partial.attached === "function") {
                 partial.attached(view);
             }
@@ -246,12 +330,18 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             BeatNo: BeatNo,
             CourierId: CourierId,
             ReportDate: ReportDate,
+            ActiveScannerEvent: ActiveScannerEvent,
+            ActiveScannerLocationId: ActiveScannerLocationId,
+            ActiveScannerDate: ActiveScannerDate,
             SearchByBeatNoAndCourierIdDeliResults: SearchByBeatNoAndCourierIdDeliResults,
             SearchByBeatNoAndCourierIdPickResults: SearchByBeatNoAndCourierIdPickResults,
+            SearchByEventAndLocationIdResults: SearchByEventAndLocationIdResults,
             searchByBeatNoAndCourierIdDeli: searchByBeatNoAndCourierIdDeli,
             clearBeatNoAndCourierIdDeli: clearBeatNoAndCourierIdDeli,
             searchByBeatNoAndCourierIdPick: searchByBeatNoAndCourierIdPick,
             clearBeatNoAndCourierIdPick: clearBeatNoAndCourierIdPick,
+            searchByEventAndLocationId: searchByEventAndLocationId,
+            clearEventAndLocationId: clearEventAndLocationId,
             activate: activate,
             attached: attached,
             partial: partial,
