@@ -109,7 +109,9 @@ namespace Bespoke.PosEntt.CustomActions
 
             var details = detailsPolly.Result;
 
-            if (details.courier_id == deco.CourierId && (details.date_field ?? DateTime.MinValue).Date == deco.Date.Date)
+            var decoDateTime = deco.Date.AddHours(deco.Time.Hour).AddMinutes(deco.Time.Minute).AddSeconds(deco.Time.Second);
+
+            if (details.courier_id == deco.CourierId && details.office_no == deco.LocationId && (details.date_field ?? DateTime.MinValue).AddHours(28) >= decoDateTime)
             {
                 var notes = details.item_consignments.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 notes.AddRange(deco.AllConsignmentnNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
