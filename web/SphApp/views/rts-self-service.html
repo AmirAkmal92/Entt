@@ -285,10 +285,9 @@
                 <br /><br />
                 <form class="form-horizontal" id="active-scanner-form">
                     <div class="form-group">
-                        <label class="col-md-2" for="ActiveScannerEvent">Event</label>
+                        <label class="col-md-2" for="ActiveScannerEvent">Event *</label>
                         <div class="col-md-6">
-                            <!--todo: hard code and disabled for now-->
-                            <input class="form-control" type="text" id="ActiveScannerEvent" name="ActiveScannerEvent" data-bind="value: ActiveScannerEvent" placeholder="Event" aria-required="true" disabled />
+                            <select class="form-control" id="ActiveScannerEvent" name="ActiveScannerEvent" data-bind="options: availableEvents, value: ActiveScannerEvent"></select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -317,11 +316,11 @@
                             <span class="pull-right" data-bind="click: clearEventAndLocationId"><i class="fa fa-times"></i></span>
                             <br />
                             <p>
-                                <label for="active-scanner-event">Event</label>: <span id="active-scanner-event" data-bind="text: ActiveScannerEvent">event</span>
+                                <label for="active-scanner-event">Event</label>: <span id="active-scanner-event">event</span>
                                 <br />
-                                <label for="active-scanner-location-id">Location Id</label>: <span id="active-scanner-location-id" data-bind="text: ActiveScannerLocationId">location id</span>
+                                <label for="active-scanner-location-id">Location Id</label>: <span id="active-scanner-location-id">location id</span>
                                 <br />
-                                <label for="active-scanner-date">Date</label>: <span id="active-scanner-date" data-bind="text: ActiveScannerDate">date</span>
+                                <label for="active-scanner-date">Date</label>: <span id="active-scanner-date">date</span>
                                 <br />
                                 <label for="active-scanner-total-events">Total Events</label>: <span id="active-scanner-total-events">total events</span>
                                 <br />
