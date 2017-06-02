@@ -113,7 +113,9 @@ namespace Bespoke.PosEntt.CustomActions
                 throw new Exception("Console Details Polly Error", detailsPolly.FinalException);
 
             var details = detailsPolly.Result;
-            if (details.courier_id == norm.CourierId && (details.date_field ?? DateTime.MinValue).Date == norm.Date.Date)
+            var normDateTime = norm.Date.AddHours(norm.Time.Hour).AddMinutes(norm.Time.Minute).AddSeconds(norm.Time.Second);
+
+            if (details.courier_id == norm.CourierId && details.office_no == norm.LocationId && (details.date_field ?? DateTime.MinValue).AddHours(28) >= normDateTime)
             {
                 var notes = details.item_consignments.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 notes.AddRange(norm.AllConsignmentNotes.Split(new[] { ',', '\t' }, StringSplitOptions.RemoveEmptyEntries));
