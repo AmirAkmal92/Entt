@@ -317,7 +317,7 @@
         },
         "Name": "WeightDensity",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "2.940",
         "IsComplex": false,
@@ -337,7 +337,7 @@
         },
         "Name": "WeightVolumetric",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "0",
         "IsComplex": false,
@@ -572,6 +572,6 @@
   "Id": "ipos-pem-port",
   "CreatedDate": "2017-06-06T12:55:45.3158643+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-06T13:55:01.0025828+08:00",
+  "ChangedDate": "2017-06-06T15:45:37.9456736+08:00",
   "WebId": "0541b99d-d897-42ad-b016-2065d37fddf9"
 }

@@ -366,7 +366,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -390,7 +390,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Decimal, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -691,6 +691,6 @@
   "Id": "ipos-pem",
   "CreatedDate": "2017-06-06T13:54:58.9440686+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-06T13:56:22.2583577+08:00",
+  "ChangedDate": "2017-06-06T15:45:59.7612195+08:00",
   "WebId": "0541b99d-d897-42ad-b016-2065d37fddf9"
 }
