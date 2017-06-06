@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": null,
+  "CredentialUserName": null,
+  "ChangeExtension": false,
+  "CredentialPassword": null,
+  "Filter": null,
+  "ArchiveLocation": null,
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IposBoemFileDrop",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": null,
+  "SubmitMethod": null,
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "ipos-boem-port",
+  "CreatedBy": "admin",
+  "Id": "ipos-boem-file-drop",
+  "CreatedDate": "2017-06-06T14:41:50.063237+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-06-06T14:41:50.063237+08:00",
+  "WebId": "b6e9893c-233a-4a17-a309-5968301864ed"
+}
