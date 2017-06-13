@@ -27,14 +27,14 @@
   "IsHttpPost": true,
   "IsHttpDelete": false,
   "Note": null,
-  "Entity": "IposBoem",
-  "Resource": "ipos-boems",
+  "Entity": "IntranetBoem",
+  "Resource": "intranet-boems",
   "IsPublished": false,
   "IsConflictDetectionEnabled": false,
   "CreatedBy": "admin",
-  "Id": "default-post-ipos-boem",
-  "CreatedDate": "2017-06-13T15:17:53.3594993+08:00",
+  "Id": "default-post-intranet-boem",
+  "CreatedDate": "2017-06-13T15:21:25.1194279+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-13T15:17:53.3594993+08:00",
-  "WebId": "87af0330-2f59-48d4-9f11-b2efdfcad685"
+  "ChangedDate": "2017-06-13T15:21:25.1194279+08:00",
+  "WebId": "539da743-56bf-434d-b0ae-de1f842fec95"
 }

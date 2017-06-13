@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": null,
+  "CredentialUserName": null,
+  "ChangeExtension": false,
+  "CredentialPassword": null,
+  "Filter": null,
+  "ArchiveLocation": null,
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IntranetPemFileDrop",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": null,
+  "SubmitMethod": null,
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "intranet-pem-port",
+  "CreatedBy": "admin",
+  "Id": "intranet-pem-file-drop",
+  "CreatedDate": "2017-06-13T15:13:12.5061334+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-06-13T15:13:12.5061334+08:00",
+  "WebId": "f8d9ecbb-9b5a-4bb6-8bfc-3ec7ed1e28cc"
+}
