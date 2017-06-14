@@ -1,0 +1,5 @@
+ USE [EnttPlatform]
+ GO
+
+CREATE SCHEMA [Entt] AUTHORIZATION [dbo]
+GO
