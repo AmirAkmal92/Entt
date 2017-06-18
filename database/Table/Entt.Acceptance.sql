@@ -78,6 +78,13 @@ CREATE TABLE [Entt].[Acceptance](
 	[delivery_branch_name] [varchar](50) NULL,
 	[is_contract] [tinyint] NULL,
 	[is_billed] [tinyint] NULL,
+	[is_missort] [tinyint] NULL,
+	[missort_location] [varchar](50) NULL,
+	[missort_date] [datetime] NULL,
+	[is_pup_statcode] [tinyint] NULL,
+	[pup_statcode_id] [varchar](2) NULL,
+	[pup_statcode_location] [varchar](50) NULL,
+	[pup_statcode_date] [datetime] NULL,
  CONSTRAINT [PK_consignment_initial] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
