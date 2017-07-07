@@ -54,7 +54,7 @@
       {
         "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
         "EmptyField": null,
-        "TypeName": "",
+        "TypeName": "TrxObject",
         "FullName": null,
         "PropertyAttribute": null,
         "MemberCollection": {
@@ -338,7 +338,7 @@
       {
         "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
         "EmptyField": null,
-        "TypeName": "",
+        "TypeName": "ConnoteObject",
         "FullName": null,
         "PropertyAttribute": null,
         "MemberCollection": {
@@ -906,7 +906,7 @@
       {
         "$type": "Bespoke.Sph.Domain.ComplexMember, domain.sph",
         "EmptyField": null,
-        "TypeName": "",
+        "TypeName": "ReceiverObject",
         "FullName": null,
         "PropertyAttribute": null,
         "MemberCollection": {
@@ -1218,15 +1218,15 @@
   "Plural": "AcceptanceDatas",
   "IconClass": "fa fa-database",
   "RecordName": "TellerID",
-  "IsPublished": false,
+  "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "acceptance-data",
   "CreatedDate": "2017-07-04T11:46:37.1896293+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-04T11:52:49.7029123+08:00",
+  "ChangedDate": "2017-07-07T11:31:40.4835904+08:00",
   "WebId": "ba2cdf6b-7925-406d-94e3-2ac26a53fe7f"
 }

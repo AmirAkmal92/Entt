@@ -1,0 +1,81 @@
+{
+    "acceptancedata":{
+        "properties":{
+            "CreatedBy": {"type": "string", "index":"not_analyzed"},
+            "ChangedBy": {"type": "string", "index":"not_analyzed"},
+            "WebId": {"type": "string", "index":"not_analyzed"},
+            "CreatedDate": {"type": "date"},
+            "ChangedDate": {"type": "date"},
+             "TellerID":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "BranchCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+    "TrxObject":{
+        "type":  "object",
+        "properties":{
+             "TrxID":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Status":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "CancelReason":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "TrxDateTime":{"type":"date","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "MHLIndicator":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "MHLDate":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PaymentType":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PaymentMethod":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "AccountNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PL9Number":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "RoundAdj":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "ConnoteObject":{
+        "type":  "object",
+        "properties":{
+             "ProductCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConnoteNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DestinationCountry":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Weight":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "Width":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Length":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Height":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DimWeight":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "ItemCategory":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "RoutingCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "StandardOfService":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "SenderObject":{
+        "type":  "object",
+        "properties":{
+             "Name":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address1":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address2":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address3":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "City":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "State":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Country":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Postcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Email":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PhoneNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ReferenceNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "ReceiverObject":{
+        "type":  "object",
+        "properties":{
+             "Name":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address1":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address2":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Address3":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "City":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "State":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Country":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Postcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Email":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "PhoneNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ReferenceNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
+        }
+    }
+
+        }
+    }
+}
