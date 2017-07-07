@@ -3,7 +3,7 @@
   <Reference Relative="..\output\PosEntt.EnttAcceptance.dll">C:\project\work\entt.rts\output\PosEntt.EnttAcceptance.dll</Reference>
   <Reference Relative="..\output\PosEntt.Pickup.dll">C:\project\work\entt.rts\output\PosEntt.Pickup.dll</Reference>
   <Reference Relative="..\output\PosEntt.ReceivePort.RtsPickup.dll">C:\project\work\entt.rts\output\PosEntt.ReceivePort.RtsPickup.dll</Reference>
-  <Reference Relative="..\output\PosEntt.RtsPickupToEnttAcceptance.dll">C:\project\work\entt.rts\output\PosEntt.RtsPickupToEnttAcceptance.dll</Reference>
+  <Reference Relative="..\output\PosEntt.RtsPickupToEnttPlatformAcceptance.dll">C:\project\work\entt.rts\output\PosEntt.RtsPickupToEnttPlatformAcceptance.dll</Reference>
   <Namespace>Bespoke.Sph.Domain</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
 </Query>
@@ -18,11 +18,11 @@ var entities = from i in rawList
 			   let json = i.ToJson()
 			   select json.DeserializeFromJson<Bespoke.PosEntt.Pickups.Domain.Pickup>();
 //entities.Dump();
-var map = new Bespoke.PosEntt.Integrations.Transforms.RtsPickupToEnttAcceptance();
+var map = new Bespoke.PosEntt.Integrations.Transforms.RtsPickupToEnttPlatformAcceptance();
 var tasks = from input in entities
 		select map.TransformAsync(input);
 var list = await Task.WhenAll(tasks);
-//list.Dump();
+list.Dump();
 //Console.WriteLine (list);
 //var adapter = new Bespoke.PosEntt.Adapters.EnttAcceptance.();
 //foreach (var item in list)
