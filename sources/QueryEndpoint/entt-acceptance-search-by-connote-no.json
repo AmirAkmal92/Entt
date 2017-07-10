@@ -48,7 +48,7 @@
   },
   "CacheProfile": "",
   "Name": "SearchByConnoteNo",
-  "Route": "search-by-connote-no/",
+  "Route": "search-by-connote-no/{connoteno}",
   "IsReturnSource": "",
   "Entity": "EnttAcceptance",
   "Note": "",
@@ -59,6 +59,6 @@
   "Id": "entt-acceptance-search-by-connote-no",
   "CreatedDate": "2017-07-07T11:49:06.6490481+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-08T23:09:18.6599162+08:00",
+  "ChangedDate": "2017-07-10T12:44:06.9302286+08:00",
   "WebId": "9db23e7b-754e-4308-9a6c-e9b438aa8b55"
 }

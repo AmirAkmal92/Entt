@@ -53,6 +53,30 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "PickupNo",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "b0b2526a-8dc7-425f-9c1a-5e08b0b0bb52"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Int32, mscorlib",
         "IsNullable": true,
         "IsNotIndexed": false,
@@ -1739,7 +1763,7 @@
   "IconClass": "fa fa-tablet",
   "RecordName": "ConsignmentNo",
   "IsPublished": true,
-  "TreatDataAsSource": true,
+  "TreatDataAsSource": false,
   "Transient": false,
   "StoreInDatabase": true,
   "StoreInElasticsearch": true,
@@ -1747,6 +1771,6 @@
   "Id": "entt-acceptance",
   "CreatedDate": "2017-06-22T12:01:08.9612286+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-05T12:45:07.5047324+08:00",
+  "ChangedDate": "2017-07-10T12:58:46.6894215+08:00",
   "WebId": "1518b614-6c86-423e-913b-5b93695c1ff8"
 }

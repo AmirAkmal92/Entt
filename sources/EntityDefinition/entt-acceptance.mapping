@@ -8,6 +8,7 @@
             "ChangedDate": {"type": "date"},
              "ConsignmentNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "DateTime":{"type":"date","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "PickupNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "TotalConsignment":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
              "IsParent":{"type":"boolean","index":"not_analyzed","boost":1,"include_in_all":true},
              "Postcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},

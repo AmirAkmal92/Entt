@@ -2,6 +2,7 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL
 ,[ConsignmentNo] VARCHAR(255) NOT NULL
 ,[DateTime] SMALLDATETIME NOT NULL
+,[PickupNo] VARCHAR(255)  NULL
 ,[TotalConsignment] INT  NULL
 ,[IsParent] BIT  NULL
 ,[Postcode] VARCHAR(255)  NULL
