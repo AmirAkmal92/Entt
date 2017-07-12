@@ -16,6 +16,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_entt-acceptance-ezi-send-pickup-notifier",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEziSendPickupNotifierTriggerSubscriber",
+      "assembly": "subscriber.trigger.entt-acceptance-ezi-send-pickup-notifier"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_pickup-rts-pickup-to-entt-platform-acceptance",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToEnttPlatformAcceptanceTriggerSubscriber",
       "assembly": "subscriber.trigger.pickup-rts-pickup-to-entt-platform-acceptance"
