@@ -42,6 +42,24 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "6a036968-7197-463d-d5a0-a720f7b8587f"
+      },
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "ipos-pem-to-pem-event-new",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "pem_event_new",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 3000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToOalPemEventNew",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "141fb4c3-8f62-4e00-8943-0496ed01b3d6"
       }
     ]
   },
@@ -102,6 +120,17 @@
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
         "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposPemToPemEventNew",
+        "FullName": "PosEntt.IposPemToPemEventNew, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\PosEntt.IposPemToPemEventNew.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
       }
     ]
   },
@@ -124,6 +153,6 @@
   "Id": "ipos-pem-rts-pem-to-oal",
   "CreatedDate": "2017-07-11T15:51:29.8460217+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-11T18:19:46.1218561+08:00",
+  "ChangedDate": "2017-07-13T03:58:58.1118459+08:00",
   "WebId": "3bf96aaa-70c7-4aab-bd33-feffb2df9393"
 }
