@@ -67,8 +67,8 @@
                         <tbody data-bind="foreach: SearchItemNoResults">
                             <tr>
                                 <td data-bind="text: _type"></td>
-                                <td data-bind="text: moment(_source.Date).format('DD/MM/YYYY') +' '+ moment(_source.Time).format('HH:mm')"></td>
-                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm'}"></td>
+                                <td data-bind="text: moment(_source.Date).format('DD/MM/YYYY') +' '+ moment(_source.Time).format('HH:mm:ss')"></td>
+                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="text: _source.CourierId"></td>
                                 <td data-bind="text: _source.LocationId"></td>
                                 <td data-bind="text: _source.Comment"></td>
