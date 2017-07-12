@@ -84,4 +84,40 @@ public class RtsScannerAppsController : BaseApiController
         var fileContent = Encoding.ASCII.GetBytes(sb.ToString());
         return File(fileContent,"text/plain","sample.txt");
     }
+
+    [Route("download-acceptance-connote/{branch}")]
+    [HttpGet]
+    public async Task<IHttpActionResult> DownloadAcceptanceConnoteAsync(string branch)
+    {
+        var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
+        var conn = new SqlConnection(connectionString);
+        var acceptances = new List<EnttAcceptance>();
+        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId", conn))
+        {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+
+            cmd.Parameters.AddWithValue("@LocationId", branch);
+
+            using (var reader = await cmd.ExecuteReaderAsync(CommandBehavior.CloseConnection))
+            {
+                while (reader.Read())
+                {
+                    var a = new EnttAcceptance
+                    {
+                        ConsignmentNo = reader.GetString(0)                        
+                    };
+                    acceptances.Add(a);                    
+                }
+            }
+        }
+
+        var sb = new StringBuilder();
+        foreach (var item in acceptances)
+        {
+            sb.AppendFormat("{0}\r\n", item.ConsignmentNo);
+        }
+        var fileContent = Encoding.ASCII.GetBytes(sb.ToString());
+        return File(fileContent, "text/plain", "sample.txt");
+    }
 }
