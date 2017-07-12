@@ -166,15 +166,15 @@
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "UserId",
+        "Name": "EventUserId",
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "e2bcc3cb-539a-429f-ad65-5e5f1143d8d4"
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": true,
+        "TypeName": "System.DateTime, mscorlib",
+        "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -197,8 +197,8 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": true,
+        "TypeName": "System.DateTime, mscorlib",
+        "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -413,7 +413,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -454,7 +454,7 @@
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
           "$values": []
         },
-        "Name": "ProductCode",
+        "Name": "ProductType",
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "db725e81-1493-4968-b3a3-2656e6e51130"
@@ -533,7 +533,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -557,7 +557,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -680,7 +680,7 @@
   },
   "Name": "IposPem",
   "Plural": "IposPems",
-  "IconClass": "fa fa-rocket",
+  "IconClass": "fa fa-envira",
   "RecordName": "ConsignmentNo",
   "IsPublished": true,
   "TreatDataAsSource": false,
@@ -689,8 +689,8 @@
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "ipos-pem",
-  "CreatedDate": "2017-06-06T13:54:58.9440686+08:00",
+  "CreatedDate": "2017-07-11T12:29:28.2239383+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-06T15:45:59.7612195+08:00",
+  "ChangedDate": "2017-07-11T12:30:40.3673316+08:00",
   "WebId": "0541b99d-d897-42ad-b016-2065d37fddf9"
 }
