@@ -14,8 +14,8 @@
   "IsActive": false,
   "ValidationEndpoint": null,
   "ValidationMethod": "",
-  "SubmitEndpoint": null,
-  "SubmitMethod": "",
+  "SubmitEndpoint": "default-post-mail-item",
+  "SubmitMethod": "POST",
   "InvalidEndpoint": null,
   "InvalidMethod": "",
   "ErrorEndpoint": null,
@@ -26,6 +26,6 @@
   "Id": "ips-export-file-drop",
   "CreatedDate": "2017-07-18T15:39:33.6137526+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-18T15:43:22.0964563+08:00",
+  "ChangedDate": "2017-07-18T16:37:45.367284+08:00",
   "WebId": "50a37f0e-7ce1-48f8-9f00-83e8d4815c1f"
 }
