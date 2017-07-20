@@ -330,7 +330,7 @@
           ]
         },
         "Name": "TrxObject",
-        "TypeName": "",
+        "TypeName": "TrxObject",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "458-10141003-3-860594-50N5/6/2017 2:38:02 PMCHCH",
@@ -619,7 +619,7 @@
           ]
         },
         "Name": "ConnoteObject",
-        "TypeName": "",
+        "TypeName": "ConnoteObject",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "C001101EH468761173MYMY2.250009ASWY-320",
@@ -1197,7 +1197,7 @@
           ]
         },
         "Name": "ReceiverObject",
-        "TypeName": "",
+        "TypeName": "ReceiverObject",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "MY32040",
@@ -1240,6 +1240,6 @@
   "Id": "prs-acceptance-port",
   "CreatedDate": "2017-07-04T11:41:59.0527169+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-04T11:45:33.3952423+08:00",
+  "ChangedDate": "2017-07-18T14:47:07.4549633+08:00",
   "WebId": "ba2cdf6b-7925-406d-94e3-2ac26a53fe7f"
 }
