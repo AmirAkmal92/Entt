@@ -120,7 +120,7 @@
                   {
                     "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
                     "TypeName": "System.String, mscorlib",
-                    "IsNullable": false,
+                    "IsNullable": true,
                     "IsNotIndexed": true,
                     "IsAnalyzed": false,
                     "IsFilterable": false,
@@ -144,7 +144,7 @@
                   {
                     "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
                     "TypeName": "System.String, mscorlib",
-                    "IsNullable": false,
+                    "IsNullable": true,
                     "IsNotIndexed": true,
                     "IsAnalyzed": false,
                     "IsFilterable": false,
@@ -2012,7 +2012,7 @@
   },
   "Name": "MailItem",
   "Plural": "MailItems",
-  "IconClass": "fa fa-send-o",
+  "IconClass": "fa fa-database",
   "RecordName": "ItemId",
   "IsPublished": true,
   "TreatDataAsSource": false,
@@ -2021,8 +2021,8 @@
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "mail-item",
-  "CreatedDate": "2017-07-18T15:06:40.3262448+08:00",
+  "CreatedDate": "2017-07-20T14:52:48.22347+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-18T15:44:59.8515755+08:00",
-  "WebId": "f58fb607-18fd-4d7f-a5ae-c97bf87f5cce"
+  "ChangedDate": "2017-07-20T14:53:49.4807501+08:00",
+  "WebId": "c7e4c4b7-7722-4a39-8d9c-d1417110bdc7"
 }

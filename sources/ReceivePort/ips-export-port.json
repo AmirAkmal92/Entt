@@ -25,7 +25,7 @@
         "Ignore": false,
         "Comment": "",
         "DefaultValueString": "",
-        "WebId": "366b6954-a46f-4cd7-84b2-4534c4e3fb08"
+        "WebId": "cd720378-25c9-4696-b184-e4d3ec976ba8"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlAttributeTextFieldMapping, domain.sph",
@@ -45,7 +45,7 @@
         "Ignore": false,
         "Comment": "",
         "DefaultValueString": "",
-        "WebId": "86a8a04d-da54-488c-844e-62cd829aa136"
+        "WebId": "ae0e5832-5989-4c2d-ae6d-850b77439289"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlAttributeTextFieldMapping, domain.sph",
@@ -65,7 +65,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "1c438c62-c7aa-4d77-916d-96f516852c41"
+        "WebId": "a2a713b2-108d-4158-987d-319ada3fc9c9"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -150,6 +150,7 @@
             ]
           }
         },
+        "Namespace": "{http://upu.int/ips}",
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -159,6 +160,7 @@
               "Element": {
                 "LocalId": "RR172301665MY"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -175,7 +177,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "8e6c5967-05f8-4d11-b377-8f05c14a5dbf"
+              "WebId": "5273f1a2-4b1c-4a10-8c48-7868e6f559c9"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -185,6 +187,7 @@
                   "DestOfficeCd": "MYKULA"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -194,6 +197,7 @@
                     "Element": {
                       "OrigOfficeCd": "AUSYDB"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -201,7 +205,7 @@
                     },
                     "Name": "OrigOfficeCd",
                     "TypeName": "System.String, mscorlib",
-                    "IsNullable": false,
+                    "IsNullable": true,
                     "Converter": null,
                     "SampleValue": "AUSYDB",
                     "IsComplex": false,
@@ -210,13 +214,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "611dda87-3a48-4fde-8233-2d3abff82694"
+                    "WebId": "dedc43cf-fb98-4b9f-915e-03e8e5e9f9b5"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "DestOfficeCd": "MYKULA"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -224,7 +229,7 @@
                     },
                     "Name": "DestOfficeCd",
                     "TypeName": "System.String, mscorlib",
-                    "IsNullable": false,
+                    "IsNullable": true,
                     "Converter": null,
                     "SampleValue": "MYKULA",
                     "IsComplex": false,
@@ -233,7 +238,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "9b58c66e-eb04-4303-9b1a-f0379373ab71"
+                    "WebId": "e78738bc-2b9c-49e3-bb7c-ff1a8dd7619d"
                   }
                 ]
               },
@@ -248,13 +253,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "761551cc-4bf5-447b-83aa-03f341feb6e0"
+              "WebId": "d31f6416-733b-49eb-8711-5069eb263ae8"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "InnrbagId": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -271,13 +277,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ec7e96fa-4a03-4553-9876-42198a4147cc"
+              "WebId": "1c61e29c-5a6b-4001-8edc-5f78f5d6b234"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "RecptclId": "AUSYDBMYKULAAEM70095002000070"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -294,13 +301,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "9be11b4a-8bde-4709-89fa-007919da1278"
+              "WebId": "4947186e-30d8-4cde-a67f-6e2a65bafc4d"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ItemWeight": "0.955"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -317,13 +325,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "0fe3e805-7bfd-48f8-9309-98680a1a16d9"
+              "WebId": "fdb8be27-b2d3-49c4-8e53-217fc9cb262d"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Value": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -340,13 +349,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "458434df-fa3c-4794-9448-f41047295169"
+              "WebId": "68584639-f16b-4fa9-afdc-f1af27f7cd62"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "CurrencyCd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -363,13 +373,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "cfb2f028-0729-4a4f-85f8-e7a72618026e"
+              "WebId": "0073b72f-afeb-4bad-a779-9658fb7a0d62"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DutiableInd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -386,13 +397,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "5e003d65-4203-415a-959d-c21f347671be"
+              "WebId": "a9bbfe14-10b4-48b5-b6f4-99ea307a9a91"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DutiableValue": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -409,13 +421,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "8bc5984b-1b15-4bb4-9e6a-3fb7c70faecc"
+              "WebId": "bdc273b4-5fbc-45c2-a51a-061e8a6b998c"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "CustomNo": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -432,13 +445,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "339a9d18-0b31-4d9b-95c3-e4d59c0bfc46"
+              "WebId": "dbf0a731-4d72-4c34-9d2d-4df72dd023aa"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ClassCd": "E"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -455,13 +469,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "04af3d9b-78da-4f63-a204-6bea614954fc"
+              "WebId": "37b6bb61-f423-4549-8ece-8f3dbc53f0ae"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "SubclassCd": "EM"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -478,13 +493,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "c9e32a1c-88b9-4394-8b54-21ad6ff084d7"
+              "WebId": "a47228ff-8dda-4a2d-b9d4-22168876cd37"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Content": "M"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -501,13 +517,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ad053ed3-fcd6-4b73-bb92-127165d8fdcb"
+              "WebId": "19e134ae-4a27-4e07-8a1b-87e78f70d366"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "OperatorCd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -524,13 +541,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "337678ae-2890-417b-bc75-1a3f40c29019"
+              "WebId": "bcdc0d6e-7a8d-494b-8fa2-fecedbd85df4"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "OrigCountryCd": "AU"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -547,13 +565,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "877373e2-7e76-4179-9bc6-2b4eb0b20b71"
+              "WebId": "95874ca4-0295-434b-8607-b015d29d0e8b"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DestCountryCd": "MY"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -570,13 +589,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "8a35c6c7-9983-428d-a901-2e804c9debea"
+              "WebId": "67fe6e52-64aa-4297-966d-66f489b99a4e"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Misc4": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -593,13 +613,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "e159d193-847a-46e6-891c-a18c49902df1"
+              "WebId": "d7ed30ba-e914-4f56-beee-0577ab2b71d5"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PostalStatusFcd": "MINL"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -616,13 +637,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "49d18ac7-e72c-458f-bdc7-ba818fed3e57"
+              "WebId": "9446d3ef-8c15-48a7-974b-866cd36a9a03"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PostagePaidValue": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -639,13 +661,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ffdcebff-c742-40c8-bb7d-1fb5beaf2eb7"
+              "WebId": "575210ea-01a7-4997-8564-96b48101ab9e"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PostagePaidCurrencyCd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -662,13 +685,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "34b0be5d-70fc-46b1-a987-39d800568750"
+              "WebId": "327d9be0-dc22-4d65-b32a-74ee4f625d62"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "AdditionalFeesValue": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -685,13 +709,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "8e6e0604-559e-4a18-b400-b416fb57304e"
+              "WebId": "53801050-7904-410d-b1ef-543784edd2d9"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "AdditionalFeesCurrencyCd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -708,13 +733,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "1377999f-7f44-47ec-87bb-9bf3cc701ad3"
+              "WebId": "d3dee789-246e-4813-a7e3-026d1e652031"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "CustomsTaxPId": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -731,13 +757,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "60c8289f-c620-4080-9308-353ce0896579"
+              "WebId": "86b33bfa-940d-4b0a-bb2f-fe8ba726dadf"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "NetworkEntryLocationTypeCd": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -754,13 +781,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "29ff5e8b-4de3-4d03-93dc-f65f820895ff"
+              "WebId": "f8035f03-6eab-427e-acd3-773570a4f287"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "MrsStatus": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -777,13 +805,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "a0dcb0f0-54d0-45dc-8f01-7766c6a1d558"
+              "WebId": "47acbb61-22e6-441f-a82a-f810d337eaf6"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "MrsExpirationDate": "2017-04-15T14:10:38.953"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -800,13 +829,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "7010e872-9b4a-4eb7-b940-4bd9c77de08b"
+              "WebId": "31565f11-10cc-4b02-802d-b8de7ecd86be"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "MrsOriginalId": ""
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -823,7 +853,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "782d7fe6-a21f-4186-857d-4d1a517b0f8c"
+              "WebId": "03fdb5cf-365e-4908-ae6d-dee019492f90"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -837,6 +867,7 @@
                   "LetterCharacteristicCd": "LL"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -846,6 +877,7 @@
                     "Element": {
                       "ConveyanceTypeCd": "P"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -862,13 +894,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "650502ff-dfa0-4f42-834d-b50353465ab8"
+                    "WebId": "3e91803e-f5a7-4041-9102-bcbad64361c4"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "MailCategoryCd": "A"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -885,13 +918,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "b6f59bd5-21d6-43e6-be60-876b54b492e8"
+                    "WebId": "4335f31a-fa4c-495e-98bf-59ac82f85a6c"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "MailItemCategoryCd": "OR"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -908,13 +942,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "cd2a7373-e140-444e-b0af-0165814879e9"
+                    "WebId": "15ffbd04-7031-4fdc-aa1c-5bcf98691de4"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "ExpressInd": "1"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -931,13 +966,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "1cd07d30-ef7e-400c-9e13-d4bf660885c9"
+                    "WebId": "b3f9ee61-56ed-49ea-93e5-578528ee349f"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "CoDInd": "0"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -954,13 +990,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "2aa3a88a-21cb-4f42-b3f8-49fb5bf66ade"
+                    "WebId": "5355911c-7458-461a-83ab-6264e03af780"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "LetterCharacteristicCd": "LL"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -977,7 +1014,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "90ed7263-6b2e-4695-9bf3-0c160e72c228"
+                    "WebId": "0aa68491-1159-4026-a608-b07094fa4f0e"
                   }
                 ]
               },
@@ -992,7 +1029,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "68575460-7368-4531-85a8-a5a8031fd731"
+              "WebId": "796ecc7e-21a3-4975-86d3-e31350f32d9f"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1005,6 +1042,7 @@
                   "CoDInd": "0"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1014,6 +1052,7 @@
                     "Element": {
                       "ConveyanceTypeCd": "P"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1030,13 +1069,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "35a3fe27-51bf-4bf9-b30b-0d74ba68e92c"
+                    "WebId": "8b846b80-b2e6-48c9-a830-74e492c442fa"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "MailCategoryCd": "A"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1053,13 +1093,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "990a46a3-c034-4cd9-956e-751fc45ae108"
+                    "WebId": "5022ed06-2428-4352-bd8c-7336668fc3fb"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "MailItemCategoryCd": "OR"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1076,13 +1117,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "efe8393d-51e2-47bd-826a-2bc9e9340faf"
+                    "WebId": "5bc3bf85-47a9-4b47-9ec0-cb53ff0416ee"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "ExpressInd": "0"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1099,13 +1141,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "1b92cf00-2fce-4bea-a697-4ac580485cc2"
+                    "WebId": "86a02735-0c2b-4f6c-a57e-b36ee4734c79"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "CoDInd": "0"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1122,7 +1165,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "ce91374d-591a-4271-9010-cda4596e30af"
+                    "WebId": "1556dab6-77a9-4be5-8528-4084787bf790"
                   }
                 ]
               },
@@ -1137,7 +1180,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "84db7528-5f83-4dee-9f6e-ce5ec18375f1"
+              "WebId": "043e3f56-1c3d-4b20-b938-286d4af948d2"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1150,6 +1193,7 @@
                   "CountryCode": "MY"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1159,6 +1203,7 @@
                     "Element": {
                       "Name": "julie qiau"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1175,13 +1220,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "29c90c04-4b16-453d-a18a-e1193a5fc368"
+                    "WebId": "cb728888-6823-4e9d-a517-323133ecc7c5"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Address": "20 jln kiara 3 bukit kiara"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1198,13 +1244,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "13c761b4-faae-49e6-96eb-cb17bae872be"
+                    "WebId": "af90395a-faa2-4008-a3a3-27ce5cdbed3a"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "City": "kl / 020 6627273"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1221,13 +1268,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "2ead1f7d-afa9-48ce-9924-627f4148d7d2"
+                    "WebId": "c7d4a2d8-8442-4cc4-8a64-6f2a8222a85e"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Postcode": "50480"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1244,13 +1292,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "792833c9-906d-4b0d-a265-401df644efbd"
+                    "WebId": "66553bd8-2033-421c-a654-855adb3e6b22"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "CountryCode": "MY"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1267,7 +1316,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "1d477d63-2670-433f-9acd-40fb96191fd4"
+                    "WebId": "4341c150-c1d1-4eb2-96ea-45c873c6c5a2"
                   }
                 ]
               },
@@ -1282,7 +1331,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "84ecc25e-ee57-4a3b-b6c7-e2db7589c7d2"
+              "WebId": "0a9636cc-33b3-44fd-9653-f4ccaa5a9a64"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1295,6 +1344,7 @@
                   "CountryCode": "MY"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1304,6 +1354,7 @@
                     "Element": {
                       "Name": "monar"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1320,13 +1371,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "cf51862e-8ef5-44fc-9f70-f1fddc1ce82d"
+                    "WebId": "f24cdb7b-3992-43c8-8f37-3cd48a4ce076"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Address": "24 jalan puput"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1343,13 +1395,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "7e712956-8246-4cf4-804c-2d5f6d192779"
+                    "WebId": "dfaaddd2-50bc-4f0e-a05b-719dc8720a07"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "City": "pb"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1366,13 +1419,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "4bc4545c-ae9b-4bd5-bbcd-ddd26117a762"
+                    "WebId": "97803623-4d8f-4368-8cdf-312422247b24"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Postcode": "34200"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1389,13 +1443,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "62d3f74d-4459-4a63-a88a-4b3a6b421125"
+                    "WebId": "3453fb52-840c-4324-ae3d-4ad108b3991d"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "CountryCode": "MY"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1412,7 +1467,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "9ea31bfa-3676-42ef-990e-c75f9489a1e3"
+                    "WebId": "e3797956-b428-4a3e-9044-3d721b846939"
                   }
                 ]
               },
@@ -1427,7 +1482,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ce59e222-1b22-4ba1-a0de-0f75a7b0090a"
+              "WebId": "f82b8788-8247-4507-bc22-99c5333608f3"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1441,6 +1496,7 @@
                   "ConditionCd": "30"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1450,6 +1506,7 @@
                     "Element": {
                       "TNCd": "TN030"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1466,13 +1523,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "b24b683d-ccf3-4b6f-b039-1f044205b310"
+                    "WebId": "6d81371d-6ee9-4aa9-b0e9-f10d3a0538b0"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Date": "2017-04-15T14:10:38.953"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1489,13 +1547,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "78752a49-faf2-4bf9-8e12-5e01191c7b0a"
+                    "WebId": "6eb1fc1c-93bc-4b2f-a5a4-ab58a6861b4e"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "OfficeCd": "MYKULA"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1512,13 +1571,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "5fff1676-b5c0-4ed8-84e5-f605fc97258b"
+                    "WebId": "321679d4-5455-4ed1-ac3a-426e55c19455"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "UserFid": "POS\\razemi"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1535,13 +1595,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "4258f641-6d09-414f-a370-168d6df735f4"
+                    "WebId": "be211fae-8922-4536-a043-096d9215273f"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "WorkstationFid": "POS\\IBSKAD0244"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1558,13 +1619,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "bc8907d6-c6bd-45a7-b247-6bd5c5b2e7f7"
+                    "WebId": "5dc4fa75-657f-479d-871e-6df687969655"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "ConditionCd": "30"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1581,13 +1643,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "d7e4cac2-0c19-4a02-b8ed-fc28cb049b9f"
+                    "WebId": "83603e54-6354-44a0-877f-1690a9845e1e"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "RetentionReasonCd": "58"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1604,7 +1667,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "6199bff3-6436-4126-bf69-ebde919681ba"
+                    "WebId": "cb2a4ad3-e24f-49bd-876a-83ba2d241554"
                   }
                 ]
               },
@@ -1619,7 +1682,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "a6abfe60-7636-44bc-9fef-78a618978cc3"
+              "WebId": "ddd7dbd7-8829-4f78-8ba3-9ae8dfadf72a"
             }
           ]
         },
@@ -1634,7 +1697,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "80ba8454-8b3f-4a85-9c70-e3e96bede7db"
+        "WebId": "7cf94864-2275-427b-b1c9-aed4599cb227"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1660,6 +1723,7 @@
             }
           }
         },
+        "Namespace": "{http://upu.int/ips}",
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1669,6 +1733,7 @@
               "Element": {
                 "RecptclId": "AUSYDBMYKULAAEM70095002000070"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1685,13 +1750,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "bb38302f-b3fb-40a0-98ab-202091f11bb2"
+              "WebId": "6cabb4bf-e718-4bab-8ea7-854a27fdeef1"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ItemWeight": "8.480"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1708,13 +1774,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "6c418d04-ea2b-48be-b1b0-201aaf2bd162"
+              "WebId": "c6b4cd14-134d-4859-b401-939680e405b9"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DestCountryCd": "MY"
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1731,7 +1798,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ea8efba3-f0c5-47f9-9833-5445addab6d7"
+              "WebId": "674e8ab9-3de0-4084-8977-805e31f63c03"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -1752,6 +1819,7 @@
                   "DeliveryPointAddressLine1": "16, JALAN CLOVER 7"
                 }
               },
+              "Namespace": "{http://upu.int/ips}",
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1761,6 +1829,7 @@
                     "Element": {
                       "EDIMsg": "EMSEVT"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1777,13 +1846,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "dce6ed59-58dd-4def-8bf0-1c986151e051"
+                    "WebId": "43025352-56f6-425b-8939-1f649dc6c48b"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "TNCd": "TN008"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1800,13 +1870,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "08366091-5b44-44bf-9b48-36b70b5952c4"
+                    "WebId": "9c587a79-ba7b-4ea5-9819-4b9ab86d9b88"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "ConditionCd": "30"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1823,13 +1894,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "1ad458da-6302-4800-b012-bc22b373ee25"
+                    "WebId": "80a63848-e77b-4e40-8ad8-05dd3d60c6e0"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "LclDate": "2017-06-06T01:09:00"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1846,13 +1918,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "b7b29e90-249c-4e97-9029-27c97dcc0bba"
+                    "WebId": "2e1bd241-c7e9-4ff7-a690-04861ca72852"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "CaptureGMTDate": "2017-06-06T01:15:55.93"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1869,13 +1942,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "b11d6c0c-1125-41c8-901f-36fd42cffe90"
+                    "WebId": "8546d24f-ee41-47e4-a98d-5eb9052d4e9c"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "SenderId": "DE330"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1892,13 +1966,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "c9d57b51-6ff2-4517-9f98-7563a37ace9b"
+                    "WebId": "77cca711-594c-4b33-896d-fb5402c8b61f"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "Location": "DEFRAA"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1915,13 +1990,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "0427e249-9536-4bfd-87aa-2ea13ec761d4"
+                    "WebId": "a28d0a95-4c9b-4121-b259-af7600730386"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "RecipientsPostCode": "63000"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1938,13 +2014,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "0e7a3533-f9e0-41d0-8474-9d60dd1d2b9b"
+                    "WebId": "b258636a-a1df-4270-911c-05b15134b68e"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "PlaceOfDestinationOfficeCd": "CYBERJAYA"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1961,13 +2038,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "6e74d01e-699d-4b50-83f1-e58ff2f79cf2"
+                    "WebId": "3db84b39-f03b-4c5f-a88c-8c365db58ebf"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "DespatchNumber": "DEFRAAMYKULAACN70369"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1984,13 +2062,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "bdec0f1e-7a9f-42a2-b247-afac605a3793"
+                    "WebId": "a9b574a7-be81-48db-a927-624e9bd193b6"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "DespatchOfficeCd": "MYKULA"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -2007,13 +2086,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "4f91999f-d154-4901-94c6-d2920c4e6598"
+                    "WebId": "b2615fae-33e6-4aa1-a9fb-7003a45b3132"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "AddresseeName": "AZLAN RAZIFCLOVER GARDEN RESIDENCE"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -2030,13 +2110,14 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "b001aedb-5236-4396-86b2-e257e2961032"
+                    "WebId": "d82aad6b-e7dc-4241-b356-ba5cc755c14c"
                   },
                   {
                     "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
                     "Element": {
                       "DeliveryPointAddressLine1": "16, JALAN CLOVER 7"
                     },
+                    "Namespace": "{http://upu.int/ips}",
                     "ContainsText": false,
                     "FieldMappingCollection": {
                       "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -2053,7 +2134,7 @@
                     "Ignore": false,
                     "Comment": null,
                     "DefaultValueString": null,
-                    "WebId": "64092695-cdd8-432a-8706-489531163aaf"
+                    "WebId": "51db0c07-e9f6-46fd-bb3c-f8cdb3d91abe"
                   }
                 ]
               },
@@ -2068,7 +2149,7 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "c846606d-7067-49ee-80c1-2119e9db072e"
+              "WebId": "a8c51f2e-3224-49de-92b5-06e92ff10cc6"
             }
           ]
         },
@@ -2083,7 +2164,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "d18ca2ec-d483-4c86-89d8-d2956ae88ff2"
+        "WebId": "f8576143-e600-415c-9f0b-39b6eb89dac9"
       }
     ]
   },
@@ -2117,7 +2198,7 @@
           "Ignore": false,
           "Comment": "",
           "DefaultValueString": "",
-          "WebId": "366b6954-a46f-4cd7-84b2-4534c4e3fb08"
+          "WebId": "cd720378-25c9-4696-b184-e4d3ec976ba8"
         },
         {
           "$type": "Bespoke.Sph.Domain.XmlAttributeTextFieldMapping, domain.sph",
@@ -2137,7 +2218,7 @@
           "Ignore": false,
           "Comment": "",
           "DefaultValueString": "",
-          "WebId": "86a8a04d-da54-488c-844e-62cd829aa136"
+          "WebId": "ae0e5832-5989-4c2d-ae6d-850b77439289"
         }
       ]
     },
@@ -2150,13 +2231,13 @@
       "$values": []
     },
     "Name": "",
-    "SampleStoreId": "73e16c85-92c8-4280-8c49-d434859d517c",
-    "WebId": "b4ee449d-eb84-4ed0-a266-2a83d156e77c"
+    "SampleStoreId": "2b28e7ac-146e-442a-bb0d-81196ac575cf",
+    "WebId": "5d4f53ef-5fae-4ced-f28f-42e0134a3300"
   },
   "CreatedBy": "admin",
   "Id": "ips-export-port",
-  "CreatedDate": "2017-07-18T14:35:09.8998355+08:00",
+  "CreatedDate": "2017-07-20T14:04:36.3786768+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-18T15:45:30.9824929+08:00",
-  "WebId": "f58fb607-18fd-4d7f-a5ae-c97bf87f5cce"
+  "ChangedDate": "2017-07-20T14:52:42.0086295+08:00",
+  "WebId": "c7e4c4b7-7722-4a39-8d9c-d1417110bdc7"
 }
