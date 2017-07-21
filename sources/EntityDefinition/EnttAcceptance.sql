@@ -40,7 +40,9 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
 ,[ShipperAddressCountry] VARCHAR(255)  NULL
 ,[IposReceiptNo] VARCHAR(255)  NULL
 ,[Pl9No] VARCHAR(255)  NULL
+,[PickupDateTime] SMALLDATETIME  NULL
 ,[ClerkId] VARCHAR(255)  NULL
+,[DropOption] VARCHAR(255)  NULL
 ,[DestinationServiceStandard] VARCHAR(255)  NULL
 ,[ExpectedDeliveryDateTime] SMALLDATETIME  NULL
 ,[DeliveryBranchId] VARCHAR(255)  NULL
