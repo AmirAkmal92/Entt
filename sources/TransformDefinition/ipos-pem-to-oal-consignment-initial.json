@@ -1210,13 +1210,13 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "var NewDateTime = item.PickupDate + \" \" + item.PickupTime;\n\nDateTime dt = Convert.ToDateTime(NewDateTime.ToString());\n\nreturn dt;",
+        "Expression": "if (item.PickupDate.Equals(\"-\") && (item.PickupTime.Equals(\"-\"))) return null;\r\n\r\nvar datetime = DateTime.ParseExact(item.PickupDate+item.PickupTime,\"ddMMyyyyHHmmss\", System.Globalization.CultureInfo.InvariantCulture);\r\nreturn datetime;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
         },
         "Name": "GetPickupDateTime",
-        "OutputTypeName": "System.DateTime, mscorlib",
+        "OutputTypeName": "System.Nullable`1[[System.DateTime, mscorlib]], mscorlib",
         "Label": null,
         "Comment": null,
         "X": 469.0,
@@ -1436,6 +1436,6 @@
   "Id": "ipos-pem-to-oal-consignment-initial",
   "CreatedDate": "2017-07-11T12:51:24.4222553+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-21T10:38:29.6575816+08:00",
+  "ChangedDate": "2017-07-21T11:39:27.6290515+08:00",
   "WebId": "e369ad0d-dd31-4087-829c-62e335a47098"
 }
