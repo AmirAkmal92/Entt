@@ -371,6 +371,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "73d8c8fd-726d-452c-d5c5-02c2181cbf91"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "bc34aa0a-4821-480e-c109-87b814d5adb2",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c253f161-76c7-4d7a-c240-d5a134266894"
       }
     ]
   },
@@ -817,6 +826,21 @@
         "X": 528.0,
         "Y": 154.0,
         "WebId": "9ab7a655-f7c9-4973-89fe-36e553fc5021"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return Guid.NewGuid().ToString();",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetGuid",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 479.0,
+        "Y": 1802.0,
+        "WebId": "bc34aa0a-4821-480e-c109-87b814d5adb2"
       }
     ]
   },
@@ -837,6 +861,6 @@
   "Id": "ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T11:52:30.6759393+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-21T12:56:37.8229364+08:00",
+  "ChangedDate": "2017-07-24T12:39:11.8264694+08:00",
   "WebId": "2d7c9d23-64f2-4cc0-84cb-7764efc9cf23"
 }
