@@ -12,6 +12,7 @@
         "Element": {
           "TellerID": "4398MASNIYATI"
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -28,20 +29,21 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "61e65e02-df16-4642-b4ab-6ab3dc094d58"
+        "WebId": "3644601d-65f4-4175-816b-cc75915a0d08"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
         "Element": {
           "BranchCode": "10141003"
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
           "$values": []
         },
         "Name": "BranchCode",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.Int32, mscorlib",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "10141003",
@@ -51,7 +53,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "ebe1b6a5-f9bb-4297-8f99-a257f064f3a8"
+        "WebId": "8e7e7115-d0c4-4a08-b593-40acb84852c8"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -70,6 +72,7 @@
             "RoundAdj": null
           }
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -79,6 +82,7 @@
               "Element": {
                 "TrxID": "458-10141003-3-860594-50"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -86,7 +90,7 @@
               },
               "Name": "TrxID",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "458-10141003-3-860594-50",
               "IsComplex": false,
@@ -95,13 +99,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "b474b4de-496b-4662-be0f-d6a2dccf01e3"
+              "WebId": "96f1e63f-988b-4711-a656-9f498577c24d"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Status": "N"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -109,7 +114,7 @@
               },
               "Name": "Status",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "N",
               "IsComplex": false,
@@ -118,13 +123,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "3ed5e572-5f03-4572-a323-4eefbd42f778"
+              "WebId": "bb932c85-acc8-4593-98a2-977bf1cfe9b4"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "CancelReason": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -132,7 +138,7 @@
               },
               "Name": "CancelReason",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -141,13 +147,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "cd593d6a-391f-4ec3-b8e8-2cc44242a88f"
+              "WebId": "440a0b2d-7352-456a-815d-cdf0caecd59c"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "TrxDateTime": "5/6/2017 2:38:02 PM"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -164,13 +171,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ffd69af9-03e6-4689-af65-e17058973de0"
+              "WebId": "d743b2da-7d40-4e8a-9113-e4f7d1ac942f"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "MHLIndicator": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -178,7 +186,7 @@
               },
               "Name": "MHLIndicator",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -187,13 +195,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "f6689555-4987-462f-bbb3-9f8f59c449af"
+              "WebId": "df72e0ec-1f37-47ec-8bdc-96ec2cadc33a"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "MHLDate": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -201,7 +210,7 @@
               },
               "Name": "MHLDate",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -210,13 +219,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "36e576c1-df36-488c-81b9-ae4a9169cf18"
+              "WebId": "da9d7bf8-8c45-49b8-97c3-6009d19fa107"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PaymentType": "CH"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -224,7 +234,7 @@
               },
               "Name": "PaymentType",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "CH",
               "IsComplex": false,
@@ -233,13 +243,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "3721827a-8f1e-4c76-a618-82a5cd5f7fb8"
+              "WebId": "9f8107d4-5d80-4f20-af6b-bf1c4bb50a50"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PaymentMethod": "CH"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -247,7 +258,7 @@
               },
               "Name": "PaymentMethod",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "CH",
               "IsComplex": false,
@@ -256,13 +267,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "61c74f51-fdf1-4e2c-b461-63522b33def8"
+              "WebId": "a9f0988d-2dc9-4a99-a2d1-80640e7d1289"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "AccountNumber": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -270,7 +282,7 @@
               },
               "Name": "AccountNumber",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -279,13 +291,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "c9839dee-144b-4ac5-a9bd-eb7cbf493fd4"
+              "WebId": "def9bd13-e684-479e-b86a-5ad917f30ee6"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PL9Number": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -293,7 +306,7 @@
               },
               "Name": "PL9Number",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -302,13 +315,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "78dc69ae-85e6-4d44-b56f-e8e6ac190e7b"
+              "WebId": "3337f931-b5fa-4597-a0f7-8cdba1755c5e"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "RoundAdj": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -316,7 +330,7 @@
               },
               "Name": "RoundAdj",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -325,13 +339,13 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ad36c052-b1ca-4652-bfdf-96e0c826f688"
+              "WebId": "43d69031-b1c5-4608-b447-d20b7060c1b4"
             }
           ]
         },
         "Name": "TrxObject",
         "TypeName": "TrxObject",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "458-10141003-3-860594-50N5/6/2017 2:38:02 PMCHCH",
         "IsComplex": true,
@@ -340,7 +354,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "1bef2b03-7585-45f3-a621-2fc8ae5a62a4"
+        "WebId": "f0eb35bc-33a2-4612-a3a0-c9822ccd9151"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -359,6 +373,7 @@
             "StandardOfService": null
           }
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -368,6 +383,7 @@
               "Element": {
                 "ProductCode": "C001101"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -375,7 +391,7 @@
               },
               "Name": "ProductCode",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "C001101",
               "IsComplex": false,
@@ -384,13 +400,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "e282cc42-f5e8-4a7e-9fac-434beb29cb2d"
+              "WebId": "cdc1b027-9607-49d3-99b7-e0879d6b0adc"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ConnoteNumber": "EH468761173MY"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -398,7 +415,7 @@
               },
               "Name": "ConnoteNumber",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "EH468761173MY",
               "IsComplex": false,
@@ -407,13 +424,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "cba8d276-2c8a-4568-8b2d-4982641124a4"
+              "WebId": "76d04b8c-a7d3-400e-a536-71bae15072c1"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DestinationCountry": "MY"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -421,7 +439,7 @@
               },
               "Name": "DestinationCountry",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "MY",
               "IsComplex": false,
@@ -430,13 +448,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "5a1efb1c-0a0b-4c71-82ea-94a8eea3ff02"
+              "WebId": "e44a26c0-5086-4071-a570-f5c1eced5085"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Weight": "2.250"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -444,7 +463,7 @@
               },
               "Name": "Weight",
               "TypeName": "System.Decimal, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "2.250",
               "IsComplex": false,
@@ -453,13 +472,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "6d74b19d-878c-45b7-b35c-020483ea4015"
+              "WebId": "478f4e81-aa5b-41b6-8380-e6ba50653f56"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Width": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -467,7 +487,7 @@
               },
               "Name": "Width",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -476,13 +496,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "54d1b490-00d9-4c8f-9419-83af376c5449"
+              "WebId": "097b88a2-b45c-4c0a-aaf3-6bc0ba9500b3"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Length": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -490,7 +511,7 @@
               },
               "Name": "Length",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -499,13 +520,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "41f146a6-56a6-4298-837f-6ad805835d29"
+              "WebId": "29107d03-2a87-47f7-b09d-553835e8d6b0"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Height": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -513,7 +535,7 @@
               },
               "Name": "Height",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -522,13 +544,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "be9c8496-0bf4-4995-8cdb-dc272cd80ed6"
+              "WebId": "32d28218-6655-4531-aefe-1417c1d0cf9a"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "DimWeight": "0"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -536,7 +559,7 @@
               },
               "Name": "DimWeight",
               "TypeName": "System.Int32, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "0",
               "IsComplex": false,
@@ -545,21 +568,22 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "356557ce-6d38-4112-a5da-fed3bf65a7cd"
+              "WebId": "2cdbc7ab-c189-4886-be63-97d351b16090"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ItemCategory": "09"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
                 "$values": []
               },
               "Name": "ItemCategory",
-              "TypeName": "System.Int32, mscorlib",
-              "IsNullable": false,
+              "TypeName": "System.String, mscorlib",
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "09",
               "IsComplex": false,
@@ -568,13 +592,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "42e89446-b9c6-4881-889d-6b16d92c3165"
+              "WebId": "b440b3d8-0993-4cbe-a3b8-efe550038039"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "RoutingCode": "ASWY-320"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -582,7 +607,7 @@
               },
               "Name": "RoutingCode",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "ASWY-320",
               "IsComplex": false,
@@ -591,13 +616,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "43b44581-06db-4c3e-850b-bb6e38a446f8"
+              "WebId": "387d2f05-4bb6-488d-9e1d-7f1ed42ba978"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "StandardOfService": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -605,7 +631,7 @@
               },
               "Name": "StandardOfService",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -614,13 +640,13 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "e5f27424-b760-4707-b765-25086bfa515b"
+              "WebId": "1a9de572-1bc2-4660-b563-b87327b74f0d"
             }
           ]
         },
         "Name": "ConnoteObject",
         "TypeName": "ConnoteObject",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "C001101EH468761173MYMY2.250009ASWY-320",
         "IsComplex": true,
@@ -629,7 +655,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "1ec79d03-d3b9-4b6f-84b1-865cae5b5246"
+        "WebId": "a2e8fe7c-238a-471e-8b69-27e990b14bc6"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -648,6 +674,7 @@
             "ReferenceNumber": null
           }
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -657,6 +684,7 @@
               "Element": {
                 "Name": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -673,13 +701,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "43f096e3-73aa-4ad2-98a1-36d26e740c38"
+              "WebId": "a2b351ff-a203-44e9-8ebe-534ab6e22d1e"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address1": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -696,13 +725,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "538f741c-d745-4ce1-aa27-5eb2ff7983d5"
+              "WebId": "31972a72-0b7e-40af-95f2-c13b577e9204"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address2": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -719,13 +749,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "2dfa116f-e0d0-4563-aa52-c9a140794756"
+              "WebId": "c3cad629-cf94-4b2c-97a2-fa27d67893da"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address3": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -742,13 +773,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "02e029b8-1cec-4856-bc10-1c31e2ed495c"
+              "WebId": "369bf065-6771-4f37-a0bb-6f8d394fa555"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "City": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -765,13 +797,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "f6a2bdf8-10d1-4c97-a530-1695b62a99c4"
+              "WebId": "26cf5fcd-7153-4f69-a66f-f591c03910ca"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "State": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -788,13 +821,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "b471aad1-ac5d-4b4c-9714-d8fee74ad9bc"
+              "WebId": "1f746407-7e73-4393-8dcd-0e445bba5301"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Country": "MY"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -811,13 +845,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "93b28b06-feda-44c3-9ea6-545dc5e30ab1"
+              "WebId": "e4044d16-5feb-4919-837a-732d9c776e84"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Postcode": "01000"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -834,13 +869,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "6bc766ae-31fc-4a59-aed7-715e1dd127f9"
+              "WebId": "fecd52c2-4768-4485-90b6-6c3cc309c7b4"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Email": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -857,13 +893,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "c258bfdb-4e1c-4ad4-972c-eda180fe3faf"
+              "WebId": "28b678c7-3a77-4996-91e5-a8c003bc8ce5"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PhoneNumber": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -871,7 +908,7 @@
               },
               "Name": "PhoneNumber",
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "Converter": null,
               "SampleValue": "",
               "IsComplex": false,
@@ -880,13 +917,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "4075fd9b-2d0d-4ae0-85a2-957f037af9db"
+              "WebId": "d0b195d1-e3e7-4b5d-bbe9-c983c0b0d88d"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ReferenceNumber": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -903,13 +941,13 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "b13d750c-fa12-4fee-bf24-2a1a34050aac"
+              "WebId": "6b38fd38-270b-4579-8f63-44035f867c8c"
             }
           ]
         },
         "Name": "SenderObject",
         "TypeName": "SenderObject",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "MY01000",
         "IsComplex": true,
@@ -918,7 +956,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "1a3928ac-adea-4dc2-b4b8-4f422cf2b340"
+        "WebId": "c3da7dc1-7c06-4050-b679-bd8f469b62ce"
       },
       {
         "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
@@ -937,6 +975,7 @@
             "ReferenceNumber": null
           }
         },
+        "Namespace": null,
         "ContainsText": false,
         "FieldMappingCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -946,6 +985,7 @@
               "Element": {
                 "Name": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -962,13 +1002,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "da3fdee0-5800-469f-9874-6c4b3b06b3cb"
+              "WebId": "a182956f-5d6d-43bc-abf7-6c7c3519182c"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address1": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -985,13 +1026,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "80b6f165-5cf6-48b3-a108-73f036ad4808"
+              "WebId": "e75329b0-ff60-45e5-aa4c-9476e8bd4138"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address2": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1008,13 +1050,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "d65bec6a-b58e-41d9-a268-9ac820c3ad61"
+              "WebId": "10257c88-0555-4bfb-b820-78cfabe20034"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Address3": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1031,13 +1074,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "e8c5bf9b-d2e0-4e54-bf58-704d18771eaf"
+              "WebId": "58d90456-35b3-4b7b-b646-f0729685b791"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "City": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1054,13 +1098,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "89b4b11f-ce5e-45ad-87e9-ba5221c8b2b3"
+              "WebId": "dfdc6c90-e5d2-4dad-b584-7e00eedd0072"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "State": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1077,13 +1122,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "441289ba-4533-4bcd-b8d4-640740765c74"
+              "WebId": "e8405130-c6f0-418a-9192-61a19c67a67d"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Country": "MY"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1100,13 +1146,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "0a021562-0c89-440a-a6a2-5a294647c271"
+              "WebId": "1492f525-592e-4bae-ba2d-06763dc34883"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Postcode": "32040"
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1123,13 +1170,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "71e83868-d53d-4c95-8b42-b2e92cfc6306"
+              "WebId": "662c1800-5793-4782-b5b2-b50a77255b7b"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "Email": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1146,13 +1194,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "0d36aae8-98f8-4ae2-b289-effaff6bc3e5"
+              "WebId": "7c27a1a2-510f-4e99-b26a-d7a71fe25ecd"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "PhoneNumber": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1169,13 +1218,14 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "d66ff804-fd9b-4a42-bc08-dd4ed3fcac39"
+              "WebId": "a14a8769-0648-4d0b-b98e-c3b96b29cec6"
             },
             {
               "$type": "Bespoke.Sph.Domain.XmlElementTextFieldMapping, domain.sph",
               "Element": {
                 "ReferenceNumber": null
               },
+              "Namespace": null,
               "ContainsText": false,
               "FieldMappingCollection": {
                 "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
@@ -1192,13 +1242,13 @@
               "Ignore": false,
               "Comment": null,
               "DefaultValueString": null,
-              "WebId": "ae0b6d9a-0b83-4ee3-b24f-efb5cdcad513"
+              "WebId": "294af6e0-d47a-47b1-aef9-7c59e58e74bd"
             }
           ]
         },
         "Name": "ReceiverObject",
         "TypeName": "ReceiverObject",
-        "IsNullable": false,
+        "IsNullable": true,
         "Converter": null,
         "SampleValue": "MY32040",
         "IsComplex": true,
@@ -1207,7 +1257,7 @@
         "Ignore": false,
         "Comment": null,
         "DefaultValueString": null,
-        "WebId": "ac47c6d8-e0df-409c-8d44-9b28b7eb7114"
+        "WebId": "22d4c123-3cfb-4d33-9934-e651b272ad7a"
       }
     ]
   },
@@ -1233,13 +1283,13 @@
       "$values": []
     },
     "Name": "",
-    "SampleStoreId": "8d3db8dd-084f-46ca-b975-8768c749e97a",
-    "WebId": "56b2381d-3e93-4423-f457-161e4cb3a404"
+    "SampleStoreId": "558d9475-7e97-4b16-aa18-99959b9e9bf5",
+    "WebId": "bd3559ed-4df5-45ca-d580-68fde33fd78a"
   },
   "CreatedBy": "admin",
   "Id": "prs-acceptance-port",
-  "CreatedDate": "2017-07-04T11:41:59.0527169+08:00",
+  "CreatedDate": "2017-07-24T14:40:15.5961762+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-18T14:47:07.4549633+08:00",
-  "WebId": "ba2cdf6b-7925-406d-94e3-2ac26a53fe7f"
+  "ChangedDate": "2017-07-24T14:43:44.0352485+08:00",
+  "WebId": "4be7c90b-8dde-445c-995c-588d866b99fa"
 }
