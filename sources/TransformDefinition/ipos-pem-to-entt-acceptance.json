@@ -491,7 +491,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "if (item.PickupDate.Equals(\"-\") && (item.PickupTime.Equals(\"-\"))) return null;\r\n\r\nvar datetime = DateTime.ParseExact(item.PickupDate+item.PickupTime,\"ddMMyyyyHHmmss\", System.Globalization.CultureInfo.InvariantCulture);\r\nreturn datetime;",
+        "Expression": "if (string.IsNullOrEmpty(item.PickupDate) && string.IsNullOrEmpty(item.PickupTime)) return null;\r\n\r\nvar datetime = DateTime.ParseExact(item.PickupDate+item.PickupTime,\"ddMMyyyyHHmmss\", System.Globalization.CultureInfo.InvariantCulture);\r\nreturn datetime;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -861,6 +861,6 @@
   "Id": "ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T11:52:30.6759393+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T15:19:55.8234937+08:00",
+  "ChangedDate": "2017-07-24T16:10:18.9752978+08:00",
   "WebId": "2d7c9d23-64f2-4cc0-84cb-7764efc9cf23"
 }
