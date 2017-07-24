@@ -523,7 +523,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
         "DefaultValue": "-",
-        "SqlText": "SELECT [product_desc] FROM [dbo].[constant_product_code] WHERE [product_code] = @value1",
+        "SqlText": "SELECT [product_desc] FROM [dbo].[constant_product_code] WHERE [sapos_code] = @value1",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": [
@@ -861,6 +861,6 @@
   "Id": "ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T11:52:30.6759393+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T12:39:11.8264694+08:00",
+  "ChangedDate": "2017-07-24T15:19:55.8234937+08:00",
   "WebId": "2d7c9d23-64f2-4cc0-84cb-7764efc9cf23"
 }
