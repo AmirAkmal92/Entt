@@ -1,0 +1,140 @@
+{
+    "mailitem":{
+        "properties":{
+            "CreatedBy": {"type": "string", "index":"not_analyzed"},
+            "ChangedBy": {"type": "string", "index":"not_analyzed"},
+            "WebId": {"type": "string", "index":"not_analyzed"},
+            "CreatedDate": {"type": "date"},
+            "ChangedDate": {"type": "date"},
+             "ExportRef":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "InterfaceCode":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ItemId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+    "FromIPS":{
+        "type":  "object",
+        "properties":{
+             "LocalId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+    "Dispatch":{
+        "type":  "object",
+        "properties":{
+             "OrigOfficeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DestOfficeCd":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+,
+             "InnrbagId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "RecptclId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ItemWeight":{"type":"float","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "Value":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CurrencyCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DutiableInd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DutiableValue":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CustomNo":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ClassCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "SubclassCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Content":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "OperatorCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "OrigCountryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DestCountryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Misc4":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "PostalStatusFcd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "PostagePaidValue":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "PostagePaidCurrencyCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "AdditionalFeesValue":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "AdditionalFeesCurrencyCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CustomsTaxPId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "NetworkEntryLocationTypeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MrsStatus":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MrsExpirationDate":{"type":"date","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "MrsOriginalId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+    "Letter":{
+        "type":  "object",
+        "properties":{
+             "ConveyanceTypeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MailCategoryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MailItemCategoryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ExpressInd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CoDInd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "LetterCharacteristicCd":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "Parcel":{
+        "type":  "object",
+        "properties":{
+             "ConveyanceTypeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MailCategoryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "MailItemCategoryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ExpressInd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CoDInd":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "Addressee":{
+        "type":  "object",
+        "properties":{
+             "Name":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Address":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "City":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Postcode":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CountryCode":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "Sender":{
+        "type":  "object",
+        "properties":{
+             "Name":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Address":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "City":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Postcode":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "CountryCode":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+,
+    "IPSEvent":{
+        "type":  "object",
+        "properties":{
+             "TNCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Date":{"type":"date","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "OfficeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "UserFid":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "WorkstationFid":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ConditionCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "RetentionReasonCd":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+
+        }
+    }
+,
+    "FromEDI":{
+        "type":  "object",
+        "properties":{
+             "RecptclId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ItemWeight":{"type":"float","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "DestCountryCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+    "EDIEvent":{
+        "type":  "object",
+        "properties":{
+             "EDIMsg":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "TNCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "ConditionCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "LclDate":{"type":"date","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "CaptureGMTDate":{"type":"date","index":"no","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "SenderId":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "Location":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "RecipientsPostCode":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "PlaceOfDestinationOfficeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DespatchNumber":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DespatchOfficeCd":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "AddresseeName":{"type":"string","index":"no","boost":1,"include_in_all":true},
+             "DeliveryPointAddressLine1":{"type":"string","index":"no","boost":1,"include_in_all":true}
+        }
+    }
+
+        }
+    }
+
+        }
+    }
+}

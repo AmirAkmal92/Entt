@@ -1,0 +1,889 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "65de1348-eb76-4ec4-8b79-6ebefe056893",
+        "Destination": "id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "35d13b45-738f-48a2-9699-6eac59901c8a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "3071c738-89b3-4487-f8b2-3a7604135765",
+        "Destination": "event_type_name_display",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5b3cdf70-e03f-4913-f4b8-4bc08dbf77cd"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "8a9a0aff-4154-4208-aa97-d38fcaf16ba3",
+        "Destination": "physical_channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "9a73d1bf-ef36-4454-cdab-c9ef6631cca5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "42d192a9-4164-46e3-e915-d5d229b91b4e",
+        "Destination": "date_created_oal_date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "9cbe4429-ee7e-47e7-cfb3-c9137120800f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "0f3ab8ad-2e6a-4502-ad2c-bb356fc0c808",
+        "Destination": "date_field",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "eff18bdf-a4ee-47a8-f107-767ca77b0c88"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "dd669fde-5968-4891-94b5-98070523360d",
+        "Destination": "beat_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ad0eeaea-a0d3-48c7-b8e7-3a39fc713c78"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "consignment_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b2dd4fa0-04c9-4bc0-9fdf-e0f7f8786645"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "courier_id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e06ee13f-838a-4d42-8d38-7cd2b45d3484"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "e100f638-6221-4ff3-eb7b-966680f197aa",
+        "Destination": "event_type",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bf363845-88e0-4f9c-bc5f-cef56c95d037"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "be09970f-3d88-4362-8dff-533523a90a9b",
+        "Destination": "item_type_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8f3118dd-9c22-403b-d6ae-96bf859bf06c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Pl9No",
+        "TypeName": "",
+        "Destination": "pl_nine",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "39b4be2f-b055-435b-a523-dfa0cf44e492"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ShipperAccountNo",
+        "TypeName": "",
+        "Destination": "account_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b7a8fde5-297b-4198-bc5b-d4ca28734e50"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "73782768-b830-4cff-fd7c-a1148719d9d6",
+        "Destination": "office_next_code",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e50be442-3aca-4a43-c9a8-1bd74185b377"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "0a1ca5f7-329b-4d70-ba81-4007f6f32656",
+        "Destination": "office_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bb4ab09c-f77f-46ba-a4da-8922aa0cad81"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BranchCode",
+        "TypeName": "",
+        "Destination": "office_no",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "18f5a90e-188c-43e2-8d81-00fde1287839"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "6ac2914c-8b7b-4675-ed61-48db9c9b835c",
+        "Destination": "event_remarks_display",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ecd45d9c-8c54-4022-8b62-aafe41f2fb6c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "43d37b11-989e-4245-c7e1-e5752d811467",
+        "Destination": "event_comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "3410425c-01b4-4b3b-a748-b62d1d14769a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "26015dce-46a7-4422-e10c-6bb3400ece63",
+        "Destination": "version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6faa6bd2-881e-4df6-b1c2-aec1d68a666b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "16f368a7-a4b0-4fb2-913b-a5b00dac4a97",
+        "Destination": "event_pending_status",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "09a7d033-2f79-464c-bf87-94f0e3ee4cc6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "5ed9c6ec-cdd9-4f8c-e7c7-d90a8c1a623c",
+        "Destination": "courier_name",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "506fb3ae-733e-49a3-8702-2c8a45ed4d2f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "SystemId",
+        "TypeName": "",
+        "Destination": "event_channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6188bbcc-b482-46d6-d63b-690fbc1074d9"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.PosEntt.Functoids.OalIdFunctoid, rts.functoids",
+        "Prefix": "EN",
+        "Suffix": null,
+        "Length": 20,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Prefix",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Suffix",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Length",
+              "TypeName": "System.Int32, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 495.0,
+        "Y": 40.0,
+        "WebId": "65de1348-eb76-4ec4-8b79-6ebefe056893"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "Penerimaan Kaunter",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 533.0,
+        "Y": 76.0,
+        "WebId": "3071c738-89b3-4487-f8b2-3a7604135765"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "switch (item.SystemId)\r\n{\r\n  case \"001\": return \"C\";\r\n  case \"002\": return \"S\";\r\n  case \"003\": return \"I\";\r\n  case \"004\": return \"C\";\r\n  case \"005\": return \"C\";\r\n  case \"009\": return \"C\";\r\n  case \"006\": return \"C\";\r\n  case \"010\": return \"C\";\r\n  case \"008\": return \"P\";\r\n  case \"011\": return \"W\";\r\n  case \"007\": return \"K\";\r\n}\r\n\r\nreturn \"U\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetPhysicalChannel",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 434.0,
+        "Y": 217.0,
+        "WebId": "8a9a0aff-4154-4208-aa97-d38fcaf16ba3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.NowFunctoid, domain.sph",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 471.0,
+        "Y": 562.0,
+        "WebId": "42d192a9-4164-46e3-e915-d5d229b91b4e"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.CombineDateTimeFunctoid, rts.functoids",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "date",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "4ca7f04e-0223-4855-b470-75e4cf71b101",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "time",
+              "TypeName": "System.DateTime, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "9ee21aa9-d1af-4504-8ebd-6aa49918f38b",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.DateTime, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 325.0,
+        "Y": 383.0,
+        "WebId": "0f3ab8ad-2e6a-4502-ad2c-bb356fc0c808"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "EventTime",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "9ee21aa9-d1af-4504-8ebd-6aa49918f38b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "EventDate",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "4ca7f04e-0223-4855-b470-75e4cf71b101"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "001",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 449.0,
+        "Y": 307.0,
+        "WebId": "dd669fde-5968-4891-94b5-98070523360d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "accp001",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 367.0,
+        "Y": 435.0,
+        "WebId": "e100f638-6221-4ff3-eb7b-966680f197aa"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var isConsole = item.ConsignmentNo.StartsWith(\"CG\") && item.ConsignmentNo.EndsWith(\"MY\");\nif (isConsole)\n{\n    return \"CONSOLE\";\n}\nelse \n{\n    return \"CONSIGNMENT\";\n}",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetItemTypeCode",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 327.0,
+        "Y": 465.0,
+        "WebId": "be09970f-3d88-4362-8dff-533523a90a9b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConfigurationSettingFunctoid, database.lookup",
+        "Section": "ConnectionString",
+        "Key": "oal",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 73.0,
+        "Y": 163.0,
+        "WebId": "eeaae2f1-a322-4c34-c62e-dd41c08d4861"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
+        "DefaultValue": "-",
+        "SqlText": "SELECT [name] FROM [dbo].[office] WHERE [location_id] = @value1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "connection",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "eeaae2f1-a322-4c34-c62e-dd41c08d4861",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value1",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": "21202931-b53a-4123-fca1-4fff8956a2f7",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value2",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value3",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value4",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 208.0,
+        "Y": 107.0,
+        "WebId": "50545164-a2ad-4d9c-875e-edba1c977de9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
+        "DefaultValue": "-",
+        "SqlText": "SELECT [nextcode] FROM [dbo].[office] WHERE [location_id] = @value1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "connection",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "eeaae2f1-a322-4c34-c62e-dd41c08d4861",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value1",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": "7c34aa8a-e56e-4e7f-e1a6-a1989615a0e2",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value2",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value3",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value4",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 208.0,
+        "Y": 171.0,
+        "WebId": "73782768-b830-4cff-fd7c-a1148719d9d6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "BranchCode",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "21202931-b53a-4123-fca1-4fff8956a2f7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "BranchCode",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "7c34aa8a-e56e-4e7f-e1a6-a1989615a0e2"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 30,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "50545164-a2ad-4d9c-875e-edba1c977de9",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 526.0,
+        "Y": 194.0,
+        "WebId": "0a1ca5f7-329b-4d70-ba81-4007f6f32656"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\nstring b = \"Penerimaan Kaunter \";\n\nif (item.EventUserId != null)\n{\n    b +=\" Dikemaskini oleh \"+ item.EventUserId;\n}\nif (item.ConsigneePostcode != null)\n{\n    b +=\", Poskod: \"+ item.ConsigneePostcode;\n}\n if (item.ConsigneeCountry != null)\n{\n    b +=\", Negara: \"+ item.ConsigneeCountry;\n}\nif (item.WeightDensity != null)\n{\n    b +=\", Densiti: \"+ item.WeightDensity;\n}\nif (item.WeightVolumetric != null)\n{\n    b +=\", Volumetrik: \"+ item.WeightVolumetric;\n}\nif (item.ItemCategory != null)\n{\n    b +=\", Kod Kategori: \"+ item.ItemCategory;\n}\nif (item.VasCode != null)\n{\n    return b +=\", Kod Vas: \"+ item.VasCode;\n}\n\nreturn b;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetEventRemarkDisplay",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 348.0,
+        "Y": 66.0,
+        "WebId": "6ac2914c-8b7b-4675-ed61-48db9c9b835c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "string b = \"Penerimaan Kaunter \";\r\n\r\nif (item.EventUserId != null)\r\n{\r\n    b +=\" Dikemaskini oleh \"+ item.EventUserId;\r\n}\r\nif (item.ConsigneePostcode != null)\r\n{\r\n    b +=\", Poskod: \"+ item.ConsigneePostcode;\r\n}\r\n if (item.ConsigneeCountry != null)\r\n{\r\n    b +=\", Negara: \"+ item.ConsigneeCountry;\r\n}\r\nif (item.WeightDensity != null)\r\n{\r\n    b +=\", Densiti: \"+ item.WeightDensity;\r\n}\r\nif (item.WeightVolumetric != null)\r\n{\r\n    b +=\", Volumetrik: \"+ item.WeightVolumetric;\r\n}\r\nif (item.ItemCategory != null)\r\n{\r\n    b +=\", Kod Kategori: \"+ item.ItemCategory;\r\n}\r\nif (item.VasCode != null)\r\n{\r\n    return b +=\", Kod Vas: \"+ item.VasCode;\r\n}\r\n\r\nreturn b;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetEventComment",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 387.0,
+        "Y": 147.0,
+        "WebId": "43d37b11-989e-4245-c7e1-e5752d811467"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "Value": "0",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 423.0,
+        "Y": 480.0,
+        "WebId": "26015dce-46a7-4422-e10c-6bb3400ece63"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
+        "DefaultValue": "-",
+        "SqlText": "SELECT [name] FROM [dbo].[oal_user] WHERE [user_id] = @value1",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "connection",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "eeaae2f1-a322-4c34-c62e-dd41c08d4861",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value1",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": "6222ef4a-a52f-4c49-b8f4-573db90b018d",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value2",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value3",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            },
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "value4",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": true,
+              "Functoid": null,
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 210.0,
+        "Y": 235.0,
+        "WebId": "c457a76f-994b-4f57-b11f-72e86e2b8030"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
+        "Field": "EventUserId",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "",
+        "OutputTypeName": "",
+        "Label": "",
+        "Comment": "",
+        "X": 0.0,
+        "Y": 0.0,
+        "WebId": "6222ef4a-a52f-4c49-b8f4-573db90b018d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.IsNullOrEmpty(name) ? \"01\" : \"00\";",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "name",
+              "TypeName": "System.String, mscorlib",
+              "Description": "",
+              "Label": "",
+              "Comment": "",
+              "IsOptional": false,
+              "Functoid": "c457a76f-994b-4f57-b11f-72e86e2b8030",
+              "Constant": "",
+              "Default": "",
+              "WebId": "2e4fe583-37f0-487d-9486-53512f565e01"
+            }
+          ]
+        },
+        "Name": "SetEventPendingStatus",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 343.0,
+        "Y": 250.0,
+        "WebId": "16f368a7-a4b0-4fb2-913b-a5b00dac4a97"
+      },
+      {
+        "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
+        "Input": null,
+        "Length": 30,
+        "Pad": false,
+        "PadLeftOrRight": "Left",
+        "PadChar": null,
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": [
+            {
+              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
+              "Name": "Input",
+              "TypeName": "System.String, mscorlib",
+              "Description": null,
+              "Label": null,
+              "Comment": null,
+              "IsOptional": false,
+              "Functoid": "16f368a7-a4b0-4fb2-913b-a5b00dac4a97",
+              "Constant": null,
+              "Default": null,
+              "WebId": null
+            }
+          ]
+        },
+        "Name": null,
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 461.0,
+        "Y": 298.0,
+        "WebId": "5ed9c6ec-cdd9-4f8c-e7c7-d90a8c1a623c"
+      }
+    ]
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IposPemToPemEventNew",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.IposPems.Domain.IposPem, PosEntt.IposPem",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Oal.dbo_pem_event_new, PosEntt.Oal",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "ipos-pem-to-pem-event-new",
+  "CreatedDate": "2017-07-12T13:32:20.6681691+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-21T15:57:37.277062+08:00",
+  "WebId": "d964dad8-ddd1-44d4-ae2f-af5a2f4a8742"
+}

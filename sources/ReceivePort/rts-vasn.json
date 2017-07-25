@@ -1,281 +1,280 @@
 {
-  "$type": "Bespoke.Sph.Domain.ReceivePort, domain.sph",
-  "ReferencedAssemblyCollection": {
-    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
-    "$values": []
-  },
-  "FieldMappingCollection": {
-    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 0,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "CourierId",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "34429",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "dc41ecc9-68b1-49b1-8978-e0b939ac7663"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 1,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "LocationId",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "4000",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "721413e3-c671-448d-a429-c866b229c439"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 2,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "BeatNo",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "717",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "4c3f656e-29cd-4df5-af8e-5b9474e36632"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 3,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "Date",
-        "TypeName": "System.DateTime, mscorlib",
-        "IsNullable": false,
-        "Converter": "ddMMyyyy",
-        "SampleValue": "20102016",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "3506fba2-c6e7-4c74-9d94-54a723b5dce6"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 4,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "Time",
-        "TypeName": "System.DateTime, mscorlib",
-        "IsNullable": false,
-        "Converter": "HHmmss",
-        "SampleValue": "021703",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "6b14f8dd-dd14-4e63-bafa-69845eb71fcf"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 5,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "ConsignmentNo",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "EH275866103MY",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "ba7aee2d-8075-44a7-b76e-c2b0eca60a34"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 6,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "ItemType",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "01",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "cfa49558-be8a-4fb3-aec8-0784d0efb894"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 7,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "SenderName",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": null,
-        "SampleValue": "AZMEE",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": null,
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "d915afa3-eab4-4855-8d0f-1d74a20b664d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 8,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "CodAccount",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": true,
-        "Converter": null,
-        "SampleValue": "-",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": "-",
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "8659db1e-c52e-4c75-a8fd-022b3ec188e3"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
-        "Column": 9,
-        "AllowMissing": false,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "CodAmount",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": true,
-        "Converter": null,
-        "SampleValue": "-",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": "-",
-        "Ignore": false,
-        "Comment": null,
-        "WebId": "814ec63c-a930-4286-93a9-1290f811606a"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
-        "Header": "Name",
-        "Pattern": ".*_(?<value>\\w{5}).txt",
-        "StartPosition": null,
-        "Length": null,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "ScannerId",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "Converter": "",
-        "SampleValue": "",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": "",
-        "Ignore": false,
-        "Comment": "",
-        "WebId": "e6c4f46b-776b-4268-eab1-61a20ac3ab25"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
-        "Header": "SourceApplication",
-        "Pattern": "(?<value>.*)",
-        "StartPosition": null,
-        "Length": null,
-        "FieldMappingCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "SourceApplication",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": true,
-        "Converter": "",
-        "SampleValue": "",
-        "IsComplex": false,
-        "AllowMultiple": false,
-        "NullPlaceholder": "",
-        "Ignore": false,
-        "Comment": "",
-        "WebId": "1c14f1ea-57c4-4a5f-bbed-aa4aa8a6164d"
-      }
-    ]
-  },
-  "Name": "RtsVasn",
-  "Entity": "Vasn",
-  "EntityId": "",
-  "Formatter": "DelimitedTextFormatter",
-  "TextFormatter": {
-    "$type": "Bespoke.Sph.Domain.DelimitedTextFormatter, domain.sph",
-    "Delimiter": "\t",
-    "HasTagIdentifier": false,
-    "RecordTag": "",
-    "EscapeCharacter": "",
-    "HasLabel": false,
-    "DetailRowCollection": {
-      "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FlatFileDetailTag, domain.sph]], domain.sph",
-      "$values": []
+    "$type": "Bespoke.Sph.Domain.ReceivePort, domain.sph",
+    "ReferencedAssemblyCollection": {
+        "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+        "$values": []
     },
-    "Name": "",
-    "SampleStoreId": "bc5df774-7052-49a9-9974-ac0a11f85b95",
-    "WebId": "02958b71-959e-4aac-a7eb-5d7932d0eb3d"
-  },
-  "CreatedBy": "admin",
-  "Id": "rts-vasn",
-  "CreatedDate": "2016-10-21T10:04:54.6515791+08:00",
-  "ChangedBy": "admin",
-  "ChangedDate": "2017-04-11T12:04:26.0839365+08:00",
-  "WebId": "11e77f74-a476-4acc-84a0-f9433fe6efc2"
+    "FieldMappingCollection": {
+        "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+        "$values": [{
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 0,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "CourierId",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "34429",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "dc41ecc9-68b1-49b1-8978-e0b939ac7663"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 1,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "LocationId",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "4000",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "721413e3-c671-448d-a429-c866b229c439"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 2,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "BeatNo",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "717",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "4c3f656e-29cd-4df5-af8e-5b9474e36632"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 3,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "Date",
+                "TypeName": "System.DateTime, mscorlib",
+                "IsNullable": false,
+                "Converter": "ddMMyyyy",
+                "SampleValue": "20102016",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "3506fba2-c6e7-4c74-9d94-54a723b5dce6"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 4,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "Time",
+                "TypeName": "System.DateTime, mscorlib",
+                "IsNullable": false,
+                "Converter": "HHmmss",
+                "SampleValue": "021703",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "6b14f8dd-dd14-4e63-bafa-69845eb71fcf"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 5,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "ConsignmentNo",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "EH275866103MY",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "ba7aee2d-8075-44a7-b76e-c2b0eca60a34"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 6,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "ItemType",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "01",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "cfa49558-be8a-4fb3-aec8-0784d0efb894"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 7,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "SenderName",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": null,
+                "SampleValue": "AZMEE",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": null,
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "d915afa3-eab4-4855-8d0f-1d74a20b664d"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 8,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "CodAccount",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": true,
+                "Converter": null,
+                "SampleValue": "-",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": "-",
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "8659db1e-c52e-4c75-a8fd-022b3ec188e3"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.DelimitedTextFieldMapping, domain.sph",
+                "Column": 9,
+                "AllowMissing": false,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "CodAmount",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": true,
+                "Converter": null,
+                "SampleValue": "-",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": "-",
+                "Ignore": false,
+                "Comment": null,
+                "WebId": "814ec63c-a930-4286-93a9-1290f811606a"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+                "Header": "X-name",
+                "Pattern": ".*_(?<value>\\w{5}).txt",
+                "StartPosition": null,
+                "Length": null,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "ScannerId",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": false,
+                "Converter": "",
+                "SampleValue": "",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": "",
+                "Ignore": false,
+                "Comment": "",
+                "WebId": "e6c4f46b-776b-4268-eab1-61a20ac3ab25"
+            },
+            {
+                "$type": "Bespoke.Sph.Domain.HeaderFieldMapping, domain.sph",
+                "Header": "SourceApplication",
+                "Pattern": "(?<value>.*)",
+                "StartPosition": null,
+                "Length": null,
+                "FieldMappingCollection": {
+                    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.TextFieldMapping, domain.sph]], domain.sph",
+                    "$values": []
+                },
+                "Name": "SourceApplication",
+                "TypeName": "System.String, mscorlib",
+                "IsNullable": true,
+                "Converter": "",
+                "SampleValue": "",
+                "IsComplex": false,
+                "AllowMultiple": false,
+                "NullPlaceholder": "",
+                "Ignore": false,
+                "Comment": "",
+                "WebId": "1c14f1ea-57c4-4a5f-bbed-aa4aa8a6164d"
+            }
+        ]
+    },
+    "Name": "RtsVasn",
+    "Entity": "Vasn",
+    "EntityId": "",
+    "Formatter": "DelimitedTextFormatter",
+    "TextFormatter": {
+        "$type": "Bespoke.Sph.Domain.DelimitedTextFormatter, domain.sph",
+        "Delimiter": "\t",
+        "HasTagIdentifier": false,
+        "RecordTag": "",
+        "EscapeCharacter": "",
+        "HasLabel": false,
+        "DetailRowCollection": {
+            "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FlatFileDetailTag, domain.sph]], domain.sph",
+            "$values": []
+        },
+        "Name": "",
+        "SampleStoreId": "bc5df774-7052-49a9-9974-ac0a11f85b95",
+        "WebId": "02958b71-959e-4aac-a7eb-5d7932d0eb3d"
+    },
+    "CreatedBy": "admin",
+    "Id": "rts-vasn",
+    "CreatedDate": "2016-10-21T10:04:54.6515791+08:00",
+    "ChangedBy": "admin",
+    "ChangedDate": "2017-04-11T12:04:26.0839365+08:00",
+    "WebId": "11e77f74-a476-4acc-84a0-f9433fe6efc2"
 }

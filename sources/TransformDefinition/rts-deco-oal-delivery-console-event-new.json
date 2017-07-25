@@ -42,24 +42,6 @@
       {
         "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
         "__uuid": "",
-        "Functoid": "a05e8858-005a-46c8-d2b6-a20c3ae78b45",
-        "Destination": "event_channel",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "454882b8-5c88-4f1f-e07a-71dfd1e44456"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "6a8bcc92-c242-4e18-b198-5929fe762a19",
-        "Destination": "physical_channel",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "4bdac690-a9c9-40aa-c892-a4b1f8882a43"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
         "Functoid": "72f81176-a230-4063-90ef-9f0800ec15e5",
         "Destination": "date_field",
         "SourceTypeName": "",
@@ -191,6 +173,24 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "65574cc2-fc97-47af-dd15-ff9f45f8d36b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "93350b15-a5e7-48b1-b5fd-b3fcd6ce8a66",
+        "Destination": "event_channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bec9e2b6-529d-49e2-90c8-b3f1e879620f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c7d40c31-b702-4492-ef83-4056f95a4fd1",
+        "Destination": "physical_channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d79b3c77-fdad-4217-8390-9f0f88a02eb8"
       }
     ]
   },
@@ -228,38 +228,6 @@
         "X": 537.0,
         "Y": 140.0,
         "WebId": "3aaef092-5b48-472b-cd56-cd1f04b0d537"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "Value": "002",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 356.0,
-        "Y": 310.0,
-        "WebId": "a05e8858-005a-46c8-d2b6-a20c3ae78b45"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "Value": "S",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": null,
-        "OutputTypeName": null,
-        "Label": null,
-        "Comment": null,
-        "X": 465.0,
-        "Y": 360.0,
-        "WebId": "6a8bcc92-c242-4e18-b198-5929fe762a19"
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
@@ -782,6 +750,36 @@
         "X": 694.0,
         "Y": 238.0,
         "WebId": "b0f6e188-2389-466b-e4b2-d63358e7a142"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "// PLEASE WAIT WHILE YOUR SCRIPT IS LOADING\nvar saEventChannel = \"002\";\nvar sowEventChannel = \"011\";\nreturn item.SourceApplication == \"sow\" ? sowEventChannel : saEventChannel;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetEventChannel",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 387.0,
+        "Y": 161.0,
+        "WebId": "93350b15-a5e7-48b1-b5fd-b3fcd6ce8a66"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "var saPhysicalChannel = \"S\";\nvar sowPhysicalChannel = \"W\";\nreturn item.SourceApplication == \"sow\" ? sowPhysicalChannel : saPhysicalChannel;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetPhysicalChannel",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 426.0,
+        "Y": 227.0,
+        "WebId": "c7d40c31-b702-4492-ef83-4056f95a4fd1"
       }
     ]
   },
@@ -802,6 +800,6 @@
   "Id": "rts-deco-oal-delivery-console-event-new",
   "CreatedDate": "2016-10-23T07:49:45.1384917+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-04-13T10:47:08.7962797+08:00",
+  "ChangedDate": "2017-06-07T13:34:43.4099666+08:00",
   "WebId": "2287dbd4-0e78-4b75-9c81-696b15773070"
 }

@@ -1,0 +1,101 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "2baf2b31-e14e-4e97-a8a5-3a7f7ccbe67d"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "EU",
+          "Name": "EU",
+          "Note": "",
+          "WebId": "ca5ff653-6a94-4ea8-dfd6-11d2f16ebe54"
+        },
+        "Operator": "StartsWith",
+        "WebId": "954d332e-4a34-4ca8-a406-f14bc58ec1db"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "entt-acceptance-to-ezi-send-pickup-api",
+        "Adapter": "EziSendPickupAdapter",
+        "Operation": "PostApiRtsPickupFormats",
+        "Table": null,
+        "Schema": null,
+        "Crud": null,
+        "Retry": 3,
+        "RetryInterval": 1000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "UpdateEziSendPickupApi",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "21cd1980-759d-45d7-ef23-e47a40b82d93"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.EziSendPickupAdapter",
+        "FullName": "PosEntt.EziSendPickupAdapter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.EziSendPickupAdapter.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.EnttAcceptanceToEziSendPickupApi",
+        "FullName": "PosEntt.EnttAcceptanceToEziSendPickupApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.EnttAcceptanceToEziSendPickupApi.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "EziSendPickupNotifier",
+  "Entity": "EnttAcceptance",
+  "TypeOf": "Bespoke.PosEntt.EnttAcceptances.Domain.EnttAcceptance, PosEntt.EnttAcceptance",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "EnttAcceptanceEziSendPickupNotifierTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "entt-acceptance-ezi-send-pickup-notifier",
+  "CreatedDate": "2017-07-11T11:16:48.2254166+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-11T11:31:43.96203+08:00",
+  "WebId": "df024bc6-56d4-4943-ba51-e107050af462"
+}

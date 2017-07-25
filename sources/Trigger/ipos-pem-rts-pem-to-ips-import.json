@@ -1,0 +1,145 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
+          "XPath": "",
+          "NamespacePrefix": "",
+          "TypeName": "",
+          "Path": "ConsigneeCountry",
+          "Name": "ConsigneeCountry",
+          "Note": "",
+          "WebId": "fe3dc2e9-5541-416c-dbfa-f4a2dffc0ba9"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "MY",
+          "Name": "MY",
+          "Note": "",
+          "WebId": "bde35caf-2caa-4d7f-d10d-73c9cc2e4d5e"
+        },
+        "Operator": "Neq",
+        "WebId": "658e95ce-1166-435c-ae9d-505e258f2638"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "fff8605e14",
+          "Script": "item.Country.Length",
+          "Name": "CheckCountryLength",
+          "Note": "",
+          "WebId": "f8605e14-a12c-4d5b-e971-69f19664393c"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "28b0e31e-e20c-4122-c9b0-bd736fbdf585"
+        },
+        "Operator": "Gt",
+        "WebId": "caa645e1-c08c-44c9-984a-5276050b89e7"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "ipos-pem-to-oal-ips-import",
+        "Adapter": "Oal",
+        "Operation": null,
+        "Table": "ips_import",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 5,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 3000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "ToPemOalIpsImport",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "77f94c15-5748-460d-d615-2df6e20ec01f"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Oal",
+        "FullName": "PosEntt.Oal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Oal.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposPemToOalIpsImport",
+        "FullName": "PosEntt.IposPemToOalIpsImport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.IposPemToOalIpsImport.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPemToIpsImport",
+  "Entity": "IposPem",
+  "TypeOf": "Bespoke.PosEntt.IposPems.Domain.IposPem, PosEntt.IposPem",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "IposPemRtsPemToIpsImportTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "ipos-pem-rts-pem-to-ips-import",
+  "CreatedDate": "2017-07-13T04:40:01.0249278+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-13T04:45:21.0802351+08:00",
+  "WebId": "13737dc6-9301-44f3-8cc1-584c942bd43c"
+}

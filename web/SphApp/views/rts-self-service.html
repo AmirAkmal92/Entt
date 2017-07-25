@@ -18,10 +18,11 @@
             <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
             <li role="presentation"><a href="#delivery-report" aria-controls="delivery-report" role="tab" data-toggle="tab">Delivery Report</a></li>
             <li role="presentation"><a href="#pickup-report" aria-controls="pickup-report" role="tab" data-toggle="tab">Pickup Report</a></li>
+            <li role="presentation"><a href="#scanner-token" aria-controls="scanner-token" role="tab" data-toggle="tab">Scanner Token</a></li>
+            <li role="presentation"><a href="#active-scanner" aria-controls="active-scanner" role="tab" data-toggle="tab">Active Scanner</a></li>
             <!--<li role="presentation"><a href="#xxx-report" aria-controls="xxx-report" role="tab" data-toggle="tab">Xxx Report</a></li>-->
             <!--<li role="presentation"><a href="#yyy-report" aria-controls="yyy-report" role="tab" data-toggle="tab">Yyy Report</a></li>-->
         </ul><!-- /Nav tabs -->
-
         <!-- Tab panes -->
         <div class="tab-content">
             <!--Tab Search-->
@@ -32,8 +33,8 @@
                     <div class="form-group">
                         <label class="col-md-2" for="ItemNo">Item No *</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="ItemNo" name="ItemNo" data-bind="value: ItemNo" placeholder="Consignment / Console" />
-                            <label id="ItemNo-error" class="error text-danger" for="ItemNo"></label>
+                            <input class="form-control" type="text" id="ItemNo" name="ItemNo" data-bind="value: ItemNo" placeholder="Consignment / Console" aria-required="true" required />
+                            <label id="ItemNo-error" class="error text-danger" for="ItemNo" style="display:none"></label>
                         </div>
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchItemNo">Search</button>
@@ -66,8 +67,8 @@
                         <tbody data-bind="foreach: SearchItemNoResults">
                             <tr>
                                 <td data-bind="text: _type"></td>
-                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm'}"></td>
-                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm'}"></td>
+                                <td data-bind="text: moment(_source.Date).format('DD/MM/YYYY') +' '+ moment(_source.Time).format('HH:mm:ss')"></td>
+                                <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="text: _source.CourierId"></td>
                                 <td data-bind="text: _source.LocationId"></td>
                                 <td data-bind="text: _source.Comment"></td>
@@ -84,23 +85,23 @@
                     <div class="form-group">
                         <label class="col-md-2" for="BeatNo">Beat No</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
-                            <label id="BeatNo-error" class="error text-danger" for="BeatNo"></label>
+                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" aria-required="true" required />
+                            <label id="BeatNo-error" class="error text-danger" for="BeatNo" style="display:none"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2" for="CourierId">Courier Id *</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
-                            <label id="CourierId-error" class="error text-danger" for="CourierId"></label>
+                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" aria-required="true" required />
+                            <label id="CourierId-error" class="error text-danger" for="CourierId" style="display:none"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2" for="ReportDateDeli">Date *</label>
                         <div class="col-md-6">
-                            <input class="form-control" id="ReportDateDeli" name="ReportDateDeli" data-bind="value: ReportDate" placeholder="Date" />
+                            <input class="form-control" id="ReportDateDeli" name="ReportDateDeli" data-bind="value: ReportDate" placeholder="Date" aria-required="true" required />
                             <br />
-                            <label id="ReportDateDeli-error" class="error text-danger" for="ReportDateDeli"></label>
+                            <label id="ReportDateDeli-error" class="error text-danger" for="ReportDateDeli" style="display:none"></label>
                         </div>
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdDeli">Search</button>
@@ -142,7 +143,7 @@
                             <tr>
                                 <td><span data-bind="text: $index() + 1"></span>. </td>
                                 <td data-bind="text: _source.ConsignmentNo"></td>
-                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: moment(_source.Date).format('DD/MM/YYYY') +' '+ moment(_source.Time).format('HH:mm')"></td>
                                 <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="text: _source.BeatNo"></td>
                                 <td data-bind="text: _source.RecipientName"></td>
@@ -161,23 +162,23 @@
                     <div class="form-group">
                         <label class="col-md-2" for="BeatNo">Beat No</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" />
-                            <label id="BeatNo-error" class="error text-danger" for="BeatNo"></label>
+                            <input class="form-control" type="text" id="BeatNo" name="BeatNo" data-bind="value: BeatNo" placeholder="Beat No" aria-required="true" required />
+                            <label id="BeatNo-error" class="error text-danger" for="BeatNo" style="display:none"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2" for="CourierId">Courier Id *</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" />
-                            <label id="CourierId-error" class="error text-danger" for="CourierId"></label>
+                            <input class="form-control" type="text" id="CourierId" name="CourierId" data-bind="value: CourierId" placeholder="Courier Id" aria-required="true" required />
+                            <label id="CourierId-error" class="error text-danger" for="CourierId" style="display:none"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2" for="ReportDatePick">Date *</label>
                         <div class="col-md-6">
-                            <input class="form-control" id="ReportDatePick" name="ReportDatePick" data-bind="value: ReportDate" placeholder="Date" />
+                            <input class="form-control" id="ReportDatePick" name="ReportDatePick" data-bind="value: ReportDate" placeholder="Date" aria-required="true" required />
                             <br />
-                            <label id="ReportDatePick-error" class="error text-danger" for="ReportDatePick"></label>
+                            <label id="ReportDatePick-error" class="error text-danger" for="ReportDatePick" style="display:none"></label>
                         </div>
                     </div>
                     <button class="btn btn-default" type="button" data-bind="click: searchByBeatNoAndCourierIdPick">Search</button>
@@ -221,7 +222,7 @@
                                 <td data-bind="text: _source.ConsignmentNo"></td>
                                 <td data-bind="text: _source.AccountNo"></td>
                                 <td data-bind="text: _source.PickupNo"></td>
-                                <td data-bind="date:{ value: _source.Time, format:'DD/MM/YYYY HH:mm:ss'}"></td>
+                                <td data-bind="text: moment(_source.Date).format('DD/MM/YYYY') +' '+ moment(_source.Time).format('HH:mm')"></td>
                                 <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
                                 <td data-bind="text: _source.BeatNo"></td>
                                 <td data-bind="text: _source.Comment"></td>
@@ -230,6 +231,122 @@
                     </table>
                 </div>
             </div><!--/Pickup Report-->
+            <!--ScannerToken-->
+            <div role="tabpanel" class="tab-pane" id="scanner-token">
+                <h3>Scanner Token</h3>
+                <br /><br />
+                <form class="form-horizontal" id="search-auth-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="ScannerId">Scanner Id *</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="ScannerId" name="ScannerId" data-bind="value: ScannerId" placeholder="Scanner Id" aria-required="true" required />
+                            <label id="ScannerId-error" class="error text-danger" for="ScannerId" style="display:none"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchScannerId">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearsearchScannerId">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: AuthToken().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearsearchScannerId"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label>Scanner Id</label>: <span id="search-auth-token">ScannerId</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Scanner Id</th>
+                                <th>Date Issued</th>
+                                <th>Date Expired</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: AuthToken" >
+                            <tr data-bind="visible:$index() < 5">
+                                <td data-bind="text:$index() + 1"></td>
+                                <td data-bind="text: user"></td>
+                                <td data-bind="text: moment(iat*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
+                                <td data-bind="text: moment(exp*1000).format('YYYY-MM-DD HH:mm:ss')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/ScannerToken-->
+            <!--Active Scanner-->
+            <div role="tabpanel" class="tab-pane" id="active-scanner">
+                <h3>Active Scanner</h3>
+                <br /><br />
+                <form class="form-horizontal" id="active-scanner-form">
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerEvent">Event *</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="ActiveScannerEvent" name="ActiveScannerEvent" data-bind="options: availableEvents, value: ActiveScannerEvent"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerLocationId">Location Id *</label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="ActiveScannerLocationId" name="ActiveScannerLocationId" data-bind="value: ActiveScannerLocationId" placeholder="Location Id" aria-required="true" required />
+                            <label id="ActiveScannerLocationId-error" class="error text-danger" for="ActiveScannerLocationId" style="display:none"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2" for="ActiveScannerDate">Date *</label>
+                        <div class="col-md-6">
+                            <input class="form-control" id="ActiveScannerDate" name="ActiveScannerDate" data-bind="value: ActiveScannerDate" placeholder="Date" aria-required="true" required />
+                            <br />
+                            <label id="ActiveScannerDate-error" class="error text-danger" for="ActiveScannerDate" style="display:none"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button" data-bind="click: searchByEventAndLocationId">Search</button>
+                    <button class="btn btn-danger" type="button" data-bind="click: clearEventAndLocationId">Clear</button>
+                    <span data-bind="if: isBusy"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>
+                </form>
+                <div data-bind="if: SearchByEventAndLocationIdResults().length > 0">
+                    <br />
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="pull-right" data-bind="click: clearEventAndLocationId"><i class="fa fa-times"></i></span>
+                            <br />
+                            <p>
+                                <label for="active-scanner-event">Event</label>: <span id="active-scanner-event">event</span>
+                                <br />
+                                <label for="active-scanner-location-id">Location Id</label>: <span id="active-scanner-location-id">location id</span>
+                                <br />
+                                <label for="active-scanner-date">Date</label>: <span id="active-scanner-date">date</span>
+                                <br />
+                                <label for="active-scanner-total-events">Total Events</label>: <span id="active-scanner-total-events">total events</span>
+                                <br />
+                                <label for="active-scanner-total-active-scanners">Total Active Scanners</label>: <span id="active-scanner-total-active-scanners">total actice scanners</span>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Scanner Id</th>
+                                <th>Events Scanned</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: SearchByEventAndLocationIdResults">
+                            <tr>
+                                <td><span data-bind="text: $index() + 1"></span>. </td>
+                                <td data-bind="text: key"></td>
+                                <td data-bind="text: doc_count"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--/Active Scanner-->
             <!--<div role="tabpanel" class="tab-pane" id="xxx-report">
                 xxx report
             </div>-->

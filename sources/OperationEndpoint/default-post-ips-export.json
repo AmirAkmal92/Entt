@@ -1,0 +1,40 @@
+{
+  "$type": "Bespoke.Sph.Domain.OperationEndpoint, domain.sph",
+  "EntityPermissionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.EntityPermission, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Rules": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": []
+  },
+  "SetterActionChildCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.SetterActionChild, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "PatchPathCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.PatchSetter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "Default",
+  "Route": "",
+  "IsHttpPut": false,
+  "IsHttpPatch": false,
+  "IsHttpPost": true,
+  "IsHttpDelete": false,
+  "Note": null,
+  "Entity": "IpsExport",
+  "Resource": "ips-exports",
+  "IsPublished": false,
+  "IsConflictDetectionEnabled": false,
+  "CreatedBy": "admin",
+  "Id": "default-post-ips-export",
+  "CreatedDate": "2017-07-12T10:22:50.4282295+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-12T10:22:50.4282295+08:00",
+  "WebId": "d8c58861-e22b-4355-8445-08eecc4d714f"
+}

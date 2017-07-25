@@ -1,0 +1,38 @@
+{
+    "intranetboem":{
+        "properties":{
+            "CreatedBy": {"type": "string", "index":"not_analyzed"},
+            "ChangedBy": {"type": "string", "index":"not_analyzed"},
+            "WebId": {"type": "string", "index":"not_analyzed"},
+            "CreatedDate": {"type": "date"},
+            "ChangedDate": {"type": "date"},
+             "ConsignmentNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "TrackingCodeSet":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "WeightDensity":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "WeightVolumetric":{"type":"float","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
+             "ConsigneeAddress1":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeAddress2":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeStateAndCity":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneePostcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeCountry":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeEmail":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneePhone":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsigneeReferenceNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "IntranetReceiptNumber":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperAccountNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperAddress1":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperAddress2":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperCity":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperPostcode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperCountry":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperEmail":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperPhone":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ShipperReferenceNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Packaging":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "RoutingCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DaysTaken":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false}
+        }
+    }
+}

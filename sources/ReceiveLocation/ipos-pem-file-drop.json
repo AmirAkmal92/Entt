@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "D:\\temp\\entt\\ipos",
+  "CredentialUserName": "admin",
+  "ChangeExtension": true,
+  "CredentialPassword": "123456",
+  "Filter": "*.log",
+  "ArchiveLocation": "D:\\temp\\entt\\ipos\\archive",
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IposPemFileDrop",
+  "IsActive": true,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "default-post-ipos-pem",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImNhbl9lZGl0X2VudGl0eSIsImNhbl9lZGl0X3dvcmtmbG93IiwiZGV2ZWxvcGVycyJdLCJlbWFpbCI6ImFkbWluQHlvdXJjb21wYW55LmNvbSIsInN1YiI6IjYzNjM1OTc2NTc4NjIzNDE0NGYyMTU5MGFmIiwibmJmIjoxNTE2MjQ4NTc5LCJpYXQiOjE1MDAzNTA5NzksImV4cCI6MTU3Nzc1MDQwMCwiYXVkIjoiUG9zRW50dCJ9.s3QeCnV_v40t2b57Q9_unIPpD4eEX830I0B2R4mN5Hw",
+  "ReceivePort": "ipos-pem-port",
+  "CreatedBy": "admin",
+  "Id": "ipos-pem-file-drop",
+  "CreatedDate": "2017-06-06T13:08:13.9605358+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-19T16:51:59.5230809+08:00",
+  "WebId": "e2fb80f1-e173-41ed-afe7-4992f5506b15"
+}

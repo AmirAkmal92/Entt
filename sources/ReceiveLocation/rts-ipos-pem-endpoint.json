@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BufferAllRows": false,
+  "RejectPartial": true,
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": null,
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/ipospem",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsIposPemEndpoint",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "ipos-pem-port",
+  "CreatedBy": "admin",
+  "Id": "rts-ipos-pem-endpoint",
+  "CreatedDate": "2017-07-18T14:04:47.1474695+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-18T14:04:47.1474695+08:00",
+  "WebId": "9fb9c3ee-2973-41a4-b7a0-5c565f4b3d96"
+}

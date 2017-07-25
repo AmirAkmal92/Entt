@@ -1,0 +1,64 @@
+{
+  "$type": "Bespoke.Sph.Domain.QueryEndpoint, domain.sph",
+  "ControllerName": "EnttAcceptanceSearchByConnoteNoQueryEndpoint",
+  "FilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Filter, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Filter, domain.sph",
+        "Term": "ConsignmentNo",
+        "Operator": "Eq",
+        "Field": {
+          "$type": "Bespoke.Sph.Domain.RouteParameterField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "DefaultValue": "",
+          "IsOptional": false,
+          "Constraints": "",
+          "Name": "connoteno",
+          "Note": "",
+          "WebId": "7e0e4bf0-ca7d-42c5-ed96-9cb4abbf5263"
+        },
+        "WebId": "9290f34d-8d26-40cd-a3d1-db113a0e54ab"
+      }
+    ]
+  },
+  "SortCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Sort, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Sort, domain.sph",
+        "Path": "CreatedDate",
+        "Direction": "Desc",
+        "WebId": "35edf963-f6d6-4275-f6f8-9b86cfde0d56"
+      }
+    ]
+  },
+  "MemberCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[System.String, mscorlib]], domain.sph",
+    "$values": [
+      "Id",
+      "ConsignmentNo",
+      "DateTime",
+      "Postcode",
+      "Weight",
+      "Pl9No",
+      "LocationId",
+      "ShipperAccountNo"
+    ]
+  },
+  "CacheProfile": "",
+  "Name": "SearchByConnoteNo",
+  "Route": "search-by-connote-no/{connoteno}",
+  "IsReturnSource": "",
+  "Entity": "EnttAcceptance",
+  "Note": "",
+  "IsPublished": true,
+  "Resource": "entt-acceptances",
+  "CacheFilter": null,
+  "CreatedBy": "admin",
+  "Id": "entt-acceptance-search-by-connote-no",
+  "CreatedDate": "2017-07-07T11:49:06.6490481+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-10T12:44:06.9302286+08:00",
+  "WebId": "9db23e7b-754e-4308-9a6c-e9b438aa8b55"
+}

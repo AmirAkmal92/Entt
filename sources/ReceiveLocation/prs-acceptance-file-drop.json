@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "C:\\temp",
+  "CredentialUserName": null,
+  "ChangeExtension": true,
+  "CredentialPassword": null,
+  "Filter": "AcceptanceData*.xml",
+  "ArchiveLocation": null,
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PrsAcceptanceFileDrop",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "default-post-acceptance-data",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": null,
+  "ReceivePort": "prs-acceptance-port",
+  "CreatedBy": "admin",
+  "Id": "prs-acceptance-file-drop",
+  "CreatedDate": "2017-07-04T11:45:47.5490675+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-18T16:38:37.0550682+08:00",
+  "WebId": "7480a0de-7541-47ea-acda-105f6dcededb"
+}
