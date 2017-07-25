@@ -38,6 +38,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "f0080f5c-ecb3-49e5-b891-e4511926afb5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ShipperAccountNo",
+        "TypeName": "",
+        "Destination": "Body.AccountNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "84e77ecb-eaa7-4a54-c8ac-cf6cacd6c2af"
       }
     ]
   },
@@ -78,6 +87,6 @@
   "Id": "entt-acceptance-to-ezi-send-pickup-api",
   "CreatedDate": "2017-07-11T11:25:05.0940932+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-11T11:29:07.8961256+08:00",
+  "ChangedDate": "2017-07-25T11:50:09.0187154+08:00",
   "WebId": "feaba49f-1c66-4a55-be1b-7d5c8f6fc14a"
 }
