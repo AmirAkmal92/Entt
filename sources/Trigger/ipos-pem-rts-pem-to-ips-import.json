@@ -31,7 +31,7 @@
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
           "CodeNamespace": "fff8605e14",
-          "Script": "item.Country.Length",
+          "Script": "item.ConsigneeCountry.Length",
           "Name": "CheckCountryLength",
           "Note": "",
           "WebId": "f8605e14-a12c-4d5b-e971-69f19664393c"
@@ -140,6 +140,6 @@
   "Id": "ipos-pem-rts-pem-to-ips-import",
   "CreatedDate": "2017-07-13T04:40:01.0249278+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-13T04:45:21.0802351+08:00",
+  "ChangedDate": "2017-07-25T11:54:17.8717933+08:00",
   "WebId": "13737dc6-9301-44f3-8cc1-584c942bd43c"
 }

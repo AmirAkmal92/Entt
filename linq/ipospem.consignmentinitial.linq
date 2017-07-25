@@ -6,6 +6,15 @@
   <Reference Relative="..\output\PosEntt.ReceivePort.IposPemPort.dll">C:\project\work\entt.rts\output\PosEntt.ReceivePort.IposPemPort.dll</Reference>
   <Namespace>Bespoke.Sph.Domain</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
+  <AppConfig>
+    <Content>
+      <configuration>
+        <connectionStrings>
+          <add name="Oal" connectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=oal;Integrated Security=True;Connect Timeout=30;Asynchronous Processing=True" providerName="System.Data.SqlClient"></add>
+        </connectionStrings>
+      </configuration>
+    </Content>
+  </AppConfig>
 </Query>
 
 var port = new Bespoke.PosEntt.ReceivePorts.IposPemPort(new Bespoke.Sph.Domain.Logger());

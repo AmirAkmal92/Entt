@@ -8,6 +8,22 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_ipos-pem-rts-pem-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_ipos-pem-rts-pem-to-ips-import",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToIpsImportTriggerSubscriber",
+      "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-ips-import"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_ipos-pem-ipos-pem-to-entt-acceptance",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemIposPemToEnttAcceptanceTriggerSubscriber",
       "assembly": "subscriber.trigger.ipos-pem-ipos-pem-to-entt-acceptance"
