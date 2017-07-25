@@ -371,6 +371,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "b9fa1aef-2b60-45d5-8c54-dc2b880de5da"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "8cf19f7f-875f-4049-bee6-eaf615f70665",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bb0be6b1-f1c4-47b1-a3c6-5ab5b4279477"
       }
     ]
   },
@@ -916,6 +925,21 @@
         "X": 539.0,
         "Y": 538.0,
         "WebId": "8009d7e0-2542-40d3-d73b-6f9ba389160c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return Guid.NewGuid().ToString();",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetGuid",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 389.0,
+        "Y": 1786.0,
+        "WebId": "8cf19f7f-875f-4049-bee6-eaf615f70665"
       }
     ]
   },
@@ -936,6 +960,6 @@
   "Id": "rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T11:29:51.8433405+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-10T12:35:03.1648046+08:00",
+  "ChangedDate": "2017-07-25T11:44:07.3986546+08:00",
   "WebId": "d690b166-42e7-4eef-9839-0d50cbfe09d7"
 }
