@@ -242,6 +242,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     "icon": "bowtie-icon bowtie-navigate-refresh",
                     "id": "rts-messages-reload",
                     command: function () {
+                        searchText("");
                         return loadListAsync();
                     }
                 }])
