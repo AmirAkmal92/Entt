@@ -32,6 +32,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_acceptance-data-prs-acceptance-to-entt-acceptance",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.AcceptanceDataPrsAcceptanceToEnttAcceptanceTriggerSubscriber",
+      "assembly": "subscriber.trigger.acceptance-data-prs-acceptance-to-entt-acceptance"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_sap-ageing-sap-ageing-file-drop-trigger",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapAgeingSapAgeingFileDropTriggerSubscriber",
       "assembly": "subscriber.trigger.sap-ageing-sap-ageing-file-drop-trigger"

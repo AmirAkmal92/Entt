@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BufferAllRows": true,
+  "RejectPartial": true,
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": "text/xml",
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/prs",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PrsAcceptanceRestEndPoint",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "prs-acceptance-port",
+  "CreatedBy": "admin",
+  "Id": "prs-acceptance-rest-end-point",
+  "CreatedDate": "2017-07-26T12:51:17.6973502+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-26T12:51:17.6973502+08:00",
+  "WebId": "b1d445dc-d46e-4806-a6ae-21a1ee8b1d51"
+}
