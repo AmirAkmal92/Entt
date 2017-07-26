@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLineArgumentExtensions.cs" />
     <Compile Include="Deco.cs" />
     <Compile Include="DecoScanSqlReceiveLocation.cs" />
     <Compile Include="Deli.cs" />

@@ -16,25 +16,25 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             "query": {
                 "bool": {
                     "must": [
-                       {
-                           "range": {
-                               "CreatedDate": {
-                                   "from": dateFrom,
-                                   "to": to
-                               }
-                           }
-                       }
+                        {
+                            "range": {
+                                "CreatedDate": {
+                                    "from": dateFrom,
+                                    "to": to
+                                }
+                            }
+                        }
                     ]
                 }
             },
             "from": from,
             "size": size,
             "sort": [
-               {
-                   "CreatedDate": {
-                       "order": "desc"
-                   }
-               }
+                {
+                    "CreatedDate": {
+                        "order": "desc"
+                    }
+                }
             ]
         },
         loadListAsync = function (q) {
@@ -63,13 +63,16 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         },
         search = function () {
             const q = ko.toJS(query);
-            q.query.bool.must.push({
+            const qs = {
                 "query_string": {
                     "default_field": "_all",
                     "query": searchText()
                 }
-            });
+            };
+            q.query.bool.must.push(qs);
             isBusy(true);
+
+
             return loadListAsync(q)
                 .fail(function (e, arg) {
                     const result = JSON.parse(e.responseJSON.result);
@@ -83,7 +86,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             rtsType(type);
             selectedItems([]);
             queues([]);
-            if(id){
+            if (id) {
                 searchText(`Id:"${id.split('-')[0]}"`);
                 dateFrom(moment().subtract(6, "month").format());
                 return search();
@@ -107,35 +110,48 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 changed: function (page, ps) {
                     from(ps * (page - 1));
                     size(ps);
-                    return loadListAsync();
+
+                    // restore the search for paging
+                    const text = ko.unwrap(searchText);
+                    const qdsl = ko.toJS(query);
+                    if (text) {
+                        const qs = {
+                            "query_string": {
+                                "default_field": "_all",
+                                "query": searchText()
+                            }
+                        };
+                        qdsl.query.bool.must.push(qs);
+                    }
+                    return loadListAsync(qdsl);
                 }
             });
 
             total.subscribe(pager.update);
 
             $(view).find("div.date-range")
-               .daterangepicker(
-                   {
-                       ranges: {
-                           'Today': [moment().startOf("day"), moment().endOf("day")],
-                           'Yesterday': [moment().startOf("day").subtract(1, "days"), moment().endOf("day").subtract(1, "days")],
-                           'Last 7 Days': [moment().startOf("day").subtract(6, "days"), moment()],
-                           'Last 30 Days': [moment().startOf("day").subtract(29, "days"), moment()],
-                           'This Month': [moment().startOf("day").startOf("month"), moment().endOf("month")],
-                           'Last Month': [
-                               moment().subtract(1, "month").startOf("month"),
-                               moment().subtract(1, "month").endOf("month")
-                           ]
-                       },
-                       startDate: moment().subtract(29, "days"),
-                       endDate: moment()
-                   },
-                   function (start, end) {
-                       dateFrom(start.format());
-                       to(end.format());
-                       return loadListAsync();
-                   }
-               );
+                .daterangepicker(
+                {
+                    ranges: {
+                        'Today': [moment().startOf("day"), moment().endOf("day")],
+                        'Yesterday': [moment().startOf("day").subtract(1, "days"), moment().endOf("day").subtract(1, "days")],
+                        'Last 7 Days': [moment().startOf("day").subtract(6, "days"), moment()],
+                        'Last 30 Days': [moment().startOf("day").subtract(29, "days"), moment()],
+                        'This Month': [moment().startOf("day").startOf("month"), moment().endOf("month")],
+                        'Last Month': [
+                            moment().subtract(1, "month").startOf("month"),
+                            moment().subtract(1, "month").endOf("month")
+                        ]
+                    },
+                    startDate: moment().subtract(29, "days"),
+                    endDate: moment()
+                },
+                function (start, end) {
+                    dateFrom(start.format());
+                    to(end.format());
+                    return loadListAsync();
+                }
+                );
 
             $(view).on("click", "form#search-form ul.dropdown-menu a", function () {
                 const term = $(this).data("term") || ($(this).text() + ":"),
@@ -155,22 +171,22 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
 
         },
         requeue = function (log, element) {
-           // console.log(log);
-           // console.log(element);
+            // console.log(log);
+            // console.log(element);
             const rows = $(element.target).parents("tr"),
                 item = ko.dataFor(rows[0]),
                 id = item._id,
                 type = ko.unwrap(rtsType);
-                
-            let data = {date : item._source.CreatedDate};
-            if(ko.isObservable(log.canRequeue)){
+
+            let data = { date: item._source.CreatedDate };
+            if (ko.isObservable(log.canRequeue)) {
                 log.canRequeue(false);
                 data = { date: log._source.time, logId: log._id, queueName: log._source.source };
             }
             return context.post(ko.toJSON(data), `api/rts-dashboard/${type}/${id}/requeue`)
-                    .then(function (result) {
-                        console.log(result);
-                    });
+                .then(function (result) {
+                    console.log(result);
+                });
         },
         viewLog = function (log) {
             console.log(log);
@@ -180,10 +196,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
 
             });
         },
-        downloadMessages = function(){
+        downloadMessages = function () {
             function download(data, filename, type) {
                 var a = document.createElement("a"),
-                    file = new Blob([data], {type: type});
+                    file = new Blob([data], { type: type });
                 if (window.navigator.msSaveOrOpenBlob) // IE10+
                     window.navigator.msSaveOrOpenBlob(file, filename);
                 else { // Others
@@ -192,10 +208,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     a.download = filename;
                     document.body.appendChild(a);
                     a.click();
-                    setTimeout(function() {
+                    setTimeout(function () {
                         document.body.removeChild(a);
-                        window.URL.revokeObjectURL(url);  
-                    }, 0); 
+                        window.URL.revokeObjectURL(url);
+                    }, 0);
                 }
             }
             var json = ko.toJSON(selectedItems);
@@ -208,7 +224,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         type: rtsType,
         list: list,
         selectedItems: selectedItems,
-        downloadMessages : downloadMessages,
+        downloadMessages: downloadMessages,
         members: members,
         queueOptions: queueOptions,
         requeue: requeue,
@@ -221,14 +237,15 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
         isBusy: isBusy,
         toolbar: {
             commands: ko.observableArray([
-            {
-                "caption": "Reload",
-                "icon": "bowtie-icon bowtie-navigate-refresh",
-                "id": "rts-messages-reload",
-                command: function () {
-                    return loadListAsync();
-                }
-            }])
+                {
+                    "caption": "Reload",
+                    "icon": "bowtie-icon bowtie-navigate-refresh",
+                    "id": "rts-messages-reload",
+                    command: function () {
+                        searchText("");
+                        return loadListAsync();
+                    }
+                }])
         }
     };
 
