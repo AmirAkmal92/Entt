@@ -11,7 +11,7 @@
     "$values": []
   },
   "Name": "IpsExportFileDrop",
-  "IsActive": false,
+  "IsActive": true,
   "ValidationEndpoint": null,
   "ValidationMethod": "",
   "SubmitEndpoint": "default-post-mail-item",
@@ -20,12 +20,12 @@
   "InvalidMethod": "",
   "ErrorEndpoint": null,
   "ErrorMethod": "",
-  "JwtToken": null,
+  "JwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImNhbl9lZGl0X2VudGl0eSIsImNhbl9lZGl0X3dvcmtmbG93IiwiZGV2ZWxvcGVycyJdLCJlbWFpbCI6ImFkbWluQHBvc2VudHQuY29tIiwic3ViIjoiNjM2MzAxMTk0Nzc5MjU5NDcwMGM1Y2Y1MDEiLCJuYmYiOjE1MTAzOTE0NzgsImlhdCI6MTQ5NDQ5Mzg3OCwiZXhwIjoxNTE0Njc4NDAwLCJhdWQiOiJQb3NFbnR0In0.0wfWm2d8Q4CerJqy3YODm5AlblCfwAk2Geo_osQAsPA",
   "ReceivePort": "ips-export-port",
   "CreatedBy": "admin",
   "Id": "ips-export-file-drop",
   "CreatedDate": "2017-07-18T15:39:33.6137526+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-18T16:37:45.367284+08:00",
+  "ChangedDate": "2017-07-26T12:43:47.4638336+08:00",
   "WebId": "50a37f0e-7ce1-48f8-9f00-83e8d4815c1f"
 }

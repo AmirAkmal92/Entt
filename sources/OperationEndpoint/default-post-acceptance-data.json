@@ -29,12 +29,12 @@
   "Note": null,
   "Entity": "AcceptanceData",
   "Resource": "acceptance-datas",
-  "IsPublished": false,
+  "IsPublished": true,
   "IsConflictDetectionEnabled": false,
   "CreatedBy": "admin",
   "Id": "default-post-acceptance-data",
   "CreatedDate": "2017-07-24T14:43:39.3777982+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T14:43:39.3777982+08:00",
+  "ChangedDate": "2017-07-27T11:29:06.6605115+08:00",
   "WebId": "14ff7adf-2571-438e-8cc7-e492acbed868"
 }
