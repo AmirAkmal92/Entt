@@ -1,11 +1,11 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
-  "Path": "C:\\temp",
+  "Path": "C:\\temp\\ips-export",
   "CredentialUserName": null,
   "ChangeExtension": true,
   "CredentialPassword": null,
-  "Filter": "IPSExp*.xml",
-  "ArchiveLocation": null,
+  "Filter": "IPSExpC*.xml",
+  "ArchiveLocation": "C:\\temp\\ips-export\\archive",
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": []
@@ -26,6 +26,6 @@
   "Id": "ips-export-file-drop",
   "CreatedDate": "2017-07-18T15:39:33.6137526+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-26T12:43:47.4638336+08:00",
+  "ChangedDate": "2017-07-28T15:01:08.8066091+08:00",
   "WebId": "50a37f0e-7ce1-48f8-9f00-83e8d4815c1f"
 }

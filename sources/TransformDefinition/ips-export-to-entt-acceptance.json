@@ -1,0 +1,101 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ChangedDate",
+        "TypeName": "",
+        "Destination": "ChangedDate",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d8bb29d3-1724-4d9b-8e0a-4a7a0ec8e3d7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ChangedBy",
+        "TypeName": "",
+        "Destination": "ChangedBy",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5a43d220-0ef6-4239-a665-04da19662faf"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CreatedDate",
+        "TypeName": "",
+        "Destination": "CreatedDate",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f452aefc-6222-4b03-da79-0c68443c9e03"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CreatedBy",
+        "TypeName": "",
+        "Destination": "CreatedBy",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "724f362d-45f7-4cc6-cd49-2cd750967c17"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "fa72010f-476f-4105-e479-8cde12685696",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fff80acd-855e-41d9-da4c-35e4c879ba78"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ItemId",
+        "TypeName": "",
+        "Destination": "ConsignmentNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c4ae71a7-b1d4-4bfd-a3e7-ec7d5319cffe"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return Guid.NewGuid().ToString();",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetGuid",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 481.0,
+        "Y": 1840.0,
+        "WebId": "fa72010f-476f-4105-e479-8cde12685696"
+      }
+    ]
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IpsExportToEnttAcceptance",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.MailItems.Domain.MailItem, PosEntt.MailItem",
+  "OutputTypeName": "Bespoke.PosEntt.EnttAcceptances.Domain.EnttAcceptance, PosEntt.EnttAcceptance",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "ips-export-to-entt-acceptance",
+  "CreatedDate": "2017-07-28T15:08:26.6960221+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-28T15:31:41.3262347+08:00",
+  "WebId": "db161969-86a6-45c6-af28-11dbafb6fc81"
+}

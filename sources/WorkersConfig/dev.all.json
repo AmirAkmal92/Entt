@@ -8,6 +8,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_mail-item-ips-export-to-entt-acceptance",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MailItemIpsExportToEnttAcceptanceTriggerSubscriber",
+      "assembly": "subscriber.trigger.mail-item-ips-export-to-entt-acceptance"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_ipos-pem-rts-pem-to-oal",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToOalTriggerSubscriber",
       "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-oal"
