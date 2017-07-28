@@ -514,7 +514,7 @@
             },
             {
               "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-              "TypeName": "System.Int32, mscorlib",
+              "TypeName": "System.Decimal, mscorlib",
               "IsNullable": true,
               "IsNotIndexed": false,
               "IsAnalyzed": false,
@@ -1227,6 +1227,6 @@
   "Id": "acceptance-data",
   "CreatedDate": "2017-07-24T14:43:39.3777982+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T15:40:10.4236463+08:00",
+  "ChangedDate": "2017-07-28T12:03:46.9348797+08:00",
   "WebId": "4be7c90b-8dde-445c-995c-588d866b99fa"
 }

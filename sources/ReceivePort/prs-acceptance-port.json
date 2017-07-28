@@ -163,7 +163,7 @@
               "Name": "TrxDateTime",
               "TypeName": "System.DateTime, mscorlib",
               "IsNullable": false,
-              "Converter": null,
+              "Converter": "d/M/yyyy h:m:ss tt",
               "SampleValue": "5/6/2017 2:38:02 PM",
               "IsComplex": false,
               "AllowMultiple": false,
@@ -558,7 +558,7 @@
                 "$values": []
               },
               "Name": "DimWeight",
-              "TypeName": "System.Int32, mscorlib",
+              "TypeName": "System.Decimal, mscorlib",
               "IsNullable": true,
               "Converter": null,
               "SampleValue": "0",
@@ -1290,6 +1290,6 @@
   "Id": "prs-acceptance-port",
   "CreatedDate": "2017-07-24T14:40:15.5961762+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T14:43:44.0352485+08:00",
+  "ChangedDate": "2017-07-28T11:59:22.2180848+08:00",
   "WebId": "4be7c90b-8dde-445c-995c-588d866b99fa"
 }
