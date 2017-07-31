@@ -57,6 +57,7 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
 ,[PupStatCodeLocation] VARCHAR(255)  NULL
 ,[PupStatCodeDateTime] SMALLDATETIME  NULL
 ,[ScannerId] VARCHAR(255)  NULL
+,[HubCode] VARCHAR(255)  NULL
 ,[Json] VARCHAR(MAX)
 ,[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
 ,[CreatedBy] VARCHAR(255) NULL

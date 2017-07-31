@@ -1778,6 +1778,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "1b3db8fc-d8ed-4e63-ab21-9f7944ab1e32"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "HubCode",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "324562b6-650c-4951-b10a-cd377ffed4bc"
       }
     ]
   },
@@ -1819,6 +1843,6 @@
   "Id": "entt-acceptance",
   "CreatedDate": "2017-06-22T12:01:08.9612286+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-21T12:33:30.7139787+08:00",
+  "ChangedDate": "2017-07-31T14:09:54.2490345+08:00",
   "WebId": "1518b614-6c86-423e-913b-5b93695c1ff8"
 }
