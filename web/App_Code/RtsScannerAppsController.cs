@@ -25,12 +25,14 @@ public class RtsScannerAppsController : BaseApiController
         var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT [Id],[ConsignmentNo],[DateTime],[LocationId],[PickupNo],[Postcode],[Pl9No],[ShipperAccountNo],[ParentWeight] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId", conn))
+        using (var cmd = new SqlCommand("SELECT [Id],[ConsignmentNo],[DateTime],[LocationId],[PickupNo],[Postcode],[Pl9No],[ShipperAccountNo],[ParentWeight] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
 
             cmd.Parameters.AddWithValue("@LocationId", branch);
+            cmd.Parameters.AddWithValue("@StartDate", DateTime.Today);
+            cmd.Parameters.AddWithValue("@EndDate", DateTime.Now);
 
             using (var reader = await cmd.ExecuteReaderAsync(CommandBehavior.CloseConnection))
             {
@@ -92,12 +94,14 @@ public class RtsScannerAppsController : BaseApiController
         var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId", conn))
+        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
 
             cmd.Parameters.AddWithValue("@LocationId", branch);
+            cmd.Parameters.AddWithValue("@StartDate", DateTime.Today);
+            cmd.Parameters.AddWithValue("@EndDate", DateTime.Now);
 
             using (var reader = await cmd.ExecuteReaderAsync(CommandBehavior.CloseConnection))
             {
