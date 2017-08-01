@@ -47,3 +47,5 @@ env.posentt.ws27.ps1
 /sources/ipos.file.watcher/obj
 /sources/rts.ipos.boems.trigger.actions/bin
 /sources/rts.ipos.boems.trigger.actions/obj
+/sources/rts.ips.export.trigger/bin
+/sources/rts.ips.export.trigger/obj
