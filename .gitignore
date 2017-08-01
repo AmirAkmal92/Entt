@@ -45,3 +45,5 @@ env.posentt.ws27.ps1
 /env.posentt.ws30.ps1
 /sources/ipos.file.watcher/bin
 /sources/ipos.file.watcher/obj
+/sources/rts.ipos.boems.trigger.actions/bin
+/sources/rts.ipos.boems.trigger.actions/obj
