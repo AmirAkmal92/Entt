@@ -25,10 +25,17 @@ namespace Bespoke.PosEntt.CustomActions
 
         public async Task RunAsync(MailItem item)
         {
-            var acceptances = new List<EnttAcceptances.Domain.EnttAcceptance>();
             var ipsExportMap = new Integrations.Transforms.IpsExportToEnttAcceptance();
-            var row = await ipsExportMap.TransformAsync(item);
-            acceptances.Add(row);
+            var acceptance = await ipsExportMap.TransformAsync(item);
+            var tn030 = item.FromIPS.IPSEvent.Single(m => m.TNCd == "TN030");
+            acceptance.DateTime = tn030.Date.Value;
+
+            var context = new SphDataContext();
+            using (var session = context.OpenSession())
+            {
+                session.Attach(acceptance);
+                await session.SubmitChanges();
+            }
         }
 
         public override string GetEditorViewModel()
@@ -109,7 +116,7 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
 
             <div class=""modal-header"">
                 <button type=""button"" class=""close"" data-dismiss=""modal"" data-bind=""click : cancelClick"">&times;</button>
-                <h3>{this.GetType().Name}</h3>
+                <h3>IPS EXPORT ACCEPTANCE ACTION</h3>
             </div>
             <div class=""modal-body"" data-bind=""with: action"">
 

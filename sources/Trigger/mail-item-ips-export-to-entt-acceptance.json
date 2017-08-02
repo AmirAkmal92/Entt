@@ -8,15 +8,12 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
     "$values": [
       {
-        "$type": "Bespoke.Sph.Messaging.EntityAction, trigger.action.entity",
-        "OutboundMap": "ips-export-to-entt-acceptance",
-        "OutboundEntity": "EnttAcceptance",
-        "Operation": "AddIpsExportToEnttAcceptance",
-        "Title": "IpsExportToEnttAcceptanceAction",
+        "$type": "Bespoke.PosEntt.CustomActions.IpsExportAcceptanceAction, rts.ips.export.trigger",
+        "Title": null,
         "IsActive": true,
         "TriggerId": null,
         "Note": null,
-        "WebId": "9bb51d61-ee3d-497d-d653-75462dd59afa"
+        "WebId": "38b06b46-ad56-401b-bd67-f2a30da1bab3"
       }
     ]
   },
@@ -99,6 +96,6 @@
   "Id": "mail-item-ips-export-to-entt-acceptance",
   "CreatedDate": "2017-07-28T15:16:25.0210325+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-28T15:19:18.204554+08:00",
+  "ChangedDate": "2017-08-02T15:42:33.2729855+08:00",
   "WebId": "95fed81f-d95f-4ff8-bf5d-283a15219813"
 }
