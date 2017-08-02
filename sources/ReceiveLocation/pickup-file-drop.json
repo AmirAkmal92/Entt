@@ -1,0 +1,31 @@
+{
+  "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
+  "Path": "R:\\trial\\pick",
+  "CredentialUserName": "admin",
+  "ChangeExtension": true,
+  "CredentialPassword": "123456",
+  "Filter": "*.log",
+  "ArchiveLocation": null,
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "PickupFileDrop",
+  "IsActive": true,
+  "ValidationEndpoint": null,
+  "ValidationMethod": "",
+  "SubmitEndpoint": "pickup-default",
+  "SubmitMethod": "POST",
+  "InvalidEndpoint": null,
+  "InvalidMethod": "",
+  "ErrorEndpoint": null,
+  "ErrorMethod": "",
+  "JwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4iLCJyb2xlcyI6WyJhZG1pbmlzdHJhdG9ycyIsImNhbl9lZGl0X2VudGl0eSIsImNhbl9lZGl0X3dvcmtmbG93IiwiZGV2ZWxvcGVycyJdLCJlbWFpbCI6ImFkbWluQHlvdXJjb21wYW55LmNvbSIsInN1YiI6IjYzNjM3MTI1NDc1NTgzNDMyMzk0NWFmN2Y4IiwibmJmIjoxNTE3Mzk3NDc2LCJpYXQiOjE1MDE0OTk4NzYsImV4cCI6MTU3Nzc1MDQwMCwiYXVkIjoiUG9zRW50dCJ9.2N7b6feXqPumIS8H--ZX-tenVSyF5FKwppKFREwCHj8",
+  "ReceivePort": "rts-pickup",
+  "CreatedBy": "admin",
+  "Id": "pickup-file-drop",
+  "CreatedDate": "2017-07-31T19:11:31.0250737+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-07-31T19:18:12.9961069+08:00",
+  "WebId": "d911131a-b4f0-40d7-8587-ed741ad82dd8"
+}
