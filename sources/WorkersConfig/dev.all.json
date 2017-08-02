@@ -40,6 +40,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_ipos-boem-ipos-boem-to-oal",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposBoemIposBoemToOalTriggerSubscriber",
+      "assembly": "subscriber.trigger.ipos-boem-ipos-boem-to-oal"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_acceptance-data-prs-acceptance-to-entt-acceptance",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.AcceptanceDataPrsAcceptanceToEnttAcceptanceTriggerSubscriber",
       "assembly": "subscriber.trigger.acceptance-data-prs-acceptance-to-entt-acceptance"

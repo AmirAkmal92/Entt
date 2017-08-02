@@ -1,7 +1,9 @@
 ﻿using Bespoke.PosEntt.IposBoems.Domain;
 using Bespoke.Sph.Domain;
+using Polly;
 using System;
 using System.ComponentModel.Composition;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace Bespoke.PosEntt.CustomActions
@@ -17,7 +19,6 @@ namespace Bespoke.PosEntt.CustomActions
             if (null == item) return;
 
             await RunAsync(item);
-
         }
 
         public async Task RunAsync(IposBoem boem)
@@ -25,21 +26,63 @@ namespace Bespoke.PosEntt.CustomActions
             var consignmentInitial = await SearchConsignmentInitialAsync(boem.ConsignmentNo);
             if (null == consignmentInitial)
             {
-                //insert consignment initial
-
-                //var initialMap = new Integrations.Transforms.RtsDeliveryToOalDboDeliveryEventNew();
+                await InsertConsignmentInitial(boem);
             }
 
             var consignmentUpdate = await SearchConsignmentUpdateAsync(boem.ConsignmentNo);
             if (null == consignmentUpdate)
             {
-                //insert consignment update
+                await InsertConsignmentUpdate(boem);
             }
             else
             {
-                //update consignment update
+                await UpdateConsignmentUpdate(boem, consignmentUpdate.id);
             }
 
+        }
+
+        private static async Task InsertConsignmentInitial(IposBoem boem)
+        {
+            var consignmentInitialMap = new Integrations.Transforms.IposBoemToOalConsignmentInitial();
+            var consignmentInitialAdapter = new Adapters.Oal.dbo_consignment_initialAdapter();
+            var item = await consignmentInitialMap.TransformAsync(boem);
+            var pr = Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                .ExecuteAndCaptureAsync(() => consignmentInitialAdapter.InsertAsync(item));
+            var result = await pr;
+            if (result.FinalException != null)
+                throw result.FinalException; // send to dead letter queue
+            System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+        }
+
+        private static async Task InsertConsignmentUpdate(IposBoem boem)
+        {
+            var consignmentUpdateMap = new Integrations.Transforms.IposBoemToOalConsignmentUpdate();
+            var consignmentUpdateAdapter = new Adapters.Oal.dbo_consignment_updateAdapter();
+            var item = await consignmentUpdateMap.TransformAsync(boem);
+            var pr = Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                .ExecuteAndCaptureAsync(() => consignmentUpdateAdapter.InsertAsync(item));
+            var result = await pr;
+            if (result.FinalException != null)
+                throw result.FinalException; // send to dead letter queue
+            System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+        }
+
+        private static async Task UpdateConsignmentUpdate(IposBoem boem, string id)
+        {
+            var consignmentUpdateAdapter = new Adapters.Oal.dbo_consignment_updateAdapter();
+            var consignmentUpdateMap = new Integrations.Transforms.IposBoemToOalConsignmentUpdate();            
+            var item = await consignmentUpdateMap.TransformAsync(boem);
+            item.id = id;
+
+            var pr = Policy.Handle<SqlException>()
+                .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                .ExecuteAndCaptureAsync(() => consignmentUpdateAdapter.UpdateAsync(item));
+            var result = await pr;
+            if (result.FinalException != null)
+                throw result.FinalException; // send to dead letter queue
+            System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
         }
 
         protected async Task<Adapters.Oal.dbo_consignment_initial> SearchConsignmentInitialAsync(string consignmentNo)
@@ -73,7 +116,7 @@ namespace Bespoke.PosEntt.CustomActions
         protected async Task<Adapters.Oal.dbo_consignment_update> SearchConsignmentUpdateAsync(string consignmentNo)
         {
             var adapter = new Adapters.Oal.dbo_consignment_initialAdapter();
-            var query = $"SELECT [weight_double] FROM [dbo].[consignment_update] WHERE [number] = '{consignmentNo}'";
+            var query = $"SELECT [id],[weight_double] FROM [dbo].[consignment_update] WHERE [number] = '{consignmentNo}'";
 
             Adapters.Oal.dbo_consignment_update consignmentUpdate = null;
 
@@ -87,12 +130,11 @@ namespace Bespoke.PosEntt.CustomActions
                     {
                         consignmentUpdate = new Adapters.Oal.dbo_consignment_update
                         {
+                            id = reader["id"].ReadNullableString(),
                             weight_double = reader["weight_double"].ReadNullable<double>()
                         };
-
                     }
                 }
-
             }
 
             return consignmentUpdate;

@@ -1,0 +1,101 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.PosEntt.CustomActions.IposBoemAction, rts.ipos.boems.trigger.actions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "a9b22567-178b-41f9-82fd-07600f94b6bf"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposBoem",
+        "FullName": "PosEntt.IposBoem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.IposBoem.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposBoemToOalConsignmentInitial",
+        "FullName": "PosEntt.IposBoemToOalConsignmentInitial, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.IposBoemToOalConsignmentInitial.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.IposBoemToOalConsignmentUpdate",
+        "FullName": "PosEntt.IposBoemToOalConsignmentUpdate, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.IposBoemToOalConsignmentUpdate.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\packages\\Polly.4.2.4\\lib\\dotnet\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IposBoemToOal",
+  "Entity": "IposBoem",
+  "TypeOf": "Bespoke.PosEntt.IposBoems.Domain.IposBoem, PosEntt.IposBoem",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "IposBoemIposBoemToOalTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "ipos-boem-ipos-boem-to-oal",
+  "CreatedDate": "2017-08-02T10:27:20.822081+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-08-02T10:29:50.9192269+08:00",
+  "WebId": "81828456-c33e-4789-b17a-ba62ce55b02b"
+}
