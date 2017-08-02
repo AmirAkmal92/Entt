@@ -25,6 +25,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "b1091b18-eb0b-4835-aac6-3fa657fc51f5"
       },
       {
@@ -42,9 +43,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "d5d77c40-384a-4b8f-85c5-4132e0619902"
       },
       {
@@ -65,6 +67,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "7883f4bb-fc92-4a62-82bf-703068d0d457"
       },
       {
@@ -85,6 +88,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "2a2974c7-5a4b-4331-829a-f6082ff31605"
       },
       {
@@ -105,6 +109,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "5f6fd644-e3d5-415a-b5ff-9318ca2a4f2d"
       },
       {
@@ -125,6 +130,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "0ce817be-8450-426f-9484-d557cfa041ad"
       },
       {
@@ -145,6 +151,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "e7c23136-c578-4c81-916a-684c3e51c73a"
       },
       {
@@ -162,9 +169,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "69518287-ec85-458c-86ee-78746ac4fa25"
       },
       {
@@ -182,9 +190,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "6c27ba19-0d30-4ee4-a64c-8ef0e99c0ff7"
       },
       {
@@ -202,9 +211,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "d1b86b16-e66a-45e7-8d56-66f3f30dfd01"
       },
       {
@@ -222,9 +232,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "284575a4-b051-4309-b481-be5b455f0754"
       },
       {
@@ -245,6 +256,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "de69a39a-da7e-41a0-83b6-d4539ed45439"
       },
       {
@@ -265,6 +277,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "afd771ef-f6e6-4f7e-b152-666f9ad407cc"
       },
       {
@@ -285,6 +298,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "7521226d-2268-45fd-a047-d85f0170369a"
       },
       {
@@ -305,6 +319,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "fa054f5b-69b6-4e18-934f-64f6f23593bb"
       },
       {
@@ -325,6 +340,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "c74c2f3f-1d90-4985-80df-a9a1099caa3f"
       },
       {
@@ -345,6 +361,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "ec921af3-a5d9-4e63-9891-a1c0a920963f"
       },
       {
@@ -365,6 +382,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "09081ee0-2bbc-4ed1-8c3b-27da806b0487"
       },
       {
@@ -382,9 +400,10 @@
         "SampleValue": "80000000",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "40576099-00af-4f64-9195-84ef91574695"
       },
       {
@@ -402,9 +421,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "c06d9ac0-20c6-42b7-91e6-97ea27404524"
       },
       {
@@ -422,9 +442,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "85d3fb46-789a-4404-a11f-0607eaa1c296"
       },
       {
@@ -445,6 +466,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "7037db91-d11d-4716-8584-84e7e1f41a17"
       },
       {
@@ -465,6 +487,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "268ad04b-bb43-493a-bb76-8217f20e1185"
       },
       {
@@ -485,6 +508,7 @@
         "NullPlaceholder": null,
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "d8429cf4-cf58-4cef-a4f5-ea30c8aab3d4"
       },
       {
@@ -502,9 +526,10 @@
         "SampleValue": "n648280",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "6fad4f57-ca8d-43c9-913b-b6947b6632c3"
       },
       {
@@ -522,9 +547,10 @@
         "SampleValue": "8800197520",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "7b084b6e-5a3b-4ceb-9693-11c47d191f14"
       },
       {
@@ -542,9 +568,10 @@
         "SampleValue": "-",
         "IsComplex": false,
         "AllowMultiple": false,
-        "NullPlaceholder": null,
+        "NullPlaceholder": "-",
         "Ignore": false,
         "Comment": null,
+        "DefaultValueString": null,
         "WebId": "74b49dcc-22ab-40ff-835c-56958233ca8c"
       }
     ]
@@ -572,6 +599,6 @@
   "Id": "intranet-pem-port",
   "CreatedDate": "2017-06-13T14:28:32.1219707+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-13T15:52:48.5361821+08:00",
+  "ChangedDate": "2017-08-02T14:03:12.7126535+08:00",
   "WebId": "1a71da1e-ba85-4544-b8b9-f649a1325170"
 }
