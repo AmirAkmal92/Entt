@@ -74,6 +74,24 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "9c26fe17-45fd-4496-ccee-b728760bfa86"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "FromIPS.DestCountryCd",
+        "TypeName": "",
+        "Destination": "ConsigneeAddressCountry",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "40ada9c4-71c7-450f-ca3b-d580372a3262"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "FromIPS.OrigCountryCd",
+        "TypeName": "",
+        "Destination": "ShipperAddressCountry",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "69cdb77e-6d30-4a48-e299-c2d915f2d841"
       }
     ]
   },
@@ -114,6 +132,6 @@
   "Id": "ips-export-to-entt-acceptance",
   "CreatedDate": "2017-07-28T15:08:26.6960221+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-02T16:27:13.2660261+08:00",
+  "ChangedDate": "2017-08-03T10:23:14.7418107+08:00",
   "WebId": "db161969-86a6-45c6-af28-11dbafb6fc81"
 }
