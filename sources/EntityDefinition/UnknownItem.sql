@@ -1,5 +1,6 @@
 CREATE TABLE [PosEntt].[UnknownItem](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL
+,[EventType] VARCHAR(255) NOT NULL
 ,[ConsignmentNo] VARCHAR(255) NOT NULL
 ,[CourierId] VARCHAR(255) NOT NULL
 ,[LocationId] VARCHAR(255) NOT NULL
