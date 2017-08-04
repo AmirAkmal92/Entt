@@ -5,6 +5,7 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
 ,[PickupNo] VARCHAR(255)  NULL
 ,[TotalConsignment] INT  NULL
 ,[IsParent] BIT  NULL
+,[Parent] VARCHAR(255)  NULL
 ,[Postcode] VARCHAR(255)  NULL
 ,[ParentWeight] MONEY  NULL
 ,[TotalItem] INT  NULL

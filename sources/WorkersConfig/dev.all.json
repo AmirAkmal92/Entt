@@ -80,6 +80,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_pickup-rts-pickup-babies-to-entt-acceptance",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupBabiesToEnttAcceptanceTriggerSubscriber",
+      "assembly": "subscriber.trigger.pickup-rts-pickup-babies-to-entt-acceptance"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "DataTransferSchedulerSubscriber",
       "fullName": "subscriber.data.transfer.DataTransferSchedulerSubscriber",
       "assembly": "subscriber.data.transfer"

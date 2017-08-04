@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff668dc35e",
+          "Script": "item.TotalBaby",
+          "Name": "TotalBaby",
+          "Note": "",
+          "WebId": "668dc35e-c96c-4821-dac6-3aae2e8fce2d"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
+          "Name": "0",
+          "Note": "",
+          "WebId": "f569a2ac-8b0c-429f-9f4d-a8739c293987"
+        },
+        "Operator": "Le",
+        "WebId": "2bd3b2fd-01c5-4eae-b752-21e22b7118d2"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -99,6 +121,6 @@
   "Id": "pickup-rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T13:01:11.2655571+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-05T13:07:24.6727028+08:00",
+  "ChangedDate": "2017-08-04T10:30:19.9345912+08:00",
   "WebId": "0b6e24fc-b628-49f3-aa71-51c411829afd"
 }

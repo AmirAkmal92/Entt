@@ -37,6 +37,9 @@
     <Reference Include="Polly">
       <HintPath>..\..\packages\Polly.4.2.4\lib\net45\Polly.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.EnttAcceptance">
+      <HintPath>..\..\output\PosEntt.EnttAcceptance.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.IposBoem">
       <HintPath>..\..\output\PosEntt.IposBoem.dll</HintPath>
     </Reference>
@@ -48,6 +51,12 @@
     </Reference>
     <Reference Include="PosEntt.Oal">
       <HintPath>..\..\output\PosEntt.Oal.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Pickup">
+      <HintPath>..\..\output\PosEntt.Pickup.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RtsPickupToEnttPlatformAcceptance">
+      <HintPath>..\..\output\PosEntt.RtsPickupToEnttPlatformAcceptance.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -62,6 +71,7 @@
   <ItemGroup>
     <Compile Include="IposBoemAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RtsPickupWithBabiesForEnttAcceptance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
