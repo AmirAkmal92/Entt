@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BufferAllRows": true,
+  "RejectPartial": true,
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": "text/plain",
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/unknown",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsUnknownItem",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "unknown-item-port",
+  "CreatedBy": "admin",
+  "Id": "rts-unknown-item",
+  "CreatedDate": "2017-08-05T01:29:42.7823523+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-08-05T01:29:42.7823523+08:00",
+  "WebId": "f00b299f-47e7-4514-836d-0aea23b4b124"
+}
