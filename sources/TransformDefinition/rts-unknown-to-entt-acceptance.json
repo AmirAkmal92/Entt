@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "ConsignmentNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a26215eb-98fa-485a-ad94-c56ef5e53d78"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "CourierId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "eb90028f-a742-4bba-a82e-f17b39b06589"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "LocationId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "34ed8802-a8de-43e5-e6b4-0f30c929b065"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DateTime",
+        "TypeName": "",
+        "Destination": "DateTime",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c10f00d1-9c2e-4ba7-edd5-5a1b06c7d93f"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsUnknownToEnttAcceptance",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.UnknownItems.Domain.UnknownItem, PosEntt.UnknownItem",
+  "OutputTypeName": "Bespoke.PosEntt.EnttAcceptances.Domain.EnttAcceptance, PosEntt.EnttAcceptance",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "rts-unknown-to-entt-acceptance",
+  "CreatedDate": "2017-08-05T01:32:37.6609565+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-08-05T01:39:44.6565967+08:00",
+  "WebId": "5503d0bc-da1a-484c-97ea-f470ebf6677a"
+}
