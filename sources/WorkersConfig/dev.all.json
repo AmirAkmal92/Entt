@@ -8,6 +8,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_miss-rts-missort-to-entt-acceptance-update",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissortToEnttAcceptanceUpdateTriggerSubscriber",
+      "assembly": "subscriber.trigger.miss-rts-missort-to-entt-acceptance-update"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_mail-item-ips-export-to-entt-acceptance",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.MailItemIpsExportToEnttAcceptanceTriggerSubscriber",
       "assembly": "subscriber.trigger.mail-item-ips-export-to-entt-acceptance"
