@@ -28,7 +28,7 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
 ,[Price] MONEY  NULL
 ,[ConsignmentFee] MONEY  NULL
 ,[CourierId] VARCHAR(255)  NULL
-,[CourierName] VARCHAR(255) NOT NULL
+,[CourierName] VARCHAR(255)  NULL
 ,[LocationId] VARCHAR(255)  NULL
 ,[LocationName] VARCHAR(255)  NULL
 ,[SystemId] VARCHAR(255)  NULL

@@ -678,7 +678,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": true,
@@ -1891,6 +1891,6 @@
   "Id": "entt-acceptance",
   "CreatedDate": "2017-06-22T12:01:08.9612286+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-10T12:14:36.9427194+08:00",
+  "ChangedDate": "2017-08-10T16:25:57.9636104+08:00",
   "WebId": "1518b614-6c86-423e-913b-5b93695c1ff8"
 }
