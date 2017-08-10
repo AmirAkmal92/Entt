@@ -678,6 +678,30 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
+        "IsNullable": false,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": true,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "CourierName",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "5c0e47ac-1f89-4c01-9e6c-7279b61bfaa5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -1867,6 +1891,6 @@
   "Id": "entt-acceptance",
   "CreatedDate": "2017-06-22T12:01:08.9612286+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-04T11:10:32.0888491+08:00",
+  "ChangedDate": "2017-08-10T12:14:36.9427194+08:00",
   "WebId": "1518b614-6c86-423e-913b-5b93695c1ff8"
 }
