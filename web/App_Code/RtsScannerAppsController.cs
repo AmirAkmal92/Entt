@@ -91,10 +91,10 @@ public class RtsScannerAppsController : BaseApiController
     [HttpGet]
     public async Task<IHttpActionResult> DownloadAcceptanceConnoteAsync(string branch)
     {
-        var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
+        var connectionString = ConfigurationManager.GetEnvironmentVariable("SqlConnectionString");
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
+        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate UNION SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE PupStatCodeLocation = @LocationId AND [PupStatCodeDateTime] > @StartDate AND [PupStatCodeDateTime] <= @EndDate", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
