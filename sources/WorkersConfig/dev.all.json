@@ -8,6 +8,14 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
+      "queueName": "trigger_subs_stat-rts-status-code-pup-to-entt-acceptance",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatusCodePupToEnttAcceptanceTriggerSubscriber",
+      "assembly": "subscriber.trigger.stat-rts-status-code-pup-to-entt-acceptance"
+    },
+    {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
       "queueName": "trigger_subs_miss-rts-missort-to-entt-acceptance-update",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissortToEnttAcceptanceUpdateTriggerSubscriber",
       "assembly": "subscriber.trigger.miss-rts-missort-to-entt-acceptance-update"
