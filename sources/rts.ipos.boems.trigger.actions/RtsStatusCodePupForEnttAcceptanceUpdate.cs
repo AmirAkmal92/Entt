@@ -31,10 +31,12 @@ namespace Bespoke.PosEntt.CustomActions
                 var item = await context.LoadOneAsync<EnttAcceptance>(a => a.ConsignmentNo == stat.ConsignmentNo);
                 if (null != item)
                 {
+                    var date = stat.Date;
+                    date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
                     item.IsPupStatCode = true;
                     item.PupStatCodeId = stat.StatusCode;
                     item.PupStatCodeLocation = stat.LocationId;
-                    item.PupStatCodeDateTime = stat.Date;
+                    item.PupStatCodeDateTime = date;
 
                     session.Attach(item);
                     await session.SubmitChanges();

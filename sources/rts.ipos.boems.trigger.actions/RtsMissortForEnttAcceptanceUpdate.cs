@@ -28,8 +28,11 @@ namespace Bespoke.PosEntt.CustomActions
                 var item = await context.LoadOneAsync<EnttAcceptance>(m => m.ConsignmentNo == missort.ConsignmentNo);
                 if (null != item)
                 {
+                    var date = missort.Date;
+                    date = date.AddHours(missort.Time.Hour).AddMinutes(missort.Time.Minute).AddSeconds(missort.Time.Second).AddMilliseconds(missort.Time.Millisecond);
+
                     item.IsMissort = true;
-                    item.MissortDateTime = missort.Date;
+                    item.MissortDateTime = date;
                     item.MissortLocation = missort.LocationId;
 
                     session.Attach(item);
