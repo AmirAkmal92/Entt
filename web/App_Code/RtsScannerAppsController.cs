@@ -94,7 +94,7 @@ public class RtsScannerAppsController : BaseApiController
         var connectionString = ConfigurationManager.GetEnvironmentVariable("SqlConnectionString");
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] >= @StartDate AND [DateTime] <= @EndDate UNION SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE PupStatCodeLocation = @LocationId AND [PupStatCodeDateTime] >= @StartDate AND [PupStatCodeDateTime] <= @EndDate UNION SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [IsMissort] = 1 AND [MissortLocation] = @LocationId AND[MissortDateTime] >= @StartDate AND[MissortDateTime] <= @EndDate", conn))
+        using (var cmd = new SqlCommand("SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] >= @StartDate AND [DateTime] <= @EndDate UNION SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [IsPupStatCode] = 1 AND [PupStatCodeLocation] = @LocationId AND [PupStatCodeDateTime] >= @StartDate AND [PupStatCodeDateTime] <= @EndDate UNION SELECT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE [IsMissort] = 1 AND [MissortLocation] = @LocationId AND[MissortDateTime] >= @StartDate AND[MissortDateTime] <= @EndDate", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
