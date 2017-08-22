@@ -2,6 +2,7 @@
 using Bespoke.PosEntt.Stats.Domain;
 using Bespoke.Sph.Domain;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Bespoke.PosEntt.CustomActions
@@ -16,6 +17,8 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var stat = context.Item as Stat;
             if (null == stat) return;
+            var validCodes = new string[] { "11", "12", "21", "22", "26", "27", "28", "29", "30", "31", "38", "43", "45", "47", "49", "55", "56" };
+            if (!validCodes.Contains(stat.StatusCode)) return;
             await RunAsync(stat);
 
         }
@@ -28,10 +31,12 @@ namespace Bespoke.PosEntt.CustomActions
                 var item = await context.LoadOneAsync<EnttAcceptance>(a => a.ConsignmentNo == stat.ConsignmentNo);
                 if (null != item)
                 {
+                    var date = stat.Date;
+                    date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
                     item.IsPupStatCode = true;
                     item.PupStatCodeId = stat.StatusCode;
                     item.PupStatCodeLocation = stat.LocationId;
-                    item.PupStatCodeDateTime = stat.Date;
+                    item.PupStatCodeDateTime = date;
 
                     session.Attach(item);
                     await session.SubmitChanges();
