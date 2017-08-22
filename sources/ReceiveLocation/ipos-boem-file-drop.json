@@ -1,10 +1,10 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
   "Path": "C:\\temp\\ipos-boem",
-  "CredentialUserName": null,
+  "CredentialUserName": "admin",
   "ChangeExtension": true,
-  "CredentialPassword": null,
-  "Filter": "ipos_boem_*.txt",
+  "CredentialPassword": "123456",
+  "Filter": "*.txt.log",
   "ArchiveLocation": "C:\\temp\\ipos-boem\\archive",
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
@@ -26,6 +26,6 @@
   "Id": "ipos-boem-file-drop",
   "CreatedDate": "2017-06-06T14:41:50.063237+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-02T10:43:55.1357651+08:00",
+  "ChangedDate": "2017-08-20T19:41:49.7914617+08:00",
   "WebId": "b6e9893c-233a-4a17-a309-5968301864ed"
 }
