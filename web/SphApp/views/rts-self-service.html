@@ -386,11 +386,13 @@
                                 <span class="pull-right" data-bind="click: clearLocationIdAndDate"><i class="fa fa-times"></i></span>
                                 <br />
                                 <p>
-                                    <label for="UnknownLocationId">Location Id</label>: <span id="UnknownLocationId">Location Id</span>
+                                    <label for="unknown-location-id">Location Id</label>: <span id="unknown-location-id">location id</span>
                                     <br />
-                                    <label for="UnknownDate">Date</label>: <span id="UnknownDate">Date</span>
+                                    <label for="unknown-date">Date</label>: <span id="unknown-date">date</span>
                                     <br />
-                                    <label for="UnknownStatus">Status</label>: <span id="UnknownStatus">Status</span>
+                                    <label for="unknown-status">Status</label>: <span id="unknown-status">status</span>
+                                    <br />
+                                    <label for="unknown-total">Total</label>: <span id="unknown-total">total</span>
                                </p>
                             </div>
                         </div>
@@ -413,7 +415,7 @@
                                     <td data-bind="text: _source.ConsignmentNo"></td>
                                     <td data-bind="text: _source.EventType"></td>
                                     <td data-bind="date:{ value: _source.CreatedDate, format:'DD/MM/YYYY HH:mm:ss'}"></td>
-                                    <td data-bind="date:{ value: _source.Date, format:'DD/MM/YYYY'} +' '+ { value: _source.Time, format:'HH:mm:ss'}"></td>
+                                    <td data-bind="text: _source.Date +' '+ _source.Time"></td>
                                     <td data-bind="text: _source.Status"></td>
                                     <td data-bind="text: _source.CourierId"></td>
                                     <td data-bind="text: _source.LocationId"></td>

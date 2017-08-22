@@ -1,0 +1,12 @@
+Microsoft (R) ASP.NET SQL Registration Tool version 4.7.2046.0
+Administrative utility to install and uninstall ASP.NET features on a SQL server.
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+Start adding the following features:
+Membership
+RoleManager
+
+.....
+
+Finished.
