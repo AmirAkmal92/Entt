@@ -389,24 +389,6 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "22f10e3f-1fc3-4114-dddf-2569130e2365"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "0609da1e-5c51-4a7b-8347-56adfef059ff",
-        "Destination": "baby_item",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "7277c38d-77b6-4b6e-800c-fd092e1fc423"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "5446a54e-f40c-4758-b5d4-e79e9fdee7e9",
-        "Destination": "parent",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "0b838a27-d8bb-4631-e352-4d1cd0dc2fb3"
       }
     ]
   },
@@ -528,7 +510,7 @@
       },
       {
         "$type": "Bespoke.PosEntt.Functoids.OalIdFunctoid, rts.functoids",
-        "Prefix": "EN",
+        "Prefix": "en",
         "Suffix": null,
         "Length": 20,
         "ArgumentCollection": {
@@ -1222,200 +1204,6 @@
         "X": 469.0,
         "Y": 1581.0,
         "WebId": "c7755169-c92a-4750-8b65-ec59d322bba4"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
-        "DefaultValue": "-",
-        "SqlText": "SELECT [id] FROM [dbo].[consignment_initial] WHERE [number] = @value1",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": [
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "connection",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": false,
-              "Functoid": "3b3defbe-2214-445c-a9a8-5b6b5b2fb11a",
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value1",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": "47d7fd17-7ede-40a4-bf0b-ea0988267696",
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value2",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value3",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value4",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            }
-          ]
-        },
-        "Name": null,
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 246.0,
-        "Y": 161.0,
-        "WebId": "0609da1e-5c51-4a7b-8347-56adfef059ff"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
-        "Field": "ConsignmentNo",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "",
-        "OutputTypeName": "",
-        "Label": "",
-        "Comment": "",
-        "X": 0.0,
-        "Y": 0.0,
-        "WebId": "47d7fd17-7ede-40a4-bf0b-ea0988267696"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SqlServerLookup, database.lookup",
-        "DefaultValue": "-",
-        "SqlText": "SELECT [id] FROM [dbo].[consignment_initial] WHERE [number] = @value1",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": [
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "connection",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": false,
-              "Functoid": "3b3defbe-2214-445c-a9a8-5b6b5b2fb11a",
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value1",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": "c845603c-6919-4c0a-f3e1-297c975216e5",
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value2",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value3",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "value4",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            }
-          ]
-        },
-        "Name": null,
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 264.0,
-        "Y": 306.0,
-        "WebId": "5446a54e-f40c-4758-b5d4-e79e9fdee7e9"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SourceFunctoid, domain.sph",
-        "Field": "ConsignmentNo",
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "",
-        "OutputTypeName": "",
-        "Label": "",
-        "Comment": "",
-        "X": 0.0,
-        "Y": 0.0,
-        "WebId": "c845603c-6919-4c0a-f3e1-297c975216e5"
       }
     ]
   },
@@ -1425,7 +1213,19 @@
   },
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
   },
   "Name": "IposPemToOalConsignmentInitial",
   "Description": "",
@@ -1436,6 +1236,6 @@
   "Id": "ipos-pem-to-oal-consignment-initial",
   "CreatedDate": "2017-07-11T12:51:24.4222553+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-27T12:09:41.5983963+08:00",
+  "ChangedDate": "2017-08-22T17:09:38.5581106+08:00",
   "WebId": "e369ad0d-dd31-4087-829c-62e335a47098"
 }
