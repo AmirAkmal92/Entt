@@ -413,8 +413,8 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
-        "IsNullable": false,
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -533,8 +533,8 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
-        "IsNullable": false,
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -557,8 +557,8 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Boolean, mscorlib",
-        "IsNullable": false,
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -685,12 +685,12 @@
   "IsPublished": true,
   "TreatDataAsSource": false,
   "Transient": true,
-  "StoreInDatabase": null,
+  "StoreInDatabase": false,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "intranet-pem",
   "CreatedDate": "2017-06-13T15:56:49.5464735+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-06-13T16:05:48.8159031+08:00",
+  "ChangedDate": "2017-08-21T14:33:21.3893164+08:00",
   "WebId": "1a71da1e-ba85-4544-b8b9-f649a1325170"
 }

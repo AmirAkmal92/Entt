@@ -373,7 +373,7 @@
           "$values": []
         },
         "Name": "CutOffIndicatior",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "0",
@@ -478,7 +478,7 @@
           "$values": []
         },
         "Name": "DropOptionIndicator",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "0",
@@ -499,7 +499,7 @@
           "$values": []
         },
         "Name": "PickupIndicator",
-        "TypeName": "System.Boolean, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": false,
         "Converter": null,
         "SampleValue": "0",
@@ -599,6 +599,6 @@
   "Id": "intranet-pem-port",
   "CreatedDate": "2017-06-13T14:28:32.1219707+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-02T14:03:12.7126535+08:00",
+  "ChangedDate": "2017-08-21T13:02:22.1043208+08:00",
   "WebId": "1a71da1e-ba85-4544-b8b9-f649a1325170"
 }

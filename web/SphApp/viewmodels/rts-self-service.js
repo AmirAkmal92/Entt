@@ -8,12 +8,16 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             BeatNo = ko.observable(""),
             CourierId = ko.observable(""),
             ReportDate = ko.observable(""),
+            UnknownLocationId = ko.observable(""),
+            UnknownDate = ko.observable(""),
+            UnknownStatus = ko.observable(""),
             ActiveScannerEvent = ko.observable(""),
             ActiveScannerLocationId = ko.observable(""),
             ActiveScannerDate = ko.observable(""),
             SearchByBeatNoAndCourierIdDeliResults = ko.observableArray(),
             SearchByBeatNoAndCourierIdPickResults = ko.observableArray(),
             SearchByEventAndLocationIdResults = ko.observableArray(),
+            SearchUnknownByLocationIdResults = ko.observableArray(),
             partial = partial || {},
             list = ko.observableArray([]),
 
@@ -51,6 +55,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                         });
                 }
             },
+            clearSearchItemNo = function () {
+                ItemNo("");
+                SearchItemNoResults.removeAll();
+            },
             searchScannerId = function () {
                 if (!$("#search-auth-form").valid()) {
                     return;
@@ -73,10 +81,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                             $("#search-auth-token").text(ScannerId())
                         });
                 }
-            },
-            clearSearchItemNo = function () {
-                ItemNo("");
-                SearchItemNoResults.removeAll();
             },
             clearsearchScannerId = function () {
                 ScannerId("");
@@ -233,6 +237,79 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 ActiveScannerDate("");
                 SearchByEventAndLocationIdResults.removeAll();
             },
+            searchUnknownByLocationId = function ()
+            {
+                if (!$("#unknown-form").valid()) {
+                    return;
+                }
+                if (UnknownLocationId() != "" && UnknownDate != "") {
+                    var query = {
+                        "query": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "query_string": {
+                                            "default_field": "_all",
+                                            "query": "_type:unknown"
+                                        }
+                                    }
+                                    ,
+                                    {
+                                        "term": {
+                                            "LocationId": {
+                                                "value": UnknownLocationId()
+                                            }
+
+                                        }
+                                    },
+                                    {
+                                        "range": {
+                                            "CreatedDate": {
+                                                "from": UnknownDate() + "T00:00:00+08:00",
+                                                "to": UnknownDate() + "2017-08-11T23:59:59+08:00"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                    if (BeatNo() != "") {
+                        query.query.bool.must.push({
+                            "term": {
+                                "Status": {
+                                    "value": UnknownStatus()
+                                }
+                            }
+                        });
+                    };
+                    isBusy(true);
+                    SearchUnknownByLocationIdResults.removeAll();
+                    context.post(ko.toJSON(query), `/api/rts-dashboard/unknown`)
+                        .then(function (result) {
+                            isBusy(false);
+                            console.log(result.hits.hits);
+                            SearchUnknownByLocationIdResults(result.hits.hits);
+                            $("#unknown-location-id").text(UnknownLocationId());
+                            $("#unknown-date").text(UnknownDate());
+                            $("#unknown-status").text(UnknownStatus());
+                            $("#unknown-total").text(result.hits.total);
+                        }, function (e) {
+                            if (e.status == 422) {
+                                console.log("Unprocessable Entity");
+                            }
+                            isBusy(false);
+                        });
+                    
+                }
+            },
+
+            clearLocationIdAndDate = function () {
+                UnknownLocationId("");
+                UnknownDate("");
+                UnknownStatus("");
+                SearchUnknownByLocationIdResults.removeAll();
+            },
 
             attached = function (view) {
                 $("#ReportDateDeli").kendoDatePicker({
@@ -242,6 +319,9 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                     format: "yyyy-MM-dd"
                 });
                 $("#ActiveScannerDate").kendoDatePicker({
+                    format: "yyyy-MM-dd"
+                });
+                $("#UnknownDate").kendoDatePicker({
                     format: "yyyy-MM-dd"
                 });
                 $("#search-form").validate({
@@ -318,6 +398,23 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                         ActiveScannerDate: "Please provide valid Date."
                     }
                 });
+                $("#unknown-form").validate({
+                    rules: {
+                        UnknownLocationId: {
+                            required: true
+                        },
+                        UnknownDate: {
+                            required: true
+                        },
+                        UnknownStatus: {
+                            required: false
+                        }
+                    },
+                    messages: {
+                        UnknownLocationId: "Please provide valid Location Id.",
+                        UnknownDate: "Please provide date.",
+                    }
+                });
                 if (typeof partial.attached === "function") {
                     partial.attached(view);
                 }
@@ -342,9 +439,15 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             ActiveScannerEvent: ActiveScannerEvent,
             ActiveScannerLocationId: ActiveScannerLocationId,
             ActiveScannerDate: ActiveScannerDate,
+            UnknownLocationId: UnknownLocationId,
+            UnknownDate: UnknownDate,
+            UnknownStatus: UnknownStatus,
             SearchByBeatNoAndCourierIdDeliResults: SearchByBeatNoAndCourierIdDeliResults,
             SearchByBeatNoAndCourierIdPickResults: SearchByBeatNoAndCourierIdPickResults,
             SearchByEventAndLocationIdResults: SearchByEventAndLocationIdResults,
+            SearchUnknownByLocationIdResults: SearchUnknownByLocationIdResults,
+            searchUnknownByLocationId: searchUnknownByLocationId,
+            clearLocationIdAndDate: clearLocationIdAndDate,
             searchByBeatNoAndCourierIdDeli: searchByBeatNoAndCourierIdDeli,
             clearBeatNoAndCourierIdDeli: clearBeatNoAndCourierIdDeli,
             searchByBeatNoAndCourierIdPick: searchByBeatNoAndCourierIdPick,
