@@ -47,6 +47,60 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "84e77ecb-eaa7-4a54-c8ac-cf6cacd6c2af"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "Body.CourierId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "93a223e7-f786-4929-df79-4bbc7b4d57a3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierName",
+        "TypeName": "",
+        "Destination": "Body.CourierName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "084e64c6-8f92-4fd8-a2f5-62377b05276d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "Body.BranchCode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7eb318f0-87fb-448e-a9e9-fe7b1e4d4837"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Parent",
+        "TypeName": "",
+        "Destination": "Body.ParentConsignmentNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f35ee7c6-af31-4b85-e49c-1e2ce603f2db"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "222b20e5-394a-4d2e-d626-ef41d329478b",
+        "Destination": "Body.TotalBaby",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e4aae40e-724f-450a-b0ab-dcfcf2d9d433"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c0532f5e-a33c-40d9-975c-79fbebd48632",
+        "Destination": "Body.ActualWeight",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0ffbe721-16c6-48b0-c849-bea215494360"
       }
     ]
   },
@@ -67,6 +121,36 @@
         "X": 455.0,
         "Y": 175.0,
         "WebId": "60a6484d-840f-4567-9c0c-eb1359b67118"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return item.TotalBaby.HasValue ? item.TotalBaby.Value : 0;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetTotalBaby",
+        "OutputTypeName": "System.Int32, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 369.0,
+        "Y": 520.0,
+        "WebId": "222b20e5-394a-4d2e-d626-ef41d329478b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return item.Weight.HasValue ? item.Weight.Value : 0;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "SetWeight",
+        "OutputTypeName": "System.Decimal, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 397.0,
+        "Y": 593.0,
+        "WebId": "c0532f5e-a33c-40d9-975c-79fbebd48632"
       }
     ]
   },
@@ -87,6 +171,6 @@
   "Id": "entt-acceptance-to-ezi-send-pickup-api",
   "CreatedDate": "2017-07-11T11:25:05.0940932+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-25T11:50:09.0187154+08:00",
+  "ChangedDate": "2017-08-23T14:10:57.0857007+08:00",
   "WebId": "feaba49f-1c66-4a55-be1b-7d5c8f6fc14a"
 }
