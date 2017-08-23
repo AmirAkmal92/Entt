@@ -21,7 +21,7 @@
             <td>
                 <input type="checkbox" data-bind="checked: $root.selectedItems, value : $data" />
             </td>
-            <td data-bind="date: {value:_source.CreatedDate, format: 'YYYY-MM-DD HH:mm:ss'}"></td>                        
+            <td data-bind="date: {value:_source.CreatedDate, format: 'YYYY-MM-DD HH:mm:ss'}"></td>
             <td data-bind="text:_source.CourierId"></td>
             <td data-bind="text:_source.LocationId"></td>
             <td data-bind="date: {value:_source.Date, format: 'YYYY-MM-DD'}"></td>
@@ -32,6 +32,12 @@
             <td data-bind="text:_source.TotalBaby"></td>
             <td data-bind="text:_source.ScannerId"></td>
             <td data-bind="with:log">
+                <div>
+                    <button type="button" class="btn btn-default" data-bind="click: $root.requeue" title="requeue to persistence">
+                        <i class="fa fa-gear"></i>
+                        Requeue
+                    </button>
+                </div>
                 <!-- ko foreach : hits -->
                 <div class="btn-group">
                     <button type="button" class="btn btn-default" data-bind="enable: canRequeue,  click: $root.requeue, attr : { title : _source.source}">
