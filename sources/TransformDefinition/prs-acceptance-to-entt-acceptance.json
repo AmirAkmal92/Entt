@@ -475,7 +475,19 @@
   },
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
   },
   "Name": "PrsAcceptanceToEnttAcceptance",
   "Description": "",
@@ -486,6 +498,6 @@
   "Id": "prs-acceptance-to-entt-acceptance",
   "CreatedDate": "2017-07-24T14:16:38.7583767+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-15T15:04:36.0006137+08:00",
+  "ChangedDate": "2017-08-23T12:21:51.5867989+08:00",
   "WebId": "a43fe87f-a030-485f-9982-d5b367a0d703"
 }
