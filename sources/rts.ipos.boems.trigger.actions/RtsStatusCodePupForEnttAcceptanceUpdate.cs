@@ -1,7 +1,10 @@
 ﻿using Bespoke.PosEntt.EnttAcceptances.Domain;
 using Bespoke.PosEntt.Stats.Domain;
 using Bespoke.Sph.Domain;
+using Polly;
+using System;
 using System.ComponentModel.Composition;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +20,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var stat = context.Item as Stat;
             if (null == stat) return;
-            var validCodes = new string[] { "11", "12", "21", "22", "26", "27", "28", "29", "30", "31", "38", "43", "45", "47", "49", "55", "56" };
+            var validCodes = new [] { "11", "12", "21", "22", "26", "27", "28", "29", "30", "31", "38", "43", "45", "47", "49", "55", "56" };
             if (!validCodes.Contains(stat.StatusCode)) return;
             await RunAsync(stat);
 
@@ -25,22 +28,34 @@ namespace Bespoke.PosEntt.CustomActions
 
         public async Task RunAsync(Stat stat)
         {
-            var context = new SphDataContext();
-            using (var session = context.OpenSession())
+            var date = stat.Date;
+            date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
+            var item = new EnttAcceptance
             {
-                var item = await context.LoadOneAsync<EnttAcceptance>(a => a.ConsignmentNo == stat.ConsignmentNo);
-                if (null != item)
-                {
-                    var date = stat.Date;
-                    date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
-                    item.IsPupStatCode = true;
-                    item.PupStatCodeId = stat.StatusCode;
-                    item.PupStatCodeLocation = stat.LocationId;
-                    item.PupStatCodeDateTime = date;
+                ConsignmentNo = stat.ConsignmentNo,
+                IsPupStatCode = true,
+                PupStatCodeId = stat.StatusCode,
+                PupStatCodeLocation = stat.LocationId,
+                PupStatCodeDateTime = date
+            };
+            var pr = Policy.Handle<SqlException>()
+                  .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
+                  .ExecuteAndCaptureAsync(async () => await UpdateStatAsync(item));
 
-                    session.Attach(item);
-                    await session.SubmitChanges();
-                }
+            pr.Wait();
+            if (null != pr.Result.FinalException)
+                throw new Exception("Fail updating PUP Stat", pr.Result.FinalException);
+        }
+
+        private async Task UpdateStatAsync(EnttAcceptance item)
+        {
+
+            var query = $"UPDATE [PosEntt].[EnttAcceptance] SET [IsPupStatCode] = 1, [PupStatCodeId] = '{item.PupStatCodeId}', [PupStatCodeLocation] = '{item.PupStatCodeLocation}', [PupStatCodeDateTime] = '{item.PupStatCodeDateTime}' WHERE [ConsignmentNo] = '{item.ConsignmentNo}'";
+            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                await cmd.ExecuteNonQueryAsync();
             }
         }
 

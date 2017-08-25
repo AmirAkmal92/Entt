@@ -1,7 +1,10 @@
 ﻿using Bespoke.PosEntt.EnttAcceptances.Domain;
 using Bespoke.PosEntt.Misses.Domain;
 using Bespoke.Sph.Domain;
+using Polly;
+using System;
 using System.ComponentModel.Composition;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace Bespoke.PosEntt.CustomActions
@@ -17,27 +20,40 @@ namespace Bespoke.PosEntt.CustomActions
             var missort = context.Item as Miss;
             if (null == missort) return;
             await RunAsync(missort);
-
         }
 
         public async Task RunAsync(Miss missort)
         {
-            var context = new SphDataContext();
-            using (var session = context.OpenSession())
+            var date = missort.Date;
+            date = date.AddHours(missort.Time.Hour).AddMinutes(missort.Time.Minute).AddSeconds(missort.Time.Second).AddMilliseconds(missort.Time.Millisecond);
+
+            var item = new EnttAcceptance
             {
-                var item = await context.LoadOneAsync<EnttAcceptance>(m => m.ConsignmentNo == missort.ConsignmentNo);
-                if (null != item)
-                {
-                    var date = missort.Date;
-                    date = date.AddHours(missort.Time.Hour).AddMinutes(missort.Time.Minute).AddSeconds(missort.Time.Second).AddMilliseconds(missort.Time.Millisecond);
+                ConsignmentNo = missort.ConsignmentNo,
+                IsMissort = true,
+                MissortDateTime = date,
+                MissortLocation = missort.LocationId
+            };
 
-                    item.IsMissort = true;
-                    item.MissortDateTime = date;
-                    item.MissortLocation = missort.LocationId;
+            var pr = Policy.Handle<SqlException>()
+                  .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
+                  .ExecuteAndCaptureAsync(async () => await UpdateMissortAsync(item));
 
-                    session.Attach(item);
-                    await session.SubmitChanges();
-                }
+            pr.Wait();
+            if (null != pr.Result.FinalException)
+                throw new Exception("Fail updating PUP Stat", pr.Result.FinalException);
+
+        }
+
+        private async Task UpdateMissortAsync(EnttAcceptance item)
+        {
+
+            var query = $"UPDATE [PosEntt].[EnttAcceptance] SET [IsMissort] = 1, [MissortLocation] = '{item.LocationId}', [MissortDateTime] = '{item.MissortDateTime}' WHERE [ConsignmentNo] = '{item.ConsignmentNo}'";
+            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                await cmd.ExecuteNonQueryAsync();
             }
         }
 
