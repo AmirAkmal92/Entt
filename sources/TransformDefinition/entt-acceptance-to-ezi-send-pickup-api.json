@@ -109,7 +109,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return \"Bearer \" + System.Environment.GetEnvironmentVariable(\"EziSendPickupAdapter_Token\");",
+        "Expression": "return \"Bearer \" + ConfigurationManager.GetEnvironmentVariable(\"EziSendPickupAdapter_Token\");",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -171,6 +171,6 @@
   "Id": "entt-acceptance-to-ezi-send-pickup-api",
   "CreatedDate": "2017-07-11T11:25:05.0940932+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-23T14:10:57.0857007+08:00",
+  "ChangedDate": "2017-08-25T16:36:12.9348724+08:00",
   "WebId": "feaba49f-1c66-4a55-be1b-7d5c8f6fc14a"
 }
