@@ -27,13 +27,12 @@ namespace Bespoke.PosEntt.CustomActions
             var date = missort.Date;
             date = date.AddHours(missort.Time.Hour).AddMinutes(missort.Time.Minute).AddSeconds(missort.Time.Second).AddMilliseconds(missort.Time.Millisecond);
 
-            var item = new EnttAcceptance
-            {
-                ConsignmentNo = missort.ConsignmentNo,
-                IsMissort = true,
-                MissortDateTime = date,
-                MissortLocation = missort.LocationId
-            };
+            var item = await GetEnttAcceptanceAsync(missort.ConsignmentNo);
+            if (null == item) return;
+
+            item.IsMissort = true;
+            item.MissortDateTime = date;
+            item.MissortLocation = missort.LocationId;
 
             var pr = Policy.Handle<SqlException>()
                   .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
@@ -42,7 +41,26 @@ namespace Bespoke.PosEntt.CustomActions
             pr.Wait();
             if (null != pr.Result.FinalException)
                 throw new Exception("Fail updating PUP Stat", pr.Result.FinalException);
+        }
 
+        protected async Task<EnttAcceptance> GetEnttAcceptanceAsync(string consignmentNo)
+        {
+            EnttAcceptance acceptance = null;
+            var query = $"SELECT TOP 1 [Json] FROM [PosEntt].[EnttAcceptance]  WHERE [ConsignmentNo] = '{consignmentNo}' ORDER BY [DateTime] DESC";
+            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        var json = reader["Json"].ReadNullableString();
+                        acceptance = JsonSerializerService.DeserializeFromJson<EnttAcceptance>(json);
+                    }
+                }
+            }
+            return acceptance;
         }
 
         private async Task UpdateMissortAsync(EnttAcceptance item)

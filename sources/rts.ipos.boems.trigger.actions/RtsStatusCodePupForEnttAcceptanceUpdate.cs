@@ -30,14 +30,14 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var date = stat.Date;
             date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
-            var item = new EnttAcceptance
-            {
-                ConsignmentNo = stat.ConsignmentNo,
-                IsPupStatCode = true,
-                PupStatCodeId = stat.StatusCode,
-                PupStatCodeLocation = stat.LocationId,
-                PupStatCodeDateTime = date
-            };
+            var item = await GetEnttAcceptanceAsync(stat.ConsignmentNo);
+            if (null == item) return;
+           
+            item.IsPupStatCode = true;
+            item.PupStatCodeId = stat.StatusCode;
+            item.PupStatCodeLocation = stat.LocationId;
+            item.PupStatCodeDateTime = date;
+
             var pr = Policy.Handle<SqlException>()
                   .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
                   .ExecuteAndCaptureAsync(async () => await UpdateStatAsync(item));
@@ -47,10 +47,30 @@ namespace Bespoke.PosEntt.CustomActions
                 throw new Exception("Fail updating PUP Stat", pr.Result.FinalException);
         }
 
+        protected async Task<EnttAcceptance> GetEnttAcceptanceAsync(string consignmentNo)
+        {
+            EnttAcceptance acceptance = null;
+            var query = $"SELECT TOP 1 [Json] FROM [PosEntt].[EnttAcceptance]  WHERE [ConsignmentNo] = '{consignmentNo}' ORDER BY [DateTime] DESC";
+            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        var json = reader["Json"].ReadNullableString();
+                        acceptance = JsonSerializerService.DeserializeFromJson<EnttAcceptance>(json);
+                    }
+                }
+            }
+            return acceptance;
+        }
+
         private async Task UpdateStatAsync(EnttAcceptance item)
         {
-
-            var query = $"UPDATE [PosEntt].[EnttAcceptance] SET [IsPupStatCode] = 1, [PupStatCodeId] = '{item.PupStatCodeId}', [PupStatCodeLocation] = '{item.PupStatCodeLocation}', [PupStatCodeDateTime] = '{item.PupStatCodeDateTime}' WHERE [ConsignmentNo] = '{item.ConsignmentNo}'";
+            var json = item.ToJsonString();
+            var query = $"UPDATE [PosEntt].[EnttAcceptance] SET [IsPupStatCode] = 1, [PupStatCodeId] = '{item.PupStatCodeId}', [PupStatCodeLocation] = '{item.PupStatCodeLocation}', [PupStatCodeDateTime] = '{item.PupStatCodeDateTime}', [Json] = '{json}' WHERE [Id] = '{item.Id}'";
             using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {

@@ -34,6 +34,7 @@
     <Reference Include="domain.sph">
       <HintPath>..\..\subscribers\domain.sph.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" />
     <Reference Include="Polly">
       <HintPath>..\..\packages\Polly.4.2.4\lib\net45\Polly.dll</HintPath>
     </Reference>
