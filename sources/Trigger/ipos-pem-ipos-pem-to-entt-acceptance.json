@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff36387ac1",
+          "Script": "var branches = new[] {\"4609\",\"3735\",\"3736\",\"3738\"};\r\nreturn branches.Contains(item.LocationId);",
+          "Name": "CheckAllowedBranch",
+          "Note": "",
+          "WebId": "36387ac1-fe0c-49c1-8e6c-78061b1e8a3e"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "True",
+          "Note": "",
+          "WebId": "c13081b6-42c6-4baf-fbac-4dacb59143c0"
+        },
+        "Operator": "Eq",
+        "WebId": "8643b974-b416-4681-d1d4-f81fee9e703a"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -99,6 +121,6 @@
   "Id": "ipos-pem-ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T13:09:18.2457534+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-07-24T11:17:16.4758751+08:00",
+  "ChangedDate": "2017-08-28T16:39:55.6609038+08:00",
   "WebId": "31e6df8f-9c75-4bf8-9b21-5a9972ebb9bc"
 }

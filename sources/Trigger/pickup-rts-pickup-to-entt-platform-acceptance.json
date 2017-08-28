@@ -23,6 +23,27 @@
         },
         "Operator": "Le",
         "WebId": "2bd3b2fd-01c5-4eae-b752-21e22b7118d2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff96849e32",
+          "Script": "var branches = new[] {\"4609\",\"3735\",\"3736\",\"3738\"};\r\nreturn branches.Contains(item.LocationId);",
+          "Name": "CheckAllowedBranch",
+          "Note": "",
+          "WebId": "96849e32-def2-456c-fbda-5baf9a8a64dc"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "True",
+          "Note": "",
+          "WebId": "6dc3347f-ba09-4ddd-9f30-fca3c675cc17"
+        },
+        "Operator": "Eq",
+        "WebId": "88eb3299-e7ad-4f9a-8ae5-d1694f33b4e9"
       }
     ]
   },
@@ -121,6 +142,6 @@
   "Id": "pickup-rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T13:01:11.2655571+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-04T10:30:19.9345912+08:00",
+  "ChangedDate": "2017-08-28T16:30:05.3596164+08:00",
   "WebId": "0b6e24fc-b628-49f3-aa71-51c411829afd"
 }

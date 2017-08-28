@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff968a63e3",
+          "Script": "var branches = new[] {\"4609\",\"3735\",\"3736\",\"3738\"};\r\nreturn branches.Contains(item.LocationId);",
+          "Name": "CheckAllowedBranch",
+          "Note": "",
+          "WebId": "968a63e3-148d-45f7-9ce5-3a727f2831b9"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "True",
+          "Note": "",
+          "WebId": "5bf94746-c7a9-462e-807f-d844af7fc8df"
+        },
+        "Operator": "Eq",
+        "WebId": "207ce01b-ac19-49da-bab8-0c2b6fede5ee"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -40,6 +62,6 @@
   "Id": "miss-rts-missort-to-entt-acceptance-update",
   "CreatedDate": "2017-08-10T15:55:55.3925726+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-10T16:12:05.6515918+08:00",
+  "ChangedDate": "2017-08-28T16:37:46.2743283+08:00",
   "WebId": "108f567c-cee4-42f3-be28-36769ce98fd0"
 }
