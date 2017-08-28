@@ -8,7 +8,7 @@
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
           "CodeNamespace": "ffa97e4df2",
-          "Script": "var branches = new[] {\"4609\",\"3735\",\"3736\",\"3738\"};\r\nreturn branches.Contains(item.LocationId);",
+          "Script": "var branches = new[] {\"4609\",\"4735\",\"4736\",\"4738\"};\r\nreturn branches.Contains(item.LocationId);",
           "Name": "CheckAllowedBranch",
           "Note": "",
           "WebId": "a97e4df2-a7ab-493a-e718-d7601efcf379"
@@ -62,6 +62,6 @@
   "Id": "pickup-rts-pickup-babies-to-entt-acceptance",
   "CreatedDate": "2017-08-04T11:26:50.7842702+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-28T16:36:47.9986861+08:00",
+  "ChangedDate": "2017-08-28T17:47:20.0287227+08:00",
   "WebId": "e7496b8e-23dc-4798-90ab-4fe4fb0595db"
 }

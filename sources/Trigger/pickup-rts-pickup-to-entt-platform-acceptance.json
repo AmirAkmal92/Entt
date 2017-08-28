@@ -29,7 +29,7 @@
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
           "CodeNamespace": "ff96849e32",
-          "Script": "var branches = new[] {\"4609\",\"3735\",\"3736\",\"3738\"};\r\nreturn branches.Contains(item.LocationId);",
+          "Script": "var branches = new[] {\"4609\",\"4735\",\"4736\",\"4738\"};\r\nreturn branches.Contains(item.LocationId);",
           "Name": "CheckAllowedBranch",
           "Note": "",
           "WebId": "96849e32-def2-456c-fbda-5baf9a8a64dc"
@@ -142,6 +142,6 @@
   "Id": "pickup-rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T13:01:11.2655571+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-28T16:30:05.3596164+08:00",
+  "ChangedDate": "2017-08-28T17:47:53.3898018+08:00",
   "WebId": "0b6e24fc-b628-49f3-aa71-51c411829afd"
 }
