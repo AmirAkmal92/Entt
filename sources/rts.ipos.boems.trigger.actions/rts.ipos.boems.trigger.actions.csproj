@@ -65,6 +65,9 @@
     <Reference Include="PosEntt.Stat">
       <HintPath>..\..\output\PosEntt.Stat.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.Unknown">
+      <HintPath>..\..\output\PosEntt.Unknown.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -81,6 +84,7 @@
     <Compile Include="RtsMissortForEnttAcceptanceUpdate.cs" />
     <Compile Include="RtsPickupWithBabiesForEnttAcceptance.cs" />
     <Compile Include="RtsStatusCodePupForEnttAcceptanceUpdate.cs" />
+    <Compile Include="RtsUnknownForEnttAcceptanceUpdate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
