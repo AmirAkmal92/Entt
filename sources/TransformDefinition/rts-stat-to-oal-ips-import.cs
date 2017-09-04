@@ -80,6 +80,17 @@ namespace Bespoke.PosEntt.Integrations.Transforms
                 }
             }
 
+            if (string.IsNullOrWhiteSpace(destination.orig_country_cd))
+            {
+                var pattern = @"\w{2}\d{9}(?<country>\w{2})";
+                var match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);
+
+                if (match.Success)
+                {
+                    destination.orig_country_cd = match.Groups["country"].Value;
+                }
+            }
+
             if (null == destination.item_weight_double) destination.item_weight_double = 0d;
             return true;
         }
