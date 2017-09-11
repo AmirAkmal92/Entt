@@ -4,10 +4,10 @@
 
 async Task Main()
 {
-	var date = new DateTime(2017,8,30);
+	var date = new DateTime(2017,9,2);
 	var list = GetNullCountryCodeList(date);
 
-	var pattern = @"\w{2}\d{9}(?<country>\w{2})";
+	var pattern = @"\w{2}\d{8}([A-z0-9]{1})(?<country>\w{2})";
 	foreach (var ips in list)
 	{
 		var connote = ips.ItemId;
