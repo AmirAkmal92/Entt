@@ -1,94 +1,73 @@
-USE [EnttPlatform]
-GO
-
 CREATE TABLE [Entt].[Acceptance](
-	[id] [varchar](20) NOT NULL,
-	[version] [int] NOT NULL,
-	[baby_item] [varchar](20) NULL,
-	[dt_received_at_oal_date_field] [datetime] NULL,
-	[dt_created_date_field] [datetime] NULL,
-	[parent] [varchar](20) NULL,
-	[total_consignment_item_number] [int] NULL,
-	[is_parent] [tinyint] NULL,
-	[number] [varchar](40) NULL,
-	[postcode] [varchar](5) NULL,
-	[parent_weight_double] [float] NULL,
-	[total_item_number] [int] NULL,
-	[prodtype] [varchar](10) NULL,
-	[prod_type_desc] [varchar](100) NULL,
-	[packagetype] [varchar](10) NULL,
-	[package_type_desc] [varchar](100) NULL,
-	[country] [varchar](10) NULL,
-	[height_double] [float] NULL,
-	[width_double] [float] NULL,
-	[length_double] [float] NULL,
-	[weight_double] [float] NULL,
-	[item_category] [varchar](2) NULL,
-	[item_category_desc] [varchar](50) NULL,
-	[total_baby_number] [int] NULL,
-	[total_parent_number] [int] NULL,
-	[routing_code] [varchar](14) NULL,
-	[total_weight_double] [float] NULL,
-	[total_dim_weight_double] [float] NULL,
-	[price_money] [float] NULL,
-	[consignment_fee_money] [float] NULL,
-	[sold_to_party_account] [varchar](10) NULL,
-	[recipient_ref_no] [varchar](20) NULL,
-	[_clerk_id] [varchar](10) NULL,
-	[_courier_id] [varchar](10) NULL,
-	[location_id] [varchar](4) NULL,
-	[location_office_name] [varchar](50) NULL,
-	[system_id] [varchar](3) NULL,
-	[system_id_desc] [varchar](30) NULL,
-	[authorisation_id] [varchar](20) NULL,
-	[weight_density_double] [float] NULL,
-	[weight_volumetric_double] [float] NULL,
-	[acceptance_cut_off_indicator] [varchar](1) NULL,
-	[consignee_address_address1] [varchar](50) NULL,
-	[consignee_address_address2] [varchar](50) NULL,
-	[consignee_address_city] [varchar](50) NULL,
-	[consignee_address_post_code] [varchar](10) NULL,
-	[consignee_address_state] [varchar](30) NULL,
-	[consignee_address_country] [varchar](30) NULL,
-	[consignee_name] [varchar](50) NULL,
-	[consignee_email] [varchar](50) NULL,
-	[consignee_phone] [varchar](15) NULL,
-	[consignee_reference_number] [varchar](12) NULL,
-	[shipper_account] [varchar](50) NULL,
-	[shipper_name] [varchar](50) NULL,
-	[shipper_address_address1] [varchar](50) NULL,
-	[shipper_address_address2] [varchar](50) NULL,
-	[shipper_address_city] [varchar](50) NULL,
-	[shipper_address_post_code] [varchar](10) NULL,
-	[shipper_address_state] [varchar](30) NULL,
-	[shipper_address_country] [varchar](30) NULL,
-	[shipper_email] [varchar](50) NULL,
-	[shipper_phone] [varchar](15) NULL,
-	[shipper_reference_number] [varchar](12) NULL,
-	[_i_p_o_s_receipt_no] [varchar](30) NULL,
-	[packaging_code] [varchar](2) NULL,
-	[packaging_desc] [varchar](20) NULL,
-	[day_taken_for_data_entry] [varchar](4) NULL,
-	[drop_option_indicator] [varchar](1) NULL,
-	[pickup_date_date_field] [datetime] NULL,
-	[pl_nine] [varchar](10) NULL,
-	[destination_service_standard] [varchar](10) NULL,
-	[expected_delivery_date] [datetime] NULL,
-	[delivery_branch_id] [varchar](4) NULL,
-	[delivery_branch_name] [varchar](50) NULL,
-	[is_contract] [tinyint] NULL,
-	[is_billed] [tinyint] NULL,
-	[is_missort] [tinyint] NULL,
-	[missort_location] [varchar](50) NULL,
-	[missort_date] [datetime] NULL,
-	[is_pup_statcode] [tinyint] NULL,
-	[pup_statcode_id] [varchar](2) NULL,
-	[pup_statcode_location] [varchar](50) NULL,
-	[pup_statcode_date] [datetime] NULL,
- CONSTRAINT [PK_consignment_initial] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
+  [Id] VARCHAR(50) PRIMARY KEY NOT NULL
+,[ModuleId] VARCHAR(2) NOT NULL
+,[ConsignmentNo] VARCHAR(50) NOT NULL
+,[DateTime] SMALLDATETIME NOT NULL
+,[PickupNo] VARCHAR(10)  NULL
+,[TotalConsignment] INT  NULL
+,[IsParent] BIT  NULL
+,[Parent] VARCHAR(20)  NULL
+,[Postcode] VARCHAR(5)  NULL
+,[ParentWeight] MONEY  NULL
+,[TotalItem] INT  NULL
+,[ProductType] VARCHAR(10)  NULL
+,[ProductTypeDescription] VARCHAR(100)  NULL
+,[PackageType] VARCHAR(10)  NULL
+,[PackageTypeDescription] VARCHAR(100)  NULL
+,[Country] VARCHAR(50)  NULL
+,[Height] MONEY  NULL
+,[Width] MONEY  NULL
+,[Length] MONEY  NULL
+,[Weight] MONEY  NULL
+,[ItemCategory] VARCHAR(2)  NULL
+,[ItemCategoryDescription] VARCHAR(50)  NULL
+,[TotalBaby] INT  NULL
+,[TotalParent] INT  NULL
+,[RoutingCode] VARCHAR(50)  NULL
+,[TotalWeight] MONEY  NULL
+,[TotalDimWeight] MONEY  NULL
+,[Price] MONEY  NULL
+,[ConsignmentFee] MONEY  NULL
+,[CourierId] VARCHAR(30)  NULL
+,[CourierName] VARCHAR(50)  NULL
+,[LocationId] VARCHAR(10)  NULL
+,[LocationName] VARCHAR(50)  NULL
+,[BeatNo] VARCHAR(3)  NULL
+,[SystemId] VARCHAR(3)  NULL
+,[SystemName] VARCHAR(50)  NULL
+,[WeightDensity] MONEY  NULL
+,[WeightVolumetric] MONEY  NULL
+,[ConsigneeAddressPostcode] VARCHAR(5)  NULL
+,[ConsigneeAddressCountry] VARCHAR(30)  NULL
+,[ShipperAccountNo] VARCHAR(10)  NULL
+,[ShipperAddressPostcode] VARCHAR(5)  NULL
+,[ShipperAddressCountry] VARCHAR(30)  NULL
+,[IposReceiptNo] VARCHAR(30)  NULL
+,[FailPickupReason] VARCHAR(2)  NULL
+,[Comment] VARCHAR(255)  NULL
+,[DropCode] VARCHAR(2)  NULL
+,[LatePickup] VARCHAR(1)  NULL
+,[Pl9No] VARCHAR(10)  NULL
+,[PickupDateTime] SMALLDATETIME  NULL
+,[ClerkId] VARCHAR(10)  NULL
+,[DropOption] VARCHAR(1)  NULL
+,[DestinationServiceStandard] VARCHAR(50)  NULL
+,[ExpectedDeliveryDateTime] SMALLDATETIME  NULL
+,[DeliveryBranchId] VARCHAR(10)  NULL
+,[DeliveryBranchName] VARCHAR(50)  NULL
+,[IsContract] BIT  NULL
+,[IsBilled] BIT  NULL
+,[IsMissort] BIT  NULL
+,[MissortLocation] VARCHAR(10)  NULL
+,[MissortDateTime] SMALLDATETIME  NULL
+,[IsPupStatCode] BIT  NULL
+,[PupStatCodeId] VARCHAR(10)  NULL
+,[PupStatCodeLocation] VARCHAR(50)  NULL
+,[PupStatCodeDateTime] SMALLDATETIME  NULL
+,[ScannerId] VARCHAR(10)  NULL
+,[HubCode] VARCHAR(10)  NULL
+,[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
+,[CreatedBy] VARCHAR(50) NULL
+,[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
+,[ChangedBy] VARCHAR(50) NULL
+)

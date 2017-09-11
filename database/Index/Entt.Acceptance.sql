@@ -1,0 +1,27 @@
+USE [Entt]
+GO
+
+CREATE NONCLUSTERED INDEX [idx_Acceptance] ON [Entt].[Acceptance]
+(
+	[ConsignmentNo] ASC,
+	[DateTime] ASC,
+	[LocationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX [idx_download_ispup] ON [Entt].[Acceptance]
+(
+	[IsPupStatCode] ASC,
+	[PupStatCodeId] ASC,
+	[PupStatCodeLocation] ASC,
+	[PupStatCodeDateTime] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX [idx_download_missort] ON [Entt].[Acceptance]
+(
+	[IsMissort] ASC,
+	[MissortLocation] ASC,
+	[MissortDateTime] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
