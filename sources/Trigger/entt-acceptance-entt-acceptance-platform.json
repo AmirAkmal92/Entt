@@ -1,0 +1,88 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "entt-acceptance-to-acceptance-platform",
+        "Adapter": "Entt",
+        "Operation": "usp_entt_acceptance",
+        "Table": null,
+        "Schema": null,
+        "Crud": null,
+        "Retry": 3,
+        "RetryInterval": 3000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "EnttPlatformAcceptance",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "4941d6bf-7213-404f-b0c8-2abda2c5ac1d"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Entt",
+        "FullName": "PosEntt.Entt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Entt.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.EnttAcceptance",
+        "FullName": "PosEntt.EnttAcceptance, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.EnttAcceptance.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.EnttAcceptanceToAcceptancePlatform",
+        "FullName": "PosEntt.EnttAcceptanceToAcceptancePlatform, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.EnttAcceptanceToAcceptancePlatform.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "EnttAcceptancePlatform",
+  "Entity": "EnttAcceptance",
+  "TypeOf": "Bespoke.PosEntt.EnttAcceptances.Domain.EnttAcceptance, PosEntt.EnttAcceptance",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "EnttAcceptanceEnttAcceptancePlatformTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "entt-acceptance-entt-acceptance-platform",
+  "CreatedDate": "2017-09-12T11:47:29.4594649+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-09-12T15:18:38.5714934+08:00",
+  "WebId": "c3a5afc5-0bd5-4d12-ac17-96043e5638be"
+}

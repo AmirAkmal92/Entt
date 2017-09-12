@@ -252,13 +252,13 @@
   "RecordName": "ConsignmentNo",
   "IsPublished": true,
   "TreatDataAsSource": false,
-  "Transient": false,
-  "StoreInDatabase": true,
-  "StoreInElasticsearch": true,
+  "Transient": true,
+  "StoreInDatabase": false,
+  "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "unknown",
   "CreatedDate": "2017-08-08T11:26:14.113274+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-08T14:11:31.1474551+08:00",
+  "ChangedDate": "2017-09-12T07:29:11.2332334+08:00",
   "WebId": "368ab870-9def-47b6-b3a6-e4421ece9133"
 }

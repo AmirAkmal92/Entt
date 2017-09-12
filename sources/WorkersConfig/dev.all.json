@@ -8,9 +8,9 @@
       "instancesCount": 1,
       "prefetchCount": 1,
       "priority": 0,
-      "queueName": "trigger_subs_mail-item-ips-export-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MailItemIpsExportToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.mail-item-ips-export-to-entt-acceptance"
+      "queueName": "trigger_subs_entt-acceptance-entt-acceptance-platform",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEnttAcceptancePlatformTriggerSubscriber",
+      "assembly": "subscriber.trigger.entt-acceptance-entt-acceptance-platform"
     },
     {
       "instancesCount": 1,
@@ -85,8 +85,8 @@
       "assembly": "subscriber.trigger.sap-ageing-sap-ageing-file-drop-trigger"
     },
     {
-      "instancesCount": 1,
-      "prefetchCount": 1,
+      "instancesCount": 0,
+      "prefetchCount": 0,
       "priority": 0,
       "queueName": "trigger_subs_entt-acceptance-ezi-send-pickup-notifier",
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEziSendPickupNotifierTriggerSubscriber",

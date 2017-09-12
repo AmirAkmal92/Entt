@@ -9,7 +9,7 @@ CREATE NONCLUSTERED INDEX [idx_Acceptance] ON [Entt].[Acceptance]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
 
-CREATE NONCLUSTERED INDEX [idx_download_ispup] ON [Entt].[Acceptance]
+CREATE NONCLUSTERED INDEX [idx_Acceptance_Pup] ON [Entt].[Acceptance]
 (
 	[IsPupStatCode] ASC,
 	[PupStatCodeId] ASC,
@@ -18,7 +18,7 @@ CREATE NONCLUSTERED INDEX [idx_download_ispup] ON [Entt].[Acceptance]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
 
-CREATE NONCLUSTERED INDEX [idx_download_missort] ON [Entt].[Acceptance]
+CREATE NONCLUSTERED INDEX [idx_Acceptance_Missort] ON [Entt].[Acceptance]
 (
 	[IsMissort] ASC,
 	[MissortLocation] ASC,

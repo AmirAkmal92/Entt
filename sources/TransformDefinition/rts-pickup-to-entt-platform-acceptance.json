@@ -398,6 +398,60 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "0a6bd311-9233-429d-e950-319d9f579b23"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ModuleId",
+        "TypeName": "",
+        "Destination": "ModuleId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1df49dca-2950-4339-984a-5f759506ee8e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LatePickup",
+        "TypeName": "",
+        "Destination": "LatePickup",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "637e165c-bf68-416a-f3cd-367513e29129"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DropCode",
+        "TypeName": "",
+        "Destination": "DropOption",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c2a7603b-e489-4d83-cca0-a73e821ecf1e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Comment",
+        "TypeName": "",
+        "Destination": "Comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "df68fa1d-73c0-4319-97a7-a29ba85e7fa8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "FailPickupReason",
+        "TypeName": "",
+        "Destination": "FailPickupReason",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "646a9ced-4155-4804-9e72-db776c742d4d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "BeatNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "21a970c2-9330-42f9-e63b-64efe7555c6a"
       }
     ]
   },
@@ -1218,6 +1272,6 @@
   "Id": "rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T11:29:51.8433405+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-11T18:34:30.4675+08:00",
+  "ChangedDate": "2017-09-12T11:16:31.3000053+08:00",
   "WebId": "d690b166-42e7-4eef-9839-0d50cbfe09d7"
 }

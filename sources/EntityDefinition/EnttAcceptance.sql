@@ -35,8 +35,11 @@ CREATE TABLE [PosEntt].[EnttAcceptance](
 ,[SystemName] VARCHAR(255)  NULL
 ,[WeightDensity] MONEY  NULL
 ,[WeightVolumetric] MONEY  NULL
+,[ModuleId] VARCHAR(255)  NULL
+,[BeatNo] VARCHAR(255)  NULL
 ,[ConsigneeAddressPostcode] VARCHAR(255)  NULL
 ,[ConsigneeAddressCountry] VARCHAR(255)  NULL
+,[LatePickup] VARCHAR(255)  NULL
 ,[ShipperAccountNo] VARCHAR(255)  NULL
 ,[ShipperAddressPostcode] VARCHAR(255)  NULL
 ,[ShipperAddressCountry] VARCHAR(255)  NULL

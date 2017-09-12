@@ -1,31 +1,32 @@
 CREATE TABLE [Entt].[Acceptance](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL
+,[Version] INT NOT NULL
 ,[ModuleId] VARCHAR(2) NOT NULL
 ,[ConsignmentNo] VARCHAR(50) NOT NULL
 ,[DateTime] SMALLDATETIME NOT NULL
-,[PickupNo] VARCHAR(10)  NULL
-,[TotalConsignment] INT  NULL
+,[PickupNo] VARCHAR(10) NULL
+,[TotalConsignment] INT NULL
 ,[IsParent] BIT  NULL
 ,[Parent] VARCHAR(20)  NULL
 ,[Postcode] VARCHAR(5)  NULL
-,[ParentWeight] MONEY  NULL
+,[ParentWeight] float  NULL
 ,[TotalItem] INT  NULL
 ,[ProductType] VARCHAR(10)  NULL
 ,[ProductTypeDescription] VARCHAR(100)  NULL
 ,[PackageType] VARCHAR(10)  NULL
 ,[PackageTypeDescription] VARCHAR(100)  NULL
 ,[Country] VARCHAR(50)  NULL
-,[Height] MONEY  NULL
-,[Width] MONEY  NULL
-,[Length] MONEY  NULL
-,[Weight] MONEY  NULL
+,[Height] float  NULL
+,[Width] float  NULL
+,[Length] float  NULL
+,[Weight] float  NULL
 ,[ItemCategory] VARCHAR(2)  NULL
 ,[ItemCategoryDescription] VARCHAR(50)  NULL
 ,[TotalBaby] INT  NULL
 ,[TotalParent] INT  NULL
 ,[RoutingCode] VARCHAR(50)  NULL
-,[TotalWeight] MONEY  NULL
-,[TotalDimWeight] MONEY  NULL
+,[TotalWeight] float  NULL
+,[TotalDimWeight] float  NULL
 ,[Price] MONEY  NULL
 ,[ConsignmentFee] MONEY  NULL
 ,[CourierId] VARCHAR(30)  NULL
@@ -35,8 +36,8 @@ CREATE TABLE [Entt].[Acceptance](
 ,[BeatNo] VARCHAR(3)  NULL
 ,[SystemId] VARCHAR(3)  NULL
 ,[SystemName] VARCHAR(50)  NULL
-,[WeightDensity] MONEY  NULL
-,[WeightVolumetric] MONEY  NULL
+,[WeightDensity] float  NULL
+,[WeightVolumetric] float  NULL
 ,[ConsigneeAddressPostcode] VARCHAR(5)  NULL
 ,[ConsigneeAddressCountry] VARCHAR(30)  NULL
 ,[ShipperAccountNo] VARCHAR(10)  NULL

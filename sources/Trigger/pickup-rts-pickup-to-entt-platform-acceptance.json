@@ -7,11 +7,11 @@
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "ff668dc35e",
+          "CodeNamespace": "ff1f32c9b4",
           "Script": "item.TotalBaby",
           "Name": "TotalBaby",
           "Note": "",
-          "WebId": "668dc35e-c96c-4821-dac6-3aae2e8fce2d"
+          "WebId": "1f32c9b4-4365-414c-9a4e-0c9d7ff8c7fb"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -19,20 +19,20 @@
           "Value": 0,
           "Name": "0",
           "Note": "",
-          "WebId": "f569a2ac-8b0c-429f-9f4d-a8739c293987"
+          "WebId": "04df9721-b19d-4688-82b9-7b5eccd02b06"
         },
         "Operator": "Le",
-        "WebId": "2bd3b2fd-01c5-4eae-b752-21e22b7118d2"
+        "WebId": "7d41ea89-cff7-4f60-8980-c29224519427"
       },
       {
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "ff96849e32",
+          "CodeNamespace": "ffd17f212a",
           "Script": "var branches = new[] {\"4609\",\"4735\",\"4736\",\"4738\"};\r\nreturn branches.Contains(item.LocationId);",
           "Name": "CheckAllowedBranch",
           "Note": "",
-          "WebId": "96849e32-def2-456c-fbda-5baf9a8a64dc"
+          "WebId": "d17f212a-39db-4ffe-c43f-bedda875008e"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -40,10 +40,10 @@
           "Value": true,
           "Name": "True",
           "Note": "",
-          "WebId": "6dc3347f-ba09-4ddd-9f30-fca3c675cc17"
+          "WebId": "26c9835b-335a-4630-d447-399c6afd1ff6"
         },
         "Operator": "Eq",
-        "WebId": "88eb3299-e7ad-4f9a-8ae5-d1694f33b4e9"
+        "WebId": "aaf4064e-1c6b-4448-ce8b-ef4f1c3e2a8c"
       }
     ]
   },
@@ -142,6 +142,6 @@
   "Id": "pickup-rts-pickup-to-entt-platform-acceptance",
   "CreatedDate": "2017-07-05T13:01:11.2655571+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-28T17:47:53.3898018+08:00",
+  "ChangedDate": "2017-09-12T15:13:54.5233843+08:00",
   "WebId": "0b6e24fc-b628-49f3-aa71-51c411829afd"
 }
