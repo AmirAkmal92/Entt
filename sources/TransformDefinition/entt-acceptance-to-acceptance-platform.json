@@ -101,6 +101,411 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "fc13cf11-3bd2-49d2-8ddf-a909c417d0ea"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "IsParent",
+        "TypeName": "",
+        "Destination": "IsParent",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5ec67044-7495-48a8-d09f-9e073231f177"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Parent",
+        "TypeName": "",
+        "Destination": "Parent",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a26fe79c-f9af-4294-9e9e-5980e8c2d0f1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Postcode",
+        "TypeName": "",
+        "Destination": "Postcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "1643ca8d-aa35-4192-b65f-f5e005fbfe68"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "f3cc1c3e-a745-4ccc-fd05-d6aa4687d9bc",
+        "Destination": "ParentWeight",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fd9c2936-2bc9-4109-8139-382398617832"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "TotalItem",
+        "TypeName": "",
+        "Destination": "TotalItem",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d176f69c-61d3-4cd0-ea1e-caf45a67c2ae"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ProductType",
+        "TypeName": "",
+        "Destination": "ProductType",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "52307597-dec9-4bc1-cd16-303ae7fbae98"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ProductTypeDescription",
+        "TypeName": "",
+        "Destination": "ProductTypeDescription",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ca95143b-c6fb-4949-c914-39ba320fc337"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PackageType",
+        "TypeName": "",
+        "Destination": "PackageType",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f8b5c2d6-4442-4370-bbe3-bbce87bc9ce4"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PackageTypeDescription",
+        "TypeName": "",
+        "Destination": "PackageTypeDescription",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "74770b0e-9218-4e17-ca9a-39e9f2117e8e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Country",
+        "TypeName": "",
+        "Destination": "Country",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d9a5141a-44c5-4275-ccba-0b9a48f663ab"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "97060bd6-84c6-4529-b31e-89e5d383ebf3",
+        "Destination": "Height",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "80541d6b-e498-454a-bfc4-217b645451ee"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "d0a730b3-abf3-42fe-b748-2026328e105a",
+        "Destination": "Width",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6375693a-a6ce-45e3-dbb0-f1bb3b60d9e7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "ce1185b4-2e56-4fbe-dda1-7eb2a7058022",
+        "Destination": "Length",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ef6dbf74-9161-42a5-ec9f-c72c2b5680aa"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "cde52061-a920-405b-fa52-de310adec81c",
+        "Destination": "Weight",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "da993050-4f04-41db-ba9f-3f38687a693f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ItemCategory",
+        "TypeName": "",
+        "Destination": "ItemCategory",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2652e357-3561-40c0-ef2d-89cdcaa36fcf"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ItemCategoryDescription",
+        "TypeName": "",
+        "Destination": "ItemCategoryDescription",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0308d65c-1deb-415f-cee9-0c54d1e277b7"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "TotalBaby",
+        "TypeName": "",
+        "Destination": "TotalBaby",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8a19ac19-6d14-46f8-f276-e5ae9c4cb033"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "TotalParent",
+        "TypeName": "",
+        "Destination": "TotalParent",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "651de8af-2987-4522-8afa-bfab2e85a127"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "RoutingCode",
+        "TypeName": "",
+        "Destination": "RoutingCode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6a7f15b2-eed2-4b0d-a298-687aef147087"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Price",
+        "TypeName": "",
+        "Destination": "Price",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "fbcb7fe4-bfc1-4260-92ba-f0e023714cc5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentFee",
+        "TypeName": "",
+        "Destination": "ConsignmentFee",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2727c22f-ffdf-4d2a-bab9-6b771deb2682"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "CourierId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "d932c4c9-5f7d-4f7d-c1a0-5c6521a01325"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierName",
+        "TypeName": "",
+        "Destination": "CourierName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c98b40be-0ddd-48a5-b1da-22adc4a4d47a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationId",
+        "TypeName": "",
+        "Destination": "LocationId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "3497849c-3bd3-417d-e185-c597253681fc"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LocationName",
+        "TypeName": "",
+        "Destination": "LocationName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e6fafbe5-528a-405e-8183-af9721853fb1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "SystemId",
+        "TypeName": "",
+        "Destination": "SystemId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "6dea34f5-cb18-459e-a584-f775243f314b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "SystemName",
+        "TypeName": "",
+        "Destination": "SystemName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "71da67d8-5d34-403b-86e7-dae2dfc00af6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "BeatNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "9fc29f7b-a145-45c6-a5de-8f971ac40fce"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsigneeAddressPostcode",
+        "TypeName": "",
+        "Destination": "ConsigneeAddressPostcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "9bfefd43-fb90-4d1c-ab68-82e9fe0bdd4f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsigneeAddressCountry",
+        "TypeName": "",
+        "Destination": "ConsigneeAddressCountry",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "84e98581-792f-4918-bcb1-f4a5444df1bb"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "LatePickup",
+        "TypeName": "",
+        "Destination": "LatePickup",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "dd61c419-0816-47c2-9fef-d43ece9613d5"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ShipperAccountNo",
+        "TypeName": "",
+        "Destination": "ShipperAccountNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ade4f240-bbfa-4d36-a4f8-6e0c5c9d4b31"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ShipperAddressPostcode",
+        "TypeName": "",
+        "Destination": "ShipperAddressPostcode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a921d7c3-32eb-47ec-e012-083f40e437ba"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ShipperAddressCountry",
+        "TypeName": "",
+        "Destination": "ShipperAddressCountry",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "972baf72-fc13-4c4e-e829-3fe694f46116"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "FailPickupReason",
+        "TypeName": "",
+        "Destination": "FailPickupReason",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4862554e-661c-4c19-a6bc-aba21f86260c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Comment",
+        "TypeName": "",
+        "Destination": "Comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "05ba7746-d0a8-4767-d420-bd85d19be308"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "IposReceiptNo",
+        "TypeName": "",
+        "Destination": "IposReceiptNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "bbb63721-a2ee-4527-c90b-f8f73cf9efe0"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Pl9No",
+        "TypeName": "",
+        "Destination": "Pl9No",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5944321a-754f-4eaf-b80f-808a951c5ba9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "PickupDateTime",
+        "TypeName": "",
+        "Destination": "PickupDateTime",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "89576c83-9402-4439-8bf9-62f6caab0442"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ClerkId",
+        "TypeName": "",
+        "Destination": "ClerkId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "84132d5b-46bf-4c25-c13d-75c51c40c90d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DropOption",
+        "TypeName": "",
+        "Destination": "DropOption",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b382de8f-698a-4b83-a722-90142fe80458"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "f5b7d6c8-9d37-4302-8eb6-2473a4a73623",
+        "Destination": "TotalDimWeight",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "c9a6ad6f-cca6-434f-d22c-b77974bbafba"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "11d4eb8f-8da2-4c9c-ac6a-7d8b0be7f30d",
+        "Destination": "TotalWeight",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7a018d1f-2dea-478a-f27c-897285a304cf"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "333e88c2-d431-4547-848b-f0196f5a211b",
+        "Destination": "WeightDensity",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8bbbcb8b-c7c3-4e93-d9b0-e1e74a580ef6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "c883ffeb-1235-4941-dde5-04d0a5f2df51",
+        "Destination": "WeightVolumetric",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "802f7e68-76fa-4625-815f-3771676e9a27"
       }
     ]
   },
@@ -163,6 +568,141 @@
         "X": 372.0,
         "Y": 38.0,
         "WebId": "9e46b6ce-ec0c-463c-972a-81ac1ac5c5c6"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.ParentWeight;\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetParentWeightDouble",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 369.0,
+        "Y": 230.0,
+        "WebId": "f3cc1c3e-a745-4ccc-fd05-d6aa4687d9bc"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.Height;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetHeightDouble",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 387.0,
+        "Y": 403.0,
+        "WebId": "97060bd6-84c6-4529-b31e-89e5d383ebf3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.Width;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetDoubleWidth",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 398.0,
+        "Y": 436.0,
+        "WebId": "d0a730b3-abf3-42fe-b748-2026328e105a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.Weight;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetWeightDouble",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 407.0,
+        "Y": 500.0,
+        "WebId": "cde52061-a920-405b-fa52-de310adec81c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.Length;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetLengthDouble",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 404.0,
+        "Y": 460.0,
+        "WebId": "ce1185b4-2e56-4fbe-dda1-7eb2a7058022"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.TotalWeight;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetTotalWeight",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 435.0,
+        "Y": 600.0,
+        "WebId": "11d4eb8f-8da2-4c9c-ac6a-7d8b0be7f30d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.TotalDimWeight;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetTotalDimWeight",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 474.0,
+        "Y": 638.0,
+        "WebId": "f5b7d6c8-9d37-4302-8eb6-2473a4a73623"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.WeightDensity;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetWeightDensity",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 494.0,
+        "Y": 873.0,
+        "WebId": "333e88c2-d431-4547-848b-f0196f5a211b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "double? x = (double?) item.WeightVolumetric;\r\nreturn x;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "GetWeightVolumetric",
+        "OutputTypeName": "System.Nullable`1[[System.Double, mscorlib]], mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 520.0,
+        "Y": 912.0,
+        "WebId": "c883ffeb-1235-4941-dde5-04d0a5f2df51"
       }
     ]
   },
@@ -183,6 +723,6 @@
   "Id": "entt-acceptance-to-acceptance-platform",
   "CreatedDate": "2017-09-12T12:07:00.6630159+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-09-12T12:12:57.7761344+08:00",
+  "ChangedDate": "2017-09-18T17:01:50.703172+08:00",
   "WebId": "11c68501-bd5b-4827-914c-8f077defda19"
 }
