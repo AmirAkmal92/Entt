@@ -86,15 +86,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "ShipperPhoneNo",
-        "TypeName": "",
-        "Destination": "ShipperPhone",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "f678c594-c4fb-4fdf-dd24-5bedca9d8675"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "ItemCategory",
         "TypeName": "",
         "Destination": "ItemCategory",
