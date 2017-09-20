@@ -305,7 +305,7 @@
                 "WebId": null
               },
               "TypeName": "System.String, mscorlib",
-              "IsNullable": false,
+              "IsNullable": true,
               "IsNotIndexed": false,
               "IsAnalyzed": false,
               "IsFilterable": false,

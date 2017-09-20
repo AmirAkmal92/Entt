@@ -293,15 +293,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "ShipperPhoneNo",
-        "TypeName": "",
-        "Destination": "ShipperPhone",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "836d6fd6-72d0-415f-be1a-f5463ff3baec"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "CreatedDate",
         "TypeName": "",
         "Destination": "CreatedDate",

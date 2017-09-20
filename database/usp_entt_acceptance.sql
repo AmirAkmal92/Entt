@@ -8,7 +8,7 @@ GO
 
 CREATE PROCEDURE [Entt].[usp_entt_acceptance] 
       @Id varchar(50),
-      @ModuleId varchar(2),
+      @ModuleId varchar(2) = NULL,
       @ConsignmentNo varchar(50),
       @DateTime smalldatetime,
       @PickupNo varchar(10) = NULL,

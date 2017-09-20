@@ -1,7 +1,7 @@
 CREATE TABLE [Entt].[Acceptance](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL
 ,[Version] INT NOT NULL
-,[ModuleId] VARCHAR(2) NOT NULL
+,[ModuleId] VARCHAR(2) NULL
 ,[ConsignmentNo] VARCHAR(50) NOT NULL
 ,[DateTime] SMALLDATETIME NOT NULL
 ,[PickupNo] VARCHAR(10) NULL
