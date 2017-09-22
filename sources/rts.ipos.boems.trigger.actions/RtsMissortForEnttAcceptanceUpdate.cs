@@ -19,55 +19,27 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var missort = context.Item as Miss;
             if (null == missort) return;
-            await RunAsync(missort);
+            Run(missort);
         }
 
-        public async Task RunAsync(Miss missort)
+        public void Run(Miss miss)
         {
-            var date = missort.Date;
-            date = date.AddHours(missort.Time.Hour).AddMinutes(missort.Time.Minute).AddSeconds(missort.Time.Second).AddMilliseconds(missort.Time.Millisecond);
-
-            var item = await GetEnttAcceptanceAsync(missort.ConsignmentNo);
-            if (null == item) return;
-
-            item.IsMissort = true;
-            item.MissortDateTime = date;
-            item.MissortLocation = missort.LocationId;
-
             var pr = Policy.Handle<SqlException>()
                   .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
-                  .ExecuteAndCaptureAsync(async () => await UpdateMissortAsync(item));
+                  .ExecuteAndCaptureAsync(async () => await UpdateEnttAcceptanceMissortAsync(miss));
 
             pr.Wait();
             if (null != pr.Result.FinalException)
                 throw new Exception("Fail updating PUP Stat", pr.Result.FinalException);
         }
 
-        protected async Task<EnttAcceptance> GetEnttAcceptanceAsync(string consignmentNo)
+        private async Task UpdateEnttAcceptanceMissortAsync(Miss miss)
         {
-            EnttAcceptance acceptance = null;
-            var query = $"SELECT TOP 1 [Json] FROM [PosEntt].[EnttAcceptance]  WHERE [ConsignmentNo] = '{consignmentNo}' ORDER BY [DateTime] DESC";
-            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
-            using (var cmd = new SqlCommand(query, conn))
-            {
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        var json = reader["Json"].ReadNullableString();
-                        acceptance = JsonSerializerService.DeserializeFromJson<EnttAcceptance>(json);
-                    }
-                }
-            }
-            return acceptance;
-        }
+            var date = miss.Date;
+            date = date.AddHours(miss.Time.Hour).AddMinutes(miss.Time.Minute).AddSeconds(miss.Time.Second).AddMilliseconds(miss.Time.Millisecond);
 
-        private async Task UpdateMissortAsync(EnttAcceptance item)
-        {
-
-            var query = $"UPDATE [PosEntt].[EnttAcceptance] SET [IsMissort] = 1, [MissortLocation] = '{item.LocationId}', [MissortDateTime] = '{item.MissortDateTime}' WHERE [ConsignmentNo] = '{item.ConsignmentNo}'";
-            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            var query = $"UPDATE [Entt].[Acceptance] SET [IsMissort] = 1, [MissortLocation] = '{miss.LocationId}', [MissortDateTime] = '{date}' WHERE [ConsignmentNo] = '{miss.ConsignmentNo}'";
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Entt"].ConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {
                 await conn.OpenAsync();
