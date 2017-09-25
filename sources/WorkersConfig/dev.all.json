@@ -52,6 +52,14 @@
       "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToIpsImportTriggerSubscriber",
       "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-ips-import"
     },
+     {
+      "instancesCount": 1,
+      "prefetchCount": 1,
+      "priority": 0,
+      "queueName": "trigger_subs_intranet-pem-intranet-pem-to-entt-acceptance",
+      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IntranetPemIntranetPemToEnttAcceptanceTriggerSubscriber",
+      "assembly": "subscriber.trigger.intranet-pem-intranet-pem-to-entt-acceptance"
+    },
     {
       "instancesCount": 1,
       "prefetchCount": 1,
