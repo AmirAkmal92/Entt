@@ -25,7 +25,7 @@ public class RtsScannerAppsController : BaseApiController
         var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT [Id],[ConsignmentNo],[DateTime],[LocationId],[PickupNo],[Postcode],[Pl9No],[ShipperAccountNo],[ParentWeight] FROM [PosEntt].[EnttAcceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
+        using (var cmd = new SqlCommand("SELECT [Id],[ConsignmentNo],[DateTime],[LocationId],[PickupNo],[Postcode],[Pl9No],[ShipperAccountNo],[ParentWeight] FROM [Entt].[Acceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
@@ -91,10 +91,10 @@ public class RtsScannerAppsController : BaseApiController
     [HttpGet]
     public async Task<IHttpActionResult> DownloadAcceptanceConnoteAsync(string branch)
     {
-        var connectionString = ConfigurationManager.GetEnvironmentVariable("SqlConnectionString");
+        var connectionString = ConfigurationManager.GetEnvironmentVariable("EnttConnectionString");
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
-        using (var cmd = new SqlCommand("SELECT DISTINCT [ConsignmentNo] FROM [PosEntt].[EnttAcceptance] WHERE ([LocationId] = @LocationId AND [DateTime] >= @StartDate AND [DateTime] <= @EndDate) OR ([IsPupStatCode] = 1 AND [PupStatCodeLocation] = @LocationId AND [PupStatCodeDateTime] >= @StartDate AND [PupStatCodeDateTime] <= @EndDate) OR ([IsMissort] = 1 AND [MissortLocation] = @LocationId AND[MissortDateTime] >= @StartDate AND[MissortDateTime] <= @EndDate)", conn))
+        using (var cmd = new SqlCommand("SELECT DISTINCT [ConsignmentNo] FROM [Entt].[Acceptance] WHERE ([LocationId] = @LocationId AND [DateTime] >= @StartDate AND [DateTime] <= @EndDate) OR ([IsPupStatCode] = 1 AND [PupStatCodeLocation] = @LocationId AND [PupStatCodeDateTime] >= @StartDate AND [PupStatCodeDateTime] <= @EndDate) OR ([IsMissort] = 1 AND [MissortLocation] = @LocationId AND[MissortDateTime] >= @StartDate AND[MissortDateTime] <= @EndDate)", conn))
         {
             if (conn.State != ConnectionState.Open)
                 conn.Open();
