@@ -1,0 +1,38 @@
+{
+  "$type": "Bespoke.Sph.Integrations.Adapters.RestApiReceiveLocation, restapi.adapter",
+  "BufferAllRows": true,
+  "RejectPartial": true,
+  "BaseAddress": "http://localhost:8080",
+  "ContentType": null,
+  "InboundMapping": null,
+  "InboundType": null,
+  "Method": "POST",
+  "Route": "~/api/rts/ipsexp",
+  "InProcess": true,
+  "Headers": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Integrations.Adapters.HttpHeader, restapi.adapter]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "IpsExportRestEndPoint",
+  "IsActive": false,
+  "ValidationEndpoint": null,
+  "ValidationMethod": null,
+  "SubmitEndpoint": "-",
+  "SubmitMethod": "-",
+  "InvalidEndpoint": null,
+  "InvalidMethod": null,
+  "ErrorEndpoint": null,
+  "ErrorMethod": null,
+  "JwtToken": null,
+  "ReceivePort": "ips-export-port",
+  "CreatedBy": "admin",
+  "Id": "ips-export-rest-end-point",
+  "CreatedDate": "2017-09-26T10:08:45.6333303+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-09-26T10:08:45.6333303+08:00",
+  "WebId": "c91b00d9-0a9c-44a1-96e9-2b7231b0f29d"
+}
