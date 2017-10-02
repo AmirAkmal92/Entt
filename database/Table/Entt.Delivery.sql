@@ -35,7 +35,6 @@ CREATE TABLE [Entt].[Delivery](
 	[BatchName] [varchar](60) NULL,
 	[DamageCode] [tinyint] NULL,
 	[DataFlag] [varchar](1) NULL,
-	[ItemTypeCode] [varchar](2) NULL,
 	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] VARCHAR(50) NULL,
 	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),

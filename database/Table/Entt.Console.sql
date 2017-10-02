@@ -1,10 +1,10 @@
-CREATE TABLE [dbo].[Console](
+CREATE TABLE [Entt].[Console](
 	[Id] [varchar](50) PRIMARY KEY NOT NULL,
 	[Version] [int] NOT NULL,
 	[EventType] [varchar](1) NULL,
 	[EventTypeName] [varchar](50) NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] SMALLDATETIME NOT NULL
+	[DateTime] SMALLDATETIME NOT NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30),
 	[OfficeNextCode] [varchar](4),
