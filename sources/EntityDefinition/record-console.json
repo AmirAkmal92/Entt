@@ -530,30 +530,6 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "5c025fce-9c71-44e4-b18a-1f3a89b63733"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 0,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "EventTypeName",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "9ca6c447-f277-4df8-a8fe-47f7949e659e"
       }
     ]
   },
@@ -584,17 +560,17 @@
   },
   "Name": "RecordConsole",
   "Plural": "RecordConsoles",
-  "IconClass": "fa fa-crosshairs",
+  "IconClass": "",
   "RecordName": "ConsignmentNo",
   "IsPublished": true,
   "TreatDataAsSource": false,
-  "Transient": true,
-  "StoreInDatabase": false,
+  "Transient": false,
+  "StoreInDatabase": null,
   "StoreInElasticsearch": null,
   "CreatedBy": "admin",
   "Id": "record-console",
   "CreatedDate": "2017-10-02T17:35:05.25101+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-03T14:47:55.6146175+08:00",
+  "ChangedDate": "2017-10-02T18:11:14.029053+08:00",
   "WebId": "98a77d11-ba4c-47d0-a2f7-b01498a23b4e"
 }

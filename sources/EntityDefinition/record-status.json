@@ -6,7 +6,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.Int32, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -54,7 +54,7 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.DateTime, mscorlib",
-        "IsNullable": false,
+        "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
         "IsFilterable": false,
@@ -403,6 +403,6 @@
   "Id": "record-status",
   "CreatedDate": "2017-10-02T14:05:20.9383754+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-03T14:30:02.1413863+08:00",
+  "ChangedDate": "2017-10-02T17:31:10.3228+08:00",
   "WebId": "c8defa6c-78fd-4d56-aaaa-7f9fa0fc9251"
 }
