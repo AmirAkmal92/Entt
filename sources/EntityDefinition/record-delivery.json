@@ -5,7 +5,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
+        "TypeName": "System.Int32, mscorlib",
         "IsNullable": false,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -883,6 +883,6 @@
   "Id": "record-delivery",
   "CreatedDate": "2017-10-02T11:58:26.5137609+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-02T16:43:11.8481513+08:00",
+  "ChangedDate": "2017-10-03T15:07:19.8453451+08:00",
   "WebId": "a99626f3-888f-4666-8f4b-089336770271"
 }
