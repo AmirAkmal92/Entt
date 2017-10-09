@@ -10000,13 +10000,13 @@
               "WebId": "Entt-Delivery-2"
             },
             {
-              "$type": "Bespoke.Sph.Integrations.Adapters.Columns.NullableTinyIntColumn, sqlserver.adapter",
-              "SqlType": "TinyInt",
+              "$type": "Bespoke.Sph.Integrations.Adapters.Columns.NullableIntColumn, sqlserver.adapter",
+              "SqlType": "Int",
               "CanWrite": true,
-              "Length": 1,
+              "Length": 4,
               "IsSelected": false,
               "Unsupported": false,
-              "DbType": "tinyint",
+              "DbType": "int",
               "ClrName": "DamageCode",
               "IsPrimaryKey": false,
               "IsVersion": false,
@@ -10030,7 +10030,7 @@
                 "TypeName": null,
                 "WebId": null
               },
-              "TypeName": "System.Byte, mscorlib",
+              "TypeName": "System.Int32, mscorlib",
               "IsNullable": true,
               "IsNotIndexed": false,
               "IsAnalyzed": false,
@@ -13259,6 +13259,6 @@
   "Id": "entt",
   "CreatedDate": "2017-09-12T08:01:03.002259+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-02T18:17:21.3886954+08:00",
+  "ChangedDate": "2017-10-09T14:17:02.6518838+08:00",
   "WebId": "4a95fb10-a802-44cb-a07b-5b12684b5a9d"
 }

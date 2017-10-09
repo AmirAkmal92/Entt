@@ -33,7 +33,7 @@ CREATE TABLE [Entt].[Delivery](
 	[DropLocation] [varchar](20) NULL,
 	[CodAccount] [varchar](20) NULL,
 	[BatchName] [varchar](60) NULL,
-	[DamageCode] [tinyint] NULL,
+	[DamageCode] [int] NULL,
 	[DataFlag] [varchar](1) NULL,
 	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] VARCHAR(50) NULL,
