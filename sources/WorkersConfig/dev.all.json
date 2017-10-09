@@ -1,542 +1,574 @@
 {
-  "name": "dev",
-  "description": "Development on local machines",
-  "isEnabled": true,
-  "environment": "dev",
-  "subscriberConfigs": [
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_entt-acceptance-entt-acceptance-platform",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEnttAcceptancePlatformTriggerSubscriber",
-      "assembly": "subscriber.trigger.entt-acceptance-entt-acceptance-platform"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_stat-rts-status-code-pup-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatusCodePupToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.stat-rts-status-code-pup-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_miss-rts-missort-to-entt-acceptance-update",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissortToEnttAcceptanceUpdateTriggerSubscriber",
-      "assembly": "subscriber.trigger.miss-rts-missort-to-entt-acceptance-update"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_mail-item-ips-export-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MailItemIpsExportToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.mail-item-ips-export-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_ipos-pem-rts-pem-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_ipos-pem-rts-pem-to-ips-import",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToIpsImportTriggerSubscriber",
-      "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-ips-import"
-    },
-     {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_intranet-pem-intranet-pem-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IntranetPemIntranetPemToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.intranet-pem-intranet-pem-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_ipos-pem-ipos-pem-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemIposPemToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.ipos-pem-ipos-pem-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_ipos-boem-ipos-boem-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposBoemIposBoemToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.ipos-boem-ipos-boem-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_acceptance-data-prs-acceptance-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.AcceptanceDataPrsAcceptanceToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.acceptance-data-prs-acceptance-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sap-ageing-sap-ageing-file-drop-trigger",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapAgeingSapAgeingFileDropTriggerSubscriber",
-      "assembly": "subscriber.trigger.sap-ageing-sap-ageing-file-drop-trigger"
-    },
-    {
-      "instancesCount": 0,
-      "prefetchCount": 0,
-      "priority": 0,
-      "queueName": "trigger_subs_entt-acceptance-ezi-send-pickup-notifier",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEziSendPickupNotifierTriggerSubscriber",
-      "assembly": "subscriber.trigger.entt-acceptance-ezi-send-pickup-notifier"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-rts-pickup-to-entt-platform-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToEnttPlatformAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-rts-pickup-to-entt-platform-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-rts-pickup-babies-to-entt-acceptance",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupBabiesToEnttAcceptanceTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-rts-pickup-babies-to-entt-acceptance"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "DataTransferSchedulerSubscriber",
-      "fullName": "subscriber.data.transfer.DataTransferSchedulerSubscriber",
-      "assembly": "subscriber.data.transfer"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
-      "fullName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
-      "assembly": "subscriber.elasticsearch.indexer"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "es.data-import",
-      "fullName": "Bespoke.Sph.ElasticSearch.DataImportSubscriber",
-      "assembly": "subscriber.elasticsearch.indexer"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "system_asset_es_indexer",
-      "fullName": "Bespoke.Sph.ElasticSearch.SystemAssetIndexerSubscriber",
-      "assembly": "subscriber.elasticsearch.indexer"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_form_gen",
-      "fullName": "subscriber.entities.EntityFormSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_es_mapping_gen",
-      "fullName": "subscriber.entities.EntityIndexerMappingSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_view_gen",
-      "fullName": "subscriber.entities.EntityViewSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_code_gen",
-      "fullName": "subscriber.entities.EntityCodeSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "dialog_gen",
-      "fullName": "subscriber.entities.FormDialogSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "partial_view_gen",
-      "fullName": "subscriber.entities.PartialViewSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_deleted",
-      "fullName": "subscriber.entities.EntityDefinitionDeletedSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "ed_sql_table",
-      "fullName": "subscriber.entities.SqlTableSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "WorkflowFormSubscriber",
-      "fullName": "subscriber.entities.WorkflowFormSubscriber",
-      "assembly": "subscriber.entities"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "persistence",
-      "fullName": "Bespoke.Sph.Persistence.PersistenceContextSubscriber",
-      "assembly": "subscriber.persistence"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "report_delivery_scheduler",
-      "fullName": "Bespoke.Sph.ReportDeliverySubscriptions.ReportDeliverySubscriber",
-      "assembly": "subscriber.report.delivery"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs",
-      "fullName": "Bespoke.Sph.CustomTriggers.TriggerSubscriber",
-      "assembly": "subscriber.trigger"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_hip-rts-hip-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.hip-rts-hip-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_rts-hop-added",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.RtsHopAddedTriggerSubscriber",
-      "assembly": "subscriber.trigger.rts-hop-added"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_delivery-rts-delivery-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-ips-import",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalIpsImportTriggerSubscriber",
-      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-ips-import"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_vasn-rts-vasn-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_comm-rts-comm-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.comm-rts-comm-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_miss-rts-miss-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.miss-rts-miss-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sip-rts-sip-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.sip-rts-sip-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sop-rts-sop-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.sop-rts-sop-to-oal"
-    },    
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_reve-rts-reve-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.ReveRtsReveToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.reve-rts-reve-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_stat-rts-stat-to-oal",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalTriggerSubscriber",
-      "assembly": "subscriber.trigger.stat-rts-stat-to-oal"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-rts-pickup-to-oal-ips-import",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalIpsImportTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-ips-import"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_stat-rts-stat-to-oal-ips-import",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalIpsImportTriggerSubscriber",
-      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-ips-import"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_vasn-rts-vasn-to-oal-ips-import",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalIpsImportTriggerSubscriber",
-      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-ips-import"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-oal-pickup-with-babies",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupOalPickupWithBabiesTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-oal-pickup-with-babies"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_pickup-rts-pickup-to-pss",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToPssTriggerSubscriber",
-      "assembly": "subscriber.trigger.pickup-rts-pickup-to-pss"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_norm-rts-norm-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_deco-rts-deco-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.deco-rts-deco-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sop-rts-sop-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.sop-rts-sop-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sip-rts-sip-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.sip-rts-sip-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_hip-rts-hip-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.hip-rts-hip-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_hop-rts-hop-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.hop-rts-hop-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_delivery-rts-delivery-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_stat-rts-stat-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.stat-rts-stat-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_vasn-rts-vasn-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_miss-rts-miss-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.miss-rts-miss-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_comm-rts-comm-to-oal-with-child",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalWithChildTriggerSubscriber",
-      "assembly": "subscriber.trigger.comm-rts-comm-to-oal-with-child"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_ipos-deposit-payment-ipos-deposit-post-to-snb",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
-      "assembly" : "subscriber.trigger.ipos-deposit-payment-ipos-deposit-post-to-snb"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sales-order-post-snb",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
-      "assembly": "subscriber.trigger.sales-order-post-snb"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "trigger_subs_sap-fi-account-create-account-with-snbweb-api",
-      "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapFiAccountCreateAccountWithSnbwebApiTriggerSubscriber",
-      "assembly": "subscriber.trigger.sap-fi-account-create-account-with-snbweb-api"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "source_queue",
-      "fullName": "subscriber.version.control.SourceSubscriber",
-      "assembly": "subscriber.version.control"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "watcher_queue",
-      "fullName": "Bespoke.Sph.WathersSubscribers.WatcherSubscriber",
-      "assembly": "subscriber.watcher"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "child_workflow_monitor",
-      "fullName": "Bespoke.Sph.WorkflowsExecution.ChildWorkflowMonitorSubscriber",
-      "assembly": "subscriber.workflow"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "workflow_terminated",
-      "fullName": "Bespoke.Sph.WorkflowsExecution.WorkflowInstantTerminatedSubscriber",
-      "assembly": "subscriber.workflow"
-    },
-    {
-      "instancesCount": 1,
-      "prefetchCount": 1,
-      "priority": 0,
-      "queueName": "workflow_execution",
-      "fullName": "Bespoke.Sph.WorkflowsExecution.WorkflowSubscriber",
-      "assembly": "subscriber.workflow"
-    }
-  ],
-  "createdBy": "erymuzuan",
-  "id": "dev",
-  "createdDate": "2016-10-07T00:00:00+08:00",
-  "changedBy": "erymuzuan",
-  "changedDate": "2016-10-07T00:00:00+08:00",
-  "webId": "dev"
+    "name": "dev",
+    "description": "Development on local machines",
+    "isEnabled": true,
+    "environment": "dev",
+    "subscriberConfigs": [
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_delivery-rts-delivery-to-record-delivery",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToRecordDeliveryTriggerSubscriber",
+            "assembly": "subscriber.trigger.delivery-rts-delivery-to-record-delivery"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-delivery-record-delivery-to-entt-delivery",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordDeliveryRecordDeliveryToEnttDeliveryTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-delivery-record-delivery-to-entt-delivery"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-console-record-console-to-entt-console",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordConsoleRecordConsoleToEnttConsoleTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-console-record-console-to-entt-console"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-status-record-stat-to-entt-stat",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordStatusRecordStatToEnttStatTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-status-record-stat-to-entt-stat"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_entt-acceptance-entt-acceptance-platform",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEnttAcceptancePlatformTriggerSubscriber",
+            "assembly": "subscriber.trigger.entt-acceptance-entt-acceptance-platform"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-status-code-pup-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatusCodePupToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-status-code-pup-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_miss-rts-missort-to-entt-acceptance-update",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissortToEnttAcceptanceUpdateTriggerSubscriber",
+            "assembly": "subscriber.trigger.miss-rts-missort-to-entt-acceptance-update"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_mail-item-ips-export-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.MailItemIpsExportToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.mail-item-ips-export-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_ipos-pem-rts-pem-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_ipos-pem-rts-pem-to-ips-import",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemRtsPemToIpsImportTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-pem-rts-pem-to-ips-import"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_intranet-pem-intranet-pem-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IntranetPemIntranetPemToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.intranet-pem-intranet-pem-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_ipos-pem-ipos-pem-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemIposPemToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-pem-ipos-pem-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_ipos-boem-ipos-boem-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposBoemIposBoemToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-boem-ipos-boem-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_acceptance-data-prs-acceptance-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.AcceptanceDataPrsAcceptanceToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.acceptance-data-prs-acceptance-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sap-ageing-sap-ageing-file-drop-trigger",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapAgeingSapAgeingFileDropTriggerSubscriber",
+            "assembly": "subscriber.trigger.sap-ageing-sap-ageing-file-drop-trigger"
+        },
+        {
+            "instancesCount": 0,
+            "prefetchCount": 0,
+            "priority": 0,
+            "queueName": "trigger_subs_entt-acceptance-ezi-send-pickup-notifier",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEziSendPickupNotifierTriggerSubscriber",
+            "assembly": "subscriber.trigger.entt-acceptance-ezi-send-pickup-notifier"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-entt-platform-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToEnttPlatformAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-entt-platform-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-babies-to-entt-acceptance",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupBabiesToEnttAcceptanceTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-babies-to-entt-acceptance"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "DataTransferSchedulerSubscriber",
+            "fullName": "subscriber.data.transfer.DataTransferSchedulerSubscriber",
+            "assembly": "subscriber.data.transfer"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
+            "fullName": "Bespoke.Sph.ElasticSearch.CustomEntityIndexerSubscriber",
+            "assembly": "subscriber.elasticsearch.indexer"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "es.data-import",
+            "fullName": "Bespoke.Sph.ElasticSearch.DataImportSubscriber",
+            "assembly": "subscriber.elasticsearch.indexer"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "system_asset_es_indexer",
+            "fullName": "Bespoke.Sph.ElasticSearch.SystemAssetIndexerSubscriber",
+            "assembly": "subscriber.elasticsearch.indexer"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_form_gen",
+            "fullName": "subscriber.entities.EntityFormSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_es_mapping_gen",
+            "fullName": "subscriber.entities.EntityIndexerMappingSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_view_gen",
+            "fullName": "subscriber.entities.EntityViewSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_code_gen",
+            "fullName": "subscriber.entities.EntityCodeSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "dialog_gen",
+            "fullName": "subscriber.entities.FormDialogSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "partial_view_gen",
+            "fullName": "subscriber.entities.PartialViewSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_deleted",
+            "fullName": "subscriber.entities.EntityDefinitionDeletedSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "ed_sql_table",
+            "fullName": "subscriber.entities.SqlTableSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "WorkflowFormSubscriber",
+            "fullName": "subscriber.entities.WorkflowFormSubscriber",
+            "assembly": "subscriber.entities"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "persistence",
+            "fullName": "Bespoke.Sph.Persistence.PersistenceContextSubscriber",
+            "assembly": "subscriber.persistence"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "report_delivery_scheduler",
+            "fullName": "Bespoke.Sph.ReportDeliverySubscriptions.ReportDeliverySubscriber",
+            "assembly": "subscriber.report.delivery"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs",
+            "fullName": "Bespoke.Sph.CustomTriggers.TriggerSubscriber",
+            "assembly": "subscriber.trigger"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hip-rts-hip-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.hip-rts-hip-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_rts-hop-added",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RtsHopAddedTriggerSubscriber",
+            "assembly": "subscriber.trigger.rts-hop-added"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_delivery-rts-delivery-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_delivery-rts-delivery-to-oal-ips-import",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalIpsImportTriggerSubscriber",
+            "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-ips-import"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_vasn-rts-vasn-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_comm-rts-comm-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.comm-rts-comm-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_miss-rts-miss-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.miss-rts-miss-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sip-rts-sip-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.sip-rts-sip-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sop-rts-sop-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.sop-rts-sop-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_reve-rts-reve-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.ReveRtsReveToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.reve-rts-reve-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-stat-to-oal",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-stat-to-oal"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-oal-ips-import",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalIpsImportTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-ips-import"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-stat-to-oal-ips-import",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalIpsImportTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-stat-to-oal-ips-import"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_vasn-rts-vasn-to-oal-ips-import",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalIpsImportTriggerSubscriber",
+            "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-ips-import"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-oal-pickup-with-babies",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupOalPickupWithBabiesTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-oal-pickup-with-babies"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-pss",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToPssTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-pss"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_norm-rts-norm-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_deco-rts-deco-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.deco-rts-deco-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sop-rts-sop-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.sop-rts-sop-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sip-rts-sip-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.sip-rts-sip-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hip-rts-hip-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.hip-rts-hip-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hop-rts-hop-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.hop-rts-hop-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_delivery-rts-delivery-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-stat-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-stat-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_vasn-rts-vasn-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.vasn-rts-vasn-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_miss-rts-miss-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.MissRtsMissToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.miss-rts-miss-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_comm-rts-comm-to-oal-with-child",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.CommRtsCommToOalWithChildTriggerSubscriber",
+            "assembly": "subscriber.trigger.comm-rts-comm-to-oal-with-child"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_ipos-deposit-payment-ipos-deposit-post-to-snb",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposDepositPaymentIposDepositPostToSnbTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-deposit-payment-ipos-deposit-post-to-snb"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sales-order-post-snb",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SalesOrderPostSnbTriggerSubscriber",
+            "assembly": "subscriber.trigger.sales-order-post-snb"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sap-fi-account-create-account-with-snbweb-api",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SapFiAccountCreateAccountWithSnbwebApiTriggerSubscriber",
+            "assembly": "subscriber.trigger.sap-fi-account-create-account-with-snbweb-api"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "source_queue",
+            "fullName": "subscriber.version.control.SourceSubscriber",
+            "assembly": "subscriber.version.control"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "watcher_queue",
+            "fullName": "Bespoke.Sph.WathersSubscribers.WatcherSubscriber",
+            "assembly": "subscriber.watcher"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "child_workflow_monitor",
+            "fullName": "Bespoke.Sph.WorkflowsExecution.ChildWorkflowMonitorSubscriber",
+            "assembly": "subscriber.workflow"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "workflow_terminated",
+            "fullName": "Bespoke.Sph.WorkflowsExecution.WorkflowInstantTerminatedSubscriber",
+            "assembly": "subscriber.workflow"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "workflow_execution",
+            "fullName": "Bespoke.Sph.WorkflowsExecution.WorkflowSubscriber",
+            "assembly": "subscriber.workflow"
+        }
+    ],
+    "createdBy": "erymuzuan",
+    "id": "dev",
+    "createdDate": "2016-10-07T00:00:00+08:00",
+    "changedBy": "erymuzuan",
+    "changedDate": "2016-10-07T00:00:00+08:00",
+    "webId": "dev"
 }
