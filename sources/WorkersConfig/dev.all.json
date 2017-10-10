@@ -8,6 +8,14 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_entt-acceptance-entt-acceptance-to-cms-update",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.EnttAcceptanceEnttAcceptanceToCmsUpdateTriggerSubscriber",
+            "assembly": "subscriber.trigger.entt-acceptance-entt-acceptance-to-cms-update"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_delivery-rts-delivery-to-record-delivery",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToRecordDeliveryTriggerSubscriber",
             "assembly": "subscriber.trigger.delivery-rts-delivery-to-record-delivery"

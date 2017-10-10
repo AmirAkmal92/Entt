@@ -49,3 +49,7 @@ env.posentt.ws27.ps1
 /sources/rts.ipos.boems.trigger.actions/obj
 /sources/rts.ips.export.trigger/bin
 /sources/rts.ips.export.trigger/obj
+/sources/entt.acceptance.ipc.poller/bin
+/sources/entt.acceptance.ipc.poller/obj
+/sources/entt.acceptance.customactions/bin
+/sources/entt.acceptance.customactions/obj
