@@ -4,6 +4,14 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
+       {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-status-to-entt-status",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatusToEnttStatusTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-status-to-entt-status"
+        },
         {
             "instancesCount": 1,
             "prefetchCount": 1,
