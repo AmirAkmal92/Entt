@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rts.ipos.boems.trigger.acti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rts.ips.export.trigger", "sources\rts.ips.export.trigger\rts.ips.export.trigger.csproj", "{F9AB36C8-DA90-4CAB-A139-A99809221B7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entt.acceptance.customactions", "sources\entt.acceptance.customactions\entt.acceptance.customactions.csproj", "{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{F9AB36C8-DA90-4CAB-A139-A99809221B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9AB36C8-DA90-4CAB-A139-A99809221B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9AB36C8-DA90-4CAB-A139-A99809221B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

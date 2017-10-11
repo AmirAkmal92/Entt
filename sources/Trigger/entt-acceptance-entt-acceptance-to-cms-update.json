@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.CmsAcceptanceApiUpdateAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "a114897c-be36-4130-a840-9cf66106529c"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "EnttAcceptanceToCmsUpdate",
+  "Entity": "EnttAcceptance",
+  "TypeOf": "Bespoke.PosEntt.EnttAcceptances.Domain.EnttAcceptance, PosEntt.EnttAcceptance",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "EnttAcceptanceEnttAcceptanceToCmsUpdateTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "entt-acceptance-entt-acceptance-to-cms-update",
+  "CreatedDate": "2017-10-10T12:03:35.3070796+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-10-10T14:56:25.2741198+08:00",
+  "WebId": "fbe5a358-eebb-47ca-8240-6e889ffac5a8"
+}
