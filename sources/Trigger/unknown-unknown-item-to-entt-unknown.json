@@ -1,0 +1,111 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "unknown-item-to-entt-unknown",
+        "Adapter": "Entt",
+        "Operation": null,
+        "Table": "Unknown",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 3,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "UnknownItemToEnttUnknown",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "49841862-2dff-4c23-fd94-bfb14655196f"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Unknown",
+        "FullName": "PosEntt.Unknown, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Unknown.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.UnknownItemToEnttUnknown",
+        "FullName": "PosEntt.UnknownItemToEnttUnknown, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.UnknownItemToEnttUnknown.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Entt",
+        "FullName": "PosEntt.Entt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Entt.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "UnknownItemToEnttUnknown",
+  "Entity": "Unknown",
+  "TypeOf": "Bespoke.PosEntt.Unknowns.Domain.Unknown, PosEntt.Unknown",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "UnknownUnknownItemToEnttUnknownTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "unknown-unknown-item-to-entt-unknown",
+  "CreatedDate": "2017-10-17T11:43:01.4604177+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-10-17T14:50:00.6266829+08:00",
+  "WebId": "eb9cf5c8-b183-4ade-8caf-d22f22faa8d7"
+}

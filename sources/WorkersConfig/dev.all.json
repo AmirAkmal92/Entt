@@ -4,6 +4,14 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_unknown-unknown-item-to-entt-unknown",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.UnknownUnknownItemToEnttUnknownTriggerSubscriber",
+            "assembly": "subscriber.trigger.unknown-unknown-item-to-entt-unknown"
+        },
        {
             "instancesCount": 1,
             "prefetchCount": 1,
