@@ -1,12 +1,13 @@
 {
-    "recordsip":{
+    "recordhop":{
         "properties":{
             "CreatedBy": {"type": "string", "index":"not_analyzed"},
             "ChangedBy": {"type": "string", "index":"not_analyzed"},
             "WebId": {"type": "string", "index":"not_analyzed"},
             "CreatedDate": {"type": "date"},
             "ChangedDate": {"type": "date"},
-             "CourierId":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "ConsignmentNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Version":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false},
              "EventName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "Comment":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "Channel":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
@@ -15,12 +16,13 @@
              "OfficeName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "OfficeNextCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "BeatNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
-             "ConsignmentNo":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "Courierid":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "CourierName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "ItemTypeCode":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DestOfficeId":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
+             "DestOfficeName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
              "BatchName":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
-             "DataFlag":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true},
-             "Version":{"type":"integer","index":"analyzed","boost":1,"include_in_all":true,"ignore_malformed":false}
+             "DataFlag":{"type":"string","index":"not_analyzed","boost":1,"include_in_all":true}
         }
     }
 }
