@@ -3,7 +3,6 @@ CREATE TABLE [Entt].[Sip](
 	[Version] [int] NOT NULL,
 	[EventName] [varchar](50) NULL,/*EventRemarkDisplay*/
 	[Channel] [varchar](3) NULL,
-	[physical_channel] [varchar](2) NULL,
 	[Comment] [varchar](50) NULL,
 	[DateTime] SMALLDATETIME Not NULL,
   [OfficeNo] [varchar](4) NULL,
