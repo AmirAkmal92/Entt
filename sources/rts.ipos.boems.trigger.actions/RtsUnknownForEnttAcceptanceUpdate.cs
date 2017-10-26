@@ -33,9 +33,8 @@ namespace Bespoke.PosEntt.CustomActions
 
         private async Task UpdateEnttUnknownAsync(Unknown unknown)
         {
-            var json = unknown.ToJsonString();
-            var query = $"UPDATE [PosEntt].[Unknown] SET [Status] = '{unknown.Status}', [PupDateTime] = '{unknown.PupDateTime}', [Json] = '{json}' WHERE [Id] = '{unknown.Id}'";
-            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            var query = $"UPDATE [Entt].[Unknown] SET [Status] = '{unknown.Status}', [PupDateTime] = '{unknown.PupDateTime}' WHERE [Id] = '{unknown.Id}'";
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Entt"].ConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {
                 await conn.OpenAsync();
@@ -46,8 +45,8 @@ namespace Bespoke.PosEntt.CustomActions
         protected async Task<Unknown> GetEnttUnknownAsync(string consignmentNo)
         {
             Unknown unknown = null;
-            var query = $"SELECT TOP 1 [Json] FROM [PosEntt].[Unknown]  WHERE [ConsignmentNo] = '{consignmentNo}' ORDER BY [CreatedDate] DESC";
-            using (var conn = new SqlConnection(ConfigurationManager.SqlConnectionString))
+            var query = $"SELECT TOP 1 [Id] FROM [Entt].[Unknown] WHERE [ConsignmentNo] = '{consignmentNo}' ORDER BY [CreatedDate] DESC";
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Entt"].ConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {
                 await conn.OpenAsync();
@@ -55,8 +54,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     while (await reader.ReadAsync())
                     {
-                        var json = reader["Json"].ReadNullableString();
-                        unknown = JsonSerializerService.DeserializeFromJson<Unknown>(json);
+                        unknown = new Unknown { Id = reader.GetString(0) };
                     }
                 }
             }
