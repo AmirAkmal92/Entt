@@ -1,6 +1,6 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
-  "Path": null,
+  "Path": "C:\\Temp",
   "CredentialUserName": null,
   "ChangeExtension": false,
   "CredentialPassword": null,
