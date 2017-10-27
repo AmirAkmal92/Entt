@@ -19,10 +19,10 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var missort = context.Item as Miss;
             if (null == missort) return;
-            Run(missort);
+            await Run(missort);
         }
 
-        public void Run(Miss miss)
+        public async Task Run(Miss miss)
         {
             var pr = Policy.Handle<SqlException>()
                   .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))

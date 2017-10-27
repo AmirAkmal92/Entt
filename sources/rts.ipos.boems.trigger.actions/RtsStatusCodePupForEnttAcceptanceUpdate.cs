@@ -22,11 +22,11 @@ namespace Bespoke.PosEntt.CustomActions
             if (null == stat) return;
             var validCodes = new [] { "11", "12", "21", "22", "26", "27", "28", "29", "30", "31", "38", "43", "45", "47", "49", "55", "56" };
             if (!validCodes.Contains(stat.StatusCode)) return;
-            Run(stat);
+            await Run(stat);
 
         }
 
-        public void Run(Stat stat)
+        public async Task Run(Stat stat)
         {
             var pr = Policy.Handle<SqlException>()
                   .WaitAndRetryAsync(3, c => TimeSpan.FromMilliseconds(c * 200))
@@ -42,7 +42,7 @@ namespace Bespoke.PosEntt.CustomActions
             var date = stat.Date;
             date = date.AddHours(stat.Time.Hour).AddMinutes(stat.Time.Minute).AddSeconds(stat.Time.Second).AddMilliseconds(stat.Time.Millisecond);
 
-            var query = $"UPDATE [Entt].[Acceptance] SET [IsPupStatCode] = 1, [PupStatCodeId] = '{stat.StatusCode}', [PupStatCodeLocation] = '{stat.LocationId}', [PupStatCodeDateTime] = '{date}' WHERE [ConsignmentNo] = '{stat.ConsignmentNo}'";
+            var query = $"UPDATE [Entt].[Acceptance] SET [IsPupStatCode] = 1, [PupStatCodeId] = '{stat.StatusCode}', [PupStatCodeLocation] = '{stat.LocationId}', [PupStatCodeDateTime] = '{date.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE [ConsignmentNo] = '{stat.ConsignmentNo}'";
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Entt"].ConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {
