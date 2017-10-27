@@ -23,6 +23,27 @@
         },
         "Operator": "Le",
         "WebId": "4a39510e-a29b-4b1f-983a-4ba999073233"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff68885877",
+          "Script": "item.ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "68885877-b639-4e74-9d75-eb3784083317"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "-",
+          "Name": "null",
+          "Note": "",
+          "WebId": "814cecfe-2141-44d7-c48f-309567ad39cb"
+        },
+        "Operator": "Neq",
+        "WebId": "a9265fde-8df1-40ea-aea2-e90aae6c3536"
       }
     ]
   },
@@ -175,6 +196,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-29T07:17:12.7264408+08:00",
+  "ChangedDate": "2017-10-24T10:03:30.428911+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }

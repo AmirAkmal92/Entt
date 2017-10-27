@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff4435870b",
+          "Script": "item.ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "4435870b-5953-47e2-88d3-ded01f337c08"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "-",
+          "Name": "null",
+          "Note": "",
+          "WebId": "ed043f23-5c14-4081-a5f8-3f79310abae0"
+        },
+        "Operator": "Neq",
+        "WebId": "2cc03b68-d88b-4aac-a8c0-62c64c7c5c52"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -40,6 +62,6 @@
   "Id": "pickup-rts-pickup-babies-to-entt-acceptance",
   "CreatedDate": "2017-08-04T11:26:50.7842702+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-09-29T12:42:29.7336837+08:00",
+  "ChangedDate": "2017-10-24T10:06:58.220782+08:00",
   "WebId": "e7496b8e-23dc-4798-90ab-4fe4fb0595db"
 }

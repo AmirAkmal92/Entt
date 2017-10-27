@@ -46,6 +46,27 @@
         },
         "Operator": "Gt",
         "WebId": "69d0f607-d10f-44ec-8ff8-39a186b291c1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff5a9dc748",
+          "Script": "item.ConsignmentNo",
+          "Name": "ConsignmentNo",
+          "Note": "",
+          "WebId": "5a9dc748-9e94-4ba6-f0b9-cbc6cf084c0f"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "-",
+          "Name": "null",
+          "Note": "",
+          "WebId": "a189411b-a32b-4d08-f8ce-c937f2ceb397"
+        },
+        "Operator": "Neq",
+        "WebId": "72564628-bf2f-454c-a5e4-d4cb4d866808"
       }
     ]
   },
@@ -140,6 +161,6 @@
   "Id": "pickup-rts-pickup-to-oal-ips-import",
   "CreatedDate": "2016-11-16T07:30:31.4853265+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T16:02:25.0241077+08:00",
+  "ChangedDate": "2017-10-24T10:34:14.6904711+08:00",
   "WebId": "453029c7-32e7-4939-8848-a7e08b9f966d"
 }
