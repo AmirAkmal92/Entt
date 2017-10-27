@@ -2,7 +2,7 @@ CREATE TABLE [Entt].[StatusCode](
   [Id] VARCHAR(50) PRIMARY KEY NOT NULL,
 	[Version] [int] NOT NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] SMALLDATETIME NOT NULL,
+	[DateTime] DATETIME NOT NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,

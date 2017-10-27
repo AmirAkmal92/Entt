@@ -4,7 +4,7 @@ CREATE TABLE [Entt].[Hip](
 	[EventName] [varchar](50) NULL, /*EventRemarkDisplay*/
 	[Channel] [varchar](3) NULL,
 	[Comment] [varchar](50) NULL,
-	[DateTime] SMALLDATETIME NOT NULL,
+	[DateTime] DATETIME NOT NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,

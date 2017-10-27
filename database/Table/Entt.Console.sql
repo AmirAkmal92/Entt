@@ -4,7 +4,7 @@ CREATE TABLE [Entt].[Console](
 	[EventType] [varchar](1) NULL,
 	[EventTypeName] [varchar](50) NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] SMALLDATETIME NOT NULL,
+	[DateTime] DATETIME NOT NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30),
 	[OfficeNextCode] [varchar](4),

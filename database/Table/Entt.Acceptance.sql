@@ -1,74 +1,75 @@
 CREATE TABLE [Entt].[Acceptance](
-  [Id] VARCHAR(50) PRIMARY KEY NOT NULL
-,[Version] INT NOT NULL
-,[ModuleId] VARCHAR(2) NULL
-,[ConsignmentNo] VARCHAR(50) NOT NULL
-,[DateTime] SMALLDATETIME NOT NULL
-,[PickupNo] VARCHAR(10) NULL
-,[TotalConsignment] INT NULL
-,[IsParent] BIT  NULL
-,[Parent] VARCHAR(20)  NULL
-,[Postcode] VARCHAR(5)  NULL
-,[ParentWeight] float  NULL
-,[TotalItem] INT  NULL
-,[ProductType] VARCHAR(10)  NULL
-,[ProductTypeDescription] VARCHAR(100)  NULL
-,[PackageType] VARCHAR(10)  NULL
-,[PackageTypeDescription] VARCHAR(100)  NULL
-,[Country] VARCHAR(50)  NULL
-,[Height] float  NULL
-,[Width] float  NULL
-,[Length] float  NULL
-,[Weight] float  NULL
-,[ItemCategory] VARCHAR(2)  NULL
-,[ItemCategoryDescription] VARCHAR(50)  NULL
-,[TotalBaby] INT  NULL
-,[TotalParent] INT  NULL
-,[RoutingCode] VARCHAR(50)  NULL
-,[TotalWeight] float  NULL
-,[TotalDimWeight] float  NULL
-,[Price] MONEY  NULL
-,[ConsignmentFee] MONEY  NULL
-,[CourierId] VARCHAR(30)  NULL
-,[CourierName] VARCHAR(50)  NULL
-,[LocationId] VARCHAR(10)  NULL
-,[LocationName] VARCHAR(50)  NULL
-,[BeatNo] VARCHAR(3)  NULL
-,[SystemId] VARCHAR(3)  NULL
-,[SystemName] VARCHAR(50)  NULL
-,[WeightDensity] float  NULL
-,[WeightVolumetric] float  NULL
-,[ConsigneeAddressPostcode] VARCHAR(5)  NULL
-,[ConsigneeAddressCountry] VARCHAR(30)  NULL
-,[ShipperAccountNo] VARCHAR(10)  NULL
-,[ShipperAddressPostcode] VARCHAR(5)  NULL
-,[ShipperAddressCountry] VARCHAR(30)  NULL
-,[IposReceiptNo] VARCHAR(30)  NULL
-,[FailPickupReason] VARCHAR(2)  NULL
-,[Comment] VARCHAR(255)  NULL
-,[DropCode] VARCHAR(2)  NULL
-,[LatePickup] VARCHAR(1)  NULL
-,[Pl9No] VARCHAR(10)  NULL
-,[PickupDateTime] SMALLDATETIME  NULL
-,[ClerkId] VARCHAR(10)  NULL
-,[DropOption] VARCHAR(1)  NULL
-,[DestinationServiceStandard] VARCHAR(50)  NULL
-,[ExpectedDeliveryDateTime] SMALLDATETIME  NULL
-,[DeliveryBranchId] VARCHAR(10)  NULL
-,[DeliveryBranchName] VARCHAR(50)  NULL
-,[IsContract] BIT  NULL
-,[IsBilled] BIT  NULL
-,[IsMissort] BIT  NULL
-,[MissortLocation] VARCHAR(10)  NULL
-,[MissortDateTime] SMALLDATETIME  NULL
-,[IsPupStatCode] BIT  NULL
-,[PupStatCodeId] VARCHAR(10)  NULL
-,[PupStatCodeLocation] VARCHAR(50)  NULL
-,[PupStatCodeDateTime] SMALLDATETIME  NULL
-,[ScannerId] VARCHAR(10)  NULL
-,[HubCode] VARCHAR(10)  NULL
-,[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
-,[CreatedBy] VARCHAR(50) NULL
-,[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE()
-,[ChangedBy] VARCHAR(50) NULL
-)
+	[Id] [varchar](50) NOT NULL,
+	[Version] [int] NOT NULL,
+	[ModuleId] [varchar](2) NOT NULL,
+	[ConsignmentNo] [varchar](50) NOT NULL,
+	[DateTime] [DateTime] NOT NULL,
+	[PickupNo] [varchar](10) NULL,
+	[TotalConsignment] [int] NULL,
+	[IsParent] [bit] NULL,
+	[Parent] [varchar](20) NULL,
+	[Postcode] [varchar](5) NULL,
+	[ParentWeight] [float] NULL,
+	[TotalItem] [int] NULL,
+	[ProductType] [varchar](10) NULL,
+	[ProductTypeDescription] [varchar](100) NULL,
+	[PackageType] [varchar](10) NULL,
+	[PackageTypeDescription] [varchar](100) NULL,
+	[Country] [varchar](50) NULL,
+	[Height] [float] NULL,
+	[Width] [float] NULL,
+	[Length] [float] NULL,
+	[Weight] [float] NULL,
+	[ItemCategory] [varchar](2) NULL,
+	[ItemCategoryDescription] [varchar](50) NULL,
+	[TotalBaby] [int] NULL,
+	[TotalParent] [int] NULL,
+	[RoutingCode] [varchar](50) NULL,
+	[TotalWeight] [float] NULL,
+	[TotalDimWeight] [float] NULL,
+	[Price] [money] NULL,
+	[ConsignmentFee] [money] NULL,
+	[CourierId] [varchar](30) NULL,
+	[CourierName] [varchar](50) NULL,
+	[LocationId] [varchar](10) NULL,
+	[LocationName] [varchar](50) NULL,
+	[BeatNo] [varchar](3) NULL,
+	[SystemId] [varchar](3) NULL,
+	[SystemName] [varchar](50) NULL,
+	[WeightDensity] [float] NULL,
+	[WeightVolumetric] [float] NULL,
+	[ConsigneeAddressPostcode] [varchar](5) NULL,
+	[ConsigneeAddressCountry] [varchar](30) NULL,
+	[ShipperAccountNo] [varchar](10) NULL,
+	[ShipperAddressPostcode] [varchar](5) NULL,
+	[ShipperAddressCountry] [varchar](30) NULL,
+	[IposReceiptNo] [varchar](30) NULL,
+	[FailPickupReason] [varchar](2) NULL,
+	[Comment] [varchar](255) NULL,
+	[DropCode] [varchar](2) NULL,
+	[LatePickup] [varchar](1) NULL,
+	[Pl9No] [varchar](10) NULL,
+	[PickupDateTime] [DateTime] NULL,
+	[ClerkId] [varchar](10) NULL,
+	[DropOption] [varchar](1) NULL,
+	[DestinationServiceStandard] [varchar](50) NULL,
+	[ExpectedDeliveryDateTime] [DateTime] NULL,
+	[DeliveryBranchId] [varchar](10) NULL,
+	[DeliveryBranchName] [varchar](50) NULL,
+	[IsContract] [bit] NULL,
+	[IsBilled] [bit] NULL,
+	[FaultPostcode] [varchar](10) NULL,
+	[IsMissort] [bit] NULL,
+	[MissortLocation] [varchar](10) NULL,
+	[MissortDateTime] [DateTime] NULL,
+	[IsPupStatCode] [bit] NULL,
+	[PupStatCodeId] [varchar](10) NULL,
+	[PupStatCodeLocation] [varchar](50) NULL,
+	[PupStatCodeDateTime] [DateTime] NULL,
+	[ScannerId] [varchar](10) NULL,
+	[HubCode] [varchar](10) NULL,
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL
+	)
