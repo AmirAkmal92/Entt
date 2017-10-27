@@ -1,6 +1,6 @@
 {
   "$type": "Bespoke.Sph.Domain.FolderReceiveLocation, domain.sph",
-  "Path": "d:\\temp\\sap-account-ageing",
+  "Path": "C:\\Temp",
   "CredentialUserName": null,
   "ChangeExtension": true,
   "CredentialPassword": null,
