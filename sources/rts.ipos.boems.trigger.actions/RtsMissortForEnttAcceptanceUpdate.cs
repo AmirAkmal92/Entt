@@ -38,7 +38,7 @@ namespace Bespoke.PosEntt.CustomActions
             var date = miss.Date;
             date = date.AddHours(miss.Time.Hour).AddMinutes(miss.Time.Minute).AddSeconds(miss.Time.Second).AddMilliseconds(miss.Time.Millisecond);
 
-            var query = $"UPDATE [Entt].[Acceptance] SET [IsMissort] = 1, [MissortLocation] = '{miss.LocationId}', [MissortDateTime] = '{date}' WHERE [ConsignmentNo] = '{miss.ConsignmentNo}'";
+            var query = $"UPDATE [Entt].[Acceptance] SET [IsMissort] = 1, [MissortLocation] = '{miss.LocationId}', [MissortDateTime] = '{date.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE [ConsignmentNo] = '{miss.ConsignmentNo}'";
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Entt"].ConnectionString))
             using (var cmd = new SqlCommand(query, conn))
             {
