@@ -22,7 +22,7 @@ public class RtsScannerAppsController : BaseApiController
     [HttpGet]
     public async Task<IHttpActionResult> DownloadAcceptanceAsync(string branch)
     {
-        var connectionString = @"Server=(localdb)\ProjectsV13;Database=PosEntt;Trusted_Connection=True;";
+        var connectionString = @"Server=(localdb)\ProjectsV13;Database=Entt;Trusted_Connection=True;";
         var conn = new SqlConnection(connectionString);
         var acceptances = new List<EnttAcceptance>();
         using (var cmd = new SqlCommand("SELECT [Id],[ConsignmentNo],[DateTime],[LocationId],[PickupNo],[Postcode],[Pl9No],[ShipperAccountNo],[ParentWeight] FROM [Entt].[Acceptance] WHERE [LocationId] = @LocationId AND [DateTime] > @StartDate AND [DateTime] <= @EndDate", conn))
@@ -41,26 +41,15 @@ public class RtsScannerAppsController : BaseApiController
                     var a = new EnttAcceptance
                     {
                         Id = reader.GetString(0)
-                        ,ConsignmentNo = reader.GetString(1)
-                        ,DateTime = reader.GetDateTime(2)
-                        ,LocationId = reader.GetString(3)
-                        //,Postcode = reader.GetString(5)
-                        //,Pl9No = reader[5]..GetString(6)
-                        ,ShipperAccountNo = reader.GetString(7)
+                        , ConsignmentNo = reader.GetString(1)
+                        , DateTime = reader.GetDateTime(2)
+                        , LocationId = reader.GetString(3)
+                        , Postcode = reader.GetValue(5).ToString()
+                        ,Pl9No = reader.GetValue(6).ToString()
+                        ,ShipperAccountNo = reader.GetValue(7).ToString()
                         //,Weight = reader.GetDecimal(8)
                     };
                     acceptances.Add(a);
-                    var postcode = reader[5];
-                    if (DBNull.Value != postcode)
-                    {
-                        a.Postcode = postcode.ToString();
-                    }
-
-                    var pl9 = reader[6];
-                    if (DBNull.Value != pl9)
-                    {
-                        a.Pl9No = pl9.ToString();
-                    }
                     var weight = reader[8];
                     if (DBNull.Value != weight)
                     {
