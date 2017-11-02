@@ -1,0 +1,229 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierId",
+        "TypeName": "",
+        "Destination": "CourierId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7b323989-29ba-42f6-db96-dc9f98ddb461"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Version",
+        "TypeName": "",
+        "Destination": "Version",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8222583d-6ec3-49f9-9727-2a5833653f71"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "EventName",
+        "TypeName": "",
+        "Destination": "EventName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5b15603d-0f52-47b0-8216-c3d1488e63de"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Comment",
+        "TypeName": "",
+        "Destination": "Comment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "4c2f775a-4533-4392-c8cf-2210f11e1dd3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Channel",
+        "TypeName": "",
+        "Destination": "Channel",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "f6139224-249d-4d10-8cb1-c24f16832506"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DateTime",
+        "TypeName": "",
+        "Destination": "DateTime",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "17122504-48c9-4425-87fc-2bb4b428aa90"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "OfficeNo",
+        "TypeName": "",
+        "Destination": "OfficeNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "81d9b485-5bf6-4d91-b19b-63a38fd16a31"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "OfficeName",
+        "TypeName": "",
+        "Destination": "OfficeName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5560c175-d7d3-487e-a8e1-b3d74289c18e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "OfficeNextCode",
+        "TypeName": "",
+        "Destination": "OfficeNextCode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "11162316-d1bc-4881-a9b0-e16e29c7547a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BeatNo",
+        "TypeName": "",
+        "Destination": "BeatNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "dca46f97-6d95-4ee1-c5bf-89dfd7e1fd39"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ConsignmentNo",
+        "TypeName": "",
+        "Destination": "ConsignmentNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "8ffdc392-5e0f-4086-c493-b96456a6bf87"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CourierName",
+        "TypeName": "",
+        "Destination": "CourierName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "18909090-cbfd-45a9-d293-d78b72766469"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ItemTypeCode",
+        "TypeName": "",
+        "Destination": "ItemTypeCode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "95e8550e-a6ea-4221-906d-e70a9c528527"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DestOfficeId",
+        "TypeName": "",
+        "Destination": "DestOfficeId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "643b72f5-2695-4184-9195-bb7dc02e7686"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DestOfficeName",
+        "TypeName": "",
+        "Destination": "DestOfficeName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2b19dafd-c654-4cb9-b34d-d7c2d634001d"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "BatchName",
+        "TypeName": "",
+        "Destination": "BatchName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "ab4b8f2d-8865-499f-fca8-388c04c61b7f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "DataFlag",
+        "TypeName": "",
+        "Destination": "DataFlag",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "87048fb6-e804-497b-e547-080c869325b3"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CreatedBy",
+        "TypeName": "",
+        "Destination": "CreatedBy",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "60334e8c-5924-4d41-e33b-906d445eae79"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "2a8e00e5-cc68-4d32-9d9b-bfbfd4040dec"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ChangedBy",
+        "TypeName": "",
+        "Destination": "ChangedBy",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "511d7c99-0d9c-4770-ac21-5fefe34778e9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ChangedDate",
+        "TypeName": "",
+        "Destination": "ChangedDate",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "85320453-d436-420e-a352-1b0638de4b22"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "CreatedDate",
+        "TypeName": "",
+        "Destination": "CreatedDate",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "46495c14-cf1d-4a37-bfb1-bbced1d38258"
+      }
+    ]
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordSopToEnttSop",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.RecordSops.Domain.RecordSop, PosEntt.RecordSop",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Entt.Entt_Sop, PosEntt.Entt",
+  "IsPublished": true,
+  "CreatedBy": "admin",
+  "Id": "record-sop-to-entt-sop",
+  "CreatedDate": "2017-11-02T15:38:49.1158791+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-02T15:40:24.0745083+08:00",
+  "WebId": "7de4e370-c2bd-478b-ad74-c94e250b2383"
+}
