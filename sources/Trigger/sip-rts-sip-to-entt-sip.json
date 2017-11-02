@@ -1,0 +1,104 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.EntityAction, trigger.action.entity",
+        "OutboundMap": "rts-sip-to-record-sip",
+        "OutboundEntity": "RecordSip",
+        "Operation": "AddRtsSipToRecordSip",
+        "Title": "RtsSipToRecordSip",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "d52de543-8968-4a00-c578-c0d0e005a4c3"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordSip",
+        "FullName": "PosEntt.RecordSip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordSip.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Sip",
+        "FullName": "PosEntt.Sip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Sip.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsSipToRecordSip",
+        "FullName": "PosEntt.RtsSipToRecordSip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsSipToRecordSip.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsSipToEnttSip",
+  "Entity": "Sip",
+  "TypeOf": "Bespoke.PosEntt.Sips.Domain.Sip, PosEntt.Sip",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "SipRtsSipToEnttSipTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "sip-rts-sip-to-entt-sip",
+  "CreatedDate": "2017-10-30T14:31:00.1100518+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-10-30T14:54:45.2790495+08:00",
+  "WebId": "e387d14e-9d91-499a-87d3-d22f091ea92d"
+}

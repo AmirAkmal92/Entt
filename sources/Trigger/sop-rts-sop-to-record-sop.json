@@ -1,0 +1,104 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.EntityAction, trigger.action.entity",
+        "OutboundMap": "rts-sop-to-record-sop",
+        "OutboundEntity": "RecordConsole",
+        "Operation": "AddRtsSopToRecordSop",
+        "Title": "RtsSopToRecordSop",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "60c79695-b4e6-4344-ffac-c112fced4022"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordSop",
+        "FullName": "PosEntt.RecordSop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordSop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RtsSopToRecordSop",
+        "FullName": "PosEntt.RtsSopToRecordSop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsSopToRecordSop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Sop",
+        "FullName": "PosEntt.Sop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Sop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsSopToRecordSop",
+  "Entity": "Sop",
+  "TypeOf": "Bespoke.PosEntt.Sops.Domain.Sop, PosEntt.Sop",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "SopRtsSopToRecordSopTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "sop-rts-sop-to-record-sop",
+  "CreatedDate": "2017-11-02T15:41:11.8160912+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-02T15:45:44.4675074+08:00",
+  "WebId": "92a00cda-a684-4fea-9697-130203bd9590"
+}

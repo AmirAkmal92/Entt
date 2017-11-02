@@ -1,0 +1,89 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "report-sip-to-entt-sip",
+        "Adapter": "Entt",
+        "Operation": null,
+        "Table": "Sip",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 3,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "RecordSipToEnttSip",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "00a796c3-afc1-43c4-ac97-3c73d929366a"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.ReportSipToEnttSip",
+        "FullName": "PosEntt.ReportSipToEnttSip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.ReportSipToEnttSip.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordSip",
+        "FullName": "PosEntt.RecordSip, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordSip.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Entt",
+        "FullName": "PosEntt.Entt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Entt.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordSipToEnttSip",
+  "Entity": "RecordSip",
+  "TypeOf": "Bespoke.PosEntt.RecordSips.Domain.RecordSip, PosEntt.RecordSip",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordSipRecordSipToEnttSipTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-sip-record-sip-to-entt-sip",
+  "CreatedDate": "2017-10-30T15:15:23.8553099+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-10-30T15:35:17.4271969+08:00",
+  "WebId": "fc735120-2829-4ad9-b897-57c75abe909d"
+}

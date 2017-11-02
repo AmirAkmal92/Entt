@@ -1,0 +1,89 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "record-sop-to-entt-sop",
+        "Adapter": "Entt",
+        "Operation": null,
+        "Table": "Sop",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 3,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "RecordSopToEnttSop",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "d4633687-6ce8-4f82-a6a8-29fbe9716292"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordSop",
+        "FullName": "PosEntt.RecordSop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordSop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordSopToEnttSop",
+        "FullName": "PosEntt.RecordSopToEnttSop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordSopToEnttSop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Entt",
+        "FullName": "PosEntt.Entt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Entt.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordSopToEnttSop",
+  "Entity": "RecordSop",
+  "TypeOf": "Bespoke.PosEntt.RecordSops.Domain.RecordSop, PosEntt.RecordSop",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordSopRecordSopToEnttSopTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-sop-record-sop-to-entt-sop",
+  "CreatedDate": "2017-11-02T15:46:24.5333576+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-02T15:48:39.4373967+08:00",
+  "WebId": "e121a01c-f0e3-4a63-97d6-df709256fd6e"
+}
