@@ -92,6 +92,24 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "69cdb77e-6d30-4a48-e299-c2d915f2d841"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "df1997ed-badf-44e8-e0cb-b7f8cf3115c9",
+        "Destination": "SystemId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "e59294d4-6c1d-4398-cf5f-2df8333b58ad"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "aa974efd-27ef-4109-ef04-1f6f80fd270f",
+        "Destination": "SystemName",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "60d93909-a9c0-4261-c369-ca0fdd59d750"
       }
     ]
   },
@@ -239,6 +257,38 @@
         "X": 0.0,
         "Y": 0.0,
         "WebId": "de646dff-b787-4d32-cff1-60e07e4c530b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "003",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 395.0,
+        "Y": 697.0,
+        "WebId": "df1997ed-badf-44e8-e0cb-b7f8cf3115c9"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ConstantFunctoid, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "Value": "IPS",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": null,
+        "OutputTypeName": null,
+        "Label": null,
+        "Comment": null,
+        "X": 421.0,
+        "Y": 764.0,
+        "WebId": "aa974efd-27ef-4109-ef04-1f6f80fd270f"
       }
     ]
   },
@@ -259,6 +309,6 @@
   "Id": "ips-export-to-entt-acceptance",
   "CreatedDate": "2017-07-28T15:08:26.6960221+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-08-23T11:15:04.8914193+08:00",
+  "ChangedDate": "2017-11-03T14:52:12.5378298+08:00",
   "WebId": "db161969-86a6-45c6-af28-11dbafb6fc81"
 }

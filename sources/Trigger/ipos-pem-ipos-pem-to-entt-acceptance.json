@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "fffbfb5d41",
+          "Script": "item.PickupIndicator",
+          "Name": "FilterPemPickup",
+          "Note": "",
+          "WebId": "fbfb5d41-63ad-43e1-99c7-d786e45d62f4"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "1",
+          "Name": "Indicator",
+          "Note": "",
+          "WebId": "e9ba59ed-b070-4481-ad64-2fbd190fb64d"
+        },
+        "Operator": "Neq",
+        "WebId": "88ab081b-9a2d-4916-ed9a-ee8bef4fcb59"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -99,6 +121,6 @@
   "Id": "ipos-pem-ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T13:09:18.2457534+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-09-20T17:29:27.5335696+08:00",
+  "ChangedDate": "2017-11-03T14:38:27.054205+08:00",
   "WebId": "31e6df8f-9c75-4bf8-9b21-5a9972ebb9bc"
 }
