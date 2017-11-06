@@ -40,10 +40,11 @@
         "Schema": null,
         "Crud": null,
         "Retry": 3,
+        "RetryAlgorithm": "Constant",
         "RetryInterval": 1000,
         "RetryIntervalTimeSpan": 1,
         "Title": "UpdateEziSendPickupApi",
-        "IsActive": false,
+        "IsActive": true,
         "TriggerId": null,
         "Note": null,
         "WebId": "21cd1980-759d-45d7-ef23-e47a40b82d93"
@@ -96,6 +97,6 @@
   "Id": "entt-acceptance-ezi-send-pickup-notifier",
   "CreatedDate": "2017-07-11T11:16:48.2254166+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-09-12T13:01:12.1185906+08:00",
+  "ChangedDate": "2017-11-06T14:16:21.1138378+08:00",
   "WebId": "df024bc6-56d4-4943-ba51-e107050af462"
 }

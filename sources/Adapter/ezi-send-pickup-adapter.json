@@ -1,6 +1,6 @@
 {
   "$type": "Bespoke.Sph.Integrations.Adapters.RestApiAdapter, restapi.adapter",
-  "BaseAddress": null,
+  "BaseAddress": "https://ezisend.poslaju.com.my",
   "AuthenticationType": null,
   "DefaultValue": null,
   "SecurityHeaderCollection": {
@@ -18,7 +18,7 @@
       {
         "$type": "Bespoke.Sph.Integrations.Adapters.RestApiOperationDefinition, restapi.adapter",
         "HttpMethod": "POST",
-        "BaseAddress": "http://localhost:50230/api/rts-pickup-formats/",
+        "BaseAddress": "https://ezisend.poslaju.com.my/api/rts-pickup-formats/",
         "UseHttpGet": false,
         "CodeNamespace": "Bespoke.PosEntt.Adapters.EziSendPickupAdapter",
         "Uuid": null,
@@ -173,7 +173,7 @@
                     "DefaultValue": {
                       "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
                       "TypeName": "System.String, mscorlib",
-                      "Value": "localhost:50230",
+                      "Value": "https://ezisend.poslaju.com.my",
                       "Name": "Host",
                       "Note": null,
                       "WebId": "edd5521d-c7c2-40fb-ac4b-a54ffff358cb"
