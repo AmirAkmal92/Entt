@@ -410,6 +410,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "288bdf40-4a91-498c-e923-93bf7158dde1"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "5c73276f-35dd-4752-fe1f-43505f111247"
       }
     ]
   },
@@ -451,6 +475,6 @@
   "Id": "record-hop",
   "CreatedDate": "2017-10-24T11:10:50.7648087+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-24T11:24:04.7120731+08:00",
+  "ChangedDate": "2017-11-09T10:26:01.1611076+08:00",
   "WebId": "cc88a0e4-e33a-48a5-813f-3513b2fe7826"
 }

@@ -362,6 +362,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "b7536c3b-0f0d-409f-89bf-007beae16425"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "353703ec-29cb-4b35-f2d0-1e7dd3049ad7"
       }
     ]
   },
@@ -403,6 +427,6 @@
   "Id": "record-hip",
   "CreatedDate": "2017-10-19T15:41:30.625515+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-24T11:20:52.4408447+08:00",
+  "ChangedDate": "2017-11-09T10:25:16.4425224+08:00",
   "WebId": "525f4bfe-4f58-432a-aef7-9994cc5529f9"
 }

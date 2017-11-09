@@ -410,6 +410,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "5efa7e45-76c5-47d7-80b4-dcd9e92a6ece"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "ec15fa57-7732-4fd9-d5d7-386729dab5b5"
       }
     ]
   },
@@ -451,6 +475,6 @@
   "Id": "record-sop",
   "CreatedDate": "2017-10-19T14:33:46.8240482+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-19T14:38:54.4674256+08:00",
+  "ChangedDate": "2017-11-09T11:02:14.729791+08:00",
   "WebId": "1e805439-5137-442b-b55c-99e55392b515"
 }

@@ -362,6 +362,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "82b36c6d-6bb9-4294-c76a-5577bbc67cb2"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.String, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ScannerId",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "deec3e5e-6eb5-4f37-fc09-1c9eac57fe36"
       }
     ]
   },
@@ -403,6 +427,6 @@
   "Id": "record-sip",
   "CreatedDate": "2017-10-19T13:23:05.1473397+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-25T12:43:09.1628291+08:00",
+  "ChangedDate": "2017-11-09T10:34:10.562439+08:00",
   "WebId": "c60fe4cd-895e-46a5-831f-70410fe28858"
 }
