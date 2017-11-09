@@ -1,0 +1,30 @@
+{
+  "$type": "Bespoke.Sph.Domain.TransformDefinition, domain.sph",
+  "MapCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Map, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "FunctoidCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "InputCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordConsoleToEnttConsole",
+  "Description": "",
+  "InputTypeName": "Bespoke.PosEntt.RecordConsoles.Domain.RecordConsole, PosEntt.RecordConsole",
+  "OutputTypeName": "Bespoke.PosEntt.Adapters.Entt.Entt_Console, PosEntt.Entt",
+  "IsPublished": false,
+  "CreatedBy": "admin",
+  "Id": "record-console-to-entt-console",
+  "CreatedDate": "2017-11-09T11:21:42.5876532+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-09T11:23:00.7319219+08:00",
+  "WebId": "04a3f776-ef0b-41cb-ab5a-a8b73e0e5c52"
+}

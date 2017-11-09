@@ -353,6 +353,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "f5f20ce3-3f5b-439b-a545-319bf990171b"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ScannerId",
+        "TypeName": "",
+        "Destination": "ScannerId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "0d03b043-4e5b-4b10-de69-32d68b40c710"
       }
     ]
   },
@@ -1724,6 +1733,6 @@
   "Id": "rts-deli-to-record-deli",
   "CreatedDate": "2017-10-05T15:17:12.4425248+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-09T14:52:10.5702332+08:00",
+  "ChangedDate": "2017-11-09T11:14:00.7260071+08:00",
   "WebId": "dc74c5ea-c90c-4365-8e2a-656b9e88cd34"
 }

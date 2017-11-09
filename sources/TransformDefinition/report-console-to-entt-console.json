@@ -254,6 +254,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "6db13e86-7ef1-4679-8bd2-d54d75ae3e22"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "ScannerId",
+        "TypeName": "",
+        "Destination": "ScannerId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "92bd31f4-73cd-4083-a485-053f71359f1a"
       }
     ]
   },
@@ -336,6 +345,6 @@
   "Id": "report-console-to-entt-console",
   "CreatedDate": "2017-10-03T14:49:26.0577797+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-03T15:10:35.4578714+08:00",
+  "ChangedDate": "2017-11-09T11:18:45.0474514+08:00",
   "WebId": "2f7385bf-c507-460a-8593-d7602825df85"
 }
