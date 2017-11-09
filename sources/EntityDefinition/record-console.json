@@ -341,7 +341,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.Int32, mscorlib",
+        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -534,30 +534,6 @@
       {
         "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
         "TypeName": "System.String, mscorlib",
-        "IsNullable": false,
-        "IsNotIndexed": false,
-        "IsAnalyzed": false,
-        "IsFilterable": false,
-        "IsExcludeInAll": false,
-        "Boost": 0,
-        "FullName": null,
-        "PropertyAttribute": null,
-        "MemberCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "FieldPermissionCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
-          "$values": []
-        },
-        "Name": "EventTypeName",
-        "AllowMultiple": false,
-        "DefaultValue": null,
-        "WebId": "9ca6c447-f277-4df8-a8fe-47f7949e659e"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
-        "TypeName": "System.String, mscorlib",
         "IsNullable": true,
         "IsNotIndexed": false,
         "IsAnalyzed": false,
@@ -578,6 +554,30 @@
         "AllowMultiple": false,
         "DefaultValue": null,
         "WebId": "cc1ff066-a171-408c-d0a1-5ca98d915b7f"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.SimpleMember, domain.sph",
+        "TypeName": "System.Int32, mscorlib",
+        "IsNullable": true,
+        "IsNotIndexed": false,
+        "IsAnalyzed": false,
+        "IsFilterable": false,
+        "IsExcludeInAll": false,
+        "Boost": 0,
+        "FullName": null,
+        "PropertyAttribute": null,
+        "MemberCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "FieldPermissionCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "TotalConsignment",
+        "AllowMultiple": false,
+        "DefaultValue": null,
+        "WebId": "61bc495a-0ac6-4d86-8ea6-a0aaaf988ca7"
       }
     ]
   },
@@ -619,6 +619,6 @@
   "Id": "record-console",
   "CreatedDate": "2017-10-02T17:35:05.25101+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T12:03:21.1288005+08:00",
+  "ChangedDate": "2017-11-09T15:11:47.2420346+08:00",
   "WebId": "98a77d11-ba4c-47d0-a2f7-b01498a23b4e"
 }
