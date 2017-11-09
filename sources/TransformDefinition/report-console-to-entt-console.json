@@ -203,15 +203,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "EventTypeName",
-        "TypeName": "",
-        "Destination": "EventTypeName",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "6180f772-9a1e-40d1-d3bd-32ab2e4beffa"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "CreatedBy",
         "TypeName": "",
         "Destination": "CreatedBy",
@@ -247,15 +238,6 @@
         "WebId": "38a9ded6-5209-4110-999d-4cc37853d328"
       },
       {
-        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
-        "__uuid": "",
-        "Functoid": "2156e6b4-10c7-4a0b-9b81-d3cd965cc9a1",
-        "Destination": "Id",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "6db13e86-7ef1-4679-8bd2-d54d75ae3e22"
-      },
-      {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "ScannerId",
         "TypeName": "",
@@ -263,70 +245,30 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "92bd31f4-73cd-4083-a485-053f71359f1a"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "TotalConsignment",
+        "TypeName": "",
+        "Destination": "TotalConsignment",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "b6f551e1-3d16-41bf-fb2a-78379738c832"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "Id",
+        "TypeName": "",
+        "Destination": "Id",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "7d23e020-feac-46c9-e8c2-de5dd1554742"
       }
     ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.PosEntt.Functoids.OalIdFunctoid, rts.functoids",
-        "Prefix": "EN",
-        "Suffix": null,
-        "Length": 34,
-        "ArgumentCollection": {
-          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
-          "$values": [
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "Prefix",
-              "TypeName": "System.String, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "Suffix",
-              "TypeName": "System.DateTime, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            },
-            {
-              "$type": "Bespoke.Sph.Domain.FunctoidArg, domain.sph",
-              "Name": "Length",
-              "TypeName": "System.Int32, mscorlib",
-              "Description": null,
-              "Label": null,
-              "Comment": null,
-              "IsOptional": true,
-              "Functoid": null,
-              "Constant": null,
-              "Default": null,
-              "WebId": null
-            }
-          ]
-        },
-        "Name": null,
-        "OutputTypeName": "System.String, mscorlib",
-        "Label": null,
-        "Comment": null,
-        "X": 450.0,
-        "Y": 65.0,
-        "WebId": "2156e6b4-10c7-4a0b-9b81-d3cd965cc9a1"
-      }
-    ]
+    "$values": []
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -345,6 +287,6 @@
   "Id": "report-console-to-entt-console",
   "CreatedDate": "2017-10-03T14:49:26.0577797+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T11:18:45.0474514+08:00",
+  "ChangedDate": "2017-11-09T15:20:16.4542184+08:00",
   "WebId": "2f7385bf-c507-460a-8593-d7602825df85"
 }
