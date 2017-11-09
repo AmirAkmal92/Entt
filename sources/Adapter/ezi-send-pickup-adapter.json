@@ -173,7 +173,7 @@
                     "DefaultValue": {
                       "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
                       "TypeName": "System.String, mscorlib",
-                      "Value": "https://ezisend.poslaju.com.my",
+                      "Value": "ezisend.poslaju.com.my",
                       "Name": "Host",
                       "Note": null,
                       "WebId": "edd5521d-c7c2-40fb-ac4b-a54ffff358cb"
