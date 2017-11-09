@@ -8,6 +8,46 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_deco-rts-deco-to-record-console",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToRecordConsoleTriggerSubscriber",
+            "assembly": "subscriber.trigger.deco-rts-deco-to-record-console"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sip-rts-sip-to-entt-sip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToEnttSipTriggerSubscriber",
+            "assembly": "subscriber.trigger.sip-rts-sip-to-entt-sip"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-sip-record-sip-to-entt-sip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSipRecordSipToEnttSipTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-sip-record-sip-to-entt-sip"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sop-rts-sop-to-record-sop",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToRecordSopTriggerSubscriber",
+            "assembly": "subscriber.trigger.sop-rts-sop-to-record-sop"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-sop-record-sop-to-entt-sop",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSopRecordSopToEnttSopTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-sop-record-sop-to-entt-sop"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_unknown-unknown-item-to-entt-unknown",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.UnknownUnknownItemToEnttUnknownTriggerSubscriber",
             "assembly": "subscriber.trigger.unknown-unknown-item-to-entt-unknown"
