@@ -4,6 +4,22 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
+         {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hip-rts-hip-to-record-hip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToRecordHipTriggerSubscriber",
+            "assembly": "subscriber.trigger.hip-rts-hip-to-record-hip"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-hip-record-hip-to-entt-hip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHipRecordHipToEnttHipTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-hip-record-hip-to-entt-hip"
+        },
         {
             "instancesCount": 1,
             "prefetchCount": 1,

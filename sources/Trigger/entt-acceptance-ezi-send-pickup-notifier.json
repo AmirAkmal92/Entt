@@ -6,25 +6,23 @@
       {
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
-          "$type": "Bespoke.Sph.Domain.DocumentField, domain.sph",
-          "XPath": "",
-          "NamespacePrefix": "",
-          "TypeName": "",
-          "Path": "ConsignmentNo",
-          "Name": "ConsignmentNo",
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff74abe5e5",
+          "Script": "var pattern = \"^(EU|EB|EC|EQ).*MY)\";\nvar match = Regex.Match(item.ConsignmentNo,pattern);\nreturn (match.Success);",
+          "Name": "AcceptConnoteForEzisend",
           "Note": "",
-          "WebId": "2baf2b31-e14e-4e97-a8a5-3a7f7ccbe67d"
+          "WebId": "74abe5e5-218c-48fc-98d4-fcf90b65d5d3"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
           "TypeName": "System.String, mscorlib",
-          "Value": "EU",
-          "Name": "EU",
+          "Value": "true",
+          "Name": "true",
           "Note": "",
-          "WebId": "ca5ff653-6a94-4ea8-dfd6-11d2f16ebe54"
+          "WebId": "32817cff-9f33-4219-aaaf-748a26f85892"
         },
-        "Operator": "StartsWith",
-        "WebId": "954d332e-4a34-4ca8-a406-f14bc58ec1db"
+        "Operator": "Eq",
+        "WebId": "633fa179-216d-4449-bc24-82b5766acaf1"
       }
     ]
   },
@@ -97,6 +95,6 @@
   "Id": "entt-acceptance-ezi-send-pickup-notifier",
   "CreatedDate": "2017-07-11T11:16:48.2254166+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-06T14:16:21.1138378+08:00",
+  "ChangedDate": "2017-11-10T10:48:20.8764243+08:00",
   "WebId": "df024bc6-56d4-4943-ba51-e107050af462"
 }
