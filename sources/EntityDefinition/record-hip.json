@@ -420,13 +420,13 @@
   "RecordName": "ConsignmentNo",
   "IsPublished": true,
   "TreatDataAsSource": false,
-  "Transient": false,
-  "StoreInDatabase": true,
-  "StoreInElasticsearch": true,
+  "Transient": true,
+  "StoreInDatabase": false,
+  "StoreInElasticsearch": false,
   "CreatedBy": "admin",
   "Id": "record-hip",
   "CreatedDate": "2017-10-19T15:41:30.625515+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T10:25:16.4425224+08:00",
+  "ChangedDate": "2017-11-13T16:04:47.4708791+08:00",
   "WebId": "525f4bfe-4f58-432a-aef7-9994cc5529f9"
 }
