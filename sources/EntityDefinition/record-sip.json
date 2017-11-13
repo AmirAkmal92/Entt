@@ -420,13 +420,13 @@
   "RecordName": "CourierId",
   "IsPublished": true,
   "TreatDataAsSource": false,
-  "Transient": false,
-  "StoreInDatabase": true,
-  "StoreInElasticsearch": true,
+  "Transient": true,
+  "StoreInDatabase": false,
+  "StoreInElasticsearch": false,
   "CreatedBy": "admin",
   "Id": "record-sip",
   "CreatedDate": "2017-10-19T13:23:05.1473397+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T10:34:10.562439+08:00",
+  "ChangedDate": "2017-11-13T15:54:28.6264195+08:00",
   "WebId": "c60fe4cd-895e-46a5-831f-70410fe28858"
 }

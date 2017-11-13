@@ -1,9 +1,9 @@
 CREATE TABLE [Entt].[Delivery](
-  [Id] VARCHAR(50) PRIMARY KEY NOT NULL,
+	[Id] [varchar](50) NOT NULL,
 	[Version] [int] NOT NULL,
 	[EventName] [varchar](50) NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] DATETIME NOT NULL,
+	[DateTime] [datetime] NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
@@ -28,15 +28,16 @@ CREATE TABLE [Entt].[Delivery](
 	[ChequeNo] [varchar](10) NULL,
 	[BankCode] [varchar](2) NULL,
 	[BankCodeDesc] [varchar](50) NULL,
-	[TotalPayment] [decimal] NULL,
+	[TotalPayment] [decimal](18, 0) NULL,
 	[DropCode] [varchar](1) NULL,
 	[DropLocation] [varchar](20) NULL,
 	[CodAccount] [varchar](20) NULL,
 	[BatchName] [varchar](60) NULL,
 	[DamageCode] [int] NULL,
 	[DataFlag] [varchar](1) NULL,
-	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] VARCHAR(50) NULL,
-	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[ChangedBy] VARCHAR(50) NULL
-)
+	[ScannerId] [varchar](10) NULL,
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL
+	)

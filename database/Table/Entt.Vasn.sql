@@ -4,7 +4,7 @@ CREATE TABLE [Entt].[Vasn](
 	[EventName] [varchar](50) NULL,
 	[Channel] [varchar](3) NULL,
 	[Comment] [varchar](50) NULL,
-	[DateTime] DATETIME NOT  NULL,
+	[DateTime] [datetime] NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
@@ -18,8 +18,9 @@ CREATE TABLE [Entt].[Vasn](
 	[VanSenderName] [varchar](30) NULL,
 	[BatchName] [varchar](60) NULL,
 	[DataFlag] [varchar](1) NULL,
-	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] VARCHAR(50) NULL,
-	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[ChangedBy] VARCHAR(50) NULL
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL,
+	[ScannerId] [varchar](10) NULL
 )

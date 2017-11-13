@@ -1,10 +1,10 @@
 CREATE TABLE [Entt].[Sop](
 	[Id] [varchar](50) NOT NULL,
 	[Version] [int] NOT NULL,
-	[EventName] [varchar](50) NULL, /*EventRemarkDisplay*/
+	[EventName] [varchar](50) NULL,
 	[Comment] [varchar](250) NULL,
 	[Channel] [varchar](3) NULL,
-	[DateTime] DATETIME NOT NULL,
+	[DateTime] [datetime] NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
@@ -17,8 +17,9 @@ CREATE TABLE [Entt].[Sop](
 	[DestOfficeName] [varchar](100) NULL,
 	[BatchName] [varchar](50) NULL,
 	[DataFlag] [varchar](1) NULL,
-	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] VARCHAR(50) NULL,
-	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[ChangedBy] VARCHAR(50) NULL
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL,
+	[ScannerId] [varchar](10) NULL
 )

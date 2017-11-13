@@ -1,13 +1,12 @@
 CREATE TABLE [Entt].[Console](
-	[Id] [varchar](50) PRIMARY KEY NOT NULL,
+	[Id] [varchar](50) NOT NULL,
 	[Version] [int] NOT NULL,
-	[EventType] [varchar](1) NULL,
-	[EventTypeName] [varchar](50) NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] DATETIME NOT NULL,
+	[DateTime] [datetime] NULL,
+	[EventType] [varchar](50) NULL,
 	[OfficeNo] [varchar](4) NULL,
-	[OfficeName] [varchar](30),
-	[OfficeNextCode] [varchar](4),
+	[OfficeName] [varchar](30) NULL,
+	[OfficeNextCode] [varchar](4) NULL,
 	[BeatNo] [varchar](3) NULL,
 	[ConsignmentNo] [varchar](40) NULL,
 	[CourierId] [varchar](15) NULL,
@@ -22,9 +21,11 @@ CREATE TABLE [Entt].[Console](
 	[DestinationOffice] [varchar](5) NULL,
 	[DestinationOfficeName] [varchar](50) NULL,
 	[RoutingCode] [varchar](15) NULL,
-	[Comment] [varchar](250),
-	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-  [CreatedBy] VARCHAR(50) NULL,
-  [ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-  [ChangedBy] VARCHAR(50) NULL
-)
+	[Comment] [varchar](250) NULL,
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL,
+	[ScannerId] [varchar](10) NULL,
+	[TotalConsignment] [int] NULL
+	)

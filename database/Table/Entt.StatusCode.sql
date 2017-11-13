@@ -1,8 +1,8 @@
 CREATE TABLE [Entt].[StatusCode](
-  [Id] VARCHAR(50) PRIMARY KEY NOT NULL,
+	[Id] [varchar](50) NOT NULL,
 	[Version] [int] NOT NULL,
 	[Channel] [varchar](2) NULL,
-	[DateTime] DATETIME NOT NULL,
+	[DateTime] [datetime] NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
@@ -15,8 +15,9 @@ CREATE TABLE [Entt].[StatusCode](
 	[StatusCode] [varchar](2) NULL,
 	[StatusCodeDesc] [varchar](50) NULL,
 	[DataFlag] [varchar](1) NULL,
-	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[CreatedBy] VARCHAR(50) NULL,
-	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
-	[ChangedBy] VARCHAR(50) NULL
-)
+	[CreatedDate] [smalldatetime] NOT NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ChangedDate] [smalldatetime] NOT NULL,
+	[ChangedBy] [varchar](50) NULL,
+	[ScannerId] [varchar](10) NULL
+	)
