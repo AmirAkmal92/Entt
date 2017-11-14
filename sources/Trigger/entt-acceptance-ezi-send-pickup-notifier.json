@@ -8,7 +8,7 @@
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
           "CodeNamespace": "ff74abe5e5",
-          "Script": "var pattern = \"^(EU|EB|EC|EQ).*MY)\";\nvar match = Regex.Match(item.ConsignmentNo,pattern);\nreturn (match.Success);",
+          "Script": "var pattern = \"^(EU|EB|EC|EQ).*MY\";\nvar match = Regex.Match(item.ConsignmentNo,pattern);\nreturn (match.Success);",
           "Name": "AcceptConnoteForEzisend",
           "Note": "",
           "WebId": "74abe5e5-218c-48fc-98d4-fcf90b65d5d3"

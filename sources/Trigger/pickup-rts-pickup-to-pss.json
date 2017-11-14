@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "fffa70435f",
+          "Script": "item.FailPickupReason",
+          "Name": "FailPickupReason",
+          "Note": "FilterFailPickup",
+          "WebId": "fa70435f-be8c-4c7b-e260-ce53a87c2bfe"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.String, mscorlib",
+          "Value": "-",
+          "Name": "null",
+          "Note": "",
+          "WebId": "a4d8e075-ff4c-46c0-c84a-5746c572d913"
+        },
+        "Operator": "IsNull",
+        "WebId": "db299699-5391-4d7a-a027-8fb1040c619e"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -95,6 +117,6 @@
   "Id": "pickup-rts-pickup-to-pss",
   "CreatedDate": "2016-11-21T07:44:47.6589294+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T07:47:17.8743511+08:00",
+  "ChangedDate": "2017-11-14T23:12:14.5013432+08:00",
   "WebId": "f8e1825d-657c-4a38-8cdd-e43ab5d2609c"
 }
