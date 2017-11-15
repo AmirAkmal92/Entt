@@ -24,6 +24,14 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_norm-rts-norm-to-record-console",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.NormRtsNormToRecordConsoleTriggerSubscriber",
+            "assembly": "subscriber.trigger.norm-rts-norm-to-record-console"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_deco-rts-deco-to-record-console",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToRecordConsoleTriggerSubscriber",
             "assembly": "subscriber.trigger.deco-rts-deco-to-record-console"
