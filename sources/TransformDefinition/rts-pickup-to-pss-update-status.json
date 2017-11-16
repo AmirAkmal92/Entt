@@ -11,6 +11,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "fc0370e3-fd6b-4672-d466-2e14622ae5d8"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "FailPickupReason",
+        "TypeName": "",
+        "Destination": "FailPickupCode",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "5b7a3ef8-e2d5-4d7b-9b48-e092e0257342"
       }
     ]
   },
@@ -35,6 +44,6 @@
   "Id": "rts-pickup-to-pss-update-status",
   "CreatedDate": "2016-11-21T07:40:43.8860853+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T07:40:59.9046076+08:00",
+  "ChangedDate": "2017-11-16T16:48:12.5547035+08:00",
   "WebId": "6d041c6e-90f8-41db-b0b9-2556c95bd2c9"
 }

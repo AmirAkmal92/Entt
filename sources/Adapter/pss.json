@@ -2,7 +2,7 @@
   "$type": "Bespoke.Sph.Integrations.Adapters.SqlServerAdapter, sqlserver.adapter",
   "OdataTranslator": "OdataSqlTranslator",
   "Version": 2012,
-  "Server": "S301\\DEV2016",
+  "Server": "(localdb)\\ProjectsV13",
   "TrustedConnection": true,
   "UserId": "psstest",
   "Password": "psstest",
@@ -16,7 +16,7 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Integrations.Adapters.SqlScriptOperationDefinition, sqlserver.adapter",
-        "SqlStatement": "UPDATE [dbo].[PickupTicket] SET \n    [PickupTicketStatus] = '07',\n    [Pickup_UpdateStatus_Date] = GETDATE()\nWHERE \n   [PickupNumber] = @PickupNumber",
+        "SqlStatement": "UPDATE [dbo].[PickupTicket] SET \n    [PickupTicketStatus] = COALESCE(NULLIF(@FailPickupCode,''),'07'),\n    [Pickup_UpdateStatus_Date] = GETDATE()\nWHERE \n   [PickupNumber] = @PickupNumber",
         "ObjectType": "SqlScript",
         "UseHttpGet": false,
         "CodeNamespace": "Bespoke.PosEntt.Adapters.Pss",
@@ -64,7 +64,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.String, mscorlib",
@@ -87,7 +87,60 @@
               "Name": "@PickupNumber",
               "AllowMultiple": false,
               "DefaultValue": null,
-              "WebId": null
+              "WebId": "dbo-UpdatePickupStatus-@PickupNumber"
+            },
+            {
+              "$type": "Bespoke.Sph.Integrations.Adapters.Columns.NullableStringColumn, sqlserver.adapter",
+              "SqlType": "NVarChar",
+              "CanWrite": true,
+              "Length": 2,
+              "IsSelected": false,
+              "Unsupported": false,
+              "DbType": "NVARCHAR",
+              "ClrName": "@FailPickupCode",
+              "IsPrimaryKey": false,
+              "IsVersion": false,
+              "IsModifiedDate": false,
+              "IsComputed": false,
+              "IsIdentity": false,
+              "IsComplex": false,
+              "MimeType": null,
+              "Ignore": false,
+              "DisplayName": "FailPickupCode",
+              "Order": 0,
+              "LookupColumnTable": {
+                "$type": "Bespoke.Sph.Domain.Api.LookupColumnTable, domain.sph",
+                "IsEnabled": false,
+                "Table": null,
+                "Column": null,
+                "DbType": null,
+                "ValueColumn": null,
+                "KeyColumn": null,
+                "Name": null,
+                "TypeName": null,
+                "WebId": null
+              },
+              "TypeName": "System.String, mscorlib",
+              "IsNullable": true,
+              "IsNotIndexed": false,
+              "IsAnalyzed": false,
+              "IsFilterable": false,
+              "IsExcludeInAll": false,
+              "Boost": 0,
+              "FullName": null,
+              "PropertyAttribute": null,
+              "MemberCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Member, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "FieldPermissionCollection": {
+                "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FieldPermission, domain.sph]], domain.sph",
+                "$values": []
+              },
+              "Name": "@FailPickupCode",
+              "AllowMultiple": false,
+              "DefaultValue": null,
+              "WebId": "dbo-UpdatePickupStatus-@FailPickupCode"
             }
           ]
         },
@@ -122,7 +175,7 @@
                 "ValueColumn": null,
                 "KeyColumn": null,
                 "Name": null,
-                "TypeName": null,
+                "TypeName": "",
                 "WebId": null
               },
               "TypeName": "System.Int32, mscorlib",
@@ -174,6 +227,6 @@
   "Id": "pss",
   "CreatedDate": "2016-11-18T10:37:17.7903444+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-21T07:38:51.7513049+08:00",
+  "ChangedDate": "2017-11-16T16:45:58.7432798+08:00",
   "WebId": "4ad82180-b533-4478-8b6d-2846fe513636"
 }
