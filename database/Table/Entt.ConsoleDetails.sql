@@ -1,19 +1,14 @@
-CREATE TABLE [Entt].[Console](
+CREATE TABLE [Entt].[ConsoleDetails](
 	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
-	[Channel] [varchar](2) NULL,
 	[DateTime] [datetime] NULL,
-	[EventType] [varchar](50) NULL,
+	[ConsoleNo] [varchar](40) NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
 	[BeatNo] [varchar](3) NULL,
-	[ConsignmentNo] [varchar](40) NULL,
 	[CourierId] [varchar](15) NULL,
 	[CourierName] [varchar](30) NULL,
-	[ItemTypeCode] [varchar](2) NULL,
-	[BatchName] [varchar](50) NULL,
-	[DataFlag] [varchar](1) NULL,
 	[ItemConsignments] [text] NULL,
 	[ConsoleType] [varchar](3) NULL,
 	[ConsoleTypeDesc] [varchar](50) NULL,
@@ -21,11 +16,12 @@ CREATE TABLE [Entt].[Console](
 	[DestinationOffice] [varchar](5) NULL,
 	[DestinationOfficeName] [varchar](50) NULL,
 	[RoutingCode] [varchar](15) NULL,
+	[EventType] [varchar](50) NULL,
 	[Comment] [varchar](250) NULL,
-	[CreatedDate] [smalldatetime] NOT NULL,
-	[CreatedBy] [varchar](50) NULL,
-	[ChangedDate] [smalldatetime] NOT NULL,
-	[ChangedBy] [varchar](50) NULL,
+	[BatchName] [varchar](50) NULL,
+	[TotalConsignment] [int] NULL,
 	[ScannerId] [varchar](10) NULL,
-	[TotalConsignment] [int] NULL
-	)
+	[CreatedDate] [smalldatetime] NOT NULL
+)
+
+GO

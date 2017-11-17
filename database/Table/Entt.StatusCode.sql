@@ -1,5 +1,5 @@
 CREATE TABLE [Entt].[StatusCode](
-	[Id] [varchar](50) NOT NULL,
+	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
 	[Channel] [varchar](2) NULL,
 	[DateTime] [datetime] NULL,

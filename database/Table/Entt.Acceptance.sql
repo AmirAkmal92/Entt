@@ -1,5 +1,5 @@
 CREATE TABLE [Entt].[Acceptance](
-	[Id] [varchar](50) NOT NULL,
+	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
 	[ModuleId] [varchar](2) NOT NULL,
 	[ConsignmentNo] [varchar](50) NOT NULL,

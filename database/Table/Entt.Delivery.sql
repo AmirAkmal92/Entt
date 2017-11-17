@@ -1,5 +1,5 @@
 CREATE TABLE [Entt].[Delivery](
-	[Id] [varchar](50) NOT NULL,
+	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
 	[EventName] [varchar](50) NULL,
 	[Channel] [varchar](2) NULL,
