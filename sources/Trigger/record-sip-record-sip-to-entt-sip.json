@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff96ea4845",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "96ea4845-2fe4-4f76-870c-28197721d6b3"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": false,
+          "Name": "false",
+          "Note": "",
+          "WebId": "a58fee62-4779-4330-ddc5-bd1d7f1cc740"
+        },
+        "Operator": "Eq",
+        "WebId": "5709e453-26b4-4b1f-eeae-31b8b769fdfa"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -16,7 +38,6 @@
         "Schema": null,
         "Crud": "Insert",
         "Retry": 3,
-        "RetryAlgorithm": "Constant",
         "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
         "Title": "RecordSipToEnttSip",
@@ -84,6 +105,6 @@
   "Id": "record-sip-record-sip-to-entt-sip",
   "CreatedDate": "2017-10-30T15:15:23.8553099+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-30T15:35:17.4271969+08:00",
+  "ChangedDate": "2017-11-17T17:06:46.0560782+08:00",
   "WebId": "fc735120-2829-4ad9-b897-57c75abe909d"
 }

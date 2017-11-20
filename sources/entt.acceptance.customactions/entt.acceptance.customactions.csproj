@@ -34,8 +34,36 @@
     <Reference Include="domain.sph">
       <HintPath>..\..\subscribers\domain.sph.dll</HintPath>
     </Reference>
+    <Reference Include="Polly, Version=4.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Polly.4.2.4\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Entt">
+      <HintPath>..\..\output\PosEntt.Entt.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.EnttAcceptance">
       <HintPath>..\..\output\PosEntt.EnttAcceptance.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordConsole">
+      <HintPath>..\..\output\PosEntt.RecordConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordSip">
+      <HintPath>..\..\output\PosEntt.RecordSip.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordSop">
+      <HintPath>..\..\output\PosEntt.RecordSop.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordSopToEnttSop">
+      <HintPath>..\..\output\PosEntt.RecordSopToEnttSop.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.ReportConsoleToEnttConsole">
+      <HintPath>..\..\output\PosEntt.ReportConsoleToEnttConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.ReportConsoleToEnttConsoleDetails">
+      <HintPath>..\..\output\PosEntt.ReportConsoleToEnttConsoleDetails.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.ReportSipToEnttSip">
+      <HintPath>..\..\output\PosEntt.ReportSipToEnttSip.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -50,7 +78,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CmsAcceptanceApiUpdateAction.cs" />
+    <Compile Include="ConcurrentBagExtensions.cs" />
+    <Compile Include="ConsoleWithBabiesAction.Partial.cs" />
+    <Compile Include="ConsoleWithBabiesAction.Pending.cs" />
+    <Compile Include="EventWithChildrenAction.cs" />
+    <Compile Include="ConsoleWithBabiesAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SopWithChildrenAction.cs" />
+    <Compile Include="SipWithChildrenAction.cs" />
+    <Compile Include="SqlExceptionExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

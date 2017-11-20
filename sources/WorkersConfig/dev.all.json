@@ -8,6 +8,14 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_record-sip-record-sip-console-to-entt-sip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSipRecordSipConsoleToEnttSipTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-sip-record-sip-console-to-entt-sip"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_hip-rts-hip-to-record-hip",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToRecordHipTriggerSubscriber",
             "assembly": "subscriber.trigger.hip-rts-hip-to-record-hip"
