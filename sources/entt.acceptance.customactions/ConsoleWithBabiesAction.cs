@@ -23,11 +23,11 @@ namespace Entt.Acceptance.CustomActions
 
         public override async Task ExecuteAsync(RuleContext context)
         {
-            var norm = context.Item as RecordConsole;
-            if (null == norm) return;
-            if (norm.TotalConsignment <= 0) return;
+            var console = context.Item as RecordConsole;
+            if (null == console) return;
+            if (console.TotalConsignment <= 0) return;
 
-            await RunAsync(norm);
+            await RunAsync(console);
         }
 
         public async Task RunAsync(RecordConsole console)
