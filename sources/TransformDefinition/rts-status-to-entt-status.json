@@ -720,9 +720,9 @@
       {
         "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
         "Input": null,
-        "Length": 0,
+        "Length": 30,
         "Pad": false,
-        "PadLeftOrRight": null,
+        "PadLeftOrRight": "Left",
         "PadChar": null,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -783,9 +783,9 @@
       {
         "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
         "Input": null,
-        "Length": 0,
+        "Length": 30,
         "Pad": false,
-        "PadLeftOrRight": null,
+        "PadLeftOrRight": "Left",
         "PadChar": null,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -1309,6 +1309,6 @@
   "Id": "rts-status-to-entt-status",
   "CreatedDate": "2017-10-09T15:14:10.4639287+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T11:16:29.2547888+08:00",
+  "ChangedDate": "2017-11-22T17:00:13.1293096+08:00",
   "WebId": "dec06814-b9c1-4be3-a7ed-6493319c6dc5"
 }
