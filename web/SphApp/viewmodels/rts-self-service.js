@@ -5,12 +5,12 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             ScannerId = ko.observable(""),
             AuthToken = ko.observableArray(),
             SearchItemNoResults = ko.observableArray(),
+
             BeatNo = ko.observable(""),
             CourierId = ko.observable(""),
             ReportDate = ko.observable(""),
             UnknownLocationId = ko.observable(""),
             UnknownDate = ko.observable(""),
-            UnknownStatus = ko.observable(""),
             ActiveScannerEvent = ko.observable(""),
             ActiveScannerLocationId = ko.observable(""),
             ActiveScannerDate = ko.observable(""),
@@ -45,6 +45,7 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                         .then(function (result) {
                             isBusy(false);
                             SearchItemNoResults(result.hits.hits);
+                            console.log(result.hits.hits);
                         }, function (e) {
                             if (e.status == 422) {
                                 console.log("Unprocessable Entity");
@@ -266,23 +267,23 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                                         "range": {
                                             "CreatedDate": {
                                                 "from": UnknownDate() + "T00:00:00+08:00",
-                                                "to": UnknownDate() + "2017-08-11T23:59:59+08:00"
+                                                "to": UnknownDate() + "T23:59:59+08:00"
                                             }
                                         }
                                     }
                                 ]
                             }
-                        }
-                    };
-                    if (BeatNo() != "") {
-                        query.query.bool.must.push({
-                            "term": {
-                                "Status": {
-                                    "value": UnknownStatus()
+                        },
+                        "size": 250,
+                        "sort": [
+                            {
+                                "CreatedDate": {
+                                    "order": "asc"
                                 }
                             }
-                        });
-                    };
+                        ]
+                    }
+
                     isBusy(true);
                     SearchUnknownByLocationIdResults.removeAll();
                     context.post(ko.toJSON(query), `/api/rts-dashboard/unknown`)
@@ -292,7 +293,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                             SearchUnknownByLocationIdResults(result.hits.hits);
                             $("#unknown-location-id").text(UnknownLocationId());
                             $("#unknown-date").text(UnknownDate());
-                            $("#unknown-status").text(UnknownStatus());
                             $("#unknown-total").text(result.hits.total);
                         }, function (e) {
                             if (e.status == 422) {
@@ -441,7 +441,6 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
             ActiveScannerDate: ActiveScannerDate,
             UnknownLocationId: UnknownLocationId,
             UnknownDate: UnknownDate,
-            UnknownStatus: UnknownStatus,
             SearchByBeatNoAndCourierIdDeliResults: SearchByBeatNoAndCourierIdDeliResults,
             SearchByBeatNoAndCourierIdPickResults: SearchByBeatNoAndCourierIdPickResults,
             SearchByEventAndLocationIdResults: SearchByEventAndLocationIdResults,

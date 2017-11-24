@@ -20,7 +20,7 @@
             <li role="presentation"><a href="#pickup-report" aria-controls="pickup-report" role="tab" data-toggle="tab">Pickup Report</a></li>
             <li role="presentation"><a href="#scanner-token" aria-controls="scanner-token" role="tab" data-toggle="tab">Scanner Token</a></li>
             <li role="presentation"><a href="#active-scanner" aria-controls="active-scanner" role="tab" data-toggle="tab">Active Scanner</a></li>
-            <li role="presentation"><a href="#unknown-item" aria-controls="unknown-item" role="tab" data-toggle="tab">Unknown Item</a></li>
+            <li role="presentation"><a href="#unknown-item" aria-controls="unknown-item" role="tab" data-toggle="tab">No Acceptance Report</a></li>
             <!--<li role="presentation"><a href="#yyy-report" aria-controls="yyy-report" role="tab" data-toggle="tab">Yyy Report</a></li>-->
         </ul><!-- /Nav tabs -->
         <!-- Tab panes -->
@@ -349,7 +349,7 @@
             </div><!--/Active Scanner-->
             <!--Unknown Form-->
                 <div role="tabpanel" class="tab-pane" id="unknown-item">
-                    <h3>Delivery Report</h3>
+                    <h3>No Acceptance Report</h3>
                     <br /><br />
                     <form class="form-horizontal" id="unknown-form">
                         <div class="form-group">
@@ -357,13 +357,6 @@
                             <div class="col-md-6">
                                 <input class="form-control" type="text" id="UnknownLocationId" name="UnknownLocationId" data-bind="value: UnknownLocationId" placeholder="Location Id" aria-required="true" required />
                                 <label id="UnknownLocationId-error" class="error text-danger" for="UnknownLocationId" style="display:none"></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2" for="UnknownStatus">Status </label>
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" id="UnknownStatus" name="UnknownStatus" data-bind="value: UnknownStatus" placeholder="Status" aria-required="true" required />
-                                <label id="UnknownStatus-error" class="error text-danger" for="UnknownStatus" style="display:none"></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -389,8 +382,6 @@
                                     <label for="unknown-location-id">Location Id</label>: <span id="unknown-location-id">location id</span>
                                     <br />
                                     <label for="unknown-date">Date</label>: <span id="unknown-date">date</span>
-                                    <br />
-                                    <label for="unknown-status">Status</label>: <span id="unknown-status">status</span>
                                     <br />
                                     <label for="unknown-total">Total</label>: <span id="unknown-total">total</span>
                                </p>
