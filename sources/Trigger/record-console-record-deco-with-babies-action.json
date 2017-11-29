@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.ConsoleWithBabiesAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "6b304888-e72b-47c5-b8b9-93017c1c1028"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordDecoWithBabiesAction",
+  "Entity": "RecordConsole",
+  "TypeOf": "Bespoke.PosEntt.RecordConsoles.Domain.RecordConsole, PosEntt.RecordConsole",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordConsoleRecordDecoWithBabiesActionTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-console-record-deco-with-babies-action",
+  "CreatedDate": "2017-11-27T15:46:41.2576335+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-27T16:27:59.9046899+08:00",
+  "WebId": "fa03a475-20eb-4c14-b8f9-87b78f1c7f31"
+}
