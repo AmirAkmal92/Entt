@@ -4,9 +4,41 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
-         {
+      {
             "instancesCount": 1,
             "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-sop-rts-sop-with-babies-action",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSopRtsSopWithBabiesActionTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-sop-rts-sop-with-babies-action"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-vasn-record-vasn-to-entt-vasn",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordVasnRecordVasnToEnttVasnTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-vasn-record-vasn-to-entt-vasn"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_vasn-rts-vasn-to-record-vasn",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToRecordVasnTriggerSubscriber",
+            "assembly": "subscriber.trigger.vasn-rts-vasn-to-record-vasn"
+        },
+        {
+            "instancesCount": 5,
+            "prefetchCount": 5,
+            "priority": 0,
+            "queueName": "trigger_subs_record-console-record-deco-with-babies-action",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordConsoleRecordDecoWithBabiesActionTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-console-record-deco-with-babies-action"
+        },
+         {
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_record-sip-record-sip-console-to-entt-sip",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSipRecordSipConsoleToEnttSipTriggerSubscriber",
@@ -37,24 +69,24 @@
             "assembly": "subscriber.trigger.norm-rts-norm-to-record-console"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_deco-rts-deco-to-record-console",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToRecordConsoleTriggerSubscriber",
             "assembly": "subscriber.trigger.deco-rts-deco-to-record-console"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_sip-rts-sip-to-entt-sip",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToEnttSipTriggerSubscriber",
             "assembly": "subscriber.trigger.sip-rts-sip-to-entt-sip"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_record-sip-record-sip-to-entt-sip",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSipRecordSipToEnttSipTriggerSubscriber",
@@ -117,8 +149,8 @@
             "assembly": "subscriber.trigger.record-delivery-record-delivery-to-entt-delivery"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_record-console-record-console-to-entt-console",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordConsoleRecordConsoleToEnttConsoleTriggerSubscriber",
@@ -261,8 +293,8 @@
             "assembly": "subscriber.elasticsearch.indexer"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "es.data-import",
             "fullName": "Bespoke.Sph.ElasticSearch.DataImportSubscriber",
@@ -349,8 +381,8 @@
             "assembly": "subscriber.entities"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "persistence",
             "fullName": "Bespoke.Sph.Persistence.PersistenceContextSubscriber",
@@ -437,8 +469,8 @@
             "assembly": "subscriber.trigger.miss-rts-miss-to-oal"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_sip-rts-sip-to-oal",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalTriggerSubscriber",
@@ -517,8 +549,8 @@
             "assembly": "subscriber.trigger.norm-rts-norm-to-oal-with-child"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_deco-rts-deco-to-oal-with-child",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.DecoRtsDecoToOalWithChildTriggerSubscriber",
@@ -533,8 +565,8 @@
             "assembly": "subscriber.trigger.sop-rts-sop-to-oal-with-child"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 5,
+            "prefetchCount": 5,
             "priority": 0,
             "queueName": "trigger_subs_sip-rts-sip-to-oal-with-child",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWithChildTriggerSubscriber",

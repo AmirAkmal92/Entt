@@ -7,11 +7,11 @@
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "ffe72c22e1",
+          "CodeNamespace": "ff51619bfc",
           "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
           "Name": "IsConsole",
           "Note": "",
-          "WebId": "e72c22e1-5c2a-453e-b45d-039ff46385b7"
+          "WebId": "51619bfc-81f4-4627-c379-aafeabce98a0"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -19,10 +19,10 @@
           "Value": false,
           "Name": "false",
           "Note": "",
-          "WebId": "b8fb3f88-7ba8-4633-fcb2-3e39559a9b72"
+          "WebId": "72dfde4d-ecd0-44d1-9ff1-f2521abd60f3"
         },
         "Operator": "Eq",
-        "WebId": "237fdbe4-fda5-4920-fbed-6c2ec17eaadf"
+        "WebId": "22557c89-db42-4d2b-dc93-6b7494014e1c"
       }
     ]
   },
@@ -31,14 +31,14 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Messaging.EntityAction, trigger.action.entity",
-        "OutboundMap": "rts-deli-to-record-deli",
-        "OutboundEntity": "RecordDelivery",
-        "Operation": "AddRtsDeliveryToReportDelivery",
-        "Title": "RtsDeliveryToRecordDelivery",
+        "OutboundMap": "rts-vasn-to-record-vasn",
+        "OutboundEntity": "RecordVasn",
+        "Operation": "AddRtsVasnToEnttVasn",
+        "Title": "RtsVasnToRecordVasn",
         "IsActive": true,
         "TriggerId": null,
         "Note": null,
-        "WebId": "b11b66d9-b7b8-4594-8364-dc474c732f48"
+        "WebId": "3dc406df-e0de-40fb-971a-4550b8ffa5fe"
       }
     ]
   },
@@ -47,32 +47,32 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Vasn",
+        "FullName": "PosEntt.Vasn, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Vasn.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordVasn",
+        "FullName": "PosEntt.RecordVasn, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordVasn.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
         "Name": "Polly",
         "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
         "Version": "4.2.4.0",
         "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.Delivery",
-        "FullName": "PosEntt.Delivery, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Delivery.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RecordDelivery",
-        "FullName": "PosEntt.RecordDelivery, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordDelivery.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -91,10 +91,10 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsDeliToRecordDeli",
-        "FullName": "PosEntt.RtsDeliToRecordDeli, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.RtsVasnToRecordVasn",
+        "FullName": "PosEntt.RtsVasnToRecordVasn, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsDeliToRecordDeli.dll",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsVasnToRecordVasn.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -106,21 +106,21 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsDeliveryToRecordDelivery",
-  "Entity": "Delivery",
-  "TypeOf": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
+  "Name": "RtsVasnToRecordVasn",
+  "Entity": "Vasn",
+  "TypeOf": "Bespoke.PosEntt.Vasns.Domain.Vasn, PosEntt.Vasn",
   "Note": "",
   "IsActive": true,
   "IsFiredOnAdded": true,
   "IsFiredOnDeleted": false,
   "IsFiredOnChanged": false,
   "FiredOnOperations": "",
-  "ClassName": "DeliveryRtsDeliveryToRecordDeliveryTriggerSubscriber",
+  "ClassName": "VasnRtsVasnToRecordVasnTriggerSubscriber",
   "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
   "CreatedBy": "admin",
-  "Id": "delivery-rts-delivery-to-record-delivery",
-  "CreatedDate": "2017-10-09T12:03:25.4330426+08:00",
+  "Id": "vasn-rts-vasn-to-record-vasn",
+  "CreatedDate": "2017-11-29T12:04:48.9733544+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-29T14:15:52.9569665+08:00",
-  "WebId": "11ed67a7-f589-4451-8b08-cffc404dc202"
+  "ChangedDate": "2017-11-29T14:18:58.8441825+08:00",
+  "WebId": "3a3e7970-1ff5-42aa-8421-3d2c59faa437"
 }

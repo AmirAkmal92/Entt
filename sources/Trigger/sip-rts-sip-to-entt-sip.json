@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff969f10e0",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "969f10e0-1aeb-43ad-9ada-806b6a434ee0"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": false,
+          "Name": "false",
+          "Note": "",
+          "WebId": "3dcf701b-8982-45f6-a8a0-b7e8b73c4db0"
+        },
+        "Operator": "Eq",
+        "WebId": "83cfa68e-87e6-4274-a7ed-1cb90cad2239"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -84,7 +106,7 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsSipToEnttSip",
+  "Name": "RtsSipToRecordSip",
   "Entity": "Sip",
   "TypeOf": "Bespoke.PosEntt.Sips.Domain.Sip, PosEntt.Sip",
   "Note": "",
@@ -99,6 +121,6 @@
   "Id": "sip-rts-sip-to-entt-sip",
   "CreatedDate": "2017-10-30T14:31:00.1100518+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-30T14:54:45.2790495+08:00",
+  "ChangedDate": "2017-11-29T14:21:17.2220972+08:00",
   "WebId": "e387d14e-9d91-499a-87d3-d22f091ea92d"
 }
