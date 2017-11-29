@@ -263,12 +263,37 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "7d23e020-feac-46c9-e8c2-de5dd1554742"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "51239662-d358-43d1-e9e9-83e2cf1c6b30",
+        "Destination": "ConsoleTag",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "a5f77bb3-f0b9-4fbd-8c9a-be026fc100f3"
       }
     ]
   },
   "FunctoidCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Functoid, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return item.ConsignmentNo;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "ConsoleTag",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 491.0,
+        "Y": 248.0,
+        "WebId": "51239662-d358-43d1-e9e9-83e2cf1c6b30"
+      }
+    ]
   },
   "InputCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.MethodArg, domain.sph]], domain.sph",
@@ -287,6 +312,6 @@
   "Id": "report-console-to-entt-console",
   "CreatedDate": "2017-10-03T14:49:26.0577797+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T15:20:16.4542184+08:00",
+  "ChangedDate": "2017-11-28T16:25:26.5656361+08:00",
   "WebId": "2f7385bf-c507-460a-8593-d7602825df85"
 }
