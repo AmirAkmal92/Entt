@@ -18,7 +18,7 @@ namespace Entt.Acceptance.CustomActions
         {
             var adapter = new Entt_ConsoleDetailsAdapter();
             var idPr = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(() => adapter.ExecuteScalarAsync<string>($"SELECT TOP 1 [Id] FROM [Entt].[ConsoleDetails] WHERE [ConsoleNo] = '{console.ConsignmentNo}' ORDER BY [DateTime] DESC"));
             var id = idPr.Result;
             var consoleTagNotInConsoleDetails = string.IsNullOrWhiteSpace(id);
@@ -27,12 +27,12 @@ namespace Entt.Acceptance.CustomActions
                 var map = new Bespoke.PosEntt.Integrations.Transforms.ReportConsoleToEnttConsoleDetails();
                 var row = await map.TransformAsync(console);
                 var dpr = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                   .WaitAndRetryAsync(RetryCount, WaitInterval)
+                   .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                    .ExecuteAndCaptureAsync(() => adapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM [Entt].[ConsoleDetails] WHERE [ConsoleNo] ='{row.ConsoleNo}'"));
                 if (dpr.Result == 0 && !string.IsNullOrWhiteSpace(row.ConsoleNo))
                 {
                     var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                        .WaitAndRetryAsync(RetryCount, WaitInterval)
+                        .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                         .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
                     var result = await pr;
                     if (result.FinalException != null)
@@ -43,7 +43,7 @@ namespace Entt.Acceptance.CustomActions
             }
 
             var detailsPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(async () => await adapter.LoadOneAsync(id));
             if (null != detailsPolly.FinalException)
                 throw new Exception("Console Details Polly Error", detailsPolly.FinalException);
@@ -94,7 +94,7 @@ namespace Entt.Acceptance.CustomActions
             };
             var errorAdapter = new Entt_ConsoleDuplicateErrorAdapter();
             await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(() => errorAdapter.InsertAsync(error));
 
         }
@@ -160,7 +160,7 @@ namespace Entt.Acceptance.CustomActions
                     continue;
 
                 var pr0 = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => consoleAdapter.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM [Entt].[Console] WHERE [Id]='{item.Id}'"));
                 var result0 = await pr0;
                 if (result0.FinalException != null)
@@ -168,7 +168,7 @@ namespace Entt.Acceptance.CustomActions
                 if (result0.Result > 0) continue;
 
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => consoleAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -189,13 +189,13 @@ namespace Entt.Acceptance.CustomActions
                 {
                     // verify the id, is not duplicate
                     var onePr = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                        .WaitAndRetryAsync(RetryCount, WaitInterval)
+                        .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                         .ExecuteAndCaptureAsync(() => pendingAdapter.LoadOneAsync(item.Id));
                     var one = onePr.Result;
                     if (null != one)
                         continue;
                     await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                       .WaitAndRetryAsync(RetryCount, WaitInterval)
+                       .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                        .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
                 }
             }

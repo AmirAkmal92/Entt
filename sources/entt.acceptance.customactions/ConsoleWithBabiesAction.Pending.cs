@@ -120,7 +120,7 @@ namespace Entt.Acceptance.CustomActions
         {
             var sipAdapter = new Entt_SipAdapter();
             var sipPendingPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(async () => await sipAdapter.LoadOneAsync(sipEventId));
             if (null != sipPendingPolly.FinalException)
                 throw new Exception("Process Sip Pending Polly Error", sipPendingPolly.FinalException);
@@ -140,7 +140,7 @@ namespace Entt.Acceptance.CustomActions
             foreach (var item in sips)
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => sipAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
@@ -153,7 +153,7 @@ namespace Entt.Acceptance.CustomActions
         {
             var sopAdapter = new Entt_SopAdapter();
             var sopPendingPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(async () => await sopAdapter.LoadOneAsync(sopEventId));
             if (null != sopPendingPolly.FinalException)
                 throw new Exception("Process Sop Pending Polly Error", sopPendingPolly.FinalException);
@@ -173,7 +173,7 @@ namespace Entt.Acceptance.CustomActions
             foreach (var item in sops)
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
-                    .WaitAndRetryAsync(RetryCount, WaitInterval)
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => sopAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)

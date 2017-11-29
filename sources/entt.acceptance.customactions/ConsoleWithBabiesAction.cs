@@ -19,7 +19,6 @@ namespace Entt.Acceptance.CustomActions
     public partial class ConsoleWithBabiesAction : EventWithChildrenAction
     {
         public static int RetryCount = ConfigurationManager.GetEnvironmentVariableInt32("NormRetryCount", 3);
-        public Func<int, TimeSpan> WaitInterval = x => TimeSpan.FromMilliseconds(ConfigurationManager.GetEnvironmentVariableInt32("NormWaitInterval", 500) * Math.Pow(2, x));
 
         public override async Task ExecuteAsync(RuleContext context)
         {
@@ -51,7 +50,7 @@ namespace Entt.Acceptance.CustomActions
 
             var consoleDetailsAdapter = new Entt_EventPendingConsoleAdapter();
             var pendingCountPr = await Policy.Handle<SqlException>(e => e.IsTimeout())
-                .WaitAndRetryAsync(RetryCount, WaitInterval)
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(
                     () =>
                         consoleDetailsAdapter.ExecuteScalarAsync<int>(
@@ -62,7 +61,7 @@ namespace Entt.Acceptance.CustomActions
 
         }
 
-
+        //public Func<int, TimeSpan> WaitInterval = x => TimeSpan.FromMilliseconds(ConfigurationManager.GetEnvironmentVariableInt32("NormWaitInterval", 500) * Math.Pow(2, x));
 
         public override string GetEditorViewModel()
         {
