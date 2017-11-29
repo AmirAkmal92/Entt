@@ -8,6 +8,7 @@ CREATE TABLE [Entt].[Console](
 	[OfficeName] [varchar](30) NULL,
 	[OfficeNextCode] [varchar](4) NULL,
 	[BeatNo] [varchar](3) NULL,
+	[ConsoleTag] [varchar](40) NOT NULL,
 	[ConsignmentNo] [varchar](40) NULL,
 	[CourierId] [varchar](15) NULL,
 	[CourierName] [varchar](30) NULL,
