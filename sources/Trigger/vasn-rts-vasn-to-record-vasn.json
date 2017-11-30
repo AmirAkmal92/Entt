@@ -2,29 +2,7 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": [
-      {
-        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
-        "Left": {
-          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "ff51619bfc",
-          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
-          "Name": "IsConsole",
-          "Note": "",
-          "WebId": "51619bfc-81f4-4627-c379-aafeabce98a0"
-        },
-        "Right": {
-          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
-          "TypeName": "System.Boolean, mscorlib",
-          "Value": false,
-          "Name": "false",
-          "Note": "",
-          "WebId": "72dfde4d-ecd0-44d1-9ff1-f2521abd60f3"
-        },
-        "Operator": "Eq",
-        "WebId": "22557c89-db42-4d2b-dc93-6b7494014e1c"
-      }
-    ]
+    "$values": []
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -121,6 +99,6 @@
   "Id": "vasn-rts-vasn-to-record-vasn",
   "CreatedDate": "2017-11-29T12:04:48.9733544+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-29T14:18:58.8441825+08:00",
+  "ChangedDate": "2017-11-30T12:49:47.7860937+08:00",
   "WebId": "3a3e7970-1ff5-42aa-8421-3d2c59faa437"
 }
