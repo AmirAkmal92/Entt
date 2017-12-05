@@ -923,9 +923,9 @@
       {
         "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
         "Input": null,
-        "Length": 0,
+        "Length": 30,
         "Pad": false,
-        "PadLeftOrRight": null,
+        "PadLeftOrRight": "Left",
         "PadChar": null,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -972,6 +972,6 @@
   "Id": "rts-norm-to-record-console",
   "CreatedDate": "2017-11-10T14:29:41.8259218+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-15T13:41:22.3567381+08:00",
+  "ChangedDate": "2017-12-04T11:37:11.5670406+08:00",
   "WebId": "2f5f7516-579c-46d6-af32-8477946a602e"
 }

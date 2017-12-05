@@ -1,0 +1,89 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
+        "OutboundMap": "record-hop-to-entt-hop",
+        "Adapter": "Entt",
+        "Operation": null,
+        "Table": "Hop",
+        "Schema": null,
+        "Crud": "Insert",
+        "Retry": 3,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 5000,
+        "RetryIntervalTimeSpan": 1,
+        "Title": "RecordHopToEnttHop",
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "1da99910-6f11-4152-ef16-74a0f2faa4dc"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.Entt",
+        "FullName": "PosEntt.Entt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.Entt.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordHop",
+        "FullName": "PosEntt.RecordHop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordHop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "PosEntt.RecordHopToEnttHop",
+        "FullName": "PosEntt.RecordHopToEnttHop, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "0.0.0.0",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RecordHopToEnttHop.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      }
+    ]
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordHopToEnttHop",
+  "Entity": "RecordHop",
+  "TypeOf": "Bespoke.PosEntt.RecordHops.Domain.RecordHop, PosEntt.RecordHop",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordHopRecordHopToEnttHopTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-hop-record-hop-to-entt-hop",
+  "CreatedDate": "2017-11-30T16:06:25.0386991+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2017-11-30T16:08:48.1647494+08:00",
+  "WebId": "aad912a5-1f0c-4ffd-9951-86ece54453c1"
+}
