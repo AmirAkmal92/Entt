@@ -17,6 +17,7 @@ CREATE TABLE [Entt].[Hop](
 	[DestOfficeName] [varchar](100) NULL,
 	[BatchName] [varchar](50) NULL,
 	[DataFlag] [varchar](1) NULL,
+	[ScannerId] [varchar](10) NULL,
 	[CreatedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
 	[CreatedBy] VARCHAR(50) NULL,
 	[ChangedDate] SMALLDATETIME NOT NULL DEFAULT GETDATE(),
