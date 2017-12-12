@@ -242,7 +242,20 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
         protected static string GenerateId(int length)
         {
             var id = $"en{Guid.NewGuid():N}";
-            return id.Substring(0, length);
+            if (length == 20)
+                return GenerateShortId("en");
+            else
+                return id.Substring(0, length);
+        }
+
+        private static string GenerateShortId(string prefix)
+        {
+            long i = 1;
+            foreach (byte b in Guid.NewGuid().ToByteArray())
+            {
+                i *= ((int)b + 1);
+            }
+            return string.Format("{0}{1:x}", prefix, i - DateTime.Now.Ticks);
         }
 
         protected static bool IsConsole(string connoteNo)
