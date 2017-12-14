@@ -38,6 +38,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     var childRow = parentRow.Clone();
                     childRow.id = GenerateId(34);
+                    childRow.date_created_oal_date_field = DateTime.Now;
                     childRow.consignment_no = babyConsignmentNo;
                     childRow.item_type_code = (babyConsignmentNo.StartsWith("CG") && babyConsignmentNo.EndsWith("MY") &&
                                                babyConsignmentNo.Length == 13)
@@ -86,6 +87,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     var consignmentChildRow = consignmentParentRow.Clone();
                     consignmentChildRow.id = GenerateId(20);
+                    consignmentChildRow.dt_created_date_field = DateTime.Now;
                     consignmentChildRow.baby_item = consignmentParentRow.id;
                     consignmentChildRow.parent = consignmentParentRow.id;
                     consignmentChildRow.is_parent = 0;
@@ -128,6 +130,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     var wwpLogChildRow = wwpEventNewLogParentRow.Clone();
                     wwpLogChildRow.id = GenerateId(34);
+                    wwpLogChildRow.dt_created_oal_date_field = DateTime.Now;
                     wwpLogChildRow.consignment_note_number = babyConsignmentNo;
                     wwpEventNewLogRows.Add(wwpLogChildRow);
                 }

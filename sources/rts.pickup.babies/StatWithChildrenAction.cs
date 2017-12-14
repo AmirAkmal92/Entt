@@ -182,6 +182,7 @@ namespace Bespoke.PosEntt.CustomActions
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
+            child.date_created_oal_date_field = DateTime.Now;
             m_statEventRows.Add(child);
         }
 
@@ -227,6 +228,7 @@ namespace Bespoke.PosEntt.CustomActions
             var wwp = statWwp.Clone();
             wwp.id = GenerateId(34);
             wwp.consignment_note_number = childConnoteNo;
+            wwp.dt_created_oal_date_field = DateTime.Now;
             m_statWwpEventLogRows.Add(wwp);
         }
 

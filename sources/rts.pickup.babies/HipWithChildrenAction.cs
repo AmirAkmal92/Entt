@@ -149,6 +149,7 @@ namespace Bespoke.PosEntt.CustomActions
             var console = IsConsole(consignmentNo);
             var child = parent.Clone();
             child.id = GenerateId(34);
+            child.date_created_oal_date_field = DateTime.Now;
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
@@ -181,6 +182,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var wwp = hipWwp.Clone();
             wwp.id = GenerateId(34);
+            wwp.dt_created_oal_date_field = DateTime.Now;
             wwp.consignment_note_number = childConnoteNo;
             m_hipWwpEventLogRows.Add(wwp);
         }

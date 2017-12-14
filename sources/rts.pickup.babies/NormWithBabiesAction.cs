@@ -781,6 +781,7 @@ namespace Bespoke.PosEntt.CustomActions
         {
             var console = IsConsole(consignmentNo);
             var child = parent.Clone();
+            child.date_created_oal_date_field = DateTime.Now;
             child.id = GenerateId(34);
             child.consignment_no = consignmentNo;
             child.data_flag = "1";

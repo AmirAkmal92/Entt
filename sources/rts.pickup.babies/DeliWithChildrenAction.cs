@@ -179,6 +179,7 @@ namespace Bespoke.PosEntt.CustomActions
             child.consignment_no = consignmentNo;
             child.data_flag = "1";
             child.item_type_code = console ? "02" : "01";
+            child.date_created_o_a_l_date_field = DateTime.Now;
             m_deliEventRows.Add(child);
         }
 
@@ -213,6 +214,7 @@ namespace Bespoke.PosEntt.CustomActions
             var wwp = sipWwp.Clone();
             wwp.id = GenerateId(34);
             wwp.consignment_note_number = childConnoteNo;
+            wwp.dt_created_oal_date_field = DateTime.Now;
             m_deliWwpEventLogRows.Add(wwp);
         }
 
