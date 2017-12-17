@@ -21,16 +21,15 @@ namespace Bespoke.PosEntt.DlqRequeue
                 var ip = args[0];
                 var user = args[1];
                 var pass = args[2];
-                await program.RunAsync(ip, null, user, pass);
+                await program.RunAsync(ip, user, pass);
             }
             else if (args.Length > 4)
             {
-                var countClearing = args[0];
                 var ip = args[1];
-                await program.RunAsync(ip, countClearing, args[2], args[3]);
+                await program.RunAsync(ip, args[2], args[3]);
             }
         }
-        private async Task RunAsync(string ip, string countClearing, string user, string pass)
+        private async Task RunAsync(string ip, string user, string pass)
         {
             var factory = new ConnectionFactory();
             var ipC = $"amqp://{user}:{pass}@{ip}:5672/PosEntt";
