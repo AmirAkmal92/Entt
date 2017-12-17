@@ -53,3 +53,9 @@ env.posentt.ws27.ps1
 /sources/entt.acceptance.ipc.poller/obj
 /sources/entt.acceptance.customactions/bin
 /sources/entt.acceptance.customactions/obj
+/.vs
+/sources/dlr.requeue/bin/Debug
+/sources/dlr.requeue/obj/Debug
+/sources/dlr.requeue/.vs/DLQREQUEUE/v15
+/sources/ipos-boem-port.receive.location/bin/Debug
+/sources/ipos-boem-port.receive.location/obj/Debug
