@@ -52,24 +52,6 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-pickup-to-oal-consigment-initial",
-        "Adapter": "Oal",
-        "Operation": "usp_consigment_initial_rts",
-        "Table": null,
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryAlgorithm": "Exponential",
-        "RetryInterval": 3000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToPickupOalConsignmentInitial",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "5fdce19b-9bb4-4ff7-f64d-32a99979b6ca"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
         "OutboundMap": "rts-pickup-to-oal-pickup-event-new",
         "Adapter": "Oal",
         "Operation": null,
@@ -85,24 +67,6 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "4ea1775a-83de-4c07-ac3e-552020cfaa95"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-pickup-oal-wwp-event-new",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "wwp_event_new_log",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryAlgorithm": "Exponential",
-        "RetryInterval": 3000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalPickupWwpEventNewLog",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "73d6a173-f73a-4d6c-b1ad-86c282012246"
       }
     ]
   },
@@ -126,28 +90,6 @@
         "FullName": "PosEntt.RtsPickupToOalPickupEventNew, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
         "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsPickupToOalPickupEventNew.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsPickupToOalConsigmentInitial",
-        "FullName": "PosEntt.RtsPickupToOalConsigmentInitial, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsPickupToOalConsigmentInitial.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsPickup_oal_wwp_event_new_log",
-        "FullName": "PosEntt.RtsPickup_oal_wwp_event_new_log, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsPickup_oal_wwp_event_new_log.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -196,6 +138,6 @@
   "Id": "pickup-rts-pickup-to-oal",
   "CreatedDate": "2016-11-09T12:07:28.1045326+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-24T10:03:30.428911+08:00",
+  "ChangedDate": "2017-12-17T00:10:57.8562425+08:00",
   "WebId": "6e843be3-f289-47d4-8cd8-7bc7de1db22a"
 }

@@ -4,6 +4,38 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
+     {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-oal-consignment-initial",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalConsignmentInitialTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-consignment-initial"
+        },
+     {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-oal-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-wwp-event-new-log"
+        },
+            {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-hop-record-hop-to-entt-hop",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHopRecordHopToEnttHopTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-hop-record-hop-to-entt-hop"
+        },
+            {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hop-rts-hop-to-record-hop",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToRecordHopTriggerSubscriber",
+            "assembly": "subscriber.trigger.hop-rts-hop-to-record-hop"
+        },
       {
             "instancesCount": 1,
             "prefetchCount": 1,
