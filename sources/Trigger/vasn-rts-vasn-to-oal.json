@@ -46,24 +46,6 @@
         "TriggerId": null,
         "Note": null,
         "WebId": "39bc4b66-36c1-4f85-9918-c86be11e1be0"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-vasn-oal-wwp-event-new",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "wwp_event_new_log",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryAlgorithm": "Exponential",
-        "RetryInterval": 3000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalVasnWwpEventNewLog",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "016c3660-8089-4aba-c699-1375ba429b96"
       }
     ]
   },
@@ -87,17 +69,6 @@
         "FullName": "PosEntt.RtsVasnToOal_vasn_event_new, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
         "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsVasnToOal_vasn_event_new.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsVasn_oal_wwp_event_new_log",
-        "FullName": "PosEntt.RtsVasn_oal_wwp_event_new_log, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsVasn_oal_wwp_event_new_log.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -146,6 +117,6 @@
   "Id": "vasn-rts-vasn-to-oal",
   "CreatedDate": "2016-11-09T12:21:56.0672031+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-11-28T15:06:55.408998+08:00",
+  "ChangedDate": "2017-12-20T18:02:04.657447+08:00",
   "WebId": "c7baf610-de20-4da2-b150-dda427c3a4cd"
 }

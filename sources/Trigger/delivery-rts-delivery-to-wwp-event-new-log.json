@@ -7,11 +7,11 @@
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "ff1b9cb02b",
+          "CodeNamespace": "fff240feed",
           "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
           "Name": "IsConsole",
           "Note": "",
-          "WebId": "1b9cb02b-c67d-482d-fefd-0ef757447516"
+          "WebId": "f240feed-c48f-4042-b37b-02cfb7e58490"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -19,10 +19,10 @@
           "Value": false,
           "Name": "false",
           "Note": "",
-          "WebId": "aad4d736-b661-4532-fbee-982ebb1e1314"
+          "WebId": "68c68845-a270-4d97-c22e-b876e9f8c8c0"
         },
         "Operator": "Eq",
-        "WebId": "79e9c605-07a2-4d12-b05a-17842ee4197d"
+        "WebId": "f5c02959-d8e1-41ca-a426-dab67fedda28"
       }
     ]
   },
@@ -31,27 +31,49 @@
     "$values": [
       {
         "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-delivery-mapping",
+        "OutboundMap": "rts-delivery-oal-wwp-event-new",
         "Adapter": "Oal",
         "Operation": null,
-        "Table": "delivery_event_new",
+        "Table": "wwp_event_new_log",
         "Schema": null,
         "Crud": "Insert",
-        "Retry": 5,
-        "RetryAlgorithm": "Exponential",
-        "RetryInterval": 3000,
+        "Retry": 3,
+        "RetryAlgorithm": "Constant",
+        "RetryInterval": 5000,
         "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalDeliveryEventNew",
+        "Title": "ToOalDeliveryWwpEventNewLog",
         "IsActive": true,
         "TriggerId": null,
         "Note": null,
-        "WebId": "e81661e8-2b77-4252-d9bf-fa31508b97f3"
+        "WebId": "489a92f8-9db1-44b3-e66f-1ae721861d48"
       }
     ]
   },
   "ReferencedAssemblyCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
     "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "Polly",
+        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
+        "Version": "4.2.4.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\Polly.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
+        "Name": "System.Threading.Tasks",
+        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "Version": "4.0.10.0",
+        "Location": "C:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "IsGac": false,
+        "IsStrongName": false,
+        "RuntimeVersion": "v4.0.30319",
+        "WebId": null
+      },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
         "Name": "PosEntt.Oal",
@@ -65,32 +87,10 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsDeliveryToOal_dbo_delivery_event_new",
-        "FullName": "PosEntt.RtsDeliveryToOal_dbo_delivery_event_new, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Name": "PosEntt.RtsDelivery_oal_wwp_event_new_log",
+        "FullName": "PosEntt.RtsDelivery_oal_wwp_event_new_log, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
-        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsDeliveryToOal_dbo_delivery_event_new.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "Polly",
-        "FullName": "Polly, Version=4.2.4.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "4.2.4.0",
-        "Location": "F:\\project\\work\\entt.rts\\packages\\Polly.4.2.4\\lib\\dotnet\\Polly.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "System.Threading.Tasks",
-        "FullName": "System.Threading.Tasks, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
-        "Version": "4.0.10.0",
-        "Location": "F:\\project\\work\\entt.rts\\web\\bin\\System.Threading.Tasks.dll",
+        "Location": "C:\\project\\work\\entt.rts\\output\\PosEntt.RtsDelivery_oal_wwp_event_new_log.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -102,7 +102,7 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsDeliveryToOal",
+  "Name": "RtsDeliveryToWwpEventNewLog",
   "Entity": "Delivery",
   "TypeOf": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
   "Note": "",
@@ -111,12 +111,12 @@
   "IsFiredOnDeleted": false,
   "IsFiredOnChanged": false,
   "FiredOnOperations": "",
-  "ClassName": "DeliveryRtsDeliveryToOalTriggerSubscriber",
+  "ClassName": "DeliveryRtsDeliveryToWwpEventNewLogTriggerSubscriber",
   "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
   "CreatedBy": "admin",
-  "Id": "delivery-rts-delivery-to-oal",
-  "CreatedDate": "2016-11-09T11:51:27.6369025+08:00",
+  "Id": "delivery-rts-delivery-to-wwp-event-new-log",
+  "CreatedDate": "2017-12-20T16:35:04.845845+08:00",
   "ChangedBy": "admin",
   "ChangedDate": "2017-12-20T16:44:49.7818735+08:00",
-  "WebId": "426d64e3-7372-474f-9fca-300ab00d64f4"
+  "WebId": "d51dd960-db30-4b38-bdbc-6f24c184a378"
 }
