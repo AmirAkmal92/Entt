@@ -4,6 +4,38 @@
     "isEnabled": true,
     "environment": "dev",
     "subscriberConfigs": [
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_stat-rts-stat-to-oal-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.stat-rts-stat-to-oal-wwp-event-new-log"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_sip-rts-sip-to-oal-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.sip-rts-sip-to-oal-wwp-event-new-log"
+        },
+     {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_vasn-rts-vasn-to-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.vasn-rts-vasn-to-wwp-event-new-log"
+        },
+     {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_delivery-rts-delivery-to-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.delivery-rts-delivery-to-wwp-event-new-log"
+        },
      {
             "instancesCount": 1,
             "prefetchCount": 1,
