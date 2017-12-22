@@ -46,24 +46,6 @@
         "TriggerId": null,
         "Note": "hop_event_new table in Oal",
         "WebId": "6be0b3b6-d528-4404-818e-d81b31a9e67d"
-      },
-      {
-        "$type": "Bespoke.Sph.Messaging.MessagingAction, trigger.action.messaging",
-        "OutboundMap": "rts-hop-to-oal-wwp-event-new",
-        "Adapter": "Oal",
-        "Operation": null,
-        "Table": "wwp_event_new_log",
-        "Schema": null,
-        "Crud": "Insert",
-        "Retry": 5,
-        "RetryAlgorithm": "Exponential",
-        "RetryInterval": 3000,
-        "RetryIntervalTimeSpan": 1,
-        "Title": "ToOalHopWwpEventNewLog",
-        "IsActive": true,
-        "TriggerId": null,
-        "Note": null,
-        "WebId": "53fe480b-babb-4a88-ee06-4694969a0478"
       }
     ]
   },
@@ -87,17 +69,6 @@
         "FullName": "PosEntt.RtsHopToOalHopEventNew, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
         "Version": "0.0.0.0",
         "Location": "F:\\project\\work\\entt.rts\\output\\PosEntt.RtsHopToOalHopEventNew.dll",
-        "IsGac": false,
-        "IsStrongName": false,
-        "RuntimeVersion": "v4.0.30319",
-        "WebId": null
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.ReferencedAssembly, domain.sph",
-        "Name": "PosEntt.RtsHopToOalWwpEventNewLog",
-        "FullName": "PosEntt.RtsHopToOalWwpEventNewLog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "Version": "0.0.0.0",
-        "Location": "D:\\project\\work\\entt.rts\\output\\PosEntt.RtsHopToOalWwpEventNewLog.dll",
         "IsGac": false,
         "IsStrongName": false,
         "RuntimeVersion": "v4.0.30319",
@@ -146,6 +117,6 @@
   "Id": "rts-hop-added",
   "CreatedDate": "2016-10-19T11:53:35.1190563+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2016-12-01T08:02:52.0911705+08:00",
+  "ChangedDate": "2017-12-22T11:23:58.7503982+08:00",
   "WebId": "ea07b5ca-8811-4ed5-ab73-82108fe47488"
 }
