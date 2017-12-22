@@ -8,6 +8,30 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_sop-rts-sop-to-oal-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.sop-rts-sop-to-oal-wwp-event-new-log"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hop-rts-hop-oal-wwp-event-new",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopOalWwpEventNewTriggerSubscriber",
+            "assembly": "subscriber.trigger.hop-rts-hop-oal-wwp-event-new"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_hip-rts-hip-to-oal-wwp-event-new-log",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWwpEventNewLogTriggerSubscriber",
+            "assembly": "subscriber.trigger.hip-rts-hip-to-oal-wwp-event-new-log"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_stat-rts-stat-to-oal-wwp-event-new-log",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.stat-rts-stat-to-oal-wwp-event-new-log"
