@@ -25,13 +25,15 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(stat.ConsignmentNo);
             if (!isConsole) return;
 
-            m_statEventRows = new List<Adapters.Oal.dbo_status_code_event_new>();
-            m_statWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_statEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-            m_statIpsImportRows = new List<Adapters.Oal.dbo_ips_import>();
-            m_statOalImportMap = new Integrations.Transforms.RtsStatToOalIpsImport();
-
-            await RunAsync(stat);
+            var swca = new StatWithChildrenAction()
+            {
+                m_statEventRows = new List<Adapters.Oal.dbo_status_code_event_new>(),
+                m_statWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_statEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>(),
+                m_statIpsImportRows = new List<Adapters.Oal.dbo_ips_import>(),
+                m_statOalImportMap = new Integrations.Transforms.RtsStatToOalIpsImport()
+            };
+            await swca.RunAsync(stat);
         }
 
         public async Task RunAsync(Stats.Domain.Stat stat)

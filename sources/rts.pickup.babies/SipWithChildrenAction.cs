@@ -24,11 +24,13 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(sip.ConsignmentNo);
             if (!isConsole) return;
 
-            m_sipEventRows = new List<Adapters.Oal.dbo_sip_event_new>();
-            m_sipWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_sipEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(sip);
+            var swca = new SipWithChildrenAction()
+            {
+                m_sipEventRows = new List<Adapters.Oal.dbo_sip_event_new>(),
+                m_sipWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_sipEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await swca.RunAsync(sip);
         }
 
         public async Task RunAsync(Sips.Domain.Sip sip)

@@ -25,11 +25,13 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(hip.ConsignmentNo);
             if (!isConsole) return;
 
-            m_hipEventRows = new List<Adapters.Oal.dbo_hip_event_new>();
-            m_hipWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_hipEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(hip);
+            var hwca = new HipWithChildrenAction()
+            {
+                m_hipEventRows = new List<Adapters.Oal.dbo_hip_event_new>(),
+                m_hipWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_hipEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await hwca.RunAsync(hip);
         }
 
         public async Task RunAsync(Hips.Domain.Hip hip)

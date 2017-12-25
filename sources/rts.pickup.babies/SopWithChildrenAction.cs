@@ -12,7 +12,6 @@ namespace Bespoke.PosEntt.CustomActions
     [DesignerMetadata(Name = "SopWithChildren", TypeName = "Bespoke.PosEntt.CustomActions.SopWithChildrenAction, rts.pickup.babies", Description = "RTS SOP with child items", FontAwesomeIcon = "calendar-check-o")]
     public class SopWithChildrenAction : EventWithChildrenAction
     {
-
         private List<Adapters.Oal.dbo_sop_event_new> m_sopEventRows;
         private List<Adapters.Oal.dbo_wwp_event_new_log> m_sopWwpEventLogRows;
         private List<Adapters.Oal.dbo_event_pending_console> m_sopEventPendingConsoleRows;
@@ -24,11 +23,13 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(sop.ConsignmentNo);
             if (!isConsole) return;
 
-            m_sopEventRows = new List<Adapters.Oal.dbo_sop_event_new>();
-            m_sopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_sopEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(sop);
+            var swca = new SopWithChildrenAction()
+            {
+                m_sopEventRows = new List<Adapters.Oal.dbo_sop_event_new>(),
+                m_sopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_sopEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await swca.RunAsync(sop);
         }
 
         public async Task RunAsync(Sops.Domain.Sop sop)

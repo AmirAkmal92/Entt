@@ -24,12 +24,14 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(deli.ConsignmentNo);
             if (!isConsole) return;
 
-            m_deliEventRows = new List<Adapters.Oal.dbo_delivery_event_new>();
-            m_deliWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_deliEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-            m_deliIpsImportEventRows = new List<Adapters.Oal.dbo_ips_import>();
-
-            await RunAsync(deli);
+            var dwca = new DeliWithChildrenAction()
+            {
+                m_deliEventRows = new List<Adapters.Oal.dbo_delivery_event_new>(),
+                m_deliWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_deliEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>(),
+                m_deliIpsImportEventRows = new List<Adapters.Oal.dbo_ips_import>()
+            };
+            await dwca.RunAsync(deli);
         }
 
         public async Task RunAsync(Deliveries.Domain.Delivery deli)

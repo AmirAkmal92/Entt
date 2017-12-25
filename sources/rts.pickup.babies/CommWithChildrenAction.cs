@@ -23,10 +23,12 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(comm.ConsignmentNo);
             if (!isConsole) return;
 
-            m_commEventRows = new List<Adapters.Oal.dbo_comment_event_new>();
-            m_commEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(comm);
+            var cwca = new CommWithChildrenAction()
+            {
+                m_commEventRows = new List<Adapters.Oal.dbo_comment_event_new>(),
+                m_commEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await cwca.RunAsync(comm);
         }
 
         public async Task RunAsync(Comms.Domain.Comm comm)

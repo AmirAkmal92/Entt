@@ -22,10 +22,12 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(miss.ConsignmentNo);
             if (!isConsole) return;
 
-            m_missEventRows = new List<Adapters.Oal.dbo_missort_event_new>();
-            m_missEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(miss);
+            var mwca = new MissWithChildrenAction()
+            {
+                m_missEventRows = new List<Adapters.Oal.dbo_missort_event_new>(),
+                m_missEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await mwca.RunAsync(miss);
         }
 
         public async Task RunAsync(Misses.Domain.Miss miss)

@@ -23,11 +23,13 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(hop.ConsignmentNo);
             if (!isConsole) return;
 
-            m_hopEventRows = new List<Adapters.Oal.dbo_hop_event_new>();
-            m_hopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_hopEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(hop);
+            var hwca = new HopWithChildrenAction()
+            {
+                m_hopEventRows = new List<Adapters.Oal.dbo_hop_event_new>(),
+                m_hopWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_hopEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await hwca.RunAsync(hop);
         }
 
         public async Task RunAsync(Hops.Domain.Hop hop)

@@ -23,11 +23,13 @@ namespace Bespoke.PosEntt.CustomActions
             var isConsole = IsConsole(vasn.ConsignmentNo);
             if (!isConsole) return;
 
-            m_vasnEventRows = new List<Adapters.Oal.dbo_vasn_event_new>();
-            m_vasnWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>();
-            m_vasnEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>();
-
-            await RunAsync(vasn);
+            var vwca = new VasnWithChildrenAction()
+            {
+                m_vasnEventRows = new List<Adapters.Oal.dbo_vasn_event_new>(),
+                m_vasnWwpEventLogRows = new List<Adapters.Oal.dbo_wwp_event_new_log>(),
+                m_vasnEventPendingConsoleRows = new List<Adapters.Oal.dbo_event_pending_console>()
+            };
+            await vwca.RunAsync(vasn);
         }
 
         public async Task RunAsync(Vasns.Domain.Vasn vasn)
