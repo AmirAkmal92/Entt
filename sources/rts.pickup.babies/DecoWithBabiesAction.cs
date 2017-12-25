@@ -29,6 +29,8 @@ namespace Bespoke.PosEntt.CustomActions
         public async Task RunAsync(Decos.Domain.Deco deco)
         {
             var pendingConsoles = new List<string>();
+            var consoleList = new List<string> { deco.ConsoleTag };
+
             //add to console_details first
             var success = await AddToConsoleDetailsAsync(deco);
 
@@ -38,7 +40,7 @@ namespace Bespoke.PosEntt.CustomActions
             var map = new Integrations.Transforms.RtsDecoOalDeliveryConsoleEventNew();
             var row = await map.TransformAsync(deco);
             rows.Add(row);
-            rows.AddRange(await GetEventRowsAsync(row, pendingConsoles, deco.AllConsignmentnNotes));
+            rows.AddRange(await GetEventRowsAsync(row, pendingConsoles, consoleList, deco.AllConsignmentnNotes));
 
             //
             await InsertDeliveryConsoleEventNewAsync(rows);
@@ -225,6 +227,7 @@ namespace Bespoke.PosEntt.CustomActions
         private async Task<IEnumerable<Adapters.Oal.dbo_delivery_console_event_new>> GetEventRowsAsync(
             Adapters.Oal.dbo_delivery_console_event_new eventRow,
             IList<string> pendingConsoles,
+            IList<string> consoleList,
             string consignmentNotes,
             int level = 0)
         {
@@ -237,9 +240,12 @@ namespace Bespoke.PosEntt.CustomActions
             foreach (var c in items)
             {
                 var itemConNote = c;
+                if (consoleList.Contains(itemConNote)) continue;
                 var row = await CloneChildAsync(eventRow, itemConNote);
                 list.Add(row);
+
                 if (!IsConsole(itemConNote)) continue;
+                consoleList.Add(itemConNote);
 
                 var childConsignments = await GetItemConsigmentsFromConsoleDetailsAsync(itemConNote);
                 if (null == childConsignments)
@@ -249,6 +255,7 @@ namespace Bespoke.PosEntt.CustomActions
                 }
                 var children = await GetEventRowsAsync(eventRow,
                     pendingConsoles,
+                    consoleList,
                     childConsignments.ToEmptyString().Trim(),
                     level + 1);
                 list.AddRange(children);
