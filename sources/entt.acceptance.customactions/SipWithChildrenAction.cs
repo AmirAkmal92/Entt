@@ -15,8 +15,8 @@ namespace Entt.Acceptance.CustomActions
     [DesignerMetadata(Name = "SipWithChildrenAction", TypeName = "Entt.Acceptance.CustomActions.SipWithChildrenAction,entt.acceptance.customactions", Description = "Entt SIP with child items", FontAwesomeIcon = "euro")]
     public class SipWithChildrenAction : EventWithChildrenAction
     {
-        private List<Entt_Sip> m_sipEventRows = new List<Entt_Sip>();
-        private List<Entt_EventPendingConsole> m_sipEventPendingConsoleRows = new List<Entt_EventPendingConsole>();
+        private List<Entt_Sip> m_sipEventRows;
+        private List<Entt_EventPendingConsole> m_sipEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
@@ -24,8 +24,13 @@ namespace Entt.Acceptance.CustomActions
             if (null == sip) return;
             var isConsole = IsConsole(sip.ConsignmentNo);
             if (!isConsole) return;
-
-            await RunAsync(sip);
+            
+            var swca = new SipWithChildrenAction()
+            {
+                m_sipEventRows = new List<Entt_Sip>(),
+                m_sipEventPendingConsoleRows = new List<Entt_EventPendingConsole>()
+            };
+            await swca.RunAsync(sip);
         }
 
         public async Task RunAsync(RecordSip sip)

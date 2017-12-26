@@ -15,8 +15,8 @@ namespace Entt.Acceptance.CustomActions
     [DesignerMetadata(Name = "SopWithChildrenAction", TypeName = "Entt.Acceptance.CustomActions.SopWithChildrenAction,entt.acceptance.customactions", Description = "Entt SOP with child items", FontAwesomeIcon = "euro")]
     public class SopWithChildrenAction : EventWithChildrenAction
     {
-        private List<Entt_Sop> m_sopEventRows = new List<Entt_Sop>();
-        private List<Entt_EventPendingConsole> m_sopEventPendingConsoleRows = new List<Entt_EventPendingConsole>();
+        private List<Entt_Sop> m_sopEventRows;
+        private List<Entt_EventPendingConsole> m_sopEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
@@ -25,7 +25,12 @@ namespace Entt.Acceptance.CustomActions
             var isConsole = IsConsole(sop.ConsignmentNo);
             if (!isConsole) return;
 
-            await RunAsync(sop);
+            var swca = new SopWithChildrenAction()
+            {
+                m_sopEventRows = new List<Entt_Sop>(),
+                m_sopEventPendingConsoleRows = new List<Entt_EventPendingConsole>()
+            };
+            await swca.RunAsync(sop);
         }
 
         public async Task RunAsync(RecordSop sop)
