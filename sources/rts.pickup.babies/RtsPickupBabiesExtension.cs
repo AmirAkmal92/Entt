@@ -13,6 +13,12 @@ namespace Bespoke.PosEntt.CustomActions
         {
             switch (domain)
             {
+                case dbo_delivery_console_event_new deco:
+                    return deco.HashDecoEventNew();
+                case dbo_normal_console_event_new norm:
+                    return norm.HashNormEventNew();
+                case dbo_console_details console:
+                    return console.HashConsoleDetails();
                 case dbo_delivery_event_new deli:
                     return deli.HashDeliEventNew();
                 case dbo_status_code_event_new stat:
@@ -35,6 +41,12 @@ namespace Bespoke.PosEntt.CustomActions
                     return comm.HashCommentEventNew();
                 case dbo_missort_event_new miss:
                     return miss.HashMissortEventNew();
+                case dbo_event_pending_console pending:
+                    return pending.HashPendingConsoleEvent();
+                case dbo_event_exception exception:
+                    return exception.HashEventException();
+                case dbo_console_duplicate_error duplicate:
+                    return duplicate.HashConsoleDuplicateError();
             }
 
             return "";
@@ -44,6 +56,12 @@ namespace Bespoke.PosEntt.CustomActions
         {
             switch (domain)
             {
+                case dbo_delivery_console_event_new deco:
+                    return deco.GetDecoConsignmentNo();
+                case dbo_normal_console_event_new norm:
+                    return norm.GetNormConsignmentNo();
+                case dbo_console_details console:
+                    return console.GetConsoleDetailsConsignmentNo();
                 case dbo_delivery_event_new deli:
                     return deli.GetDeliConsignmentNo();
                 case dbo_status_code_event_new stat:
@@ -66,6 +84,12 @@ namespace Bespoke.PosEntt.CustomActions
                     return comm.GetCommentConsignmentNo();
                 case dbo_missort_event_new miss:
                     return miss.GetMissortConsignmentNo();
+                case dbo_event_pending_console pending:
+                    return pending.GetPendingConsoleConsignmentNo();
+                case dbo_event_exception exception:
+                    return exception.GetEventExceptionConsignmentNo();
+                case dbo_console_duplicate_error duplicate:
+                    return duplicate.GetConsoleDuplicateErrorConsignmentNo();
             }
 
             return "";
@@ -75,6 +99,12 @@ namespace Bespoke.PosEntt.CustomActions
         {
             switch (domain)
             {
+                case dbo_delivery_console_event_new deco:
+                    return deco.GetDecoDateTime();
+                case dbo_normal_console_event_new norm:
+                    return norm.GetNormDateTime();
+                case dbo_console_details console:
+                    return console.GetConsoleDetailsDateTime();
                 case dbo_delivery_event_new deli:
                     return deli.GetDeliDateTime();
                 case dbo_status_code_event_new stat:
@@ -97,9 +127,60 @@ namespace Bespoke.PosEntt.CustomActions
                     return comm.GetCommentDateTime();
                 case dbo_missort_event_new miss:
                     return miss.GetMissortDateTime();
+                case dbo_event_pending_console pending:
+                    return pending.GetPendingConsoleDateTime();
+                case dbo_event_exception exception:
+                    return exception.GetEventExceptionDateTime();
+                case dbo_console_duplicate_error duplicate:
+                    return duplicate.GetConsoleDuplicateErrorDateTime();
             }
 
             return null;
+        }
+
+        private static string HashDecoEventNew(this dbo_delivery_console_event_new deco)
+        {
+            var key = $"deco.{deco.GetType().Name}.{deco.consignment_no}.{deco.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetDecoConsignmentNo(this dbo_delivery_console_event_new deco)
+        {
+            return deco.consignment_no;
+        }
+
+        private static DateTime? GetDecoDateTime(this dbo_delivery_console_event_new deco)
+        {
+            return deco.date_field;
+        }
+
+        private static string HashNormEventNew(this dbo_normal_console_event_new norm)
+        {
+            var key = $"norm.{norm.GetType().Name}.{norm.consignment_no}.{norm.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetNormConsignmentNo(this dbo_normal_console_event_new norm)
+        {
+            return norm.consignment_no;
+        }
+
+        private static DateTime? GetNormDateTime(this dbo_normal_console_event_new norm)
+        {
+            return norm.date_field;
+        }
+
+        private static string HashConsoleDetails(this dbo_console_details console)
+        {
+            var key = $"console.{console.GetType().Name}.{console.console_no}.{console.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetConsoleDetailsConsignmentNo(this dbo_console_details console)
+        {
+            return console.console_no;
+        }
+
+        private static DateTime? GetConsoleDetailsDateTime(this dbo_console_details console)
+        {
+            return console.date_field;
         }
 
         private static string HashDeliEventNew(this dbo_delivery_event_new deli)
@@ -267,6 +348,51 @@ namespace Bespoke.PosEntt.CustomActions
         private static DateTime? GetMissortDateTime(this dbo_missort_event_new miss)
         {
             return miss.date_field;
+        }
+
+        private static string HashPendingConsoleEvent(this dbo_event_pending_console pending)
+        {
+            var key = $"pending.{pending.GetType().Name}.{pending.console_no}.{pending.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetPendingConsoleConsignmentNo(this dbo_event_pending_console pending)
+        {
+            return pending.console_no;
+        }
+
+        private static DateTime? GetPendingConsoleDateTime(this dbo_event_pending_console pending)
+        {
+            return pending.date_field;
+        }
+
+        private static string HashEventException(this dbo_event_exception exception)
+        {
+            var key = $"exception.{exception.GetType().Name}.{exception.consignment_no}.{exception.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetEventExceptionConsignmentNo(this dbo_event_exception exception)
+        {
+            return exception.consignment_no;
+        }
+
+        private static DateTime? GetEventExceptionDateTime(this dbo_event_exception exception)
+        {
+            return exception.date_field;
+        }
+
+        private static string HashConsoleDuplicateError(this dbo_console_duplicate_error duplicate)
+        {
+            var key = $"duplicate.{duplicate.GetType().Name}.{duplicate.console_no}.{duplicate.date_field.Value:s}";
+            return GetHashKey(key);
+        }
+        private static string GetConsoleDuplicateErrorConsignmentNo(this dbo_console_duplicate_error duplicate)
+        {
+            return duplicate.console_no;
+        }
+
+        private static DateTime? GetConsoleDuplicateErrorDateTime(this dbo_console_duplicate_error duplicate)
+        {
+            return duplicate.date_field;
         }
 
         private static string GetHashKey(string input)
