@@ -108,6 +108,8 @@ namespace Bespoke.PosEntt.CustomActions
             //persist any rows
             foreach (var item in m_sopEventRows)
             {
+                //if (item.consignment_no == "EH465625253MY") throw new ArgumentNullException("scenario failed testing");
+
                 System.Diagnostics.Debug.WriteLine("sop_event_new: {0}|{1}", item.consignment_no, item.id);
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
