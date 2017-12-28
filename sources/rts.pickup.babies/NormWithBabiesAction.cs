@@ -99,7 +99,7 @@ namespace Bespoke.PosEntt.CustomActions
                 {
                     var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                         .WaitAndRetryAsync(RetryCount, WaitInterval)
-                        .ExecuteAndCaptureAsync(() => adapter.InsertAsync(row));
+                        .ExecuteAndCaptureAsync(() => TrackEvents(adapter.InsertAsync,row));
                     var result = await pr;
                     if (result.FinalException != null)
                         throw result.FinalException; // Send to dead letter queue
@@ -166,7 +166,7 @@ namespace Bespoke.PosEntt.CustomActions
             var errorAdapter = new Adapters.Oal.dbo_console_duplicate_errorAdapter();
             await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                 .WaitAndRetryAsync(RetryCount, WaitInterval)
-                .ExecuteAndCaptureAsync(() => errorAdapter.InsertAsync(error));
+                .ExecuteAndCaptureAsync(() => TrackEvents(errorAdapter.InsertAsync,error));
 
 
             var exc = new Adapters.Oal.dbo_event_exception
@@ -184,7 +184,7 @@ namespace Bespoke.PosEntt.CustomActions
             var excAdapter = new Adapters.Oal.dbo_event_exceptionAdapter();
             await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                 .WaitAndRetryAsync(RetryCount, WaitInterval)
-                .ExecuteAndCaptureAsync(() => excAdapter.InsertAsync(exc));
+                .ExecuteAndCaptureAsync(() => TrackEvents(excAdapter.InsertAsync,exc));
         }
 
         private async Task InsertEventPendingConsoleAsync(Adapters.Oal.dbo_normal_console_event_new parent, params string[] connoteNotes)
@@ -206,7 +206,7 @@ namespace Bespoke.PosEntt.CustomActions
                         continue;
                     await Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                        .WaitAndRetryAsync(RetryCount, WaitInterval)
-                       .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                       .ExecuteAndCaptureAsync(() => TrackEvents(pendingAdapter.InsertAsync,item));
 
                 }
 
@@ -233,7 +233,7 @@ namespace Bespoke.PosEntt.CustomActions
 
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => decoEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(decoEventAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -375,7 +375,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => deliAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(deliAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -386,7 +386,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(ipsAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -468,7 +468,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => missAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(missAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -503,7 +503,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => statAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(statAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -540,7 +540,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => vasnAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(vasnAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -573,7 +573,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => sopAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(sopAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -610,7 +610,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => sipAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(sipAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -645,7 +645,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => hopAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(hopAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -678,7 +678,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => hipAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(hipAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -709,7 +709,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => wwpAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(wwpAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -745,7 +745,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, WaitInterval)
-                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(ipsAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
