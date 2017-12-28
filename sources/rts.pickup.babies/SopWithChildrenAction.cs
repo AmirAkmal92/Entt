@@ -111,7 +111,7 @@ namespace Bespoke.PosEntt.CustomActions
                 System.Diagnostics.Debug.WriteLine("sop_event_new: {0}|{1}", item.consignment_no, item.id);
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => sopEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(sopEventAdapter.InsertAsync, item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -122,7 +122,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => sopWwpEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(sopWwpEventAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -134,7 +134,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(pendingAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -188,8 +188,5 @@ namespace Bespoke.PosEntt.CustomActions
             wwp.consignment_note_number = childConnoteNo;
             m_sopWwpEventLogRows.Add(wwp);
         }
-
-
-
     }
 }

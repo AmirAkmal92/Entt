@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Bespoke.Sph.Domain;
+using Bespoke.Entt.Tracker.Service;
 
 namespace Bespoke.PosEntt.CustomActions
 {
@@ -8,12 +9,27 @@ namespace Bespoke.PosEntt.CustomActions
     {
         public override bool UseAsync => true;
 
+        protected async Task<int> TrackEvents<T>(Func<T, Task> operation, T item) where T : DomainObject
+        {
+            var tracker = new EnttTracker();
+            var done = await tracker.GetStatusAsync(item.HashEvent(), item.GetConsignmentNo(), item.GetDateTime(), typeof(T).Name).ConfigureAwait(false);
+            if (done) return 1;
+
+            await operation(item);
+            tracker.AddStatusAsync(item.HashEvent(), item.GetConsignmentNo(), item.GetDateTime(), typeof(T).Name)
+                .ContinueWith(_ =>
+                {
+                    System.Diagnostics.Debug.Assert(_.Exception == null);
+                })
+                .ConfigureAwait(false);
+            return 1;
+        }
+
         protected Task<string> GetItemConsigmentsFromConsoleDetailsAsync(string consignmentNo)
         {
             var consoleDetailsAdapter = new Adapters.Oal.dbo_console_detailsAdapter();
             var query = $"SELECT [item_consignments] FROM [dbo].[console_details] WHERE console_no = '{consignmentNo}'";
             return consoleDetailsAdapter.ExecuteScalarAsync<string>(query);
-            
         }
 
         protected async Task<Adapters.Oal.dbo_ips_import> CreateStatIpsImport(Adapters.Oal.dbo_status_code_event_new stat, string consignmentNo)

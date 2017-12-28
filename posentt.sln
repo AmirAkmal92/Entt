@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rts.ips.export.trigger", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entt.acceptance.customactions", "sources\entt.acceptance.customactions\entt.acceptance.customactions.csproj", "{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tracker.service", "sources\tracker.service\tracker.service.csproj", "{FA8FC8C7-BCBB-4146-B2B6-B5B214AFD9EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8EA3A8E-945F-4F27-B5E8-223DEF0382DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8FC8C7-BCBB-4146-B2B6-B5B214AFD9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8FC8C7-BCBB-4146-B2B6-B5B214AFD9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8FC8C7-BCBB-4146-B2B6-B5B214AFD9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8FC8C7-BCBB-4146-B2B6-B5B214AFD9EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

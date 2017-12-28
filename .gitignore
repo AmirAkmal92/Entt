@@ -59,3 +59,5 @@ env.posentt.ws27.ps1
 /sources/dlr.requeue/.vs/DLQREQUEUE/v15
 /sources/ipos-boem-port.receive.location/bin/Debug
 /sources/ipos-boem-port.receive.location/obj/Debug
+/sources/tracker.service/bin
+/sources/tracker.service/obj
