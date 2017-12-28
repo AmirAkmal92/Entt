@@ -352,7 +352,7 @@ namespace Bespoke.PosEntt.CustomActions
 
         private static string HashPendingConsoleEvent(this dbo_event_pending_console pending)
         {
-            var key = $"pending.{pending.GetType().Name}.{pending.console_no}.{pending.date_field.Value:s}";
+            var key = $"pending.{pending.GetType().Name}.{pending.console_no}.{pending.date_field.Value:s}.{pending.event_class}";
             return GetHashKey(key);
         }
         private static string GetPendingConsoleConsignmentNo(this dbo_event_pending_console pending)
