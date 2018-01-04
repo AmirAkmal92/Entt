@@ -47,6 +47,7 @@ public class RtsDashboadController : BaseApiController
            ""query"": ""{consignmentNo}""
         }}
     }},
+    ""size"": 30,
     ""sort"": [
         {{
             ""CreatedDate"": {{
