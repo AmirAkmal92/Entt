@@ -265,7 +265,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"12\"; break;\r\n    case \"03\" : display = \"10\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"18\";  break;\r\n    case \"05\" : display = \"13\"; break;\r\n    case \"06\" : display = \"14\"; break;\r\n    case \"07\" : display = \"16\"; break;\r\n    case \"08\" : display = \"13\"; break;\r\n    case \"09\" : display = \"12\"; break;\r\n}\r\nreturn display;",
+        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"12\"; break;\r\n    case \"03\" : display = \"10\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"18\";  break;\r\n    case \"05\" : display = \"13\"; break;\r\n    case \"06\" : display = \"16\"; break;\r\n    case \"07\" : display = \"16\"; break;\r\n    case \"08\" : display = \"13\"; break;\r\n    case \"09\" : display = \"12\"; break;\r\n}\r\nreturn display;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -280,7 +280,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"C\"; break;\r\n    case \"03\" : display = \"M\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"C\";  break;\r\n    case \"05\" : display = \"E\"; break;\r\n    case \"06\" : display = \"L\"; break;\r\n    case \"07\" : display = \"B\"; break;\r\n    case \"08\" : display = \"E\"; break;\r\n    case \"09\" : display = \"C\"; break;\r\n}\r\nreturn display;",
+        "Expression": "string display = null;\r\nswitch (item.ReasonCode)\r\n{\r\n    case \"02\" : display = \"C\"; break;\r\n    case \"03\" : display = \"M\"; break;\r\n    case \"04\" : if (item.DamageCode == \"01\")  display = null; else display = \"C\";  break;\r\n    case \"05\" : display = \"E\"; break;\r\n    case \"06\" : display = \"B\"; break;\r\n    case \"07\" : display = \"B\"; break;\r\n    case \"08\" : display = \"E\"; break;\r\n    case \"09\" : display = \"C\"; break;\r\n}\r\nreturn display;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -656,6 +656,6 @@
   "Id": "rts-delivery-to-ips-import",
   "CreatedDate": "2016-10-19T10:42:27.4855359+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-09-04T15:20:37.905314+08:00",
+  "ChangedDate": "2018-01-12T16:52:21.0077181+08:00",
   "WebId": "03bfc107-1309-4a52-b4f9-051ac46d1d9f"
 }
