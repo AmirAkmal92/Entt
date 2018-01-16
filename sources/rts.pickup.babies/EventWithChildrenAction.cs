@@ -111,7 +111,7 @@ namespace Bespoke.PosEntt.CustomActions
                 case "03": display = "10"; break;
                 case "04": if (damageCode == "01") display = null; else display = "18"; break;
                 case "05": display = "13"; break;
-                case "06": display = "14"; break;
+                case "06": display = "16"; break;
                 case "07": display = "16"; break;
                 case "08": display = "13"; break;
                 case "09": display = "12"; break;
@@ -128,7 +128,7 @@ namespace Bespoke.PosEntt.CustomActions
                 case "03": display = "M"; break;
                 case "04": if (damageCode == "01") display = null; else display = "C"; break;
                 case "05": display = "E"; break;
-                case "06": display = "L"; break;
+                case "06": display = "B"; break;
                 case "07": display = "B"; break;
                 case "08": display = "E"; break;
                 case "09": display = "C"; break;
