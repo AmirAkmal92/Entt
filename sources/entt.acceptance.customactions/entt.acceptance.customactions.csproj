@@ -47,6 +47,18 @@
     <Reference Include="PosEntt.RecordConsole">
       <HintPath>..\..\output\PosEntt.RecordConsole.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RecordHip">
+      <HintPath>..\..\output\PosEntt.RecordHip.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordHipToEnttHip">
+      <HintPath>..\..\output\PosEntt.RecordHipToEnttHip.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordHop">
+      <HintPath>..\..\output\PosEntt.RecordHop.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordHopToEnttHop">
+      <HintPath>..\..\output\PosEntt.RecordHopToEnttHop.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RecordSip">
       <HintPath>..\..\output\PosEntt.RecordSip.dll</HintPath>
     </Reference>
@@ -77,16 +89,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HipWithChildrenAction.cs" />
     <Compile Include="CmsAcceptanceApiUpdateAction.cs" />
     <Compile Include="ConcurrentBagExtensions.cs" />
     <Compile Include="ConsoleWithBabiesAction.Partial.cs" />
     <Compile Include="ConsoleWithBabiesAction.Pending.cs" />
     <Compile Include="EventWithChildrenAction.cs" />
     <Compile Include="ConsoleWithBabiesAction.cs" />
+    <Compile Include="HopWithChildrenAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SopWithChildrenAction.cs" />
     <Compile Include="SipWithChildrenAction.cs" />
     <Compile Include="SqlExceptionExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
