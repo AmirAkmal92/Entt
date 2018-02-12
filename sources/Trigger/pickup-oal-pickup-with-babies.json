@@ -8,7 +8,7 @@
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
           "CodeNamespace": "ffb61d81c3",
-          "Script": "item.ConsignmentNo",
+          "Script": "return string.IsNullOrWhiteSpace(item.ConsignmentNo);",
           "Name": "ConsignmentNo",
           "Note": "",
           "WebId": "b61d81c3-b5fa-4ef4-9c86-0830bf5432c7"
@@ -16,12 +16,12 @@
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
           "TypeName": "System.String, mscorlib",
-          "Value": "-",
-          "Name": "null",
+          "Value": "False",
+          "Name": "false",
           "Note": "",
           "WebId": "e3c307f4-f0ca-4933-bd3e-9ec92a745f46"
         },
-        "Operator": "Neq",
+        "Operator": "Eq",
         "WebId": "5fe3f034-fcd0-4ad6-82dc-8e88b2358571"
       }
     ]
@@ -62,6 +62,6 @@
   "Id": "pickup-oal-pickup-with-babies",
   "CreatedDate": "2016-11-18T19:56:37.871382+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-10-24T10:05:36.7945171+08:00",
+  "ChangedDate": "2018-02-07T16:23:04.0616147+08:00",
   "WebId": "d4d3322c-665c-4c01-a0c4-f62f294960a0"
 }
