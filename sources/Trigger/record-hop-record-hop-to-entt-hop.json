@@ -2,7 +2,29 @@
   "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
   "RuleCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
-    "$values": []
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff65712398",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "65712398-d588-400a-e2aa-bb6eff295592"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": false,
+          "Name": "false",
+          "Note": "",
+          "WebId": "4496987b-207f-4780-f71e-ef163b2ebdb3"
+        },
+        "Operator": "Eq",
+        "WebId": "18329a46-cb40-42f5-df81-b755388200ce"
+      }
+    ]
   },
   "ActionCollection": {
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
@@ -84,6 +106,6 @@
   "Id": "record-hop-record-hop-to-entt-hop",
   "CreatedDate": "2017-11-30T16:06:25.0386991+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-30T16:08:48.1647494+08:00",
+  "ChangedDate": "2018-02-12T16:50:35.9528075+08:00",
   "WebId": "aad912a5-1f0c-4ffd-9951-86ece54453c1"
 }

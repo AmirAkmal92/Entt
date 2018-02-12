@@ -7,11 +7,11 @@
         "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
         "Left": {
           "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
-          "CodeNamespace": "fffa154284",
+          "CodeNamespace": "ff21abdfa6",
           "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
           "Name": "IsConsole",
           "Note": "",
-          "WebId": "fa154284-e3af-4757-ccf2-7df64b784747"
+          "WebId": "21abdfa6-4306-4403-ada6-01eda888dd79"
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
@@ -19,10 +19,10 @@
           "Value": true,
           "Name": "true",
           "Note": "",
-          "WebId": "d7bd57cb-d4c1-4422-8e79-6360dc35f2de"
+          "WebId": "fb7c6e80-3d06-4754-cd49-03c14ef970cb"
         },
         "Operator": "Eq",
-        "WebId": "22072a8e-33fa-4eb4-c9b9-3443840c3af7"
+        "WebId": "021becbf-f500-491e-e117-f8d3603e62eb"
       }
     ]
   },
@@ -30,12 +30,12 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
     "$values": [
       {
-        "$type": "Entt.Acceptance.CustomActions.SopWithChildrenAction, entt.acceptance.customactions",
+        "$type": "Entt.Acceptance.CustomActions.HopWithChildrenAction, entt.acceptance.customactions",
         "Title": null,
         "IsActive": true,
         "TriggerId": null,
         "Note": null,
-        "WebId": "9029cbe9-0bb2-43d1-e13f-f4c01d56c37b"
+        "WebId": "f2ad55b6-907d-4e5a-8172-0ea0d47b34d0"
       }
     ]
   },
@@ -47,21 +47,21 @@
     "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
     "$values": []
   },
-  "Name": "RtsSopWithBabiesAction",
-  "Entity": "RecordSop",
-  "TypeOf": "Bespoke.PosEntt.RecordSops.Domain.RecordSop, PosEntt.RecordSop",
+  "Name": "RtsHopToEnttBabyHop",
+  "Entity": "RecordHop",
+  "TypeOf": "Bespoke.PosEntt.RecordHops.Domain.RecordHop, PosEntt.RecordHop",
   "Note": "",
   "IsActive": true,
   "IsFiredOnAdded": true,
   "IsFiredOnDeleted": false,
   "IsFiredOnChanged": false,
   "FiredOnOperations": "",
-  "ClassName": "RecordSopRtsSopWithBabiesActionTriggerSubscriber",
+  "ClassName": "RecordHopRtsHopToEnttBabyHopTriggerSubscriber",
   "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
   "CreatedBy": "admin",
-  "Id": "record-sop-rts-sop-with-babies-action",
-  "CreatedDate": "2017-11-29T15:00:41.0402816+08:00",
+  "Id": "record-hop-rts-hop-to-entt-baby-hop",
+  "CreatedDate": "2018-02-12T14:50:19.9257566+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2018-02-12T14:49:46.8172234+08:00",
-  "WebId": "8852f386-4a10-4a58-b7fa-83638818a2ce"
+  "ChangedDate": "2018-02-12T14:53:20.7461239+08:00",
+  "WebId": "7d023c82-3e9a-4dce-9849-4bd1c01a3abd"
 }

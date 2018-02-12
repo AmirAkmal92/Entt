@@ -1,0 +1,36 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "HipWithRecordBabyHip",
+  "Entity": "RecordHip",
+  "TypeOf": "Bespoke.PosEntt.RecordHips.Domain.RecordHip, PosEntt.RecordHip",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordHipHipWithRecordBabyHipTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-hip-hip-with-record-baby-hip",
+  "CreatedDate": "2018-02-12T13:19:02.636287+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-02-12T13:19:03.9703944+08:00",
+  "WebId": "a1cd6448-f966-4d3c-a0d2-c11595d7a5af"
+}

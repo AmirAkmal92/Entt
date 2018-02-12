@@ -11,6 +11,23 @@
             "queueName": "trigger_subs_sop-rts-sop-to-oal-wwp-event-new-log",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.sop-rts-sop-to-oal-wwp-event-new-log"
+        },  
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-hop-rts-hop-to-entt-baby-hop",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHopRtsHopToEnttBabyHopTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-hop-rts-hop-to-entt-baby-hop"
+        },
+        
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-hip-rts-hip-to-record-baby-hip",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHipRtsHipToRecordBabyHipTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-hip-rts-hip-to-record-baby-hip"
         },
     {
             "instancesCount": 1,
