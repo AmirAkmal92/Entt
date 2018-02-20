@@ -3,15 +3,30 @@
     "description": "Development on local machines",
     "isEnabled": true,
     "environment": "dev",
-    "subscriberConfigs": [
-    {
+    "subscriberConfigs": [{
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-vasn-rts-vasn-to-entt-vasn-babies",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordVasnRtsVasnToEnttVasnBabiesTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-vasn-rts-vasn-to-entt-vasn-babies"
+        },
+        {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_record-status-rts-stat-to-entt-stat-babies",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordStatusRtsStatToEnttStatBabiesTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-status-rts-stat-to-entt-stat-babies"
+        },
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
             "queueName": "trigger_subs_sop-rts-sop-to-oal-wwp-event-new-log",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SopRtsSopToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.sop-rts-sop-to-oal-wwp-event-new-log"
-        },  
+        },
         {
             "instancesCount": 1,
             "prefetchCount": 1,
@@ -20,8 +35,8 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHopRtsHopToEnttBabyHopTriggerSubscriber",
             "assembly": "subscriber.trigger.record-hop-rts-hop-to-entt-baby-hop"
         },
-        
-    {
+
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -29,7 +44,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHipRtsHipToRecordBabyHipTriggerSubscriber",
             "assembly": "subscriber.trigger.record-hip-rts-hip-to-record-baby-hip"
         },
-    {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -37,7 +52,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopOalWwpEventNewTriggerSubscriber",
             "assembly": "subscriber.trigger.hop-rts-hop-oal-wwp-event-new"
         },
-    {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -45,7 +60,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.HipRtsHipToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.hip-rts-hip-to-oal-wwp-event-new-log"
         },
-    {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -53,7 +68,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.StatRtsStatToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.stat-rts-stat-to-oal-wwp-event-new-log"
         },
-    {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -61,7 +76,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.SipRtsSipToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.sip-rts-sip-to-oal-wwp-event-new-log"
         },
-     {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -69,7 +84,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.VasnRtsVasnToWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.vasn-rts-vasn-to-wwp-event-new-log"
         },
-     {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -77,7 +92,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.DeliveryRtsDeliveryToWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.delivery-rts-delivery-to-wwp-event-new-log"
         },
-     {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -85,7 +100,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalConsignmentInitialTriggerSubscriber",
             "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-consignment-initial"
         },
-     {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -93,7 +108,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalWwpEventNewLogTriggerSubscriber",
             "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-wwp-event-new-log"
         },
-            {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -101,7 +116,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordHopRecordHopToEnttHopTriggerSubscriber",
             "assembly": "subscriber.trigger.record-hop-record-hop-to-entt-hop"
         },
-            {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -109,7 +124,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.HopRtsHopToRecordHopTriggerSubscriber",
             "assembly": "subscriber.trigger.hop-rts-hop-to-record-hop"
         },
-      {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -141,7 +156,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordConsoleRecordDecoWithBabiesActionTriggerSubscriber",
             "assembly": "subscriber.trigger.record-console-record-deco-with-babies-action"
         },
-         {
+        {
             "instancesCount": 5,
             "prefetchCount": 5,
             "priority": 0,
@@ -221,7 +236,7 @@
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.UnknownUnknownItemToEnttUnknownTriggerSubscriber",
             "assembly": "subscriber.trigger.unknown-unknown-item-to-entt-unknown"
         },
-       {
+        {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,

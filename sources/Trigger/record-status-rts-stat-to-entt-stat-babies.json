@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff813c0560",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "813c0560-00cd-4d8b-c911-e56e14ea0694"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "true",
+          "Note": "",
+          "WebId": "4f58a379-8491-4465-af97-b8a1ccbd4981"
+        },
+        "Operator": "Eq",
+        "WebId": "735110af-eb85-4490-e4f0-d50e54badaaa"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.StatWithChildrenAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "5b0e3906-3990-4bc3-ada4-77d61820bbc3"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsStatToEnttStatBabies",
+  "Entity": "RecordStatus",
+  "TypeOf": "Bespoke.PosEntt.RecordStatuses.Domain.RecordStatus, PosEntt.RecordStatus",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordStatusRtsStatToEnttStatBabiesTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-status-rts-stat-to-entt-stat-babies",
+  "CreatedDate": "2018-02-20T12:39:05.7162136+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-02-20T12:55:50.1616916+08:00",
+  "WebId": "17f4f603-7a1d-4a86-bf7b-971225e49301"
+}

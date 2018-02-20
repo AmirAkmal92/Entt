@@ -84,14 +84,14 @@ namespace Entt.Acceptance.CustomActions
                     await ProcessHopPendingItem(pending.EventId, itemList);
                     ok = true;
                     break;
-                    //case "StatusCode":
-                    //    await ProcessStatPendingItem(pending.event_id, itemList);
-                    //    ok = true;
-                    //    break;
-                    //case "Vasn":
-                    //    await ProcessVasnPendingItem(pending.event_id, itemList);
-                    //    ok = true;
-                    //    break;
+                case "StatusCode":
+                    await ProcessStatPendingItem(pending.EventId, itemList);
+                    ok = true;
+                    break;
+                case "Vasn":
+                    await ProcessVasnPendingItem(pending.EventId, itemList);
+                    ok = true;
+                    break;
                     //case "pos.oal.NormalConsoleEventNew":
                     //    //ProcessNormPendingItem(item.console_no, item.event_id);
                     //    break;
@@ -189,7 +189,7 @@ namespace Entt.Acceptance.CustomActions
                 .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(async () => await hipAdapter.LoadOneAsync(hipEventId));
             if (null != hipPendingPolly.FinalException)
-                throw new Exception("Process Sip Pending Polly Error", hipPendingPolly.FinalException);
+                throw new Exception("Process Hip Pending Polly Error", hipPendingPolly.FinalException);
 
             var hip = hipPendingPolly.Result;
             var hips = new List<Entt_Hip>();
@@ -222,7 +222,7 @@ namespace Entt.Acceptance.CustomActions
                 .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                 .ExecuteAndCaptureAsync(async () => await hopAdapter.LoadOneAsync(hopEventId));
             if (null != hopPendingPolly.FinalException)
-                throw new Exception("Process Sip Pending Polly Error", hopPendingPolly.FinalException);
+                throw new Exception("Process Hop Pending Polly Error", hopPendingPolly.FinalException);
 
             var hop = hopPendingPolly.Result;
             var hops = new List<Entt_Hop>();
@@ -241,6 +241,72 @@ namespace Entt.Acceptance.CustomActions
                 var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
                     .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
                     .ExecuteAndCaptureAsync(() => hopAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task ProcessStatPendingItem(string statEventId, string[] itemList)
+        {
+            var statAdapter = new Entt_StatusCodeAdapter();
+            var statPendingPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                .ExecuteAndCaptureAsync(async () => await statAdapter.LoadOneAsync(statEventId));
+            if (null != statPendingPolly.FinalException)
+                throw new Exception("Process Stat Pending Polly Error", statPendingPolly.FinalException);
+
+            var stat = statPendingPolly.Result;
+            var stats = new List<Entt_StatusCode>();
+            foreach (var item in itemList)
+            {
+                var console = IsConsole(item);
+                var child = stat.Clone();
+                child.Id = GenerateId(34);
+                child.ConsignmentNo = item;
+                child.DataFlag = "1";
+                child.ItemTypeCode = console ? "02" : "01";
+                stats.Add(child);
+            }
+            foreach (var item in stats)
+            {
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => statAdapter.InsertAsync(item));
+                var result = await pr;
+                if (result.FinalException != null)
+                    throw result.FinalException; // send to dead letter queue
+                System.Diagnostics.Debug.Assert(result.Result > 0, "Should be at least 1 row");
+            }
+        }
+
+        private async Task ProcessVasnPendingItem(string vasnEventId, string[] itemList)
+        {
+            var vasnAdapter = new Entt_VasnAdapter();
+            var vasnPendingPolly = await Policy.Handle<SqlException>(e => e.IsTimeout())
+                .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                .ExecuteAndCaptureAsync(async () => await vasnAdapter.LoadOneAsync(vasnEventId));
+            if (null != vasnPendingPolly.FinalException)
+                throw new Exception("Process Vasn Pending Polly Error", vasnPendingPolly.FinalException);
+
+            var vasn = vasnPendingPolly.Result;
+            var vasns = new List<Entt_Vasn>();
+            foreach (var item in itemList)
+            {
+                var console = IsConsole(item);
+                var child = vasn.Clone();
+                child.Id = GenerateId(34);
+                child.ConsignmentNo = item;
+                child.DataFlag = "1";
+                child.ItemTypeCode = console ? "02" : "01";
+                vasns.Add(child);
+            }
+            foreach (var item in vasns)
+            {
+                var pr = Policy.Handle<SqlException>(e => e.IsDeadlockOrTimeout())
+                    .WaitAndRetryAsync(RetryCount, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
+                    .ExecuteAndCaptureAsync(() => vasnAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue

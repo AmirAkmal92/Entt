@@ -1,6 +1,6 @@
 ﻿using Bespoke.PosEntt.Adapters.Entt;
 using Bespoke.PosEntt.Integrations.Transforms;
-using Bespoke.PosEntt.RecordHops.Domain;
+using Bespoke.PosEntt.RecordStatuses.Domain;
 using Bespoke.Sph.Domain;
 using Polly;
 using System;
@@ -12,46 +12,46 @@ using System.Threading.Tasks;
 namespace Entt.Acceptance.CustomActions
 {
     [Export(typeof(CustomAction))]
-    [DesignerMetadata(Name = "HopWithChildrenAction", TypeName = "Entt.Acceptance.CustomActions.HopWithChildrenAction,entt.acceptance.customactions", Description = "Entt HOP with child items", FontAwesomeIcon = "euro")]
-    public class HopWithChildrenAction : EventWithChildrenAction
+    [DesignerMetadata(Name = "StatWithChildrenAction", TypeName = "Entt.Acceptance.CustomActions.StatWithChildrenAction,entt.acceptance.customactions", Description = "Entt STAT with child items", FontAwesomeIcon = "euro")]
+    public class StatWithChildrenAction : EventWithChildrenAction
     {
-        private List<Entt_Hop> m_hopEventRows;
-        private List<Entt_EventPendingConsole> m_hopEventPendingConsoleRows;
+        private List<Entt_StatusCode> m_statEventRows;
+        private List<Entt_EventPendingConsole> m_statEventPendingConsoleRows;
 
         public override async Task ExecuteAsync(RuleContext context)
         {
-            var hop = context.Item as RecordHop;
-            if (null == hop) return;
-            var isConsole = IsConsole(hop.ConsignmentNo);
+            var stat = context.Item as RecordStatus;
+            if (null == stat) return;
+            var isConsole = IsConsole(stat.ConsignmentNo);
             if (!isConsole) return;
-
-            var swca = new HopWithChildrenAction()
+            
+            var swca = new StatWithChildrenAction()
             {
-                m_hopEventRows = new List<Entt_Hop>(),
-                m_hopEventPendingConsoleRows = new List<Entt_EventPendingConsole>()
+                m_statEventRows = new List<Entt_StatusCode>(),
+                m_statEventPendingConsoleRows = new List<Entt_EventPendingConsole>()
             };
-            await swca.RunAsync(hop);
+            await swca.RunAsync(stat);
         }
 
-        public async Task RunAsync(RecordHop hop)
+        public async Task RunAsync(RecordStatus stat)
         {
             //console_details
             var consoleList = new List<string>();
-            if (IsConsole(hop.ConsignmentNo)) consoleList.Add(hop.ConsignmentNo);
+            if (IsConsole(stat.ConsignmentNo)) consoleList.Add(stat.ConsignmentNo);
+            
+            var statEventMap = new ReportStatusToEnttStatus();
+            var statConsoleRow = await statEventMap.TransformAsync(stat);
+            statConsoleRow.Id = GenerateId(34);
+            m_statEventRows.Add(statConsoleRow);
 
-            var hopEventMap = new RecordHopToEnttHop();
-            var hopConsoleRow = await hopEventMap.TransformAsync(hop);
-            hopConsoleRow.Id = GenerateId(34);
-            m_hopEventRows.Add(hopConsoleRow);
-
-            var consoleItem = await GetItemConsigmentsFromConsoleDetailsAsync(hop.ConsignmentNo);
+            var consoleItem = await GetItemConsigmentsFromConsoleDetailsAsync(stat.ConsignmentNo);
             if (null != consoleItem)
             {
                 var children = consoleItem.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in children)
                 {
                     if (consoleList.Contains(item)) continue;
-                    ProcessChild(hopConsoleRow, item);
+                    ProcessChild(statConsoleRow, item);
 
                     //2 level
                     var console = IsConsole(item);
@@ -65,7 +65,7 @@ namespace Entt.Acceptance.CustomActions
                             foreach (var cc in childConsoleItems)
                             {
                                 if (consoleList.Contains(cc)) continue;
-                                ProcessChild(hopConsoleRow, cc);
+                                ProcessChild(statConsoleRow, cc);
 
                                 //3 level
                                 var anotherConsole = IsConsole(cc);
@@ -79,34 +79,34 @@ namespace Entt.Acceptance.CustomActions
                                         foreach (var ccc in anotherChildConsoleItems)
                                         {
                                             if (consoleList.Contains(ccc)) continue;
-                                            ProcessChild(hopConsoleRow, ccc);
+                                            ProcessChild(statConsoleRow, ccc);
                                         }
                                     }
                                     else
                                     {
-                                        AddPendingItems(hopConsoleRow.Id, cc);
+                                        AddPendingItems(statConsoleRow.Id, cc);
                                     }
                                 }
                             }
                         }
                         else
                         {
-                            AddPendingItems(hopConsoleRow.Id, item);
+                            AddPendingItems(statConsoleRow.Id, item);
                         }
                     }
                 }
             }
             else
             {
-                AddPendingItems(hopConsoleRow.Id, hop.ConsignmentNo);
+                AddPendingItems(statConsoleRow.Id, stat.ConsignmentNo);
             }
 
-            var hopEventAdapter = new Entt_HopAdapter();
-            foreach (var item in m_hopEventRows)
+            var statEventAdapter = new Entt_StatusCodeAdapter();
+            foreach (var item in m_statEventRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => hopEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => statEventAdapter.InsertAsync(item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -114,7 +114,7 @@ namespace Entt.Acceptance.CustomActions
             }
 
             var pendingAdapter = new Entt_EventPendingConsoleAdapter();
-            foreach (var item in m_hopEventPendingConsoleRows)
+            foreach (var item in m_statEventPendingConsoleRows)
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
@@ -126,8 +126,7 @@ namespace Entt.Acceptance.CustomActions
             }
         }
 
-
-        private void ProcessChild(Entt_Hop parent, string consignmentNo)
+        private void ProcessChild(Entt_StatusCode parent, string consignmentNo)
         {
             var isConsole = IsConsole(consignmentNo);
             var child = parent.Clone();
@@ -135,7 +134,7 @@ namespace Entt.Acceptance.CustomActions
             child.ConsignmentNo = consignmentNo;
             child.DataFlag = "1";
             child.ItemTypeCode = isConsole ? "02" : "01";
-            m_hopEventRows.Add(child);
+            m_statEventRows.Add(child);
         }
 
         private void AddPendingItems(string parentId, string consignmentNo)
@@ -144,12 +143,12 @@ namespace Entt.Acceptance.CustomActions
             {
                 Id = GenerateId(20),
                 EventId = parentId,
-                EventName = "Hop",
+                EventName = "StatusCode",
                 ConsoleNo = consignmentNo,
                 Version = 0,
                 DateTime = DateTime.Now
             };
-            m_hopEventPendingConsoleRows.Add(pendingConsole);
+            m_statEventPendingConsoleRows.Add(pendingConsole);
         }
 
 
@@ -159,10 +158,10 @@ namespace Entt.Acceptance.CustomActions
 define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbuilders.system],
     function(context, logger, dialog, system) {
 
-                bespoke.sph.domain.HopWithChildrenAction = function(optionOrWebid) {
+                bespoke.sph.domain.StatWithChildrenAction = function(optionOrWebid) {
 
                     const v = new bespoke.sph.domain.CustomAction(optionOrWebid);
-                    v[""$type""] = ""Entt.Acceptance.CustomActions.HopWithChildrenAction,entt.acceptance.customactions"";
+                    v[""$type""] = ""Entt.Acceptance.CustomActions.StatWithChildrenAction,entt.acceptance.customactions"";
                     if (optionOrWebid && typeof optionOrWebid === ""object"")
                     {
                         for (var n in optionOrWebid)
@@ -178,16 +177,16 @@ define([""services/datacontext"", 'services/logger', 'plugins/dialog', objectbui
                         v.WebId(optionOrWebid);
                     }
 
-                    if (bespoke.sph.domain.HopWithChildrenActionPartial)
+                    if (bespoke.sph.domain.StatWithChildrenActionPartial)
                     {
-                        return _(v).extend(new bespoke.sph.domain.HopWithChildrenActionPartial(v));
+                        return _(v).extend(new bespoke.sph.domain.StatWithChildrenActionPartial(v));
                     }
                     return v;
                 };
 
 
 
-        const action = ko.observable(new bespoke.sph.domain.HopWithChildrenAction(system.guid())),
+        const action = ko.observable(new bespoke.sph.domain.StatWithChildrenAction(system.guid())),
             trigger = ko.observable(),                   
             activate = function() {
                    return true;

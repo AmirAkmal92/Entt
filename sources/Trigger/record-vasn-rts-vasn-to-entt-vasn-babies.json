@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff6951bd3f",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "6951bd3f-e2bf-4692-b6f4-afce52f17085"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "true",
+          "Note": "",
+          "WebId": "3fe665bd-93ff-4dce-b1dd-e32d36293312"
+        },
+        "Operator": "Eq",
+        "WebId": "0b0f46d7-ebb6-4a93-b888-f807b4c770e2"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.VasnWithChildrenAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "28e35838-954a-4206-c711-1edc377f664e"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsVasnToEnttVasnBabies",
+  "Entity": "RecordVasn",
+  "TypeOf": "Bespoke.PosEntt.RecordVasns.Domain.RecordVasn, PosEntt.RecordVasn",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordVasnRtsVasnToEnttVasnBabiesTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-vasn-rts-vasn-to-entt-vasn-babies",
+  "CreatedDate": "2018-02-20T12:56:24.5392512+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-02-20T13:00:24.3145541+08:00",
+  "WebId": "9cc15574-cf35-42b1-bea7-f3686c71e434"
+}

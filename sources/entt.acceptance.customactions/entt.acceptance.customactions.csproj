@@ -68,6 +68,15 @@
     <Reference Include="PosEntt.RecordSopToEnttSop">
       <HintPath>..\..\output\PosEntt.RecordSopToEnttSop.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RecordStatus">
+      <HintPath>..\..\output\PosEntt.RecordStatus.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordVasn">
+      <HintPath>..\..\output\PosEntt.RecordVasn.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.RecordVasnToEnttVasn">
+      <HintPath>..\..\output\PosEntt.RecordVasnToEnttVasn.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.ReportConsoleToEnttConsole">
       <HintPath>..\..\output\PosEntt.ReportConsoleToEnttConsole.dll</HintPath>
     </Reference>
@@ -76,6 +85,9 @@
     </Reference>
     <Reference Include="PosEntt.ReportSipToEnttSip">
       <HintPath>..\..\output\PosEntt.ReportSipToEnttSip.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.ReportStatusToEnttStatus">
+      <HintPath>..\..\output\PosEntt.ReportStatusToEnttStatus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -89,6 +101,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VasnWithChildrenAction.cs" />
+    <Compile Include="StatWithChildrenAction.cs" />
     <Compile Include="HipWithChildrenAction.cs" />
     <Compile Include="CmsAcceptanceApiUpdateAction.cs" />
     <Compile Include="ConcurrentBagExtensions.cs" />
