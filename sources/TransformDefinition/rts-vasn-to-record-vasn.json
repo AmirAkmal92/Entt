@@ -988,9 +988,9 @@
       {
         "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
         "Input": null,
-        "Length": 0,
+        "Length": 30,
         "Pad": false,
-        "PadLeftOrRight": null,
+        "PadLeftOrRight": "Left",
         "PadChar": null,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -1036,9 +1036,9 @@
       {
         "$type": "Bespoke.PosEntt.Functoids.FixedLengthStringFunctoid, rts.functoids",
         "Input": null,
-        "Length": 0,
+        "Length": 30,
         "Pad": false,
-        "PadLeftOrRight": null,
+        "PadLeftOrRight": "Left",
         "PadChar": null,
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
@@ -1115,6 +1115,6 @@
   "Id": "rts-vasn-to-record-vasn",
   "CreatedDate": "2017-11-29T10:30:24.2709524+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-29T11:58:08.1520646+08:00",
+  "ChangedDate": "2018-02-28T12:38:00.1496739+08:00",
   "WebId": "5b3d9d07-f020-4664-866b-746bb9b9f765"
 }

@@ -32,15 +32,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "CourierId",
-        "TypeName": "",
-        "Destination": "CourierId",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "285f1d87-589f-4a12-bd51-79477ddd399d"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "BranchCode",
         "TypeName": "",
         "Destination": "LocationId",
@@ -302,15 +293,6 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
-        "Source": "EventUserId",
-        "TypeName": "",
-        "Destination": "ClerkId",
-        "SourceTypeName": "",
-        "DestinationTypeName": "",
-        "WebId": "9e0f76d7-7129-4447-847e-f766ea46b32a"
-      },
-      {
-        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
         "Source": "DropOptionIndicator",
         "TypeName": "",
         "Destination": "DropOption",
@@ -389,6 +371,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "9c4ff0db-9f63-48ac-d54c-e7a14a2d235c"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.FunctoidMap, domain.sph",
+        "__uuid": "",
+        "Functoid": "de3e3ba7-e158-4571-cecd-2decdf16d470",
+        "Destination": "CourierId",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "532de7f9-8900-436e-d7e2-e50a91d71af5"
       }
     ]
   },
@@ -1008,6 +999,21 @@
         "X": 370.0,
         "Y": 772.0,
         "WebId": "2dd2b544-e232-4bfe-f953-ed6c92eecb3e"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
+        "Expression": "return string.IsNullOrWhiteSpace(item.CourierId) ? item.EventUserId : item.CourierId;",
+        "ArgumentCollection": {
+          "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
+          "$values": []
+        },
+        "Name": "AddCourierId",
+        "OutputTypeName": "System.String, mscorlib",
+        "Label": null,
+        "Comment": null,
+        "X": 606.0,
+        "Y": 598.0,
+        "WebId": "de3e3ba7-e158-4571-cecd-2decdf16d470"
       }
     ]
   },
@@ -1028,6 +1034,6 @@
   "Id": "ipos-pem-to-entt-acceptance",
   "CreatedDate": "2017-07-21T11:52:30.6759393+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-03T14:49:30.2858116+08:00",
+  "ChangedDate": "2018-02-23T15:37:13.57527+08:00",
   "WebId": "2d7c9d23-64f2-4cc0-84cb-7764efc9cf23"
 }
