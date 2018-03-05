@@ -160,9 +160,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="tracker.service">
-      <HintPath>..\tracker.service\bin\Debug\tracker.service.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConcurrentBagExtensions.cs" />
@@ -186,6 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tracker.service\tracker.service.csproj">
+      <Project>{fa8fc8c7-bcbb-4146-b2b6-b5b214afd9ec}</Project>
+      <Name>tracker.service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
