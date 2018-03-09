@@ -16,7 +16,7 @@ namespace Bespoke.PosEntt.CustomActions
             if (done) return 1;
 
             await operation(item);
-            tracker.AddStatusAsync(item.HashEvent(), item.GetConsignmentNo(), item.GetDateTime(), typeof(T).Name)
+            await tracker.AddStatusAsync(item.HashEvent(), item.GetConsignmentNo(), item.GetDateTime(), typeof(T).Name)
                 .ContinueWith(_ =>
                 {
                     System.Diagnostics.Debug.Assert(_.Exception == null);
