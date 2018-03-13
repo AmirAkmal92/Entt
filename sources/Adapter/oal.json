@@ -40948,7 +40948,7 @@
         "ObjectType": "P",
         "UseHttpGet": false,
         "CodeNamespace": "Bespoke.PosEntt.Adapters.Oal",
-        "Uuid": "64d1f8fa-71d9-434a-be85-4670e657ef9f",
+        "Uuid": "5adf1638-9dbe-449b-96aa-0efbad79b06f",
         "ParameterDefinition": {
           "$type": "Bespoke.Sph.Domain.Api.ParameterDefinition, domain.sph",
           "MemberCollection": {
@@ -40968,7 +40968,7 @@
               "$type": "Bespoke.Sph.Integrations.Adapters.Columns.NullableStringColumn, sqlserver.adapter",
               "SqlType": "VarChar",
               "CanWrite": true,
-              "Length": 20,
+              "Length": 34,
               "IsSelected": false,
               "Unsupported": false,
               "DbType": "varchar",
@@ -43263,7 +43263,7 @@
         "IsOneWay": false,
         "IsSelected": false,
         "Schema": "dbo",
-        "WebId": "64d1f8fa-71d9-434a-be85-4670e657ef9f"
+        "WebId": "5adf1638-9dbe-449b-96aa-0efbad79b06f"
       }
     ]
   },
@@ -43275,6 +43275,6 @@
   "Id": "oal",
   "CreatedDate": "2016-10-12T15:16:51.3557981+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2018-03-13T11:12:47.7310812+08:00",
+  "ChangedDate": "2018-03-13T16:21:08.9447844+08:00",
   "WebId": "fac085be-f03e-491c-845b-851cf3f703a5"
 }

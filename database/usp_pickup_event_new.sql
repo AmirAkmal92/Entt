@@ -1,7 +1,7 @@
 USE [oal]
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_pickup_event_new_rts]    Script Date: 13/03/2018 11:11:15 ******/
+/****** Object:  StoredProcedure [dbo].[usp_pickup_event_new_rts]    Script Date: 13/03/2018 16:12:25 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -16,7 +16,7 @@ GO
 -- Description:	#5393
 -- =============================================
 CREATE PROCEDURE [dbo].[usp_pickup_event_new_rts] 
-		   @id varchar(20),
+		   @id varchar(34),
            @event_type_name_display varchar(50) = null,
            @event_sub_type_name_display varchar(20) = null,
            @event_remarks_display varchar(200) = NULL,

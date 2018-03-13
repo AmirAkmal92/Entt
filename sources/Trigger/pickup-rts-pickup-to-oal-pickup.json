@@ -15,8 +15,8 @@
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
-          "TypeName": "System.String, mscorlib",
-          "Value": "0",
+          "TypeName": "System.Int32, mscorlib",
+          "Value": 0,
           "Name": "0",
           "Note": "",
           "WebId": "28f15452-c560-49d5-a3dd-8adb6b9e19cf"
@@ -138,6 +138,6 @@
   "Id": "pickup-rts-pickup-to-oal-pickup",
   "CreatedDate": "2018-03-12T15:20:52.8752106+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2018-03-13T11:23:14.0799079+08:00",
+  "ChangedDate": "2018-03-13T14:15:18.3068467+08:00",
   "WebId": "430aa26a-6d21-48b3-ab65-1341cdc9af9a"
 }
