@@ -3,7 +3,16 @@
     "description": "Development on local machines",
     "isEnabled": true,
     "environment": "dev",
-    "subscriberConfigs": [{
+    "subscriberConfigs": [
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
+            "queueName": "trigger_subs_pickup-rts-pickup-to-oal-pickup",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalPickupTriggerSubscriber",
+            "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-pickup"
+        },
+    {
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
@@ -557,8 +566,8 @@
             "assembly": "subscriber.trigger.delivery-rts-delivery-to-oal-ips-import"
         },
         {
-            "instancesCount": 1,
-            "prefetchCount": 1,
+            "instancesCount": 0,
+            "prefetchCount": 0,
             "priority": 0,
             "queueName": "trigger_subs_pickup-rts-pickup-to-oal",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalTriggerSubscriber",
