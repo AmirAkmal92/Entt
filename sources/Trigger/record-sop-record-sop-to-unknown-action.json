@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff6a55e324",
+          "Script": "var branches = new string[] {\"4609\",\"1500\",\"5613\",\"5900\"};\r\nreturn branches.Contains(item.OfficeNo);",
+          "Name": "OnlyInBranch",
+          "Note": "",
+          "WebId": "6a55e324-9a98-460b-d241-1397f3ae52a0"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "true",
+          "Note": "",
+          "WebId": "0439355e-99de-4a5a-b25a-6f8fa06237d2"
+        },
+        "Operator": "Eq",
+        "WebId": "931b032d-3038-4bfe-86ac-45a871e16a5b"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.SopVsAcceptanceAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "3bf1f7e9-9708-4d3a-b1e4-0d0fe1dfa1b3"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RecordSopToUnknownAction",
+  "Entity": "RecordSop",
+  "TypeOf": "Bespoke.PosEntt.RecordSops.Domain.RecordSop, PosEntt.RecordSop",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordSopRecordSopToUnknownActionTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-sop-record-sop-to-unknown-action",
+  "CreatedDate": "2018-03-19T12:39:33.9702414+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-03-19T13:31:07.5456253+08:00",
+  "WebId": "964f2deb-9f94-49c6-bc73-583e28e10e3c"
+}

@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SopVsAcceptanceAction.cs" />
     <Compile Include="VasnWithChildrenAction.cs" />
     <Compile Include="StatWithChildrenAction.cs" />
     <Compile Include="HipWithChildrenAction.cs" />
