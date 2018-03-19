@@ -236,6 +236,15 @@
         "SourceTypeName": "",
         "DestinationTypeName": "",
         "WebId": "9de83cb1-4550-44b0-d613-ff722daf3208"
+      },
+      {
+        "$type": "Bespoke.Sph.Domain.DirectMap, domain.sph",
+        "Source": "TrxObject.AccountNumber",
+        "TypeName": "",
+        "Destination": "ShipperAccountNo",
+        "SourceTypeName": "",
+        "DestinationTypeName": "",
+        "WebId": "803a9077-e555-4a9e-8c6d-36a34a9d645c"
       }
     ]
   },
@@ -649,6 +658,6 @@
   "Id": "prs-acceptance-to-entt-acceptance",
   "CreatedDate": "2017-07-24T14:16:38.7583767+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-03T15:05:03.3760815+08:00",
+  "ChangedDate": "2018-03-15T14:03:34.9498264+08:00",
   "WebId": "a43fe87f-a030-485f-9982-d5b367a0d703"
 }
