@@ -8,6 +8,14 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_record-sop-record-sop-to-unknown-action",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSopRecordSopToUnknownActionTriggerSubscriber",
+            "assembly": "subscriber.trigger.record-sop-record-sop-to-unknown-action"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_pickup-rts-pickup-to-oal-pickup",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.PickupRtsPickupToOalPickupTriggerSubscriber",
             "assembly": "subscriber.trigger.pickup-rts-pickup-to-oal-pickup"
