@@ -1,14 +1,17 @@
 USE [Entt]
 GO
 
+/****** Object:  StoredProcedure [Entt].[usp_entt_acceptance]    Script Date: 23/03/2018 18:35:25 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 CREATE PROCEDURE [Entt].[usp_entt_acceptance] 
       @Id varchar(50),
-      @ModuleId varchar(2) = NULL,
+      @ModuleId varchar(2),
       @ConsignmentNo varchar(50),
       @DateTime smalldatetime,
       @PickupNo varchar(10) = NULL,
@@ -127,7 +130,7 @@ UPDATE [Entt].[Acceptance]
     [CreatedBy] = @CreatedBy,
     [ChangedDate] = @ChangedDate,
     [ChangedBy] = @ChangedBy
-WHERE [ConsignmentNo] = @ConsignmentNo
+WHERE [ConsignmentNo] = @ConsignmentNo And [SystemId] = @SystemId And [SystemName] = @SystemName And [LocationId] = @LocationId And [DateTime] = @DateTime
 
 IF @@ROWCOUNT = 0
 BEGIN
@@ -256,3 +259,7 @@ END
 COMMIT TRANSACTION;
 
 END
+
+GO
+
+
