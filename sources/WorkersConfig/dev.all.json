@@ -8,6 +8,14 @@
             "instancesCount": 1,
             "prefetchCount": 1,
             "priority": 0,
+            "queueName": "trigger_subs_ipos-pem-ipos-pem-to-ipos-pickup",
+            "fullName": "Bespoke.PosEntt.TriggerSubscribers.IposPemIposPemToIposPickupTriggerSubscriber",
+            "assembly": "subscriber.trigger.ipos-pem-ipos-pem-to-ipos-pickup"
+        },
+    {
+            "instancesCount": 1,
+            "prefetchCount": 1,
+            "priority": 0,
             "queueName": "trigger_subs_record-sop-record-sop-to-unknown-action",
             "fullName": "Bespoke.PosEntt.TriggerSubscribers.RecordSopRecordSopToUnknownActionTriggerSubscriber",
             "assembly": "subscriber.trigger.record-sop-record-sop-to-unknown-action"
