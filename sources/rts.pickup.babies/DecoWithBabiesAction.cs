@@ -317,8 +317,8 @@ namespace Bespoke.PosEntt.CustomActions
 
             //if (ok)
             //{
-                var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
-                await pendingAdapter.DeleteAsync(pending.id);
+            var pendingAdapter = new Adapters.Oal.dbo_event_pending_consoleAdapter();
+            await pendingAdapter.DeleteAsync(pending.id);
             //}
         }
 
@@ -389,7 +389,7 @@ namespace Bespoke.PosEntt.CustomActions
                 item_id = consignmentNo,
                 class_cd = GetClassCode(consignmentNo),
                 status = "1",
-                user_fid = deli.courier_id.Length >= 5 ?  deli.courier_id.Substring(0,5) : deli.courier_id,
+                user_fid = deli.courier_id.Length >= 5 ? deli.courier_id.Substring(0, 5) : deli.courier_id,
                 event_date_local_date_field = deli.date_field,
                 event_date_g_m_t_date_field = (deli.date_field ?? DateTime.Now).AddHours(-8),
                 postal_status_fcd = "MINL",

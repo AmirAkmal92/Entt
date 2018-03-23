@@ -130,7 +130,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => deliEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(deliEventAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -141,7 +141,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => deliWwpEventAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(deliWwpEventAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -153,7 +153,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => ipsAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(ipsAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
@@ -165,7 +165,7 @@ namespace Bespoke.PosEntt.CustomActions
             {
                 var pr = Policy.Handle<SqlException>()
                     .WaitAndRetryAsync(5, x => TimeSpan.FromMilliseconds(500 * Math.Pow(2, x)))
-                    .ExecuteAndCaptureAsync(() => pendingAdapter.InsertAsync(item));
+                    .ExecuteAndCaptureAsync(() => TrackEvents(pendingAdapter.InsertAsync,item));
                 var result = await pr;
                 if (result.FinalException != null)
                     throw result.FinalException; // send to dead letter queue
