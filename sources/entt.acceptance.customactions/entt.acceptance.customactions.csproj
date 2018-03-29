@@ -47,6 +47,9 @@
     <Reference Include="PosEntt.RecordConsole">
       <HintPath>..\..\output\PosEntt.RecordConsole.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.RecordDelivery">
+      <HintPath>..\..\output\PosEntt.RecordDelivery.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.RecordHip">
       <HintPath>..\..\output\PosEntt.RecordHip.dll</HintPath>
     </Reference>
@@ -83,6 +86,9 @@
     <Reference Include="PosEntt.ReportConsoleToEnttConsoleDetails">
       <HintPath>..\..\output\PosEntt.ReportConsoleToEnttConsoleDetails.dll</HintPath>
     </Reference>
+    <Reference Include="PosEntt.ReportDeliveryToEnttDelivery">
+      <HintPath>..\..\output\PosEntt.ReportDeliveryToEnttDelivery.dll</HintPath>
+    </Reference>
     <Reference Include="PosEntt.ReportSipToEnttSip">
       <HintPath>..\..\output\PosEntt.ReportSipToEnttSip.dll</HintPath>
     </Reference>
@@ -101,6 +107,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeliWithChildrenAction.cs" />
     <Compile Include="SopVsAcceptanceAction.cs" />
     <Compile Include="VasnWithChildrenAction.cs" />
     <Compile Include="StatWithChildrenAction.cs" />

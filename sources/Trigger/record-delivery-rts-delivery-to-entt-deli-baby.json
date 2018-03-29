@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff04022f20",
+          "Script": "var pattern = \"CG[0-9]{9}MY\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.ConsignmentNo, pattern);\r\nreturn match.Success;",
+          "Name": "IsConsole",
+          "Note": "",
+          "WebId": "04022f20-0052-4606-ce63-8b3da0cc9dfc"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "true",
+          "Note": "",
+          "WebId": "59f6837c-4986-4e69-e44c-56e9a2d84c3b"
+        },
+        "Operator": "Eq",
+        "WebId": "e1357592-0da4-4f68-b576-696108009034"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Entt.Acceptance.CustomActions.DeliWithChildrenAction, entt.acceptance.customactions",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "2892dfef-ca60-4367-f6d4-dd7425e7eafa"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsDeliveryToEnttDeliBaby",
+  "Entity": "RecordDelivery",
+  "TypeOf": "Bespoke.PosEntt.RecordDeliveries.Domain.RecordDelivery, PosEntt.RecordDelivery",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "RecordDeliveryRtsDeliveryToEnttDeliBabyTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "record-delivery-rts-delivery-to-entt-deli-baby",
+  "CreatedDate": "2018-03-29T14:56:18.0039506+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-03-29T16:11:10.1859525+08:00",
+  "WebId": "c9182b57-5793-4370-a391-97d813322c23"
+}
