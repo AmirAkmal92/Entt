@@ -2,7 +2,7 @@ CREATE TABLE [Entt].[Delivery](
 	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
 	[EventName] [varchar](50) NULL,
-	[Channel] [varchar](2) NULL,
+	[Channel] [varchar](3) NULL,
 	[DateTime] [datetime] NULL,
 	[OfficeNo] [varchar](4) NULL,
 	[OfficeName] [varchar](30) NULL,
