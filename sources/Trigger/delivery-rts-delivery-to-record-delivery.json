@@ -15,8 +15,8 @@
         },
         "Right": {
           "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
-          "TypeName": "System.String, mscorlib",
-          "Value": "false",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": false,
           "Name": "false",
           "Note": "",
           "WebId": "b554b9b8-96d8-43a3-b8f7-6f261071cf9a"
@@ -121,6 +121,6 @@
   "Id": "delivery-rts-delivery-to-record-delivery",
   "CreatedDate": "2017-10-09T12:03:25.4330426+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2018-03-29T15:28:20.2483929+08:00",
+  "ChangedDate": "2018-04-03T16:06:08.662389+08:00",
   "WebId": "11ed67a7-f589-4451-8b08-cffc404dc202"
 }
