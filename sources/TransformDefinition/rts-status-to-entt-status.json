@@ -301,7 +301,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_stat_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_stat_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_stat_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1309,6 +1309,6 @@
   "Id": "rts-status-to-entt-status",
   "CreatedDate": "2017-10-09T15:14:10.4639287+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-22T17:00:13.1293096+08:00",
+  "ChangedDate": "2018-04-02T14:45:16.9639666+08:00",
   "WebId": "dec06814-b9c1-4be3-a7ed-6493319c6dc5"
 }
