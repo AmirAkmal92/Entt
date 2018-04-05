@@ -249,16 +249,15 @@ namespace Bespoke.PosEntt.CustomActions
                     child.content = "D";
             }
 
-            if (string.IsNullOrWhiteSpace(child.orig_country_cd))
-            {
-                var pattern = @"\w{2}\d{9}(?<country>\w{2})";
-                var match = System.Text.RegularExpressions.Regex.Match(consignmentNo, pattern);
+         
+            var pattern = @"\w{2}\d{9}(?<country>\w{2})";
+            var match = System.Text.RegularExpressions.Regex.Match(consignmentNo, pattern);
 
                 if (match.Success)
                 {
                     child.orig_country_cd = match.Groups["country"].Value;
                 }
-            }
+            
 
             if (null == child.item_weight_double) child.item_weight_double = 0d;
 
