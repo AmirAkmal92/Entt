@@ -1,7 +1,7 @@
 CREATE TABLE [Entt].[Console](
 	[Id] [varchar](50) NOT NULL PRIMARY KEY,
 	[Version] [int] NOT NULL,
-	[Channel] [varchar](2) NULL,
+	[Channel] [varchar](3) NULL,
 	[DateTime] [datetime] NULL,
 	[EventType] [varchar](50) NULL,
 	[OfficeNo] [varchar](4) NULL,
