@@ -502,7 +502,7 @@
       },
       {
         "$type": "Bespoke.Sph.Domain.ScriptFunctoid, domain.sph",
-        "Expression": "return string.Format(\"sa_deli_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);",
+        "Expression": "var saFileName = string.Format(\"sa_deli_{0:yyyyMMdd}_{1:HHmmss}_{2}\", item.Date, item.Time,item.ScannerId);\r\nvar sowFileName = string.Format(\"sow_deli_{0}_{1:yyyyMMdd}-{2:HHmmss}_1_{3}\", item.LocationId,item.Date, item.Time,item.CourierId);\r\nreturn item.SourceApplication == \"sow\" ? sowFileName : saFileName;",
         "ArgumentCollection": {
           "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.FunctoidArg, domain.sph]], domain.sph",
           "$values": []
@@ -1733,6 +1733,6 @@
   "Id": "rts-deli-to-record-deli",
   "CreatedDate": "2017-10-05T15:17:12.4425248+08:00",
   "ChangedBy": "admin",
-  "ChangedDate": "2017-11-09T16:02:14.2982936+08:00",
+  "ChangedDate": "2018-04-02T14:35:31.5867065+08:00",
   "WebId": "dc74c5ea-c90c-4365-8e2a-656b9e88cd34"
 }
