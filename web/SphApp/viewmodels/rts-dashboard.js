@@ -42,7 +42,10 @@ define(["services/datacontext", "services/logger", "plugins/router", objectbuild
                 "size": 1
             },
             activate = function () {
-                return context.loadAsync("EntityDefinition", "Transient eq true").done(function(lo){
+                return context.loadAsync({
+					entity : "EntityDefinition",
+					size : 50
+				}, "Transient eq true").done(function(lo){
                     entities(lo.itemCollection);
                 });
             },
