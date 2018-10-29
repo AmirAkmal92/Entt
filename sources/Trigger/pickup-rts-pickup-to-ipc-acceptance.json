@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ff9a9685a5",
+          "Script": "if (string.IsNullOrEmpty(item.FailPickupReason))\r\n    return true;\r\n    \r\nreturn false;",
+          "Name": "PickupReason",
+          "Note": "",
+          "WebId": "9a9685a5-256d-4272-accb-2c795e80a3b3"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "True",
+          "Note": "",
+          "WebId": "fd30275a-e8a9-4bc4-db2f-8f0db1c16235"
+        },
+        "Operator": "Eq",
+        "WebId": "070cbf1d-cea8-4a16-a7fe-494edf707778"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "RTS.TO.IPC.API.PickupToIpcAcceptance, rts.to.ipc.api",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "27418f09-2c44-49c6-e7f2-ef879d4dd62a"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsPickupToIpcAcceptance",
+  "Entity": "Pickup",
+  "TypeOf": "Bespoke.PosEntt.Pickups.Domain.Pickup, PosEntt.Pickup",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "PickupRtsPickupToIpcAcceptanceTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "pickup-rts-pickup-to-ipc-acceptance",
+  "CreatedDate": "2018-10-15T16:38:06.1714361+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2018-10-26T12:21:57.068936+08:00",
+  "WebId": "e8661458-e173-42d7-8930-90ea1302f5cf"
+}

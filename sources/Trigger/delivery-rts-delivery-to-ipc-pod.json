@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "RTS.TO.IPC.API.DeliveryToIpcPod, rts.to.ipc.api",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "743c1ff4-3d0f-4bc0-aa8d-5142d4b63cad"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsDeliveryToIpcPod",
+  "Entity": "Delivery",
+  "TypeOf": "Bespoke.PosEntt.Deliveries.Domain.Delivery, PosEntt.Delivery",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "DeliveryRtsDeliveryToIpcPodTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin",
+  "Id": "delivery-rts-delivery-to-ipc-pod",
+  "CreatedDate": "2018-10-15T16:06:29.3623228+08:00",
+  "ChangedBy": "admin",
+  "ChangedDate": "2018-10-15T16:07:59.7594724+08:00",
+  "WebId": "2e72f8cb-08e3-435b-97e4-81cb180be265"
+}

@@ -1,0 +1,67 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "Bespoke.Sph.Domain.Rule, domain.sph",
+        "Left": {
+          "$type": "Bespoke.Sph.Domain.FunctionField, domain.sph",
+          "CodeNamespace": "ffeffc4f2b",
+          "Script": "var statuscode = \"27\";\r\nvar match = System.Text.RegularExpressions.Regex.Match(item.StatusCode, statuscode);\r\nreturn match.Success;",
+          "Name": "StatusCode",
+          "Note": "",
+          "WebId": "effc4f2b-3512-4025-d381-31dff83073e9"
+        },
+        "Right": {
+          "$type": "Bespoke.Sph.Domain.ConstantField, domain.sph",
+          "TypeName": "System.Boolean, mscorlib",
+          "Value": true,
+          "Name": "True",
+          "Note": "",
+          "WebId": "6f2630e8-e45f-4845-a110-9e9624234344"
+        },
+        "Operator": "Eq",
+        "WebId": "9cec9eb9-91ad-4db1-c6ab-5a80d602f167"
+      }
+    ]
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "RTS.TO.IPC.API.StatusCodeToIpcAcceptance, rts.to.ipc.api",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "46f3654a-48dd-4896-b52c-9f23069e480c"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsStatusToIpcAcceptance",
+  "Entity": "Stat",
+  "TypeOf": "Bespoke.PosEntt.Stats.Domain.Stat, PosEntt.Stat",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "StatRtsStatusToIpcAcceptanceTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin ",
+  "Id": "stat-rts-status-to-ipc-acceptance",
+  "CreatedDate": "2018-10-23T10:52:29.5122495+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2018-10-24T12:52:42.6999868+08:00",
+  "WebId": "f0a0e819-c7df-457c-bf2f-ea9ada953bd2"
+}

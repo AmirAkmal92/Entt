@@ -1,0 +1,45 @@
+{
+  "$type": "Bespoke.Sph.Domain.Trigger, domain.sph",
+  "RuleCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.Rule, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "ActionCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.CustomAction, domain.sph]], domain.sph",
+    "$values": [
+      {
+        "$type": "RTS.TO.IPC.API.NormalConsoleToIpcConsolidation, rts.to.ipc.api",
+        "Title": null,
+        "IsActive": true,
+        "TriggerId": null,
+        "Note": null,
+        "WebId": "9fa584d2-af8b-4401-9869-2d69c6809dfe"
+      }
+    ]
+  },
+  "ReferencedAssemblyCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ReferencedAssembly, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "RequeueFilterCollection": {
+    "$type": "Bespoke.Sph.Domain.ObjectCollection`1[[Bespoke.Sph.Domain.ExceptionFilter, domain.sph]], domain.sph",
+    "$values": []
+  },
+  "Name": "RtsNormToIpcConsolidation",
+  "Entity": "Norm",
+  "TypeOf": "Bespoke.PosEntt.Norms.Domain.Norm, PosEntt.Norm",
+  "Note": "",
+  "IsActive": true,
+  "IsFiredOnAdded": true,
+  "IsFiredOnDeleted": false,
+  "IsFiredOnChanged": false,
+  "FiredOnOperations": "",
+  "ClassName": "NormRtsNormToIpcConsolidationTriggerSubscriber",
+  "CodeNamespace": "Bespoke.PosEntt.TriggerSubscribers",
+  "CreatedBy": "admin ",
+  "Id": "norm-rts-norm-to-ipc-consolidation",
+  "CreatedDate": "2018-10-26T15:22:48.992306+08:00",
+  "ChangedBy": "admin ",
+  "ChangedDate": "2018-10-26T15:23:07.8279306+08:00",
+  "WebId": "83c7d7c8-fb3a-48e7-a24d-49e41c95c784"
+}

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4191AAC-D377-4E44-9DE9-AB950D2DAC88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>rts.to.ipc.api</RootNamespace>
+    <AssemblyName>rts.to.ipc.api</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="domain.sph">
+      <HintPath>..\subscribers.host\domain.sph.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>..\subscribers.host\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Deco">
+      <HintPath>..\output\PosEntt.Deco.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Delivery">
+      <HintPath>..\output\PosEntt.Delivery.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Entt">
+      <HintPath>..\output\PosEntt.Entt.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.EnttAcceptance">
+      <HintPath>..\output\PosEntt.EnttAcceptance.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Norm">
+      <HintPath>..\output\PosEntt.Norm.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Pickup">
+      <HintPath>..\..\subscribers\PosEntt.Pickup.dll</HintPath>
+    </Reference>
+    <Reference Include="PosEntt.Stat">
+      <HintPath>..\..\subscribers\PosEntt.Stat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NormalConsoleToIpcConsolidation.cs" />
+    <Compile Include="DeliveryConsoleToIpcConsolidation.cs" />
+    <Compile Include="StatusCodeToIpcAcceptance.cs" />
+    <Compile Include="DeliveryToIpcPod.cs" />
+    <Compile Include="PickupToIpcAcceptance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)$(TargetName).dll $(SolutionDir)output
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)output
+
+copy $(TargetDir)$(TargetName).dll $(SolutionDir)subscribers
+copy $(TargetDir)$(TargetName).pdb $(SolutionDir)subscribers</PostBuildEvent>
+  </PropertyGroup>
+</Project>
